@@ -151,7 +151,7 @@ export default function ContactForm({ categoryName }) {
                     <input
                         type="tel"
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="+34 600..."
+                        placeholder="+34 633..."
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
