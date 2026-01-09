@@ -25,7 +25,7 @@ function CategoryPage({ categoryId }) {
         */}
 
       {/* Hero Section for Category */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <div className="relative min-h-[60vh] h-auto flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0">
           <img
             src={currentCategory.image}
