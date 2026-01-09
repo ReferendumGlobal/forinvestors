@@ -19,7 +19,7 @@ export default function Footer() {
                         <div>
                             <h3 className="text-xl font-serif font-bold text-white mb-4">FOR INVESTORS</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
-                                Specialists in high-value real estate asset management. Connecting private capital with exclusive investment opportunities in Spain and Europe.
+                                Specialists in high-value real estate asset management. Connecting private capital with exclusive investment opportunities worldwide.
                             </p>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
                                 Operated by Urbina Agency LLC

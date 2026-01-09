@@ -5,7 +5,7 @@ export const categories = {
         id: 'hotels',
         icon: Hotel,
         title: 'Hotel Investments',
-        description: 'Exclusive selection of hotel assets in prime tourist destinations across Spain and European capitals. From boutique hotels to large resort complexes.',
+        description: 'Exclusive selection of hotel assets in prime tourist destinations worldwide. From boutique hotels to large resort complexes.',
         priceRange: 'From €2M to €300M',
         image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         details: 'Guaranteed yields and management or rebranding opportunities.'
