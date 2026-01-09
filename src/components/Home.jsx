@@ -7,7 +7,9 @@ export default function Home() {
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+            {/* Hero Section */}
+            {/* Mobile: pt-24 (6rem=96px) is enough to clear 80px header + space. Desktop pt-32. */}
+            <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -26,7 +28,8 @@ export default function Home() {
                         <div className="inline-block p-3 mb-6 border border-gold-500/30 rounded-full bg-gold-500/10 backdrop-blur-md">
                             <Shield className="w-8 h-8 text-gold-500" />
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
+                        {/* Mobile: text-4xl. Desktop: text-7xl. */}
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8 leading-tight">
                             The Art of <span className="text-gold-400">Discretion</span>
                         </h1>
                     </motion.div>
@@ -35,9 +38,9 @@ export default function Home() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-12"
+                        className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-8 md:mb-12"
                     >
-                        "Our clients entrust us with valuable secrets in the form of investments. We return successful businesses: classified content that is only declassified as press headlines celebrating your success."
+                        "Our clients entrust us with valuable secrets in the form of investments in <strong>Spain, Europe and worldwide</strong>. We return successful businesses: classified content that is only declassified as press headlines celebrating your success."
                     </motion.p>
 
                     <motion.div
@@ -45,9 +48,10 @@ export default function Home() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.6 }}
                     >
+                        {/* Mobile: w-full button for easier tapping */}
                         <Link
                             to="/hotels"
-                            className="inline-flex items-center gap-3 px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-1"
+                            className="inline-flex w-full md:w-auto justify-center items-center gap-3 px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-1 active:scale-95 touch-manipulation"
                         >
                             Enter Portfolio <ChevronRight size={20} />
                         </Link>
