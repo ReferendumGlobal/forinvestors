@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import Home from './components/Home';
 import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
@@ -18,8 +19,13 @@ function CategoryPage({ categoryId }) {
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.4 }}
     >
+      {/* Padding top is handled by main container, but we need extra spacing because of fixed navbar overlap on inner pages if not careful. 
+            However, Home handles its own hero. Category page needs the hero top spacing. 
+            The Navbar is fixed h-20. The Hero is 60vh. 
+        */}
+
       {/* Hero Section for Category */}
-      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+      <div className="relative h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0">
           <img
             src={currentCategory.image}
@@ -130,16 +136,16 @@ function AppContent() {
     <div className="min-h-screen bg-midnight-950 text-gray-200 selection:bg-gold-500/30">
       <Navbar categories={categories} />
 
-      <main className="pt-20">
+      <main className="pt-0 relative">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Navigate to="/hoteles" replace />} />
+            <Route path="/" element={<Home />} />
             <Route path="/hoteles" element={<CategoryPage categoryId="hoteles" />} />
             <Route path="/terrenos" element={<CategoryPage categoryId="terrenos" />} />
             <Route path="/promotores" element={<CategoryPage categoryId="promotores" />} />
             <Route path="/lujo" element={<CategoryPage categoryId="lujo" />} />
             <Route path="/bodegas" element={<CategoryPage categoryId="bodegas" />} />
-            <Route path="*" element={<Navigate to="/hoteles" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
       </main>
