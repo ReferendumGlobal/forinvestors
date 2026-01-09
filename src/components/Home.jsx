@@ -37,7 +37,7 @@ export default function Home() {
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-12"
                     >
-                        "Nuestros clientes nos entregan secretos valiosos en forma de inversiones. Nosotros les devolvemos negocios exitosos de contenido clasificado, que solo se desclasifica en forma de titulares de prensa celebrando su éxito."
+                        "Nuestros clientes nos entregan secretos valiosos en forma de inversiones en <strong>España, Europa y en todo el mundo</strong>. Nosotros les devolvemos negocios exitosos de contenido clasificado, que solo se desclasifica en forma de titulares de prensa celebrando su éxito."
                     </motion.p>
 
                     <motion.div

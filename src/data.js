@@ -5,7 +5,7 @@ export const categories = {
         id: 'hoteles',
         icon: Hotel,
         title: 'Inversión en Hoteles',
-        description: 'Disponemos de una exclusiva selección de activos hoteleros en las principales zonas turísticas de España y capitales europeas. Desde hoteles boutique hasta grandes complejos resots.',
+        description: 'Disponemos de una exclusiva selección de activos hoteleros en las principales zonas turísticas de España, Europa y destinos mundiales. Desde hoteles boutique hasta grandes complejos resots.',
         priceRange: 'Desde 1M€ hasta 150M€',
         image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
         details: 'Rentabilidades garantizadas y oportunidades de gestión o rebranding.'

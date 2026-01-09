@@ -19,7 +19,7 @@ export default function Footer() {
                         <div>
                             <h3 className="text-xl font-serif font-bold text-white mb-4">PARA INVERSORES</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
-                                Especialistas en la gestión de activos inmobiliarios de alto valor. Conectamos capital privado con oportunidades de inversión exclusivas en España y Europa.
+                                Especialistas en la gestión de activos inmobiliarios de alto valor. Conectamos capital privado con oportunidades de inversión exclusivas en España, Europa y en todo el mundo.
                             </p>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
                                 Operado por Urbina Agency LLC
@@ -65,7 +65,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer >
 
             <LegalModal
                 isOpen={legalModalOpen}
