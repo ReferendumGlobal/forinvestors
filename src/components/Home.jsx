@@ -5,9 +5,9 @@ import { ChevronRight, Shield, Key, FileText } from 'lucide-react';
 
 export default function Home() {
     return (
-        <div className="min-h-screen pt-20 pb-16">
+        <div className="min-h-screen">
             {/* Hero Section */}
-            <div className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+            <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
