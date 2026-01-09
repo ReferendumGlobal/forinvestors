@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import ScrollToTop from './components/ScrollToTop';
 import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
@@ -158,6 +159,7 @@ function AppContent() {
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <AppContent />
     </HashRouter>
   );

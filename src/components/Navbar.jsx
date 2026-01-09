@@ -72,7 +72,8 @@ export default function Navbar({ categories }) {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-midnight-950 border-b border-white/5"
+                        // Fix: precise positioning below navbar (h-20 = 5rem = 80px)
+                        className="md:hidden fixed top-20 left-0 w-full bg-midnight-950 border-b border-white/5 shadow-2xl overflow-y-auto max-h-[calc(100vh-5rem)]"
                     >
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                             {Object.values(categories).map((category) => (
