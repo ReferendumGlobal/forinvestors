@@ -1,108 +1,47 @@
 import React, { useState } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export default function ContactForm({ categoryName }) {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        funds: '',
-        message: '',
-        file: null
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
+    const [file, setFile] = useState(null);
 
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
-            setFormState({ ...formState, file: e.target.files[0] });
+            setFile(e.target.files[0]);
         }
     };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        const formData = new FormData();
-        formData.append('name', formState.name);
-        formData.append('email', formState.email);
-        formData.append('phone', formState.phone);
-        formData.append('funds', formState.funds);
-        formData.append('message', formState.message);
-        formData.append('category', categoryName);
-        formData.append('_subject', `New Investment Request: ${categoryName}`);
-        formData.append('_template', 'table');
-        formData.append('_captcha', 'false');
-
-        if (formState.file) {
-            formData.append('attachment', formState.file);
-        }
-
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
-                method: "POST",
-                body: formData
-            });
-
-            if (response.ok) {
-                setSubmitted(true);
-            } else {
-                alert("There was an error submitting the form. Please try again.");
-            }
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("Connection error. Please check your internet.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
-    if (submitted) {
-        return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-midnight-800 border border-gold-500/30 rounded-2xl p-8 text-center"
-            >
-                <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="text-gold-500" size={32} />
-                </div>
-                <h3 className="text-2xl font-serif text-white mb-2">Request Sent</h3>
-                <p className="text-gray-400">Thank you for contacting us. We have received your Proof of Funds and will analyze your profile to send you properties matching your investment criteria.</p>
-                <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-6 text-gold-400 hover:text-gold-300 font-medium"
-                >
-                    Send another request
-                </button>
-            </motion.div>
-        );
-    }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5">
+        <form
+            action="https://formsubmit.co/urbinaagency@gmail.com"
+            method="POST"
+            encType="multipart/form-data"
+            className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5"
+        >
+            <input type="hidden" name="_subject" value={`New Investment Request: ${categoryName}`} />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://forinvestors.org/" />
+            <input type="hidden" name="category" value={categoryName} />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
                     <input
                         type="text"
+                        name="name"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         placeholder="John Doe"
-                        value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     />
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">Professional Email</label>
                     <input
                         type="email"
+                        name="email"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         placeholder="john@company.com"
-                        value={formState.email}
-                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
                 </div>
             </div>
@@ -112,21 +51,19 @@ export default function ContactForm({ categoryName }) {
                     <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
                     <input
                         type="tel"
+                        name="phone"
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         placeholder="+1 555..."
-                        value={formState.phone}
-                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">Capital to Invest (€)</label>
                     <input
                         type="text"
+                        name="funds"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         placeholder="Ex: 5,000,000"
-                        value={formState.funds}
-                        onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
                 </div>
             </div>
@@ -138,15 +75,16 @@ export default function ContactForm({ categoryName }) {
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
                     <input
                         type="file"
+                        name="attachment"
                         className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                         onChange={handleFileChange}
                         accept=".pdf,.jpg,.png,.doc,.docx"
                     />
                     <div className="space-y-1 text-center">
-                        {formState.file ? (
+                        {file ? (
                             <div className="flex flex-col items-center">
                                 <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
-                                <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
+                                <p className="text-sm text-gray-300 mt-2">{file.name}</p>
                                 <p className="text-xs text-gray-500">File uploaded successfully</p>
                             </div>
                         ) : (
@@ -169,24 +107,18 @@ export default function ContactForm({ categoryName }) {
             <div>
                 <label className="block text-sm font-medium text-gray-400 mb-2">Additional Message</label>
                 <textarea
+                    name="message"
                     rows={4}
                     className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                     placeholder="Interested in properties in..."
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                 />
             </div>
 
             <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full flex items-center justify-center bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px]"
             >
-                {isSubmitting ? 'Sending...' : (
-                    <>
-                        Send Request <Send size={18} className="ml-2" />
-                    </>
-                )}
+                Send Request <Send size={18} className="ml-2" />
             </button>
 
             <div className="text-center pt-2">
