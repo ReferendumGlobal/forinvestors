@@ -20,15 +20,42 @@ export default function ContactForm({ categoryName }) {
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        setTimeout(() => {
+        const formData = new FormData();
+        formData.append('name', formState.name);
+        formData.append('email', formState.email);
+        formData.append('phone', formState.phone);
+        formData.append('funds', formState.funds);
+        formData.append('message', formState.message);
+        formData.append('category', categoryName);
+        formData.append('_subject', `New Investment Request: ${categoryName}`);
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
+
+        if (formState.file) {
+            formData.append('attachment', formState.file);
+        }
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                alert("There was an error submitting the form. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Connection error. Please check your internet.");
+        } finally {
             setIsSubmitting(false);
-            setSubmitted(true);
-        }, 1500);
+        }
     };
 
     if (submitted) {
