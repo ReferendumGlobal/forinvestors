@@ -1,0 +1,172 @@
+import React, { useState } from 'react';
+import { Upload, CheckCircle, AlertCircle, Send } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function ContactForm({ categoryName }) {
+    const [formState, setFormState] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        funds: '',
+        message: '',
+        file: null
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleFileChange = (e) => {
+        if (e.target.files[0]) {
+            setFormState({ ...formState, file: e.target.files[0] });
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        // Simulate API call
+        setTimeout(() => {
+            setIsSubmitting(false);
+            setSubmitted(true);
+        }, 1500);
+    };
+
+    if (submitted) {
+        return (
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="bg-midnight-800 border border-gold-500/30 rounded-2xl p-8 text-center"
+            >
+                <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="text-gold-500" size={32} />
+                </div>
+                <h3 className="text-2xl font-serif text-white mb-2">Request Sent</h3>
+                <p className="text-gray-400">Thank you for contacting us. We have received your Proof of Funds and will analyze your profile to send you properties matching your investment criteria.</p>
+                <button
+                    onClick={() => setSubmitted(false)}
+                    className="mt-6 text-gold-400 hover:text-gold-300 font-medium"
+                >
+                    Send another request
+                </button>
+            </motion.div>
+        );
+    }
+
+    return (
+        <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                    <input
+                        type="text"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder="John Doe"
+                        value={formState.name}
+                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Professional Email</label>
+                    <input
+                        type="email"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder="john@company.com"
+                        value={formState.email}
+                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
+                    <input
+                        type="tel"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder="+1 555..."
+                        value={formState.phone}
+                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Capital to Invest (€)</label>
+                    <input
+                        type="text"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder="Ex: 5,000,000"
+                        value={formState.funds}
+                        onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
+                    Proof of Funds (POF) Document <AlertCircle size={14} />
+                </label>
+                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
+                    <input
+                        type="file"
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                        onChange={handleFileChange}
+                        accept=".pdf,.jpg,.png,.doc,.docx"
+                    />
+                    <div className="space-y-1 text-center">
+                        {formState.file ? (
+                            <div className="flex flex-col items-center">
+                                <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
+                                <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
+                                <p className="text-xs text-gray-500">File uploaded successfully</p>
+                            </div>
+                        ) : (
+                            <>
+                                <Upload className="mx-auto h-12 w-12 text-gray-400 group-hover:text-gold-400 transition-colors" />
+                                <div className="flex text-sm text-gray-400 justify-center">
+                                    <span className="font-medium text-gold-400">Upload a file</span>
+                                    <p className="pl-1">or drag and drop</p>
+                                </div>
+                                <p className="text-xs text-gray-500">PDF, PNG, JPG up to 10MB</p>
+                            </>
+                        )}
+                    </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                    * Required to access detailed asset information. Your documentation will be treated with absolute confidentiality.
+                </p>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gray-400 mb-2">Additional Message</label>
+                <textarea
+                    rows={4}
+                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                    placeholder="Interested in properties in..."
+                    value={formState.message}
+                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                />
+            </div>
+
+            <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                {isSubmitting ? 'Sending...' : (
+                    <>
+                        Send Request <Send size={18} className="ml-2" />
+                    </>
+                )}
+            </button>
+
+            <div className="text-center pt-2">
+                <p className="text-sm text-gray-500">
+                    You can also contact us directly at <a href="mailto:urbinaagency@gmail.com" className="text-gold-400 hover:underline">urbinaagency@gmail.com</a>
+                </p>
+            </div>
+        </form>
+    );
+}
