@@ -16,13 +16,15 @@ export default function Navbar({ categories }) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0 flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
-                            <span className="text-midnight-950 font-serif font-bold text-2xl">U</span>
-                        </div>
-                        <div className="hidden md:block">
-                            <span className="block text-white font-serif tracking-widest text-lg leading-none">URBINA</span>
-                            <span className="block text-gold-500 text-xs tracking-[0.2em] leading-none">AGENCY</span>
-                        </div>
+                        <Link to="/" className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
+                                <span className="text-midnight-950 font-serif font-bold text-2xl">U</span>
+                            </div>
+                            <div className="hidden md:block">
+                                <span className="block text-white font-serif tracking-widest text-lg leading-none">URBINA</span>
+                                <span className="block text-gold-500 text-xs tracking-[0.2em] leading-none">AGENCY</span>
+                            </div>
+                        </Link>
                     </div>
 
                     <div className="hidden md:block">
