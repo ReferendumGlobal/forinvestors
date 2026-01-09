@@ -32,8 +32,8 @@ export default function Navbar({ categories }) {
                                     key={category.id}
                                     to={`/${category.id}`}
                                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === category.id
-                                            ? 'text-gold-400 bg-white/5 border border-white/5'
-                                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
                                     {category.title}
@@ -47,7 +47,7 @@ export default function Navbar({ categories }) {
                             <Globe size={18} />
                             <span className="text-sm">EN</span>
                         </div>
-                        <a href="https://wa.me/14079854446" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-gold-500/20">
+                        <a href="https://wa.me/34633330223" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-gold-500/20">
                             <Phone size={16} />
                             <span>Contact</span>
                         </a>
@@ -79,8 +79,8 @@ export default function Navbar({ categories }) {
                                     to={`/${category.id}`}
                                     onClick={() => setIsOpen(false)}
                                     className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === category.id
-                                            ? 'text-gold-400 bg-white/5'
-                                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        ? 'text-gold-400 bg-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
                                     <div className="flex items-center gap-3">
@@ -94,7 +94,7 @@ export default function Navbar({ categories }) {
                                     <Globe size={18} />
                                     <span>EN</span>
                                 </div>
-                                <a href="https://wa.me/14079854446" className="text-gold-400 font-medium">Contact</a>
+                                <a href="https://wa.me/34633330223" className="text-gold-400 font-medium">Contact</a>
                             </div>
                         </div>
                     </motion.div>
