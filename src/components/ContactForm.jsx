@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -14,12 +14,33 @@ export default function ContactForm({ categoryName }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(null);
+    const [loadingText, setLoadingText] = useState('Initiating secure transmission...');
 
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
             setFormState({ ...formState, file: e.target.files[0] });
         }
     };
+
+    useEffect(() => {
+        if (isSubmitting) {
+            const messages = [
+                "Encrypting documents...",
+                "Uploading Proof of Funds to secure server...",
+                "Verifying submission integrity...",
+                "Finalizing transmission..."
+            ];
+            let i = 0;
+            setLoadingText(messages[0]);
+
+            const interval = setInterval(() => {
+                i = (i + 1) % messages.length;
+                setLoadingText(messages[i]);
+            }, 4000);
+
+            return () => clearInterval(interval);
+        }
+    }, [isSubmitting]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -203,7 +224,13 @@ export default function ContactForm({ categoryName }) {
                 className="w-full flex items-center justify-center bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
                 {isSubmitting ? (
-                    <>Sending... <Loader2 className="ml-2 animate-spin" size={18} /></>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="flex items-center">
+                            <Loader2 className="mr-2 animate-spin" size={20} />
+                            <span>Processing...</span>
+                        </div>
+                        <span className="text-xs font-normal mt-1 text-gold-100 opacity-90 animate-pulse">{loadingText}</span>
+                    </div>
                 ) : (
                     <>Send Request <Send size={18} className="ml-2" /></>
                 )}
