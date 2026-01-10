@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react';
 import LegalModal from './LegalModal';
 
 export default function Footer() {
@@ -60,6 +60,17 @@ export default function Footer() {
                         <p className="text-sm text-gray-600">
                             &copy; {new Date().getFullYear()} Urbina Agency LLC. All rights reserved.
                         </p>
+                        <div className="flex items-center gap-4">
+                            <a href="#" className="p-2 bg-white/5 rounded-full text-gold-400 hover:text-white hover:bg-gold-500 transition-all duration-300">
+                                <Linkedin size={20} />
+                            </a>
+                            <a href="#" className="p-2 bg-white/5 rounded-full text-gold-400 hover:text-white hover:bg-gold-500 transition-all duration-300">
+                                <Instagram size={20} />
+                            </a>
+                            <a href="#" className="p-2 bg-white/5 rounded-full text-gold-400 hover:text-white hover:bg-gold-500 transition-all duration-300">
+                                <Facebook size={20} />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </footer>
