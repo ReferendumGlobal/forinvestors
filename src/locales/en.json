@@ -45,7 +45,8 @@
         "results_found": "We have detected off-market assets available in",
         "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
         "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search."
+        "no_results": "No public results. Contact us for a custom search.",
+        "available_multiple": "Available"
     },
     "categories": {
         "inversiones": {

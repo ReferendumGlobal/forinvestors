@@ -13,6 +13,12 @@ export default function PropertySearch() {
     const [searching, setSearching] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
+    const [results, setResults] = useState([]);
+
+    // Cities where we show specific numbers (mock)
+    const TIER_1_CITIES = ['madrid', 'barcelona', 'paris', 'london', 'londres', 'dubai', 'new york', 'miami', 'marbella', 'ibiza', 'mallorca', 'milan', 'roma', 'berlin', 'munich'];
+    const CATEGORIES = ['hoteles', 'inversiones', 'terrenos', 'lujo', 'bodegas'];
+
     const handleSearch = (e) => {
         e.preventDefault();
         if (!location.trim()) return;
@@ -20,8 +26,22 @@ export default function PropertySearch() {
         setSearching(true);
         // Simulate API call
         setTimeout(() => {
+            const isTier1 = TIER_1_CITIES.some(city => location.toLowerCase().includes(city));
+
+            // Shuffle and pick 3 categories
+            const shuffled = [...CATEGORIES].sort(() => 0.5 - Math.random());
+            const selectedCategories = shuffled.slice(0, 3);
+
+            const newResults = selectedCategories.map(cat => ({
+                id: cat,
+                // If Tier 1, show random count 3-12. If not, show 'available'
+                count: isTier1 ? Math.floor(Math.random() * 10) + 3 : 'available'
+            }));
+
+            setResults(newResults);
             setSearching(false);
             setHasSearched(true);
+            setShowForm(false); // Reset form visibility on new search
         }, 1500);
     };
 
@@ -127,21 +147,21 @@ export default function PropertySearch() {
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left">
-                            <div className="bg-midnight-950 p-6 rounded-xl border border-white/5">
-                                <Building className="text-gold-500 mb-3 w-6 h-6" />
-                                <div className="text-2xl font-bold text-white mb-1">3</div>
-                                <div className="text-sm text-gray-400">Hoteles Off-Market</div>
-                            </div>
-                            <div className="bg-midnight-950 p-6 rounded-xl border border-white/5">
-                                <Building className="text-gold-500 mb-3 w-6 h-6" />
-                                <div className="text-2xl font-bold text-white mb-1">5</div>
-                                <div className="text-sm text-gray-400">Edificios Residenciales</div>
-                            </div>
-                            <div className="bg-midnight-950 p-6 rounded-xl border border-white/5">
-                                <Building className="text-gold-500 mb-3 w-6 h-6" />
-                                <div className="text-2xl font-bold text-white mb-1">2</div>
-                                <div className="text-sm text-gray-400">Suelos Finalistas</div>
-                            </div>
+                            {results.map((item) => (
+                                <div key={item.id} className="bg-midnight-950 p-6 rounded-xl border border-white/5">
+                                    <Building className="text-gold-500 mb-3 w-6 h-6" />
+                                    <div className="text-2xl font-bold text-white mb-1">
+                                        {item.count === 'available' ? (
+                                            <span className="text-xl">{t('search.available_multiple')}</span>
+                                        ) : (
+                                            item.count
+                                        )}
+                                    </div>
+                                    <div className="text-sm text-gray-400 leading-tight">
+                                        {t(`nav.${item.id}`)}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
                         {!showForm ? (

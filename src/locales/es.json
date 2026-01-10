@@ -45,7 +45,8 @@
         "results_found": "Hemos detectado activos off-market disponibles en",
         "cta_text": "Por razones de confidencialidad, no publicamos detalles. Complete el formulario para recibir el dossier ciego.",
         "cta_button": "Solicitar Dossier",
-        "no_results": "No hay resultados públicos. Contáctenos para una búsqueda personalizada."
+        "no_results": "No hay resultados públicos. Contáctenos para una búsqueda personalizada.",
+        "available_multiple": "Disponible"
     },
     "categories": {
         "inversiones": {
