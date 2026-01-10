@@ -38,13 +38,13 @@ export default function Navbar({ categories }) {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center gap-8">
-                        <div className="flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/5 backdrop-blur-sm">
+                    <div className="hidden md:flex items-center gap-4 lg:gap-8">
+                        <div className="flex items-center gap-1 bg-white/5 rounded-2xl p-2 border border-white/5 backdrop-blur-sm">
                             {Object.entries(categories).map(([key, category]) => (
                                 <Link
                                     key={key}
                                     to={key}
-                                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${currentPath === key
+                                    className={`px-3 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 whitespace-normal text-center max-w-[120px] leading-tight ${currentPath === key
                                         ? 'bg-gold-500 text-midnight-950 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
                                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                                         }`}
@@ -54,7 +54,16 @@ export default function Navbar({ categories }) {
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2 lg:gap-4">
+                            <Link
+                                to="search"
+                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'search'
+                                    ? 'text-gold-400 bg-white/5 border border-white/5'
+                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                {t('nav.search')}
+                            </Link>
                             <Link
                                 to="blog"
                                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'blog'
@@ -116,6 +125,19 @@ export default function Navbar({ categories }) {
                         </Link>
                     ))}
                     <div className="h-px bg-white/10 my-2"></div>
+                    <Link
+                        to="search"
+                        onClick={() => setIsOpen(false)}
+                        className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === 'search'
+                            ? 'text-gold-400 bg-white/5'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            }`}
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 w-5 flex justify-center">•</span>
+                            {t('nav.search')}
+                        </div>
+                    </Link>
                     <Link
                         to="blog"
                         onClick={() => setIsOpen(false)}

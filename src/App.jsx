@@ -10,6 +10,7 @@ import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
 import { HashRouter, Routes, Route, Navigate, useLocation, useParams, Outlet, useNavigate } from 'react-router-dom';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
+import PropertySearch from './components/PropertySearch';
 import Agencies from './components/Agencies';
 import { useTranslation } from 'react-i18next';
 import './i18n';
@@ -165,6 +166,7 @@ function App() {
             <Route path="wineries" element={<CategoryPage categoryId="wineries" />} />
             <Route path="blog" element={<Blog />} />
             <Route path="for-agencies" element={<Agencies />} />
+            <Route path="search" element={<PropertySearch />} />
           </Route>
           <Route path="/" element={<Navigate to="/en" replace />} />
         </Routes>

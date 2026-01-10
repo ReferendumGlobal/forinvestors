@@ -1,12 +1,13 @@
 {
     "nav": {
-        "investments": "Investments",
-        "hotels": "Hotels",
-        "land": "Land",
-        "luxury": "Luxury",
-        "wineries": "Wineries",
+        "investments": "Real Estate Investments",
+        "hotels": "Hotels for Sale",
+        "land": "Land for Sale",
+        "luxury": "Luxury Properties",
+        "wineries": "Wineries for Sale",
         "blog": "Blog",
-        "agencies": "For Agencies"
+        "agencies": "For Real Estate Agencies",
+        "search": "Property Search"
     },
     "hero": {
         "shield": "The Art of Discretion",
@@ -35,6 +36,16 @@
     "seo": {
         "title": "For Investors | Luxury Real Estate Assets Worldwide",
         "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Off-Market Asset Search",
+        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
+        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
+        "button": "Search Properties",
+        "results_found": "We have detected off-market assets available in",
+        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
+        "cta_button": "Request Dossier",
+        "no_results": "No public results. Contact us for a custom search."
     },
     "categories": {
         "inversiones": {

@@ -1,12 +1,13 @@
 {
     "nav": {
-        "investments": "Inversiones",
-        "hotels": "Hoteles",
-        "land": "Terrenos",
-        "luxury": "Lujo",
-        "wineries": "Bodegas",
+        "investments": "Inversiones Inmobiliarias",
+        "hotels": "Hoteles en Venta",
+        "land": "Terrenos en Venta",
+        "luxury": "Propiedades de Lujo",
+        "wineries": "Bodegas en Venta",
         "blog": "Blog",
-        "agencies": "Para Agencias"
+        "agencies": "Para Agencias Inmobiliarias",
+        "search": "Buscador de Propiedades"
     },
     "hero": {
         "shield": "El Arte de la Discreción",
@@ -35,6 +36,16 @@
     "seo": {
         "title": "Para Inversores | Activos Inmobiliarios de Lujo en España y Europa",
         "description": "Cartera exclusiva de hoteles, terrenos, bodegas y propiedades de lujo desde 1M€ hasta 150M€. Gestión experta de Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Buscador de Activos Off-Market",
+        "subtitle": "Acceda a la mayor base de datos de activos ocultos en España y Europa.",
+        "placeholder": "Introduzca ubicación (ej: Madrid, Ibiza, París...)",
+        "button": "Buscar Propiedades",
+        "results_found": "Hemos detectado activos off-market disponibles en",
+        "cta_text": "Por razones de confidencialidad, no publicamos detalles. Complete el formulario para recibir el dossier ciego.",
+        "cta_button": "Solicitar Dossier",
+        "no_results": "No hay resultados públicos. Contáctenos para una búsqueda personalizada."
     },
     "categories": {
         "inversiones": {
