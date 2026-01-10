@@ -1,10 +1,10 @@
 {
     "nav": {
-        "investments": "Inversiones Inmobiliarias",
-        "hotels": "Hoteles en Venta",
-        "land": "Terrenos en Venta",
-        "luxury": "Propiedades de Lujo",
-        "wineries": "Bodegas en Venta",
+        "inversiones": "Inversiones Inmobiliarias",
+        "hoteles": "Hoteles en Venta",
+        "terrenos": "Terrenos en Venta",
+        "lujo": "Propiedades de Lujo",
+        "bodegas": "Bodegas en Venta",
         "blog": "Blog",
         "agencies": "Para Agencias Inmobiliarias",
         "search": "Buscador de Propiedades"
