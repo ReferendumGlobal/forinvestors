@@ -42,7 +42,7 @@ export default function Home() {
                             transition={{ delay: 0.3, duration: 0.8 }}
                             className="text-xl md:text-2xl text-gray-300 max-w-2xl font-light leading-relaxed mb-12 border-l-4 border-gold-500 pl-6"
                         >
-                            "Our clients entrust us with valuable secrets in the form of investments in <strong>Spain, Europe and worldwide</strong>. We return successful businesses."
+                            "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses."
                         </motion.p>
 
                         <motion.div

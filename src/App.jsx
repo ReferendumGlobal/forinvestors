@@ -10,6 +10,7 @@ import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
+import Agencies from './components/Agencies';
 
 function CategoryPage({ categoryId }) {
   const currentCategory = categories[categoryId];
@@ -169,6 +170,7 @@ function AppContent() {
             <Route path="/luxury" element={<CategoryPage categoryId="luxury" />} />
             <Route path="/wineries" element={<CategoryPage categoryId="wineries" />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/for-agencies" element={<Agencies />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
