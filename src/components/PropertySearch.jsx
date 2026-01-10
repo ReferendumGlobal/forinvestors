@@ -34,8 +34,7 @@ export default function PropertySearch() {
 
             const newResults = selectedCategories.map(cat => ({
                 id: cat,
-                // If Tier 1, show random count 3-12. If not, show 'available'
-                count: isTier1 ? Math.floor(Math.random() * 10) + 3 : 'available'
+                count: 'available'
             }));
 
             setResults(newResults);
