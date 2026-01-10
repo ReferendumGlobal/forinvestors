@@ -11,15 +11,15 @@ function CountingLabel({ onComplete, labelAvailable }) {
     const [finished, setFinished] = useState(false);
 
     useEffect(() => {
-        const duration = 2000; // 2 seconds
-        const intervalTime = 50; // Update every 50ms
+        const duration = 5000; // 5 seconds
+        const intervalTime = 30; // Update every 30ms for rapid effect
         const steps = duration / intervalTime;
         let currentStep = 0;
 
         const timer = setInterval(() => {
             currentStep++;
-            // Random number between 1 and 50
-            setCount(Math.floor(Math.random() * 50) + 1);
+            // Random number between 1 and 99 for more variation
+            setCount(Math.floor(Math.random() * 99) + 1);
 
             if (currentStep >= steps) {
                 clearInterval(timer);
