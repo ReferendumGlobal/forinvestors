@@ -18,6 +18,8 @@ import { HelmetProvider, Helmet } from 'react-helmet-async';
 function CategoryPage({ categoryId }) {
   const currentCategory = categories[categoryId];
   const { t } = useTranslation();
+  // Get features as array. t returns object/array if returnObjects: true
+  const features = t(`categories.${categoryId}.features`, { returnObjects: true });
 
   return (
     <motion.div
@@ -27,43 +29,94 @@ function CategoryPage({ categoryId }) {
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.4 }}
     >
+      <SeoHead
+        title={`${t(`categories.${categoryId}.title`)} | Urbina Agency`}
+        description={t(`categories.${categoryId}.description`)}
+      />
       <div className="relative min-h-[60vh] h-auto flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0">
           <img
             src={currentCategory.image}
-            alt={currentCategory.title}
+            alt={t(`categories.${categoryId}.title`)}
             className="w-full h-full object-cover opacity-40 transform scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/50 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <motion.div description="Icon" className="flex justify-center mb-6">
+          <motion.div className="flex justify-center mb-6">
             <div className="p-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
               <currentCategory.icon size={32} className="text-gold-400" />
             </div>
           </motion.div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-            {currentCategory.title}
+            {t(`categories.${categoryId}.title`)}
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-            {currentCategory.description}
+            {t(`categories.${categoryId}.description`)}
           </p>
 
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <div className="px-8 py-4 bg-gold-600/10 border border-gold-500/30 rounded-xl backdrop-blur-md">
-              <span className="block text-sm text-gold-400 uppercase tracking-widest mb-1">Inversión Desde</span>
-              <span className="text-2xl md:text-3xl font-serif text-white">{currentCategory.priceRange}</span>
+              <span className="block text-sm text-gold-400 uppercase tracking-widest mb-1">
+                {t('categories.inversiones.title') === 'Inversiones Inmobiliarias' ? 'Inversión Desde' : 'Investment From'}
+              </span>
+              <span className="text-2xl md:text-3xl font-serif text-white">{t(`categories.${categoryId}.priceRange`)}</span>
             </div>
           </div>
         </div>
       </div>
-      {/* ... Content truncated for brevity, assume existing structure ... */}
-      {/* Simplified for the tool call to fit. In reality I'd keep all content. */}
-      {/* Since I can't replace partial content easily without context, I will just wrap the Router in the next tool call properly. */}
-      {/* Wait, the replace_file_content tool needs exact match. The file is huge. I should use focused edits. */}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <h3 className="text-3xl font-serif text-white mb-6 border-l-4 border-gold-500 pl-6">
+              {t(`categories.${categoryId}.title`)}
+            </h3>
+            <div className="prose prose-lg prose-invert text-gray-400">
+              <p className="leading-relaxed">
+                {t(`categories.${categoryId}.longDescription`)}
+              </p>
+            </div>
+
+            <div className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-gold-400 font-medium italic">
+                "{t(`categories.${categoryId}.details`)}"
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-midnight-900/50 p-8 rounded-2xl border border-white/5">
+            <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+              <ShieldCheck className="text-gold-500" />
+              {t('categories.inversiones.title') === 'Inversiones Inmobiliarias' ? 'Características Clave' : 'Key Features'}
+            </h4>
+            <ul className="space-y-4">
+              {Array.isArray(features) && features.map((feature, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></div>
+                  <span className="text-gray-300">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 pt-8 border-t border-white/10">
+              <div className="flex items-center justify-between">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map(i => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-gray-700 border-2 border-midnight-900"></div>
+                  ))}
+                </div>
+                <button className="text-sm text-gold-400 hover:text-white transition-colors font-medium">
+                  {t('categories.inversiones.title') === 'Inversiones Inmobiliarias' ? 'Contactar Agente' : 'Contact Agent'} →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }
