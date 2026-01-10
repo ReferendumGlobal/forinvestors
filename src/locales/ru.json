@@ -1,151 +1,138 @@
 {
     "nav": {
-        "inversiones": "Real Estate Investments",
-        "hoteles": "Hotels for Sale",
-        "terrenos": "Land for Sale",
-        "lujo": "Luxury Properties",
-        "bodegas": "Wineries for Sale",
-        "blog": "Blog",
-        "agencies": "For Real Estate Agencies",
-        "search": "Property Search"
+        "inversiones": "Инвестиции в недвижимость",
+        "hoteles": "Отели на продажу",
+        "terrenos": "Земельные участки",
+        "lujo": "Элитная недвижимость",
+        "bodegas": "Винодельни",
+        "blog": "Блог",
+        "agencies": "Агентствам",
+        "search": "Поиск недвижимости"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
-        "cta": "Enter Portfolio"
+        "shield": "Искусство конфиденциальности",
+        "subtitle": "Мы работаем с портфолио, которое <strong>не опубликовано на порталах недвижимости</strong>, но отличается высочайшим качеством. Клиенты доверяют нам ценные секреты, а мы возвращаем успешный бизнес.",
+        "cta": "Открыть портфолио"
     },
     "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as high-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
+        "title": "Наследие чести",
+        "text1": "Традиции Urbina Agency рождаются не на рынке, а в чести и служении. Наша ДНК происходит от Франсиско и Анхелиты Урбина, моих бабушки и дедушки.",
+        "text2": "И от моего прадеда, Хосе Марии Урбина, высокопоставленного военного офицера. От него мы узнали, что самая ценная информация — это та, которая защищена.",
+        "secrets_title": "Ценные секреты",
+        "secrets_text": "Мы относимся к каждому инвестиционному намерению как к секретной информации высокого уровня.",
+        "success_title": "Рассекреченный успех",
+        "success_text": "Единственный след, который мы оставляем, — это успех."
     },
     "footer": {
-        "title": "FOR INVESTORS",
-        "description": "Specialists in high-value real estate asset management.",
-        "contact_title": "Corporate Contact",
-        "legal_title": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "disclaimer": "Disclaimer",
-        "rights": "All rights reserved."
+        "title": "ДЛЯ ИНВЕСТОРОВ",
+        "description": "Специалисты по управлению дорогостоящими активами недвижимости.",
+        "contact_title": "Корпоративный контакт",
+        "legal_title": "Юридическая информация",
+        "terms": "Условия и положения",
+        "privacy": "Политика конфиденциальности",
+        "disclaimer": "Отказ от ответственности",
+        "rights": "Все права защищены."
     },
     "seo": {
-        "title": "For Investors | Luxury Real Estate Assets Worldwide",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+        "title": "Для инвесторов | Элитная недвижимость по всему миру",
+        "description": "Эксклюзивное портфолио отелей, земельных участков, виноделен и ультра-роскошной недвижимости. Экспертное управление от Urbina Agency LLC."
     },
     "search": {
-        "title": "Off-Market Asset Search",
-        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
-        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
-        "button": "Search Properties",
-        "results_found": "We have detected off-market assets available in",
-        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
-        "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search.",
-        "available_multiple": "Available"
+        "title": "Поиск закрытых активов",
+        "subtitle": "Доступ к крупнейшей базе данных скрытых активов в Испании и Европе.",
+        "placeholder": "Введите местоположение (напр., Мадрид, Ибица, Париж...)",
+        "button": "Найти объекты",
+        "results_found": "Мы обнаружили закрытые активы, доступные в",
+        "cta_text": "По соображениям конфиденциальности мы не публикуем подробности. Заполните форму, чтобы получить слепое досье.",
+        "cta_button": "Запросить досье",
+        "no_results": "Нет публичных результатов. Свяжитесь с нами для индивидуального поиска.",
+        "available_multiple": "Доступно"
     },
     "categories": {
         "inversiones": {
-            "title": "Real Estate Investments",
-            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
-            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
-            "priceRange": "From €1M to €500M",
-            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "title": "Инвестиции в недвижимость",
+            "description": "Комплексное управление инвестиционным портфелем. Мы выявляем высокодоходные возможности на мировом рынке недвижимости.",
+            "longDescription": "Наше подразделение инвестиций в недвижимость не только ищет активы, но и разрабатывает стратегии капитала. Мы анализируем рыночные тренды, экономические циклы и возможности роста стоимости, чтобы предлагать продукты, соответствующие профилю риска и доходности институциональных инвесторов и семейных офисов.",
+            "priceRange": "От 1 млн € до 500 млн €",
+            "details": "Индивидуальные стратегии: Core, Value-Add и Opportunistic.",
             "features": [
-                "Macroeconomic and local market analysis.",
-                "Comprehensive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
-                "Post-acquisition Asset Management."
+                "Макроэкономический и локальный анализ рынка.",
+                "Всесторонняя техническая, юридическая и финансовая Due Diligence.",
+                "Структурирование инвестиционных механизмов.",
+                "Управление активами (Asset Management) после приобретения."
             ]
         },
         "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
+            "title": "Отели на продажу",
+            "description": "Эксклюзивный выбор гостиничных активов в основных туристических зонах Испании, Европы и мира.",
+            "longDescription": "Гостиничный сектор — жемчужина нашей короны. Мы имеем прямой доступ к владельцам гостиничных сетей, независимых бутик-отелей и роскошных курортов, работающих в закрытом режиме («off-market»). Мы ищем активы с потенциалом репозиционирования, гибкими контрактами на управление или стабилизированной доходностью в неповторимых локациях.",
+            "priceRange": "От 1 млн € до 150 млн €",
+            "details": "Возможности управления, франшизы или чистой покупки.",
             "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
-            ]
-        },
-        "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
-            "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
+                "Городские отели в европейских столицах (Мадрид, Париж, Лондон).",
+                "Пляжные курорты (Балеарские острова, Коста-дель-Соль).",
+                "Здания с гостиничной лицензией под реконструкцию.",
+                "Sale & Leaseback с операторами высшего уровня."
             ]
         },
         "terrenos": {
-            "title": "Land for Sale",
-            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
-            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
-            "priceRange": "From €1M to €150M",
-            "details": "Residential, logistics, commercial, and tertiary land.",
+            "title": "Земельные участки",
+            "description": "Финальные, под застройку и сельхоз участки в стратегических локациях для крупных проектов.",
+            "longDescription": "Основа любого великого проекта — это земля. Наш земельный портфель включает участки, готовые к получению лицензии (Ready-to-build), среднесрочные девелоперские проекты и большие площади сельхозземель для возобновляемой энергетики. Мы тщательно проверяем градостроительный статус каждого квадратного метра.",
+            "priceRange": "От 1 млн € до 150 млн €",
+            "details": "Жилая, логистическая, коммерческая и третичная земля.",
             "features": [
-                "Residential land for new developments.",
-                "Logistics land in strategic communication hubs.",
-                "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation boards."
+                "Земля под жилую застройку для новых проектов.",
+                "Логистическая земля в стратегических транспортных узлах.",
+                "Земля третичного назначения для торговых центров или офисов.",
+                "Градостроительное управление и компенсационные советы."
             ]
         },
         "lujo": {
-            "title": "Luxury Properties for Sale",
-            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
-            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
-            "priceRange": "From €1M to €150M",
-            "details": "Prime and Ultra-Prime residential assets.",
+            "title": "Элитная недвижимость",
+            "description": "Уникальные виллы и пентхаусы в престижных районах. Высшее проявление жилой эксклюзивности.",
+            "longDescription": "Мы понимаем роскошь не просто как цену, а как жизненный опыт. Наша подборка «Элитная недвижимость» включает самые эксклюзивные резиденции на рынке: виллы в Ла Загалета, пентхаусы в районе Саламанка или исторические особняки на Лазурном берегу. Конфиденциальность, безопасность и архитектурный дизайн без компромиссов.",
+            "priceRange": "От 1 млн € до 150 млн €",
+            "details": "Жилые активы классов Prime и Ultra-Prime.",
             "features": [
-                "Designer villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
-                "Recreational estates and historic palaces.",
-                "Concierge and lifestyle management services."
+                "Дизайнерские виллы с круглосуточной частной охраной.",
+                "Пентхаусы с панорамными видами в финансовых центрах.",
+                "Рекреационные поместья и исторические дворцы.",
+                "Консьерж-сервис и управление образом жизни."
             ]
         },
         "bodegas": {
-            "title": "Wineries for Sale",
-            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
-            "priceRange": "From €1M to €150M",
-            "details": "Productive assets with real estate and brand value.",
+            "title": "Винодельни",
+            "description": "Инвестиции в винодельческий сектор: винодельни с D.O., виноградники и производственные центры.",
+            "longDescription": "Инвестиции в винодельню — это инвестиции в культуру, историю и землю. Мы предлагаем возможности в самых престижных винодельческих регионах (Риоха, Рибера-дель-Дуэро, Бордо, Напа Вэлли). От семейных виноделен с консолидированным брендом до крупных центров массового производства — мы анализируем производственные мощности и ценность бренда.",
+            "priceRange": "От 1 млн € до 150 млн €",
+            "details": "Производственные активы с недвижимостью и ценностью бренда.",
             "features": [
-                "Wineries with Qualified Designation of Origin.",
-                "Centuries-old vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
+                "Винодельни с квалифицированным наименованием места происхождения.",
+                "Вековые виноградники в полном производстве.",
+                "Объекты винного туризма и отели при винодельнях.",
+                "Винные бренды с международной дистрибуцией."
             ]
         }
     },
-    "faqs_title": "Frequently Asked Questions",
-    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs_title": "Частые вопросы",
+    "faqs_subtitle": "Всё, что вам нужно знать перед инвестированием с нами.",
     "faqs": [
         {
-            "question": "What type of investors can access your portfolio?",
-            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+            "question": "Какой тип инвесторов может получить доступ к вашему портфолио?",
+            "answer": "Мы работаем исключительно с квалифицированными инвесторами, семейными офисами и институциональными фондами, способными подтвердить платежеспособность для операций от 1 млн €."
         },
         {
-            "question": "Why do you require Proof of Funds (POF) before seeing details?",
-            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+            "question": "Почему вы требуете подтверждение средств (POF) перед показом деталей?",
+            "answer": "Чтобы защитить конфиденциальность наших продавцов и закрытых активов. Мы делимся чувствительной информацией (точное местоположение, метрики) только с проверенными покупателями."
         },
         {
-            "question": "Do you manage the Golden Visa for non-EU investors?",
-            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
+            "question": "Вы оформляете Золотую визу для инвесторов не из ЕС?",
+            "answer": "Да. У нас есть юридический отдел, специализирующийся на оформлении ВНЖ за инвестиции (Золотая виза) для клиентов, приобретающих активы стоимостью более 500 000 €."
         },
         {
-            "question": "Do you charge fees to the buyer or the seller?",
-            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
+            "question": "Вы берете комиссию с покупателя или продавца?",
+            "answer": "Это зависит от мандата. В прямых закрытых операциях наши гонорары обычно включены в цену продажи или согласованы через мандат на покупку (buy-side mandate)."
         }
     ]
 }

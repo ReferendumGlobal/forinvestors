@@ -1,151 +1,138 @@
 {
     "nav": {
-        "inversiones": "Real Estate Investments",
-        "hoteles": "Hotels for Sale",
-        "terrenos": "Land for Sale",
-        "lujo": "Luxury Properties",
-        "bodegas": "Wineries for Sale",
-        "blog": "Blog",
-        "agencies": "For Real Estate Agencies",
-        "search": "Property Search"
+        "inversiones": "استثمارات عقارية",
+        "hoteles": "فنادق للبيع",
+        "terrenos": "أراضي للبيع",
+        "lujo": "عقارات فاخرة",
+        "bodegas": "مصانع نبيذ",
+        "blog": "مدونة",
+        "agencies": "للوساطة العقارية",
+        "search": "بحث عن عقارات"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
-        "cta": "Enter Portfolio"
+        "shield": "فن السرية",
+        "subtitle": "نحن نعمل مع محفظة <strong>غير منشورة على بوابات العقارات</strong> ولكنها ذات جودة عالية. يأتمننا عملاؤنا على أسرار قيمة، ونعيد إليهم أعمالاً ناجحة.",
+        "cta": "ادخل المحفظة"
     },
     "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as high-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
+        "title": "إرث من الشرف",
+        "text1": "لم يولد تقليد وكالة أوربينا في السوق، بل في الشرف والخدمة. حمضنا النووي يأتي من فرانسيسكو وأنجيليتا أوربينا، أجدادي.",
+        "text2": "ومن جدي الأكبر، خوسيه ماريا أوربينا، ضابط عسكري رفيع المستوى. منه تعلمنا أن أغلى المعلومات هي تلك المحمية.",
+        "secrets_title": "أسرار قيمة",
+        "secrets_text": "نحن نتعامل مع كل نية استثمارية كمعلومات سرية رفيعة المستوى.",
+        "success_title": "نجاح رُفعت عنه السرية",
+        "success_text": "الأثر الوحيد الذي نتركه هو النجاح."
     },
     "footer": {
-        "title": "FOR INVESTORS",
-        "description": "Specialists in high-value real estate asset management.",
-        "contact_title": "Corporate Contact",
-        "legal_title": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "disclaimer": "Disclaimer",
-        "rights": "All rights reserved."
+        "title": "للمستثمرين",
+        "description": "متخصصون في إدارة الأصول العقارية عالية القيمة.",
+        "contact_title": "اتصال مؤسسي",
+        "legal_title": "قانوني",
+        "terms": "الشروط والأحكام",
+        "privacy": "سياسة الخصوصية",
+        "disclaimer": "إخلاء المسؤولية",
+        "rights": "جميع الحقوق محفوظة."
     },
     "seo": {
-        "title": "For Investors | Luxury Real Estate Assets Worldwide",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+        "title": "للمستثمرين | أصول عقارية فاخرة حول العالم",
+        "description": "محفظة حصرية من الفنادق والأراضي ومصانع النبيذ والعقارات الفاخرة للغاية. إدارة خبيرة من قبل Urbina Agency LLC."
     },
     "search": {
-        "title": "Off-Market Asset Search",
-        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
-        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
-        "button": "Search Properties",
-        "results_found": "We have detected off-market assets available in",
-        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
-        "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search.",
-        "available_multiple": "Available"
+        "title": "بحث عن أصول خارج السوق",
+        "subtitle": "الوصول إلى أكبر قاعدة بيانات للأصول الخفية في إسبانيا وأوروبا.",
+        "placeholder": "أدخل الموقع (مثلاً: مدريد، إيبيزا، باريس...)",
+        "button": "بحث عن عقارات",
+        "results_found": "لقد رصدنا أصولاً خارج السوق متاحة في",
+        "cta_text": "لأسباب تتعلق بالسرية، لا ننشر التفاصيل. أكمل النموذج لتلقي الملف الأعمى.",
+        "cta_button": "طلب الملف",
+        "no_results": "لا توجد نتائج عامة. اتصل بنا لإجراء بحث مخصص.",
+        "available_multiple": "متاح"
     },
     "categories": {
         "inversiones": {
-            "title": "Real Estate Investments",
-            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
-            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
-            "priceRange": "From €1M to €500M",
-            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "title": "استثمارات عقارية",
+            "description": "إدارة شاملة للمحفظة الاستثمارية. نكتشف فرص الاستثمار عالية العائد في سوق العقارات العالمي.",
+            "longDescription": "قسم الاستثمارات العقارية لدينا لا يبحث فقط عن الأصول، بل يصمم استراتيجيات رأس المال. نقوم بتحليل اتجاهات السوق والدورات الاقتصادية وفرص ارتفاع القيمة لتقديم منتجات تتناسب مع ملف المخاطر والعوائد للمستثمرين المؤسسيين والمكاتب العائلية.",
+            "priceRange": "من 1 مليون يورو إلى 500 مليون يورو",
+            "details": "استراتيجيات مخصصة: Core و Value-Add و Opportunistic.",
             "features": [
-                "Macroeconomic and local market analysis.",
-                "Comprehensive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
-                "Post-acquisition Asset Management."
+                "تحليل الاقتصاد الكلي والسوق المحلية.",
+                "العناية الواجبة الفنية والقانونية والمالية الشاملة.",
+                "هيكلة أدوات الاستثمار.",
+                "إدارة الأصول بعد الاستحواذ."
             ]
         },
         "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
+            "title": "فنادق للبيع",
+            "description": "مجموعة حصرية من الأصول الفندقية في المناطق السياحية الرئيسية في إسبانيا وأوروبا والوجهات العالمية.",
+            "longDescription": "قطاع الفنادق هو جوهرة تاجنا. لدينا وصول مباشر إلى مالكي سلاسل الفنادق والفنادق المستقلة والمنتجعات الفاخرة التي تعمل \"خارج السوق\". نبحث عن أصول ذات إمكانات لإعادة التموضع، أو عقود إدارة مرنة، أو عوائد مستقرة في مواقع لا تتكرر.",
+            "priceRange": "من 1 مليون يورو إلى 150 مليون يورو",
+            "details": "فرص الإدارة أو الامتياز أو الشراء الخالص.",
             "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
-            ]
-        },
-        "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
-            "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
+                "فنادق حضرية في العواصم الأوروبية (مدريد، باريس، لندن).",
+                "منتجعات عطلات على شاطئ البحر (جزر البليار، كوستا ديل سول).",
+                "مبانٍ مع رخصة فندقية للتجديد.",
+                "البيع وإعادة الاستئجار مع مشغلين من الدرجة الأولى."
             ]
         },
         "terrenos": {
-            "title": "Land for Sale",
-            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
-            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
-            "priceRange": "From €1M to €150M",
-            "details": "Residential, logistics, commercial, and tertiary land.",
+            "title": "أراضي للبيع",
+            "description": "أراضي نهائية وقابلة للبناء وريفية في مواقع استراتيجية للتطويرات الكبيرة.",
+            "longDescription": "أساس أي مشروع عظيم هو الأرض. تشمل محفظة أراضينا قطع أراضي نهائية جاهزة لطلب الترخيص (جاهزة للبناء)، وتطويرات حضرية متوسطة الأجل، ومساحات كبيرة من الأراضي الريفية لمشاريع الطاقة المتجددة أو الاستخدام الزراعي. نتحقق بصرامة من الوضع التخطيطي لكل متر مربع.",
+            "priceRange": "من 1 مليون يورو إلى 150 مليون يورو",
+            "details": "أراضي سكنية ولوجستية وتجارية وخدمية.",
             "features": [
-                "Residential land for new developments.",
-                "Logistics land in strategic communication hubs.",
-                "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation boards."
+                "أراضي سكنية لتطوير المباني الجديدة.",
+                "أراضي لوجستية في مراكز الاتصالات الاستراتيجية.",
+                "أراضي خدمية لمراكز التسوق أو المكاتب.",
+                "الإدارة الحضرية ومجالس التعويض."
             ]
         },
         "lujo": {
-            "title": "Luxury Properties for Sale",
-            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
-            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
-            "priceRange": "From €1M to €150M",
-            "details": "Prime and Ultra-Prime residential assets.",
+            "title": "عقارات فاخرة للبيع",
+            "description": "فلل فريدة وشقق بنتهاوس في مواقع مميزة. أقصى تعبير عن التفرد السكني.",
+            "longDescription": "نحن نفهم الفخامة ليس فقط كسعر، بل كتجربة حياة. تشمل مجموعتنا \"عقارات فاخرة\" المساكن الأكثر تميزًا في السوق: فلل في لا زاغاليتا، أو شقق بنتهاوس في حي سالامانكا، أو قصور تاريخية في كوت دازور. خصوصية وأمان وتصميم معماري دون مساومات.",
+            "priceRange": "من 1 مليون يورو إلى 150 مليون يورو",
+            "details": "أصول سكنية فاخرة وفائقة الفخامة.",
             "features": [
-                "Designer villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
-                "Recreational estates and historic palaces.",
-                "Concierge and lifestyle management services."
+                "فلل مصممة مع أمان خاص على مدار 24 ساعة.",
+                "شقق بنتهاوس بإطلالات بانورامية في المراكز المالية.",
+                "عقارات ترفيهية وقصور تاريخية.",
+                "خدمات الكونسيرج وإدارة نمط الحياة."
             ]
         },
         "bodegas": {
-            "title": "Wineries for Sale",
-            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
-            "priceRange": "From €1M to €150M",
-            "details": "Productive assets with real estate and brand value.",
+            "title": "مصانع نبيذ للبيع",
+            "description": "استثمارات في قطاع النبيذ: مصانع نبيذ ذات تسمية منشأ، وكروم عنب، ومراكز إنتاج.",
+            "longDescription": "الاستثمار في مصنع نبيذ هو استثمار في الثقافة والتاريخ والأرض. نقدم فرصًا في أرقى مناطق النبيذ (ريوخا، ريبيرا ديل دويرو، بوردو، نابا فالي). من مصانع النبيذ العائلية ذات العلامة التجارية الراسخة إلى مراكز الإنتاج الكبيرة بالجملة، نقوم بتحليل القدرة الإنتاجية وقيمة العلامة التجارية.",
+            "priceRange": "من 1 مليون يورو إلى 150 مليون يورو",
+            "details": "أصول إنتاجية ذات قيمة عقارية وعلامة تجارية.",
             "features": [
-                "Wineries with Qualified Designation of Origin.",
-                "Centuries-old vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
+                "مصانع نبيذ ذات تسمية منشأ مؤهلة.",
+                "كروم عنب عمرها قرون في إنتاج كامل.",
+                "مرافق سياحة النبيذ وفنادق مصانع النبيذ.",
+                "علامات تجارية للنبيذ ذات توزيع دولي."
             ]
         }
     },
-    "faqs_title": "Frequently Asked Questions",
-    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs_title": "أسئلة شائعة",
+    "faqs_subtitle": "كل ما تحتاج إلى معرفته قبل الاستثمار معنا.",
     "faqs": [
         {
-            "question": "What type of investors can access your portfolio?",
-            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+            "question": "ما نوع المستثمرين الذين يمكنهم الوصول إلى محفظتكم؟",
+            "answer": "نحن نعمل حصريًا مع المستثمرين المؤهلين، والمكاتب العائلية، والصناديق المؤسسية القادرة على إثبات الملاءة المالية لعمليات تبدأ من 1 مليون يورو."
         },
         {
-            "question": "Why do you require Proof of Funds (POF) before seeing details?",
-            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+            "question": "لماذا تطلبون إثبات الأموال (POF) قبل رؤية التفاصيل؟",
+            "answer": "لحماية سرية البائعين والأصول خارج السوق. نحن نشارك المعلومات الحساسة (الموقع الدقيق، المقاييس) فقط مع المشترين الذين تم التحقق منهم."
         },
         {
-            "question": "Do you manage the Golden Visa for non-EU investors?",
-            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
+            "question": "هل تديرون الفيزا الذهبية للمستثمرين من خارج الاتحاد الأوروبي؟",
+            "answer": "نعم. لدينا قسم قانوني متخصص في معالجة الإقامة عن طريق الاستثمار (الفيزا الذهبية) للعملاء الذين يستحوذون على أصول تزيد قيمتها عن 500,000 يورو."
         },
         {
-            "question": "Do you charge fees to the buyer or the seller?",
-            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
+            "question": "هل تتقاضون رسومًا من المشتري أم البائع؟",
+            "answer": "يعتمد ذلك على التفويض. في العمليات المباشرة خارج السوق، عادة ما تكون أتعابنا مشمولة في سعر البيع أو متفق عليها من خلال تفويض الشراء (buy-side mandate)."
         }
     ]
 }

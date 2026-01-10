@@ -1,151 +1,138 @@
 {
     "nav": {
-        "inversiones": "Real Estate Investments",
-        "hoteles": "Hotels for Sale",
-        "terrenos": "Land for Sale",
-        "lujo": "Luxury Properties",
-        "bodegas": "Wineries for Sale",
+        "inversiones": "Investissements Immobiliers",
+        "hoteles": "Hôtels à Vendre",
+        "terrenos": "Terrains à Vendre",
+        "lujo": "Propriétés de Luxe",
+        "bodegas": "Vignobles à Vendre",
         "blog": "Blog",
-        "agencies": "For Real Estate Agencies",
-        "search": "Property Search"
+        "agencies": "Pour Agences Immobilières",
+        "search": "Recherche de Propriétés"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
-        "cta": "Enter Portfolio"
+        "shield": "L'Art de la Discrétion",
+        "subtitle": "Nous travaillons avec un portefeuille qui <strong>n'est pas publié sur les portails immobiliers</strong> mais qui est de haute qualité. Nos clients nous confient des secrets précieux, et nous leur rendons des affaires fructueuses.",
+        "cta": "Entrer dans le Portefeuille"
     },
     "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as high-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
+        "title": "Un Héritage d'Honneur",
+        "text1": "La tradition de l'Urbina Agency ne naît pas sur le marché, mais dans l'honneur et le service. Notre ADN vient de Francisco et Angelita Urbina, mes grands-parents.",
+        "text2": "Et de mon arrière-grand-père, José María Urbina, un officier militaire de haut rang. De lui, nous avons appris que l'information la plus précieuse est celle qui est protégée.",
+        "secrets_title": "Secrets Précieux",
+        "secrets_text": "Nous traitons chaque intention d'investissement comme une information classifiée de haut niveau.",
+        "success_title": "Succès Déclassifié",
+        "success_text": "La seule trace que nous laissons est le succès."
     },
     "footer": {
-        "title": "FOR INVESTORS",
-        "description": "Specialists in high-value real estate asset management.",
-        "contact_title": "Corporate Contact",
-        "legal_title": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "disclaimer": "Disclaimer",
-        "rights": "All rights reserved."
+        "title": "POUR INVESTISSEURS",
+        "description": "Spécialistes de la gestion d'actifs immobiliers de haute valeur.",
+        "contact_title": "Contact Corporatif",
+        "legal_title": "Mentions Légales",
+        "terms": "Termes et Conditions",
+        "privacy": "Politique de Confidentialité",
+        "disclaimer": "Avis de Non-responsabilité",
+        "rights": "Tous droits réservés."
     },
     "seo": {
-        "title": "For Investors | Luxury Real Estate Assets Worldwide",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+        "title": "Pour Investisseurs | Actifs Immobiliers de Luxe dans le Monde",
+        "description": "Portefeuille exclusif d'hôtels, de terrains, de vignobles et de propriétés ultra-luxueuses. Gestion experte par Urbina Agency LLC."
     },
     "search": {
-        "title": "Off-Market Asset Search",
-        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
-        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
-        "button": "Search Properties",
-        "results_found": "We have detected off-market assets available in",
-        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
-        "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search.",
-        "available_multiple": "Available"
+        "title": "Recherche d'Actifs Off-Market",
+        "subtitle": "Accédez à la plus grande base de données d'actifs cachés en Espagne et en Europe.",
+        "placeholder": "Entrez l'emplacement (ex : Madrid, Ibiza, Paris...)",
+        "button": "Rechercher des Propriétés",
+        "results_found": "Nous avons détecté des actifs off-market disponibles à",
+        "cta_text": "Pour des raisons de confidentialité, nous ne publions pas les détails. Remplissez le formulaire pour recevoir le dossier aveugle.",
+        "cta_button": "Demander le Dossier",
+        "no_results": "Aucun résultat public. Contactez-nous pour une recherche personnalisée.",
+        "available_multiple": "Disponible"
     },
     "categories": {
         "inversiones": {
-            "title": "Real Estate Investments",
-            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
-            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
-            "priceRange": "From €1M to €500M",
-            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "title": "Investissements Immobiliers",
+            "description": "Gestion complète de portefeuille d'investissement. Nous détectons des opportunités à haut rendement sur le marché immobilier mondial.",
+            "longDescription": "Notre division Investissements Immobiliers ne se contente pas de chercher des actifs, elle conçoit des stratégies de capital. Nous analysons les tendances du marché, les cycles économiques et les opportunités de valorisation pour offrir des produits adaptés au profil de risque et de rendement des investisseurs institutionnels et des family offices.",
+            "priceRange": "De 1M€ à 500M€",
+            "details": "Stratégies sur mesure : Core, Value-Add et Opportunistic.",
             "features": [
-                "Macroeconomic and local market analysis.",
-                "Comprehensive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
-                "Post-acquisition Asset Management."
+                "Analyse macroéconomique et du marché local.",
+                "Due Diligence technique, juridique et financière exhaustive.",
+                "Structuration de véhicules d'investissement.",
+                "Asset Management post-acquisition."
             ]
         },
         "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
+            "title": "Hôtels à Vendre",
+            "description": "Sélection exclusive d'actifs hôteliers dans les principales zones touristiques d'Espagne, d'Europe et de destinations mondiales.",
+            "longDescription": "Le secteur hôtelier est le joyau de notre couronne. Nous avons un accès direct aux propriétaires de chaînes hôtelières, d'hôtels-boutiques indépendants et de complexes de luxe opérant « off-market ». Nous recherchons des actifs avec un potentiel de repositionnement, des contrats de gestion flexibles ou des rendements stabilisés dans des emplacements irremplaçables.",
+            "priceRange": "De 1M€ à 150M€",
+            "details": "Opportunités de gestion, franchise ou achat pur.",
             "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
-            ]
-        },
-        "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
-            "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
+                "Hôtels urbains dans les capitales européennes (Madrid, Paris, Londres).",
+                "Villages de vacances en bord de mer (Baléares, Costa del Sol).",
+                "Bâtiments avec licence hôtelière à rénover.",
+                "Sale & Leaseback avec des opérateurs de premier plan."
             ]
         },
         "terrenos": {
-            "title": "Land for Sale",
-            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
-            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
-            "priceRange": "From €1M to €150M",
-            "details": "Residential, logistics, commercial, and tertiary land.",
+            "title": "Terrains à Vendre",
+            "description": "Terrains finalistes, constructibles et rustiques dans des emplacements stratégiques pour de grands développements.",
+            "longDescription": "La base de tout grand projet est la terre. Notre portefeuille foncier comprend des parcelles finalistes prêtes pour la demande de permis (Ready-to-build), des développements urbains à moyen terme et de grandes étendues de terres rustiques pour des projets d'énergie renouvelable ou à usage agricole. Nous vérifions rigoureusement le statut urbanistique de chaque mètre carré.",
+            "priceRange": "De 1M€ à 150M€",
+            "details": "Terrains résidentiels, logistiques, commerciaux et tertiaires.",
             "features": [
-                "Residential land for new developments.",
-                "Logistics land in strategic communication hubs.",
-                "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation boards."
+                "Terrains résidentiels pour promotions de nouvelles constructions.",
+                "Terrains logistiques dans des nœuds de communication stratégiques.",
+                "Terrains tertiaires pour centres commerciaux ou bureaux.",
+                "Gestion urbaine et conseils de compensation."
             ]
         },
         "lujo": {
-            "title": "Luxury Properties for Sale",
-            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
-            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
-            "priceRange": "From €1M to €150M",
-            "details": "Prime and Ultra-Prime residential assets.",
+            "title": "Propriétés de Luxe à Vendre",
+            "description": "Villas uniques et penthouses dans des emplacements privilégiés. L'expression ultime de l'exclusivité résidentielle.",
+            "longDescription": "Nous comprenons le luxe non seulement comme un prix, mais comme une expérience de vie. Notre sélection « Propriétés de Luxe » comprend les résidences les plus exclusives du marché : villas à La Zagaleta, penthouses dans le quartier de Salamanca ou manoirs historiques sur la Côte d'Azur. Intimité, sécurité et design architectural sans compromis.",
+            "priceRange": "De 1M€ à 150M€",
+            "details": "Actifs résidentiels Prime et Ultra-Prime.",
             "features": [
-                "Designer villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
-                "Recreational estates and historic palaces.",
-                "Concierge and lifestyle management services."
+                "Villas d'auteur avec sécurité privée 24h/24.",
+                "Penthouses avec vues panoramiques dans les centres financiers.",
+                "Domaines de loisirs et palais historiques.",
+                "Services de conciergerie et de gestion de style de vie."
             ]
         },
         "bodegas": {
-            "title": "Wineries for Sale",
-            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
-            "priceRange": "From €1M to €150M",
-            "details": "Productive assets with real estate and brand value.",
+            "title": "Vignobles à Vendre",
+            "description": "Investissements dans le secteur viticole : domaines avec D.O., vignobles et centres de production.",
+            "longDescription": "Investir dans un domaine viticole, c'est investir dans la culture, l'histoire et la terre. Nous offrons des opportunités dans les régions viticoles les plus prestigieuses (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Des domaines familiaux avec une marque consolidée aux grands centres de production en vrac, nous analysons la capacité de production et la valeur de la marque.",
+            "priceRange": "De 1M€ à 150M€",
+            "details": "Actifs productifs avec valeur immobilière et de marque.",
             "features": [
-                "Wineries with Qualified Designation of Origin.",
-                "Centuries-old vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
+                "Domaines viticoles avec Appellation d'Origine Qualifiée.",
+                "Vignobles centenaires en pleine production.",
+                "Installations d'œnotourisme et hôtels viticoles.",
+                "Marques de vin avec distribution internationale."
             ]
         }
     },
-    "faqs_title": "Frequently Asked Questions",
-    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs_title": "Foire Aux Questions",
+    "faqs_subtitle": "Tout ce que vous devez savoir avant d'investir avec nous.",
     "faqs": [
         {
-            "question": "What type of investors can access your portfolio?",
-            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+            "question": "Quel type d'investisseurs peut accéder à votre portefeuille ?",
+            "answer": "Nous travaillons exclusivement avec des investisseurs qualifiés, des Family Offices et des fonds institutionnels capables de prouver leur solvabilité pour des opérations à partir de 1M€."
         },
         {
-            "question": "Why do you require Proof of Funds (POF) before seeing details?",
-            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+            "question": "Pourquoi demandez-vous une Preuve de Fonds (POF) avant de voir les détails ?",
+            "answer": "Pour protéger la confidentialité de nos vendeurs et des actifs off-market. Nous ne partageons des informations sensibles (emplacement exact, mesures) qu'avec des acheteurs vérifiés."
         },
         {
-            "question": "Do you manage the Golden Visa for non-EU investors?",
-            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
+            "question": "Gérez-vous le Golden Visa pour les investisseurs non-UE ?",
+            "answer": "Oui. Nous avons un département juridique spécialisé dans le traitement de la résidence par investissement (Golden Visa) pour les clients acquérant des actifs de plus de 500 000 €."
         },
         {
-            "question": "Do you charge fees to the buyer or the seller?",
-            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
+            "question": "Facturez-vous des honoraires à l'acheteur ou au vendeur ?",
+            "answer": "Cela dépend du mandat. Dans les opérations directes off-market, nos honoraires sont généralement inclus dans le prix de vente ou convenus via un mandat d'achat (buy-side mandate)."
         }
     ]
 }

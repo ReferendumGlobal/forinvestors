@@ -1,151 +1,138 @@
 {
     "nav": {
-        "inversiones": "Real Estate Investments",
-        "hoteles": "Hotels for Sale",
-        "terrenos": "Land for Sale",
-        "lujo": "Luxury Properties",
-        "bodegas": "Wineries for Sale",
-        "blog": "Blog",
-        "agencies": "For Real Estate Agencies",
-        "search": "Property Search"
+        "inversiones": "不動産投資",
+        "hoteles": "販売中のホテル",
+        "terrenos": "販売中の土地",
+        "lujo": "高級不動産",
+        "bodegas": "ワイナリー",
+        "blog": "ブログ",
+        "agencies": "代理店向け",
+        "search": "物件検索"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
-        "cta": "Enter Portfolio"
+        "shield": "機密保持の芸術",
+        "subtitle": "私たちは<strong>不動産ポータルに公開されていない</strong>が、非常に高品質なポートフォリオを扱っています。クライアントは私たちに貴重な秘密を託し、私たちは成功したビジネスをお返しします。",
+        "cta": "ポートフォリオを見る"
     },
     "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as high-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
+        "title": "名誉の遺産",
+        "text1": "Urbina Agencyの伝統は市場ではなく、名誉と奉仕の中で生まれました。私たちのDNAは、私の祖父母であるフランシスコとアンヘリータ・ウルビナから来ています。",
+        "text2": "そして、高級軍人であった曽祖父ホセ・マリア・ウルビナからも。彼から、最も価値のある情報は守られた情報であることを学びました。",
+        "secrets_title": "貴重な秘密",
+        "secrets_text": "私たちはすべての投資意向を最高レベルの機密情報として扱います。",
+        "success_title": "機密解除された成功",
+        "success_text": "私たちが残す唯一の痕跡は成功です。"
     },
     "footer": {
-        "title": "FOR INVESTORS",
-        "description": "Specialists in high-value real estate asset management.",
-        "contact_title": "Corporate Contact",
-        "legal_title": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "disclaimer": "Disclaimer",
-        "rights": "All rights reserved."
+        "title": "投資家向け",
+        "description": "高価値不動産資産管理のスペシャリスト。",
+        "contact_title": "企業連絡先",
+        "legal_title": "法的事項",
+        "terms": "利用規約",
+        "privacy": "プライバシーポリシー",
+        "disclaimer": "免責事項",
+        "rights": "全著作権所有。"
     },
     "seo": {
-        "title": "For Investors | Luxury Real Estate Assets Worldwide",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+        "title": "投資家向け | 世界の高級不動産資産",
+        "description": "ホテル、土地、ワイナリー、超高級不動産の独占ポートフォリオ。Urbina Agency LLCによる専門的な管理。"
     },
     "search": {
-        "title": "Off-Market Asset Search",
-        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
-        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
-        "button": "Search Properties",
-        "results_found": "We have detected off-market assets available in",
-        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
-        "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search.",
-        "available_multiple": "Available"
+        "title": "非公開資産検索",
+        "subtitle": "スペインとヨーロッパ最大の隠された資産データベースにアクセス。",
+        "placeholder": "場所を入力（例：マドリード、イビサ、パリ...）",
+        "button": "物件を検索",
+        "results_found": "以下の場所で利用可能な非公開資産を検出しました：",
+        "cta_text": "機密保持の理由により、詳細は公開していません。フォームに記入してブラインド資料を受け取ってください。",
+        "cta_button": "資料を請求",
+        "no_results": "公開結果はありません。カスタム検索についてお問い合わせください。",
+        "available_multiple": "利用可能"
     },
     "categories": {
         "inversiones": {
-            "title": "Real Estate Investments",
-            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
-            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
-            "priceRange": "From €1M to €500M",
-            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "title": "不動産投資",
+            "description": "包括的な投資ポートフォリオ管理。世界の不動産市場で高利回りの機会を発見します。",
+            "longDescription": "私たちの不動産投資部門は資産を探すだけでなく、資本戦略を設計します。市場動向、経済サイクル、評価の機会を分析し、機関投資家やファミリーオフィスのリスクとリターンのプロファイルに合った商品を提供します。",
+            "priceRange": "100万ユーロから5億ユーロまで",
+            "details": "オーダーメイド戦略：コア、バリューアッド、オポチュニスティック。",
             "features": [
-                "Macroeconomic and local market analysis.",
-                "Comprehensive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
-                "Post-acquisition Asset Management."
+                "マクロ経済および地域市場分析。",
+                "包括的な技術的、法的、財務的デューデリジェンス。",
+                "投資ビークルの構築。",
+                "取得後のアセットマネジメント。"
             ]
         },
         "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
+            "title": "販売中のホテル",
+            "description": "スペイン、ヨーロッパ、そして世界の主要観光地にあるホテル資産の独占的なセレクション。",
+            "longDescription": "ホテル部門は私たちの王冠の宝石です。私たちは、ホテルチェーンのオーナー、独立系ブティックホテル、そして「オフマーケット」で運営されている高級リゾートに直接アクセスできます。再配置の可能性、柔軟な管理契約、または再現不可能な場所での安定した利回りを持つ資産を探しています。",
+            "priceRange": "100万ユーロから1億5000万ユーロまで",
+            "details": "管理、フランチャイズ、または純粋な購入の機会。",
             "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
-            ]
-        },
-        "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
-            "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
+                "ヨーロッパの首都（マドリード、パリ、ロンドン）の都市型ホテル。",
+                "ビーチフロントのバケーションリゾート（バレアレス諸島、コスタ・デル・ソル）。",
+                "改装用のホテルライセンスを持つ建物。",
+                "一流オペレーターとのセール＆リースバック。"
             ]
         },
         "terrenos": {
-            "title": "Land for Sale",
-            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
-            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
-            "priceRange": "From €1M to €150M",
-            "details": "Residential, logistics, commercial, and tertiary land.",
+            "title": "販売中の土地",
+            "description": "大規模開発のための戦略的な場所にある、最終的な、建設可能な、そして田舎の土地。",
+            "longDescription": "すべての素晴らしいプロジェクトの基礎は土地です。私たちの土地ポートフォリオには、ライセンス申請の準備ができている最終区画（Ready-to-build）、中期的な都市開発、および再生可能エネルギープロジェクトや農業用途のための広大な田舎の土地が含まれます。私たちは各平方メートルの都市計画状況を厳密に検証します。",
+            "priceRange": "100万ユーロから1億5000万ユーロまで",
+            "details": "住宅、物流、商業、および第三次産業用地。",
             "features": [
-                "Residential land for new developments.",
-                "Logistics land in strategic communication hubs.",
-                "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation boards."
+                "新しい建設開発のための住宅用地。",
+                "戦略的な通信ハブにある物流用地。",
+                "ショッピングセンターやオフィス用の第三次産業用地。",
+                "都市管理および補償委員会。"
             ]
         },
         "lujo": {
-            "title": "Luxury Properties for Sale",
-            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
-            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
-            "priceRange": "From €1M to €150M",
-            "details": "Prime and Ultra-Prime residential assets.",
+            "title": "販売中の高級不動産",
+            "description": "一等地にあるユニークなヴィラやペントハウス。住宅の独占性の最高峰。",
+            "longDescription": "私たちは贅沢を単なる価格ではなく、人生経験として理解しています。私たちの「高級不動産」セレクションには、市場で最も独占的なレジデンスが含まれています：ラ・ザガレタのヴィラ、サラマンカ地区のペントハウス、またはコート・ダジュールの歴史的な邸宅。妥協のないプライバシー、セキュリティ、建築デザイン。",
+            "priceRange": "100万ユーロから1億5000万ユーロまで",
+            "details": "プライムおよびウルトラプライム住宅資産。",
             "features": [
-                "Designer villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
-                "Recreational estates and historic palaces.",
-                "Concierge and lifestyle management services."
+                "24時間体制のプライベートセキュリティを備えたデザイナーズヴィラ。",
+                "金融センターのパノラマビューを持つペントハウス。",
+                "レクリエーションエステートと歴史的な宮殿。",
+                "コンシェルジュおよびライフスタイル管理サービス。"
             ]
         },
         "bodegas": {
-            "title": "Wineries for Sale",
-            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
-            "priceRange": "From €1M to €150M",
-            "details": "Productive assets with real estate and brand value.",
+            "title": "販売中のワイナリー",
+            "description": "ワインセクターへの投資：D.O.付きワイナリー、ブドウ畑、生産センター。",
+            "longDescription": "ワイナリーへの投資は、文化、歴史、そして土地への投資です。私たちは最も権威のあるワイン産地（リオハ、リベラ・デル・ドゥエロ、ボルドー、ナパバレー）での機会を提供します。確固たるブランドを持つ家族経営のワイナリーから大規模なバルク生産センターまで、生産能力とブランド価値を分析します。",
+            "priceRange": "100万ユーロから1億5000万ユーロまで",
+            "details": "不動産およびブランド価値を持つ生産資産。",
             "features": [
-                "Wineries with Qualified Designation of Origin.",
-                "Centuries-old vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
+                "認定原産地呼称を持つワイナリー。",
+                "完全生産中の樹齢100年のブドウ畑。",
+                "ワインツーリズム施設およびワイナリーホテル。",
+                "国際的な流通を持つワインブランド。"
             ]
         }
     },
-    "faqs_title": "Frequently Asked Questions",
-    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs_title": "よくある質問",
+    "faqs_subtitle": "投資する前に知っておくべきことすべて。",
     "faqs": [
         {
-            "question": "What type of investors can access your portfolio?",
-            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+            "question": "どのような投資家が貴社のポートフォリオにアクセスできますか？",
+            "answer": "私たちは、100万ユーロからの運用に対して支払い能力を証明できる適格投資家、ファミリーオフィス、および機関投資家とのみ協力しています。"
         },
         {
-            "question": "Why do you require Proof of Funds (POF) before seeing details?",
-            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+            "question": "詳細を見る前に資金証明（POF）を要求するのはなぜですか？",
+            "answer": "売り手とオフマーケット資産の機密性を保護するためです。私たちは検証された買い手とのみ、機密情報（正確な場所、指標）を共有します。"
         },
         {
-            "question": "Do you manage the Golden Visa for non-EU investors?",
-            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
+            "question": "EU圏外の投資家のためのゴールデンビザを管理していますか？",
+            "answer": "はい。50万ユーロ以上の資産を取得するクライアントのために、投資による居住（ゴールデンビザ）の処理を専門とする法務部門があります。"
         },
         {
-            "question": "Do you charge fees to the buyer or the seller?",
-            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
+            "question": "買い手または売り手に手数料を請求しますか？",
+            "answer": "それはマンデートによります。直接的なオフマーケット操作では、私たちの手数料は通常、販売価格に含まれているか、買い手側のマンデート（buy-side mandate）を通じて合意されています。"
         }
     ]
 }

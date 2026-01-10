@@ -1,151 +1,138 @@
 {
     "nav": {
-        "inversiones": "Real Estate Investments",
-        "hoteles": "Hotels for Sale",
-        "terrenos": "Land for Sale",
-        "lujo": "Luxury Properties",
-        "bodegas": "Wineries for Sale",
-        "blog": "Blog",
-        "agencies": "For Real Estate Agencies",
-        "search": "Property Search"
+        "inversiones": "रियल एस्टेट निवेश",
+        "hoteles": "बिक्री के लिए होटल",
+        "terrenos": "बिक्री के लिए भूमि/प्लॉट",
+        "lujo": "लग्जरी संपत्तियां",
+        "bodegas": "वाइनरी",
+        "blog": "ब्लॉग",
+        "agencies": "एजेंसियों के लिए",
+        "search": "संपत्ति खोज"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
-        "cta": "Enter Portfolio"
+        "shield": "गोपनीयता की कला",
+        "subtitle": "हम एक ऐसे पोर्टफोलियो के साथ काम करते हैं जो <strong>रियल एस्टेट पोर्टल्स पर प्रकाशित नहीं है</strong> लेकिन उच्च गुणवत्ता वाला है। हमारे ग्राहक हमें मूल्यवान रहस्य सौंपते हैं, और हम उन्हें सफल व्यवसाय लौटाते हैं।",
+        "cta": "पोर्टफोलियो में प्रवेश करें"
     },
     "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as high-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
+        "title": "सम्मान की विरासत",
+        "text1": "उरबिना एजेंसी की परंपरा बाजार में नहीं, बल्कि सम्मान और सेवा में पैदा हुई है। हमारा डीएनए मेरे दादा-दादी, फ्रांसिस्को और एंजेलिता उरबिना से आता है।",
+        "text2": "और मेरे परदादा, जोस मारिया उरबिना, एक उच्च पदस्थ सैन्य अधिकारी से। उनसे हमने सीखा कि सबसे मूल्यवान जानकारी वह है जो संरक्षित है।",
+        "secrets_title": "मूल्यवान रहस्य",
+        "secrets_text": "हम प्रत्येक निवेश इरादे को उच्च-स्तरीय वर्गीकृत जानकारी के रूप में मानते हैं।",
+        "success_title": "डिक्लासिफाइड सफलता",
+        "success_text": "हम जो एकमात्र निशान छोड़ते हैं वह सफलता है।"
     },
     "footer": {
-        "title": "FOR INVESTORS",
-        "description": "Specialists in high-value real estate asset management.",
-        "contact_title": "Corporate Contact",
-        "legal_title": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "disclaimer": "Disclaimer",
-        "rights": "All rights reserved."
+        "title": "निवेशकों के लिए",
+        "description": "उच्च-मूल्य वाली रियल एस्टेट परिसंपत्ति प्रबंधन में विशेषज्ञ।",
+        "contact_title": "कॉर्पोरेट संपर्क",
+        "legal_title": "कानूनी",
+        "terms": "नियम और शर्तें",
+        "privacy": "गोपनीयता नीति",
+        "disclaimer": "अस्वीकरण",
+        "rights": "सर्वाधिकार सुरक्षित।"
     },
     "seo": {
-        "title": "For Investors | Luxury Real Estate Assets Worldwide",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+        "title": "निवेशकों के लिए | दुनिया भर में लग्जरी रियल एस्टेट संपत्तियां",
+        "description": "होटल, भूमि, वाइनरी और अल्ट्रा-लग्जरी संपत्तियों का विशेष पोर्टफोलियो। उरबिना एजेंसी एलएलसी द्वारा विशेषज्ञ प्रबंधन।"
     },
     "search": {
-        "title": "Off-Market Asset Search",
-        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
-        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
-        "button": "Search Properties",
-        "results_found": "We have detected off-market assets available in",
-        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
-        "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search.",
-        "available_multiple": "Available"
+        "title": "ऑफ-मार्केट एसेट सर्च",
+        "subtitle": "स्पेन और यूरोप में छिपी हुई संपत्तियों के सबसे बड़े डेटाबेस तक पहुंचें।",
+        "placeholder": "स्थान दर्ज करें (जैसे: मैड्रिड, इबिजा, पेरिस...)",
+        "button": "संपत्तियां खोजें",
+        "results_found": "हमने उपलब्ध ऑफ-मार्केट संपत्तियों का पता लगाया है",
+        "cta_text": "गोपनीयता कारणों से, हम विवरण प्रकाशित नहीं करते हैं। ब्लाइंड डोजियर प्राप्त करने के लिए फॉर्म भरें।",
+        "cta_button": "डोजियर का अनुरोध करें",
+        "no_results": "कोई सार्वजनिक परिणाम नहीं। कस्टम खोज के लिए हमसे संपर्क करें।",
+        "available_multiple": "उपलब्ध"
     },
     "categories": {
         "inversiones": {
-            "title": "Real Estate Investments",
-            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
-            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
-            "priceRange": "From €1M to €500M",
-            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "title": "रियल एस्टेट निवेश",
+            "description": "व्यापक निवेश पोर्टफोलियो प्रबंधन। हम वैश्विक रियल एस्टेट बाजार में उच्च-उपज वाले अवसरों का पता लगाते हैं।",
+            "longDescription": "हमारा रियल एस्टेट निवेश प्रभाग न केवल संपत्ति चाहता है, बल्कि पूंजी रणनीतियों को भी डिजाइन करता है। हम संस्थागत निवेशकों और फैमिली ऑफिसेज के जोखिम और रिटर्न प्रोफाइल के अनुकूल उत्पादों की पेशकश करने के लिए बाजार के रुझान, आर्थिक चक्र और प्रशंसा के अवसरों का विश्लेषण करते हैं।",
+            "priceRange": "€1M से €500M तक",
+            "details": "तैयार रणनीतियां: कोर, वैल्यू-एड और अवसरवादी।",
             "features": [
-                "Macroeconomic and local market analysis.",
-                "Comprehensive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
-                "Post-acquisition Asset Management."
+                "मैक्रोइकॉनॉमिक और स्थानीय बाजार विश्लेषण।",
+                "व्यापक तकनीकी, कानूनी और वित्तीय ड्यू डिलिजेंस।",
+                "निवेश वाहनों की संरचना।",
+                "अधिग्रहण के बाद संपत्ति प्रबंधन।"
             ]
         },
         "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
+            "title": "बिक्री के लिए होटल",
+            "description": "स्पेन, यूरोप और वैश्विक स्थलों के प्रमुख पर्यटन क्षेत्रों में होटल संपत्तियों का विशेष चयन।",
+            "longDescription": "होटल सेक्टर हमारे ताज का गहना है। हमारे पास होटल चेन के मालिकों, स्वतंत्र बुटीक होटलों और 'ऑफ-मार्केट' संचालित करने वाले लक्जरी रिसॉर्ट्स तक सीधी पहुंच है। हम अपूरणीय स्थानों पर रीपोजिशनिंग क्षमता, लचीले प्रबंधन अनुबंध या स्थिर पैदावार वाली संपत्ति की तलाश करते हैं।",
+            "priceRange": "€1M से €150M तक",
+            "details": "प्रबंधन, फ्रैंचाइज़ी या शुद्ध खरीद के अवसर।",
             "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
-            ]
-        },
-        "hoteles": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "details": "Management, franchise, or pure purchase opportunities.",
-            "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
+                "युरोपीय राजधानियों (मैड्रिड, पेरिस, लंदन) में शहरी होटल।",
+                "समुद्र तट पर छुट्टी रिसॉर्ट्स (बेलिएरिक द्वीप समूह, कोस्टा डेल सोल)।",
+                "नवीनीकरण के लिए होटल लाइसेंस वाली इमारतें।",
+                "शीर्ष स्तरीय ऑपरेटरों के साथ सेल और लीजबैक।"
             ]
         },
         "terrenos": {
-            "title": "Land for Sale",
-            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
-            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
-            "priceRange": "From €1M to €150M",
-            "details": "Residential, logistics, commercial, and tertiary land.",
+            "title": "बिक्री के लिए भूमि",
+            "description": "बड़े विकास के लिए रणनीतिक स्थानों में फाइनलिस्ट, निर्माण योग्य और देहाती भूमि।",
+            "longDescription": "किसी भी महान परियोजना का आधार भूमि है। हमारे भूमि पोर्टफोलियो में लाइसेंस आवेदन (रेडी-टू-बिल्ड) के लिए तैयार फाइनलिस्ट प्लॉट, मध्यम अवधि के शहरी विकास, और नवीकरणीय ऊर्जा परियोजनाओं या कृषि उपयोग के लिए देहाती भूमि के बड़े पथ शामिल हैं। हम हर वर्ग मीटर की शहरी नियोजन स्थिति को सख्ती से सत्यापित करते हैं।",
+            "priceRange": "€1M से €150M तक",
+            "details": "आवासीय, रसद, वाणिज्यिक और तृतीयक भूमि।",
             "features": [
-                "Residential land for new developments.",
-                "Logistics land in strategic communication hubs.",
-                "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation boards."
+                "नए निर्माण विकास के लिए आवासीय भूमि।",
+                "रणनीतिक संचार हब में रसद भूमि।",
+                "शॉपिंग सेंटर या कार्यालयों के लिए तृतीयक भूमि।",
+                "शहरी प्रबंधन और मुआवजा बोर्ड।"
             ]
         },
         "lujo": {
-            "title": "Luxury Properties for Sale",
-            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
-            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
-            "priceRange": "From €1M to €150M",
-            "details": "Prime and Ultra-Prime residential assets.",
+            "title": "बिक्री के लिए लग्जरी संपत्तियां",
+            "description": "प्रमुख स्थानों में अद्वितीय विला और पेंटहाउस। आवासीय विशिष्टता का अंतिम प्रतिपादक।",
+            "longDescription": "हम विलासिता को केवल एक कीमत के रूप में नहीं, बल्कि एक जीवन अनुभव के रूप में समझते हैं। हमारे 'लग्जरी संपत्तियां' चयन में बाजार में सबसे विशिष्ट आवास शामिल हैं: ला ज़गालेटा में विला, सलामांका जिले में पेंटहाउस, या कोटे डी ज़ूर पर ऐतिहासिक हवेली। गोपनीयता, सुरक्षा और वास्तुशिल्प डिजाइन बिना किसी समझौते के।",
+            "priceRange": "€1M से €150M तक",
+            "details": "प्राइम और अल्ट्रा-प्राइम आवासीय संपत्ति।",
             "features": [
-                "Designer villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
-                "Recreational estates and historic palaces.",
-                "Concierge and lifestyle management services."
+                "24 घंटे निजी सुरक्षा के साथ डिजाइनर विला।",
+                "वित्तीय केंद्रों में मनोरम दृश्यों के साथ पेंटहाउस।",
+                "मनोरंजक संपदा और ऐतिहासिक महल।",
+                "द्वारपाल और जीवन शैली प्रबंधन सेवाएं।"
             ]
         },
         "bodegas": {
-            "title": "Wineries for Sale",
-            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
-            "priceRange": "From €1M to €150M",
-            "details": "Productive assets with real estate and brand value.",
+            "title": "बिक्री के लिए वाइनरी",
+            "description": "वाइन क्षेत्र में निवेश: डी.ओ. वाली वाइनरी, अंगूर के बाग और उत्पादन केंद्र।",
+            "longDescription": "वाइनरी में निवेश संस्कृति, इतिहास और भूमि में निवेश करना है। हम सबसे प्रतिष्ठित वाइन क्षेत्रों (रियोजा, रिबेरा डेल डुएरो, बोर्डो, नापा वैली) में अवसर प्रदान करते हैं। समेकित ब्रांड वाली पारिवारिक वाइनरी से लेकर बड़े थोक उत्पादन केंद्रों तक, हम उत्पादन क्षमता और ब्रांड मूल्य का विश्लेषण करते हैं।",
+            "priceRange": "€1M से €150M तक",
+            "details": "रियल एस्टेट और ब्रांड मूल्य के साथ उत्पादक संपत्ति।",
             "features": [
-                "Wineries with Qualified Designation of Origin.",
-                "Centuries-old vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
+                "योग्य मूल पदनाम वाली वाइनरी।",
+                "पूर्ण उत्पादन में सदियों पुराने अंगूर के बाग।",
+                "वाइन पर्यटन सुविधाएं और वाइनरी होटल।",
+                "अंतर्राष्ट्रीय वितरण के साथ वाइन ब्रांड।"
             ]
         }
     },
-    "faqs_title": "Frequently Asked Questions",
-    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs_title": "अक्सर पूछे जाने वाले प्रश्न",
+    "faqs_subtitle": "हमे निवेश करने से पहले वह सब कुछ जो आपको जानना चाहिए।",
     "faqs": [
         {
-            "question": "What type of investors can access your portfolio?",
-            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+            "question": "किस प्रकार के निवेशक आपके पोर्टफोलियो तक पहुंच सकते हैं?",
+            "answer": "हम विशेष रूप से योग्य निवेशकों, फैमिली ऑफिसेज और संस्थागत फंडों के साथ काम करते हैं जो €1M से शुरू होने वाले संचालन के लिए शोधन क्षमता साबित करने में सक्षम हैं।"
         },
         {
-            "question": "Why do you require Proof of Funds (POF) before seeing details?",
-            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+            "question": "विवरण देखने से पहले आपको प्रूफ ऑफ फंड्स (POF) की आवश्यकता क्यों है?",
+            "answer": "हमारे विक्रेताओं और ऑफ-मार्केट संपत्तियों की गोपनीयता की रक्षा करने के लिए। हम केवल सत्यापित खरीदारों के साथ संवेदनशील जानकारी (सटीक स्थान, मैट्रिक्स) साझा करते हैं।"
         },
         {
-            "question": "Do you manage the Golden Visa for non-EU investors?",
-            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
+            "question": "क्या आप गैर-यूरोपीय संघ के निवेशकों के लिए गोल्डन वीज़ा का प्रबंधन करते हैं?",
+            "answer": "हाँ। हमारे पास एक कानूनी विभाग है जो €500,000 से अधिक संपत्ति प्राप्त करने वाले ग्राहकों के लिए निवेश (गोल्डन वीज़ा) द्वारा निवास को संसाधित करने में विशिष्ट है।"
         },
         {
-            "question": "Do you charge fees to the buyer or the seller?",
-            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
+            "question": "क्या आप खरीदार या विक्रेता से शुल्क लेते हैं?",
+            "answer": "यह जनादेश (mandate) पर निर्भर करता है। प्रत्यक्ष ऑफ-मार्केट संचालन में, हमारी फीस आमतौर पर बिक्री मूल्य में शामिल होती है या खरीद-पक्ष जनादेश (buy-side mandate) के माध्यम से सहमत होती है।"
         }
     ]
 }
