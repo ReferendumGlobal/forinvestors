@@ -28,9 +28,8 @@ export default function PropertySearch() {
         setTimeout(() => {
             const isTier1 = TIER_1_CITIES.some(city => location.toLowerCase().includes(city));
 
-            // Shuffle and pick 3 categories
-            const shuffled = [...CATEGORIES].sort(() => 0.5 - Math.random());
-            const selectedCategories = shuffled.slice(0, 3);
+            // Show all categories
+            const selectedCategories = CATEGORIES;
 
             const newResults = selectedCategories.map(cat => ({
                 id: cat,
