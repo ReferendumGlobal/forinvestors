@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Search, MapPin, ArrowRight, Building, CheckCircle } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import ContactForm from './ContactForm';
 
 export default function PropertySearch() {
     const { t } = useTranslation();
@@ -10,6 +11,7 @@ export default function PropertySearch() {
     const [location, setLocation] = useState('');
     const [hasSearched, setHasSearched] = useState(false);
     const [searching, setSearching] = useState(false);
+    const [showForm, setShowForm] = useState(false);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -142,12 +144,22 @@ export default function PropertySearch() {
                             </div>
                         </div>
 
-                        <a
-                            href="mailto:urbinaagency@gmail.com?subject=Solicitud Dossier Off-Market: ${location}"
-                            className="inline-flex items-center gap-2 bg-transparent border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-midnight-950 font-bold py-4 px-12 rounded-lg transition-all duration-300 text-lg uppercase tracking-wider"
-                        >
-                            {t('search.cta_button')} <ArrowRight className="w-5 h-5" />
-                        </a>
+                        {!showForm ? (
+                            <button
+                                onClick={() => setShowForm(true)}
+                                className="inline-flex items-center gap-2 bg-transparent border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-midnight-950 font-bold py-4 px-12 rounded-lg transition-all duration-300 text-lg uppercase tracking-wider"
+                            >
+                                {t('search.cta_button')} <ArrowRight className="w-5 h-5" />
+                            </button>
+                        ) : (
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="mt-8 text-left max-w-2xl mx-auto"
+                            >
+                                <ContactForm categoryName={`Búsqueda Off-Market: ${location}`} />
+                            </motion.div>
+                        )}
                     </motion.div>
                 )}
             </div>
