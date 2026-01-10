@@ -1,9 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search, MapPin, ArrowRight, Building, CheckCircle } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import ContactForm from './ContactForm';
+
+// Helper component for counting animation
+function CountingLabel({ onComplete, labelAvailable }) {
+    const [count, setCount] = useState(0);
+    const [finished, setFinished] = useState(false);
+
+    useEffect(() => {
+        const duration = 2000; // 2 seconds
+        const intervalTime = 50; // Update every 50ms
+        const steps = duration / intervalTime;
+        let currentStep = 0;
+
+        const timer = setInterval(() => {
+            currentStep++;
+            // Random number between 1 and 50
+            setCount(Math.floor(Math.random() * 50) + 1);
+
+            if (currentStep >= steps) {
+                clearInterval(timer);
+                setFinished(true);
+                if (onComplete) onComplete();
+            }
+        }, intervalTime);
+
+        return () => clearInterval(timer);
+    }, [onComplete]);
+
+    if (finished) {
+        return <span className="text-xl text-gold-400 uppercase">{labelAvailable}</span>;
+    }
+
+    return <span>{count}</span>;
+}
 
 export default function PropertySearch() {
     const { t } = useTranslation();
@@ -26,8 +59,6 @@ export default function PropertySearch() {
         setSearching(true);
         // Simulate API call
         setTimeout(() => {
-            const isTier1 = TIER_1_CITIES.some(city => location.toLowerCase().includes(city));
-
             // Show all categories
             const selectedCategories = CATEGORIES;
 
@@ -44,26 +75,9 @@ export default function PropertySearch() {
     };
 
     const handleRequest = () => {
-        // Navigate to contact with pre-filled context if possible, or just scroll to contact
-        // We will navigate to the contact section or page.
-        // For simplicity, we can use state or query params, but here we'll just go to #contact equivalent
-        // Since we don't have a standalone contact page, we might want to direct them to the main contact form
-        // or toggle a modal. Given the current structure, let's navigate to home/contact or generic contact.
-        // Ideally, we redirect to the "Agencies" or "Home" contact form with a state.
-        // For now, let's redirect to '/:lang/contact' if it exists, or '/:lang/#contact'.
-        // Assuming we rely on the main ContactForm component which is usually on Home or specific pages.
-        // Let's implement a specific Contact section or redirect to Home with a query param.
-
-        // BETTER: Just show a "Contact Us" button that links to mailto or scroll to a form if we add one here.
-        // Let's add a simple form here or redirect to /:lang/inversiones#contact
-
         const contactSection = document.getElementById('contact');
         if (contactSection) {
             contactSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            // Fallback to navigating to a page with contact form
-            // We will just show a "Request Dossier" button that opens a modal or form in this component?
-            // Let's keep it simple: "Solicitar Dossier" -> Redirect to /:lang/agencias (which has a form) or Home.
         }
     };
 
@@ -149,11 +163,7 @@ export default function PropertySearch() {
                                 <div key={item.id} className="bg-midnight-950 p-6 rounded-xl border border-white/5">
                                     <Building className="text-gold-500 mb-3 w-6 h-6" />
                                     <div className="text-2xl font-bold text-white mb-1">
-                                        {item.count === 'available' ? (
-                                            <span className="text-xl">{t('search.available_multiple')}</span>
-                                        ) : (
-                                            item.count
-                                        )}
+                                        <CountingLabel labelAvailable={t('search.available_multiple')} />
                                     </div>
                                     <div className="text-sm text-gray-400 leading-tight">
                                         {t(`nav.${item.id}`)}
