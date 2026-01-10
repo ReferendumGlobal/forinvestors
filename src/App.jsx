@@ -8,6 +8,8 @@ import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import Blog from './components/Blog';
+import FAQ from './components/FAQ';
 
 function CategoryPage({ categoryId }) {
   const currentCategory = categories[categoryId];

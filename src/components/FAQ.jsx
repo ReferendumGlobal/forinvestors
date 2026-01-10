@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
+import { ChevronDown, ChevronUp, CircleHelp } from 'lucide-react';
 import { faqs } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,7 +11,7 @@ export default function FAQ() {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-sans font-bold text-white mb-4 flex items-center justify-center gap-3">
-                        <HelpCircle className="text-gold-500" /> Frequently Asked Questions
+                        <CircleHelp className="text-gold-500" /> Frequently Asked Questions
                     </h2>
                     <p className="text-gray-400">Everything you need to know before investing with us.</p>
                 </div>
