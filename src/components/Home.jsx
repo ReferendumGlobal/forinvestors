@@ -95,7 +95,7 @@ export default function Home() {
                                     La tradición de Urbina Agency no nace en los mercados, sino en el honor y el servicio. Nuestro ADN proviene de <strong>Francisco y Angelita Urbina</strong> (en la foto), mis abuelos, quienes cimentaron los valores de familia y palabra.
                                 </p>
                                 <p>
-                                    Y de mi bisabuelo, <strong>José María Urbina</strong>, alto cargo militar y miembro de la <strong>CIA</strong>. De él aprendimos que la información más valiosa es la que se protege, y que el éxito de una misión depende de la precisión y el silencio.
+                                    Y de mi bisabuelo, <strong>José María Urbina</strong>, alto cargo militar. De él aprendimos que la información más valiosa es la que se protege, y que el éxito de una misión depende de la precisión y el silencio.
                                 </p>
                             </div>
                         </div>
