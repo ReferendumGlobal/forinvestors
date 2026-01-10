@@ -9,53 +9,56 @@ export default function Home() {
             {/* Hero Section */}
             {/* Hero Section */}
             {/* Mobile: pt-24 (6rem=96px) is enough to clear 80px header + space. Desktop pt-32. */}
-            <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
+            <div className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                        alt="Office vibe"
-                        className="w-full h-full object-cover opacity-20"
+                        alt="International Business"
+                        className="w-full h-full object-cover opacity-30 invert-[.05]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-midnight-950 via-midnight-950/80 to-midnight-950"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-midnight-950 via-midnight-950/90 to-transparent"></div>
                 </div>
 
-                <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="inline-block p-3 mb-6 border border-gold-500/30 rounded-full bg-gold-500/10 backdrop-blur-md">
-                            <Shield className="w-8 h-8 text-gold-500" />
-                        </div>
-                        {/* Mobile: text-4xl. Desktop: text-7xl. */}
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8 leading-tight">
-                            The Art of <span className="text-gold-400">Discretion</span>
-                        </h1>
-                    </motion.div>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-8 md:mb-12"
-                    >
-                        "Our clients entrust us with valuable secrets in the form of investments in <strong>Spain, Europe and worldwide</strong>. We return successful businesses: classified content that is only declassified as press headlines celebrating your success."
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.6 }}
-                    >
-                        {/* Mobile: w-full button for easier tapping */}
-                        <Link
-                            to="/investments"
-                            className="inline-flex w-full md:w-auto justify-center items-center gap-3 px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-1 active:scale-95 touch-manipulation"
+                <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 w-full">
+                    <div className="max-w-3xl text-left">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            Enter Portfolio <ChevronRight size={20} />
-                        </Link>
-                    </motion.div>
+                            <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 border border-gold-500/30 rounded-full bg-gold-900/30 backdrop-blur-md">
+                                <span className="flex h-2 w-2 rounded-full bg-gold-400 animate-pulse"></span>
+                                <span className="text-sm font-medium text-gold-300 tracking-wider uppercase">Global Investment</span>
+                            </div>
+
+                            <h1 className="text-5xl md:text-7xl font-sans font-bold text-white mb-8 leading-tight tracking-tight">
+                                The Science of <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-200">Discretion</span>
+                            </h1>
+                        </motion.div>
+
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3, duration: 0.8 }}
+                            className="text-xl md:text-2xl text-gray-300 max-w-2xl font-light leading-relaxed mb-12 border-l-4 border-gold-500 pl-6"
+                        >
+                            "Our clients entrust us with valuable secrets in the form of investments in <strong>Spain, Europe and worldwide</strong>. We return successful businesses."
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
+                            className="flex flex-col sm:flex-row gap-4"
+                        >
+                            <Link
+                                to="/investments"
+                                className="inline-flex w-full sm:w-auto justify-center items-center gap-3 px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-1 active:scale-95 touch-manipulation"
+                            >
+                                Enter Portfolio <ChevronRight size={20} />
+                            </Link>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
@@ -95,7 +98,7 @@ export default function Home() {
                                     The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from <strong>Francisco and Angelita Urbina</strong> (pictured), my grandparents, who built the foundations of family and integrity.
                                 </p>
                                 <p>
-                                    And from my great-grandfather, <strong>Jose Maria Urbina</strong>, a high-ranking military officer and member of the <strong>CIA</strong>. From him, we learned that the most valuable information is that which is protected, and that the success of a mission depends on precision and silence.
+                                    And from my great-grandfather, <strong>Jose Maria Urbina</strong>, a high-ranking military officer. From him, we learned that the most valuable information is that which is protected, and that the success of a mission depends on precision and silence.
                                 </p>
                             </div>
                         </div>
