@@ -5,6 +5,12 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export default function Blog() {
+    if (!blogPosts || blogPosts.length === 0) return (
+        <div className="min-h-screen pt-32 pb-20 bg-midnight-950 text-center text-white">
+            <h1 className="text-2xl">Próximamente</h1>
+        </div>
+    );
+
     return (
         <div className="min-h-screen pt-32 pb-20 bg-midnight-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

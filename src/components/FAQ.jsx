@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, CircleHelp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { faqs } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FAQ() {
     const [openIndex, setOpenIndex] = useState(null);
 
+    if (!faqs || faqs.length === 0) return null;
+
     return (
         <section className="py-20 bg-midnight-950 border-t border-white/5">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-serif text-white mb-4 flex items-center justify-center gap-3">
-                        <CircleHelp className="text-gold-500" /> Preguntas Frecuentes
+                        Preguntas Frecuentes
                     </h2>
                     <p className="text-gray-400">Todo lo que necesita saber antes de invertir con nosotros.</p>
                 </div>
