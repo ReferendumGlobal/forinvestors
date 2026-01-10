@@ -166,11 +166,13 @@ function AppContent() {
             <Route path="/land" element={<CategoryPage categoryId="land" />} />
             <Route path="/luxury" element={<CategoryPage categoryId="luxury" />} />
             <Route path="/wineries" element={<CategoryPage categoryId="wineries" />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </AnimatePresence>
       </main>
 
+      <FAQ />
       <Footer />
     </div>
   );

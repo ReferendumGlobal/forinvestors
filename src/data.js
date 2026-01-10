@@ -82,3 +82,49 @@ export const categories = {
         ]
     }
 };
+
+export const blogPosts = [
+    {
+        id: 1,
+        title: "Real Estate Trends 2026: The Rise of 'Build to Rent'",
+        excerpt: "Analyzing how major funds are rotating portfolios towards flexible residential assets in key European capitals.",
+        date: "Oct 12, 2025",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        readTime: "5 min read"
+    },
+    {
+        id: 2,
+        title: "Hotel Investment: Rebranding or Direct Management?",
+        excerpt: "Keys to maximizing RevPAR in coastal hotel assets through brand repositioning strategies.",
+        date: "Sep 28, 2025",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        readTime: "8 min read"
+    },
+    {
+        id: 3,
+        title: "Logistics Land: The New Black Gold",
+        excerpt: "Demand for last-mile spaces is skyrocketing industrial land valuations in metropolitan rings worldwide.",
+        date: "Sep 15, 2025",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        readTime: "6 min read"
+    }
+];
+
+export const faqs = [
+    {
+        question: "What type of investors can access your portfolio?",
+        answer: "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+    },
+    {
+        question: "Why do you require Proof of Funds (POF) before seeing details?",
+        answer: "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+    },
+    {
+        question: "Do you handle Golden Visa for non-EU investors?",
+        answer: "Yes. We have a legal department specialized in processing residence by investment (Golden Visa) for clients acquiring assets over €500,000."
+    },
+    {
+        question: "Do you charge fees to the buyer or the seller?",
+        answer: "It depends on the mandate. In direct off-market operations, our fees are usually included in the sales price or agreed upon via a buy-side mandate."
+    }
+];
