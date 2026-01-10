@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { faqs } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function FAQ() {
+    const { t } = useTranslation();
     const [openIndex, setOpenIndex] = useState(null);
 
     if (!faqs || faqs.length === 0) return null;
