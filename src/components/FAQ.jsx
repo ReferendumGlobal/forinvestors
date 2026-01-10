@@ -19,7 +19,7 @@ export default function FAQ() {
                 </div>
 
                 <div className="space-y-4">
-                    {faqs.map((faq, index) => (
+                    {t('faqs', { returnObjects: true }).map((faq, index) => (
                         <div key={index} className="border border-white/10 rounded-xl overflow-hidden bg-midnight-900/50 hover:bg-midnight-900 transition-colors">
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

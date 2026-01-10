@@ -7,144 +7,114 @@ import ScrollToTop from './components/ScrollToTop';
 import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
-import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, useLocation, useParams, Outlet, useNavigate } from 'react-router-dom';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import Agencies from './components/Agencies';
+import { useTranslation } from 'react-i18next';
+import './i18n';
+import { HelmetProvider } from 'react-helmet-async';
+import SeoHead from './components/SeoHead';
 
 function CategoryPage({ categoryId }) {
   const currentCategory = categories[categoryId];
+  const { t } = useTranslation();
+  // Get features as array. t returns object/array if returnObjects: true
+  const features = t(`categories.${categoryId}.features`, { returnObjects: true });
 
   return (
     <motion.div
-      key={categoryId} // Key ensures remount/animation on change
+      key={categoryId}
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.4 }}
     >
-      {/* Padding top is handled by main container, but we need extra spacing because of fixed navbar overlap on inner pages if not careful. 
-            However, Home handles its own hero. Category page needs the hero top spacing. 
-            The Navbar is fixed h-20. The Hero is 60vh. 
-        */}
-
-      {/* Hero Section for Category */}
+      <SeoHead
+        title={`${t(`categories.${categoryId}.title`)} | Urbina Agency`}
+        description={t(`categories.${categoryId}.description`)}
+      />
       <div className="relative min-h-[60vh] h-auto flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0">
           <img
             src={currentCategory.image}
-            alt={currentCategory.title}
+            alt={t(`categories.${categoryId}.title`)}
             className="w-full h-full object-cover opacity-40 transform scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-midnight-950 via-midnight-950/50 to-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex justify-center mb-6"
-          >
+          <motion.div className="flex justify-center mb-6">
             <div className="p-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
               <currentCategory.icon size={32} className="text-gold-400" />
             </div>
           </motion.div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-            {currentCategory.title}
+            {t(`categories.${categoryId}.title`)}
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-            {currentCategory.description}
+            {t(`categories.${categoryId}.description`)}
           </p>
 
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <div className="px-8 py-4 bg-gold-600/10 border border-gold-500/30 rounded-xl backdrop-blur-md">
-              <span className="block text-sm text-gold-400 uppercase tracking-widest mb-1">Investments From</span>
-              <span className="text-2xl md:text-3xl font-serif text-white">{currentCategory.priceRange}</span>
+              <span className="block text-sm text-gold-400 uppercase tracking-widest mb-1">
+                {t('categories.inversiones.title') === 'Real Estate Investments' ? 'Investment From' : 'Inversión Desde'}
+              </span>
+              <span className="text-2xl md:text-3xl font-serif text-white">{t(`categories.${categoryId}.priceRange`)}</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Expanded Content: Long Description & Features */}
-      {/* This fulfills the 'develop much more' requirement */}
-      <div className="py-20 bg-midnight-950">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-serif text-gold-400 mb-8">Sector Analysis</h2>
-          <p className="text-lg text-gray-300 leading-relaxed mb-12">
-            {currentCategory.longDescription}
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-            {currentCategory.features && currentCategory.features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-4 p-6 bg-white/5 rounded-xl border border-white/5 hover:border-gold-500/30 transition-colors">
-                <div className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-gold-500"></div>
-                <span className="text-gray-200">{feature}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Value Proposition Grid */}
-      <div className="py-20 bg-midnight-900 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-midnight-800 border border-white/5">
-              <ShieldCheck className="h-10 w-10 text-gold-500 mb-6" />
-              <h3 className="text-xl font-serif text-white mb-3">Legal Security</h3>
-              <p className="text-gray-400">Complete legal audit (Due Diligence) available for every asset in the portfolio.</p>
-            </div>
-            <div className="p-8 rounded-2xl bg-midnight-800 border border-white/5">
-              <TrendingUp className="h-10 w-10 text-gold-500 mb-6" />
-              <h3 className="text-xl font-serif text-white mb-3">High Profitability</h3>
-              <p className="text-gray-400">We select assets with high appreciation potential and yields superior to the market average.</p>
-            </div>
-            <div className="p-8 rounded-2xl bg-midnight-800 border border-white/5">
-              <Handshake className="h-10 w-10 text-gold-500 mb-6" />
-              <h3 className="text-xl font-serif text-white mb-3">Direct Deal</h3>
-              <p className="text-gray-400">Personal management with owners and direct mandates, without chains of intermediaries.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content & Form Section */}
-      <div className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Investment Dossier Access</h2>
-            <div className="space-y-6 text-lg text-gray-400">
-              <p>
-                Due to the confidential nature of our {categoryId === 'developers' ? 'off-market ' : ''}assets, as well as the exclusivity of our sales mandates, we require a prior verification process.
-              </p>
-              <p className="flex items-start gap-3">
-                <ChevronRight className="flex-shrink-0 text-gold-500 mt-1" />
-                <span>We only provide detailed information (exact location, financial metrics, appraisals) to qualified investors.</span>
-              </p>
-              <p className="flex items-start gap-3">
-                <ChevronRight className="flex-shrink-0 text-gold-500 mt-1" />
-                <span>It is <strong>essential</strong> to provide Proof of Funds (POF) or a Bank Letter of Intent for the value of the asset of interest.</span>
-              </p>
-              <p className="flex items-start gap-3">
-                <ChevronRight className="flex-shrink-0 text-gold-500 mt-1" />
-                <span>Once your solvency is validated, you will receive the full dossier and we will organize a private viewing.</span>
+            <h3 className="text-3xl font-serif text-white mb-6 border-l-4 border-gold-500 pl-6">
+              {t(`categories.${categoryId}.title`)}
+            </h3>
+            <div className="prose prose-lg prose-invert text-gray-400">
+              <p className="leading-relaxed">
+                {t(`categories.${categoryId}.longDescription`)}
               </p>
             </div>
 
-            <div className="mt-12 p-6 bg-gold-900/10 border border-gold-500/20 rounded-xl">
-              <h4 className="text-gold-400 font-bold mb-2">Important Notice</h4>
-              <p className="text-sm text-gold-100/80">
-                Our portfolio includes assets with value up to the figure accredited in your proof of funds. We take the privacy of our sellers and buyers very seriously.
+            <div className="mt-8 p-6 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-gold-400 font-medium italic">
+                "{t(`categories.${categoryId}.details`)}"
               </p>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-gold-600 to-gold-400 rounded-2xl blur opacity-20"></div>
-            <ContactForm categoryName={currentCategory.title} />
+          <div className="bg-midnight-900/50 p-8 rounded-2xl border border-white/5">
+            <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
+              <ShieldCheck className="text-gold-500" />
+              {t('categories.inversiones.title') === 'Real Estate Investments' ? 'Key Features' : 'Características Clave'}
+            </h4>
+            <ul className="space-y-4">
+              {Array.isArray(features) && features.map((feature, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></div>
+                  <span className="text-gray-300">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 pt-8 border-t border-white/10">
+              <div className="flex items-center justify-between">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map(i => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-gray-700 border-2 border-midnight-900"></div>
+                  ))}
+                </div>
+                <button className="text-sm text-gold-400 hover:text-white transition-colors font-medium">
+                  {t('categories.inversiones.title') === 'Real Estate Investments' ? 'Contact Agent' : 'Contactar Agente'} →
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -152,42 +122,54 @@ function CategoryPage({ categoryId }) {
   );
 }
 
+function LanguageWrapper() {
+  const { lang } = useParams();
+  const { i18n } = useTranslation();
+  const navigate = useNavigate();
 
-function AppContent() {
-  const location = useLocation();
+  useEffect(() => {
+    const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];
+    if (validLangs.includes(lang)) {
+      i18n.changeLanguage(lang);
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+    } else {
+      navigate('/en', { replace: true });
+    }
+  }, [lang, i18n, navigate]);
 
   return (
     <div className="min-h-screen bg-midnight-950 text-gray-200 selection:bg-gold-500/30">
       <Navbar categories={categories} />
-
       <main className="pt-0 relative">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/investments" element={<CategoryPage categoryId="investments" />} />
-            <Route path="/hotels" element={<CategoryPage categoryId="hotels" />} />
-            <Route path="/land" element={<CategoryPage categoryId="land" />} />
-            <Route path="/luxury" element={<CategoryPage categoryId="luxury" />} />
-            <Route path="/wineries" element={<CategoryPage categoryId="wineries" />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/for-agencies" element={<Agencies />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </AnimatePresence>
+        <Outlet />
       </main>
-
       <FAQ />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
 
 function App() {
   return (
-    <HashRouter>
-      <ScrollToTop />
-      <AppContent />
-    </HashRouter>
+    <HelmetProvider>
+      <HashRouter>
+        <Routes>
+          <Route path="/:lang" element={<LanguageWrapper />}>
+            <Route index element={<Home />} />
+            <Route path="investments" element={<CategoryPage categoryId="investments" />} />
+            <Route path="hotels" element={<CategoryPage categoryId="hotels" />} />
+            <Route path="land" element={<CategoryPage categoryId="land" />} />
+            <Route path="luxury" element={<CategoryPage categoryId="luxury" />} />
+            <Route path="wineries" element={<CategoryPage categoryId="wineries" />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="for-agencies" element={<Agencies />} />
+          </Route>
+          <Route path="/" element={<Navigate to="/en" replace />} />
+        </Routes>
+      </HashRouter>
+    </HelmetProvider>
   );
 }
 
