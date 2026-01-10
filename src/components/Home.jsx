@@ -50,7 +50,7 @@ export default function Home() {
                     >
                         {/* Mobile: w-full button for easier tapping */}
                         <Link
-                            to="/hoteles"
+                            to="/inversiones"
                             className="inline-flex w-full md:w-auto justify-center items-center gap-3 px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-1 active:scale-95 touch-manipulation"
                         >
                             Acceder al Portafolio <ChevronRight size={20} />

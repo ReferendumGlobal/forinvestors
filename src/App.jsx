@@ -63,6 +63,26 @@ function CategoryPage({ categoryId }) {
         </div>
       </div>
 
+      {/* Expanded Content: Long Description & Features */}
+      {/* This fulfills the 'develop much more' requirement */}
+      <div className="py-20 bg-midnight-950">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-serif text-gold-400 mb-8">Análisis del Sector</h2>
+          <p className="text-lg text-gray-300 leading-relaxed mb-12">
+            {currentCategory.longDescription}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            {currentCategory.features && currentCategory.features.map((feature, index) => (
+              <div key={index} className="flex items-start gap-4 p-6 bg-white/5 rounded-xl border border-white/5 hover:border-gold-500/30 transition-colors">
+                <div className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-gold-500"></div>
+                <span className="text-gray-200">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Value Proposition Grid */}
       <div className="py-20 bg-midnight-900 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,9 +159,9 @@ function AppContent() {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
+            <Route path="/inversiones" element={<CategoryPage categoryId="inversiones" />} />
             <Route path="/hoteles" element={<CategoryPage categoryId="hoteles" />} />
             <Route path="/terrenos" element={<CategoryPage categoryId="terrenos" />} />
-            <Route path="/promotores" element={<CategoryPage categoryId="promotores" />} />
             <Route path="/lujo" element={<CategoryPage categoryId="lujo" />} />
             <Route path="/bodegas" element={<CategoryPage categoryId="bodegas" />} />
             <Route path="*" element={<Navigate to="/" replace />} />
