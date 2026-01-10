@@ -152,24 +152,25 @@ function AppContent() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-midnight-950 text-gray-200 selection:bg-gold-500/30">
+    <div className="bg-midnight-950 min-h-screen flex flex-col font-sans text-white selection:bg-gold-500/30 selection:text-white">
       <Navbar categories={categories} />
 
-      <main className="pt-0 relative">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/inversiones" element={<CategoryPage categoryId="inversiones" />} />
-            <Route path="/hoteles" element={<CategoryPage categoryId="hoteles" />} />
-            <Route path="/terrenos" element={<CategoryPage categoryId="terrenos" />} />
-            <Route path="/lujo" element={<CategoryPage categoryId="lujo" />} />
-            <Route path="/bodegas" element={<CategoryPage categoryId="bodegas" />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </AnimatePresence>
-      </main>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/inversiones" element={<CategoryPage categoryId="inversiones" />} />
+          <Route path="/hoteles" element={<CategoryPage categoryId="hoteles" />} />
+          <Route path="/terrenos" element={<CategoryPage categoryId="terrenos" />} />
+          <Route path="/lujo" element={<CategoryPage categoryId="lujo" />} />
+          <Route path="/bodegas" element={<CategoryPage categoryId="bodegas" />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AnimatePresence>
 
+      <FAQ />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
@@ -177,7 +178,6 @@ function AppContent() {
 function App() {
   return (
     <HashRouter>
-      <ScrollToTop />
       <AppContent />
     </HashRouter>
   );

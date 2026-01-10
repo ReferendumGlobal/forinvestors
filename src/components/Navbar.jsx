@@ -41,6 +41,15 @@ export default function Navbar({ categories }) {
                                     {category.title}
                                 </Link>
                             ))}
+                            <Link
+                                to="/blog"
+                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'blog'
+                                    ? 'text-gold-400 bg-white/5 border border-white/5'
+                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                Blog
+                            </Link>
                         </div>
                     </div>
 
@@ -49,10 +58,6 @@ export default function Navbar({ categories }) {
                             <Globe size={18} />
                             <span className="text-sm">ES</span>
                         </div>
-                        <a href="https://wa.me/34633330223" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg hover:shadow-gold-500/20">
-                            <Phone size={16} />
-                            <span>Contactar</span>
-                        </a>
                     </div>
 
                     <div className="-mr-2 flex md:hidden">
@@ -92,12 +97,24 @@ export default function Navbar({ categories }) {
                                     </div>
                                 </Link>
                             ))}
+                            <Link
+                                to="/blog"
+                                onClick={() => setIsOpen(false)}
+                                className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === 'blog'
+                                    ? 'text-gold-400 bg-white/5'
+                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                <div className="flex items-center gap-3">
+                                    <span className="text-gold-500 w-5 flex justify-center">•</span>
+                                    Blog
+                                </div>
+                            </Link>
                             <div className="border-t border-white/10 mt-4 pt-4 px-3 flex items-center justify-between">
                                 <div className="flex items-center gap-2 text-gray-300">
                                     <Globe size={18} />
                                     <span>ES</span>
                                 </div>
-                                <a href="https://wa.me/34633330223" className="text-gold-400 font-medium">Contactar</a>
                             </div>
                         </div>
                     </motion.div>

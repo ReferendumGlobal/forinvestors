@@ -82,3 +82,49 @@ export const categories = {
         ]
     }
 };
+
+export const blogPosts = [
+    {
+        id: 1,
+        title: "Tendencias Inmobiliarias 2026: El Auge del 'Build to Rent'",
+        excerpt: "Analizamos cómo los grandes fondos están rotando sus carteras hacia activos residenciales flexibles en las principales capitales europeas.",
+        date: "12 Oct 2025",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        readTime: "5 min lectura"
+    },
+    {
+        id: 2,
+        title: "Inversión Hotelera: ¿Rebranding o Gestión Directa?",
+        excerpt: "Claves para maximizar el RevPAR en activos hoteleros costeros mediante estrategias de reposicionamiento de marca.",
+        date: "28 Sep 2025",
+        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        readTime: "8 min lectura"
+    },
+    {
+        id: 3,
+        title: "Suelo Logístico: El Nuevo Oro Negro",
+        excerpt: "La demanda de espacios de última milla está disparando las valoraciones de suelo industrial en los anillos metropolitanos de Madrid y Barcelona.",
+        date: "15 Sep 2025",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        readTime: "6 min lectura"
+    }
+];
+
+export const faqs = [
+    {
+        question: "¿Qué tipo de inversores pueden acceder a su cartera?",
+        answer: "Trabajamos exclusivamente con inversores cualificados, Family Offices y fondos institucionales capaces de acreditar solvencia para operaciones desde 1M€."
+    },
+    {
+        question: "¿Por qué requieren una Prueba de Fondos (POF) antes de ver detalles?",
+        answer: "Para proteger la confidencialidad de nuestros vendedores y activos off-market. Solo compartimos información sensible (ubicación exacta, métricas) con compradores verificados."
+    },
+    {
+        question: "¿Gestionan la Golden Visa para inversores extracomunitarios?",
+        answer: "Sí. Contamos con un departamento legal especializado en tramitar la residencia por inversión (Golden Visa) para clientes que adquieren activos superiores a 500.000€."
+    },
+    {
+        question: "¿Cobran honorarios al comprador o al vendedor?",
+        answer: "Depende del mandato. En operaciones off-market directas, nuestros honorarios suelen estar incluidos en el precio de venta o pactados mediante mandato de compra (buy-side mandate)."
+    }
+];
