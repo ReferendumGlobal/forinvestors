@@ -243,11 +243,7 @@ export default function ContactForm({ categoryName }) {
                 )}
             </button>
 
-            <div className="text-center pt-2">
-                <p className="text-sm text-gray-500">
-                    You can also contact us directly at <a href="mailto:urbinaagency@gmail.com" className="text-gold-400 hover:underline">urbinaagency@gmail.com</a>
-                </p>
-            </div>
+
         </form>
     );
 }

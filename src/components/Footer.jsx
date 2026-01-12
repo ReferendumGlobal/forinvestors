@@ -29,10 +29,7 @@ export default function Footer() {
                         <div>
                             <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Contacto Corporativo</h3>
                             <ul className="space-y-4">
-                                <li className="flex items-start text-gray-400">
-                                    <Mail className="flex-shrink-0 h-5 w-5 text-gold-500 mr-3 mt-1" />
-                                    <a href="mailto:urbinaagency@gmail.com" className="hover:text-white transition-colors">urbinaagency@gmail.com</a>
-                                </li>
+
                                 <li className="flex items-start text-gray-400">
                                     <MapPin className="flex-shrink-0 h-5 w-5 text-gold-500 mr-3 mt-1" />
                                     <span className="text-sm leading-relaxed">
