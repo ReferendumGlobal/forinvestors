@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function ContactForm({ categoryName, explanation }) {
+export default function AgencyContactForm() {
     const [formState, setFormState] = useState({
-        name: '',
+        contactPerson: '',
         email: '',
         phone: '',
-        funds: '',
-        targetLocation: '',
+        city: '',
+        country: '',
+        propertiesCount: '',
+        priceRangeFrom: '',
+        priceRangeTo: '',
+        propertyTypes: [],
         message: '',
         file: null
     });
@@ -17,9 +21,28 @@ export default function ContactForm({ categoryName, explanation }) {
     const [error, setError] = useState(null);
     const [loadingText, setLoadingText] = useState('Initiating secure transmission...');
 
+    const propertyTypeOptions = [
+        "Hotels",
+        "Buildable Land",
+        "Fincas/Estates",
+        "Wineries",
+        "Agricultural",
+        "Livestock",
+        "Buildings",
+        "Luxury Properties"
+    ];
+
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
             setFormState({ ...formState, file: e.target.files[0] });
+        }
+    };
+
+    const handleCheckboxChange = (type) => {
+        if (formState.propertyTypes.includes(type)) {
+            setFormState({ ...formState, propertyTypes: formState.propertyTypes.filter(t => t !== type) });
+        } else {
+            setFormState({ ...formState, propertyTypes: [...formState.propertyTypes, type] });
         }
     };
 
@@ -27,8 +50,8 @@ export default function ContactForm({ categoryName, explanation }) {
         if (isSubmitting) {
             const messages = [
                 "Encrypting documents...",
-                "Uploading Proof of Funds to secure server...",
-                "Verifying submission integrity...",
+                "Uploading Portfolio to secure server...",
+                "Verifying integration...",
                 "Finalizing transmission..."
             ];
             let i = 0;
@@ -49,14 +72,15 @@ export default function ContactForm({ categoryName, explanation }) {
         setError(null);
 
         const formData = new FormData();
-        formData.append('name', formState.name);
+        formData.append('contactPerson', formState.contactPerson);
         formData.append('email', formState.email);
         formData.append('phone', formState.phone);
-        formData.append('funds', formState.funds);
-        formData.append('targetLocation', formState.targetLocation);
+        formData.append('location', `${formState.city}, ${formState.country}`);
+        formData.append('propertiesCount', formState.propertiesCount);
+        formData.append('priceRange', `${formState.priceRangeFrom} - ${formState.priceRangeTo}`);
+        formData.append('propertyTypes', formState.propertyTypes.join(', '));
         formData.append('message', formState.message);
-        formData.append('category', categoryName);
-        formData.append('_subject', `New Investment Request: ${categoryName}`);
+        formData.append('_subject', `New AGENCY Application: ${formState.city}`);
         formData.append('_template', 'table');
         formData.append('_captcha', 'false');
 
@@ -73,7 +97,6 @@ export default function ContactForm({ categoryName, explanation }) {
                 body: formData
             });
 
-            // Try to parse JSON but don't fail if it's not JSON
             let result = {};
             const text = await response.text();
             try {
@@ -85,10 +108,15 @@ export default function ContactForm({ categoryName, explanation }) {
             if (response.ok) {
                 setSubmitted(true);
                 setFormState({
-                    name: '',
+                    contactPerson: '',
                     email: '',
                     phone: '',
-                    funds: '',
+                    city: '',
+                    country: '',
+                    propertiesCount: '',
+                    priceRangeFrom: '',
+                    priceRangeTo: '',
+                    propertyTypes: [],
                     message: '',
                     file: null
                 });
@@ -113,13 +141,13 @@ export default function ContactForm({ categoryName, explanation }) {
                 <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="text-gold-500" size={32} />
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-2">Request Sent</h3>
-                <p className="text-gray-400">Thank you for contacting us. We have received your proof of funds and will analyze your profile shortly.</p>
+                <h3 className="text-2xl font-serif text-white mb-2">Application Sent</h3>
+                <p className="text-gray-400">We have received your application. Our legal team will send the collaboration agreement to activate your access.</p>
                 <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
                 >
-                    Send another request
+                    Send another application
                 </button>
             </motion.div>
         );
@@ -129,22 +157,15 @@ export default function ContactForm({ categoryName, explanation }) {
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">
             <input type="hidden" name="_captcha" value="false" />
 
-            {explanation && (
-                <div className="bg-gold-500/10 border border-gold-500/30 rounded-lg p-4 mb-6">
-                    <p className="text-gold-400 text-sm">{explanation}</p>
-                </div>
-            )}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Contact Person</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="John Doe"
-                        value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                        value={formState.contactPerson}
+                        onChange={(e) => setFormState({ ...formState, contactPerson: e.target.value })}
                     />
                 </div>
                 <div>
@@ -153,7 +174,6 @@ export default function ContactForm({ categoryName, explanation }) {
                         type="email"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="john@company.com"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
@@ -165,39 +185,87 @@ export default function ContactForm({ categoryName, explanation }) {
                     <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
                     <input
                         type="tel"
+                        required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="+34 633..."
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Capital to Invest (€)</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2"># of Exclusive Properties</label>
+                    <input
+                        type="number"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.propertiesCount}
+                        onChange={(e) => setFormState({ ...formState, propertiesCount: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">City</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="Ex: 5,000,000"
-                        value={formState.funds}
-                        onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
+                        value={formState.city}
+                        onChange={(e) => setFormState({ ...formState, city: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Country</label>
+                    <input
+                        type="text"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.country}
+                        onChange={(e) => setFormState({ ...formState, country: e.target.value })}
                     />
                 </div>
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Where do you want to invest?</label>
-                <input
-                    type="text"
-                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Ex: Madrid, Marbella, London..."
-                    value={formState.targetLocation}
-                    onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
-                />
+                <label className="block text-sm font-medium text-gray-400 mb-2">Price Range (€)</label>
+                <div className="grid grid-cols-2 gap-4">
+                    <input
+                        type="text"
+                        placeholder="From"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.priceRangeFrom}
+                        onChange={(e) => setFormState({ ...formState, priceRangeFrom: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="To"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.priceRangeTo}
+                        onChange={(e) => setFormState({ ...formState, priceRangeTo: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gray-400 mb-2">Property Types in Portfolio</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {propertyTypeOptions.map((type) => (
+                        <label key={type} className="flex items-center space-x-2 bg-midnight-900/50 p-3 rounded-lg border border-white/5 cursor-pointer hover:border-gold-500/30 transition-colors">
+                            <input
+                                type="checkbox"
+                                checked={formState.propertyTypes.includes(type)}
+                                onChange={() => handleCheckboxChange(type)}
+                                className="form-checkbox h-4 w-4 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                            />
+                            <span className="text-sm text-gray-300">{type}</span>
+                        </label>
+                    ))}
+                </div>
             </div>
 
             <div>
                 <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                    Proof of Funds (POF) Document <AlertCircle size={14} />
+                    Corporate Dossier / Portfolio Example <AlertCircle size={14} />
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
                     <input
@@ -211,38 +279,21 @@ export default function ContactForm({ categoryName, explanation }) {
                             <div className="flex flex-col items-center">
                                 <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
                                 <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
-                                <p className="text-xs text-gray-500">File uploaded successfully</p>
+                                <p className="text-xs text-gray-500">File ready</p>
                             </div>
                         ) : (
                             <>
                                 <Upload className="mx-auto h-12 w-12 text-gray-400 group-hover:text-gold-400 transition-colors" />
                                 <div className="flex text-sm text-gray-400 justify-center">
-                                    <span className="font-medium text-gold-400">Upload a file</span>
-                                    <p className="pl-1">or drag and drop</p>
+                                    <span className="font-medium text-gold-400">Upload file</span>
+                                    <p className="pl-1">or drag & drop</p>
                                 </div>
-                                <p className="text-xs text-gray-500">PDF, PNG, JPG up to 10MB</p>
+                                <p className="text-xs text-gray-500">PDF, up to 10MB</p>
                             </>
                         )}
                     </div>
                 </div>
             </div>
-
-            <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Additional Message</label>
-                <textarea
-                    rows={4}
-                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Interested in properties in..."
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                />
-            </div>
-
-            {error && (
-                <div className="p-4 bg-red-900/20 border border-red-500/50 rounded-lg text-red-200 text-sm">
-                    {error}
-                </div>
-            )}
 
             <button
                 type="submit"
@@ -253,16 +304,14 @@ export default function ContactForm({ categoryName, explanation }) {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-center">
                             <Loader2 className="mr-2 animate-spin" size={20} />
-                            <span>Processing...</span>
+                            <span>Processing Application...</span>
                         </div>
                         <span className="text-xs font-normal mt-1 text-gold-100 opacity-90 animate-pulse">{loadingText}</span>
                     </div>
                 ) : (
-                    <>Send Request <Send size={18} className="ml-2" /></>
+                    <>Apply for Collaboration <Send size={18} className="ml-2" /></>
                 )}
             </button>
-
-
         </form>
     );
 }

@@ -1,68 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Handshake, Users, PieChart, Send, CheckCircle, Upload, Loader2, Building2 } from 'lucide-react';
+import { Handshake, Users, PieChart, Building2, Lock, ArrowRight } from 'lucide-react';
 import SeoHead from './SeoHead';
 import { useTranslation } from 'react-i18next';
+import AgencyContactForm from './AgencyContactForm';
 
 export default function Agencies() {
     const { t } = useTranslation();
-    const [formState, setFormState] = useState({
-        agencyName: '',
-        email: '',
-        phone: '',
-        propertyType: '',
-        message: '',
-        file: null
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-
-    const handleFileChange = (e) => {
-        if (e.target.files[0]) {
-            setFormState({ ...formState, file: e.target.files[0] });
-        }
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        const formData = new FormData();
-        formData.append('agencyName', formState.agencyName);
-        formData.append('email', formState.email);
-        formData.append('phone', formState.phone);
-        formData.append('propertyType', formState.propertyType);
-        formData.append('message', formState.message);
-        formData.append('_subject', `New Agency Collaboration: ${formState.agencyName}`);
-        formData.append('_template', 'table');
-        formData.append('_captcha', 'false');
-
-        if (formState.file) {
-            formData.append('attachment', formState.file);
-        }
-
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
-                method: "POST",
-                body: formData
-            });
-
-            if (response.ok) {
-                setSubmitted(true);
-            }
-        } catch (err) {
-            console.error(err);
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
 
     return (
         <div className="min-h-screen bg-midnight-950 pt-32 pb-20">
-            <SeoHead title={`${t('nav.agencies')} | Urbina Agency`} description="We collaborate with agencies that have singular assets. We bring the final investor." routeKey="agencies" />
+            <SeoHead title={`${t('nav.agencies')} | Urbina Agency`} description="We collaborate with agencies that have singular assets. Join the Global Alliance." routeKey="agencies" />
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -76,19 +28,34 @@ export default function Agencies() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-sans font-bold text-white mb-6"
                     >
-                        For Real Estate Agencies
+                        Global Alliance for Agencies
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-xl text-gray-400 max-w-3xl mx-auto"
+                        className="text-xl text-gray-400 max-w-3xl mx-auto mb-8"
                     >
-                        We collaborate with agencies that have singular assets. We bring the final investor.
+                        Join the world's largest network of independent agencies. We centralize the demand from large capital investors.
                     </motion.p>
+
+                    {/* User Access Button placeholder */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.25 }}
+                        className="flex justify-center"
+                    >
+                        <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-gold-500/50 text-gold-400 px-8 py-3 rounded-full font-medium transition-all backdrop-blur-sm group">
+                            <Lock size={18} />
+                            Partner Access (Agencies & Investors)
+                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </button>
+                    </motion.div>
+                    <p className="text-xs text-gray-500 mt-3">* Access restricted. Requires manual activation after contract signature.</p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Value Props */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -96,139 +63,55 @@ export default function Agencies() {
                         transition={{ delay: 0.3 }}
                         className="space-y-12"
                     >
-                        <div className="flex gap-6">
-                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold-900/20 border border-gold-500/20 flex items-center justify-center">
-                                <Users className="text-gold-500" />
+                        <div className="prose prose-invert max-w-none">
+                            <h3 className="text-2xl font-serif text-gold-500 mb-4">Collaboration Model</h3>
+                            <p className="text-gray-300 text-lg leading-relaxed">
+                                We are not a portal, we are an **Alliance**. We sign a collaboration agreement that protects your mandate and guarantees a fair commission split (50/50) on every closed deal.
+                            </p>
+                            <p className="text-gray-300 text-lg leading-relaxed mt-4">
+                                Once the contract is signed, you will be granted access to our private platform where you can:
+                            </p>
+                            <ul className="list-disc pl-5 mt-4 space-y-2 text-gray-400">
+                                <li>Upload your exclusive portfolio visible only to verified investors.</li>
+                                <li>Receive automated requests from investors matching your assets.</li>
+                                <li>Access our "Wanted" list of assets requested by Large Capital.</li>
+                            </ul>
+                        </div>
+
+                        <div className="grid gap-6">
+                            <div className="flex gap-4 p-4 bg-midnight-900/50 rounded-xl border border-white/5">
+                                <Users className="text-gold-500 flex-shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="font-bold text-white">Verified Demand</h4>
+                                    <p className="text-gray-400 text-sm">We provide you with buyers who have already passed Proof of Funds (POF).</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-2">High-Level Investors</h3>
-                                <p className="text-gray-400">We work with Family Offices and investment funds that don't waste time. If the asset fits, we close the deal.</p>
+                            <div className="flex gap-4 p-4 bg-midnight-900/50 rounded-xl border border-white/5">
+                                <Building2 className="text-gold-500 flex-shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="font-bold text-white">Global Exposure</h4>
+                                    <p className="text-gray-400 text-sm">Your local assets will travel directly to desks in Dubai, New York, and London.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="flex gap-6">
-                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold-900/20 border border-gold-500/20 flex items-center justify-center">
-                                <PieChart className="text-gold-500" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-2">50% Commission Split</h3>
-                                <p className="text-gray-400">We believe in fair play and long-term relationships. We split fees 50/50 on all jointly closed operations.</p>
-                            </div>
-                        </div>
-
-                        <div className="flex gap-6">
-                            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold-900/20 border border-gold-500/20 flex items-center justify-center">
-                                <Building2 className="text-gold-500" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-2">Off-Market & Discretion</h3>
-                                <p className="text-gray-400">We protect your mandate. Your properties will not be published on portals, only presented to qualified buyers.</p>
-                            </div>
-                        </div>
                     </motion.div>
 
-                    {/* Agency Form */}
+                    {/* New Agency Form */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4 }}
                     >
-                        {submitted ? (
-                            <div className="bg-midnight-800 border border-gold-500/30 rounded-2xl p-12 text-center">
-                                <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                                <h3 className="text-2xl font-sans text-white mb-4">Proposal Sent</h3>
-                                <p className="text-gray-400 mb-8">Our acquisitions team will review your proposal and contact you if it fits our investors' criteria.</p>
-                                <button onClick={() => setSubmitted(false)} className="text-gold-400 hover:text-white transition-colors">Send another property</button>
+                        <div className="bg-midnight-800/80 backdrop-blur-md rounded-2xl border border-gold-500/20 p-1">
+                            <div className="bg-midnight-950/50 rounded-xl p-6 md:p-8">
+                                <div className="mb-6">
+                                    <h3 className="text-xl font-bold text-white">Request Alliance Access</h3>
+                                    <p className="text-gray-400 text-sm mt-1">Fill out the profile to receive the collaboration contract.</p>
+                                </div>
+                                <AgencyContactForm />
                             </div>
-                        ) : (
-                            <form onSubmit={handleSubmit} className="bg-midnight-800/50 backdrop-blur-md p-8 rounded-2xl border border-white/5 space-y-6">
-                                <h3 className="text-2xl font-sans text-white mb-6">Share Property / Mandate</h3>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-2">Agency / Agent</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            value={formState.agencyName}
-                                            onChange={e => setFormState({ ...formState, agencyName: e.target.value })}
-                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 outline-none"
-                                            placeholder="Agency Name"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
-                                        <input
-                                            type="tel"
-                                            required
-                                            value={formState.phone}
-                                            onChange={e => setFormState({ ...formState, phone: e.target.value })}
-                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 outline-none"
-                                            placeholder="+1..."
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Professional Email</label>
-                                    <input
-                                        type="email"
-                                        required
-                                        value={formState.email}
-                                        onChange={e => setFormState({ ...formState, email: e.target.value })}
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 outline-none"
-                                        placeholder="agent@company.com"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Property Type</label>
-                                    <input
-                                        type="text"
-                                        required
-                                        value={formState.propertyType}
-                                        onChange={e => setFormState({ ...formState, propertyType: e.target.value })}
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 outline-none"
-                                        placeholder="E.g., 4* Hotel in Ibiza, Land in Miami..."
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Dossier / Teaser (PDF)</label>
-                                    <div className="relative border-2 border-dashed border-white/10 rounded-lg p-6 hover:bg-midnight-900 transition-colors text-center cursor-pointer">
-                                        <input type="file" onChange={handleFileChange} className="absolute inset-0 opacity-0 cursor-pointer" accept=".pdf,.doc,.docx" />
-                                        {formState.file ? (
-                                            <span className="text-gold-400 flex items-center justify-center gap-2"><CheckCircle size={16} /> {formState.file.name}</span>
-                                        ) : (
-                                            <span className="text-gray-500 flex items-center justify-center gap-2"><Upload size={16} /> Attach file (Optional)</span>
-                                        )}
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Message / Key Details</label>
-                                    <textarea
-                                        rows={3}
-                                        value={formState.message}
-                                        onChange={e => setFormState({ ...formState, message: e.target.value })}
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 outline-none"
-                                        placeholder="Briefly describe the opportunity..."
-                                    ></textarea>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full bg-gold-600 hover:bg-gold-500 text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2"
-                                >
-                                    {isSubmitting ? (
-                                        <>Processing...</>
-                                    ) : (
-                                        <>Send Proposal <Send size={18} /></>
-                                    )}
-                                </button>
-                            </form>
-                        )}
+                        </div>
                     </motion.div>
                 </div>
             </div>

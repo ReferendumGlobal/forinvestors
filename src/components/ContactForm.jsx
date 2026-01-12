@@ -8,6 +8,7 @@ export default function ContactForm({ categoryName, explanation }) {
         email: '',
         phone: '',
         funds: '',
+        targetLocation: '',
         message: '',
         file: null
     });
@@ -52,6 +53,7 @@ export default function ContactForm({ categoryName, explanation }) {
         formData.append('email', formState.email);
         formData.append('phone', formState.phone);
         formData.append('funds', formState.funds);
+        formData.append('targetLocation', formState.targetLocation);
         formData.append('message', formState.message);
         formData.append('category', categoryName);
         formData.append('_subject', `Nueva solicitud de inversión: ${categoryName}`);
@@ -127,8 +129,6 @@ export default function ContactForm({ categoryName, explanation }) {
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">
             <input type="hidden" name="_captcha" value="false" />
 
-            <input type="hidden" name="_captcha" value="false" />
-
             {explanation && (
                 <div className="bg-gold-500/10 border border-gold-500/30 rounded-lg p-4 mb-6">
                     <p className="text-gold-400 text-sm">{explanation}</p>
@@ -182,6 +182,17 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
                 </div>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gray-400 mb-2">¿Dónde quieres invertir?</label>
+                <input
+                    type="text"
+                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                    placeholder="Ej: Madrid, Marbella, París..."
+                    value={formState.targetLocation}
+                    onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
+                />
             </div>
 
             <div>

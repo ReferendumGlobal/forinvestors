@@ -2,20 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function ContactForm({ categoryName, explanation }) {
+export default function AgencyContactForm() {
     const [formState, setFormState] = useState({
-        name: '',
+        contactPerson: '',
         email: '',
         phone: '',
-        funds: '',
-        targetLocation: '',
+        city: '',
+        country: '',
+        propertiesCount: '',
+        priceRangeFrom: '',
+        priceRangeTo: '',
+        propertyTypes: [],
         message: '',
         file: null
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(null);
-    const [loadingText, setLoadingText] = useState('Initiating secure transmission...');
+    const [loadingText, setLoadingText] = useState('Iniciando transmisión segura...');
+
+    const propertyTypeOptions = [
+        "Hoteles",
+        "Suelo para construir",
+        "Fincas",
+        "Bodegas",
+        "Explotaciones Agrícolas",
+        "Ganaderas",
+        "Edificios",
+        "Propiedades de Lujo"
+    ];
 
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
@@ -23,13 +38,21 @@ export default function ContactForm({ categoryName, explanation }) {
         }
     };
 
+    const handleCheckboxChange = (type) => {
+        if (formState.propertyTypes.includes(type)) {
+            setFormState({ ...formState, propertyTypes: formState.propertyTypes.filter(t => t !== type) });
+        } else {
+            setFormState({ ...formState, propertyTypes: [...formState.propertyTypes, type] });
+        }
+    };
+
     useEffect(() => {
         if (isSubmitting) {
             const messages = [
-                "Encrypting documents...",
-                "Uploading Proof of Funds to secure server...",
-                "Verifying submission integrity...",
-                "Finalizing transmission..."
+                "Encriptando documentos...",
+                "Subiendo Cartera a servidor seguro...",
+                "Verificando integridad del envío...",
+                "Finalizando transmisión..."
             ];
             let i = 0;
             setLoadingText(messages[0]);
@@ -49,14 +72,15 @@ export default function ContactForm({ categoryName, explanation }) {
         setError(null);
 
         const formData = new FormData();
-        formData.append('name', formState.name);
+        formData.append('contactPerson', formState.contactPerson);
         formData.append('email', formState.email);
         formData.append('phone', formState.phone);
-        formData.append('funds', formState.funds);
-        formData.append('targetLocation', formState.targetLocation);
+        formData.append('location', `${formState.city}, ${formState.country}`);
+        formData.append('propertiesCount', formState.propertiesCount);
+        formData.append('priceRange', `${formState.priceRangeFrom} - ${formState.priceRangeTo}`);
+        formData.append('propertyTypes', formState.propertyTypes.join(', '));
         formData.append('message', formState.message);
-        formData.append('category', categoryName);
-        formData.append('_subject', `New Investment Request: ${categoryName}`);
+        formData.append('_subject', `Nueva Solicitud de AGENCIA: ${formState.city}`);
         formData.append('_template', 'table');
         formData.append('_captcha', 'false');
 
@@ -73,7 +97,6 @@ export default function ContactForm({ categoryName, explanation }) {
                 body: formData
             });
 
-            // Try to parse JSON but don't fail if it's not JSON
             let result = {};
             const text = await response.text();
             try {
@@ -85,19 +108,24 @@ export default function ContactForm({ categoryName, explanation }) {
             if (response.ok) {
                 setSubmitted(true);
                 setFormState({
-                    name: '',
+                    contactPerson: '',
                     email: '',
                     phone: '',
-                    funds: '',
+                    city: '',
+                    country: '',
+                    propertiesCount: '',
+                    priceRangeFrom: '',
+                    priceRangeTo: '',
+                    propertyTypes: [],
                     message: '',
                     file: null
                 });
             } else {
-                setError(result.message || "There was an error submitting the form. Please try again.");
+                setError(result.message || "Hubo un error al enviar el formulario. Inténtelo de nuevo.");
             }
         } catch (err) {
             console.error("Error submitting form:", err);
-            setError("Connection error. Please check your internet and try again.");
+            setError("Error de conexión. Compruebe su internet e inténtelo de nuevo.");
         } finally {
             setIsSubmitting(false);
         }
@@ -113,13 +141,13 @@ export default function ContactForm({ categoryName, explanation }) {
                 <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="text-gold-500" size={32} />
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-2">Request Sent</h3>
-                <p className="text-gray-400">Thank you for contacting us. We have received your proof of funds and will analyze your profile shortly.</p>
+                <h3 className="text-2xl font-serif text-white mb-2">Solicitud de Colaboración Enviada</h3>
+                <p className="text-gray-400">Hemos recibido su solicitud. Nuestro equipo legal le enviará el contrato de colaboración para activar su acceso.</p>
                 <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
                 >
-                    Send another request
+                    Enviar otra solicitud
                 </button>
             </motion.div>
         );
@@ -129,31 +157,23 @@ export default function ContactForm({ categoryName, explanation }) {
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">
             <input type="hidden" name="_captcha" value="false" />
 
-            {explanation && (
-                <div className="bg-gold-500/10 border border-gold-500/30 rounded-lg p-4 mb-6">
-                    <p className="text-gold-400 text-sm">{explanation}</p>
-                </div>
-            )}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Persona de Contacto</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="John Doe"
-                        value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                        value={formState.contactPerson}
+                        onChange={(e) => setFormState({ ...formState, contactPerson: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Professional Email</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Email Profesional</label>
                     <input
                         type="email"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="john@company.com"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
@@ -162,42 +182,90 @@ export default function ContactForm({ categoryName, explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Teléfono</label>
                     <input
                         type="tel"
+                        required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="+34 633..."
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Capital to Invest (€)</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Nº Propiedades en Exclusiva</label>
+                    <input
+                        type="number"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.propertiesCount}
+                        onChange={(e) => setFormState({ ...formState, propertiesCount: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Ciudad</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="Ex: 5,000,000"
-                        value={formState.funds}
-                        onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
+                        value={formState.city}
+                        onChange={(e) => setFormState({ ...formState, city: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">País</label>
+                    <input
+                        type="text"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.country}
+                        onChange={(e) => setFormState({ ...formState, country: e.target.value })}
                     />
                 </div>
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Where do you want to invest?</label>
-                <input
-                    type="text"
-                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Ex: Madrid, Marbella, London..."
-                    value={formState.targetLocation}
-                    onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
-                />
+                <label className="block text-sm font-medium text-gray-400 mb-2">Rango de Precios (€)</label>
+                <div className="grid grid-cols-2 gap-4">
+                    <input
+                        type="text"
+                        placeholder="Desde"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.priceRangeFrom}
+                        onChange={(e) => setFormState({ ...formState, priceRangeFrom: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Hasta"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.priceRangeTo}
+                        onChange={(e) => setFormState({ ...formState, priceRangeTo: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gray-400 mb-2">Tipos de Propiedad en Cartera</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {propertyTypeOptions.map((type) => (
+                        <label key={type} className="flex items-center space-x-2 bg-midnight-900/50 p-3 rounded-lg border border-white/5 cursor-pointer hover:border-gold-500/30 transition-colors">
+                            <input
+                                type="checkbox"
+                                checked={formState.propertyTypes.includes(type)}
+                                onChange={() => handleCheckboxChange(type)}
+                                className="form-checkbox h-4 w-4 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                            />
+                            <span className="text-sm text-gray-300">{type}</span>
+                        </label>
+                    ))}
+                </div>
             </div>
 
             <div>
                 <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                    Proof of Funds (POF) Document <AlertCircle size={14} />
+                    Dossier Corporativo / Ejemplo de Cartera <AlertCircle size={14} />
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
                     <input
@@ -211,38 +279,21 @@ export default function ContactForm({ categoryName, explanation }) {
                             <div className="flex flex-col items-center">
                                 <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
                                 <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
-                                <p className="text-xs text-gray-500">File uploaded successfully</p>
+                                <p className="text-xs text-gray-500">Archivo listo</p>
                             </div>
                         ) : (
                             <>
                                 <Upload className="mx-auto h-12 w-12 text-gray-400 group-hover:text-gold-400 transition-colors" />
                                 <div className="flex text-sm text-gray-400 justify-center">
-                                    <span className="font-medium text-gold-400">Upload a file</span>
-                                    <p className="pl-1">or drag and drop</p>
+                                    <span className="font-medium text-gold-400">Subir archivo</span>
+                                    <p className="pl-1">o arrastrar</p>
                                 </div>
-                                <p className="text-xs text-gray-500">PDF, PNG, JPG up to 10MB</p>
+                                <p className="text-xs text-gray-500">PDF, hasta 10MB</p>
                             </>
                         )}
                     </div>
                 </div>
             </div>
-
-            <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Additional Message</label>
-                <textarea
-                    rows={4}
-                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Interested in properties in..."
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                />
-            </div>
-
-            {error && (
-                <div className="p-4 bg-red-900/20 border border-red-500/50 rounded-lg text-red-200 text-sm">
-                    {error}
-                </div>
-            )}
 
             <button
                 type="submit"
@@ -253,16 +304,14 @@ export default function ContactForm({ categoryName, explanation }) {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-center">
                             <Loader2 className="mr-2 animate-spin" size={20} />
-                            <span>Processing...</span>
+                            <span>Procesando solicitud...</span>
                         </div>
                         <span className="text-xs font-normal mt-1 text-gold-100 opacity-90 animate-pulse">{loadingText}</span>
                     </div>
                 ) : (
-                    <>Send Request <Send size={18} className="ml-2" /></>
+                    <>Solicitar Colaboración <Send size={18} className="ml-2" /></>
                 )}
             </button>
-
-
         </form>
     );
 }
