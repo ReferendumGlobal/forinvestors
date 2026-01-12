@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Search, MapPin, ArrowRight, Building, CheckCircle } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search, MapPin, ArrowRight, Building, CheckCircle, Sparkles } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import ContactForm from './ContactForm';
@@ -11,14 +11,13 @@ function CountingLabel({ onComplete, labelAvailable }) {
     const [finished, setFinished] = useState(false);
 
     useEffect(() => {
-        const duration = 5000; // 5 seconds
-        const intervalTime = 30; // Update every 30ms for rapid effect
+        const duration = 2500; // Reduced to 2.5s for better UX
+        const intervalTime = 30;
         const steps = duration / intervalTime;
         let currentStep = 0;
 
         const timer = setInterval(() => {
             currentStep++;
-            // Random number between 1 and 99 for more variation
             setCount(Math.floor(Math.random() * 99) + 1);
 
             if (currentStep >= steps) {
@@ -32,7 +31,15 @@ function CountingLabel({ onComplete, labelAvailable }) {
     }, [onComplete]);
 
     if (finished) {
-        return <span className="text-xl text-gold-400 uppercase">{labelAvailable}</span>;
+        return (
+            <motion.span
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="text-xl text-gold-400 uppercase drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]"
+            >
+                {labelAvailable}
+            </motion.span>
+        );
     }
 
     return <span>{count}</span>;
@@ -45,11 +52,12 @@ export default function PropertySearch() {
     const [hasSearched, setHasSearched] = useState(false);
     const [searching, setSearching] = useState(false);
     const [showForm, setShowForm] = useState(false);
+    const [prizeWon, setPrizeWon] = useState(false);
+    const resultsRef = useRef(null);
 
     const [results, setResults] = useState([]);
 
-    // Cities where we show specific numbers (mock)
-    const TIER_1_CITIES = ['madrid', 'barcelona', 'paris', 'london', 'londres', 'dubai', 'new york', 'miami', 'marbella', 'ibiza', 'mallorca', 'milan', 'roma', 'berlin', 'munich'];
+    // SPANISH keys for parainversores.com (matches es.json)
     const CATEGORIES = ['hoteles', 'inversiones', 'terrenos', 'lujo', 'bodegas'];
 
     const handleSearch = (e) => {
@@ -57,6 +65,9 @@ export default function PropertySearch() {
         if (!location.trim()) return;
 
         setSearching(true);
+        setHasSearched(false);
+        setPrizeWon(false);
+
         // Simulate API call
         setTimeout(() => {
             // Show all categories
@@ -71,14 +82,13 @@ export default function PropertySearch() {
             setSearching(false);
             setHasSearched(true);
             setShowForm(false); // Reset form visibility on new search
-        }, 1500);
-    };
 
-    const handleRequest = () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
+            // Scroll to results
+            setTimeout(() => {
+                resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+
+        }, 1500);
     };
 
     return (
@@ -140,56 +150,91 @@ export default function PropertySearch() {
                 </motion.div>
 
                 {/* Results Section */}
-                {hasSearched && (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="max-w-4xl mx-auto bg-midnight-800/50 backdrop-blur-md border border-gold-500/30 rounded-2xl p-8 md:p-12 text-center"
-                    >
-                        <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <CheckCircle className="text-green-500 w-8 h-8" />
-                        </div>
-
-                        <h3 className="text-3xl font-serif text-white mb-4">
-                            {t('search.results_found')} <span className="text-gold-400">{location}</span>
-                        </h3>
-
-                        <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-                            {t('search.cta_text')}
-                        </p>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left">
-                            {results.map((item) => (
-                                <div key={item.id} className="bg-midnight-950 p-6 rounded-xl border border-white/5">
-                                    <Building className="text-gold-500 mb-3 w-6 h-6" />
-                                    <div className="text-2xl font-bold text-white mb-1">
-                                        <CountingLabel labelAvailable={t('search.available_multiple')} />
-                                    </div>
-                                    <div className="text-sm text-gray-400 leading-tight">
-                                        {t(`nav.${item.id}`)}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {!showForm ? (
-                            <button
-                                onClick={() => setShowForm(true)}
-                                className="inline-flex items-center gap-2 bg-transparent border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-midnight-950 font-bold py-4 px-12 rounded-lg transition-all duration-300 text-lg uppercase tracking-wider"
-                            >
-                                {t('search.cta_button')} <ArrowRight className="w-5 h-5" />
-                            </button>
-                        ) : (
+                <div ref={resultsRef}>
+                    <AnimatePresence>
+                        {hasSearched && (
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="mt-8 text-left max-w-2xl mx-auto"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                className="max-w-4xl mx-auto bg-midnight-800/50 backdrop-blur-md border border-gold-500/30 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
                             >
-                                <ContactForm categoryName={`Búsqueda Off-Market: ${location}`} />
+                                {/* Prize Effect Background */}
+                                {prizeWon && (
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        className="absolute inset-0 bg-gold-500/5 z-0"
+                                    />
+                                )}
+
+                                <div className="relative z-10 w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                    <CheckCircle className="text-green-500 w-8 h-8" />
+                                </div>
+
+                                <div className="relative z-10">
+                                    <h3 className="text-3xl font-serif text-white mb-4">
+                                        {t('search.results_found')} <span className="text-gold-400">{location}</span>
+                                    </h3>
+
+                                    <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+                                        {t('search.cta_text')}
+                                    </p>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left">
+                                        {results.map((item, index) => (
+                                            <motion.div
+                                                key={item.id}
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: index * 0.1 }}
+                                                className={`p-6 rounded-xl border transition-colors ${prizeWon ? 'bg-midnight-900 border-gold-500/50 shadow-[0_0_15px_rgba(234,179,8,0.15)]' : 'bg-midnight-950 border-white/5'}`}
+                                            >
+                                                <Building className={`mb-3 w-6 h-6 ${prizeWon ? 'text-gold-400' : 'text-gold-500'}`} />
+                                                <div className="text-2xl font-bold text-white mb-1 h-8 flex items-center">
+                                                    <CountingLabel
+                                                        labelAvailable={t('search.available_multiple')}
+                                                        onComplete={() => index === results.length - 1 && setPrizeWon(true)}
+                                                    />
+                                                </div>
+                                                <div className="text-sm text-gray-400 leading-tight">
+                                                    {t(`nav.${item.id}`)}
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+
+                                    {!showForm ? (
+                                        <button
+                                            onClick={() => setShowForm(true)}
+                                            className="inline-flex items-center gap-2 bg-transparent border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-midnight-950 font-bold py-4 px-12 rounded-lg transition-all duration-300 text-lg uppercase tracking-wider relative overflow-hidden group"
+                                        >
+                                            <span className="relative z-10 flex items-center gap-2">
+                                                {t('search.cta_button')} <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                            </span>
+                                            {prizeWon && (
+                                                <motion.div
+                                                    initial={{ x: '-100%' }}
+                                                    animate={{ x: '100%' }}
+                                                    transition={{ repeat: Infinity, duration: 1.5, repeatDelay: 3 }}
+                                                    className="absolute inset-0 bg-white/20 skew-x-12"
+                                                />
+                                            )}
+                                        </button>
+                                    ) : (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="mt-8 text-left max-w-2xl mx-auto"
+                                        >
+                                            <ContactForm categoryName={`Búsqueda Off-Market: ${location}`} />
+                                        </motion.div>
+                                    )}
+                                </div>
                             </motion.div>
                         )}
-                    </motion.div>
-                )}
+                    </AnimatePresence>
+                </div>
             </div>
         </div>
     );

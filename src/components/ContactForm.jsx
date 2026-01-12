@@ -71,7 +71,14 @@ export default function ContactForm({ categoryName }) {
                 body: formData
             });
 
-            const result = await response.json();
+            // Try to parse JSON but don't fail if it's not JSON (e.g. if email was sent but response is weird)
+            let result = {};
+            const text = await response.text();
+            try {
+                result = JSON.parse(text);
+            } catch (e) {
+                console.warn("Non-JSON response:", text);
+            }
 
             if (response.ok) {
                 setSubmitted(true);
