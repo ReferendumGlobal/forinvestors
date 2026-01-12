@@ -1,8 +1,8 @@
 import { Hotel, LandPlot, Building2, Star, Grape, TrendingUp } from 'lucide-react';
 
 export const categories = {
-    inversiones: {
-        id: 'inversiones',
+    investments: {
+        id: 'investments',
         icon: TrendingUp,
         title: 'Inversiones Inmobiliarias',
         description: 'Gestión integral de carteras de inversión. Detectamos oportunidades de alto rendimiento en el mercado inmobiliario global.',
@@ -17,8 +17,8 @@ export const categories = {
             'Gestión de activos (Asset Management) post-adquisición.'
         ]
     },
-    hoteles: {
-        id: 'hoteles',
+    hotels: {
+        id: 'hotels',
         icon: Hotel,
         title: 'Hoteles a la Venta',
         description: 'Selección exclusiva de activos hoteleros en las principales zonas turísticas de España, Europa y destinos mundiales.',
@@ -33,8 +33,8 @@ export const categories = {
             'Sale & Leaseback con operadores de primer nivel.'
         ]
     },
-    terrenos: {
-        id: 'terrenos',
+    land: {
+        id: 'land',
         icon: LandPlot,
         title: 'Terrenos a la Venta',
         description: 'Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.',
@@ -49,8 +49,8 @@ export const categories = {
             'Gestión urbanística y juntas de compensación.'
         ]
     },
-    lujo: {
-        id: 'lujo',
+    luxury: {
+        id: 'luxury',
         icon: Star,
         title: 'Propiedades de Lujo a la Venta',
         description: 'Villas singulares y áticos en ubicaciones prime. El máximo exponente de la exclusividad residencial.',
@@ -65,8 +65,8 @@ export const categories = {
             'Servicios de conserjería y gestión de estilo de vida.'
         ]
     },
-    bodegas: {
-        id: 'bodegas',
+    wineries: {
+        id: 'wineries',
         icon: Grape,
         title: 'Bodegas a la Venta',
         description: 'Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.',

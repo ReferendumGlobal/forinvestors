@@ -63,7 +63,7 @@ function CategoryPage({ categoryId }) {
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <div className="px-8 py-4 bg-gold-600/10 border border-gold-500/30 rounded-xl backdrop-blur-md">
               <span className="block text-sm text-gold-400 uppercase tracking-widest mb-1">
-                {t('categories.inversiones.title') === 'Inversiones Inmobiliarias' ? 'Inversión Desde' : 'Investment From'}
+                {t('categories.investments.title') === 'Inversiones Inmobiliarias' ? 'Inversión Desde' : 'Investment From'}
               </span>
               <span className="text-2xl md:text-3xl font-serif text-white">{t(`categories.${categoryId}.priceRange`)}</span>
             </div>
@@ -93,7 +93,7 @@ function CategoryPage({ categoryId }) {
           <div className="bg-midnight-900/50 p-8 rounded-2xl border border-white/5">
             <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
               <ShieldCheck className="text-gold-500" />
-              {t('categories.inversiones.title') === 'Inversiones Inmobiliarias' ? 'Características Clave' : 'Key Features'}
+              {t('categories.investments.title') === 'Inversiones Inmobiliarias' ? 'Características Clave' : 'Key Features'}
             </h4>
             <ul className="space-y-4">
               {Array.isArray(features) && features.map((feature, idx) => (
@@ -112,7 +112,7 @@ function CategoryPage({ categoryId }) {
                   ))}
                 </div>
                 <button className="text-sm text-gold-400 hover:text-white transition-colors font-medium">
-                  {t('categories.inversiones.title') === 'Inversiones Inmobiliarias' ? 'Contactar Agente' : 'Contact Agent'} →
+                  {t('categories.investments.title') === 'Inversiones Inmobiliarias' ? 'Contactar Agente' : 'Contact Agent'} →
                 </button>
               </div>
             </div>
@@ -185,11 +185,11 @@ function App() {
         <Routes>
           <Route path="/:lang" element={<LanguageWrapper />}>
             <Route index element={<Home />} />
-            <Route path="inversiones" element={<CategoryPage categoryId="inversiones" />} />
-            <Route path="hoteles" element={<CategoryPage categoryId="hoteles" />} />
-            <Route path="terrenos" element={<CategoryPage categoryId="terrenos" />} />
-            <Route path="lujo" element={<CategoryPage categoryId="lujo" />} />
-            <Route path="bodegas" element={<CategoryPage categoryId="bodegas" />} />
+            <Route path="inversiones" element={<CategoryPage categoryId="investments" />} />
+            <Route path="hoteles" element={<CategoryPage categoryId="hotels" />} />
+            <Route path="terrenos" element={<CategoryPage categoryId="land" />} />
+            <Route path="lujo" element={<CategoryPage categoryId="luxury" />} />
+            <Route path="bodegas" element={<CategoryPage categoryId="wineries" />} />
             <Route path="blog" element={<Blog />} />
             <Route path="agencias" element={<Agencies />} />
             <Route path="search" element={<PropertySearch />} />

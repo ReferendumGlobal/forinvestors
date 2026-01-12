@@ -201,7 +201,7 @@ export default function PropertySearch() {
                                                     />
                                                 </div>
                                                 <div className="text-sm text-gray-400 leading-tight">
-                                                    {t(`nav.${item.id}`)}
+                                                    {t(`categories.${item.id}.shortTitle`)}
                                                 </div>
                                             </motion.div>
                                         ))}
@@ -230,7 +230,10 @@ export default function PropertySearch() {
                                             animate={{ opacity: 1, y: 0 }}
                                             className="mt-8 text-left max-w-2xl mx-auto"
                                         >
-                                            <ContactForm categoryName={`Búsqueda Off-Market: ${location}`} />
+                                            <ContactForm
+                                                categoryName={`Off-Market Search: ${location}`}
+                                                explanation={t('contact_global.explanation')}
+                                            />
                                         </motion.div>
                                     )}
                                 </div>

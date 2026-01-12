@@ -51,6 +51,7 @@
     "categories": {
         "investments": {
             "title": "Investissements Immobiliers",
+            "shortTitle": "Investissements Immobiliers",
             "description": "Gestion complète de portefeuille d'investissement. Nous détectons des opportunités à haut rendement sur le marché immobilier mondial.",
             "longDescription": "Notre division Investissements Immobiliers ne se contente pas de chercher des actifs, elle conçoit des stratégies de capital. Nous analysons les tendances du marché, les cycles économiques et les opportunités de valorisation pour offrir des produits adaptés au profil de risque et de rendement des investisseurs institutionnels et des family offices.",
             "priceRange": "De 1M€ à 500M€",
@@ -64,6 +65,7 @@
         },
         "hotels": {
             "title": "Hôtels à Vendre",
+            "shortTitle": "Hôtels à Vendre",
             "description": "Sélection exclusive d'actifs hôteliers dans les principales zones touristiques d'Espagne, d'Europe et de destinations mondiales.",
             "longDescription": "Le secteur hôtelier est le joyau de notre couronne. Nous avons un accès direct aux propriétaires de chaînes hôtelières, d'hôtels-boutiques indépendants et de complexes de luxe opérant « off-market ». Nous recherchons des actifs avec un potentiel de repositionnement, des contrats de gestion flexibles ou des rendements stabilisés dans des emplacements irremplaçables.",
             "priceRange": "De 1M€ à 150M€",
@@ -77,6 +79,7 @@
         },
         "land": {
             "title": "Terrains à Vendre",
+            "shortTitle": "Terrains à Vendre",
             "description": "Terrains finalistes, constructibles et rustiques dans des emplacements stratégiques pour de grands développements.",
             "longDescription": "La base de tout grand projet est la terre. Notre portefeuille foncier comprend des parcelles finalistes prêtes pour la demande de permis (Ready-to-build), des développements urbains à moyen terme et de grandes étendues de terres rustiques pour des projets d'énergie renouvelable ou à usage agricole. Nous vérifions rigoureusement le statut urbanistique de chaque mètre carré.",
             "priceRange": "De 1M€ à 150M€",
@@ -90,6 +93,7 @@
         },
         "luxury": {
             "title": "Propriétés de Luxe à Vendre",
+            "shortTitle": "Propriétés de Luxe à Vendre",
             "description": "Villas uniques et penthouses dans des emplacements privilégiés. L'expression ultime de l'exclusivité résidentielle.",
             "longDescription": "Nous comprenons le luxe non seulement comme un prix, mais comme une expérience de vie. Notre sélection « Propriétés de Luxe » comprend les résidences les plus exclusives du marché : villas à La Zagaleta, penthouses dans le quartier de Salamanca ou manoirs historiques sur la Côte d'Azur. Intimité, sécurité et design architectural sans compromis.",
             "priceRange": "De 1M€ à 150M€",
@@ -103,6 +107,7 @@
         },
         "wineries": {
             "title": "Vignobles à Vendre",
+            "shortTitle": "Vignobles à Vendre",
             "description": "Investissements dans le secteur viticole : domaines avec D.O., vignobles et centres de production.",
             "longDescription": "Investir dans un domaine viticole, c'est investir dans la culture, l'histoire et la terre. Nous offrons des opportunités dans les régions viticoles les plus prestigieuses (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Des domaines familiaux avec une marque consolidée aux grands centres de production en vrac, nous analysons la capacité de production et la valeur de la marque.",
             "priceRange": "De 1M€ à 150M€",
@@ -134,5 +139,10 @@
             "question": "Facturez-vous des honoraires à l'acheteur ou au vendeur ?",
             "answer": "Cela dépend du mandat. Dans les opérations directes off-market, nos honoraires sont généralement inclus dans le prix de vente ou convenus via un mandat d'achat (buy-side mandate)."
         }
-    ]
+    ],
+    "contact_global": {
+        "title": "Demande d'Accès & POF",
+        "subtitle": "Remplissez le formulaire et joignez votre POF pour recevoir des dossiers confidentiels.",
+        "explanation": "Pour protéger la confidentialité de nos vendeurs. Nous ne partageons des informations sensibles qu'avec des acheteurs vérifiés."
+    }
 }

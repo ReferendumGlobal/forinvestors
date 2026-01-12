@@ -55,11 +55,12 @@
         "available_multiple": "Available in Network"
     },
     "categories": {
-        "inversiones": {
+        "investments": {
             "title": "Real Estate Investments (+3,000 Assets)",
             "description": "The largest global investment portfolio. We detect high-yield opportunities in over 50 markets.",
             "longDescription": "As the world's largest investment association, we centralize the best opportunities from hundreds of local agencies. No matter where you seek profitability: we have the asset and the local partner to execute the operation with total legal and financial security.",
             "priceRange": "From €1M to €500M",
+            "shortTitle": "Real Estate Investments",
             "details": "Global Strategies: Core, Value-Add, and Opportunistic.",
             "features": [
                 "Access to assets in 50 countries with a single call.",
@@ -68,11 +69,12 @@
                 "Global scale post-acquisition Asset Management."
             ]
         },
-        "hoteles": {
+        "hotels": {
             "title": "Hotels for Sale (+500 Available)",
             "description": "The world's largest selection of hotels. Over 500 off-market assets in major global tourist hubs.",
             "longDescription": "No one has more hotels than us. By joining forces with local specialists in every tourist destination, we offer everything from boutique hotels in Paris to resorts in the Caribbean or Maldives. If you are looking to buy a hotel, we are your only necessary stop.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Hotels for Sale",
             "details": "Management, franchise, or pure purchase opportunities globally.",
             "features": [
                 "Portfolio of +500 hotels in Europe, Americas, and Asia.",
@@ -81,11 +83,12 @@
                 "Luxury resorts in emerging and consolidated destinations."
             ]
         },
-        "terrenos": {
+        "land": {
             "title": "Land for Sale (Global Portfolio)",
             "description": "Finalist and large-scale development land in strategic locations across 5 continents.",
             "longDescription": "For large developers, land is the raw material. Our global alliance allows us to offer finalist land in the world's fastest-growing markets, verified by local urban planning experts.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Land for Sale",
             "details": "Residential, logistics, and tertiary land worldwide.",
             "features": [
                 "Land banks in urban expansion zones.",
@@ -94,11 +97,12 @@
                 "Comprehensive urban management in any jurisdiction."
             ]
         },
-        "lujo": {
+        "luxury": {
             "title": "Luxury Properties (+1,000 Villas)",
             "description": "The most exclusive collection of Prime villas and penthouses in the world's most desired cities.",
             "longDescription": "From Monaco to Miami, Dubai to Marbella. We have gathered the most exclusive properties from the world's best luxury agencies into a single portfolio. Access what no one else sees.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Luxury Properties",
             "details": "Global Ultra-Prime residential assets.",
             "features": [
                 "Designer villas in elite gated communities.",
@@ -107,11 +111,12 @@
                 "Global concierge service for the buyer."
             ]
         },
-        "bodegas": {
+        "wineries": {
             "title": "Wineries & Vineyards (World Selection)",
             "description": "Investments in the most prestigious terroirs: France, Spain, Italy, California, and New Worlds.",
             "longDescription": "Wine is a global asset. Our association includes agronomy and enology experts from the best wine regions. Buy a winery in Bordeaux or a vineyard in Mendoza with the assurance of the best local advice.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Wineries for Sale",
             "details": "Productive assets with international brand value.",
             "features": [
                 "Wineries in Premier Grand Cru regions.",

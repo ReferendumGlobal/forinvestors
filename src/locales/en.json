@@ -49,11 +49,12 @@
         "available_multiple": "Available"
     },
     "categories": {
-        "inversiones": {
+        "investments": {
             "title": "Real Estate Investments",
             "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
             "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
             "priceRange": "From €1M to €500M",
+            "shortTitle": "Real Estate Investments",
             "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
             "features": [
                 "Macroeconomic and local market analysis.",
@@ -62,11 +63,12 @@
                 "Post-acquisition Asset Management."
             ]
         },
-        "hoteles": {
+        "hotels": {
             "title": "Hotels for Sale",
             "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
             "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Hotels for Sale",
             "details": "Management, franchise, or pure purchase opportunities.",
             "features": [
                 "Urban hotels in European capitals (Madrid, Paris, London).",
@@ -75,11 +77,12 @@
                 "Sale & Leaseback with top-tier operators."
             ]
         },
-        "terrenos": {
+        "land": {
             "title": "Land for Sale",
             "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
             "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Land for Sale",
             "details": "Residential, logistics, commercial, and tertiary land.",
             "features": [
                 "Residential land for new developments.",
@@ -88,11 +91,12 @@
                 "Urban management and compensation boards."
             ]
         },
-        "lujo": {
+        "luxury": {
             "title": "Luxury Properties for Sale",
             "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
             "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Luxury Properties",
             "details": "Prime and Ultra-Prime residential assets.",
             "features": [
                 "Designer villas with 24h private security.",
@@ -101,11 +105,12 @@
                 "Concierge and lifestyle management services."
             ]
         },
-        "bodegas": {
+        "wineries": {
             "title": "Wineries for Sale",
             "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
             "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
             "priceRange": "From €1M to €150M",
+            "shortTitle": "Wineries for Sale",
             "details": "Productive assets with real estate and brand value.",
             "features": [
                 "Wineries with Qualified Designation of Origin.",
@@ -134,5 +139,9 @@
             "question": "Do you charge fees to the buyer or the seller?",
             "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
         }
-    ]
+    ],
+    "contact_global": {
+        "title": "Contact Us",
+        "explanation": "To check our exclusive portfolio or ask for a property search, we need to verify your investment profile. Please, fill the form with your professional details and attach a Proof of Funds (POF) if available."
+    }
 }
