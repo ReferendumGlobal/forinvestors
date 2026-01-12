@@ -74,6 +74,31 @@ export default function Home() {
                             <ChevronRight className="relative w-5 h-5 text-gold-500 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </motion.div>
+
+                    {/* Global Stats Grid */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.8, duration: 1 }}
+                        className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto border-t border-gold-500/20 pt-8"
+                    >
+                        <div className="text-center">
+                            <span className="block text-2xl md:text-3xl font-serif text-white mb-1">{t('stats.properties')}</span>
+                            <span className="text-xs text-gold-500 uppercase tracking-widest">Off-Market</span>
+                        </div>
+                        <div className="text-center">
+                            <span className="block text-2xl md:text-3xl font-serif text-white mb-1">{t('stats.countries')}</span>
+                            <span className="text-xs text-gold-500 uppercase tracking-widest">Global Reach</span>
+                        </div>
+                        <div className="text-center">
+                            <span className="block text-2xl md:text-3xl font-serif text-white mb-1">{t('stats.hotels')}</span>
+                            <span className="text-xs text-gold-500 uppercase tracking-widest">Inventory</span>
+                        </div>
+                        <div className="text-center">
+                            <span className="block text-2xl md:text-3xl font-serif text-white mb-1">{t('stats.partners')}</span>
+                            <span className="text-xs text-gold-500 uppercase tracking-widest">Network</span>
+                        </div>
+                    </motion.div>
                 </div>
 
                 <div className="absolute bottom-10 left-0 right-0 z-20 hidden md:flex justify-center animate-bounce">

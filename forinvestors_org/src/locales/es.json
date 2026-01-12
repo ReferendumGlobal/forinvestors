@@ -10,22 +10,28 @@
         "search": "Buscador de Propiedades"
     },
     "hero": {
-        "shield": "El Arte de la Discreción",
-        "subtitle": "Aquí encontrará todas las oportunidades que <strong>no aparecen en Idealista</strong> ni en portales inmobiliarios. Nuestros clientes nos entregan secretos valiosos en forma de inversiones, y nosotros les devolvemos negocios exitosos de alto nivel.",
-        "cta": "Acceder al Portafolio"
+        "shield": "La Mayor Asociación de Inversión Inmobiliaria Global",
+        "subtitle": "Gestionamos la mayor cartera conjunta del mundo para Gran Capital: <strong>+3.000 activos off-market</strong> y las mejores agencias de <strong>+50 países</strong> unidas en una sola alianza.",
+        "cta": "Acceder a la Cartera Global"
+    },
+    "stats": {
+        "properties": "+3.000 Propiedades",
+        "countries": "+50 Países",
+        "hotels": "+500 Hoteles",
+        "partners": "Alianza Global"
     },
     "legacy": {
-        "title": "Un Legado de Honor",
-        "text1": "La tradición de Urbina Agency no nace en los mercados, sino en el honor y el servicio. Nuestro ADN proviene de Francisco y Angelita Urbina, mis abuelos.",
-        "text2": "Y de mi bisabuelo, José María Urbina, alto cargo militar. De él aprendimos que la información más valiosa es la que se protege.",
-        "secrets_title": "Secretos Valiosos",
-        "secrets_text": "Tratamos cada intención de inversión como información clasificada de alto nivel.",
-        "success_title": "Éxito Desclasificado",
-        "success_text": "El único rastro que dejamos es el éxito."
+        "title": "La Alianza Más Poderosa",
+        "text1": "Urbina Agency no es solo una agencia, es el nexo de unión de la élite inmobiliaria mundial. Hemos creado la mayor red de colaboración para ofrecer al inversor lo que nadie más tiene: acceso total.",
+        "text2": "Centralizamos la oferta de las agencias top de 50 países. Si existe y es rentable, lo tenemos.",
+        "secrets_title": "Acceso Global",
+        "secrets_text": "Una sola puerta de entrada a miles de activos confidenciales en todo el planeta.",
+        "success_title": "Poder de Negociación",
+        "success_text": "Al representar el mayor volumen de capital, conseguimos las mejores condiciones."
     },
     "footer": {
         "title": "PARA INVERSORES",
-        "description": "Especialistas en la gestión de activos inmobiliarios de alto valor.",
+        "description": "La autoridad mundial en gestión de activos inmobiliarios de alto valor.",
         "contact_title": "Contacto Corporativo",
         "legal_title": "Legal",
         "terms": "Términos y Condiciones",
@@ -34,105 +40,110 @@
         "rights": "Todos los derechos reservados."
     },
     "seo": {
-        "title": "Para Inversores | Activos Inmobiliarios de Lujo en España y Europa",
-        "description": "Cartera exclusiva de hoteles, terrenos, bodegas y propiedades de lujo desde 1M€ hasta 150M€. Gestión experta de Urbina Agency LLC."
+        "title": "Para Inversores | Mayor Asociación de Inversión Inmobiliaria del Mundo",
+        "description": "Acceda a +3.000 activos off-market en 50 países. +500 Hoteles, Terrenos y Lujo. Solo para Gran Capital bajo estricta Prueba de Fondos (POF)."
     },
     "search": {
-        "title": "Buscador de Activos Off-Market",
-        "subtitle": "Acceda a la mayor base de datos de activos ocultos en España y Europa.",
+        "title": "Buscador Global de Activos",
+        "subtitle": "Rastree nuestra cartera conjunta de +3.000 oportunidades en 50 países.",
         "placeholder": "Introduzca ubicación (ej: Madrid, Ibiza, París...)",
-        "button": "Buscar Propiedades",
-        "results_found": "Hemos detectado activos off-market disponibles en",
-        "cta_text": "Por razones de confidencialidad, no publicamos detalles. Complete el formulario para recibir el dossier ciego.",
-        "cta_button": "Solicitar Dossier",
-        "no_results": "No hay resultados públicos. Contáctenos para una búsqueda personalizada.",
-        "available_multiple": "Disponible"
+        "button": "Buscar en la Red Global",
+        "results_found": "Hemos detectado oportunidades exclusivas en",
+        "cta_text": "Nuestros activos están protegidos. Complete el formulario y aporte su Prueba de Fondos (POF) para recibir ofertas confidenciales de esta zona en su email.",
+        "cta_button": "Solicitar Ofertas (Requiere POF)",
+        "no_results": "No hay resultados públicos. Contáctenos para activar nuestra red global.",
+        "available_multiple": "Disponible en Red"
     },
     "categories": {
         "inversiones": {
-            "title": "Inversiones Inmobiliarias",
-            "description": "Gestión integral de carteras de inversión. Detectamos oportunidades de alto rendimiento en el mercado inmobiliario global.",
-            "longDescription": "Nuestra división de Inversiones Inmobiliarias no solo busca activos, sino que diseña estrategias de capital. Analizamos tendencias de mercado, ciclos económicos y oportunidades de revalorización para ofrecer productos que encajen con el perfil de riesgo y retorno de inversores institucionales y family offices.",
+            "title": "Inversiones Inmobiliarias (+3.000 Activos)",
+            "description": "La mayor cartera de inversión global. Detectamos oportunidades de alto rendimiento en más de 50 mercados.",
+            "longDescription": "Como la mayor asociación de inversión del mundo, centralizamos las mejores oportunidades de cientos de agencias locales. No importa dónde busque rentabilidad: nosotros tenemos el activo y el socio local para ejecutar la operación con total seguridad jurídica y financiera.",
             "priceRange": "Desde 1M€ hasta 500M€",
-            "details": "Estrategias a medida: Core, Value-Add y Opportunistic.",
+            "details": "Estrategias Globales: Core, Value-Add y Opportunistic.",
             "features": [
-                "Análisis macroeconómico y de mercado local.",
-                "Due Diligence técnica, legal y financiera exhaustiva.",
-                "Estructuración de vehículos de inversión.",
-                "Gestión de activos (Asset Management) post-adquisición."
+                "Acceso a activos de 50 países en una sola llamada.",
+                "Due Diligence estandarizada de alto nivel.",
+                "Estructuración de vehículos de inversión transfronterizos.",
+                "Gestión de activos post-adquisición a escala global."
             ]
         },
         "hoteles": {
-            "title": "Hoteles a la Venta",
-            "description": "Selección exclusiva de activos hoteleros en las principales zonas turísticas de España, Europa y destinos mundiales.",
-            "longDescription": "El sector hotelero es la joya de nuestra corona. Disponemos de acceso directo a propietarios de cadenas hoteleras, hoteles boutique independientes y resorts de lujo que operan \"off-market\". Buscamos activos con potencial de reposicionamiento, contratos de gestión flexibles o rentabilidades estabilizadas en ubicaciones irreplicables.",
+            "title": "Hoteles en Venta (+500 Disponibles)",
+            "description": "La mayor selección de hoteles del mundo. Más de 500 activos off-market en las principales plazas turísticas globales.",
+            "longDescription": "Nadie tiene más hoteles que nosotros. Al unir fuerzas con especialistas locales en cada destino turístico, ofrecemos desde hoteles boutique en París hasta resorts en el Caribe o Maldivas. Si busca comprar un hotel, somos su única parada necesaria.",
             "priceRange": "Desde 1M€ hasta 150M€",
-            "details": "Oportunidades de gestión, franquicia o compra pura.",
+            "details": "Gestión, franquicia o compra pura a escala global.",
             "features": [
-                "Hoteles urbanos en capitales europeas (Madrid, París, Londres).",
-                "Resorts vacacionales en primera línea de playa (Baleares, Costa del Sol).",
-                "Edificios con licencia hotelera para reformar.",
-                "Sale & Leaseback con operadores de primer nivel."
+                "Cartera de +500 hoteles en Europa, América y Asia.",
+                "Acceso directo a cadenas hoteleras y family offices.",
+                "Oportunidades de Sale & Leaseback con operadores top.",
+                "Resorts de lujo en destinos emergentes y consolidados."
             ]
         },
         "terrenos": {
-            "title": "Terrenos a la Venta",
-            "description": "Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.",
-            "longDescription": "La base de cualquier gran proyecto es la tierra. Nuestra cartera de suelos incluye parcelas finalistas listas para solicitar licencia (Ready-to-build), desarrollos urbanísticos a medio plazo y grandes extensiones de suelo rústico para proyectos de energía renovable o uso agropecuario. Verificamos rigurosamente la situación urbanística de cada metro cuadrado.",
+            "title": "Terrenos en Venta (Cartera Global)",
+            "description": "Suelo finalista y grandes desarrollos en ubicaciones estratégicas de 5 continentes.",
+            "longDescription": "Para los grandes desarrolladores, el suelo es la materia prima. Nuestra alianza global nos permite ofrecer suelo finalista en los mercados de mayor crecimiento del mundo, verificados por expertos locales en urbanismo.",
             "priceRange": "Desde 1M€ hasta 150M€",
-            "details": "Suelo residencial, logístico, comercial y terciario.",
+            "details": "Suelo residencial, logístico y terciario internacional.",
             "features": [
-                "Suelo residencial para promociones de obra nueva.",
-                "Suelo logístico en nudos de comunicación estratégicos.",
-                "Suelo terciario para centros comerciales u oficinas.",
-                "Gestión urbanística y juntas de compensación."
+                "Bancos de suelo en zonas de expansión urbana.",
+                "Suelo logístico en los principales hubs de transporte mundial.",
+                "Desarrollos turísticos en primera línea de costa.",
+                "Gestión urbanística integral en cualquier jurisdicción."
             ]
         },
         "lujo": {
-            "title": "Propiedades de Lujo a la Venta",
-            "description": "Villas singulares y áticos en ubicaciones prime. El máximo exponente de la exclusividad residencial.",
-            "longDescription": "Entendemos el lujo no solo como un precio, sino como una experiencia de vida. Nuestra selección \"Propiedades de Lujo\" incluye las residencias más exclusivas del mercado: villas en La Zagaleta, áticos en el Barrio de Salamanca o mansiones históricas en la Costa Azul. Privacidad, seguridad y diseño arquitectónico sin compromisos.",
+            "title": "Propiedades de Lujo (+1.000 Villas)",
+            "description": "La colección más exclusiva de villas y áticos Prime en las ciudades más deseadas del mundo.",
+            "longDescription": "Desde Mónaco hasta Miami, pasando por Dubái y Marbella. Hemos reunido en una sola cartera las propiedades más exclusivas de las mejores agencias de lujo del mundo. Acceda a lo que nadie más ve.",
             "priceRange": "Desde 1M€ hasta 150M€",
-            "details": "Activos residenciales Prime y Ultra-Prime.",
+            "details": "Activos residenciales Ultra-Prime Globales.",
             "features": [
-                "Villas de autor con seguridad privada 24h.",
-                "Áticos con vistas panorámicas en centros financieros.",
-                "Fincas de recreo y palacetes históricos.",
-                "Servicios de conserjería y gestión de estilo de vida."
+                "Villas de autor en comunidades cerradas de élite.",
+                "Áticos trofeo en Nueva York, Londres y Singapur.",
+                "Fincas históricas y castillos en Europa.",
+                "Servicio de conserjería global para el comprador."
             ]
         },
         "bodegas": {
-            "title": "Bodegas a la Venta",
-            "description": "Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.",
-            "longDescription": "Invertir en una bodega es invertir en cultura, historia y tierra. Ofrecemos oportunidades en las regiones vinícolas más prestigiosas (Rioja, Ribera del Duero, Burdeos, Napa Valley). Desde bodegas familiares con marca consolidada hasta grandes centros de producción a granel, analizamos la capacidad productiva y el valor de marca.",
+            "title": "Bodegas y Viñedos (Selección Mundial)",
+            "description": "Inversiones en los terroirs más prestigiosos: Francia, España, Italia, California y nuevos mundos.",
+            "longDescription": "El vino es un activo global. Nuestra asociación incluye expertos en agronomía y enología de las mejores regiones vinícolas. Compre una bodega en Burdeos o un viñedo en Mendoza con la seguridad de tener el mejor asesoramiento local.",
             "priceRange": "Desde 1M€ hasta 150M€",
-            "details": "Activos productivos con valor inmobiliario y de marca.",
+            "details": "Activos productivos con valor de marca internacional.",
             "features": [
-                "Bodegas con Denominación de Origen Calificada.",
-                "Viñedos centenarios en plena producción.",
-                "Instalaciones de enoturismo y hoteles bodega.",
-                "Marcas de vino con distribución internacional."
+                "Bodegas en regiones Premier Grand Cru.",
+                "Viñedos de producción intensiva en el Nuevo Mundo.",
+                "Hoteles bodega y proyectos de enoturismo rentables.",
+                "Marcas con distribución lista para exportar."
             ]
         }
     },
     "faqs_title": "Preguntas Frecuentes",
-    "faqs_subtitle": "Todo lo que necesita saber antes de invertir con nosotros.",
+    "faqs_subtitle": "Todo lo que necesita saber antes de invertir con la Mayor Asociación Global.",
     "faqs": [
         {
-            "question": "¿Qué tipo de inversores pueden acceder a su cartera?",
-            "answer": "Trabajamos exclusivamente con inversores cualificados, Family Offices y fondos institucionales capaces de acreditar solvencia para operaciones desde 1M€."
+            "question": "¿Qué es esta Asociación Global?",
+            "answer": "Somos la unión de las mejores agencias boutique de inversión de más de 50 países. Hemos centralizado nuestras carteras para ofrecer al gran inversor un único punto de acceso a todo el mercado off-market mundial."
         },
         {
-            "question": "¿Por qué requieren una Prueba de Fondos (POF) antes de ver detalles?",
-            "answer": "Para proteger la confidencialidad de nuestros vendedores y activos off-market. Solo compartimos información sensible (ubicación exacta, métricas) con compradores verificados."
+            "question": "¿Por qué es OBLIGATORIA la Prueba de Fondos (POF)?",
+            "answer": "Manejamos información crítica de miles de millones de euros en activos. Para recibir el dossier y las ofertas por email, es imprescindible demostrar capacidad financiera. Sin POF, no hay información."
         },
         {
-            "question": "¿Gestionan la Golden Visa para inversores extracomunitarios?",
-            "answer": "Sí. Contamos con un departamento legal especializado en tramitar la residencia por inversión (Golden Visa) para clientes que adquieren activos superiores a 500.000€."
+            "question": "¿Cómo recibo las ofertas de inversión?",
+            "answer": "Una vez verificado su perfil y POF, nuestro sistema le enviará automáticamente las oportunidades que encajen con sus criterios en las zonas seleccionadas."
         },
         {
-            "question": "¿Cobran honorarios al comprador o al vendedor?",
-            "answer": "Depende del mandato. En operaciones off-market directas, nuestros honorarios suelen estar incluidos en el precio de venta o pactados mediante mandato de compra (buy-side mandate)."
+            "question": "¿Tengo que pagar comisiones a múltiples agencias?",
+            "answer": "No. Usted trata solo con nosotros como su interlocutor único. Nosotros gestionamos internamente los acuerdos con los socios locales."
         }
-    ]
+    ],
+    "contact_global": {
+        "title": "Solicitud de Acceso & POF",
+        "subtitle": "Complete el formulario y adjunte su POF para recibir los dossieres confidenciales.",
+        "explanation": "Para proteger la confidencialidad de nuestros vendedores. Solo compartimos información sensible con compradores verificados."
+    }
 }
