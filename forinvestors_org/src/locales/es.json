@@ -1,0 +1,138 @@
+{
+    "nav": {
+        "investments": "Inversiones Inmobiliarias",
+        "hotels": "Hoteles en Venta",
+        "land": "Terrenos en Venta",
+        "luxury": "Propiedades de Lujo",
+        "wineries": "Bodegas en Venta",
+        "blog": "Blog",
+        "agencies": "Para Agencias Inmobiliarias",
+        "search": "Buscador de Propiedades"
+    },
+    "hero": {
+        "shield": "El Arte de la Discreción",
+        "subtitle": "Aquí encontrará todas las oportunidades que <strong>no aparecen en Idealista</strong> ni en portales inmobiliarios. Nuestros clientes nos entregan secretos valiosos en forma de inversiones, y nosotros les devolvemos negocios exitosos de alto nivel.",
+        "cta": "Acceder al Portafolio"
+    },
+    "legacy": {
+        "title": "Un Legado de Honor",
+        "text1": "La tradición de Urbina Agency no nace en los mercados, sino en el honor y el servicio. Nuestro ADN proviene de Francisco y Angelita Urbina, mis abuelos.",
+        "text2": "Y de mi bisabuelo, José María Urbina, alto cargo militar. De él aprendimos que la información más valiosa es la que se protege.",
+        "secrets_title": "Secretos Valiosos",
+        "secrets_text": "Tratamos cada intención de inversión como información clasificada de alto nivel.",
+        "success_title": "Éxito Desclasificado",
+        "success_text": "El único rastro que dejamos es el éxito."
+    },
+    "footer": {
+        "title": "PARA INVERSORES",
+        "description": "Especialistas en la gestión de activos inmobiliarios de alto valor.",
+        "contact_title": "Contacto Corporativo",
+        "legal_title": "Legal",
+        "terms": "Términos y Condiciones",
+        "privacy": "Política de Privacidad",
+        "disclaimer": "Aviso Legal",
+        "rights": "Todos los derechos reservados."
+    },
+    "seo": {
+        "title": "Para Inversores | Activos Inmobiliarios de Lujo en España y Europa",
+        "description": "Cartera exclusiva de hoteles, terrenos, bodegas y propiedades de lujo desde 1M€ hasta 150M€. Gestión experta de Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Buscador de Activos Off-Market",
+        "subtitle": "Acceda a la mayor base de datos de activos ocultos en España y Europa.",
+        "placeholder": "Introduzca ubicación (ej: Madrid, Ibiza, París...)",
+        "button": "Buscar Propiedades",
+        "results_found": "Hemos detectado activos off-market disponibles en",
+        "cta_text": "Por razones de confidencialidad, no publicamos detalles. Complete el formulario para recibir el dossier ciego.",
+        "cta_button": "Solicitar Dossier",
+        "no_results": "No hay resultados públicos. Contáctenos para una búsqueda personalizada.",
+        "available_multiple": "Disponible"
+    },
+    "categories": {
+        "inversiones": {
+            "title": "Inversiones Inmobiliarias",
+            "description": "Gestión integral de carteras de inversión. Detectamos oportunidades de alto rendimiento en el mercado inmobiliario global.",
+            "longDescription": "Nuestra división de Inversiones Inmobiliarias no solo busca activos, sino que diseña estrategias de capital. Analizamos tendencias de mercado, ciclos económicos y oportunidades de revalorización para ofrecer productos que encajen con el perfil de riesgo y retorno de inversores institucionales y family offices.",
+            "priceRange": "Desde 1M€ hasta 500M€",
+            "details": "Estrategias a medida: Core, Value-Add y Opportunistic.",
+            "features": [
+                "Análisis macroeconómico y de mercado local.",
+                "Due Diligence técnica, legal y financiera exhaustiva.",
+                "Estructuración de vehículos de inversión.",
+                "Gestión de activos (Asset Management) post-adquisición."
+            ]
+        },
+        "hoteles": {
+            "title": "Hoteles a la Venta",
+            "description": "Selección exclusiva de activos hoteleros en las principales zonas turísticas de España, Europa y destinos mundiales.",
+            "longDescription": "El sector hotelero es la joya de nuestra corona. Disponemos de acceso directo a propietarios de cadenas hoteleras, hoteles boutique independientes y resorts de lujo que operan \"off-market\". Buscamos activos con potencial de reposicionamiento, contratos de gestión flexibles o rentabilidades estabilizadas en ubicaciones irreplicables.",
+            "priceRange": "Desde 1M€ hasta 150M€",
+            "details": "Oportunidades de gestión, franquicia o compra pura.",
+            "features": [
+                "Hoteles urbanos en capitales europeas (Madrid, París, Londres).",
+                "Resorts vacacionales en primera línea de playa (Baleares, Costa del Sol).",
+                "Edificios con licencia hotelera para reformar.",
+                "Sale & Leaseback con operadores de primer nivel."
+            ]
+        },
+        "terrenos": {
+            "title": "Terrenos a la Venta",
+            "description": "Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.",
+            "longDescription": "La base de cualquier gran proyecto es la tierra. Nuestra cartera de suelos incluye parcelas finalistas listas para solicitar licencia (Ready-to-build), desarrollos urbanísticos a medio plazo y grandes extensiones de suelo rústico para proyectos de energía renovable o uso agropecuario. Verificamos rigurosamente la situación urbanística de cada metro cuadrado.",
+            "priceRange": "Desde 1M€ hasta 150M€",
+            "details": "Suelo residencial, logístico, comercial y terciario.",
+            "features": [
+                "Suelo residencial para promociones de obra nueva.",
+                "Suelo logístico en nudos de comunicación estratégicos.",
+                "Suelo terciario para centros comerciales u oficinas.",
+                "Gestión urbanística y juntas de compensación."
+            ]
+        },
+        "lujo": {
+            "title": "Propiedades de Lujo a la Venta",
+            "description": "Villas singulares y áticos en ubicaciones prime. El máximo exponente de la exclusividad residencial.",
+            "longDescription": "Entendemos el lujo no solo como un precio, sino como una experiencia de vida. Nuestra selección \"Propiedades de Lujo\" incluye las residencias más exclusivas del mercado: villas en La Zagaleta, áticos en el Barrio de Salamanca o mansiones históricas en la Costa Azul. Privacidad, seguridad y diseño arquitectónico sin compromisos.",
+            "priceRange": "Desde 1M€ hasta 150M€",
+            "details": "Activos residenciales Prime y Ultra-Prime.",
+            "features": [
+                "Villas de autor con seguridad privada 24h.",
+                "Áticos con vistas panorámicas en centros financieros.",
+                "Fincas de recreo y palacetes históricos.",
+                "Servicios de conserjería y gestión de estilo de vida."
+            ]
+        },
+        "bodegas": {
+            "title": "Bodegas a la Venta",
+            "description": "Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.",
+            "longDescription": "Invertir en una bodega es invertir en cultura, historia y tierra. Ofrecemos oportunidades en las regiones vinícolas más prestigiosas (Rioja, Ribera del Duero, Burdeos, Napa Valley). Desde bodegas familiares con marca consolidada hasta grandes centros de producción a granel, analizamos la capacidad productiva y el valor de marca.",
+            "priceRange": "Desde 1M€ hasta 150M€",
+            "details": "Activos productivos con valor inmobiliario y de marca.",
+            "features": [
+                "Bodegas con Denominación de Origen Calificada.",
+                "Viñedos centenarios en plena producción.",
+                "Instalaciones de enoturismo y hoteles bodega.",
+                "Marcas de vino con distribución internacional."
+            ]
+        }
+    },
+    "faqs_title": "Preguntas Frecuentes",
+    "faqs_subtitle": "Todo lo que necesita saber antes de invertir con nosotros.",
+    "faqs": [
+        {
+            "question": "¿Qué tipo de inversores pueden acceder a su cartera?",
+            "answer": "Trabajamos exclusivamente con inversores cualificados, Family Offices y fondos institucionales capaces de acreditar solvencia para operaciones desde 1M€."
+        },
+        {
+            "question": "¿Por qué requieren una Prueba de Fondos (POF) antes de ver detalles?",
+            "answer": "Para proteger la confidencialidad de nuestros vendedores y activos off-market. Solo compartimos información sensible (ubicación exacta, métricas) con compradores verificados."
+        },
+        {
+            "question": "¿Gestionan la Golden Visa para inversores extracomunitarios?",
+            "answer": "Sí. Contamos con un departamento legal especializado en tramitar la residencia por inversión (Golden Visa) para clientes que adquieren activos superiores a 500.000€."
+        },
+        {
+            "question": "¿Cobran honorarios al comprador o al vendedor?",
+            "answer": "Depende del mandato. En operaciones off-market directas, nuestros honorarios suelen estar incluidos en el precio de venta o pactados mediante mandato de compra (buy-side mandate)."
+        }
+    ]
+}

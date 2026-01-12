@@ -1,0 +1,138 @@
+{
+    "nav": {
+        "investments": "Immobilieninvestitionen",
+        "hotels": "Hotels zu verkaufen",
+        "land": "Grundstücke",
+        "luxury": "Luxusimmobilien",
+        "wineries": "Weingüter",
+        "blog": "Blog",
+        "agencies": "Für Agenturen",
+        "search": "Immobiliensuche"
+    },
+    "hero": {
+        "shield": "Die Kunst der Diskretion",
+        "subtitle": "Wir arbeiten mit einem Portfolio, das <strong>nicht auf Immobilienportalen veröffentlicht</strong> ist, aber von höchster Qualität ist. Unsere Kunden vertrauen uns wertvolle Geheimnisse an, und wir geben erfolgreiche Geschäfte zurück.",
+        "cta": "Portfolio betreten"
+    },
+    "legacy": {
+        "title": "Ein Erbe der Ehre",
+        "text1": "Die Tradition der Urbina Agency entsteht nicht auf dem Markt, sondern in Ehre und Dienstleistung. Unsere DNA stammt von Francisco und Angelita Urbina, meinen Großeltern.",
+        "text2": "Und von meinem Urgroßvater, José María Urbina, einem hochrangigen Militäroffizier. Von ihm haben wir gelernt, dass die wertvollste Information die ist, die geschützt wird.",
+        "secrets_title": "Wertvolle Geheimnisse",
+        "secrets_text": "Wir behandeln jede Investitionsabsicht als hochgradig klassifizierte Information.",
+        "success_title": "Freigegebener Erfolg",
+        "success_text": "Die einzige Spur, die wir hinterlassen, ist Erfolg."
+    },
+    "footer": {
+        "title": "FÜR INVESTOREN",
+        "description": "Spezialisten für die Verwaltung von hochwertigen Immobilienvermögenswerten.",
+        "contact_title": "Unternehmenskontakt",
+        "legal_title": "Rechtliches",
+        "terms": "Allgemeine Geschäftsbedingungen",
+        "privacy": "Datenschutzrichtlinie",
+        "disclaimer": "Haftungsausschluss",
+        "rights": "Alle Rechte vorbehalten."
+    },
+    "seo": {
+        "title": "Für Investoren | Luxusimmobilien weltweit",
+        "description": "Exklusives Portfolio aus Hotels, Grundstücken, Weingütern und Ultra-Luxus-Immobilien. Expertenmanagement durch Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Suche nach Off-Market-Anlagen",
+        "subtitle": "Zugriff auf die größte Datenbank für verborgene Vermögenswerte in Spanien und Europa.",
+        "placeholder": "Ort eingeben (z.B. Madrid, Ibiza, Paris...)",
+        "button": "Immobilien suchen",
+        "results_found": "Wir haben verfügbare Off-Market-Anlagen entdeckt in",
+        "cta_text": "Aus Vertraulichkeitsgründen veröffentlichen wir keine Details. Füllen Sie das Formular aus, um das Blind-Dossier zu erhalten.",
+        "cta_button": "Dossier anfordern",
+        "no_results": "Keine öffentlichen Ergebnisse. Kontaktieren Sie uns für eine individuelle Suche.",
+        "available_multiple": "Verfügbar"
+    },
+    "categories": {
+        "investments": {
+            "title": "Immobilieninvestitionen",
+            "description": "Umfassendes Management von Investitionsportfolios. Wir entdecken renditestarke Möglichkeiten auf dem globalen Immobilienmarkt.",
+            "longDescription": "Unsere Abteilung für Immobilieninvestitionen sucht nicht nur nach Vermögenswerten, sondern entwirft Kapitalstrategien. Wir analysieren Markttrends, Wirtschaftszyklen und Wertsteigerungsmöglichkeiten, um Produkte anzubieten, die zum Risiko- und Renditeprofil institutioneller Investoren und Family Offices passen.",
+            "priceRange": "Von 1 Mio. € bis 500 Mio. €",
+            "details": "Maßgeschneiderte Strategien: Core, Value-Add und Opportunistic.",
+            "features": [
+                "Makroökonomische und lokale Marktanalyse.",
+                "Umfassende technische, rechtliche und finanzielle Due Diligence.",
+                "Strukturierung von Investitionsvehikeln.",
+                "Asset Management nach der Akquisition."
+            ]
+        },
+        "hotels": {
+            "title": "Hotels zu verkaufen",
+            "description": "Exklusive Auswahl an Hotelanlagen in den wichtigsten touristischen Gebieten Spaniens, Europas und weltweiter Destinationen.",
+            "longDescription": "Der Hotelsektor ist das Juwel unserer Krone. Wir haben direkten Zugang zu Eigentümern von Hotelketten, unabhängigen Boutique-Hotels und Luxusresorts, die „off-market“ operieren. Wir suchen Vermögenswerte mit Repositionierungspotenzial, flexiblen Managementverträgen oder stabilisierten Renditen an unwiederbringlichen Standorten.",
+            "priceRange": "Von 1 Mio. € bis 150 Mio. €",
+            "details": "Management-, Franchise- oder reine Kaufmöglichkeiten.",
+            "features": [
+                "Stadthotels in europäischen Hauptstädten (Madrid, Paris, London).",
+                "Urlaubsresorts in erster Strandlinie (Balearen, Costa del Sol).",
+                "Gebäude mit Hotellizenz zur Renovierung.",
+                "Sale & Leaseback mit erstklassigen Betreibern."
+            ]
+        },
+        "land": {
+            "title": "Grundstücke zu verkaufen",
+            "description": "Baureifes, entwicklungsfähiges und ländliches Land an strategischen Standorten für Großprojekte.",
+            "longDescription": "Die Basis jedes großen Projekts ist das Land. Unser Grundstücksportfolio umfasst baureife Parzellen (Ready-to-build), mittelfristige Stadtentwicklungen und große ländliche Flächen für Projekte im Bereich erneuerbare Energien oder landwirtschaftliche Nutzung. Wir prüfen den städtebaulichen Status jedes Quadratmeters rigoros.",
+            "priceRange": "Von 1 Mio. € bis 150 Mio. €",
+            "details": "Wohn-, Logistik-, Gewerbe- und Tertiärland.",
+            "features": [
+                "Wohnbauland für Neubauprojekte.",
+                "Logistikland an strategischen Verkehrsknotenpunkten.",
+                "Tertiärland für Einkaufszentren oder Büros.",
+                "Stadtmanagement und Entschädigungsausschüsse."
+            ]
+        },
+        "luxury": {
+            "title": "Luxusimmobilien zu verkaufen",
+            "description": "Einzigartige Villen und Penthouses in erstklassigen Lagen. Der höchste Ausdruck von Wohnexklusivität.",
+            "longDescription": "Wir verstehen Luxus nicht nur als Preis, sondern als Lebenserfahrung. Unsere Auswahl „Luxusimmobilien“ umfasst die exklusivsten Residenzen auf dem Markt: Villen in La Zagaleta, Penthouses im Viertel Salamanca oder historische Villen an der Côte d'Azur. Privatsphäre, Sicherheit und architektonisches Design ohne Kompromisse.",
+            "priceRange": "Von 1 Mio. € bis 150 Mio. €",
+            "details": "Prime und Ultra-Prime Wohnanlagen.",
+            "features": [
+                "Designervillen mit 24h privater Sicherheit.",
+                "Penthouses mit Panoramablick in Finanzzentren.",
+                "Freizeitgüter und historische Paläste.",
+                "Concierge- und Lifestyle-Management-Services."
+            ]
+        },
+        "wineries": {
+            "title": "Weingüter zu verkaufen",
+            "description": "Investitionen in den Weinsektor: Weingüter mit Herkunftsbezeichnung, Weinberge und Produktionszentren.",
+            "longDescription": "In ein Weingut zu investieren bedeutet, in Kultur, Geschichte und Land zu investieren. Wir bieten Möglichkeiten in den renommiertesten Weinregionen (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Von Familienweingütern mit etablierter Marke bis hin zu großen Massenproduktionszentren analysieren wir die Produktionskapazität und den Markenwert.",
+            "priceRange": "Von 1 Mio. € bis 150 Mio. €",
+            "details": "Produktionsanlagen mit Immobilien- und Markenwert.",
+            "features": [
+                "Weingüter mit qualifizierter Herkunftsbezeichnung.",
+                "Jahrhundertealte Weinberge in voller Produktion.",
+                "Weintouristikanlagen und Weinhotels.",
+                "Weinmarken mit internationalem Vertrieb."
+            ]
+        }
+    },
+    "faqs_title": "Häufig gestellte Fragen",
+    "faqs_subtitle": "Alles, was Sie wissen müssen, bevor Sie bei uns investieren.",
+    "faqs": [
+        {
+            "question": "Welche Art von Investoren hat Zugang zu Ihrem Portfolio?",
+            "answer": "Wir arbeiten ausschließlich mit qualifizierten Investoren, Family Offices und institutionellen Fonds, die ihre Bonität für Operationen ab 1 Mio. € nachweisen können."
+        },
+        {
+            "question": "Warum verlangen Sie einen Kapitalnachweis (POF), bevor Details gezeigt werden?",
+            "answer": "Um die Vertraulichkeit unserer Verkäufer und Off-Market-Anlagen zu schützen. Wir teilen sensible Informationen (genauer Standort, Kennzahlen) nur mit verifizierten Käufern."
+        },
+        {
+            "question": "Kümmern Sie sich um das Goldene Visum für Nicht-EU-Investoren?",
+            "answer": "Ja. Wir verfügen über eine Rechtsabteilung, die auf die Bearbeitung von Aufenthaltsgenehmigungen durch Investitionen (Goldenes Visum) für Kunden spezialisiert ist, die Vermögenswerte über 500.000 € erwerben."
+        },
+        {
+            "question": "Berechnen Sie Gebühren an den Käufer oder den Verkäufer?",
+            "answer": "Das hängt vom Mandat ab. Bei direkten Off-Market-Operationen sind unsere Honorare in der Regel im Verkaufspreis enthalten oder werden über ein Kaufmandat (Buy-Side-Mandat) vereinbart."
+        }
+    ]
+}

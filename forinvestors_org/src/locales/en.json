@@ -1,0 +1,143 @@
+{
+    "nav": {
+        "investments": "Real Estate Investments",
+        "hotels": "Hotels for Sale",
+        "land": "Land for Sale",
+        "luxury": "Luxury Properties",
+        "wineries": "Wineries for Sale",
+        "blog": "Blog",
+        "agencies": "For Real Estate Agencies",
+        "search": "Property Search"
+    },
+    "hero": {
+        "shield": "The Art of Discretion",
+        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
+        "cta": "Enter Portfolio"
+    },
+    "contact_global": {
+        "title": "Access Request & Proof of Funds",
+        "subtitle": "Complete the form below and attach your POF to receive the detailed dossier.",
+        "explanation": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+    },
+    "legacy": {
+        "title": "A Legacy of Honor",
+        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
+        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
+        "secrets_title": "Valuable Secrets",
+        "secrets_text": "We treat every investment intention as high-level classified information.",
+        "success_title": "Declassified Success",
+        "success_text": "The only trace we leave is success."
+    },
+    "footer": {
+        "title": "FOR INVESTORS",
+        "description": "Specialists in high-value real estate asset management.",
+        "contact_title": "Corporate Contact",
+        "legal_title": "Legal",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "disclaimer": "Disclaimer",
+        "rights": "All rights reserved."
+    },
+    "seo": {
+        "title": "For Investors | Luxury Real Estate Assets Worldwide",
+        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Off-Market Asset Search",
+        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
+        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
+        "button": "Search Properties",
+        "results_found": "We have detected off-market assets available in",
+        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
+        "cta_button": "Request Dossier",
+        "no_results": "No public results. Contact us for a custom search.",
+        "available_multiple": "Available"
+    },
+    "categories": {
+        "inversiones": {
+            "title": "Real Estate Investments",
+            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
+            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
+            "priceRange": "From €1M to €500M",
+            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "features": [
+                "Macroeconomic and local market analysis.",
+                "Comprehensive technical, legal, and financial Due Diligence.",
+                "Structuring of investment vehicles.",
+                "Post-acquisition Asset Management."
+            ]
+        },
+        "hoteles": {
+            "title": "Hotels for Sale",
+            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
+            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
+            "priceRange": "From €1M to €150M",
+            "details": "Management, franchise, or pure purchase opportunities.",
+            "features": [
+                "Urban hotels in European capitals (Madrid, Paris, London).",
+                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
+                "Buildings with hotel license for renovation.",
+                "Sale & Leaseback with top-tier operators."
+            ]
+        },
+        "terrenos": {
+            "title": "Land for Sale",
+            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
+            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
+            "priceRange": "From €1M to €150M",
+            "details": "Residential, logistics, commercial, and tertiary land.",
+            "features": [
+                "Residential land for new developments.",
+                "Logistics land in strategic communication hubs.",
+                "Tertiary land for shopping centers or offices.",
+                "Urban management and compensation boards."
+            ]
+        },
+        "lujo": {
+            "title": "Luxury Properties for Sale",
+            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
+            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
+            "priceRange": "From €1M to €150M",
+            "details": "Prime and Ultra-Prime residential assets.",
+            "features": [
+                "Designer villas with 24h private security.",
+                "Penthouses with panoramic views in financial centers.",
+                "Recreational estates and historic palaces.",
+                "Concierge and lifestyle management services."
+            ]
+        },
+        "bodegas": {
+            "title": "Wineries for Sale",
+            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
+            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
+            "priceRange": "From €1M to €150M",
+            "details": "Productive assets with real estate and brand value.",
+            "features": [
+                "Wineries with Qualified Designation of Origin.",
+                "Centuries-old vineyards in full production.",
+                "Wine tourism facilities and winery hotels.",
+                "Wine brands with international distribution."
+            ]
+        }
+    },
+    "faqs_title": "Frequently Asked Questions",
+    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs": [
+        {
+            "question": "What type of investors can access your portfolio?",
+            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
+        },
+        {
+            "question": "Why do you require Proof of Funds (POF) before seeing details?",
+            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
+        },
+        {
+            "question": "Do you manage the Golden Visa for non-EU investors?",
+            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
+        },
+        {
+            "question": "Do you charge fees to the buyer or the seller?",
+            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
+        }
+    ]
+}
