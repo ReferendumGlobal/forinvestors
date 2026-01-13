@@ -119,6 +119,24 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                             />
                         </div>
                     </div>
+                    </div>
+                </div>
+
+                <div className="bg-gold-500/10 border border-gold-500/30 rounded-lg p-4">
+                    <label className="flex items-start gap-3 cursor-pointer">
+                        <input
+                            type="checkbox"
+                            required
+                            name="confirmMinimum"
+                            className="mt-1 form-checkbox h-5 w-5 text-gold-500 rounded border-white/20 bg-midnight-950 focus:ring-gold-500"
+                        />
+                        <div className="text-sm">
+                            <span className="font-bold text-white block mb-1">Portfolio Value Confirmation</span>
+                            <span className="text-gray-300">
+                                I verify that our agency primarily deals with assets and investments valued above <strong className="text-gold-400">1,000,000 €</strong>.
+                            </span>
+                        </div>
+                    </label>
                 </div>
 
                 <div className="flex justify-end pt-4">
@@ -131,7 +149,7 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                         <ArrowRight size={20} />
                     </button>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 }

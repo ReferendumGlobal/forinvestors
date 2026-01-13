@@ -110,14 +110,15 @@ export default function SellerDataForm({ initialData = {}, onComplete }) {
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Target Sale Price (EUR)</label>
-                            required
-                            name="price"
-                            type="number"
-                            min="1000000"
-                            value={propertyData.price}
-                            onChange={handlePropertyChange}
-                            placeholder="Min. 1,000,000 €"
-                            className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
+                            <input
+                                required
+                                name="price"
+                                type="number"
+                                min="1000000"
+                                value={propertyData.price}
+                                onChange={handlePropertyChange}
+                                placeholder="Min. 1,000,000 €"
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
                             />
                         </div>
                     </div>
