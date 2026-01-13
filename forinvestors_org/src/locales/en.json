@@ -209,6 +209,24 @@
             }
         ]
     },
+    "faqs": [
+        {
+            "question": "Who has access to my properties?",
+            "answer": "Only qualified investors who have passed our verification process and Proof of Funds (POF)."
+        },
+        {
+            "question": "Do you require sales exclusivity?",
+            "answer": "Yes. We work with exclusive sales mandates to protect the value of your asset in the off-market and avoid overexposure."
+        },
+        {
+            "question": "How are assets valued?",
+            "answer": "Our team of analysts uses real comparable transaction data and financial projections to determine optimal market value."
+        },
+        {
+            "question": "Do you work with other agencies?",
+            "answer": "Yes, we collaborate with verified agencies under strict Non-Disclosure Agreements (NDA) and commission sharing."
+        }
+    ],
     "footer": {
         "rights": "All rights reserved.",
         "privacy": "Privacy Policy",

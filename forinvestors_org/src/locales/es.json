@@ -209,6 +209,24 @@
             }
         ]
     },
+    "faqs": [
+        {
+            "question": "¿Quién tiene acceso a mis propiedades?",
+            "answer": "Solo inversores cualificados que han pasado nuestro proceso de verificación y prueba de fondos (POF)."
+        },
+        {
+            "question": "¿Exigen exclusividad de venta?",
+            "answer": "Sí. Trabajamos con mandatos de venta exclusivos para proteger el valor de su activo en el mercado off-market y evitar la sobreexposición."
+        },
+        {
+            "question": "¿Cómo se valoran los activos?",
+            "answer": "Nuestro equipo de analistas utiliza datos de transacciones reales comparables y proyecciones financieras para determinar el valor de mercado óptimo."
+        },
+        {
+            "question": "¿Trabajan con otras agencias?",
+            "answer": "Sí, colaboramos con agencias verificadas bajo estrictos acuerdos de confidencialidad (NDA) y reparto de comisiones."
+        }
+    ],
     "footer": {
         "rights": "Todos los derechos reservados.",
         "privacy": "Política de Privacidad",
