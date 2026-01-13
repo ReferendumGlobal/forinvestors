@@ -1,152 +1,43 @@
 {
     "nav": {
-        "investments": "Real Estate Investments",
-        "hotels": "Hotels for Sale",
-        "land": "Land for Sale",
-        "luxury": "Luxury Properties",
-        "wineries": "Wineries for Sale",
-        "blog": "Blog",
-        "agencies": "For Real Estate Agencies",
-        "search": "Property Search",
-        "access": "Private Area"
+        "home": "Home",
+        "invest": "For Investors",
+        "agencies": "For Agencies",
+        "sell": "Sell Assets",
+        "about": "About Us",
+        "blog": "News",
+        "contact": "Private Access"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
-        "cta": "Enter Portfolio"
-    },
-    "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, Jose Maria Urbina, a high-ranking military officer. From him, we learned that the most valuable information is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as high-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
-    },
-    "footer": {
-        "title": "FOR INVESTORS",
-        "description": "Specialists in high-value real estate asset management.",
-        "contact_title": "Corporate Contact",
-        "legal_title": "Legal",
-        "terms": "Terms & Conditions",
-        "privacy": "Privacy Policy",
-        "disclaimer": "Disclaimer",
-        "rights": "All rights reserved."
-    },
-    "seo": {
-        "title": "For Investors | Luxury Real Estate Assets Worldwide",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Urbina Agency LLC."
-    },
-    "search": {
-        "title": "Off-Market Asset Search",
-        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
-        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
-        "button": "Search Properties",
-        "results_found": "We have detected off-market assets available in",
-        "cta_text": "For confidentiality reasons, we do not publish details. Complete the form to receive the blind dossier.",
-        "cta_button": "Request Dossier",
-        "no_results": "No public results. Contact us for a custom search.",
-        "available_multiple": "Available"
-    },
-    "categories": {
-        "investments": {
-            "title": "Real Estate Investments",
-            "description": "Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.",
-            "longDescription": "Our Real Estate Investment division not only seeks assets but designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.",
-            "priceRange": "From €1M to €500M",
-            "shortTitle": "Real Estate Investments",
-            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
-            "features": [
-                "Macroeconomic and local market analysis.",
-                "Comprehensive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
-                "Post-acquisition Asset Management."
-            ]
-        },
-        "hotels": {
-            "title": "Hotels for Sale",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain, Europe, and global destinations.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
-            "priceRange": "From €1M to €150M",
-            "shortTitle": "Hotels for Sale",
-            "details": "Management, franchise, or pure purchase opportunities.",
-            "features": [
-                "Urban hotels in European capitals (Madrid, Paris, London).",
-                "Beachfront vacation resorts (Balearic Islands, Costa del Sol).",
-                "Buildings with hotel license for renovation.",
-                "Sale & Leaseback with top-tier operators."
-            ]
-        },
-        "land": {
-            "title": "Land for Sale",
-            "description": "Finalist, developable, and rustic land in strategic locations for large developments.",
-            "longDescription": "The basis of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.",
-            "priceRange": "From €1M to €150M",
-            "shortTitle": "Land for Sale",
-            "details": "Residential, logistics, commercial, and tertiary land.",
-            "features": [
-                "Residential land for new developments.",
-                "Logistics land in strategic communication hubs.",
-                "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation boards."
-            ]
-        },
-        "luxury": {
-            "title": "Luxury Properties for Sale",
-            "description": "Unique villas and penthouses in prime locations. The ultimate exponent of residential exclusivity.",
-            "longDescription": "We understand luxury not just as a price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in Salamanca District, or historic mansions on the Côte d'Azur. Privacy, security, and architectural design without compromise.",
-            "priceRange": "From €1M to €150M",
-            "shortTitle": "Luxury Properties",
-            "details": "Prime and Ultra-Prime residential assets.",
-            "features": [
-                "Designer villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
-                "Recreational estates and historic palaces.",
-                "Concierge and lifestyle management services."
-            ]
-        },
-        "wineries": {
-            "title": "Wineries for Sale",
-            "description": "Investments in the wine sector: D.O. wineries, vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with consolidated brands to large bulk production centers, we analyze production capacity and brand value.",
-            "priceRange": "From €1M to €150M",
-            "shortTitle": "Wineries for Sale",
-            "details": "Productive assets with real estate and brand value.",
-            "features": [
-                "Wineries with Qualified Designation of Origin.",
-                "Centuries-old vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
-            ]
+        "title": "Off-Market Real Estate\nfor Family Offices",
+        "subtitle": "Exclusive access to prime real estate assets in Europe. Hotels, Land, and Buildings.",
+        "cta_invest": "I am an Investor",
+        "cta_agency": "I am an Agency",
+        "stats": {
+            "volume": "Volume Managed",
+            "assets": "Assets in Portfolio",
+            "partners": "Partner Agencies"
         }
     },
-    "faqs_title": "Frequently Asked Questions",
-    "faqs_subtitle": "Everything you need to know before investing with us.",
-    "faqs": [
-        {
-            "question": "What type of investors can access your portfolio?",
-            "answer": "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
-        },
-        {
-            "question": "Why do you require Proof of Funds (POF) before seeing details?",
-            "answer": "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
-        },
-        {
-            "question": "Do you manage the Golden Visa for non-EU investors?",
-            "answer": "Yes. We have a legal department specialized in processing residency by investment (Golden Visa) for clients acquiring assets over €500,000."
-        },
-        {
-            "question": "Do you charge fees to the buyer or the seller?",
-            "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
-        }
-    ],
+    "about": {
+        "title": "About Urbina Agency",
+        "description_1": "We are a boutique firm specializing in the intermediation of prime off-market real estate assets.",
+        "description_2": "We connect owners and investment funds with total confidentiality, operating in major European markets."
+    },
+    "features": {
+        "title": "Why Choose Us?",
+        "card_1_title": "100% Off-Market",
+        "card_1_desc": "Assets you won't find on public portals. Guaranteed confidentiality.",
+        "card_2_title": " rigorous Verification",
+        "card_2_desc": "All assets and buyers undergo a strict due diligence process.",
+        "card_3_title": "Global Network",
+        "card_3_desc": "Direct connection with Family Offices and Sovereign Wealth Funds."
+    },
     "agencies_page": {
-        "title": "Global Alliance for Agencies",
-        "subtitle": "Join the largest global network of independent agencies. We centralize demand from large capital.",
-        "access_button": "Partners Access (Agencies & Investors)",
-        "disclaimer": "* Restricted access. Requires manual activation after contract signing.",
-        "collaboration_model": "Collaboration Model",
+        "hero_title": "Collaborate with Real Estate Elite",
+        "hero_subtitle": "Join our verified agency network and share deals with total security.",
+        "hero_cta": "Request Collaboration",
+        "collaboration_title": "A Fair Collaboration Model",
         "collaboration_text_1": "We are not a portal, we are an **Alliance**. We sign a collaboration agreement that protects your mandate and guarantees a fair commission split (50/50) on every jointly closed operation.",
         "collaboration_text_2": "Once the contract is signed, you will be given access to our private platform where you can:",
         "benefits_list": [
@@ -192,6 +83,7 @@
     },
     "forms": {
         "labels": {
+            "name": "Full Name",
             "companyName": "Company Name (Optional)",
             "fullName": "Full Name",
             "email": "Professional Email",
@@ -207,8 +99,12 @@
             "to": "To",
             "propertyTypes": "Property Types in Portfolio",
             "message": "Additional Message",
-            "capital": "Capital to Invest (€)",
-            "location_interest": "Where do you want to invest?",
+            "capital": "Capital to Invest (€ / Proof of Funds)",
+            "targetLocation": "Where do you want to invest?",
+            "goal": "What is your goal?",
+            "request_access": "I request access to the",
+            "private_platform": "Private Platform",
+            "view_exclusive": "to view exclusive opportunities.",
             "dossier": "Corporate Dossier / Portfolio Example",
             "pof": "Proof of Funds (POF) Document"
         },
@@ -219,7 +115,8 @@
             "phone_example": "+34 633...",
             "capital_example": "Ex: 5,000,000",
             "location_example": "Ex: Madrid, Marbella, London...",
-            "message_example": "Interested in properties in..."
+            "message_example": "Interested in properties in...",
+            "funds_example": "Ex: 10,000,000"
         },
         "buttons": {
             "send_request": "Send Request",
@@ -240,7 +137,7 @@
             "connection_error": "Connection error. Please check your internet and try again."
         },
         "goals": {
-            "invest": "I want to Invest / Buy",
+            "buy": "I want to Invest / Buy",
             "sell": "I want to Sell (Exclusive)",
             "request_access": "I request access to the Private Platform to view exclusive opportunities.",
             "goal_label": "What is your goal?"
@@ -248,10 +145,10 @@
         "agency_types": {
             "hotels": "Hotels",
             "land": "Buildable Land",
-            "fincas": "Fincas/Estates",
+            "fincas": "Fincas / Estates",
             "wineries": "Wineries",
-            "agricultural": "Agricultural",
-            "livestock": "Livestock",
+            "agricultural": "Agricultural Land",
+            "livestock": "Livestock Farms",
             "buildings": "Buildings",
             "luxury": "Luxury Properties"
         },
@@ -270,66 +167,63 @@
         "agencies": [
             {
                 "title": "Access Request",
-                "description": "Fill out the form. If you pass the filter, you will receive an access email.",
+                "description": "Fill out the form. If you pass the screen, you will receive an access email.",
                 "icon": "FileText"
             },
             {
                 "title": "Register & Sign",
-                "description": "Enter your agency details and digitally sign the collaboration contract.",
+                "description": "Enter your agency details and digitally sign the collaboration agreement.",
                 "icon": "Handshake"
             },
             {
-                "title": "Upload Properties",
-                "description": "Upload the properties for which you seek qualified investors.",
+                "title": "Upload Assets",
+                "description": "Publish your exclusive properties. They will be visible to verified investors.",
                 "icon": "Upload"
             },
             {
-                "title": "Smart Matching",
-                "description": "The system will match your assets with large capital investors.",
-                "icon": "PieChart"
-            },
-            {
-                "title": "Receive Interest",
-                "description": "Get contacts from investors interested in each property.",
-                "icon": "Users"
-            },
-            {
-                "title": "Close Sale",
-                "description": "If you close the sale, enter the details and mark the asset as sold.",
-                "icon": "CheckCircle"
-            },
-            {
-                "title": "Payment & Invoice",
-                "description": "Pay the shared commission and receive your service invoice.",
-                "icon": "CreditCard"
+                "title": "Close Deals",
+                "description": "We manage visits and offers. 50/50 fee split.",
+                "icon": "Award"
             }
         ],
         "investors": [
             {
-                "title": "Request & POF",
-                "description": "Fill out the form and submit your Proof of Funds (POF).",
-                "icon": "FileText"
+                "title": "Register & POF",
+                "description": "Request access by providing your Proof of Funds (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "Verification",
-                "description": "We will review your request and grant platform access via email.",
+                "title": "Search Mandate",
+                "description": "Digitally sign our non-exclusive search mandate.",
                 "icon": "Search"
             },
             {
-                "title": "Sign Mandate",
-                "description": "Sign the mandate to receive properties matching your profile.",
-                "icon": "Handshake"
+                "title": "Access Deals",
+                "description": "Access the dashboard and view opportunities matching your criteria.",
+                "icon": "Eye"
             },
             {
-                "title": "Receive Offers",
-                "description": "You will receive opportunities from our international agency network.",
-                "icon": "PieChart"
-            },
-            {
-                "title": "Purchase & Fee",
-                "description": "Close the deal and pay the commission to the platform.",
-                "icon": "CreditCard"
+                "title": "Acquisition",
+                "description": "Full advisory until signing at the notary.",
+                "icon": "Key"
             }
         ]
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions",
+        "contact": "Contact"
+    },
+    "legal": {
+        "modal_title": "Legal Terms",
+        "privacy_policy": {
+            "title": "Privacy Policy",
+            "content": "At Urbina Agency, we are committed to protecting your privacy..."
+        },
+        "terms_conditions": {
+            "title": "Terms & Conditions",
+            "content": "Use of this platform implies acceptance of the following terms..."
+        }
     }
 }
