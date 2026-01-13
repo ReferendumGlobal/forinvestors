@@ -8,11 +8,7 @@ import ContractSign from './ContractSign';
 import { CheckCircle, Building2, FileText, UploadCloud } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-import SetPassword from './SetPassword';
-import { UserCircle } from 'lucide-react'; // Ensure UserCircle is imported
-
 const STEPS = [
-    { title: 'Security', icon: UserCircle },
     { title: 'Property & Owners', icon: Building2 },
     { title: 'Documentation', icon: UploadCloud },
     { title: 'Sign Mandate', icon: FileText }
@@ -55,18 +51,14 @@ export default function SellerOnboarding() {
         fetchLeadData();
     }, [user]);
 
-    const handlePasswordSet = () => {
-        setStep(2);
-    };
-
     const handleDataComplete = (data) => {
         setSellerData(prev => ({ ...prev, ...data }));
-        setStep(3);
+        setStep(2);
     };
 
     const handleDocsComplete = (docsData) => {
         setSellerData(prev => ({ ...prev, docs: docsData }));
-        setStep(4);
+        setStep(3);
     };
 
     const handleContractSigned = async () => {
@@ -122,30 +114,27 @@ export default function SellerOnboarding() {
             {/* Content */}
             <div className="transition-all duration-300">
                 {step === 1 && (
-                    <SetPassword onComplete={handlePasswordSet} />
-                )}
-                {step === 2 && (
                     <SellerDataForm
                         initialData={sellerData}
                         onComplete={handleDataComplete}
                     />
                 )}
-                {step === 3 && (
+                {step === 2 && (
                     <SellerDocsUpload
                         sellerData={sellerData}
                         onComplete={handleDocsComplete}
-                        onBack={() => setStep(2)}
+                        onBack={() => setStep(1)}
                     />
                 )}
-                {step === 4 && (
+                {step === 3 && (
                     <ContractSign
                         mode="onboarding"
                         contractType="sale_mandate"
                         user={user}
                         profile={profile}
-                        sellerData={sellerData} // Pass all data including docs urls
+                        sellerData={sellerData}
                         onSuccess={handleContractSigned}
-                        onBack={() => setStep(3)}
+                        onBack={() => setStep(2)}
                     />
                 )}
             </div>
