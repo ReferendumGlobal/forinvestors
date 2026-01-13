@@ -29,8 +29,7 @@ export default function Navbar({ categories }) {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-midnight-950/90 backdrop-blur-md py-4 shadow-lg border-b border-white/5' : 'bg-transparent py-6'
-                }`}
+            className="fixed w-full z-50 bg-midnight-950/95 backdrop-blur-md py-4 shadow-lg border-b border-white/5"
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">

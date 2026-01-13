@@ -17,7 +17,8 @@ export default function ProcessSteps({ variant = 'agencies' }) {
         PieChart
     };
 
-    const steps = t(`steps.${variant}`, { returnObjects: true }) || [];
+    const stepsData = t(`steps.${variant}`, { returnObjects: true });
+    const steps = Array.isArray(stepsData) ? stepsData : [];
 
     return (
         <section className="py-20 bg-midnight-950 relative overflow-hidden">

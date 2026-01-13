@@ -9,7 +9,8 @@ const CategoryPage = ({ categoryId }) => {
 
     if (!currentCategory) return null;
 
-    const features = t(`categories.${categoryId}.features`, { returnObjects: true });
+    const featuresData = t(`categories.${categoryId}.features`, { returnObjects: true });
+    const features = Array.isArray(featuresData) ? featuresData : [];
 
     return (
         <>
