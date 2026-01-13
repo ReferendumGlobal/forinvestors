@@ -1,23 +1,35 @@
 {
     "nav": {
-        "home": "Home",
-        "invest": "For Investors",
+        "investments": "Real Estate Investments",
+        "hotels": "Hotels for Sale",
+        "land": "Land for Sale",
+        "luxury": "Luxury Properties",
+        "wineries": "Wineries for Sale",
+        "blog": "Blog",
         "agencies": "For Agencies",
+        "search": "Asset Search",
+        "access": "Private Access",
         "sell": "Sell Assets",
+        "home": "Home",
         "about": "About Us",
-        "blog": "News",
-        "contact": "Private Access"
+        "contact": "Contact"
     },
     "hero": {
-        "title": "Off-Market Real Estate\nfor Family Offices",
-        "subtitle": "Exclusive access to prime real estate assets in Europe. Hotels, Land, and Buildings.",
+        "shield": "The Art of Discretion",
+        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients trust us with valuable secrets, and we return fruitful business.",
+        "cta": "Enter the Portfolio",
+        "title": "Off-Market Real Estate",
         "cta_invest": "I am an Investor",
-        "cta_agency": "I am an Agency",
-        "stats": {
-            "volume": "Volume Managed",
-            "assets": "Assets in Portfolio",
-            "partners": "Partner Agencies"
-        }
+        "cta_agency": "I am an Agency"
+    },
+    "legacy": {
+        "title": "A Legacy of Honor",
+        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
+        "text2": "And from my great-grandfather, José María Urbina, a high-ranking military officer. From him, we learned that the most valuable information is that which is protected.",
+        "secrets_title": "Valuable Secrets",
+        "secrets_text": "We treat every investment intention as top-level classified information.",
+        "success_title": "Declassified Success",
+        "success_text": "The only trace we leave is success."
     },
     "about": {
         "title": "About Urbina Agency",
@@ -27,11 +39,11 @@
     "features": {
         "title": "Why Choose Us?",
         "card_1_title": "100% Off-Market",
-        "card_1_desc": "Assets you won't find on public portals. Guaranteed confidentiality.",
-        "card_2_title": " rigorous Verification",
+        "card_1_desc": "Assets you won't find on public portals.",
+        "card_2_title": "Rigorous Verification",
         "card_2_desc": "All assets and buyers undergo a strict due diligence process.",
         "card_3_title": "Global Network",
-        "card_3_desc": "Direct connection with Family Offices and Sovereign Wealth Funds."
+        "card_3_desc": "Direct connection with Family Offices."
     },
     "agencies_page": {
         "hero_title": "Collaborate with Real Estate Elite",
@@ -52,10 +64,6 @@
         "form_title": "Request Access to the Alliance",
         "form_subtitle": "Complete the profile to receive the collaboration contract.",
         "form_explanation": "Enter your agency details to verify eligibility. We will contact you to formalize the shared sales mandate."
-    },
-    "contact_global": {
-        "title": "Contact Us",
-        "explanation": "To verify your investor profile and grant you access to our private platform with username and password, we need to validate your Proof of Funds (POF). Once validated, you will receive personalized investment offers tailored to your needs and available capital."
     },
     "sell_page": {
         "title": "Sell Your Asset Exclusively",
@@ -81,6 +89,117 @@
         "success_title": "Request Received",
         "success_desc": "We have received your property details. Our valuation team will contact you shortly to formalize the sales mandate."
     },
+    "contact_global": {
+        "title": "Contact Us",
+        "explanation": "To verify your investor profile and grant you access to our private platform with username and password, we need to validate your Proof of Funds (POF). Once validated, you will receive personalized investment offers tailored to your needs and available capital."
+    },
+    "seo": {
+        "title": "For Investors | Global Luxury Real Estate Assets",
+        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-prime properties. Expert management by Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Off-Market Asset Search",
+        "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
+        "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
+        "button": "Search Properties",
+        "results_found": "We have detected off-market assets available in",
+        "cta_text": "For confidentiality, we do not publish details. Fill out the form to receive the blind dossier.",
+        "cta_button": "Request Dossier",
+        "no_results": "No public results. Contact us for a custom search.",
+        "available_multiple": "Available"
+    },
+    "categories": {
+        "investments": {
+            "title": "Real Estate Investments",
+            "shortTitle": "Investments",
+            "description": "Comprehensive wealth management. We detect high-yield opportunities in the global market.",
+            "longDescription": "Our Real Estate Investments division does not just search for assets; it designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products tailored to the risk and return profile of institutional investors and family offices.",
+            "priceRange": "From €1M to €500M",
+            "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
+            "features": [
+                "Macroeconomic and local market analysis.",
+                "Exhaustive technical, legal, and financial Due Diligence.",
+                "Structuring of investment vehicles.",
+                "Post-acquisition Asset Management."
+            ]
+        },
+        "hotels": {
+            "title": "Hotels for Sale",
+            "shortTitle": "Hotels",
+            "description": "Exclusive selection of hotel assets in major tourist areas of Spain and Europe.",
+            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
+            "priceRange": "From €1M to €150M",
+            "details": "Management, franchise, or pure purchase opportunities.",
+            "features": [
+                "Urban hotels in European capitals.",
+                "Beachfront vacation resorts.",
+                "Buildings with hotel use for renovation.",
+                "Sale & Leaseback with top-tier operators."
+            ]
+        },
+        "land": {
+            "title": "Land for Sale",
+            "shortTitle": "Land",
+            "description": "Finalist, buildable, and rustic land in strategic locations for major developments.",
+            "longDescription": "The basis of every great project is the land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use.",
+            "priceRange": "From €1M to €150M",
+            "details": "Residential, logistical, commercial, and tertiary land.",
+            "features": [
+                "Residential land for new construction promotions.",
+                "Logistical land in communication hubs.",
+                "Tertiary land for shopping centers or offices.",
+                "Urban management and compensation advice."
+            ]
+        },
+        "luxury": {
+            "title": "Luxury Properties",
+            "shortTitle": "Luxury",
+            "description": "Unique villas and penthouses in prime locations. The ultimate expression of residential exclusivity.",
+            "longDescription": "We understand luxury not just as price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market.",
+            "priceRange": "From €1M to €150M",
+            "details": "Prime and Ultra-Prime residential assets.",
+            "features": [
+                "Signature villas with 24h private security.",
+                "Penthouses with panoramic views in financial centers.",
+                "Recreational estates and historic palaces.",
+                "Concierge and lifestyle management services."
+            ]
+        },
+        "wineries": {
+            "title": "Wineries for Sale",
+            "shortTitle": "Wineries",
+            "description": "Investments in the wine sector: wineries with D.O., vineyards, and production centers.",
+            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions.",
+            "priceRange": "From €1M to €150M",
+            "details": "Productive assets with real estate and brand value.",
+            "features": [
+                "Wineries with Qualified Designation of Origin.",
+                "Centennial vineyards in full production.",
+                "Wine tourism facilities and winery hotels.",
+                "Wine brands with international distribution."
+            ]
+        }
+    },
+    "faqs_title": "Frequently Asked Questions",
+    "faqs_subtitle": "Everything you need to know before investing with us.",
+    "faqs": [
+        {
+            "question": "Who has access to my properties?",
+            "answer": "Only qualified investors who have passed our verification process and Proof of Funds (POF)."
+        },
+        {
+            "question": "Do you require sales exclusivity?",
+            "answer": "Yes. We work with exclusive sales mandates to protect the value of your asset in the off-market and avoid overexposure."
+        },
+        {
+            "question": "How are assets valued?",
+            "answer": "Our team of analysts uses real comparable transaction data and financial projections to determine optimal market value."
+        },
+        {
+            "question": "Do you work with other agencies?",
+            "answer": "Yes, we collaborate with verified agencies under strict Non-Disclosure Agreements (NDA) and commission sharing."
+        }
+    ],
     "forms": {
         "labels": {
             "name": "Full Name",
@@ -209,24 +328,6 @@
             }
         ]
     },
-    "faqs": [
-        {
-            "question": "Who has access to my properties?",
-            "answer": "Only qualified investors who have passed our verification process and Proof of Funds (POF)."
-        },
-        {
-            "question": "Do you require sales exclusivity?",
-            "answer": "Yes. We work with exclusive sales mandates to protect the value of your asset in the off-market and avoid overexposure."
-        },
-        {
-            "question": "How are assets valued?",
-            "answer": "Our team of analysts uses real comparable transaction data and financial projections to determine optimal market value."
-        },
-        {
-            "question": "Do you work with other agencies?",
-            "answer": "Yes, we collaborate with verified agencies under strict Non-Disclosure Agreements (NDA) and commission sharing."
-        }
-    ],
     "footer": {
         "rights": "All rights reserved.",
         "privacy": "Privacy Policy",

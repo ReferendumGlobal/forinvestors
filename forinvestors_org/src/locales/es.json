@@ -1,23 +1,35 @@
 {
     "nav": {
-        "home": "Inicio",
-        "invest": "Para Inversores",
+        "investments": "Inversiones Inmobiliarias",
+        "hotels": "Hoteles en Venta",
+        "land": "Suelo en Venta",
+        "luxury": "Propiedades de Lujo",
+        "wineries": "Bodegas en Venta",
+        "blog": "Blog",
         "agencies": "Para Agencias",
+        "search": "Buscador de Activos",
+        "access": "Acceso Privado",
         "sell": "Vender Activos",
+        "home": "Inicio",
         "about": "Nosotros",
-        "blog": "Noticias",
-        "contact": "Acceso Privado"
+        "contact": "Contacto"
     },
     "hero": {
-        "title": "Mercado Inmobiliario\nOff-Market para Family Offices",
-        "subtitle": "Acceso exclusivo a activos inmobiliarios prime en Europa. Hoteles, Suelo Finalista y Edificios.",
+        "shield": "El Arte de la Discreción",
+        "subtitle": "Trabajamos con una cartera que <strong>no se publica en portales inmobiliarios</strong> pero que es de alta calidad. Nuestros clientes nos confían secretos valiosos, y nosotros les devolvemos negocios fructíferos.",
+        "cta": "Entrar en la Cartera",
+        "title": "Mercado Inmobiliario Off-Market",
         "cta_invest": "Soy Inversor",
-        "cta_agency": "Soy Agencia",
-        "stats": {
-            "volume": "Volumen Gestionado",
-            "assets": "Activos en Cartera",
-            "partners": "Agencias Partner"
-        }
+        "cta_agency": "Soy Agencia"
+    },
+    "legacy": {
+        "title": "Un Legado de Honor",
+        "text1": "La tradición de Urbina Agency no nace en el mercado, sino en el honor y el servicio. Nuestro ADN proviene de Francisco y Angelita Urbina, mis abuelos.",
+        "text2": "Y de mi bisabuelo, José María Urbina, un alto oficial militar. De él aprendimos que la información más valiosa es la que se protege.",
+        "secrets_title": "Secretos Valiosos",
+        "secrets_text": "Tratamos cada intención de inversión como información clasificada de alto nivel.",
+        "success_title": "Éxito Desclasificado",
+        "success_text": "El único rastro que dejamos es el éxito."
     },
     "about": {
         "title": "Sobre Urbina Agency",
@@ -27,11 +39,11 @@
     "features": {
         "title": "¿Por qué elegirnos?",
         "card_1_title": "100% Off-Market",
-        "card_1_desc": "Activos que no encontrará en portales públicos. Confidencialidad garantizada.",
+        "card_1_desc": "Activos que no encontrará en portales públicos.",
         "card_2_title": "Verificación Rigurosa",
         "card_2_desc": "Todos los activos y compradores pasan un estricto proceso de due diligence.",
         "card_3_title": "Red Global",
-        "card_3_desc": "Conexión directa con Family Offices y Fondos Soberanos."
+        "card_3_desc": "Conexión directa con Family Offices."
     },
     "agencies_page": {
         "hero_title": "Colabora con la Élite del Real Estate",
@@ -52,10 +64,6 @@
         "form_title": "Solicitar Acceso a la Alianza",
         "form_subtitle": "Complete el perfil para recibir el contrato de colaboración.",
         "form_explanation": "Introduzca los datos de su agencia para verificar su elegibilidad. Nos pondremos en contacto para formalizar el mandato de venta compartido."
-    },
-    "contact_global": {
-        "title": "Contacto Global",
-        "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
     },
     "sell_page": {
         "title": "Venda su Activo en Exclusiva",
@@ -81,6 +89,117 @@
         "success_title": "Solicitud Recibida",
         "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
     },
+    "contact_global": {
+        "title": "Contacto Global",
+        "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
+    },
+    "seo": {
+        "title": "Para Inversores | Activos Inmobiliarios de Lujo Globales",
+        "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por Urbina Agency LLC."
+    },
+    "search": {
+        "title": "Buscador de Activos Off-Market",
+        "subtitle": "Acceda a la mayor base de datos de activos ocultos en España y Europa.",
+        "placeholder": "Introduzca ubicación (ej: Madrid, Ibiza, París...)",
+        "button": "Buscar Propiedades",
+        "results_found": "Hemos detectado activos off-market disponibles en",
+        "cta_text": "Por confidencialidad, no publicamos detalles. Rellene el formulario para recibir el blind dossier.",
+        "cta_button": "Solicitar Dossier",
+        "no_results": "Sin resultados públicos. Contáctenos para un encargo personalizado.",
+        "available_multiple": "Disponibles"
+    },
+    "categories": {
+        "investments": {
+            "title": "Inversiones Inmobiliarias",
+            "shortTitle": "Inversiones",
+            "description": "Gestión integral de patrimonios. Detectamos oportunidades de alta rentabilidad en el mercado global.",
+            "longDescription": "Nuestra división de Inversiones Inmobiliarias no solo busca activos, diseña estrategias de capital. Analizamos tendencias de mercado, ciclos económicos y oportunidades de revalorización para ofrecer productos ajustados al perfil de riesgo y retorno de inversores institucionales y family offices.",
+            "priceRange": "Desde 1M€ a 500M€",
+            "details": "Estrategias a medida: Core, Value-Add y Opportunistic.",
+            "features": [
+                "Análisis macroeconómico y de mercado local.",
+                "Due Diligence técnica, legal y financiera exhaustiva.",
+                "Estructuración de vehículos de inversión.",
+                "Asset Management post-adquisición."
+            ]
+        },
+        "hotels": {
+            "title": "Hoteles en Venta",
+            "shortTitle": "Hoteles",
+            "description": "Selección exclusiva de activos hoteleros en las principales zonas turísticas de España y Europa.",
+            "longDescription": "El sector hotelero es la joya de nuestra corona. Tenemos acceso directo a propietarios de cadenas, hoteles boutique independientes y resorts de lujo que operan 'off-market'. Buscamos activos con potencial de reposicionamiento, contratos de gestión flexibles o rentabilidades estabilizadas en ubicaciones irreemplazables.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Oportunidades de gestión, franquicia o compra pura.",
+            "features": [
+                "Hoteles urbanos en capitales europeas.",
+                "Resorts vacacionales en primera línea de playa.",
+                "Edificios con uso hotelero para reformar.",
+                "Sale & Leaseback con operadores de primer nivel."
+            ]
+        },
+        "land": {
+            "title": "Suelo en Venta",
+            "shortTitle": "Suelo",
+            "description": "Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.",
+            "longDescription": "La base de todo gran proyecto es la tierra. Nuestra cartera de suelo incluye parcelas finalistas listas para pedir licencia (Ready-to-build), desarrollos urbanísticos a medio plazo y grandes extensiones de suelo rústico para proyectos de energía renovable o uso agropecuario.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Suelo residencial, logístico, comercial y terciario.",
+            "features": [
+                "Suelo residencial para promociones de obra nueva.",
+                "Suelo logístico en nodos de comunicación.",
+                "Suelo terciario para centros comerciales u oficinas.",
+                "Gestión urbanística y asesoramiento en compensación."
+            ]
+        },
+        "luxury": {
+            "title": "Propiedades de Lujo",
+            "shortTitle": "Lujo",
+            "description": "Villas únicas y áticos en ubicaciones prime. La máxima expresión de la exclusividad residencial.",
+            "longDescription": "Entendemos el lujo no solo como precio, sino como experiencia de vida. Nuestra selección 'Luxury Properties' incluye las residencias más exclusivas del mercado: villas en La Zagaleta, áticos en Barrio de Salamanca o pazos históricos.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Activos residenciales Prime y Ultra-Prime.",
+            "features": [
+                "Villas de autor con seguridad privada 24h.",
+                "Áticos con vistas panorámicas en centros financieros.",
+                "Fincas de recreo y palacios históricos.",
+                "Servicios de conserjería y lifestyle management."
+            ]
+        },
+        "wineries": {
+            "title": "Bodegas en Venta",
+            "shortTitle": "Bodegas",
+            "description": "Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.",
+            "longDescription": "Invertir en una bodega es invertir en cultura, historia y tierra. Ofrecemos oportunidades en las regiones vinícolas más prestigiosas (Rioja, Ribera del Duero). Desde bodegas familiares con marca consolidada hasta grandes centros de producción a granel.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Activos productivos con valor inmobiliario y de marca.",
+            "features": [
+                "Bodegas con Denominación de Origen Calificada.",
+                "Viñedos centenarios en plena producción.",
+                "Instalaciones de enoturismo y hoteles bodega.",
+                "Marcas de vino con distribución internacional."
+            ]
+        }
+    },
+    "faqs_title": "Preguntas Frecuentes",
+    "faqs_subtitle": "Todo lo que necesita saber antes de invertir con nosotros.",
+    "faqs": [
+        {
+            "question": "¿Quién tiene acceso a mis propiedades?",
+            "answer": "Solo inversores cualificados que han pasado nuestro proceso de verificación y prueba de fondos (POF)."
+        },
+        {
+            "question": "¿Exigen exclusividad de venta?",
+            "answer": "Sí. Trabajamos con mandatos de venta exclusivos para proteger el valor de su activo en el mercado off-market y evitar la sobreexposición."
+        },
+        {
+            "question": "¿Cómo se valoran los activos?",
+            "answer": "Nuestro equipo de analistas utiliza datos de transacciones reales comparables y proyecciones financieras para determinar el valor de mercado óptimo."
+        },
+        {
+            "question": "¿Trabajan con otras agencias?",
+            "answer": "Sí, colaboramos con agencias verificadas bajo estrictos acuerdos de confidencialidad (NDA) y reparto de comisiones."
+        }
+    ],
     "forms": {
         "labels": {
             "name": "Nombre Completo",
@@ -209,24 +328,6 @@
             }
         ]
     },
-    "faqs": [
-        {
-            "question": "¿Quién tiene acceso a mis propiedades?",
-            "answer": "Solo inversores cualificados que han pasado nuestro proceso de verificación y prueba de fondos (POF)."
-        },
-        {
-            "question": "¿Exigen exclusividad de venta?",
-            "answer": "Sí. Trabajamos con mandatos de venta exclusivos para proteger el valor de su activo en el mercado off-market y evitar la sobreexposición."
-        },
-        {
-            "question": "¿Cómo se valoran los activos?",
-            "answer": "Nuestro equipo de analistas utiliza datos de transacciones reales comparables y proyecciones financieras para determinar el valor de mercado óptimo."
-        },
-        {
-            "question": "¿Trabajan con otras agencias?",
-            "answer": "Sí, colaboramos con agencias verificadas bajo estrictos acuerdos de confidencialidad (NDA) y reparto de comisiones."
-        }
-    ],
     "footer": {
         "rights": "Todos los derechos reservados.",
         "privacy": "Política de Privacidad",
