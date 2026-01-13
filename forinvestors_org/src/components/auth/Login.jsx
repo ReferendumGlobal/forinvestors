@@ -136,15 +136,32 @@ export default function Login() {
 
                     <div className="mt-6">
                         <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-white/10" />
+                            </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="px-2 bg-midnight-950 text-gray-400">
-                                    Access Restricted
-                                </span>
+                                <span className="px-2 bg-midnight-950 text-gray-400">Not a member yet?</span>
                             </div>
                         </div>
-                        <div className="mt-4 text-center text-sm text-gray-500">
-                            Registration is by invitation only. <br />
-                            Please submit a request via the forms on the home page.
+
+                        <div className="mt-6 grid grid-cols-2 gap-3">
+                            <Link
+                                to="/register?type=investor"
+                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-900 text-sm font-medium text-white hover:bg-midnight-800 transition-colors"
+                            >
+                                <span className="sr-only">Sign up for</span> Investor
+                            </Link>
+                            <Link
+                                to="/register?type=agency"
+                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-900 text-sm font-medium text-white hover:bg-midnight-800 transition-colors"
+                            >
+                                <span className="sr-only">Sign up for</span> Agency
+                            </Link>
+                        </div>
+                        <div className="mt-4 text-center">
+                            <Link to="/sell" className="text-sm text-gold-500 hover:text-gold-400">
+                                Looking to sell a property?
+                            </Link>
                         </div>
                     </div>
                 </motion.div>
