@@ -178,25 +178,42 @@ function LanguageWrapper() {
   );
 }
 
+import { AuthProvider } from './context/AuthContext';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardHome from './components/dashboard/DashboardHome';
+
 function App() {
   return (
     <HelmetProvider>
-      <HashRouter>
-        <Routes>
-          <Route path="/:lang" element={<LanguageWrapper />}>
-            <Route index element={<Home />} />
-            <Route path="inversiones" element={<CategoryPage categoryId="investments" />} />
-            <Route path="hoteles" element={<CategoryPage categoryId="hotels" />} />
-            <Route path="terrenos" element={<CategoryPage categoryId="land" />} />
-            <Route path="lujo" element={<CategoryPage categoryId="luxury" />} />
-            <Route path="bodegas" element={<CategoryPage categoryId="wineries" />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="agencias" element={<Agencies />} />
-            <Route path="search" element={<PropertySearch />} />
-          </Route>
-          <Route path="/" element={<Navigate to="/es" replace />} />
-        </Routes>
-      </HashRouter>
+      <AuthProvider>
+        <HashRouter>
+          <Routes>
+            {/* Auth & Dashboard Routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<DashboardHome />} />
+            </Route>
+
+            {/* Public Website Routes */}
+            <Route path="/:lang" element={<LanguageWrapper />}>
+              <Route index element={<Home />} />
+              <Route path="inversiones" element={<CategoryPage categoryId="investments" />} />
+              <Route path="hoteles" element={<CategoryPage categoryId="hotels" />} />
+              <Route path="terrenos" element={<CategoryPage categoryId="land" />} />
+              <Route path="lujo" element={<CategoryPage categoryId="luxury" />} />
+              <Route path="bodegas" element={<CategoryPage categoryId="wineries" />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="agencias" element={<Agencies />} />
+              <Route path="search" element={<PropertySearch />} />
+            </Route>
+            <Route path="/" element={<Navigate to="/es" replace />} />
+          </Routes>
+        </HashRouter>
+      </AuthProvider>
     </HelmetProvider>
   );
 }

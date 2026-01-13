@@ -187,25 +187,42 @@ function LanguageWrapper() {
   );
 }
 
+import { AuthProvider } from './context/AuthContext';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardHome from './components/dashboard/DashboardHome';
+
 function App() {
   // We need to render routes for all languages dynamically to support the localized slugs
   return (
     <HelmetProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to="/en" replace />} />
-          <Route path="/:lang" element={<LanguageWrapper />}>
-            <Route index element={<Home />} />
-            {/* 
-                 Dynamic Route Matching:
-                 Because slug is specialized per language, we use a catch-all specific path parameter.
-                 However, to avoid conflict, we can't just put `/:slug`. 
-                 But the requirement is domain.com/:lang/:slug
-             */}
-            <Route path=":slug" element={<DynamicRouteHandler />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            {/* Auth & Dashboard Routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<DashboardHome />} />
+            </Route>
+
+            {/* Public Website Routes */}
+            <Route path="/" element={<Navigate to="/en" replace />} />
+            <Route path="/:lang" element={<LanguageWrapper />}>
+              <Route index element={<Home />} />
+              {/* 
+                    Dynamic Route Matching:
+                    Because slug is specialized per language, we use a catch-all specific path parameter.
+                    However, to avoid conflict, we can't just put `/:slug`. 
+                    But the requirement is domain.com/:lang/:slug
+                */}
+              <Route path=":slug" element={<DynamicRouteHandler />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </HelmetProvider>
   );
 }
