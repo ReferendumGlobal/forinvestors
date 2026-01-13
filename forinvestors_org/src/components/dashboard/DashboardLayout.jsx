@@ -1,20 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { supabase } from '../../lib/supabase';
 import { Navigate, Outlet, Link, useLocation } from 'react-router-dom';
 import { Shield, LayoutDashboard, Building, Users, FileText, LogOut, Menu, X } from 'lucide-react';
+import InvestorOnboarding from './InvestorOnboarding';
 
 export default function DashboardLayout() {
-    const { user, profile, loading, signOut } = useAuth();
+    const { user, profile, loading: authLoading, signOut } = useAuth();
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [hasContract, setHasContract] = useState(false);
+    const [checkingContract, setCheckingContract] = useState(true);
     const location = useLocation();
 
-    if (loading) return (
+    useEffect(() => {
+        if (user && profile?.role === 'investor') {
+            checkContract();
+        } else {
+            setCheckingContract(false);
+        }
+    }, [user, profile]);
+
+    const checkContract = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('contracts')
+                .select('id')
+                .eq('user_id', user.id)
+                .maybeSingle(); // Use maybeSingle to avoid 406 if multiple (shouldn't happen but safe) or 0
+
+            if (data) setHasContract(true);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setCheckingContract(false);
+        }
+    };
+
+    if (authLoading || checkingContract) return (
         <div className="min-h-screen bg-midnight-950 flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-500"></div>
         </div>
     );
 
     if (!user) return <Navigate to="/login" />;
+
+    // Force onboarding for investors without contract
+    if (profile?.role === 'investor' && !hasContract) {
+        // Render Onboarding in a simplified layout
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col">
+                <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
+                    <Link to="/" className="flex items-center space-x-2">
+                        <Shield className="h-8 w-8 text-gold-500" />
+                        <span className="text-white font-serif font-bold text-lg">URBINA</span>
+                    </Link>
+                    <button onClick={signOut} className="text-gray-400 hover:text-white text-sm">
+                        Sign Out
+                    </button>
+                </header>
+                <main className="flex-1 overflow-y-auto">
+                    <InvestorOnboarding />
+                </main>
+            </div>
+        );
+    }
 
     // Navigation items based on role
     const navItems = [
