@@ -192,6 +192,7 @@
     },
     "forms": {
         "labels": {
+            "companyName": "Company Name (Optional)",
             "fullName": "Full Name",
             "email": "Professional Email",
             "phone": "Phone",
@@ -212,6 +213,7 @@
             "pof": "Proof of Funds (POF) Document"
         },
         "placeholders": {
+            "company_example": "Your Company Name",
             "name_example": "John Doe",
             "email_example": "john@company.com",
             "phone_example": "+34 633...",

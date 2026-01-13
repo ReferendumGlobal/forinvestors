@@ -8,6 +8,7 @@ export default function ContactForm({ categoryName, explanation }) {
     const { t } = useTranslation();
     const [formState, setFormState] = useState({
         name: '',
+        companyName: '',
         email: '',
         phone: '',
         funds: '',
@@ -55,6 +56,7 @@ export default function ContactForm({ categoryName, explanation }) {
 
         const formData = new FormData();
         formData.append('name', formState.name);
+        formData.append('company_name', formState.companyName);
         formData.append('email', formState.email);
         formData.append('phone', formState.phone);
         formData.append('funds', formState.funds);
@@ -76,6 +78,7 @@ export default function ContactForm({ categoryName, explanation }) {
             const { error: dbError } = await supabase.from('leads').insert([
                 {
                     full_name: formState.name,
+                    company_name: formState.companyName,
                     email: formState.email,
                     phone: formState.phone,
                     budget: formState.funds,
@@ -112,6 +115,7 @@ export default function ContactForm({ categoryName, explanation }) {
                 setSubmitted(true);
                 setFormState({
                     name: '',
+                    companyName: '',
                     email: '',
                     phone: '',
                     funds: '',
@@ -171,6 +175,16 @@ export default function ContactForm({ categoryName, explanation }) {
                         placeholder={t('forms.placeholders.name_example')}
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyName')}</label>
+                    <input
+                        type="text"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder={t('forms.placeholders.company_example')}
+                        value={formState.companyName}
+                        onChange={(e) => setFormState({ ...formState, companyName: e.target.value })}
                     />
                 </div>
                 <div>

@@ -13,7 +13,7 @@
     },
     "hero": {
         "shield": "El Arte de la Discreción",
-        "subtitle": "Aquí encontrará todas las oportunidades que <strong>no aparecen en Idealista</strong> ni en portales inmobiliarios. Nuestros clientes nos entregan secretos valiosos en forma de inversiones, y nosotros les devolvemos negocios exitosos de alto nivel.",
+        "subtitle": "Aquí encontrará todas las oportunidades que <strong>no aparecen en portales inmobiliarios</strong>. Nuestros clientes nos entregan secretos valiosos en forma de inversiones, y nosotros les devolvemos negocios exitosos de alto nivel.",
         "cta": "Acceder al Portafolio"
     },
     "legacy": {
@@ -193,6 +193,7 @@
     },
     "forms": {
         "labels": {
+            "companyName": "Nombre de Empresa (Opcional)",
             "fullName": "Nombre Completo",
             "email": "Email Profesional",
             "phone": "Teléfono",
@@ -213,6 +214,7 @@
             "pof": "Documento Prueba de Fondos (POF)"
         },
         "placeholders": {
+            "company_example": "Nombre de su empresa",
             "name_example": "Juan Pérez",
             "email_example": "juan@empresa.com",
             "phone_example": "+34 633...",

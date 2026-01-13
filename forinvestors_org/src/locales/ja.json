@@ -8,7 +8,8 @@
         "blog": "ブログ",
         "agencies": "代理店向け",
         "search": "物件検索",
-        "access": "プライベートエリア"
+        "access": "プライベートエリア",
+        "sell": "Sell Assets"
     },
     "hero": {
         "shield": "機密保持の芸術",
@@ -189,7 +190,8 @@
             "private_platform": "プライベートプラットフォーム",
             "view_exclusive": "へのアクセスをリクエストします。",
             "dossier": "会社概要 / ポートフォリオ例",
-            "pof": "資金証明 (POF) ドキュメント"
+            "pof": "資金証明 (POF) ドキュメント",
+            "companyName": "Company Name"
         },
         "placeholders": {
             "name_example": "山田 太郎",
@@ -198,7 +200,8 @@
             "capital_example": "例: 5,000,000",
             "location_example": "例: マドリード、マルベーリャ、ロンドン...",
             "message_example": "〜の物件に興味があります...",
-            "funds_example": "例: 5,000,000"
+            "funds_example": "例: 5,000,000",
+            "company_example": "Your Company"
         },
         "buttons": {
             "send_request": "リクエストを送信",
@@ -238,5 +241,29 @@
             "verifying": "送信を確認中...",
             "finalizing": "転送を完了中..."
         }
+    },
+    "sell_page": {
+        "title": "Venda su Activo en Exclusiva",
+        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
+        "hero_cta": "Valorar mi Propiedad",
+        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "benefits": [
+            {
+                "title": "Confidencialidad Total",
+                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+            },
+            {
+                "title": "Red Global",
+                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+            },
+            {
+                "title": "Gestión Integral",
+                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+            }
+        ],
+        "form_title": "Detalles del Activo",
+        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
+        "success_title": "Solicitud Recibida",
+        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
     }
 }
