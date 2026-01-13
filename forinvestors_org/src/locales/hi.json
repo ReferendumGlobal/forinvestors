@@ -9,7 +9,7 @@
         "agencies": "एजेंसियों के लिए",
         "search": "संपत्ति खोज",
         "access": "निजी क्षेत्र",
-        "sell": "Sell Assets"
+        "sell": "संपत्ति बेचें"
     },
     "hero": {
         "shield": "गोपनीयता की कला",
@@ -191,7 +191,7 @@
             "view_exclusive": "तक पहुंच का अनुरोध करता हूं ताकि विशेष अवसर देख सकूं।",
             "dossier": "कॉर्पोरेट डोजियर / पोर्टफोलियो उदाहरण",
             "pof": "फंड का सबूत (POF) दस्तावेज़",
-            "companyName": "Company Name"
+            "companyName": "कंपनी का नाम (वैकल्पिक)"
         },
         "placeholders": {
             "name_example": "राहुल शर्मा",
@@ -201,7 +201,7 @@
             "location_example": "उदाहरण: मैड्रिड, मार्सिला, लंदन...",
             "message_example": "में संपत्तियों में रुचि...",
             "funds_example": "उदाहरण: 5,000,000",
-            "company_example": "Your Company"
+            "company_example": "आपकी कंपनी का नाम"
         },
         "buttons": {
             "send_request": "अनुरोध भेजें",
@@ -313,27 +313,27 @@
         ]
     },
     "sell_page": {
-        "title": "Venda su Activo en Exclusiva",
-        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
-        "hero_cta": "Valorar mi Propiedad",
-        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "title": "अपनी संपत्ति को विशेष रूप से बेचें",
+        "subtitle": "योग्य निवेशकों और वैश्विक फैमिली ऑफिस के हमारे नेटवर्क तक पहुंच प्राप्त करें।",
+        "hero_cta": "मेरी संपत्ति का मूल्यांकन करें",
+        "why_us_title": "Urbina Agency के साथ क्यों बेचें?",
         "benefits": [
             {
-                "title": "Confidencialidad Total",
-                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+                "title": "पूर्ण गोपनीयता",
+                "desc": "आपकी संपत्ति सामान्य पोर्टल्स पर प्रकाशित नहीं की जाएगी। केवल फंड के सबूत के साथ सत्यापित निवेशकों की ही पहुंच होगी।"
             },
             {
-                "title": "Red Global",
-                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+                "title": "वैश्विक नेटवर्क",
+                "desc": "हम आपकी संपत्ति को दुबई, लंदन, न्यूयॉर्क और एशिया में पूंजी के साथ जोड़ते हैं।"
             },
             {
-                "title": "Gestión Integral",
-                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+                "title": "समग्र प्रबंधन",
+                "desc": "हम सब कुछ का ध्यान रखते हैं: मूल्यांकन, ड्यू डिलिजेंस, दौरे और कानूनी समापन।"
             }
         ],
-        "form_title": "Detalles del Activo",
-        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
-        "success_title": "Solicitud Recibida",
-        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+        "form_title": "संपत्ति विवरण",
+        "form_subtitle": "हमारी टीम द्वारा आपकी संपत्ति का मूल्यांकन करने के लिए फॉर्म भरें।",
+        "success_title": "अनुरोध प्राप्त हुआ",
+        "success_desc": "हमें आपकी संपत्ति का विवरण प्राप्त हुआ है। हमारी मूल्यांकन टीम बिक्री जनादेश को औपचारिक बनाने के लिए शीघ्र ही आपसे संपर्क करेगी।"
     }
 }

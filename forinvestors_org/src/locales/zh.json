@@ -9,7 +9,7 @@
         "agencies": "房地产代理",
         "search": "房产搜索",
         "access": "私人区域",
-        "sell": "Sell Assets"
+        "sell": "出售资产"
     },
     "hero": {
         "shield": "保密的艺术",
@@ -191,7 +191,7 @@
             "view_exclusive": "以查看独家机会。",
             "dossier": "公司档案 / 投资组合示例",
             "pof": "资金证明 (POF) 文件",
-            "companyName": "Company Name"
+            "companyName": "公司名称（可选）"
         },
         "placeholders": {
             "name_example": "李明",
@@ -201,7 +201,7 @@
             "location_example": "例如：马德里，马贝拉，伦敦...",
             "message_example": "对...的房产感兴趣",
             "funds_example": "例如：5,000,000",
-            "company_example": "Your Company"
+            "company_example": "您的公司名称"
         },
         "buttons": {
             "send_request": "发送请求",
@@ -243,27 +243,27 @@
         }
     },
     "sell_page": {
-        "title": "Venda su Activo en Exclusiva",
-        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
-        "hero_cta": "Valorar mi Propiedad",
-        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "title": "独家出售您的资产",
+        "subtitle": "访问我们要合格投资者和全球家族办公室网络。",
+        "hero_cta": "评估我的房产",
+        "why_us_title": "为什么要通过 Urbina Agency 出售？",
         "benefits": [
             {
-                "title": "Confidencialidad Total",
-                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+                "title": "完全保密",
+                "desc": "您的资产不会在一般门户网站上发布。只有经过验证并提供资金证明的投资者才能访问。"
             },
             {
-                "title": "Red Global",
-                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+                "title": "全球网络",
+                "desc": "我们将您的房产与迪拜、伦敦、纽约和亚洲的资本联系起来。"
             },
             {
-                "title": "Gestión Integral",
-                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+                "title": "综合管理",
+                "desc": "我们负责一切：估值、尽职调查、访问和法律结算。"
             }
         ],
-        "form_title": "Detalles del Activo",
-        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
-        "success_title": "Solicitud Recibida",
-        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+        "form_title": "资产详情",
+        "form_subtitle": "填写表格以便我们的团队评估您的房产。",
+        "success_title": "已收到请求",
+        "success_desc": "我们已收到您的房产详细信息。我们的估值团队将很快与您联系以正式确定销售授权。"
     }
 }

@@ -9,7 +9,7 @@
         "agencies": "للوساطة العقارية",
         "search": "بحث عن عقارات",
         "access": "منطقة خاصة",
-        "sell": "Sell Assets"
+        "sell": "بيع الأصول"
     },
     "hero": {
         "shield": "فن السرية",
@@ -191,7 +191,7 @@
             "view_exclusive": "لعرض الفرص الحصرية.",
             "dossier": "ملف الشركة / مثال للمحفظة",
             "pof": "وثيقة إثبات الأموال (POF)",
-            "companyName": "Company Name"
+            "companyName": "اسم الشركة (اختياري)"
         },
         "placeholders": {
             "name_example": "أحمد محمد",
@@ -201,7 +201,7 @@
             "location_example": "مثال: مدريد، ماربييا، لندن...",
             "message_example": "مهتم بـ...",
             "funds_example": "مثال: 5,000,000",
-            "company_example": "Your Company"
+            "company_example": "اسم شركتك"
         },
         "buttons": {
             "send_request": "إرسال طلب",
@@ -313,27 +313,27 @@
         ]
     },
     "sell_page": {
-        "title": "Venda su Activo en Exclusiva",
-        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
-        "hero_cta": "Valorar mi Propiedad",
-        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "title": "بع أصولك بشكل حصري",
+        "subtitle": "احصل على حق الوصول إلى شبكتنا من المستثمرين المؤهلين والمكاتب العائلية العالمية.",
+        "hero_cta": "تقييم ممتلكاتي",
+        "why_us_title": "لماذا تبيع مع وكالة أوربينا؟",
         "benefits": [
             {
-                "title": "Confidencialidad Total",
-                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+                "title": "سرية تامة",
+                "desc": "لن يتم نشر أصولك على البوابات العامة. سيتمكن فقط المستثمرون الذين تم التحقق منهم ولديهم إثبات الأموال من الوصول إليها."
             },
             {
-                "title": "Red Global",
-                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+                "title": "شبكة عالمية",
+                "desc": "نربط ممتلكاتك برأس المال في دبي ولندن ونيويورك وآسيا."
             },
             {
-                "title": "Gestión Integral",
-                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+                "title": "إدارة شاملة",
+                "desc": "نحن نهتم بكل شيء: التقييم، والعناية الواجبة، والزيارات، والإغلاق القانوني."
             }
         ],
-        "form_title": "Detalles del Activo",
-        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
-        "success_title": "Solicitud Recibida",
-        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+        "form_title": "تفاصيل الأصول",
+        "form_subtitle": "املأ النموذج ليقوم فريقنا بتقييم ممتلكاتك.",
+        "success_title": "تم استلام الطلب",
+        "success_desc": "لقد استلمنا بيانات ممتلكاتك. سيتصل بك فريق التقييم لدينا قريبًا لإضفاء الطابع الرسمي على تفويض البيع."
     }
 }

@@ -9,7 +9,7 @@
         "agencies": "Агентствам",
         "search": "Поиск недвижимости",
         "access": "Личный кабинет",
-        "sell": "Sell Assets"
+        "sell": "Продать Активы"
     },
     "hero": {
         "shield": "Искусство конфиденциальности",
@@ -191,7 +191,7 @@
             "view_exclusive": "для просмотра эксклюзивных возможностей.",
             "dossier": "Корпоративное досье / Пример портфолио",
             "pof": "Документ подтверждения средств (POF)",
-            "companyName": "Company Name"
+            "companyName": "Название компании (необязательно)"
         },
         "placeholders": {
             "name_example": "Иван Иванов",
@@ -201,7 +201,7 @@
             "location_example": "Например: Мадрид, Марбелья, Лондон...",
             "message_example": "Интересуют объекты в...",
             "funds_example": "Например: 5,000,000",
-            "company_example": "Your Company"
+            "company_example": "Название вашей компании"
         },
         "buttons": {
             "send_request": "Отправить запрос",
@@ -313,27 +313,27 @@
         ]
     },
     "sell_page": {
-        "title": "Venda su Activo en Exclusiva",
-        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
-        "hero_cta": "Valorar mi Propiedad",
-        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "title": "Продайте свой актив эксклюзивно",
+        "subtitle": "Получите доступ к нашей сети квалифицированных инвесторов и глобальных семейных офисов.",
+        "hero_cta": "Оценить мою собственность",
+        "why_us_title": "Почему продавать с Urbina Agency?",
         "benefits": [
             {
-                "title": "Confidencialidad Total",
-                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+                "title": "Полная конфиденциальность",
+                "desc": "Ваш актив не будет опубликован на общих порталах. Доступ будут иметь только проверенные инвесторы с подтверждением средств."
             },
             {
-                "title": "Red Global",
-                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+                "title": "Глобальная сеть",
+                "desc": "Мы связываем вашу собственность с капиталом в Дубае, Лондоне, Нью-Йорке и Азии."
             },
             {
-                "title": "Gestión Integral",
-                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+                "title": "Комплексное управление",
+                "desc": "Мы берем на себя все: оценку, due diligence, визиты и юридическое закрытие."
             }
         ],
-        "form_title": "Detalles del Activo",
-        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
-        "success_title": "Solicitud Recibida",
-        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+        "form_title": "Детали актива",
+        "form_subtitle": "Заполните форму, чтобы наша команда оценила вашу собственность.",
+        "success_title": "Запрос получен",
+        "success_desc": "Мы получили данные о вашей собственности. Наша команда по оценке свяжется с вами в ближайшее время для оформления мандата на продажу."
     }
 }

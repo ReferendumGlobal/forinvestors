@@ -9,7 +9,7 @@
         "agencies": "Pour Agences Immobilières",
         "search": "Recherche de Propriétés",
         "access": "Espace Privé",
-        "sell": "Sell Assets"
+        "sell": "Vendre des Actifs"
     },
     "hero": {
         "shield": "L'Art de la Discrétion",
@@ -191,7 +191,7 @@
             "view_exclusive": "pour voir les opportunités exclusives.",
             "dossier": "Dossier d'Entreprise / Exemple de Portefeuille",
             "pof": "Preuve de Fonds (POF)",
-            "companyName": "Company Name"
+            "companyName": "Nom de l'Entreprise (Optionnel)"
         },
         "placeholders": {
             "name_example": "Jean Dupont",
@@ -201,7 +201,7 @@
             "location_example": "Ex: Madrid, Marbella, Londres...",
             "message_example": "Intéressé par des propriétés à...",
             "funds_example": "Ex: 5,000,000",
-            "company_example": "Your Company"
+            "company_example": "Nom de votre entreprise"
         },
         "buttons": {
             "send_request": "Envoyer la Demande",
@@ -313,27 +313,27 @@
         ]
     },
     "sell_page": {
-        "title": "Venda su Activo en Exclusiva",
-        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
-        "hero_cta": "Valorar mi Propiedad",
-        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "title": "Vendez votre Actif en Exclusivité",
+        "subtitle": "Accédez à notre réseau d'investisseurs qualifiés et de family offices mondiaux.",
+        "hero_cta": "Estimer ma Propriété",
+        "why_us_title": "Pourquoi vendre avec Urbina Agency ?",
         "benefits": [
             {
-                "title": "Confidencialidad Total",
-                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+                "title": "Confidentialité Totale",
+                "desc": "Votre actif ne sera pas publié sur les portails généralistes. Seuls les investisseurs vérifiés avec POF y auront accès."
             },
             {
-                "title": "Red Global",
-                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+                "title": "Réseau Mondial",
+                "desc": "Nous connectons votre propriété avec des capitaux à Dubaï, Londres, New York et en Asie."
             },
             {
-                "title": "Gestión Integral",
-                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+                "title": "Gestion Intégrale",
+                "desc": "Nous nous occupons de tout : évaluation, due diligence, visites et clôture juridique."
             }
         ],
-        "form_title": "Detalles del Activo",
-        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
-        "success_title": "Solicitud Recibida",
-        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+        "form_title": "Détails de l'Actif",
+        "form_subtitle": "Remplissez le formulaire pour que notre équipe évalue votre propriété.",
+        "success_title": "Demande Reçue",
+        "success_desc": "Nous avons bien reçu les données de votre propriété. Notre équipe d'évaluation vous contactera sous peu pour formaliser le mandat de vente."
     }
 }

@@ -9,7 +9,7 @@
         "agencies": "代理店向け",
         "search": "物件検索",
         "access": "プライベートエリア",
-        "sell": "Sell Assets"
+        "sell": "資産を売却"
     },
     "hero": {
         "shield": "機密保持の芸術",
@@ -191,7 +191,7 @@
             "view_exclusive": "へのアクセスをリクエストします。",
             "dossier": "会社概要 / ポートフォリオ例",
             "pof": "資金証明 (POF) ドキュメント",
-            "companyName": "Company Name"
+            "companyName": "会社名（任意）"
         },
         "placeholders": {
             "name_example": "山田 太郎",
@@ -201,7 +201,7 @@
             "location_example": "例: マドリード、マルベーリャ、ロンドン...",
             "message_example": "〜の物件に興味があります...",
             "funds_example": "例: 5,000,000",
-            "company_example": "Your Company"
+            "company_example": "あなたの会社名"
         },
         "buttons": {
             "send_request": "リクエストを送信",
@@ -243,27 +243,27 @@
         }
     },
     "sell_page": {
-        "title": "Venda su Activo en Exclusiva",
-        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
-        "hero_cta": "Valorar mi Propiedad",
-        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "title": "資産を独占的に売却",
+        "subtitle": "適格な投資家やグローバルなファミリーオフィスのネットワークにアクセスできます。",
+        "hero_cta": "物件を査定する",
+        "why_us_title": "Urbina Agencyで売却する理由",
         "benefits": [
             {
-                "title": "Confidencialidad Total",
-                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+                "title": "完全な機密性",
+                "desc": "あなたの資産は一般のポータルには掲載されません。資金証明を持つ確認済みの投資家のみがアクセスできます。"
             },
             {
-                "title": "Red Global",
-                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+                "title": "グローバルネットワーク",
+                "desc": "あなたの物件をドバイ、ロンドン、ニューヨーク、アジアの資本と結びつけます。"
             },
             {
-                "title": "Gestión Integral",
-                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+                "title": "総合管理",
+                "desc": "査定、デューデリジェンス、訪問、法的完了まで、すべて私たちが担当します。"
             }
         ],
-        "form_title": "Detalles del Activo",
-        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
-        "success_title": "Solicitud Recibida",
-        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+        "form_title": "資産の詳細",
+        "form_subtitle": "フォームに記入して、私たちのチームがあなたの物件を査定します。",
+        "success_title": "リクエストを受け取りました",
+        "success_desc": "物件の詳細を受け取りました。査定チームが間もなく連絡し、販売委任を正式に決定します。"
     }
 }
