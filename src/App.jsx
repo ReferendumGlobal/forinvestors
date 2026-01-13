@@ -219,11 +219,11 @@ function App() {
             {/* Public Website Routes */}
             <Route path="/:lang" element={<LanguageWrapper />}>
               <Route index element={<Home />} />
-              <Route path="inversiones" element={<CategoryPage categoryId="investments" />} />
-              <Route path="hoteles" element={<CategoryPage categoryId="hotels" />} />
-              <Route path="terrenos" element={<CategoryPage categoryId="land" />} />
-              <Route path="lujo" element={<CategoryPage categoryId="luxury" />} />
-              <Route path="bodegas" element={<CategoryPage categoryId="wineries" />} />
+              <Route path="investments" element={<CategoryPage categoryId="investments" />} />
+              <Route path="hotels" element={<CategoryPage categoryId="hotels" />} />
+              <Route path="land" element={<CategoryPage categoryId="land" />} />
+              <Route path="luxury" element={<CategoryPage categoryId="luxury" />} />
+              <Route path="wineries" element={<CategoryPage categoryId="wineries" />} />
               <Route path="blog" element={<Blog />} />
               <Route path="agencias" element={<Agencies />} />
               <Route path="search" element={<PropertySearch />} />
