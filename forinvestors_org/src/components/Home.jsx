@@ -64,7 +64,7 @@ export default function Home() {
                         transition={{ delay: 0.5 }}
                     >
                         <Link
-                            to="inversiones"
+                            to="investments"
                             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent overflow-hidden rounded-none transition-all duration-300"
                         >
                             <div className="absolute inset-0 border border-gold-500/30 group-hover:border-gold-500 transition-colors duration-500"></div>

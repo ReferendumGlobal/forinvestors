@@ -124,6 +124,7 @@ function App() {
               <Route path="blog" element={<Blog />} />
               <Route path="agencias" element={<Agencies />} />
               <Route path="search" element={<PropertySearch />} />
+              <Route path="*" element={<Navigate to="." replace />} />
             </Route>
             <Route path="/" element={<Navigate to="/es" replace />} />
           </Routes>
