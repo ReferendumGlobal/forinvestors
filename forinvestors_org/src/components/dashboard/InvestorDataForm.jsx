@@ -1,10 +1,40 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Save, Loader2, ArrowRight, MapPin, Building, DollarSign } from 'lucide-react';
+import { Save, Loader2, ArrowRight, MapPin, Building, DollarSign, CheckCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+// Same list as ContactForm for consistency
+const ASSET_TYPES = [
+    'hotels',
+    'wineries',
+    'agricultural',
+    'livestock',
+    'mansions',
+    'castles',
+    'penthouses',
+    'office_buildings',
+    'apartment_buildings',
+    'urban_land',
+    'dev_land',
+    'casinos',
+    'football_clubs',
+    'islands',
+    'sports_clubs',
+    'garages',
+    'businesses'
+];
 
 export default function InvestorDataForm({ initialData = {}, onComplete }) {
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(false);
+
+    // Ensure propertyType is an array for multi-select
+    const safeInitialData = {
+        ...initialData,
+        propertyType: Array.isArray(initialData.propertyType) ? initialData.propertyType : (initialData.propertyType ? [initialData.propertyType] : [])
+    };
+
     const [formData, setFormData] = useState({
         // Personal / Legal
         address: '',
@@ -15,17 +45,28 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
         targetCountry: '',
         targetRegion: '',
         targetCity: '',
-        propertyType: '',
+        propertyType: [], // Array for multi-select
         intendedUse: '',
-        priceRange: '',
+        priceRange: '', // We will treat this as the specific numeric budget
         targetReturn: '',
         otherCharacteristics: '',
-        ...initialData
+        ...safeInitialData
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleAssetToggle = (assetKey) => {
+        setFormData(prev => {
+            const currentAssets = prev.propertyType || [];
+            if (currentAssets.includes(assetKey)) {
+                return { ...prev, propertyType: currentAssets.filter(a => a !== assetKey) };
+            } else {
+                return { ...prev, propertyType: [...currentAssets, assetKey] };
+            }
+        });
     };
 
     const handleSubmit = async (e) => {
@@ -96,8 +137,9 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-1">Target Country</label>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">Target Country <span className="text-gold-500">*</span></label>
                             <input
+                                required
                                 name="targetCountry"
                                 value={formData.targetCountry}
                                 onChange={handleChange}
@@ -106,7 +148,7 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-1">Region / State</label>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">Region / State <span className="text-xs text-gray-600">(Optional)</span></label>
                             <input
                                 name="targetRegion"
                                 value={formData.targetRegion}
@@ -116,7 +158,7 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-1">City / Municipality</label>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">City / Municipality <span className="text-xs text-gray-600">(Optional)</span></label>
                             <input
                                 name="targetCity"
                                 value={formData.targetCity}
@@ -127,24 +169,51 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
                         </div>
                     </div>
 
+                    {/* Multi-Select Assets */}
+                    <div>
+                        <label className="block text-sm font-medium text-gray-400 mb-3">Target Asset Types</label>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 bg-midnight-950/50 p-4 rounded-lg border border-white/5">
+                            {ASSET_TYPES.map((asset) => (
+                                <label
+                                    key={asset}
+                                    className={`flex items-center space-x-2 p-2 rounded cursor-pointer transition-all ${formData.propertyType.includes(asset)
+                                            ? 'text-gold-400'
+                                            : 'text-gray-400 hover:text-white'
+                                        }`}
+                                >
+                                    <div className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${formData.propertyType.includes(asset) ? 'border-gold-500 bg-gold-500' : 'border-gray-600'
+                                        }`}>
+                                        {formData.propertyType.includes(asset) && <CheckCircle size={12} className="text-midnight-950" />}
+                                    </div>
+                                    <input
+                                        type="checkbox"
+                                        checked={formData.propertyType.includes(asset)}
+                                        onChange={() => handleAssetToggle(asset)}
+                                        className="hidden"
+                                    />
+                                    <span className="text-xs">{t(`forms.assets.${asset}`, asset)}</span>
+                                </label>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-1">Property Type</label>
-                            <select
-                                name="propertyType"
-                                value={formData.propertyType}
-                                onChange={handleChange}
-                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
-                            >
-                                <option value="">Select Type...</option>
-                                <option value="Hotel">Hotel</option>
-                                <option value="Land">Land</option>
-                                <option value="Luxury Residential">Luxury Residential</option>
-                                <option value="Commercial">Commercial</option>
-                                <option value="Industrial">Industrial</option>
-                                <option value="Winery">Winery</option>
-                                <option value="Other">Other</option>
-                            </select>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">
+                                Maximum Investment Budget
+                                <span className="block text-xs text-red-400 mt-1">* Must not exceed Proof of Funds amount</span>
+                            </label>
+                            <div className="relative">
+                                <DollarSign size={16} className="absolute left-3 top-3 text-gray-500" />
+                                <input
+                                    type="number"
+                                    name="priceRange"
+                                    value={formData.priceRange}
+                                    onChange={handleChange}
+                                    placeholder="e.g. 1000000"
+                                    className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 pl-9 text-white focus:ring-1 focus:ring-gold-500"
+                                />
+                            </div>
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Intended Use</label>
@@ -159,18 +228,6 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-1">Price Range</label>
-                            <div className="relative">
-                                <DollarSign size={16} className="absolute left-3 top-3 text-gray-500" />
-                                <input
-                                    name="priceRange"
-                                    value={formData.priceRange}
-                                    placeholder="Min. 1M - 5M EUR"
-                                    className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 pl-9 text-white focus:ring-1 focus:ring-gold-500"
-                                />
-                            </div>
-                        </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Target Return (%)</label>
                             <input
