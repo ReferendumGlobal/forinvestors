@@ -7,7 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
-import { HashRouter, Routes, Route, Navigate, useLocation, useParams, Outlet, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useParams, Outlet, useNavigate } from 'react-router-dom';
 import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PropertySearch from './components/PropertySearch';
@@ -195,7 +195,7 @@ function App() {
   return (
     <HelmetProvider>
       <AuthProvider>
-        <HashRouter>
+        <BrowserRouter>
           <Routes>
             {/* Auth & Dashboard Routes */}
             <Route path="/login" element={<Login />} />
@@ -223,7 +223,7 @@ function App() {
             </Route>
             <Route path="/" element={<Navigate to="/es" replace />} />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </AuthProvider>
     </HelmetProvider>
   );

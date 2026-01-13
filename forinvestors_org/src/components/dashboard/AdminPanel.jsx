@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
-import { Users, FileText, CheckCircle, XCircle, Mail, Loader2, AlertTriangle } from 'lucide-react';
+import { Users, FileText, CheckCircle, XCircle, Mail, Loader2, AlertTriangle, GitMerge } from 'lucide-react';
+import MatchingEngine from './MatchingEngine';
 
 export default function AdminPanel() {
     const { profile } = useAuth();
@@ -181,8 +182,8 @@ export default function AdminPanel() {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 capitalize">{u.role}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                                         <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${u.status === 'approved' ? 'bg-green-100/10 text-green-400' :
-                                                u.status === 'rejected' ? 'bg-red-100/10 text-red-400' :
-                                                    'bg-yellow-100/10 text-yellow-400'
+                                            u.status === 'rejected' ? 'bg-red-100/10 text-red-400' :
+                                                'bg-yellow-100/10 text-yellow-400'
                                             }`}>
                                             {u.status}
                                         </span>
@@ -244,5 +245,15 @@ export default function AdminPanel() {
                 </div>
             )}
         </div>
+    )
+}
+
+{/* MATCHING ENGINE TAB */ }
+{
+    activeTab === 'matching' && (
+        <MatchingEngine />
+    )
+}
+        </div >
     );
 }
