@@ -83,8 +83,6 @@ export default function Home() {
             </div>
 
 
-            {/* Investor Process */}
-            <ProcessSteps variant="investors" />
 
             {/* Legacy Section */}
             <div className="py-24 md:py-32 relative bg-midnight-950">
