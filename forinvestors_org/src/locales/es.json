@@ -8,7 +8,8 @@
         "blog": "Blog",
         "agencies": "Para Agencias Inmobiliarias",
         "search": "Buscador",
-        "access": "Área Privada de Propiedades"
+        "access": "Área Privada de Propiedades",
+        "sell": "Vender Activos"
     },
     "hero": {
         "shield": "El Arte de la Discreción",
@@ -165,6 +166,30 @@
     "contact_global": {
         "title": "Contacto Global",
         "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
+    },
+    "sell_page": {
+        "title": "Venda su Activo en Exclusiva",
+        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
+        "hero_cta": "Valorar mi Propiedad",
+        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "benefits": [
+            {
+                "title": "Confidencialidad Total",
+                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+            },
+            {
+                "title": "Red Global",
+                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+            },
+            {
+                "title": "Gestión Integral",
+                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+            }
+        ],
+        "form_title": "Detalles del Activo",
+        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
+        "success_title": "Solicitud Recibida",
+        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
     },
     "forms": {
         "labels": {

@@ -12,6 +12,7 @@ import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PropertySearch from './components/PropertySearch';
 import Agencies from './components/Agencies';
+import SellAssets from './components/SellAssets';
 import ProcessSteps from './components/ProcessSteps';
 import CategoryPage from './components/CategoryPage';
 import { useTranslation } from 'react-i18next';
@@ -123,6 +124,7 @@ function App() {
               <Route path="wineries" element={<CategoryPage categoryId="wineries" />} />
               <Route path="blog" element={<Blog />} />
               <Route path="agencias" element={<Agencies />} />
+              <Route path="sell" element={<SellAssets />} />
               <Route path="search" element={<PropertySearch />} />
               <Route path="*" element={<Navigate to="." replace />} />
             </Route>
