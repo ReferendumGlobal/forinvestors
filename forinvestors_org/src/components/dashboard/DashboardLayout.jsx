@@ -6,6 +6,7 @@ import { Navigate, Outlet, Link, useLocation } from 'react-router-dom';
 import { Shield, LayoutDashboard, Building, Users, FileText, LogOut, Menu, X } from 'lucide-react';
 import InvestorOnboarding from './InvestorOnboarding';
 import SellerOnboarding from './SellerOnboarding';
+import AgencyOnboarding from './AgencyOnboarding';
 
 export default function DashboardLayout() {
     const { user, profile, loading: authLoading, signOut } = useAuth();
@@ -15,8 +16,8 @@ export default function DashboardLayout() {
     const location = useLocation();
 
     useEffect(() => {
-        // Check contract if user is investor or seller
-        if (user && (profile?.role === 'investor' || profile?.role === 'seller')) {
+        // Check contract if user is investor, seller, or agency
+        if (user && ['investor', 'seller', 'agency'].includes(profile?.role)) {
             checkContract();
         } else {
             setCheckingContract(false);
@@ -47,7 +48,9 @@ export default function DashboardLayout() {
 
     if (!user) return <Navigate to="/login" />;
 
-    // Force onboarding for INVESTORS without contract
+    // --- ONBOARDING ROUTING ---
+
+    // 1. INVESTOR
     if (profile?.role === 'investor' && !hasContract) {
         return (
             <div className="min-h-screen bg-midnight-950 flex flex-col">
@@ -67,7 +70,7 @@ export default function DashboardLayout() {
         );
     }
 
-    // Force onboarding for SELLERS without contract
+    // 2. SELLER
     if (profile?.role === 'seller' && !hasContract) {
         return (
             <div className="min-h-screen bg-midnight-950 flex flex-col">
@@ -82,6 +85,26 @@ export default function DashboardLayout() {
                 </header>
                 <main className="flex-1 overflow-y-auto">
                     <SellerOnboarding />
+                </main>
+            </div>
+        );
+    }
+
+    // 3. AGENCY
+    if (profile?.role === 'agency' && !hasContract) {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col">
+                <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
+                    <Link to="/" className="flex items-center space-x-2">
+                        <Shield className="h-8 w-8 text-gold-500" />
+                        <span className="text-white font-serif font-bold text-lg">URBINA</span>
+                    </Link>
+                    <button onClick={signOut} className="text-gray-400 hover:text-white text-sm">
+                        Sign Out
+                    </button>
+                </header>
+                <main className="flex-1 overflow-y-auto">
+                    <AgencyOnboarding />
                 </main>
             </div>
         );
