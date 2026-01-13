@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
