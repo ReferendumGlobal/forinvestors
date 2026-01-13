@@ -48,7 +48,29 @@ export default function DashboardLayout() {
 
     if (!user) return <Navigate to="/login" />;
 
-    // --- ONBOARDING ROUTING ---
+    // 0. CHECK PENDING STATUS
+    if (profile?.status === 'pending') {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col items-center justify-center p-4 text-center">
+                <Shield className="h-16 w-16 text-gold-500 mb-6" />
+                <h2 className="text-3xl font-bold text-white mb-4">Account Under Review</h2>
+                <div className="max-w-md mx-auto bg-midnight-900/50 p-6 rounded-lg border border-white/10 mb-8">
+                    <p className="text-gray-300 mb-4">
+                        Your account is currently being verified by our team.
+                    </p>
+                    <p className="text-sm text-gray-400">
+                        We are reviewing your application and Proof of Funds. You will receive an email once your account is fully activated.
+                    </p>
+                </div>
+                <button
+                    onClick={signOut}
+                    className="text-gold-500 hover:text-gold-400 font-medium flex items-center gap-2"
+                >
+                    <LogOut size={18} /> Sign Out
+                </button>
+            </div>
+        );
+    }
 
     // 1. INVESTOR
     if (profile?.role === 'investor' && !hasContract) {
