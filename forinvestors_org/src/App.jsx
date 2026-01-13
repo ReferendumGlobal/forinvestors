@@ -139,7 +139,12 @@ function LanguageWrapper() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const showGlobalContact = !location.pathname.includes('/agencies') && !location.pathname.includes('/agencias');
+
+  // Check if current path matches any localized 'agencies' slug
+  const agencySlugs = Object.values(routeConfig).map(config => config.agencies);
+  const isAgencyPage = agencySlugs.some(slug => location.pathname.includes(`/${slug}`));
+
+  const showGlobalContact = !isAgencyPage;
 
   useEffect(() => {
     const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];
