@@ -19,6 +19,7 @@ export default function DashboardLayout() {
     // Navigation items based on role
     const navItems = [
         { name: 'Inicio', path: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'agency', 'investor'] },
+        { name: 'Admin Panel', path: '/dashboard/admin', icon: Shield, roles: ['admin'] },
         { name: 'Usuarios', path: '/dashboard/users', icon: Users, roles: ['admin'] },
         { name: 'Propiedades', path: '/dashboard/properties', icon: Building, roles: ['admin', 'agency'] },
         { name: 'Oportunidades', path: '/dashboard/opportunities', icon: Building, roles: ['investor'] },
@@ -55,8 +56,8 @@ export default function DashboardLayout() {
                             key={item.path}
                             to={item.path}
                             className={`flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors ${location.pathname === item.path
-                                    ? 'bg-gold-500/10 text-gold-500'
-                                    : 'text-gray-400 hover:bg-midnight-800 hover:text-white'
+                                ? 'bg-gold-500/10 text-gold-500'
+                                : 'text-gray-400 hover:bg-midnight-800 hover:text-white'
                                 }`}
                         >
                             <item.icon className="mr-3 h-5 w-5" />

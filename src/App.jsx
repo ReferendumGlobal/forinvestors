@@ -184,6 +184,7 @@ import Register from './components/auth/Register';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHome from './components/dashboard/DashboardHome';
 import ContractSign from './components/dashboard/ContractSign';
+import AdminPanel from './components/dashboard/AdminPanel';
 
 function App() {
   return (
@@ -198,6 +199,7 @@ function App() {
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<DashboardHome />} />
               <Route path="contracts" element={<ContractSign />} />
+              <Route path="admin" element={<AdminPanel />} />
             </Route>
 
             {/* Public Website Routes */}

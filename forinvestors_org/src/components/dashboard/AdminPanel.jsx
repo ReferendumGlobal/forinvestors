@@ -1,0 +1,248 @@
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../../context/AuthContext';
+import { supabase } from '../../lib/supabase';
+import { Users, FileText, CheckCircle, XCircle, Mail, Loader2, AlertTriangle } from 'lucide-react';
+
+export default function AdminPanel() {
+    const { profile } = useAuth();
+    const [leads, setLeads] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [contracts, setContracts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [activeTab, setActiveTab] = useState('leads');
+
+    useEffect(() => {
+        if (profile?.role === 'admin') {
+            fetchData();
+        }
+    }, [profile]);
+
+    const fetchData = async () => {
+        setLoading(true);
+        try {
+            const { data: leadsData } = await supabase
+                .from('leads')
+                .select('*')
+                .order('created_at', { ascending: false });
+            setLeads(leadsData || []);
+
+            const { data: profilesData } = await supabase
+                .from('profiles')
+                .select('*')
+                .order('created_at', { ascending: false });
+            setUsers(profilesData || []);
+
+            const { data: contractsData } = await supabase
+                .from('contracts')
+                .select('*, profiles(full_name, email)')
+                .order('signed_at', { ascending: false });
+            setContracts(contractsData || []);
+
+        } catch (error) {
+            console.error("Error fetching admin data:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleInvite = async (lead) => {
+        const { error } = await supabase
+            .from('leads')
+            .update({ status: 'invited' })
+            .eq('id', lead.id);
+
+        if (!error) {
+            alert(`Marked as invited. Send this link to ${lead.email}:\n\nhttps://forinvestors.org/#/register?email=${encodeURIComponent(lead.email)}&type=${lead.intent === 'sell' ? 'agency' : 'investor'}`);
+            fetchData();
+        }
+    };
+
+    const handleApproveUser = async (userId) => {
+        const { error } = await supabase
+            .from('profiles')
+            .update({ status: 'approved' })
+            .eq('id', userId);
+
+        if (!error) fetchData();
+    };
+
+    if (!profile || profile.role !== 'admin') {
+        return <div className="p-10 text-center text-red-500">Access Denied</div>;
+    }
+
+    if (loading) return <div className="p-10 text-center text-gold-500"><Loader2 className="animate-spin inline mr-2" /> Loading Admin Data...</div>;
+
+    return (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <h1 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
+                <AlertTriangle className="text-red-500" /> Admin Control Center
+            </h1>
+
+            <div className="flex space-x-4 border-b border-white/10 mb-8 overflow-x-auto">
+                <button
+                    onClick={() => setActiveTab('leads')}
+                    className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'leads' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
+                >
+                    Leads ({leads.length})
+                </button>
+                <button
+                    onClick={() => setActiveTab('users')}
+                    className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'users' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
+                >
+                    Users ({users.length})
+                </button>
+                <button
+                    onClick={() => setActiveTab('contracts')}
+                    className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'contracts' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
+                >
+                    Contracts ({contracts.length})
+                </button>
+            </div>
+
+            {/* LEADS TAB */}
+            {activeTab === 'leads' && (
+                <div className="bg-midnight-900 rounded-lg border border-white/10 overflow-hidden">
+                    <table className="min-w-full divide-y divide-white/10">
+                        <thead className="bg-midnight-950">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Date</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Name</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Email/Phone</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Intent</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-midnight-900 divide-y divide-white/5">
+                            {leads.map((lead) => (
+                                <tr key={lead.id} className="hover:bg-white/5 transition-colors">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">
+                                        {new Date(lead.created_at).toLocaleDateString()}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm font-medium text-white">{lead.full_name}</div>
+                                        <div className="text-xs text-gray-500">{lead.target_location}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm text-gray-300">{lead.email}</div>
+                                        <div className="text-xs text-gray-500">{lead.phone}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${lead.intent === 'buy' ? 'bg-green-100/10 text-green-400' : 'bg-blue-100/10 text-blue-400'}`}>
+                                            {lead.intent === 'buy' ? 'Buy' : 'Sell'}
+                                        </span>
+                                        {lead.request_access && (
+                                            <span className="ml-2 px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gold-100/10 text-gold-400">
+                                                Access
+                                            </span>
+                                        )}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${lead.status === 'invited' ? 'bg-green-900 text-green-200' : 'bg-yellow-900 text-yellow-200'}`}>
+                                            {lead.status}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        {lead.status !== 'invited' && (
+                                            <button
+                                                onClick={() => handleInvite(lead)}
+                                                className="text-gold-500 hover:text-gold-400 flex items-center justify-end gap-1 w-full"
+                                            >
+                                                <Mail size={16} /> Invite
+                                            </button>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+
+            {/* USERS TAB */}
+            {activeTab === 'users' && (
+                <div className="bg-midnight-900 rounded-lg border border-white/10 overflow-hidden">
+                    <table className="min-w-full divide-y divide-white/10">
+                        <thead className="bg-midnight-950">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">User</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Role</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-midnight-900 divide-y divide-white/5">
+                            {users.map((u) => (
+                                <tr key={u.id} className="hover:bg-white/5 transition-colors">
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm font-medium text-white">{u.full_name}</div>
+                                        <div className="text-xs text-gray-500">{u.email}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 capitalize">{u.role}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm">
+                                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${u.status === 'approved' ? 'bg-green-100/10 text-green-400' :
+                                                u.status === 'rejected' ? 'bg-red-100/10 text-red-400' :
+                                                    'bg-yellow-100/10 text-yellow-400'
+                                            }`}>
+                                            {u.status}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        {u.status === 'pending' && (
+                                            <div className="flex justify-end gap-2">
+                                                <button
+                                                    onClick={() => handleApproveUser(u.id)}
+                                                    className="text-green-500 hover:text-green-400"
+                                                >
+                                                    <CheckCircle size={18} />
+                                                </button>
+                                                <button className="text-red-500 hover:text-red-400">
+                                                    <XCircle size={18} />
+                                                </button>
+                                            </div>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+
+            {/* CONTRACTS TAB */}
+            {activeTab === 'contracts' && (
+                <div className="bg-midnight-900 rounded-lg border border-white/10 overflow-hidden">
+                    <table className="min-w-full divide-y divide-white/10">
+                        <thead className="bg-midnight-950">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Date</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Signed By</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Type</th>
+                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Signature</th>
+                            </tr>
+                        </thead>
+                        <tbody className="bg-midnight-900 divide-y divide-white/5">
+                            {contracts.map((c) => (
+                                <tr key={c.id} className="hover:bg-white/5 transition-colors">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">
+                                        {new Date(c.signed_at).toLocaleDateString()}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-sm font-medium text-white">{c.profiles?.full_name || 'Unknown User'}</div>
+                                        <div className="text-xs text-gray-500">{c.profiles?.email}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 capitalize">
+                                        {c.type}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-right">
+                                        <img src={c.signature_url} alt="Signature" className="h-8 inline-block bg-white rounded p-1" />
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
+        </div>
+    );
+}
