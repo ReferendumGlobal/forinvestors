@@ -44,6 +44,12 @@ export default function SellerDataForm({ initialData = {}, onComplete }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Validation: Check price >= 1M
+        if (Number(propertyData.price) < 1000000) {
+            alert('The minimum asset value must be 1,000,000 €. Please update the price.');
+            return;
+        }
+
         // Validation: Check if percentages sum to 100?
         const totalPercent = owners.reduce((acc, curr) => acc + Number(curr.percent), 0);
         if (Math.abs(totalPercent - 100) > 1) {
@@ -104,14 +110,14 @@ export default function SellerDataForm({ initialData = {}, onComplete }) {
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Target Sale Price (EUR)</label>
-                            <input
-                                required
-                                name="price"
-                                type="number"
-                                value={propertyData.price}
-                                onChange={handlePropertyChange}
-                                placeholder="e.g. 1500000"
-                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
+                            required
+                            name="price"
+                            type="number"
+                            min="1000000"
+                            value={propertyData.price}
+                            onChange={handlePropertyChange}
+                            placeholder="Min. 1,000,000 €"
+                            className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
                             />
                         </div>
                     </div>

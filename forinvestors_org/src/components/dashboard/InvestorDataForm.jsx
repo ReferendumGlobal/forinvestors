@@ -166,8 +166,7 @@ export default function InvestorDataForm({ initialData = {}, onComplete }) {
                                 <input
                                     name="priceRange"
                                     value={formData.priceRange}
-                                    onChange={handleChange}
-                                    placeholder="e.g. 1M - 5M EUR"
+                                    placeholder="Min. 1M - 5M EUR"
                                     className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 pl-9 text-white focus:ring-1 focus:ring-gold-500"
                                 />
                             </div>
