@@ -32,37 +32,23 @@ export default function Register() {
         setError(null);
 
         try {
-            // 1. Sign Up Auth User
+            // 1. Sign Up Auth User (Profile created via SQL Trigger)
             const { data: authData, error: authError } = await supabase.auth.signUp({
                 email,
                 password,
+                options: {
+                    data: {
+                        full_name: fullName,
+                        role: role,
+                        company_name: role === 'agency' ? companyName : null,
+                    }
+                }
             });
 
             if (authError) throw authError;
 
-            if (authData.user) {
-                // 2. Create Profile
-                const { error: profileError } = await supabase
-                    .from('profiles')
-                    .insert([
-                        {
-                            id: authData.user.id,
-                            email: email,
-                            role: role,
-                            full_name: fullName,
-                            company_name: role === 'agency' ? companyName : null,
-                            status: 'pending'
-                        }
-                    ]);
-
-                if (profileError) {
-                    console.error("Profile creation failed:", profileError);
-                    throw new Error("Error creating user profile.");
-                }
-
-                // 3. Success -> Redirect or Show Confirmation
-                navigate('/dashboard');
-            }
+            // 2. Success -> Redirect
+            navigate('/dashboard');
         } catch (err) {
             setError(err.message);
         } finally {
@@ -96,8 +82,8 @@ export default function Register() {
                             type="button"
                             onClick={() => setRole('investor')}
                             className={`flex-1 flex items-center justify-center py-2 text-sm font-medium rounded-md transition-all ${role === 'investor'
-                                    ? 'bg-gold-600 text-white shadow'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gold-600 text-white shadow'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             <User size={16} className="mr-2" /> Investor
@@ -106,8 +92,8 @@ export default function Register() {
                             type="button"
                             onClick={() => setRole('agency')}
                             className={`flex-1 flex items-center justify-center py-2 text-sm font-medium rounded-md transition-all ${role === 'agency'
-                                    ? 'bg-gold-600 text-white shadow'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gold-600 text-white shadow'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             <Building size={16} className="mr-2" /> Agency

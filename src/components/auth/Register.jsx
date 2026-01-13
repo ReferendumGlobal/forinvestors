@@ -32,39 +32,24 @@ export default function Register() {
         setError(null);
 
         try {
-            // 1. Sign Up Auth User
+            // 1. Sign Up Auth User (Profile created via SQL Trigger)
             const { data: authData, error: authError } = await supabase.auth.signUp({
                 email,
                 password,
+                options: {
+                    data: {
+                        full_name: fullName,
+                        role: role,
+                        company_name: role === 'agency' ? companyName : null,
+                    }
+                }
             });
 
             if (authError) throw authError;
 
-            if (authData.user) {
-                // 2. Create Profile
-                const { error: profileError } = await supabase
-                    .from('profiles')
-                    .insert([
-                        {
-                            id: authData.user.id,
-                            email: email,
-                            role: role,
-                            full_name: fullName,
-                            company_name: role === 'agency' ? companyName : null,
-                            status: 'pending'
-                        }
-                    ]);
-
-                if (profileError) {
-                    // Critical: If profile creation fails, we might have a dangling auth user.
-                    // Ideally we should delete the auth user or handle this carefully.
-                    console.error("Profile creation failed:", profileError);
-                    throw new Error("Error al crear el perfil de usuario.");
-                }
-
-                // 3. Success -> Redirect or Show Confirmation
-                navigate('/dashboard'); // Ideally to a "Check check email" or "Pending Approval" page
-            }
+            // 2. Success -> Redirect
+            // If email confirmation is enabled, session might be null, but profile is created by trigger.
+            navigate('/dashboard');
         } catch (err) {
             setError(err.message);
         } finally {
@@ -98,8 +83,8 @@ export default function Register() {
                             type="button"
                             onClick={() => setRole('investor')}
                             className={`flex-1 flex items-center justify-center py-2 text-sm font-medium rounded-md transition-all ${role === 'investor'
-                                    ? 'bg-gold-600 text-white shadow'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gold-600 text-white shadow'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             <User size={16} className="mr-2" /> Inversor
@@ -108,8 +93,8 @@ export default function Register() {
                             type="button"
                             onClick={() => setRole('agency')}
                             className={`flex-1 flex items-center justify-center py-2 text-sm font-medium rounded-md transition-all ${role === 'agency'
-                                    ? 'bg-gold-600 text-white shadow'
-                                    : 'text-gray-400 hover:text-white'
+                                ? 'bg-gold-600 text-white shadow'
+                                : 'text-gray-400 hover:text-white'
                                 }`}
                         >
                             <Building size={16} className="mr-2" /> Agencia

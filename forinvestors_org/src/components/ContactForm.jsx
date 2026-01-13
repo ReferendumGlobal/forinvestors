@@ -10,6 +10,7 @@ export default function ContactForm({ categoryName, explanation }) {
         funds: '',
         targetLocation: '',
         intent: 'buy',
+        requestAccess: true,
         message: '',
         file: null
     });
@@ -56,6 +57,7 @@ export default function ContactForm({ categoryName, explanation }) {
         formData.append('funds', formState.funds);
         formData.append('targetLocation', formState.targetLocation);
         formData.append('intent', formState.intent === 'buy' ? 'Investment (Buy)' : 'Sale');
+        formData.append('requestAccess', formState.requestAccess ? 'Yes' : 'No');
         formData.append('message', formState.message);
         formData.append('category', categoryName);
         formData.append('_subject', `New Investment Request: ${categoryName}`);
@@ -223,6 +225,19 @@ export default function ContactForm({ categoryName, explanation }) {
                         <span className="font-medium">I want to Sell (Exclusive)</span>
                     </label>
                 </div>
+            </div>
+
+            <div className="flex items-center space-x-3 bg-midnight-900/50 p-4 rounded-lg border border-white/5">
+                <input
+                    type="checkbox"
+                    id="requestAccess"
+                    checked={formState.requestAccess}
+                    onChange={(e) => setFormState({ ...formState, requestAccess: e.target.checked })}
+                    className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                />
+                <label htmlFor="requestAccess" className="text-sm text-gray-300 cursor-pointer select-none">
+                    I request access to the <strong className="text-gold-400">Private Platform</strong> to view exclusive opportunities.
+                </label>
             </div>
 
             <div>
