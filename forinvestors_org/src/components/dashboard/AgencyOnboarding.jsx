@@ -5,10 +5,8 @@ import AgencyDataForm from './AgencyDataForm';
 import ContractSign from './ContractSign';
 import { CheckCircle, Building2, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
-const STEPS = [
 import SetPassword from './SetPassword';
-import { UserCircle } from 'lucide-react'; // Ensure icon import
+import { UserCircle } from 'lucide-react';
 
 const STEPS = [
     { title: 'Security', icon: UserCircle },
