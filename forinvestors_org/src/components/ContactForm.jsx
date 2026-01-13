@@ -212,7 +212,7 @@ export default function ContactForm({ categoryName, explanation }) {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.funds')}</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.capital')}</label>
                     <input
                         type="text"
                         required

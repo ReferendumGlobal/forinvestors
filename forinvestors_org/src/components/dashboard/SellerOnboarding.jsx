@@ -1,36 +1,63 @@
 
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { supabase } from '../../lib/supabase';
 import SellerDataForm from './SellerDataForm';
 import SellerDocsUpload from './SellerDocsUpload';
 import ContractSign from './ContractSign';
-import { CheckCircle, Shield, FileText, User, Building } from 'lucide-react';
+import { CheckCircle, Building2, FileText, UploadCloud } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const STEPS = [
-    { title: 'Property & Owners', icon: Building },
-    { title: 'Documentation', icon: Shield },
+    { title: 'Property & Owners', icon: Building2 },
+    { title: 'Documentation', icon: UploadCloud },
     { title: 'Sign Mandate', icon: FileText }
 ];
 
 export default function SellerOnboarding() {
     const { user, profile } = useAuth();
     const [step, setStep] = useState(1);
-    const [onboardingData, setOnboardingData] = useState({
-        property: {},
-        owners: [],
-        docs: {}
-    });
+    const [sellerData, setSellerData] = useState({});
     const [completed, setCompleted] = useState(false);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        // Hydrate from Leads (if user came from public Sell page)
+        const fetchLeadData = async () => {
+            if (!user?.email) return;
+            const { data } = await supabase
+                .from('leads')
+                .select('*')
+                .eq('email', user.email)
+                .eq('role', 'seller')
+                .order('created_at', { ascending: false })
+                .limit(1)
+                .single();
+
+            if (data) {
+                setSellerData(prev => ({
+                    ...prev,
+                    property: {
+                        address: data.target_location || '', // Using target_location as address/location
+                        price: data.budget || '', // Using budget as price
+                        type: data.message || '', // Details often contain type
+                    },
+                    owners: [
+                        { name: data.full_name || '', email: data.email || '', percent: '100', idNumber: '' }
+                    ]
+                }));
+            }
+        };
+        fetchLeadData();
+    }, [user]);
+
     const handleDataComplete = (data) => {
-        setOnboardingData(prev => ({ ...prev, ...data }));
+        setSellerData(prev => ({ ...prev, ...data }));
         setStep(2);
     };
 
-    const handleDocsComplete = (docs) => {
-        setOnboardingData(prev => ({ ...prev, docs: docs }));
+    const handleDocsComplete = (docsData) => {
+        setSellerData(prev => ({ ...prev, docs: docsData }));
         setStep(3);
     };
 
@@ -44,10 +71,10 @@ export default function SellerOnboarding() {
                 <div className="bg-green-500/20 p-6 rounded-full inline-block mb-8">
                     <CheckCircle className="h-16 w-16 text-green-500" />
                 </div>
-                <h2 className="text-3xl font-bold text-white mb-4">Mandate Signed Successfully!</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">Mandate Active!</h2>
                 <p className="text-gray-300 text-lg mb-8">
-                    Your property search mandate is now active.
-                    We are verifying your documents and will start matching your asset with our investors immediately.
+                    Your property is now under exclusive management.
+                    We will begin the marketing process immediately.
                 </p>
                 <button
                     onClick={() => navigate('/dashboard')}
@@ -62,15 +89,14 @@ export default function SellerOnboarding() {
     return (
         <div className="max-w-4xl mx-auto py-10 px-4">
             {/* Stepper */}
-            <div className="flex justify-between items-center mb-12 relative z-10 max-w-3xl mx-auto">
-                <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -z-10"></div>
+            <div className="flex justify-center items-center gap-10 mb-12 relative z-10">
                 {STEPS.map((s, i) => {
                     const stepNum = i + 1;
                     const isActive = step === stepNum;
                     const isDone = step > stepNum;
 
                     return (
-                        <div key={i} className="flex flex-col items-center bg-midnight-950 px-4">
+                        <div key={i} className="flex flex-col items-center">
                             <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 mb-2 transition-colors ${isActive ? 'border-gold-500 bg-gold-500/20 text-gold-500' :
                                     isDone ? 'border-green-500 bg-green-500/20 text-green-500' :
                                         'border-gray-700 bg-midnight-900 text-gray-500'
@@ -89,14 +115,13 @@ export default function SellerOnboarding() {
             <div className="transition-all duration-300">
                 {step === 1 && (
                     <SellerDataForm
-                        initialData={onboardingData}
+                        initialData={sellerData}
                         onComplete={handleDataComplete}
                     />
                 )}
                 {step === 2 && (
                     <SellerDocsUpload
-                        userId={user?.id}
-                        owners={onboardingData.owners}
+                        sellerData={sellerData}
                         onComplete={handleDocsComplete}
                         onBack={() => setStep(1)}
                     />
@@ -104,14 +129,10 @@ export default function SellerOnboarding() {
                 {step === 3 && (
                     <ContractSign
                         mode="onboarding"
-                        contractType="sale_mandate" // Tell ContractSign to use Sale template
+                        contractType="sale_mandate"
                         user={user}
                         profile={profile}
-                        sellerData={{
-                            property: onboardingData.property,
-                            owners: onboardingData.owners,
-                            docs: onboardingData.docs
-                        }}
+                        sellerData={sellerData} // Pass all data including docs urls
                         onSuccess={handleContractSigned}
                         onBack={() => setStep(2)}
                     />

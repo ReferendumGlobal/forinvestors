@@ -5,44 +5,63 @@ import { supabase } from '../../lib/supabase';
 import InvestorDataForm from './InvestorDataForm';
 import IdUpload from './IdUpload';
 import ContractSign from './ContractSign';
-import { CheckCircle, Shield, FileText, User } from 'lucide-react';
+import { CheckCircle, Building2, FileText, UserCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const STEPS = [
-    { title: 'Profile & Criteria', icon: User },
-    { title: 'Identity Verify', icon: Shield },
+    { title: 'Investment Profile', icon: Building2 },
+    { title: 'Identity Verification', icon: UserCircle },
     { title: 'Sign Mandate', icon: FileText }
 ];
 
 export default function InvestorOnboarding() {
     const { user, profile } = useAuth();
     const [step, setStep] = useState(1);
-    const [onboardingData, setOnboardingData] = useState({
-        criteria: {},
-        idUrl: null
-    });
+    const [investorData, setInvestorData] = useState({});
+    const [docs, setDocuments] = useState({});
     const [completed, setCompleted] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if already has contract, if so, maybe redirect to dashboard home or show success?
-        // For now, we assume this component is rendered because the user needs to onboard.
-    }, []);
+        // Hydrate from Leads (if user came from public form)
+        const fetchLeadData = async () => {
+            if (!user?.email) return;
+            const { data } = await supabase
+                .from('leads')
+                .select('*')
+                .eq('email', user.email)
+                .order('created_at', { ascending: false })
+                .limit(1)
+                .single();
 
-    const handleCriteriaComplete = (data) => {
-        setOnboardingData(prev => ({ ...prev, criteria: data }));
+            if (data) {
+                // Pre-fill data from the lead form
+                setInvestorData(prev => ({
+                    ...prev,
+                    investmentCapacity: data.budget || '',
+                    companyName: data.company_name || '',
+                    address: data.target_location || '',
+                    // Search Profile logic could be complex to map directly, 
+                    // but we can map the basic 'message' or 'target_location'
+                }));
+            }
+        };
+        fetchLeadData();
+    }, [user]);
+
+    const handleDataComplete = (data) => {
+        setInvestorData(data);
         setStep(2);
     };
 
-    const handleUploadComplete = (url) => {
-        setOnboardingData(prev => ({ ...prev, idUrl: url }));
+    const handleDocsUpload = (uploadedDocs) => {
+        setDocuments(uploadedDocs); // { passport: url, etc }
         setStep(3);
     };
 
     const handleContractSigned = async () => {
+        // Here we could update profile status if needed
         setCompleted(true);
-        // Maybe wait a bit then redirect
-        // navigate('/dashboard');
     };
 
     if (completed) {
@@ -53,9 +72,7 @@ export default function InvestorOnboarding() {
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">You are all set!</h2>
                 <p className="text-gray-300 text-lg mb-8">
-                    Your mandate has been signed and your profile is verified.
-                    We are now cross-referencing your criteria with our off-market assets.
-                    You will be notified immediately when a match is found.
+                    Your mandate has been signed. You now have full access to our exclusive opportunities.
                 </p>
                 <button
                     onClick={() => navigate('/dashboard')}
@@ -70,15 +87,14 @@ export default function InvestorOnboarding() {
     return (
         <div className="max-w-4xl mx-auto py-10 px-4">
             {/* Stepper */}
-            <div className="flex justify-between items-center mb-12 relative z-10">
-                <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -z-10"></div>
+            <div className="flex justify-center items-center gap-10 mb-12 relative z-10">
                 {STEPS.map((s, i) => {
                     const stepNum = i + 1;
                     const isActive = step === stepNum;
                     const isDone = step > stepNum;
 
                     return (
-                        <div key={i} className="flex flex-col items-center bg-midnight-950 px-4">
+                        <div key={i} className="flex flex-col items-center">
                             <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 mb-2 transition-colors ${isActive ? 'border-gold-500 bg-gold-500/20 text-gold-500' :
                                     isDone ? 'border-green-500 bg-green-500/20 text-green-500' :
                                         'border-gray-700 bg-midnight-900 text-gray-500'
@@ -91,30 +107,31 @@ export default function InvestorOnboarding() {
                         </div>
                     );
                 })}
+                {/* Connecting Line (Visual only, tricky to implement perfectly responsive without absolute positioning nonsense) */}
             </div>
 
             {/* Content */}
             <div className="transition-all duration-300">
                 {step === 1 && (
                     <InvestorDataForm
-                        initialData={onboardingData.criteria}
-                        onComplete={handleCriteriaComplete}
+                        initialData={investorData}
+                        onComplete={handleDataComplete}
                     />
                 )}
                 {step === 2 && (
                     <IdUpload
-                        userId={user?.id}
-                        onComplete={handleUploadComplete}
+                        onUploadComplete={handleDocsUpload}
                         onBack={() => setStep(1)}
                     />
                 )}
                 {step === 3 && (
                     <ContractSign
                         mode="onboarding"
+                        contractType="buy_mandate"
                         user={user}
                         profile={profile}
-                        criteria={onboardingData.criteria}
-                        idUrl={onboardingData.idUrl}
+                        criteria={investorData} // Pass the collected data
+                        idUrl={docs.passport} // Pass ID url
                         onSuccess={handleContractSigned}
                         onBack={() => setStep(2)}
                     />
