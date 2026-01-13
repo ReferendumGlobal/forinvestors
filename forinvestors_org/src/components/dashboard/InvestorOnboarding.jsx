@@ -8,10 +8,7 @@ import ContractSign from './ContractSign';
 import { CheckCircle, Building2, FileText, UserCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-import SetPassword from './SetPassword';
-
 const STEPS = [
-    { title: 'Security', icon: UserCircle }, // New Step 1
     { title: 'Investment Profile', icon: Building2 },
     { title: 'Identity Verification', icon: UserCircle },
     { title: 'Sign Mandate', icon: FileText }
@@ -44,30 +41,24 @@ export default function InvestorOnboarding() {
                     investmentCapacity: data.budget || '',
                     companyName: data.company_name || '',
                     address: data.target_location || '',
-                    // Search Profile logic could be complex to map directly, 
-                    // but we can map the basic 'message' or 'target_location'
+                    pof_url: data.message?.match(/https?:\/\/[^\s]+/)?.[0] // Try to extract POF URL if embedded in message
                 }));
             }
         };
         fetchLeadData();
     }, [user]);
 
-    const handlePasswordSet = () => {
-        setStep(2);
-    };
-
     const handleDataComplete = (data) => {
         setInvestorData(data);
-        setStep(3);
+        setStep(2);
     };
 
     const handleDocsUpload = (uploadedDocs) => {
         setDocuments(uploadedDocs); // { passport: url, etc }
-        setStep(4);
+        setStep(3);
     };
 
     const handleContractSigned = async () => {
-        // Here we could update profile status if needed
         setCompleted(true);
     };
 
@@ -119,30 +110,27 @@ export default function InvestorOnboarding() {
             {/* Content */}
             <div className="transition-all duration-300">
                 {step === 1 && (
-                    <SetPassword onComplete={handlePasswordSet} />
-                )}
-                {step === 2 && (
                     <InvestorDataForm
                         initialData={investorData}
                         onComplete={handleDataComplete}
                     />
                 )}
-                {step === 3 && (
+                {step === 2 && (
                     <IdUpload
                         onUploadComplete={handleDocsUpload}
-                        onBack={() => setStep(2)}
+                        onBack={() => setStep(1)}
                     />
                 )}
-                {step === 4 && (
+                {step === 3 && (
                     <ContractSign
                         mode="onboarding"
                         contractType="buy_mandate"
                         user={user}
                         profile={profile}
-                        criteria={investorData} // Pass the collected data
-                        idUrl={docs.passport} // Pass ID url
+                        criteria={investorData}
+                        idUrl={docs.passport}
                         onSuccess={handleContractSigned}
-                        onBack={() => setStep(3)}
+                        onBack={() => setStep(2)}
                     />
                 )}
             </div>
