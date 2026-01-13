@@ -119,7 +119,6 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                             />
                         </div>
                     </div>
-                    </div>
                 </div>
 
                 <div className="bg-gold-500/10 border border-gold-500/30 rounded-lg p-4">
