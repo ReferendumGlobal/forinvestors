@@ -7,6 +7,11 @@ import { CheckCircle, Building2, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const STEPS = [
+import SetPassword from './SetPassword';
+import { UserCircle } from 'lucide-react'; // Ensure icon import
+
+const STEPS = [
+    { title: 'Security', icon: UserCircle },
     { title: 'Agency Details', icon: Building2 },
     { title: 'Collaboration Agreement', icon: FileText }
 ];
@@ -18,9 +23,13 @@ export default function AgencyOnboarding() {
     const [completed, setCompleted] = useState(false);
     const navigate = useNavigate();
 
+    const handlePasswordSet = () => {
+        setStep(2);
+    };
+
     const handleDataComplete = (data) => {
         setAgencyData(data);
-        setStep(2);
+        setStep(3);
     };
 
     const handleContractSigned = async () => {
@@ -60,8 +69,8 @@ export default function AgencyOnboarding() {
                     return (
                         <div key={i} className="flex flex-col items-center">
                             <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 mb-2 transition-colors ${isActive ? 'border-gold-500 bg-gold-500/20 text-gold-500' :
-                                    isDone ? 'border-green-500 bg-green-500/20 text-green-500' :
-                                        'border-gray-700 bg-midnight-900 text-gray-500'
+                                isDone ? 'border-green-500 bg-green-500/20 text-green-500' :
+                                    'border-gray-700 bg-midnight-900 text-gray-500'
                                 }`}>
                                 {isDone ? <CheckCircle size={24} /> : <s.icon size={24} />}
                             </div>
@@ -76,12 +85,15 @@ export default function AgencyOnboarding() {
             {/* Content */}
             <div className="transition-all duration-300">
                 {step === 1 && (
+                    <SetPassword onComplete={handlePasswordSet} />
+                )}
+                {step === 2 && (
                     <AgencyDataForm
                         initialData={agencyData}
                         onComplete={handleDataComplete}
                     />
                 )}
-                {step === 2 && (
+                {step === 3 && (
                     <ContractSign
                         mode="onboarding"
                         contractType="agency_collaboration"
@@ -89,7 +101,7 @@ export default function AgencyOnboarding() {
                         profile={profile}
                         agencyData={agencyData} // Pass the collected data
                         onSuccess={handleContractSigned}
-                        onBack={() => setStep(1)}
+                        onBack={() => setStep(2)}
                     />
                 )}
             </div>
