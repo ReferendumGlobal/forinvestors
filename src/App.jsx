@@ -127,6 +127,8 @@ function LanguageWrapper() {
   const { lang } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+  const showGlobalContact = !location.pathname.includes('/agencias') && !location.pathname.includes('/agencies');
 
   useEffect(() => {
     const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];
@@ -155,25 +157,28 @@ function LanguageWrapper() {
       </main>
 
       {/* Global Contact Section with POF Explanation */}
-      <section id="contact" className="py-20 bg-midnight-900 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gold-500/5 mix-blend-overlay"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
-              {t('contact_global.title', 'Solicitud de Acceso & Prueba de Fondos')}
-            </h2>
-            <div className="bg-gold-500/10 border border-gold-500/30 p-6 rounded-xl max-w-3xl mx-auto backdrop-blur-sm">
-              <p className="text-gold-400 text-lg font-light leading-relaxed">
-                {t('contact_global.explanation')}
+      {/* Global Contact Section with POF Explanation - Hidden on Agency Page */}
+      {showGlobalContact && (
+        <section id="contact" className="py-20 bg-midnight-900 border-t border-white/5 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gold-500/5 mix-blend-overlay"></div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
+                {t('contact_global.title', 'Solicitud de Acceso & Prueba de Fondos')}
+              </h2>
+              <div className="bg-gold-500/10 border border-gold-500/30 p-6 rounded-xl max-w-3xl mx-auto backdrop-blur-sm">
+                <p className="text-gold-400 text-lg font-light leading-relaxed">
+                  {t('contact_global.explanation')}
+                </p>
+              </div>
+              <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                {t('contact_global.subtitle', 'Complete el siguiente formulario y adjunte su POF para recibir el dossier detallado.')}
               </p>
             </div>
-            <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-              {t('contact_global.subtitle', 'Complete el siguiente formulario y adjunte su POF para recibir el dossier detallado.')}
-            </p>
+            <ContactForm categoryName="Global Footer Request" />
           </div>
-          <ContactForm categoryName="Global Footer Request" />
-        </div>
-      </section>
+        </section>
+      )}
 
       <FAQ />
       <Footer />
