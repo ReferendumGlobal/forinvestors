@@ -192,6 +192,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHome from './components/dashboard/DashboardHome';
+import ContractSign from './components/dashboard/ContractSign';
 
 function App() {
   // We need to render routes for all languages dynamically to support the localized slugs
@@ -206,6 +207,7 @@ function App() {
 
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<DashboardHome />} />
+              <Route path="contracts" element={<ContractSign />} />
             </Route>
 
             {/* Public Website Routes */}
