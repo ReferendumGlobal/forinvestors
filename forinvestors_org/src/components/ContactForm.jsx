@@ -110,7 +110,31 @@ export default function ContactForm({ categoryName, explanation }) {
         }
 
         try {
-            // 1. Save to Supabase (Leads Table)
+            let fileUrl = null;
+
+            // 1. Upload File to Supabase Storage (if present)
+            if (formState.file) {
+                const fileExt = formState.file.name.split('.').pop();
+                const fileName = `leads_pof/${Date.now()}_${Math.random().toString(36).substr(2, 9)}.${fileExt}`;
+
+                const { data: uploadData, error: uploadError } = await supabase.storage
+                    .from('documents') // Ensure this bucket exists or use 'user-documents' if that is the one
+                    .upload(fileName, formState.file);
+
+                if (uploadError) {
+                    console.error("Upload error:", uploadError);
+                    // Continue without file or show error? Let's log but continue lead creation for now
+                } else {
+                    // Get Public URL
+                    const { data: publicUrlData } = supabase.storage
+                        .from('documents')
+                        .getPublicUrl(fileName);
+
+                    fileUrl = publicUrlData.publicUrl;
+                }
+            }
+
+            // 1b. Save to Supabase (Leads Table)
             const { error: dbError } = await supabase.from('leads').insert([
                 {
                     full_name: formState.name,
@@ -121,15 +145,23 @@ export default function ContactForm({ categoryName, explanation }) {
                     target_location: formState.targetLocation,
                     intent: formState.intent,
                     request_access: formState.requestAccess,
-                    message: finalMessage, // Storing interests in message for now
+                    message: finalMessage,
                     role: 'investor',
-                    status: 'new'
+                    status: 'new',
+                    // Assuming 'metadata' or 'notes' column exists for extra data if schema is strict
+                    // If pof_url column exists excellent, if not we append to message
+                    message: fileUrl ? `${finalMessage}\n\n[POF Document]: ${fileUrl}` : finalMessage
                 }
             ]);
 
             if (dbError) console.error("Error saving lead:", dbError);
 
             // 2. Send Email via FormSubmit
+            // Append POF link to message for email too
+            if (fileUrl) {
+                formData.set('message', `${formState.message}\n\nPOF Link: ${fileUrl}`);
+            }
+
             const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
                 method: "POST",
                 headers: {
