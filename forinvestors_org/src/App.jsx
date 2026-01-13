@@ -141,6 +141,10 @@ function LanguageWrapper() {
 
   useEffect(() => {
     const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];
+
+    // Safety check: specific protected routes should not be handled as langs
+    if (lang === 'dashboard' || lang === 'admin') return;
+
     if (validLangs.includes(lang)) {
       if (i18n.language !== lang) {
         i18n.changeLanguage(lang);
@@ -194,6 +198,7 @@ import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHome from './components/dashboard/DashboardHome';
 import ContractSign from './components/dashboard/ContractSign';
 import AdminPanel from './components/dashboard/AdminPanel';
+import PropertyManager from './components/dashboard/PropertyManager';
 
 function App() {
   // We need to render routes for all languages dynamically to support the localized slugs
@@ -210,6 +215,8 @@ function App() {
               <Route index element={<DashboardHome />} />
               <Route path="contracts" element={<ContractSign />} />
               <Route path="admin" element={<AdminPanel />} />
+              <Route path="users" element={<AdminPanel />} />
+              <Route path="properties" element={<PropertyManager />} />
             </Route>
 
             {/* Public Website Routes */}

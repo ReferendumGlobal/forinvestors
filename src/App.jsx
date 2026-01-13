@@ -130,6 +130,10 @@ function LanguageWrapper() {
 
   useEffect(() => {
     const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];
+
+    // Safety check: specific protected routes should not be handled as langs
+    if (lang === 'dashboard' || lang === 'admin') return;
+
     if (validLangs.includes(lang)) {
       i18n.changeLanguage(lang);
       // Handle RTL for Arabic
@@ -185,6 +189,7 @@ import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHome from './components/dashboard/DashboardHome';
 import ContractSign from './components/dashboard/ContractSign';
 import AdminPanel from './components/dashboard/AdminPanel';
+import PropertyManager from './components/dashboard/PropertyManager';
 
 function App() {
   return (
@@ -200,6 +205,8 @@ function App() {
               <Route index element={<DashboardHome />} />
               <Route path="contracts" element={<ContractSign />} />
               <Route path="admin" element={<AdminPanel />} />
+              <Route path="users" element={<AdminPanel />} /> {/* Redirect users nav to Admin Panel */}
+              <Route path="properties" element={<PropertyManager />} />
             </Route>
 
             {/* Public Website Routes */}
