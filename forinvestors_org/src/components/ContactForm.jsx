@@ -257,7 +257,7 @@ export default function ContactForm({ categoryName, explanation }) {
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder={t('forms.placeholders.funds_example')}
+                        placeholder="Min. 1,000,000 €"
                         value={formState.funds}
                         onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
