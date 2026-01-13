@@ -9,6 +9,7 @@ export default function ContactForm({ categoryName, explanation }) {
         phone: '',
         funds: '',
         targetLocation: '',
+        intent: 'buy',
         message: '',
         file: null
     });
@@ -54,6 +55,7 @@ export default function ContactForm({ categoryName, explanation }) {
         formData.append('phone', formState.phone);
         formData.append('funds', formState.funds);
         formData.append('targetLocation', formState.targetLocation);
+        formData.append('intent', formState.intent === 'buy' ? 'Investment (Buy)' : 'Sale');
         formData.append('message', formState.message);
         formData.append('category', categoryName);
         formData.append('_subject', `New Investment Request: ${categoryName}`);
@@ -193,6 +195,34 @@ export default function ContactForm({ categoryName, explanation }) {
                     value={formState.targetLocation}
                     onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
                 />
+            </div>
+
+            <div>
+                <label className="block text-sm font-medium text-gray-400 mb-3">What is your goal?</label>
+                <div className="grid grid-cols-2 gap-4">
+                    <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'buy' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
+                        <input
+                            type="radio"
+                            name="intent"
+                            value="buy"
+                            checked={formState.intent === 'buy'}
+                            onChange={() => setFormState({ ...formState, intent: 'buy' })}
+                            className="hidden"
+                        />
+                        <span className="font-medium">I want to Invest / Buy</span>
+                    </label>
+                    <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'sell' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
+                        <input
+                            type="radio"
+                            name="intent"
+                            value="sell"
+                            checked={formState.intent === 'sell'}
+                            onChange={() => setFormState({ ...formState, intent: 'sell' })}
+                            className="hidden"
+                        />
+                        <span className="font-medium">I want to Sell (Exclusive)</span>
+                    </label>
+                </div>
             </div>
 
             <div>

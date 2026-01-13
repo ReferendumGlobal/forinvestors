@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 
 export default function AgencyContactForm() {
     const [formState, setFormState] = useState({
+        agencyName: '',
+        taxId: '',
         contactPerson: '',
         email: '',
         phone: '',
@@ -72,6 +74,8 @@ export default function AgencyContactForm() {
         setError(null);
 
         const formData = new FormData();
+        formData.append('agencyName', formState.agencyName);
+        formData.append('taxId', formState.taxId);
         formData.append('contactPerson', formState.contactPerson);
         formData.append('email', formState.email);
         formData.append('phone', formState.phone);
@@ -156,6 +160,29 @@ export default function AgencyContactForm() {
     return (
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">
             <input type="hidden" name="_captcha" value="false" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Nombre de Agencia</label>
+                    <input
+                        type="text"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.agencyName}
+                        onChange={(e) => setFormState({ ...formState, agencyName: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">NIF / CIF / Tax ID</label>
+                    <input
+                        type="text"
+                        required
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        value={formState.taxId}
+                        onChange={(e) => setFormState({ ...formState, taxId: e.target.value })}
+                    />
+                </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
