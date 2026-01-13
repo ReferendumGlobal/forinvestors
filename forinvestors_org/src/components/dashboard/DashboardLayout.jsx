@@ -1,9 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
 import { Navigate, Outlet, Link, useLocation } from 'react-router-dom';
 import { Shield, LayoutDashboard, Building, Users, FileText, LogOut, Menu, X } from 'lucide-react';
 import InvestorOnboarding from './InvestorOnboarding';
+import SellerOnboarding from './SellerOnboarding';
 
 export default function DashboardLayout() {
     const { user, profile, loading: authLoading, signOut } = useAuth();
@@ -13,7 +15,8 @@ export default function DashboardLayout() {
     const location = useLocation();
 
     useEffect(() => {
-        if (user && profile?.role === 'investor') {
+        // Check contract if user is investor or seller
+        if (user && (profile?.role === 'investor' || profile?.role === 'seller')) {
             checkContract();
         } else {
             setCheckingContract(false);
@@ -26,7 +29,7 @@ export default function DashboardLayout() {
                 .from('contracts')
                 .select('id')
                 .eq('user_id', user.id)
-                .maybeSingle(); // Use maybeSingle to avoid 406 if multiple (shouldn't happen but safe) or 0
+                .maybeSingle();
 
             if (data) setHasContract(true);
         } catch (err) {
@@ -44,9 +47,8 @@ export default function DashboardLayout() {
 
     if (!user) return <Navigate to="/login" />;
 
-    // Force onboarding for investors without contract
+    // Force onboarding for INVESTORS without contract
     if (profile?.role === 'investor' && !hasContract) {
-        // Render Onboarding in a simplified layout
         return (
             <div className="min-h-screen bg-midnight-950 flex flex-col">
                 <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
@@ -65,14 +67,34 @@ export default function DashboardLayout() {
         );
     }
 
+    // Force onboarding for SELLERS without contract
+    if (profile?.role === 'seller' && !hasContract) {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col">
+                <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
+                    <Link to="/" className="flex items-center space-x-2">
+                        <Shield className="h-8 w-8 text-gold-500" />
+                        <span className="text-white font-serif font-bold text-lg">URBINA</span>
+                    </Link>
+                    <button onClick={signOut} className="text-gray-400 hover:text-white text-sm">
+                        Sign Out
+                    </button>
+                </header>
+                <main className="flex-1 overflow-y-auto">
+                    <SellerOnboarding />
+                </main>
+            </div>
+        );
+    }
+
     // Navigation items based on role
     const navItems = [
-        { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'agency', 'investor'] },
+        { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'agency', 'investor', 'seller'] },
         { name: 'Admin Panel', path: '/dashboard/admin', icon: Shield, roles: ['admin'] },
         { name: 'Users', path: '/dashboard/users', icon: Users, roles: ['admin'] },
-        { name: 'Properties', path: '/dashboard/properties', icon: Building, roles: ['admin', 'agency'] },
+        { name: 'Properties', path: '/dashboard/properties', icon: Building, roles: ['admin', 'agency', 'seller'] },
         { name: 'Opportunities', path: '/dashboard/opportunities', icon: Building, roles: ['investor'] },
-        { name: 'Contracts', path: '/dashboard/contracts', icon: FileText, roles: ['admin', 'agency', 'investor'] },
+        { name: 'Contracts', path: '/dashboard/contracts', icon: FileText, roles: ['admin', 'agency', 'investor', 'seller'] },
     ];
 
     const filteredNav = navItems.filter(item => item.roles.includes(profile?.role));
