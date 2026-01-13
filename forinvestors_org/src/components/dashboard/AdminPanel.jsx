@@ -137,6 +137,18 @@ export default function AdminPanel() {
                                                 Access
                                             </span>
                                         )}
+                                        {/* Extract POF Link if present */}
+                                        {lead.message && (lead.message.includes('http') || lead.message.includes('POF')) && (
+                                            <a
+                                                href={lead.message.match(/https?:\/\/[^\s]+/) ? lead.message.match(/https?:\/\/[^\s]+/)[0] : '#'}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="ml-2 text-gold-500 hover:text-gold-400 inline-flex items-center"
+                                                title="View Proof of Funds"
+                                            >
+                                                <FileText size={16} />
+                                            </a>
+                                        )}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                                         <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${lead.status === 'invited' ? 'bg-green-900 text-green-200' : 'bg-yellow-900 text-yellow-200'}`}>
