@@ -7,7 +7,8 @@
         "bodegas": "ワイナリー",
         "blog": "ブログ",
         "agencies": "代理店向け",
-        "search": "物件検索"
+        "search": "物件検索",
+        "access": "プライベートエリア"
     },
     "hero": {
         "shield": "機密保持の芸術",
@@ -140,8 +141,102 @@
             "answer": "それはマンデートによります。直接的なオフマーケット操作では、私たちの手数料は通常、販売価格に含まれているか、買い手側のマンデート（buy-side mandate）を通じて合意されています。"
         }
     ],
+    "agencies_page": {
+        "title": "グローバル・エージェンシー・アライアンス",
+        "subtitle": "世界最大の独立系エージェンシーネットワークに参加しましょう。大規模資本からの需要を一元化します。",
+        "access_button": "パートナーアクセス（代理店＆投資家）",
+        "disclaimer": "* アクセス制限あり。契約締結後に手動での有効化が必要です。",
+        "collaboration_model": "コラボレーションモデル",
+        "collaboration_text_1": "私たちはポータルサイトではなく、**アライアンス（同盟）**です。お客様の委任を保護し、共同で成立したすべての取引において公正な手数料分配（50/50）を保証する協力契約を締結します。",
+        "collaboration_text_2": "契約締結後、以下のことが可能なプライベートプラットフォームへのアクセス権が付与されます。",
+        "benefits_list": [
+            "検証済みの投資家のみに表示される独占物件のポートフォリオをアップロード。",
+            "資産にマッチする投資家からの自動リクエストを受信。",
+            "大規模資本による「募集（Wanted）」リストへのアクセス。"
+        ],
+        "verified_demand_title": "検証済みの需要",
+        "verified_demand_text": "資金証明（POF）を通過済みのバイヤーをご紹介します。",
+        "global_exposure_title": "グローバルな露出",
+        "global_exposure_text": "あなたの地域の資産情報は、ドバイ、ニューヨーク、ロンドンのオフィスに直接届けられます。",
+        "form_title": "アライアンスへのアクセスをリクエスト",
+        "form_subtitle": "コラボレーション契約を受け取るためにプロフィールを完了してください。",
+        "form_explanation": "適格性を確認するために代理店の詳細を入力してください。販売委任の共有を正式化するためにご連絡いたします。"
+    },
     "contact_global": {
         "title": "お問い合わせ",
         "explanation": "当社の独占ポートフォリオを確認したり、物件検索を依頼したりするには、投資プロファイルを確認する必要があります。フォームに専門的な詳細を記入し、可能であれば資金証明（POF）を添付してください。"
+    },
+    "forms": {
+        "labels": {
+            "fullName": "氏名",
+            "email": "企業のメールアドレス",
+            "phone": "電話番号",
+            "city": "市区町村",
+            "country": "国",
+            "agencyName": "代理店名",
+            "taxId": "納税者番号 / 会社コード",
+            "contactPerson": "担当者",
+            "propertiesCount": "独占物件数",
+            "priceRange": "価格帯 (€)",
+            "from": "から",
+            "to": "まで",
+            "propertyTypes": "ポートフォリオ内の物件タイプ",
+            "message": "追加メッセージ",
+            "capital": "投資資本 (€)",
+            "targetLocation": "どこに投資したいですか？",
+            "goal": "あなたの目標は何ですか？",
+            "request_access": "独占的な機会を閲覧するために、",
+            "private_platform": "プライベートプラットフォーム",
+            "view_exclusive": "へのアクセスをリクエストします。",
+            "dossier": "会社概要 / ポートフォリオ例",
+            "pof": "資金証明 (POF) ドキュメント"
+        },
+        "placeholders": {
+            "name_example": "山田 太郎",
+            "email_example": "taro.yamada@company.com",
+            "phone_example": "+81 90...",
+            "capital_example": "例: 5,000,000",
+            "location_example": "例: マドリード、マルベーリャ、ロンドン...",
+            "message_example": "〜の物件に興味があります...",
+            "funds_example": "例: 5,000,000"
+        },
+        "buttons": {
+            "send_request": "リクエストを送信",
+            "sending": "送信中...",
+            "apply": "提携を申請",
+            "processing": "申請を処理中...",
+            "upload_file": "ファイルをアップロード",
+            "or_drag": "またはドラッグ＆ドロップ",
+            "file_ready": "ファイルの準備完了",
+            "send_another": "別の申請を送信"
+        },
+        "status": {
+            "sent_title": "申請を送信しました",
+            "sent_text": "お問い合わせありがとうございます。POFを受け取りました。まもなくプロフィールを分析いたします。",
+            "sent_agency_text": "申請を受け付けました。法務チームより、アクセスを有効にするための提携契約書をお送りします。",
+            "error": "フォームの送信中にエラーが発生しました。もう一度お試しください。",
+            "success": "成功！",
+            "connection_error": "接続エラー。インターネットを確認して、もう一度お試しください。"
+        },
+        "goals": {
+            "buy": "投資 / 購入したい",
+            "sell": "売却したい（独占）"
+        },
+        "agency_types": {
+            "hotels": "ホテル",
+            "land": "建設用地",
+            "fincas": "農園 / エステート",
+            "wineries": "ワイナリー",
+            "agricultural": "農業",
+            "livestock": "畜産",
+            "buildings": "建物",
+            "luxury": "高級物件"
+        },
+        "loading": {
+            "encrypting": "ドキュメントを暗号化中...",
+            "uploading": "安全なサーバーにアップロード中...",
+            "verifying": "送信を確認中...",
+            "finalizing": "転送を完了中..."
+        }
     }
 }

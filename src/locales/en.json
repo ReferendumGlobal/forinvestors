@@ -7,7 +7,8 @@
         "bodegas": "Wineries for Sale",
         "blog": "Blog",
         "agencies": "For Real Estate Agencies",
-        "search": "Property Search"
+        "search": "Property Search",
+        "access": "Private Area"
     },
     "hero": {
         "shield": "The Art of Discretion",
@@ -140,8 +141,169 @@
             "answer": "It depends on the mandate. In direct off-market operations, our fees are usually included in the sale price or agreed upon through a buy-side mandate."
         }
     ],
+    "agencies_page": {
+        "title": "Global Alliance for Agencies",
+        "subtitle": "Join the largest global network of independent agencies. We centralize demand from large capital.",
+        "access_button": "Partners Access (Agencies & Investors)",
+        "disclaimer": "* Restricted access. Requires manual activation after contract signing.",
+        "collaboration_model": "Collaboration Model",
+        "collaboration_text_1": "We are not a portal, we are an **Alliance**. We sign a collaboration agreement that protects your mandate and guarantees a fair commission split (50/50) on every jointly closed operation.",
+        "collaboration_text_2": "Once the contract is signed, you will be given access to our private platform where you can:",
+        "benefits_list": [
+            "Upload your portfolio of exclusive properties visible only to verified investors.",
+            "Receive automated requests from investors matching your assets.",
+            "Access our 'Wanted' list by Large Capital."
+        ],
+        "verified_demand_title": "Verified Demand",
+        "verified_demand_text": "We bring you buyers who have already passed the Proof of Funds (POF).",
+        "global_exposure_title": "Global Exposure",
+        "global_exposure_text": "Your local assets will travel directly to offices in Dubai, New York, and London.",
+        "form_title": "Request Access to the Alliance",
+        "form_subtitle": "Complete the profile to receive the collaboration contract.",
+        "form_explanation": "Enter your agency details to verify eligibility. We will contact you to formalize the shared sales mandate."
+    },
     "contact_global": {
         "title": "Contact Us",
         "explanation": "To verify your investor profile and grant you access to our private platform with username and password, we need to validate your Proof of Funds (POF). Once validated, you will receive personalized investment offers tailored to your needs and available capital."
+    },
+    "forms": {
+        "labels": {
+            "fullName": "Full Name",
+            "email": "Professional Email",
+            "phone": "Phone",
+            "city": "City",
+            "country": "Country",
+            "agencyName": "Agency Name",
+            "taxId": "Tax ID / EIN / VAT Number",
+            "contactPerson": "Contact Person",
+            "propertiesCount": "# of Exclusive Properties",
+            "priceRange": "Price Range (€)",
+            "from": "From",
+            "to": "To",
+            "propertyTypes": "Property Types in Portfolio",
+            "message": "Additional Message",
+            "capital": "Capital to Invest (€)",
+            "location_interest": "Where do you want to invest?",
+            "dossier": "Corporate Dossier / Portfolio Example",
+            "pof": "Proof of Funds (POF) Document"
+        },
+        "placeholders": {
+            "name_example": "John Doe",
+            "email_example": "john@company.com",
+            "phone_example": "+34 633...",
+            "capital_example": "Ex: 5,000,000",
+            "location_example": "Ex: Madrid, Marbella, London...",
+            "message_example": "Interested in properties in..."
+        },
+        "buttons": {
+            "send_request": "Send Request",
+            "sending": "Sending...",
+            "apply": "Apply for Collaboration",
+            "processing": "Processing Application...",
+            "upload_file": "Upload file",
+            "or_drag": "or drag & drop",
+            "file_ready": "File ready",
+            "send_another": "Send another application"
+        },
+        "status": {
+            "sent_title": "Application Sent",
+            "sent_agency_text": "We have received your application. Our legal team will send the collaboration agreement to activate your access.",
+            "sent_investor_text": "Your application has been received. The verification team will review your POF and contact you within 24h.",
+            "error": "There was an error submitting the form. Please try again.",
+            "success": "Success!",
+            "connection_error": "Connection error. Please check your internet and try again."
+        },
+        "goals": {
+            "invest": "I want to Invest / Buy",
+            "sell": "I want to Sell (Exclusive)",
+            "request_access": "I request access to the Private Platform to view exclusive opportunities.",
+            "goal_label": "What is your goal?"
+        },
+        "agency_types": {
+            "hotels": "Hotels",
+            "land": "Buildable Land",
+            "fincas": "Fincas/Estates",
+            "wineries": "Wineries",
+            "agricultural": "Agricultural",
+            "livestock": "Livestock",
+            "buildings": "Buildings",
+            "luxury": "Luxury Properties"
+        },
+        "loading": {
+            "encrypting": "Encrypting documents...",
+            "uploading": "Uploading to secure server...",
+            "verifying": "Verifying submission...",
+            "finalizing": "Finalizing transmission..."
+        }
+    },
+    "steps": {
+        "agencies_title": "How to Collaborate",
+        "agencies_subtitle": "Follow these steps to join our global alliance and start closing deals.",
+        "investors_title": "Investment Process",
+        "investors_subtitle": "A clear and secure path to access the best off-market opportunities.",
+        "agencies": [
+            {
+                "title": "Access Request",
+                "description": "Fill out the form. If you pass the filter, you will receive an access email.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Register & Sign",
+                "description": "Enter your agency details and digitally sign the collaboration contract.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Upload Properties",
+                "description": "Upload the properties for which you seek qualified investors.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching",
+                "description": "The system will match your assets with large capital investors.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Receive Interest",
+                "description": "Get contacts from investors interested in each property.",
+                "icon": "Users"
+            },
+            {
+                "title": "Close Sale",
+                "description": "If you close the sale, enter the details and mark the asset as sold.",
+                "icon": "CheckCircle"
+            },
+            {
+                "title": "Payment & Invoice",
+                "description": "Pay the shared commission and receive your service invoice.",
+                "icon": "CreditCard"
+            }
+        ],
+        "investors": [
+            {
+                "title": "Request & POF",
+                "description": "Fill out the form and submit your Proof of Funds (POF).",
+                "icon": "FileText"
+            },
+            {
+                "title": "Verification",
+                "description": "We will review your request and grant platform access via email.",
+                "icon": "Search"
+            },
+            {
+                "title": "Sign Mandate",
+                "description": "Sign the mandate to receive properties matching your profile.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Receive Offers",
+                "description": "You will receive opportunities from our international agency network.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Purchase & Fee",
+                "description": "Close the deal and pay the commission to the platform.",
+                "icon": "CreditCard"
+            }
+        ]
     }
 }

@@ -4,13 +4,14 @@ import { Handshake, Users, PieChart, Building2, Lock, ArrowRight } from 'lucide-
 import SeoHead from './SeoHead';
 import { useTranslation } from 'react-i18next';
 import AgencyContactForm from './AgencyContactForm';
+import ProcessSteps from './ProcessSteps';
 
 export default function Agencies() {
     const { t } = useTranslation();
 
     return (
         <div className="min-h-screen bg-midnight-950 pt-32 pb-20">
-            <SeoHead title={`${t('nav.agencies')} | Urbina Agency`} description="Colaboramos con agencias que tienen activos singulares. Únete a la Alianza Global." routeKey="agencies" />
+            <SeoHead title={`${t('nav.agencies')} | Urbina Agency`} description={t('agencies_page.subtitle')} routeKey="agencies" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
@@ -28,7 +29,7 @@ export default function Agencies() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-sans font-bold text-white mb-6"
                     >
-                        Alianza Global para Agencias
+                        {t('agencies_page.title')}
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -36,7 +37,7 @@ export default function Agencies() {
                         transition={{ delay: 0.2 }}
                         className="text-xl text-gray-400 max-w-3xl mx-auto mb-8"
                     >
-                        Únase a la mayor red mundial de agencias independientes. Centralizamos la demanda de grandes capitales.
+                        {t('agencies_page.subtitle')}
                     </motion.p>
 
                     {/* User Access Button placeholder */}
@@ -48,11 +49,16 @@ export default function Agencies() {
                     >
                         <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-gold-500/50 text-gold-400 px-8 py-3 rounded-full font-medium transition-all backdrop-blur-sm group">
                             <Lock size={18} />
-                            Acceso Partners (Agencias e Inversores)
+                            {t('agencies_page.access_button')}
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                     </motion.div>
-                    <p className="text-xs text-gray-500 mt-3">* Acceso restringido. Requiere activación manual tras firma de contrato.</p>
+                    <p className="text-xs text-gray-500 mt-3">{t('agencies_page.disclaimer')}</p>
+                </div>
+
+
+                <div className="mb-20">
+                    <ProcessSteps variant="agencies" />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -64,17 +70,19 @@ export default function Agencies() {
                         className="space-y-12"
                     >
                         <div className="prose prose-invert max-w-none">
-                            <h3 className="text-2xl font-serif text-gold-500 mb-4">Modelo de Colaboración</h3>
+                            <h3 className="text-2xl font-serif text-gold-500 mb-4">{t('agencies_page.collaboration_model')}</h3>
                             <p className="text-gray-300 text-lg leading-relaxed">
-                                No somos un portal, somos una **Alianza**. Firmamos un acuerdo de colaboración que protege su mandato y garantiza un reparto justo de comisiones (50/50) en cada operación cerrada conjuntamente.
+                                {t('agencies_page.collaboration_text_1').split('**Alianza**').map((part, i, arr) =>
+                                    i === 0 ? <React.Fragment key={i}>{part}<strong className="text-white">Alianza</strong></React.Fragment> : part
+                                )}
                             </p>
                             <p className="text-gray-300 text-lg leading-relaxed mt-4">
-                                Una vez firmado el contrato, se le dará acceso a nuestra plataforma privada donde podrá:
+                                {t('agencies_page.collaboration_text_2')}
                             </p>
                             <ul className="list-disc pl-5 mt-4 space-y-2 text-gray-400">
-                                <li>Subir su cartera de inmuebles exclusivos visibles solo para inversores verificados.</li>
-                                <li>Recibir solicitudes automatizadas de inversores que coincidan con sus activos.</li>
-                                <li>Acceder a nuestra lista de "Buscados" (Wanted) por Gran Capital.</li>
+                                {(t('agencies_page.benefits_list', { returnObjects: true }) || []).map((benefit, index) => (
+                                    <li key={index}>{benefit}</li>
+                                ))}
                             </ul>
                         </div>
 
@@ -82,15 +90,15 @@ export default function Agencies() {
                             <div className="flex gap-4 p-4 bg-midnight-900/50 rounded-xl border border-white/5">
                                 <Users className="text-gold-500 flex-shrink-0 mt-1" />
                                 <div>
-                                    <h4 className="font-bold text-white">Demanda Verificada</h4>
-                                    <p className="text-gray-400 text-sm">Le aportamos compradores que ya han pasado la Prueba de Fondos (POF).</p>
+                                    <h4 className="font-bold text-white">{t('agencies_page.verified_demand_title')}</h4>
+                                    <p className="text-gray-400 text-sm">{t('agencies_page.verified_demand_text')}</p>
                                 </div>
                             </div>
                             <div className="flex gap-4 p-4 bg-midnight-900/50 rounded-xl border border-white/5">
                                 <Building2 className="text-gold-500 flex-shrink-0 mt-1" />
                                 <div>
-                                    <h4 className="font-bold text-white">Exposición Global</h4>
-                                    <p className="text-gray-400 text-sm">Sus activos locales viajarán directamente a despachos en Dubái, Nueva York y Londres.</p>
+                                    <h4 className="font-bold text-white">{t('agencies_page.global_exposure_title')}</h4>
+                                    <p className="text-gray-400 text-sm">{t('agencies_page.global_exposure_text')}</p>
                                 </div>
                             </div>
                         </div>
@@ -106,15 +114,15 @@ export default function Agencies() {
                         <div className="bg-midnight-800/80 backdrop-blur-md rounded-2xl border border-gold-500/20 p-1">
                             <div className="bg-midnight-950/50 rounded-xl p-6 md:p-8">
                                 <div className="mb-6">
-                                    <h3 className="text-xl font-bold text-white">Solicitar Acceso a la Alianza</h3>
-                                    <p className="text-gray-400 text-sm mt-1">Complete el perfil para recibir el contrato de colaboración.</p>
+                                    <h3 className="text-xl font-bold text-white">{t('agencies_page.form_title')}</h3>
+                                    <p className="text-gray-400 text-sm mt-1">{t('agencies_page.form_subtitle')}</p>
                                 </div>
-                                <AgencyContactForm explanation="Introduzca los datos de su agencia para verificar su elegibilidad. Nos pondremos en contacto para formalizar el mandato de venta compartido." />
+                                <AgencyContactForm explanation={t('agencies_page.form_explanation')} />
                             </div>
                         </div>
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

@@ -4,6 +4,7 @@ import { ChevronRight, Shield, Award, Users, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import SeoHead from './SeoHead';
+import ProcessSteps from './ProcessSteps';
 
 export default function Home() {
     const containerRef = useRef(null);
@@ -82,6 +83,10 @@ export default function Home() {
                 </div>
             </div>
 
+
+            {/* Investor Process */}
+            <ProcessSteps variant="investors" />
+
             {/* Legacy Section */}
             <div className="py-24 md:py-32 relative bg-midnight-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,6 +136,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

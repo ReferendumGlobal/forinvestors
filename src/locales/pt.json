@@ -7,7 +7,8 @@
         "bodegas": "Vinícolas",
         "blog": "Blog",
         "agencies": "Para Agências",
-        "search": "Busca de Imóveis"
+        "search": "Busca de Imóveis",
+        "access": "Área Privada"
     },
     "hero": {
         "shield": "A Arte da Discrição",
@@ -140,8 +141,172 @@
             "answer": "Depende do mandato. Em operações diretas off-market, nossos honorários costumam estar incluídos no preço de venda ou pactuados mediante mandato de compra (buy-side mandate)."
         }
     ],
+    "agencies_page": {
+        "title": "Aliança Global para Agências",
+        "subtitle": "Junte-se à maior rede global de agências independentes. Centralizamos a demanda de grandes capitais.",
+        "access_button": "Acesso Parceiros (Agências e Investidores)",
+        "disclaimer": "* Acesso restrito. Requer ativação manual após assinatura de contrato.",
+        "collaboration_model": "Modelo de Colaboração",
+        "collaboration_text_1": "Não somos um portal, somos uma **Aliança**. Assinamos um acordo de colaboração que protege seu mandato e garante uma divisão justa de comissões (50/50) em cada operação fechada conjuntamente.",
+        "collaboration_text_2": "Uma vez assinado o contrato, você terá acesso à nossa plataforma privada onde poderá:",
+        "benefits_list": [
+            "Carregar seu portfólio de imóveis exclusivos visíveis apenas para investidores verificados.",
+            "Receber solicitações automatizadas de investidores que correspondam aos seus ativos.",
+            "Acessar nossa lista de \"Procurados\" (Wanted) por Grande Capital."
+        ],
+        "verified_demand_title": "Demanda Verificada",
+        "verified_demand_text": "Trazemos compradores que já passaram pela Prova de Fundos (POF).",
+        "global_exposure_title": "Exposição Global",
+        "global_exposure_text": "Seus ativos locais viajarão diretamente para escritórios em Dubai, Nova York e Londres.",
+        "form_title": "Solicitar Acesso à Aliança",
+        "form_subtitle": "Complete o perfil para receber o contrato de colaboração.",
+        "form_explanation": "Insira os dados da sua agência para verificar a elegibilidade. Entraremos em contato para formalizar o mandato de venda compartilhado."
+    },
     "contact_global": {
         "title": "Contate-nos",
         "explanation": "Para consultar nosso portfólio exclusivo ou solicitar uma busca de imóveis, precisamos verificar seu perfil de investimento. Por favor, preencha o formulário com seus dados profissionais e anexe uma Prova de Fundos (POF) se disponível."
+    },
+    "forms": {
+        "labels": {
+            "fullName": "Nome Completo",
+            "email": "E-mail Profissional",
+            "phone": "Telefone",
+            "city": "Cidade",
+            "country": "País",
+            "agencyName": "Nome da Agência",
+            "taxId": "CNPJ / NIF / VAT",
+            "contactPerson": "Pessoa de Contato",
+            "propertiesCount": "Número de Imóveis Exclusivos",
+            "priceRange": "Faixa de Preço (€)",
+            "from": "De",
+            "to": "Até",
+            "propertyTypes": "Tipos de Imóveis no Portfólio",
+            "message": "Mensagem Adicional",
+            "capital": "Capital para Investir (€)",
+            "targetLocation": "Onde você quer investir?",
+            "goal": "Qual é o seu objetivo?",
+            "request_access": "Eu solicito acesso à",
+            "private_platform": "Plataforma Privada",
+            "view_exclusive": "para ver oportunidades exclusivas.",
+            "dossier": "Dossiê Corporativo / Exemplo de Portfólio",
+            "pof": "Documento de Prova de Fundos (POF)"
+        },
+        "placeholders": {
+            "name_example": "João Silva",
+            "email_example": "joao@empresa.com",
+            "phone_example": "+55 11...",
+            "capital_example": "Ex: 5,000,000",
+            "location_example": "Ex: Madrid, Marbella, Lisboa...",
+            "message_example": "Interessado em imóveis em...",
+            "funds_example": "Ex: 5,000,000"
+        },
+        "buttons": {
+            "send_request": "Enviar Solicitação",
+            "sending": "Enviando...",
+            "apply": "Solicitar Colaboração",
+            "processing": "Processando solicitação...",
+            "upload_file": "Carregar arquivo",
+            "or_drag": "ou arrastar e soltar",
+            "file_ready": "Arquivo pronto",
+            "send_another": "Enviar outra solicitação"
+        },
+        "status": {
+            "sent_title": "Solicitação Enviada",
+            "sent_text": "Obrigado por entrar em contato. Recebemos sua prova de fundos e analisaremos seu perfil em breve.",
+            "sent_agency_text": "Recebemos sua solicitação. Nossa equipe jurídica enviará o acordo de colaboração para ativar seu acesso.",
+            "error": "Houve um erro ao enviar o formulário. Por favor, tente novamente.",
+            "success": "Sucesso!",
+            "connection_error": "Erro de conexão. Verifique sua conexão e tente novamente."
+        },
+        "goals": {
+            "buy": "Eu quero Investir / Comprar",
+            "sell": "Eu quero Vender (Exclusivo)"
+        },
+        "agency_types": {
+            "hotels": "Hotéis",
+            "land": "Terrenos Urbanizáveis",
+            "fincas": "Fazendas / Sítios",
+            "wineries": "Vinícolas",
+            "agricultural": "Terras Agrícolas",
+            "livestock": "Pecuária",
+            "buildings": "Edifícios",
+            "luxury": "Imóveis de Luxo"
+        },
+        "loading": {
+            "encrypting": "Criptografando documentos...",
+            "uploading": "Enviando para servidor seguro...",
+            "verifying": "Verificando envio...",
+            "finalizing": "Finalizando transmissão..."
+        }
+    },
+    "steps": {
+        "agencies_title": "Como Colaborar",
+        "agencies_subtitle": "Siga estas etapas para se juntar à nossa aliança global e começar a fechar negócios.",
+        "investors_title": "Processo de Investimento",
+        "investors_subtitle": "Um caminho claro e seguro para acessar as melhores oportunidades fora do mercado.",
+        "agencies": [
+            {
+                "title": "Pedido de Acesso",
+                "description": "Preencha o formulário. Se passar no filtro, receberá um e-mail de acesso.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Registre-se e Assine",
+                "description": "Insira os detalhes da sua agência e assine digitalmente o contrato de colaboração.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Carregar Propriedades",
+                "description": "Carregue as propriedades para as quais você busca investidores qualificados.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Correspondência Inteligente",
+                "description": "O sistema combinará seus ativos com investidores de grande capital.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Receber Interesse",
+                "description": "Obtenha contatos de investidores interessados em cada propriedade.",
+                "icon": "Users"
+            },
+            {
+                "title": "Fechar Venda",
+                "description": "Se fechar a venda, insira os detalhes e marque o ativo como vendido.",
+                "icon": "CheckCircle"
+            },
+            {
+                "title": "Pagamento e Fatura",
+                "description": "Pague a comissão compartilhada e receba sua fatura de serviço.",
+                "icon": "CreditCard"
+            }
+        ],
+        "investors": [
+            {
+                "title": "Pedido e POF",
+                "description": "Preencha o formulário e envie sua Prova de Fundos (POF).",
+                "icon": "FileText"
+            },
+            {
+                "title": "Verificação",
+                "description": "Revisaremos seu pedido e concederemos acesso à plataforma via e-mail.",
+                "icon": "Search"
+            },
+            {
+                "title": "Assinar Mandato",
+                "description": "Assine o mandato para receber propriedades correspondentes ao seu perfil.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Receber Ofertas",
+                "description": "Você receberá oportunidades da nossa rede internacional de agências.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Compra e Taxa",
+                "description": "Feche o negócio e pague a comissão à plataforma.",
+                "icon": "CreditCard"
+            }
+        ]
     }
 }

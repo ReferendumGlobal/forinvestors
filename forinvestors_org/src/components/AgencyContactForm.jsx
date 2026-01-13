@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 
 export default function AgencyContactForm({ explanation }) {
+    const { t } = useTranslation();
     const [formState, setFormState] = useState({
         agencyName: '',
         taxId: '',
@@ -22,17 +24,17 @@ export default function AgencyContactForm({ explanation }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(null);
-    const [loadingText, setLoadingText] = useState('Initiating secure transmission...');
+    const [loadingText, setLoadingText] = useState(t('forms.loading.encrypting'));
 
-    const propertyTypeOptions = [
-        "Hotels",
-        "Buildable Land",
-        "Fincas/Estates",
-        "Wineries",
-        "Agricultural",
-        "Livestock",
-        "Buildings",
-        "Luxury Properties"
+    const propertyTypeKeys = [
+        "hotels",
+        "land",
+        "fincas",
+        "wineries",
+        "agricultural",
+        "livestock",
+        "buildings",
+        "luxury"
     ];
 
     const handleFileChange = (e) => {
@@ -41,21 +43,21 @@ export default function AgencyContactForm({ explanation }) {
         }
     };
 
-    const handleCheckboxChange = (type) => {
-        if (formState.propertyTypes.includes(type)) {
-            setFormState({ ...formState, propertyTypes: formState.propertyTypes.filter(t => t !== type) });
+    const handleCheckboxChange = (key) => {
+        if (formState.propertyTypes.includes(key)) {
+            setFormState({ ...formState, propertyTypes: formState.propertyTypes.filter(t => t !== key) });
         } else {
-            setFormState({ ...formState, propertyTypes: [...formState.propertyTypes, type] });
+            setFormState({ ...formState, propertyTypes: [...formState.propertyTypes, key] });
         }
     };
 
     useEffect(() => {
         if (isSubmitting) {
             const messages = [
-                "Encrypting documents...",
-                "Uploading Portfolio to secure server...",
-                "Verifying integration...",
-                "Finalizing transmission..."
+                t('forms.loading.encrypting'),
+                t('forms.loading.uploading'),
+                t('forms.loading.verifying'),
+                t('forms.loading.finalizing')
             ];
             let i = 0;
             setLoadingText(messages[0]);
@@ -67,7 +69,7 @@ export default function AgencyContactForm({ explanation }) {
 
             return () => clearInterval(interval);
         }
-    }, [isSubmitting]);
+    }, [isSubmitting, t]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -83,7 +85,10 @@ export default function AgencyContactForm({ explanation }) {
         formData.append('location', `${formState.city}, ${formState.country}`);
         formData.append('propertiesCount', formState.propertiesCount);
         formData.append('priceRange', `${formState.priceRangeFrom} - ${formState.priceRangeTo}`);
-        formData.append('propertyTypes', formState.propertyTypes.join(', '));
+
+        const translatedTypes = formState.propertyTypes.map(k => t(`forms.agency_types.${k}`));
+        formData.append('propertyTypes', translatedTypes.join(', '));
+
         formData.append('message', formState.message);
         formData.append('_subject', `New AGENCY Application: ${formState.city}`);
         formData.append('_template', 'table');
@@ -104,7 +109,7 @@ export default function AgencyContactForm({ explanation }) {
                     target_location: `${formState.city}, ${formState.country}`,
                     intent: 'sell', // Agencies sell
                     request_access: true, // Agencies always request access
-                    message: `AGENCY: ${formState.agencyName} (Tax ID: ${formState.taxId}). Properties: ${formState.propertiesCount}. Types: ${formState.propertyTypes.join(', ')}. Msg: ${formState.message}`,
+                    message: `AGENCIA: ${formState.agencyName} (Tax ID: ${formState.taxId}). Properties: ${formState.propertiesCount}. Types: ${translatedTypes.join(', ')}. Msg: ${formState.message}`,
                     role: 'agency',
                     status: 'new'
                 }
@@ -145,11 +150,11 @@ export default function AgencyContactForm({ explanation }) {
                     file: null
                 });
             } else {
-                setError(result.message || "There was an error submitting the form. Please try again.");
+                setError(result.message || t('forms.status.error'));
             }
         } catch (err) {
             console.error("Error submitting form:", err);
-            setError("Connection error. Please check your internet and try again.");
+            setError(t('forms.status.connection_error'));
         } finally {
             setIsSubmitting(false);
         }
@@ -165,13 +170,13 @@ export default function AgencyContactForm({ explanation }) {
                 <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="text-gold-500" size={32} />
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-2">Application Sent</h3>
-                <p className="text-gray-400">We have received your application. Our legal team will send the collaboration agreement to activate your access.</p>
+                <h3 className="text-2xl font-serif text-white mb-2">{t('forms.status.sent_title')}</h3>
+                <p className="text-gray-400">{t('forms.status.sent_agency_text')}</p>
                 <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
                 >
-                    Send another application
+                    {t('forms.buttons.send_another')}
                 </button>
             </motion.div>
         );
@@ -189,7 +194,7 @@ export default function AgencyContactForm({ explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Agency Name</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.agencyName')}</label>
                     <input
                         type="text"
                         required
@@ -199,7 +204,7 @@ export default function AgencyContactForm({ explanation }) {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Tax ID / EIN / VAT Number</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.taxId')}</label>
                     <input
                         type="text"
                         required
@@ -212,40 +217,43 @@ export default function AgencyContactForm({ explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Contact Person</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.contactPerson')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         value={formState.contactPerson}
                         onChange={(e) => setFormState({ ...formState, contactPerson: e.target.value })}
+                        placeholder={t('forms.placeholders.name_example')}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Professional Email</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.email')}</label>
                     <input
                         type="email"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                        placeholder={t('forms.placeholders.email_example')}
                     />
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.phone')}</label>
                     <input
                         type="tel"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        placeholder={t('forms.placeholders.phone_example')}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2"># of Exclusive Properties</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.propertiesCount')}</label>
                     <input
                         type="number"
                         required
@@ -258,17 +266,18 @@ export default function AgencyContactForm({ explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">City</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.city')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         value={formState.city}
                         onChange={(e) => setFormState({ ...formState, city: e.target.value })}
+                        placeholder={t('forms.placeholders.location_example')}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Country</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.country')}</label>
                     <input
                         type="text"
                         required
@@ -280,18 +289,18 @@ export default function AgencyContactForm({ explanation }) {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Price Range (€)</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.priceRange')}</label>
                 <div className="grid grid-cols-2 gap-4">
                     <input
                         type="text"
-                        placeholder="From"
+                        placeholder={t('forms.labels.from')}
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         value={formState.priceRangeFrom}
                         onChange={(e) => setFormState({ ...formState, priceRangeFrom: e.target.value })}
                     />
                     <input
                         type="text"
-                        placeholder="To"
+                        placeholder={t('forms.labels.to')}
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
                         value={formState.priceRangeTo}
                         onChange={(e) => setFormState({ ...formState, priceRangeTo: e.target.value })}
@@ -300,17 +309,17 @@ export default function AgencyContactForm({ explanation }) {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Property Types in Portfolio</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.propertyTypes')}</label>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {propertyTypeOptions.map((type) => (
-                        <label key={type} className="flex items-center space-x-2 bg-midnight-900/50 p-3 rounded-lg border border-white/5 cursor-pointer hover:border-gold-500/30 transition-colors">
+                    {propertyTypeKeys.map((key) => (
+                        <label key={key} className="flex items-center space-x-2 bg-midnight-900/50 p-3 rounded-lg border border-white/5 cursor-pointer hover:border-gold-500/30 transition-colors">
                             <input
                                 type="checkbox"
-                                checked={formState.propertyTypes.includes(type)}
-                                onChange={() => handleCheckboxChange(type)}
+                                checked={formState.propertyTypes.includes(key)}
+                                onChange={() => handleCheckboxChange(key)}
                                 className="form-checkbox h-4 w-4 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
                             />
-                            <span className="text-sm text-gray-300">{type}</span>
+                            <span className="text-sm text-gray-300">{t(`forms.agency_types.${key}`)}</span>
                         </label>
                     ))}
                 </div>
@@ -318,7 +327,7 @@ export default function AgencyContactForm({ explanation }) {
 
             <div>
                 <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                    Corporate Dossier / Portfolio Example <AlertCircle size={14} />
+                    {t('forms.labels.dossier')} <AlertCircle size={14} />
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
                     <input
@@ -332,14 +341,14 @@ export default function AgencyContactForm({ explanation }) {
                             <div className="flex flex-col items-center">
                                 <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
                                 <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
-                                <p className="text-xs text-gray-500">File ready</p>
+                                <p className="text-xs text-gray-500">{t('forms.buttons.file_ready')}</p>
                             </div>
                         ) : (
                             <>
                                 <Upload className="mx-auto h-12 w-12 text-gray-400 group-hover:text-gold-400 transition-colors" />
                                 <div className="flex text-sm text-gray-400 justify-center">
-                                    <span className="font-medium text-gold-400">Upload file</span>
-                                    <p className="pl-1">or drag & drop</p>
+                                    <span className="font-medium text-gold-400">{t('forms.buttons.upload_file')}</span>
+                                    <p className="pl-1">{t('forms.buttons.or_drag')}</p>
                                 </div>
                                 <p className="text-xs text-gray-500">PDF, up to 10MB</p>
                             </>
@@ -357,12 +366,12 @@ export default function AgencyContactForm({ explanation }) {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-center">
                             <Loader2 className="mr-2 animate-spin" size={20} />
-                            <span>Processing Application...</span>
+                            <span>{t('forms.buttons.processing')}</span>
                         </div>
                         <span className="text-xs font-normal mt-1 text-gold-100 opacity-90 animate-pulse">{loadingText}</span>
                     </div>
                 ) : (
-                    <>Apply for Collaboration <Send size={18} className="ml-2" /></>
+                    <>{t('forms.buttons.apply')} <Send size={18} className="ml-2" /></>
                 )}
             </button>
         </form>

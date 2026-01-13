@@ -86,6 +86,14 @@ export default function Navbar({ categories }) {
                                 {t('nav.agencies')}
                             </Link>
 
+                            <Link
+                                to="/login"
+                                className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-midnight-950"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                                {t('nav.access')}
+                            </Link>
+
                             <div className="h-6 w-px bg-white/10 mx-1"></div>
 
                             <LanguageSwitcher />
@@ -165,6 +173,18 @@ export default function Navbar({ categories }) {
                         <div className="flex items-center gap-3">
                             <span className="text-gold-500 w-5 flex justify-center">•</span>
                             {t('nav.agencies')}
+                        </div>
+                    </Link>
+                    <Link
+                        to="/login"
+                        onClick={() => setIsOpen(false)}
+                        className="block px-3 py-4 rounded-md text-base font-medium text-gold-400 bg-gold-500/10 border border-gold-500/30 mt-2"
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 w-5 flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                            </span>
+                            {t('nav.access')}
                         </div>
                     </Link>
                 </div>

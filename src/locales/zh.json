@@ -7,7 +7,8 @@
         "bodegas": "酒庄出售",
         "blog": "博客",
         "agencies": "房地产代理",
-        "search": "房产搜索"
+        "search": "房产搜索",
+        "access": "私人区域"
     },
     "hero": {
         "shield": "保密的艺术",
@@ -140,8 +141,102 @@
             "answer": "这取决于委托。在直接的非公开市场操作中，我们的费用通常包含在销售价格中，或通过买方委托协议商定。"
         }
     ],
+    "agencies_page": {
+        "title": "全球代理联盟",
+        "subtitle": "加入全球最大的独立代理网络。我们集中大资本的需求。",
+        "access_button": "合作伙伴入口（代理与投资者）",
+        "disclaimer": "* 受限访问。签署合同后需手动激活。",
+        "collaboration_model": "合作模式",
+        "collaboration_text_1": "我们不是门户网站，我们是一个**联盟**。我们签署合作协议，保护您的委托权，并保证在每笔共同完成的交易中公平分配佣金（50/50）。",
+        "collaboration_text_2": "签署合同后，您将获得访问我们私人平台的权限，您可以：",
+        "benefits_list": [
+            "上传仅对经过验证的投资者可见的独家房产组合。",
+            "接收与您的资产匹配的投资者的自动请求。",
+            "访问我们大资本的“需求”（Wanted）列表。"
+        ],
+        "verified_demand_title": "经过验证的需求",
+        "verified_demand_text": "我们为您带来已通过资金证明（POF）的买家。",
+        "global_exposure_title": "全球曝光",
+        "global_exposure_text": "您的本地资产将直接送达迪拜、纽约和伦敦的办公室。",
+        "form_title": "申请加入联盟",
+        "form_subtitle": "完善资料以接收合作合同。",
+        "form_explanation": "输入您的代理机构详细信息以验证资格。我们将联系您以正规化共享销售委托。"
+    },
     "contact_global": {
         "title": "联系我们",
         "explanation": "为了查阅我们的独家投资组合或请求房产搜索，我们需要验证您的投资资料。请填写表格并提供您的专业详细信息，如有需要，请附上资金证明 (POF)。"
+    },
+    "forms": {
+        "labels": {
+            "fullName": "全名",
+            "email": "专业邮箱",
+            "phone": "电话",
+            "city": "城市",
+            "country": "国家",
+            "agencyName": "代理机构名称",
+            "taxId": "税务标识号 / 企业代码",
+            "contactPerson": "联系人",
+            "propertiesCount": "独家房产数量",
+            "priceRange": "价格范围 (€)",
+            "from": "从",
+            "to": "到",
+            "propertyTypes": "投资组合中的房产类型",
+            "message": "附加信息",
+            "capital": "投资资本 (€)",
+            "targetLocation": "您想在哪里投资？",
+            "goal": "您的目标是什么？",
+            "request_access": "我请求访问",
+            "private_platform": "私人平台",
+            "view_exclusive": "以查看独家机会。",
+            "dossier": "公司档案 / 投资组合示例",
+            "pof": "资金证明 (POF) 文件"
+        },
+        "placeholders": {
+            "name_example": "李明",
+            "email_example": "li.ming@company.com",
+            "phone_example": "+86 138...",
+            "capital_example": "例如：5,000,000",
+            "location_example": "例如：马德里，马贝拉，伦敦...",
+            "message_example": "对...的房产感兴趣",
+            "funds_example": "例如：5,000,000"
+        },
+        "buttons": {
+            "send_request": "发送请求",
+            "sending": "发送中...",
+            "apply": "申请合作",
+            "processing": "正在处理申请...",
+            "upload_file": "上传文件",
+            "or_drag": "或拖放文件",
+            "file_ready": "文件已就绪",
+            "send_another": "发送另一个申请"
+        },
+        "status": {
+            "sent_title": "申请已发送",
+            "sent_text": "感谢您的联系。我们已收到您的资金证明，很快会分析您的资料。",
+            "sent_agency_text": "我们已收到您的申请。我们的法律团队将发送合作协议以激活您的访问权限。",
+            "error": "提交表单时出错。请重试。",
+            "success": "成功！",
+            "connection_error": "连接错误。请检查您的网络并重试。"
+        },
+        "goals": {
+            "buy": "我想投资 / 购买",
+            "sell": "我想出售（独家）"
+        },
+        "agency_types": {
+            "hotels": "酒店",
+            "land": "可建设用地",
+            "fincas": "庄园 / 农场",
+            "wineries": "酒庄",
+            "agricultural": "农业用地",
+            "livestock": "畜牧业用地",
+            "buildings": "建筑物",
+            "luxury": "豪华房产"
+        },
+        "loading": {
+            "encrypting": "正在加密文件...",
+            "uploading": "正在上传至安全服务器...",
+            "verifying": "正在验证提交...",
+            "finalizing": "正在完成传输..."
+        }
     }
 }

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactForm({ categoryName, explanation }) {
+    const { t } = useTranslation();
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -18,7 +20,7 @@ export default function ContactForm({ categoryName, explanation }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(null);
-    const [loadingText, setLoadingText] = useState('Iniciando transmisión segura...');
+    const [loadingText, setLoadingText] = useState(t('forms.loading.encrypting'));
 
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
@@ -29,10 +31,10 @@ export default function ContactForm({ categoryName, explanation }) {
     useEffect(() => {
         if (isSubmitting) {
             const messages = [
-                "Encriptando documentos...",
-                "Subiendo Prueba de Fondos a servidor seguro...",
-                "Verificando integridad del envío...",
-                "Finalizando transmisión..."
+                t('forms.loading.encrypting'),
+                t('forms.loading.uploading'),
+                t('forms.loading.verifying'),
+                t('forms.loading.finalizing')
             ];
             let i = 0;
             setLoadingText(messages[0]);
@@ -40,11 +42,11 @@ export default function ContactForm({ categoryName, explanation }) {
             const interval = setInterval(() => {
                 i = (i + 1) % messages.length;
                 setLoadingText(messages[i]);
-            }, 4000); // Change message every 4 seconds
+            }, 4000);
 
             return () => clearInterval(interval);
         }
-    }, [isSubmitting]);
+    }, [isSubmitting, t]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -88,8 +90,6 @@ export default function ContactForm({ categoryName, explanation }) {
 
             if (dbError) {
                 console.error("Error saving lead:", dbError);
-                // We don't block the email submission if DB fails, or should we?
-                // User said "must also stay in database". Proceeding to ensure we try both.
             }
 
             // 2. Send Email via FormSubmit
@@ -101,7 +101,7 @@ export default function ContactForm({ categoryName, explanation }) {
                 body: formData
             });
 
-            // Try to parse JSON but don't fail if it's not JSON (e.g. if email was sent but response is weird)
+            // Try to parse JSON
             let result = {};
             const text = await response.text();
             try {
@@ -121,11 +121,11 @@ export default function ContactForm({ categoryName, explanation }) {
                     file: null
                 });
             } else {
-                setError(result.message || "Hubo un error al enviar el formulario. Inténtelo de nuevo.");
+                setError(t('forms.status.error'));
             }
         } catch (err) {
             console.error("Error submitting form:", err);
-            setError("Error de conexión. Compruebe su internet e inténtelo de nuevo.");
+            setError(t('forms.status.connection_error'));
         } finally {
             setIsSubmitting(false);
         }
@@ -141,13 +141,13 @@ export default function ContactForm({ categoryName, explanation }) {
                 <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="text-gold-500" size={32} />
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-2">Solicitud Enviada</h3>
-                <p className="text-gray-400">Hemos recibido su información y prueba de fondos correctamente. Nuestro equipo analizará su perfil y le contactará en breve.</p>
+                <h3 className="text-2xl font-serif text-white mb-2">{t('forms.status.sent_title')}</h3>
+                <p className="text-gray-400">{t('forms.status.sent_investor_text')}</p>
                 <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
                 >
-                    Enviar otra solicitud
+                    {t('forms.buttons.send_another')}
                 </button>
             </motion.div>
         );
@@ -165,23 +165,23 @@ export default function ContactForm({ categoryName, explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Nombre Completo</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.fullName')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="John Doe"
+                        placeholder={t('forms.placeholders.name_example')}
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Email Profesional</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.email')}</label>
                     <input
                         type="email"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="john@company.com"
+                        placeholder={t('forms.placeholders.email_example')}
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
@@ -190,22 +190,22 @@ export default function ContactForm({ categoryName, explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Teléfono</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.phone')}</label>
                     <input
                         type="tel"
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="+34 633..."
+                        placeholder={t('forms.placeholders.phone_example')}
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Capital a Invertir (€)</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.capital')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="Ej: 5.000.000"
+                        placeholder={t('forms.placeholders.capital_example')}
                         value={formState.funds}
                         onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
@@ -213,18 +213,18 @@ export default function ContactForm({ categoryName, explanation }) {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">¿Dónde quieres invertir?</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.location_interest')}</label>
                 <input
                     type="text"
                     className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Ej: Madrid, Marbella, París..."
+                    placeholder={t('forms.placeholders.location_example')}
                     value={formState.targetLocation}
                     onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
                 />
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-3">¿Cuál es su objetivo?</label>
+                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.goals.goal_label')}</label>
                 <div className="grid grid-cols-2 gap-4">
                     <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'buy' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
                         <input
@@ -235,7 +235,7 @@ export default function ContactForm({ categoryName, explanation }) {
                             onChange={() => setFormState({ ...formState, intent: 'buy' })}
                             className="hidden"
                         />
-                        <span className="font-medium">Quiero Invertir / Comprar</span>
+                        <span className="font-medium text-center">{t('forms.goals.invest')}</span>
                     </label>
                     <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'sell' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
                         <input
@@ -246,7 +246,7 @@ export default function ContactForm({ categoryName, explanation }) {
                             onChange={() => setFormState({ ...formState, intent: 'sell' })}
                             className="hidden"
                         />
-                        <span className="font-medium">Quiero Vender (Exclusiva)</span>
+                        <span className="font-medium text-center">{t('forms.goals.sell')}</span>
                     </label>
                 </div>
             </div>
@@ -260,13 +260,13 @@ export default function ContactForm({ categoryName, explanation }) {
                     className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
                 />
                 <label htmlFor="requestAccess" className="text-sm text-gray-300 cursor-pointer select-none">
-                    Solicito acceso a la <strong className="text-gold-400">Plataforma Privada</strong> para ver oportunidades exclusivas.
+                    {t('forms.goals.request_access')}
                 </label>
             </div>
 
             <div>
                 <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                    Documento Prueba de Fondos (POF) <AlertCircle size={14} />
+                    {t('forms.labels.pof')} <AlertCircle size={14} />
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
                     <input
@@ -280,16 +280,16 @@ export default function ContactForm({ categoryName, explanation }) {
                             <div className="flex flex-col items-center">
                                 <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
                                 <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
-                                <p className="text-xs text-gray-500">Documento cargado correctamente</p>
+                                <p className="text-xs text-gray-500">{t('forms.buttons.file_ready')}</p>
                             </div>
                         ) : (
                             <>
                                 <Upload className="mx-auto h-12 w-12 text-gray-400 group-hover:text-gold-400 transition-colors" />
                                 <div className="flex text-sm text-gray-400 justify-center">
-                                    <span className="font-medium text-gold-400">Sube un archivo</span>
-                                    <p className="pl-1">o arrastra y suelta</p>
+                                    <span className="font-medium text-gold-400">{t('forms.buttons.upload_file')}</span>
+                                    <p className="pl-1">{t('forms.buttons.or_drag')}</p>
                                 </div>
-                                <p className="text-xs text-gray-500">PDF, PNG, JPG hasta 10MB</p>
+                                <p className="text-xs text-gray-500">PDF, PNG, JPG up to 10MB</p>
                             </>
                         )}
                     </div>
@@ -297,11 +297,11 @@ export default function ContactForm({ categoryName, explanation }) {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Mensaje Adicional</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
                 <textarea
                     rows={4}
                     className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Interesado en propiedades en la Costa del Sol..."
+                    placeholder={t('forms.placeholders.message_example')}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                 />
@@ -322,12 +322,12 @@ export default function ContactForm({ categoryName, explanation }) {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-center">
                             <Loader2 className="mr-2 animate-spin" size={20} />
-                            <span>Procesando...</span>
+                            <span>{t('forms.buttons.processing')}</span>
                         </div>
                         <span className="text-xs font-normal mt-1 text-gold-100 opacity-90 animate-pulse">{loadingText}</span>
                     </div>
                 ) : (
-                    <>Enviar Solicitud <Send size={18} className="ml-2" /></>
+                    <>{t('forms.buttons.send_request')} <Send size={18} className="ml-2" /></>
                 )}
             </button>
 

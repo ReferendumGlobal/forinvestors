@@ -1,13 +1,14 @@
 {
     "nav": {
-        "investments": "Immobilieninvestitionen",
-        "hotels": "Hotels zu verkaufen",
-        "land": "Grundstücke",
-        "luxury": "Luxusimmobilien",
-        "wineries": "Weingüter",
+        "inversiones": "Immobilieninvestitionen",
+        "hoteles": "Hotels zu verkaufen",
+        "terrenos": "Grundstücke",
+        "lujo": "Luxusimmobilien",
+        "bodegas": "Weingüter",
         "blog": "Blog",
         "agencies": "Für Agenturen",
-        "search": "Immobiliensuche"
+        "search": "Immobiliensuche",
+        "access": "Privater Bereich"
     },
     "hero": {
         "shield": "Die Kunst der Diskretion",
@@ -140,9 +141,172 @@
             "answer": "Das hängt vom Mandat ab. Bei direkten Off-Market-Operationen sind unsere Honorare in der Regel im Verkaufspreis enthalten oder werden über ein Kaufmandat (Buy-Side-Mandat) vereinbart."
         }
     ],
+    "agencies_page": {
+        "title": "Globale Allianz für Agenturen",
+        "subtitle": "Treten Sie dem größten globalen Netzwerk unabhängiger Agenturen bei. Wir zentralisieren die Nachfrage von Großkapital.",
+        "access_button": "Partnerzugang (Agenturen & Investoren)",
+        "disclaimer": "* Eingeschränkter Zugang. Erfordert manuelle Aktivierung nach Vertragsunterzeichnung.",
+        "collaboration_model": "Kooperationsmodell",
+        "collaboration_text_1": "Wir sind kein Portal, wir sind eine **Allianz**. Wir unterzeichnen eine Kooperationsvereinbarung, die Ihr Mandat schützt und eine faire Provisionsaufteilung (50/50) bei jeder gemeinsam abgeschlossenen Operation garantiert.",
+        "collaboration_text_2": "Sobald der Vertrag unterzeichnet ist, erhalten Sie Zugang zu unserer privaten Plattform, wo Sie:",
+        "benefits_list": [
+            "Ihr Portfolio an exklusiven Immobilien hochladen, die nur für verifizierte Investoren sichtbar sind.",
+            "Automatisierte Anfragen von Investoren erhalten, die zu Ihren Vermögenswerten passen.",
+            "Zugang zu unserer „Gesucht“-Liste (Wanted) von Großkapital erhalten."
+        ],
+        "verified_demand_title": "Verifizierte Nachfrage",
+        "verified_demand_text": "Wir bringen Ihnen Käufer, die den Kapitalnachweis (POF) bereits bestanden haben.",
+        "global_exposure_title": "Globale Präsenz",
+        "global_exposure_text": "Ihre lokalen Vermögenswerte gelangen direkt in Büros in Dubai, New York und London.",
+        "form_title": "Zugang zur Allianz anfordern",
+        "form_subtitle": "Vervollständigen Sie das Profil, um den Kooperationsvertrag zu erhalten.",
+        "form_explanation": "Geben Sie Ihre Agenturdaten ein, um die Berechtigung zu prüfen. Wir werden uns mit Ihnen in Verbindung setzen, um das gemeinsame Verkaufsmandat zu formalisieren."
+    },
     "contact_global": {
-        "title": "Zugangsanfrage & POF",
-        "subtitle": "Füllen Sie das Formular aus und fügen Sie Ihren POF bei, um vertrauliche Dossiers zu erhalten.",
-        "explanation": "Um die Vertraulichkeit unserer Verkäufer zu schützen. Wir teilen sensible Informationen nur mit verifizierten Käufern."
+        "title": "Kontaktieren Sie uns",
+        "explanation": "Um unser exklusives Portfolio einzusehen oder eine Immobiliensuche anzufordern, müssen wir Ihr Investitionsprofil überprüfen. Bitte füllen Sie das Formular mit Ihren beruflichen Daten aus und fügen Sie einen Kapitalnachweis (POF) bei, falls verfügbar."
+    },
+    "forms": {
+        "labels": {
+            "fullName": "Vollständiger Name",
+            "email": "Berufliche E-Mail",
+            "phone": "Telefon",
+            "city": "Stadt",
+            "country": "Land",
+            "agencyName": "Name der Agentur",
+            "taxId": "Steuernummer / USt-IdNr.",
+            "contactPerson": "Ansprechpartner",
+            "propertiesCount": "Anzahl der exklusiven Immobilien",
+            "priceRange": "Preisspanne (€)",
+            "from": "Von",
+            "to": "Bis",
+            "propertyTypes": "Immobilienarten im Portfolio",
+            "message": "Zusätzliche Nachricht",
+            "capital": "Investitionskapital (€)",
+            "targetLocation": "Wo möchten Sie investieren?",
+            "goal": "Was ist Ihr Ziel?",
+            "request_access": "Ich fordere Zugang zur",
+            "private_platform": "privaten Plattform",
+            "view_exclusive": "an, um exklusive Möglichkeiten zu sehen.",
+            "dossier": "Firmendossier / Portfolio-Beispiel",
+            "pof": "Kapitalnachweis (POF) Dokument"
+        },
+        "placeholders": {
+            "name_example": "Max Mustermann",
+            "email_example": "max@firma.de",
+            "phone_example": "+49 170...",
+            "capital_example": "Bsp.: 5.000.000",
+            "location_example": "Bsp.: Madrid, Marbella, London...",
+            "message_example": "Interessiert an Immobilien in...",
+            "funds_example": "Bsp.: 5.000.000"
+        },
+        "buttons": {
+            "send_request": "Anfrage senden",
+            "sending": "Senden...",
+            "apply": "Zusammenarbeit beantragen",
+            "processing": "Antrag wird bearbeitet...",
+            "upload_file": "Datei hochladen",
+            "or_drag": "oder hierher ziehen",
+            "file_ready": "Datei bereit",
+            "send_another": "Einen weiteren Antrag senden"
+        },
+        "status": {
+            "sent_title": "Antrag gesendet",
+            "sent_text": "Vielen Dank für Ihre Anfrage. Wir haben Ihren Kapitalnachweis erhalten und werden Ihr Profil in Kürze analysieren.",
+            "sent_agency_text": "Wir haben Ihren Antrag erhalten. Unser Rechtsteam wird Ihnen die Kooperationsvereinbarung zur Freischaltung des Zugangs zusenden.",
+            "error": "Es gab einen Fehler beim Senden des Formulars. Bitte versuchen Sie es erneut.",
+            "success": "Erfolg!",
+            "connection_error": "Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut."
+        },
+        "goals": {
+            "buy": "Ich möchte investieren / kaufen",
+            "sell": "Ich möchte verkaufen (exklusiv)"
+        },
+        "agency_types": {
+            "hotels": "Hotels",
+            "land": "Bauland",
+            "fincas": "Landgüter / Fincas",
+            "wineries": "Weingüter",
+            "agricultural": "Landwirtschaftliche Flächen",
+            "livestock": "Viehzucht",
+            "buildings": "Gebäude",
+            "luxury": "Luxusimmobilien"
+        },
+        "loading": {
+            "encrypting": "Dokumente werden verschlüsselt...",
+            "uploading": "Upload auf sicheren Server...",
+            "verifying": "Übermittlung wird überprüft...",
+            "finalizing": "Übertragung wird abgeschlossen..."
+        }
+    },
+    "steps": {
+        "agencies_title": "Wie Sie zusammenarbeiten",
+        "agencies_subtitle": "Folgen Sie diesen Schritten, um unserer globalen Allianz beizutreten und Geschäfte abzuschließen.",
+        "investors_title": "Investitionsprozess",
+        "investors_subtitle": "Ein klarer und sicherer Weg zu den besten Off-Market-Chancen.",
+        "agencies": [
+            {
+                "title": "Zugangsanfrage",
+                "description": "Füllen Sie das Formular aus. Wenn Sie den Filter bestehen, erhalten Sie eine Zugangs-E-Mail.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Registrieren & Signieren",
+                "description": "Geben Sie Ihre Agenturdaten ein und unterschreiben Sie den Kooperationsvertrag digital.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Immobilien hochladen",
+                "description": "Laden Sie die Immobilien hoch, für die Sie qualifizierte Investoren suchen.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching",
+                "description": "Das System gleicht Ihre Vermögenswerte mit Großkapitalgebern ab.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Interesse erhalten",
+                "description": "Erhalten Sie Kontakte von Investoren, die an jeder Immobilie interessiert sind.",
+                "icon": "Users"
+            },
+            {
+                "title": "Verkauf abschließen",
+                "description": "Wenn Sie den Verkauf abschließen, geben Sie die Details ein und markieren Sie das Asset als verkauft.",
+                "icon": "CheckCircle"
+            },
+            {
+                "title": "Zahlung & Rechnung",
+                "description": "Zahlen Sie die geteilte Provision und erhalten Sie Ihre Leistungsrechnung.",
+                "icon": "CreditCard"
+            }
+        ],
+        "investors": [
+            {
+                "title": "Anfrage & POF",
+                "description": "Füllen Sie das Formular aus und reichen Sie Ihren Kapitalnachweis (POF) ein.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Überprüfung",
+                "description": "Wir prüfen Ihre Anfrage und gewähren Ihnen per E-Mail Zugriff auf die Plattform.",
+                "icon": "Search"
+            },
+            {
+                "title": "Mandat unterzeichnen",
+                "description": "Unterzeichnen Sie das Mandat, um Immobilien zu erhalten, die Ihrem Profil entsprechen.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Angebote erhalten",
+                "description": "Sie erhalten Möglichkeiten von unserem internationalen Agenturnetzwerk.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Kauf & Gebühr",
+                "description": "Schließen Sie das Geschäft ab und zahlen Sie die Provision an die Plattform.",
+                "icon": "CreditCard"
+            }
+        ]
     }
 }

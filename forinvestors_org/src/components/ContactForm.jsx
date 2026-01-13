@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 
 export default function ContactForm({ categoryName, explanation }) {
+    const { t } = useTranslation();
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -18,7 +20,7 @@ export default function ContactForm({ categoryName, explanation }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(null);
-    const [loadingText, setLoadingText] = useState('Initiating secure transmission...');
+    const [loadingText, setLoadingText] = useState(t('forms.loading.encrypting'));
 
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
@@ -29,10 +31,10 @@ export default function ContactForm({ categoryName, explanation }) {
     useEffect(() => {
         if (isSubmitting) {
             const messages = [
-                "Encrypting documents...",
-                "Uploading Proof of Funds to secure server...",
-                "Verifying submission integrity...",
-                "Finalizing transmission..."
+                t('forms.loading.encrypting'),
+                t('forms.loading.uploading'),
+                t('forms.loading.verifying'),
+                t('forms.loading.finalizing')
             ];
             let i = 0;
             setLoadingText(messages[0]);
@@ -44,7 +46,7 @@ export default function ContactForm({ categoryName, explanation }) {
 
             return () => clearInterval(interval);
         }
-    }, [isSubmitting]);
+    }, [isSubmitting, t]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -117,11 +119,11 @@ export default function ContactForm({ categoryName, explanation }) {
                     file: null
                 });
             } else {
-                setError(result.message || "There was an error submitting the form. Please try again.");
+                setError(result.message || t('forms.status.error'));
             }
         } catch (err) {
             console.error("Error submitting form:", err);
-            setError("Connection error. Please check your internet and try again.");
+            setError(t('forms.status.connection_error'));
         } finally {
             setIsSubmitting(false);
         }
@@ -137,13 +139,13 @@ export default function ContactForm({ categoryName, explanation }) {
                 <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="text-gold-500" size={32} />
                 </div>
-                <h3 className="text-2xl font-serif text-white mb-2">Request Sent</h3>
-                <p className="text-gray-400">Thank you for contacting us. We have received your proof of funds and will analyze your profile shortly.</p>
+                <h3 className="text-2xl font-serif text-white mb-2">{t('forms.status.sent_title')}</h3>
+                <p className="text-gray-400">{t('forms.status.sent_text')}</p>
                 <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
                 >
-                    Send another request
+                    {t('forms.buttons.send_another')}
                 </button>
             </motion.div>
         );
@@ -161,23 +163,23 @@ export default function ContactForm({ categoryName, explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.name')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="John Doe"
+                        placeholder={t('forms.placeholders.name_example')}
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Professional Email</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.email')}</label>
                     <input
                         type="email"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="john@company.com"
+                        placeholder={t('forms.placeholders.email_example')}
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
@@ -186,22 +188,22 @@ export default function ContactForm({ categoryName, explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.phone')}</label>
                     <input
                         type="tel"
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="+34 633..."
+                        placeholder={t('forms.placeholders.phone_example')}
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Capital to Invest (€)</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.funds')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder="Ex: 5,000,000"
+                        placeholder={t('forms.placeholders.funds_example')}
                         value={formState.funds}
                         onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
@@ -209,18 +211,18 @@ export default function ContactForm({ categoryName, explanation }) {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Where do you want to invest?</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation')}</label>
                 <input
                     type="text"
                     className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Ex: Madrid, Marbella, London..."
+                    placeholder={t('forms.placeholders.location_example')}
                     value={formState.targetLocation}
                     onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
                 />
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-3">What is your goal?</label>
+                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.labels.goal')}</label>
                 <div className="grid grid-cols-2 gap-4">
                     <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'buy' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
                         <input
@@ -231,7 +233,7 @@ export default function ContactForm({ categoryName, explanation }) {
                             onChange={() => setFormState({ ...formState, intent: 'buy' })}
                             className="hidden"
                         />
-                        <span className="font-medium">I want to Invest / Buy</span>
+                        <span className="font-medium">{t('forms.goals.buy')}</span>
                     </label>
                     <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'sell' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
                         <input
@@ -242,7 +244,7 @@ export default function ContactForm({ categoryName, explanation }) {
                             onChange={() => setFormState({ ...formState, intent: 'sell' })}
                             className="hidden"
                         />
-                        <span className="font-medium">I want to Sell (Exclusive)</span>
+                        <span className="font-medium">{t('forms.goals.sell')}</span>
                     </label>
                 </div>
             </div>
@@ -256,13 +258,13 @@ export default function ContactForm({ categoryName, explanation }) {
                     className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
                 />
                 <label htmlFor="requestAccess" className="text-sm text-gray-300 cursor-pointer select-none">
-                    I request access to the <strong className="text-gold-400">Private Platform</strong> to view exclusive opportunities.
+                    {t('forms.labels.request_access')} <strong className="text-gold-400">{t('forms.labels.private_platform')}</strong> {t('forms.labels.view_exclusive')}
                 </label>
             </div>
 
             <div>
                 <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                    Proof of Funds (POF) Document <AlertCircle size={14} />
+                    {t('forms.labels.pof')} <AlertCircle size={14} />
                 </label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg bg-midnight-900 hover:bg-midnight-800 transition-colors group cursor-pointer relative">
                     <input
@@ -276,14 +278,14 @@ export default function ContactForm({ categoryName, explanation }) {
                             <div className="flex flex-col items-center">
                                 <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
                                 <p className="text-sm text-gray-300 mt-2">{formState.file.name}</p>
-                                <p className="text-xs text-gray-500">File uploaded successfully</p>
+                                <p className="text-xs text-gray-500">{t('forms.buttons.file_ready')}</p>
                             </div>
                         ) : (
                             <>
                                 <Upload className="mx-auto h-12 w-12 text-gray-400 group-hover:text-gold-400 transition-colors" />
                                 <div className="flex text-sm text-gray-400 justify-center">
-                                    <span className="font-medium text-gold-400">Upload a file</span>
-                                    <p className="pl-1">or drag and drop</p>
+                                    <span className="font-medium text-gold-400">{t('forms.buttons.upload_file')}</span>
+                                    <p className="pl-1">{t('forms.buttons.or_drag')}</p>
                                 </div>
                                 <p className="text-xs text-gray-500">PDF, PNG, JPG up to 10MB</p>
                             </>
@@ -293,11 +295,11 @@ export default function ContactForm({ categoryName, explanation }) {
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Additional Message</label>
+                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
                 <textarea
                     rows={4}
                     className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder="Interested in properties in..."
+                    placeholder={t('forms.placeholders.message_example')}
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                 />
@@ -318,12 +320,12 @@ export default function ContactForm({ categoryName, explanation }) {
                     <div className="flex flex-col items-center justify-center">
                         <div className="flex items-center">
                             <Loader2 className="mr-2 animate-spin" size={20} />
-                            <span>Processing...</span>
+                            <span>{t('forms.buttons.processing')}</span>
                         </div>
                         <span className="text-xs font-normal mt-1 text-gold-100 opacity-90 animate-pulse">{loadingText}</span>
                     </div>
                 ) : (
-                    <>Send Request <Send size={18} className="ml-2" /></>
+                    <>{t('forms.buttons.send_request')} <Send size={18} className="ml-2" /></>
                 )}
             </button>
 
