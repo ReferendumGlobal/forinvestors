@@ -32,7 +32,7 @@ export default function Register() {
         setError(null);
 
         try {
-            // 1. Sign Up Auth User (Profile created via SQL Trigger)
+            // 1. Sign Up Auth User
             const { data: authData, error: authError } = await supabase.auth.signUp({
                 email,
                 password,
@@ -41,16 +41,24 @@ export default function Register() {
                         full_name: fullName,
                         role: role,
                         company_name: role === 'agency' ? companyName : null,
+                        status: 'pending' // Default to pending for manual approval
                     }
                 }
             });
 
             if (authError) throw authError;
 
-            // 2. Success -> Redirect
-            navigate('/dashboard');
+            // 2. Check if session exists (Email Confirmation might be enabled)
+            if (authData.session) {
+                navigate('/dashboard');
+            } else {
+                // User created but not signed in (needs verification)
+                alert('Registration successful! Please check your email to confirm your account before logging in.');
+                navigate('/login');
+            }
         } catch (err) {
-            setError(err.message);
+            console.error("Registration error:", err);
+            setError(err.message || "An error occurred during registration.");
         } finally {
             setLoading(false);
         }
