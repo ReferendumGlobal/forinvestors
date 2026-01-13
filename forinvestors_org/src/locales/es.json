@@ -225,7 +225,21 @@
             "private_platform": "Plataforma Privada",
             "view_exclusive": "para ver oportunidades exclusivas.",
             "dossier": "Dossier Corporativo / Ejemplo de Cartera",
-            "pof": "Documento Prueba de Fondos (POF)"
+            "pof": "Documento Prueba de Fondos (POF)",
+            "interested_assets": "Activos de Interés (Seleccione varios)"
+        },
+        "assets": {
+            "hotels": "Hoteles",
+            "wineries": "Bodegas",
+            "agricultural": "Fincas Agrícolas",
+            "livestock": "Fincas Ganaderas",
+            "mansions": "Mansiones",
+            "castles": "Castillos y Palacios",
+            "penthouses": "Áticos de Lujo",
+            "office_buildings": "Edificios de Oficinas",
+            "apartment_buildings": "Edificios de Apartamentos",
+            "urban_land": "Terrenos Urbanos",
+            "dev_land": "Suelo para Promociones"
         },
         "placeholders": {
             "company_example": "Nombre de su empresa",

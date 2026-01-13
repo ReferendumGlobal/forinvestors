@@ -1,8 +1,23 @@
+
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
+
+const ASSET_TYPES = [
+    'hotels',
+    'wineries',
+    'agricultural',
+    'livestock',
+    'mansions',
+    'castles',
+    'penthouses',
+    'office_buildings',
+    'apartment_buildings',
+    'urban_land',
+    'dev_land'
+];
 
 export default function ContactForm({ categoryName, explanation }) {
     const { t } = useTranslation();
@@ -16,6 +31,7 @@ export default function ContactForm({ categoryName, explanation }) {
         intent: 'buy',
         requestAccess: true,
         message: '',
+        selectedAssets: [],
         file: null
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,6 +43,15 @@ export default function ContactForm({ categoryName, explanation }) {
         if (e.target.files[0]) {
             setFormState({ ...formState, file: e.target.files[0] });
         }
+    };
+
+    const handleAssetToggle = (asset) => {
+        setFormState(prev => {
+            const newAssets = prev.selectedAssets.includes(asset)
+                ? prev.selectedAssets.filter(a => a !== asset)
+                : [...prev.selectedAssets, asset];
+            return { ...prev, selectedAssets: newAssets };
+        });
     };
 
     useEffect(() => {
@@ -54,6 +79,10 @@ export default function ContactForm({ categoryName, explanation }) {
         setIsSubmitting(true);
         setError(null);
 
+        // Format selected assets for display
+        const interests = formState.selectedAssets.map(a => t(`forms.assets.${a}`)).join(', ');
+        const finalMessage = `Interests: ${interests}\n\nMessage: ${formState.message}`;
+
         const formData = new FormData();
         formData.append('name', formState.name);
         formData.append('company_name', formState.companyName);
@@ -61,6 +90,7 @@ export default function ContactForm({ categoryName, explanation }) {
         formData.append('phone', formState.phone);
         formData.append('funds', formState.funds);
         formData.append('targetLocation', formState.targetLocation);
+        formData.append('interests', interests);
         formData.append('intent', formState.intent === 'buy' ? 'Investment (Buy)' : 'Sale');
         formData.append('requestAccess', formState.requestAccess ? 'Yes' : 'No');
         formData.append('message', formState.message);
@@ -85,7 +115,7 @@ export default function ContactForm({ categoryName, explanation }) {
                     target_location: formState.targetLocation,
                     intent: formState.intent,
                     request_access: formState.requestAccess,
-                    message: formState.message,
+                    message: finalMessage, // Storing interests in message for now
                     role: 'investor',
                     status: 'new'
                 }
@@ -119,7 +149,11 @@ export default function ContactForm({ categoryName, explanation }) {
                     email: '',
                     phone: '',
                     funds: '',
+                    targetLocation: '',
+                    intent: 'buy',
+                    requestAccess: true,
                     message: '',
+                    selectedAssets: [],
                     file: null
                 });
             } else {
@@ -198,9 +232,6 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
                 </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.phone')}</label>
                     <input
@@ -211,6 +242,9 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.capital')}</label>
                     <input
@@ -222,17 +256,44 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
                 </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation')}</label>
+                    <input
+                        type="text"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder={t('forms.placeholders.location_example')}
+                        value={formState.targetLocation}
+                        onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
+                    />
+                </div>
             </div>
 
+            {/* Asset Type Selection */}
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation')}</label>
-                <input
-                    type="text"
-                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder={t('forms.placeholders.location_example')}
-                    value={formState.targetLocation}
-                    onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
-                />
+                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.labels.interested_assets')}</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {ASSET_TYPES.map((asset) => (
+                        <label
+                            key={asset}
+                            className={`flex items-center space-x-2 p-3 rounded-lg border cursor-pointer transition-all ${formState.selectedAssets.includes(asset)
+                                    ? 'bg-gold-500/20 border-gold-500 text-white'
+                                    : 'bg-midnight-950 border-white/10 text-gray-400 hover:border-white/30'
+                                }`}
+                        >
+                            <input
+                                type="checkbox"
+                                checked={formState.selectedAssets.includes(asset)}
+                                onChange={() => handleAssetToggle(asset)}
+                                className="hidden"
+                            />
+                            <div className={`w-4 h-4 rounded border flex items-center justify-center ${formState.selectedAssets.includes(asset) ? 'border-gold-500 bg-gold-500' : 'border-gray-500'
+                                }`}>
+                                {formState.selectedAssets.includes(asset) && <CheckCircle size={12} className="text-midnight-950" />}
+                            </div>
+                            <span className="text-xs md:text-sm">{t(`forms.assets.${asset}`)}</span>
+                        </label>
+                    ))}
+                </div>
             </div>
 
             <div>

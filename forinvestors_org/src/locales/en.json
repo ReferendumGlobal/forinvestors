@@ -225,7 +225,21 @@
             "private_platform": "Private Platform",
             "view_exclusive": "to view exclusive opportunities.",
             "dossier": "Corporate Dossier / Portfolio Example",
-            "pof": "Proof of Funds (POF) Document"
+            "pof": "Proof of Funds (POF) Document",
+            "interested_assets": "Assets of Interest (Select multiple)"
+        },
+        "assets": {
+            "hotels": "Hotels",
+            "wineries": "Wineries",
+            "agricultural": "Agricultural Estates",
+            "livestock": "Livestock Farms",
+            "mansions": "Mansions",
+            "castles": "Castles & Palaces",
+            "penthouses": "Luxury Penthouses",
+            "office_buildings": "Office Buildings",
+            "apartment_buildings": "Apartment Buildings",
+            "urban_land": "Urban Land",
+            "dev_land": "Development Land"
         },
         "placeholders": {
             "company_example": "Your Company Name",
