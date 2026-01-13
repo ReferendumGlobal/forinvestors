@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { supabase } from '../../lib/supabase';
 
 export default function ContactForm({ categoryName, explanation }) {
     const [formState, setFormState] = useState({
@@ -69,6 +70,25 @@ export default function ContactForm({ categoryName, explanation }) {
         }
 
         try {
+            // 1. Save to Supabase (Leads Table)
+            const { error: dbError } = await supabase.from('leads').insert([
+                {
+                    full_name: formState.name,
+                    email: formState.email,
+                    phone: formState.phone,
+                    budget: formState.funds,
+                    target_location: formState.targetLocation,
+                    intent: formState.intent,
+                    request_access: formState.requestAccess,
+                    message: formState.message,
+                    role: 'investor',
+                    status: 'new'
+                }
+            ]);
+
+            if (dbError) console.error("Error saving lead:", dbError);
+
+            // 2. Send Email via FormSubmit
             const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
                 method: "POST",
                 headers: {
