@@ -239,7 +239,13 @@
             "office_buildings": "Office Buildings",
             "apartment_buildings": "Apartment Buildings",
             "urban_land": "Urban Land",
-            "dev_land": "Development Land"
+            "dev_land": "Development Land",
+            "casinos": "Casinos",
+            "football_clubs": "Football Clubs",
+            "islands": "Private Islands",
+            "sports_clubs": "Sports Clubs",
+            "garages": "High Capacity Parking",
+            "businesses": "Businesses / M&A"
         },
         "placeholders": {
             "company_example": "Your Company Name",

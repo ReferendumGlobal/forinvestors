@@ -16,7 +16,13 @@ const ASSET_TYPES = [
     'office_buildings',
     'apartment_buildings',
     'urban_land',
-    'dev_land'
+    'dev_land',
+    'casinos',
+    'football_clubs',
+    'islands',
+    'sports_clubs',
+    'garages',
+    'businesses'
 ];
 
 export default function ContactForm({ categoryName, explanation }) {
@@ -276,8 +282,8 @@ export default function ContactForm({ categoryName, explanation }) {
                         <label
                             key={asset}
                             className={`flex items-center space-x-2 p-3 rounded-lg border cursor-pointer transition-all ${formState.selectedAssets.includes(asset)
-                                    ? 'bg-gold-500/20 border-gold-500 text-white'
-                                    : 'bg-midnight-950 border-white/10 text-gray-400 hover:border-white/30'
+                                ? 'bg-gold-500/20 border-gold-500 text-white'
+                                : 'bg-midnight-950 border-white/10 text-gray-400 hover:border-white/30'
                                 }`}
                         >
                             <input
