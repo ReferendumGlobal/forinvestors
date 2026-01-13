@@ -5,11 +5,9 @@ import AgencyDataForm from './AgencyDataForm';
 import ContractSign from './ContractSign';
 import { CheckCircle, Building2, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import SetPassword from './SetPassword';
 import { UserCircle } from 'lucide-react';
 
 const STEPS = [
-    { title: 'Security', icon: UserCircle },
     { title: 'Agency Details', icon: Building2 },
     { title: 'Collaboration Agreement', icon: FileText }
 ];
@@ -21,13 +19,9 @@ export default function AgencyOnboarding() {
     const [completed, setCompleted] = useState(false);
     const navigate = useNavigate();
 
-    const handlePasswordSet = () => {
-        setStep(2);
-    };
-
     const handleDataComplete = (data) => {
         setAgencyData(data);
-        setStep(3);
+        setStep(2);
     };
 
     const handleContractSigned = async () => {
@@ -83,23 +77,20 @@ export default function AgencyOnboarding() {
             {/* Content */}
             <div className="transition-all duration-300">
                 {step === 1 && (
-                    <SetPassword onComplete={handlePasswordSet} />
-                )}
-                {step === 2 && (
                     <AgencyDataForm
                         initialData={agencyData}
                         onComplete={handleDataComplete}
                     />
                 )}
-                {step === 3 && (
+                {step === 2 && (
                     <ContractSign
                         mode="onboarding"
                         contractType="agency_collaboration"
                         user={user}
                         profile={profile}
-                        agencyData={agencyData} // Pass the collected data
+                        agencyData={agencyData}
                         onSuccess={handleContractSigned}
-                        onBack={() => setStep(2)}
+                        onBack={() => setStep(1)}
                     />
                 )}
             </div>
