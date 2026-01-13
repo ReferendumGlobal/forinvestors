@@ -104,7 +104,8 @@ function App() {
           <Routes>
             {/* Auth & Dashboard Routes */}
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            {/* <Route path="/register" element={<Register />} /> Public registration disabled */}
 
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<DashboardHome />} />

@@ -36,6 +36,11 @@ export default function Login() {
     return (
         <div className="min-h-screen bg-midnight-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
+                <div className="flex justify-start mb-4">
+                    <Link to="/" className="text-sm text-gold-500 hover:text-gold-400 flex items-center gap-2">
+                        ← Back to Home
+                    </Link>
+                </div>
                 <Link to="/" className="flex justify-center mb-6">
                     <Shield className="h-12 w-12 text-gold-500" />
                 </Link>
@@ -131,29 +136,15 @@ export default function Login() {
 
                     <div className="mt-6">
                         <div className="relative">
-                            <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-gray-700" />
-                            </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="px-2 bg-midnight-900 text-gray-400">
-                                    Not a member yet?
+                                <span className="px-2 bg-midnight-950 text-gray-400">
+                                    Access Restricted
                                 </span>
                             </div>
                         </div>
-
-                        <div className="mt-6 grid grid-cols-2 gap-3">
-                            <Link
-                                to="/register?type=investor"
-                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-800 text-sm font-medium text-gray-300 hover:bg-midnight-700 transition-colors"
-                            >
-                                Investor
-                            </Link>
-                            <Link
-                                to="/register?type=agency"
-                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-800 text-sm font-medium text-gray-300 hover:bg-midnight-700 transition-colors"
-                            >
-                                Agency
-                            </Link>
+                        <div className="mt-4 text-center text-sm text-gray-500">
+                            Registration is by invitation only. <br />
+                            Please submit a request via the forms on the home page.
                         </div>
                     </div>
                 </motion.div>
