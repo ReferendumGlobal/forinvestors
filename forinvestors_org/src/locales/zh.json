@@ -191,7 +191,27 @@
             "view_exclusive": "以查看独家机会。",
             "dossier": "公司档案 / 投资组合示例",
             "pof": "资金证明 (POF) 文件",
+            "interested_assets": "感兴趣的资产（多选）",
             "companyName": "公司名称（可选）"
+        },
+        "assets": {
+            "hotels": "酒店",
+            "wineries": "酒庄",
+            "agricultural": "农业庄园",
+            "livestock": "畜牧场",
+            "mansions": "豪宅",
+            "castles": "城堡与宫殿",
+            "penthouses": "豪华顶层公寓",
+            "office_buildings": "办公楼",
+            "apartment_buildings": "公寓楼",
+            "urban_land": "城市用地",
+            "dev_land": "开发用地",
+            "casinos": "赌场",
+            "football_clubs": "足球俱乐部",
+            "islands": "私人岛屿",
+            "sports_clubs": "体育俱乐部",
+            "garages": "大型停车场",
+            "businesses": "企业并购 / M&A"
         },
         "placeholders": {
             "name_example": "李明",

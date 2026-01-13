@@ -191,7 +191,27 @@
             "view_exclusive": "para ver oportunidades exclusivas.",
             "dossier": "Dossiê Corporativo / Exemplo de Portfólio",
             "pof": "Documento de Prova de Fundos (POF)",
+            "interested_assets": "Ativos de Interesse (Seleção múltipla)",
             "companyName": "Nome da Empresa (Opcional)"
+        },
+        "assets": {
+            "hotels": "Hotéis",
+            "wineries": "Vinícolas",
+            "agricultural": "Propriedades Agrícolas",
+            "livestock": "Fazendas de Pecuária",
+            "mansions": "Mansões",
+            "castles": "Castelos e Palácios",
+            "penthouses": "Coberturas de Luxo",
+            "office_buildings": "Edifícios de Escritórios",
+            "apartment_buildings": "Edifícios Residenciais",
+            "urban_land": "Terrenos Urbanos",
+            "dev_land": "Terrenos para Desenvolvimento",
+            "casinos": "Cassinos",
+            "football_clubs": "Clubes de Futebol",
+            "islands": "Ilhas Privadas",
+            "sports_clubs": "Clubes Esportivos",
+            "garages": "Estacionamentos de Alta Capacidade",
+            "businesses": "Negócios / M&A"
         },
         "placeholders": {
             "name_example": "João Silva",

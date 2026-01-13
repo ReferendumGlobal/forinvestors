@@ -191,8 +191,28 @@
             "view_exclusive": "لعرض الفرص الحصرية.",
             "dossier": "ملف الشركة / مثال للمحفظة",
             "pof": "وثيقة إثبات الأموال (POF)",
-            "companyName": "اسم الشركة (اختياري)"
+            "interested_assets": "الأصول ذات الاهتمام (تحديد متعدد)"
         },
+        "assets": {
+            "hotels": "فنادق",
+            "wineries": "مصانع نبيذ",
+            "agricultural": "عقارات زراعية",
+            "livestock": "مزارع الماشية",
+            "mansions": "قصور",
+            "castles": "قلاع وقصور",
+            "penthouses": "شقق بنتهاوس فاخرة",
+            "office_buildings": "مباني مكتبية",
+            "apartment_buildings": "مباني سكنية",
+            "urban_land": "أراضي حضرية",
+            "dev_land": "أراضي للتطوير",
+            "casinos": "كازينوهات",
+            "football_clubs": "أندية كرة قدم",
+            "islands": "جزر خاصة",
+            "sports_clubs": "أندية رياضية",
+            "garages": "مواقف سيارات ذات سعة عالية",
+            "businesses": "أعمال تجارية / اندماج واستحواذ"
+        },
+        "companyName": "اسم الشركة (اختياري)",
         "placeholders": {
             "name_example": "أحمد محمد",
             "email_example": "ahmed@company.com",

@@ -191,7 +191,27 @@
             "view_exclusive": "pour voir les opportunités exclusives.",
             "dossier": "Dossier d'Entreprise / Exemple de Portefeuille",
             "pof": "Preuve de Fonds (POF)",
-            "companyName": "Nom de l'Entreprise (Optionnel)"
+            "companiesName": "Nom de l'Entreprise (Optionnel)",
+            "interested_assets": "Actifs d'Intérêt (Sélection multiple)"
+        },
+        "assets": {
+            "hotels": "Hôtels",
+            "wineries": "Vignobles",
+            "agricultural": "Domaines Agricoles",
+            "livestock": "Fermes d'Élevage",
+            "mansions": "Manoirs",
+            "castles": "Châteaux et Palais",
+            "penthouses": "Penthouses de Luxe",
+            "office_buildings": "Immeubles de Bureaux",
+            "apartment_buildings": "Immeubles d'Appartements",
+            "urban_land": "Terrains Urbains",
+            "dev_land": "Terrains à Développer",
+            "casinos": "Casinos",
+            "football_clubs": "Clubs de Football",
+            "islands": "Îles Privées",
+            "sports_clubs": "Clubs Sportifs",
+            "garages": "Parkings Grande Capacité",
+            "businesses": "Entreprises / M&A"
         },
         "placeholders": {
             "name_example": "Jean Dupont",

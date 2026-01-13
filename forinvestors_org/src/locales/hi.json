@@ -191,7 +191,27 @@
             "view_exclusive": "तक पहुंच का अनुरोध करता हूं ताकि विशेष अवसर देख सकूं।",
             "dossier": "कॉर्पोरेट डोजियर / पोर्टफोलियो उदाहरण",
             "pof": "फंड का सबूत (POF) दस्तावेज़",
+            "interested_assets": "रुचि की संपत्ति (बहुविकल्पीय)",
             "companyName": "कंपनी का नाम (वैकल्पिक)"
+        },
+        "assets": {
+            "hotels": "होटल",
+            "wineries": "वाइनरी",
+            "agricultural": "कृषि संपदा",
+            "livestock": "पशुधन फॉर्म",
+            "mansions": "हवेलियां",
+            "castles": "महल और किले",
+            "penthouses": "लक्ज़री पेंटहाउस",
+            "office_buildings": "कार्यालय भवन",
+            "apartment_buildings": "अपार्टमेंट इमारतें",
+            "urban_land": "शहरी भूमि",
+            "dev_land": "विकास भूमि",
+            "casinos": "कैसीनो",
+            "football_clubs": "फुटबॉल क्लब",
+            "islands": "निजी द्वीप",
+            "sports_clubs": "स्पोर्ट्स क्लब",
+            "garages": "उच्च क्षमता वाले गैरेज",
+            "businesses": "व्यवसाय / M&A"
         },
         "placeholders": {
             "name_example": "राहुल शर्मा",
