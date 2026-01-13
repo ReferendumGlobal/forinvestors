@@ -258,16 +258,10 @@ export default function AdminPanel() {
                     </table>
                 </div>
             )}
+            {/* MATCHING ENGINE TAB */}
+            {activeTab === 'matching' && (
+                <MatchingEngine />
+            )}
         </div>
-    )
-}
-
-{/* MATCHING ENGINE TAB */ }
-{
-    activeTab === 'matching' && (
-        <MatchingEngine />
-    )
-}
-        </div >
     );
 }
