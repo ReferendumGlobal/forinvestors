@@ -21,7 +21,7 @@ export default function Register() {
 
     // Update role if URL param changes
     useEffect(() => {
-        if (typeParam === 'agency' || typeParam === 'investor') {
+        if (typeParam === 'agency' || typeParam === 'investor' || typeParam === 'seller') {
             setRole(typeParam);
         }
     }, [typeParam]);
@@ -67,7 +67,7 @@ export default function Register() {
                     Solicitud de Acceso
                 </h2>
                 <p className="mt-2 text-center text-sm text-gray-400">
-                    Únase a Urbina Agency como {role === 'agency' ? 'Agencia Partner' : 'Inversor Cualificado'}
+                    Únase a Urbina Agency como {role === 'agency' ? 'Agencia Partner' : role === 'seller' ? 'Propietario / Vendedor' : 'Inversor Cualificado'}
                 </p>
             </div>
 
@@ -88,6 +88,16 @@ export default function Register() {
                                 }`}
                         >
                             <User size={16} className="mr-2" /> Inversor
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setRole('seller')}
+                            className={`flex-1 flex items-center justify-center py-2 text-sm font-medium rounded-md transition-all ${role === 'seller'
+                                ? 'bg-gold-600 text-white shadow'
+                                : 'text-gray-400 hover:text-white'
+                                }`}
+                        >
+                            <User size={16} className="mr-2" /> Vendedor
                         </button>
                         <button
                             type="button"
@@ -177,7 +187,7 @@ export default function Register() {
                         </Link>
                     </div>
                 </motion.div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }

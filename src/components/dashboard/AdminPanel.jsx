@@ -58,7 +58,8 @@ export default function AdminPanel() {
             .eq('id', lead.id);
 
         if (!error) {
-            alert(`Marcado como invitado. Envía este link a ${lead.email}:\n\nhttps://parainversores.com/#/register?email=${encodeURIComponent(lead.email)}&type=${lead.intent === 'sell' ? 'agency' : 'investor'}`);
+            const roleParam = lead.role || (lead.intent === 'sell' ? 'seller' : 'investor');
+            alert(`Marcado como invitado. Envía este link a ${lead.email}:\n\nhttps://parainversores.com/#/register?email=${encodeURIComponent(lead.email)}&type=${roleParam}`);
             fetchData();
         }
     };

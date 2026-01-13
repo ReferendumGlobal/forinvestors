@@ -8,12 +8,37 @@
         "blog": "Blog",
         "agencies": "For Real Estate Agencies",
         "search": "Property Search",
-        "access": "Private Area"
+        "access": "Private Portal",
+        "sell": "Sell Assets"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
+        "shield": "The Art of Privacy",
+        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of the highest quality. Our clients entrust us with valuable secrets, and we return successful businesses.",
         "cta": "Enter Portfolio"
+    },
+    "sell_page": {
+        "title": "Sell Your Asset Exclusively",
+        "subtitle": "Access our network of qualified investors and global family offices.",
+        "hero_cta": "Value My Property",
+        "why_us_title": "Why sell with Urbina Agency?",
+        "benefits": [
+            {
+                "title": "Total Confidentiality",
+                "desc": "Your asset will not be published on general portals. Only verified investors with POF will have access."
+            },
+            {
+                "title": "Global Network",
+                "desc": "We connect your property with capital in Dubai, London, New York and Asia."
+            },
+            {
+                "title": "Integral Management",
+                "desc": "We take care of everything: valuation, due diligence, visits and legal closing."
+            }
+        ],
+        "form_title": "Asset Details",
+        "form_subtitle": "Fill out the form for our team to evaluate your property.",
+        "success_title": "Request Received",
+        "success_desc": "We have received your property details. Our valuation team will contact you shortly to formalize the sales mandate."
     },
     "legacy": {
         "title": "A Legacy of Honor",

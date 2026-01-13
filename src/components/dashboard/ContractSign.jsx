@@ -11,19 +11,34 @@ export default function ContractSign() {
     const [contractUrl, setContractUrl] = useState(null);
 
     // Contract text content based on role
-    const contractContent = profile?.role === 'agency'
-        ? `CONTRATO DE COLABORACIÓN (AGENCIA)
+    let contractText = '';
+
+    if (profile?.role === 'agency') {
+        contractText = `CONTRATO DE COLABORACIÓN (AGENCIA)
         
 Entre Urbina Agency y ${profile?.company_name || 'la Agencia'}, se acuerda:
 1. La Agencia podrá publicar sus activos en la plataforma.
 2. Urbina Agency actuará como intermediario...
-[... Texto legal completo del contrato de agencia ...]`
-        : `MANDATO DE COMPRA / VENTA (INVERSOR)
+[... Texto legal completo del contrato de agencia ...]`;
+    } else if (profile?.role === 'seller') {
+        contractText = `HOJA DE ENCARGO DE VENTA (EXCLUSIVA)
+
+Entre Urbina Agency y ${profile?.full_name || 'el Propietario'}, se acuerda:
+1. El Propietario encarga a Urbina Agency la gestión de venta en EXCLUSIVA de su propiedad.
+2. Duración del encargo: 6 meses prorrogables salvo notificación contraria.
+3. Honorarios: 7% sobre el valor final de venta, pagaderos en el momento del otorgamiento de la escritura pública.
+4. Confidencialidad: Urbina Agency se compromete a no publicar la propiedad en portales abiertos.
+[... Texto legal completo de la hoja de encargo ...]`;
+    } else {
+        contractText = `MANDATO DE COMPRA / VENTA (INVERSOR)
 
 Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
 1. El Inversor otorga mandato para la búsqueda de activos...
 2. La comisión pactada será del X% sobre el valor final...
 [... Texto legal completo del contrato de inversión ...]`;
+    }
+
+    const contractContent = contractText;
 
     useEffect(() => {
         checkExistingContract();
@@ -57,7 +72,8 @@ Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
                 .insert([
                     {
                         user_id: user.id,
-                        type: profile?.role === 'agency' ? 'collaboration' : 'buy_mandate',
+                        type: profile?.role === 'agency' ? 'collaboration' :
+                            profile?.role === 'seller' ? 'sales_mandate' : 'buy_mandate',
                         signature_url: signatureDataUrl, // Storing base64 directly for MVP simplicity
                         signed_at: new Date().toISOString()
                     }
@@ -108,7 +124,9 @@ Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
                 <div className="flex items-center gap-3 mb-6">
                     <FileText className="text-gold-500" size={28} />
                     <h1 className="text-2xl font-bold text-white">
-                        {profile?.role === 'agency' ? 'Firma de Acuerdo de Colaboración' : 'Firma de Mandato'}
+                        {profile?.role === 'agency' ? 'Firma de Acuerdo de Colaboración' :
+                            profile?.role === 'seller' ? 'Firma de Hoja de Encargo' :
+                                'Firma de Mandato'}
                     </h1>
                 </div>
 

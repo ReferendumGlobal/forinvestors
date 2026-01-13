@@ -13,7 +13,9 @@ import FAQ from './components/FAQ';
 import PropertySearch from './components/PropertySearch';
 import Agencies from './components/Agencies';
 import ProcessSteps from './components/ProcessSteps';
+
 import CategoryPage from './components/CategoryPage';
+import SellAssets from './components/SellAssets';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
@@ -123,6 +125,7 @@ function App() {
               <Route path="wineries" element={<CategoryPage categoryId="wineries" />} />
               <Route path="blog" element={<Blog />} />
               <Route path="agencias" element={<Agencies />} />
+              <Route path="sell" element={<SellAssets />} />
               <Route path="search" element={<PropertySearch />} />
               <Route path="*" element={<Navigate to="." replace />} />
             </Route>

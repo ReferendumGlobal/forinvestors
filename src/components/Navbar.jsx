@@ -84,6 +84,15 @@ export default function Navbar({ categories }) {
                             >
                                 {t('nav.agencies')}
                             </Link>
+                            <Link
+                                to="sell"
+                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'sell'
+                                    ? 'text-gold-400 bg-white/5 border border-white/5'
+                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                {t('nav.sell')}
+                            </Link>
 
                             <Link
                                 to="/login"
@@ -172,6 +181,19 @@ export default function Navbar({ categories }) {
                         <div className="flex items-center gap-3">
                             <span className="text-gold-500 w-5 flex justify-center">•</span>
                             {t('nav.agencies')}
+                        </div>
+                    </Link>
+                    <Link
+                        to="sell"
+                        onClick={() => setIsOpen(false)}
+                        className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === 'sell'
+                            ? 'text-gold-400 bg-white/5'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            }`}
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 w-5 flex justify-center">•</span>
+                            {t('nav.sell')}
                         </div>
                     </Link>
                     <Link
