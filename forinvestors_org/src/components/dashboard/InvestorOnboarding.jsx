@@ -8,7 +8,10 @@ import ContractSign from './ContractSign';
 import { CheckCircle, Building2, FileText, UserCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import SetPassword from './SetPassword';
+
 const STEPS = [
+    { title: 'Security', icon: UserCircle }, // New Step 1
     { title: 'Investment Profile', icon: Building2 },
     { title: 'Identity Verification', icon: UserCircle },
     { title: 'Sign Mandate', icon: FileText }
@@ -49,14 +52,18 @@ export default function InvestorOnboarding() {
         fetchLeadData();
     }, [user]);
 
+    const handlePasswordSet = () => {
+        setStep(2);
+    };
+
     const handleDataComplete = (data) => {
         setInvestorData(data);
-        setStep(2);
+        setStep(3);
     };
 
     const handleDocsUpload = (uploadedDocs) => {
         setDocuments(uploadedDocs); // { passport: url, etc }
-        setStep(3);
+        setStep(4);
     };
 
     const handleContractSigned = async () => {
@@ -96,8 +103,8 @@ export default function InvestorOnboarding() {
                     return (
                         <div key={i} className="flex flex-col items-center">
                             <div className={`w-12 h-12 rounded-full flex items-center justify-center border-2 mb-2 transition-colors ${isActive ? 'border-gold-500 bg-gold-500/20 text-gold-500' :
-                                    isDone ? 'border-green-500 bg-green-500/20 text-green-500' :
-                                        'border-gray-700 bg-midnight-900 text-gray-500'
+                                isDone ? 'border-green-500 bg-green-500/20 text-green-500' :
+                                    'border-gray-700 bg-midnight-900 text-gray-500'
                                 }`}>
                                 {isDone ? <CheckCircle size={24} /> : <s.icon size={24} />}
                             </div>
@@ -107,24 +114,26 @@ export default function InvestorOnboarding() {
                         </div>
                     );
                 })}
-                {/* Connecting Line (Visual only, tricky to implement perfectly responsive without absolute positioning nonsense) */}
             </div>
 
             {/* Content */}
             <div className="transition-all duration-300">
                 {step === 1 && (
+                    <SetPassword onComplete={handlePasswordSet} />
+                )}
+                {step === 2 && (
                     <InvestorDataForm
                         initialData={investorData}
                         onComplete={handleDataComplete}
                     />
                 )}
-                {step === 2 && (
+                {step === 3 && (
                     <IdUpload
                         onUploadComplete={handleDocsUpload}
-                        onBack={() => setStep(1)}
+                        onBack={() => setStep(2)}
                     />
                 )}
-                {step === 3 && (
+                {step === 4 && (
                     <ContractSign
                         mode="onboarding"
                         contractType="buy_mandate"
@@ -133,7 +142,7 @@ export default function InvestorOnboarding() {
                         criteria={investorData} // Pass the collected data
                         idUrl={docs.passport} // Pass ID url
                         onSuccess={handleContractSigned}
-                        onBack={() => setStep(2)}
+                        onBack={() => setStep(3)}
                     />
                 )}
             </div>
