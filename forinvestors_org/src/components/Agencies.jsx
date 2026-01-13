@@ -109,7 +109,7 @@ export default function Agencies() {
                                     <h3 className="text-xl font-bold text-white">Request Alliance Access</h3>
                                     <p className="text-gray-400 text-sm mt-1">Fill out the profile to receive the collaboration contract.</p>
                                 </div>
-                                <AgencyContactForm />
+                                <AgencyContactForm explanation="Enter your agency details to verify eligibility. We will contact you to formalize the shared sales mandate." />
                             </div>
                         </div>
                     </motion.div>

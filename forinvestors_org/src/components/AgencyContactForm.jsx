@@ -2,7 +2,7 @@ import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 
-export default function AgencyContactForm() {
+export default function AgencyContactForm({ explanation }) {
     const [formState, setFormState] = useState({
         agencyName: '',
         taxId: '',
@@ -179,6 +179,12 @@ export default function AgencyContactForm() {
     return (
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">
             <input type="hidden" name="_captcha" value="false" />
+
+            {explanation && (
+                <div className="bg-gold-500/10 border border-gold-500/30 rounded-lg p-4 mb-6">
+                    <p className="text-gold-400 text-sm">{explanation}</p>
+                </div>
+            )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
