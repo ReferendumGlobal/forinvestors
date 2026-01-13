@@ -254,7 +254,8 @@ function DynamicRouteHandler() {
 
   // Check if slug maps to a Category
   const categoryId = getCategoryFromSlug(slug, lang);
-  if (categoryId) {
+  // Only render CategoryPage if it is a VALID category defined in data.js
+  if (categoryId && categories[categoryId]) {
     return <CategoryPage />;
   }
 
