@@ -1,10 +1,10 @@
 {
     "nav": {
-        "inversiones": "不動産投資",
-        "hoteles": "販売中のホテル",
-        "terrenos": "販売中の土地",
-        "lujo": "高級不動産",
-        "bodegas": "ワイナリー",
+        "investments": "不動産投資",
+        "hotels": "販売中のホテル",
+        "land": "販売中の土地",
+        "luxury": "高級不動産",
+        "wineries": "ワイナリー",
         "blog": "ブログ",
         "agencies": "代理店向け",
         "search": "物件検索",

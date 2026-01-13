@@ -1,10 +1,10 @@
 {
     "nav": {
-        "inversiones": "Investissements Immobiliers",
-        "hoteles": "Hôtels à Vendre",
-        "terrenos": "Terrains à Vendre",
-        "lujo": "Propriétés de Luxe",
-        "bodegas": "Vignobles à Vendre",
+        "investments": "Investissements Immobiliers",
+        "hotels": "Hôtels à Vendre",
+        "land": "Terrains à Vendre",
+        "luxury": "Propriétés de Luxe",
+        "wineries": "Vignobles à Vendre",
         "blog": "Blog",
         "agencies": "Pour Agences Immobilières",
         "search": "Recherche de Propriétés",

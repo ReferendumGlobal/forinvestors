@@ -12,24 +12,23 @@ import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PropertySearch from './components/PropertySearch';
 import Agencies from './components/Agencies';
+import ProcessSteps from './components/ProcessSteps';
 import { useTranslation } from 'react-i18next';
 import './i18n';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import SeoHead from './components/SeoHead';
-import { routeConfig, getCategoryFromSlug } from './routes';
+import { AuthProvider } from './context/AuthContext';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardHome from './components/dashboard/DashboardHome';
+import ContractSign from './components/dashboard/ContractSign';
+import AdminPanel from './components/dashboard/AdminPanel';
+import PropertyManager from './components/dashboard/PropertyManager';
 
-function CategoryPage() {
-  const { lang, slug } = useParams();
-  const { t } = useTranslation();
-
-  // Resolve categoryId from slug + lang
-  const categoryId = getCategoryFromSlug(slug, lang);
+function CategoryPage({ categoryId }) {
   const currentCategory = categories[categoryId];
-
-  // If no category resolved (invalid slug), return null or redirect
-  // Ideally should be handled by a NotFound component or parent
-  if (!currentCategory) return <Navigate to={`/${lang}`} replace />;
-
+  const { t } = useTranslation();
   // Get features as array. t returns object/array if returnObjects: true
   const features = t(`categories.${categoryId}.features`, { returnObjects: true });
 
@@ -44,7 +43,6 @@ function CategoryPage() {
       <SeoHead
         title={`${t(`categories.${categoryId}.title`)} | Urbina Agency`}
         description={t(`categories.${categoryId}.description`)}
-        routeKey={categoryId} // Pass categoryId for Hreflang generation
       />
       <div className="relative min-h-[60vh] h-auto flex items-center justify-center overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0">
@@ -74,7 +72,7 @@ function CategoryPage() {
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <div className="px-8 py-4 bg-gold-600/10 border border-gold-500/30 rounded-xl backdrop-blur-md">
               <span className="block text-sm text-gold-400 uppercase tracking-widest mb-1">
-                {t('categories.inversiones.title') === 'Real Estate Investments' ? 'Investment From' : 'Inversión Desde'}
+                {t('categories.investments.title') === 'Inversiones Inmobiliarias' ? 'Inversión Desde' : 'Investment From'}
               </span>
               <span className="text-2xl md:text-3xl font-serif text-white">{t(`categories.${categoryId}.priceRange`)}</span>
             </div>
@@ -104,7 +102,7 @@ function CategoryPage() {
           <div className="bg-midnight-900/50 p-8 rounded-2xl border border-white/5">
             <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
               <ShieldCheck className="text-gold-500" />
-              {t('categories.inversiones.title') === 'Real Estate Investments' ? 'Key Features' : 'Características Clave'}
+              {t('categories.investments.title') === 'Inversiones Inmobiliarias' ? 'Características Clave' : 'Key Features'}
             </h4>
             <ul className="space-y-4">
               {Array.isArray(features) && features.map((feature, idx) => (
@@ -123,7 +121,7 @@ function CategoryPage() {
                   ))}
                 </div>
                 <button className="text-sm text-gold-400 hover:text-white transition-colors font-medium">
-                  {t('categories.inversiones.title') === 'Real Estate Investments' ? 'Contact Agent' : 'Contactar Agente'} →
+                  {t('categories.investments.title') === 'Inversiones Inmobiliarias' ? 'Contactar Agente' : 'Contact Agent'} →
                 </button>
               </div>
             </div>
@@ -135,16 +133,11 @@ function CategoryPage() {
 }
 
 function LanguageWrapper() {
-  const { lang, slug } = useParams();
+  const { lang } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-
-  // Check if current path matches any localized 'agencies' slug
-  const agencySlugs = Object.values(routeConfig).map(config => config.agencies);
-  const isAgencyPage = agencySlugs.some(slug => location.pathname.includes(`/${slug}`));
-
-  const showGlobalContact = !isAgencyPage;
+  const showGlobalContact = !location.pathname.includes('/agencias') && !location.pathname.includes('/agencies');
 
   useEffect(() => {
     const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];
@@ -153,45 +146,49 @@ function LanguageWrapper() {
     if (lang === 'dashboard' || lang === 'admin') return;
 
     if (validLangs.includes(lang)) {
-      if (i18n.language !== lang) {
-        i18n.changeLanguage(lang);
-      }
+      i18n.changeLanguage(lang);
+      // Handle RTL for Arabic
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
     } else {
-      navigate('/en', { replace: true });
+      // Invalid lang, redirect to default (es)
+      // We can't easily redirect here inside the render as it might cause loops if not careful,
+      // but the route matching /:lang *should* catch it.
+      navigate('/es', { replace: true });
     }
   }, [lang, i18n, navigate]);
 
   return (
-    <div className="min-h-screen bg-midnight-950 text-gray-200 selection:bg-gold-500/30">
+    <div className="bg-midnight-950 min-h-screen flex flex-col font-sans text-white selection:bg-gold-500/30 selection:text-white">
       <Navbar categories={categories} />
       <main className="pt-0 relative">
         <Outlet />
       </main>
 
       {/* Global Contact Section with POF Explanation */}
-      {/* Global Contact Section with POF Explanation - Hidden on Agency Page */}
       {showGlobalContact && (
-        <section id="contact" className="py-20 bg-midnight-900 border-t border-white/5 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gold-500/5 mix-blend-overlay"></div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
-                {t('contact_global.title', 'Access Request & Proof of Funds')}
-              </h2>
-              <div className="bg-gold-500/10 border border-gold-500/30 p-6 rounded-xl max-w-3xl mx-auto backdrop-blur-sm">
-                <p className="text-gold-400 text-lg font-light leading-relaxed">
-                  {t('contact_global.explanation')}
+        <>
+          <ProcessSteps variant="investors" />
+          <section id="contact" className="py-20 bg-midnight-900 border-t border-white/5 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gold-500/5 mix-blend-overlay"></div>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
+                  {t('contact_global.title', 'Solicitud de Acceso & Prueba de Fondos')}
+                </h2>
+                <div className="bg-gold-500/10 border border-gold-500/30 p-6 rounded-xl max-w-3xl mx-auto backdrop-blur-sm">
+                  <p className="text-gold-400 text-lg font-light leading-relaxed">
+                    {t('contact_global.explanation')}
+                  </p>
+                </div>
+                <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                  {t('contact_global.subtitle', 'Complete el siguiente formulario y adjunte su POF para recibir el dossier detallado.')}
                 </p>
               </div>
-              <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-                {t('contact_global.subtitle', 'Complete the form below and attach your POF to receive the detailed dossier.')}
-              </p>
+              <ContactForm categoryName="Global Footer Request" />
             </div>
-            <ContactForm categoryName="Global Footer Request" />
-          </div>
-        </section>
+          </section>
+        </>
       )}
 
       <FAQ />
@@ -201,17 +198,7 @@ function LanguageWrapper() {
   );
 }
 
-import { AuthProvider } from './context/AuthContext';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import DashboardLayout from './components/dashboard/DashboardLayout';
-import DashboardHome from './components/dashboard/DashboardHome';
-import ContractSign from './components/dashboard/ContractSign';
-import AdminPanel from './components/dashboard/AdminPanel';
-import PropertyManager from './components/dashboard/PropertyManager';
-
 function App() {
-  // We need to render routes for all languages dynamically to support the localized slugs
   return (
     <HelmetProvider>
       <AuthProvider>
@@ -225,48 +212,28 @@ function App() {
               <Route index element={<DashboardHome />} />
               <Route path="contracts" element={<ContractSign />} />
               <Route path="admin" element={<AdminPanel />} />
-              <Route path="users" element={<AdminPanel />} />
+              <Route path="users" element={<AdminPanel />} /> {/* Redirect users nav to Admin Panel */}
               <Route path="properties" element={<PropertyManager />} />
             </Route>
 
             {/* Public Website Routes */}
-            <Route path="/" element={<Navigate to="/en" replace />} />
             <Route path="/:lang" element={<LanguageWrapper />}>
               <Route index element={<Home />} />
-              {/* 
-                    Dynamic Route Matching:
-                    Because slug is specialized per language, we use a catch-all specific path parameter.
-                    However, to avoid conflict, we can't just put `/:slug`. 
-                    But the requirement is domain.com/:lang/:slug
-                */}
-              <Route path=":slug" element={<DynamicRouteHandler />} />
+              <Route path="inversiones" element={<CategoryPage categoryId="investments" />} />
+              <Route path="hoteles" element={<CategoryPage categoryId="hotels" />} />
+              <Route path="terrenos" element={<CategoryPage categoryId="land" />} />
+              <Route path="lujo" element={<CategoryPage categoryId="luxury" />} />
+              <Route path="bodegas" element={<CategoryPage categoryId="wineries" />} />
+              <Route path="blog" element={<Blog />} />
+              <Route path="agencias" element={<Agencies />} />
+              <Route path="search" element={<PropertySearch />} />
             </Route>
+            <Route path="/" element={<Navigate to="/es" replace />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
     </HelmetProvider>
   );
-}
-
-// Intermediary component to route to the correct Page Component based on the slug
-function DynamicRouteHandler() {
-  const { lang, slug } = useParams();
-
-  // Check if slug maps to a Category
-  const categoryId = getCategoryFromSlug(slug, lang);
-  // Only render CategoryPage if it is a VALID category defined in data.js
-  if (categoryId && categories[categoryId]) {
-    return <CategoryPage />;
-  }
-
-  // Check fixed pages (Blog, Search, Agencies)
-  const fixedRoutes = routeConfig[lang] || routeConfig['en'];
-  if (slug === fixedRoutes.blog) return <Blog />;
-  if (slug === fixedRoutes.search) return <PropertySearch />;
-  if (slug === fixedRoutes.agencies) return <Agencies />;
-
-  // fallback to home or 404
-  return <Navigate to={`/${lang}`} replace />;
 }
 
 export default App;

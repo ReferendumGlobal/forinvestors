@@ -1,10 +1,10 @@
 {
     "nav": {
-        "inversiones": "Immobilieninvestitionen",
-        "hoteles": "Hotels zu verkaufen",
-        "terrenos": "Grundstücke",
-        "lujo": "Luxusimmobilien",
-        "bodegas": "Weingüter",
+        "investments": "Immobilieninvestitionen",
+        "hotels": "Hotels zu verkaufen",
+        "land": "Grundstücke",
+        "luxury": "Luxusimmobilien",
+        "wineries": "Weingüter",
         "blog": "Blog",
         "agencies": "Für Agenturen",
         "search": "Immobiliensuche",

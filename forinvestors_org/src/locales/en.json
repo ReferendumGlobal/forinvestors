@@ -1,10 +1,10 @@
 {
     "nav": {
-        "inversiones": "Real Estate Investments",
-        "hoteles": "Hotels for Sale",
-        "terrenos": "Land for Sale",
-        "lujo": "Luxury Properties",
-        "bodegas": "Wineries for Sale",
+        "investments": "Real Estate Investments",
+        "hotels": "Hotels for Sale",
+        "land": "Land for Sale",
+        "luxury": "Luxury Properties",
+        "wineries": "Wineries for Sale",
         "blog": "Blog",
         "agencies": "For Real Estate Agencies",
         "search": "Property Search",

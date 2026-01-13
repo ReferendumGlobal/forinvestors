@@ -4,7 +4,6 @@ import { ChevronRight, Shield, Award, Users, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import SeoHead from './SeoHead';
-import ProcessSteps from './ProcessSteps';
 
 export default function Home() {
     const containerRef = useRef(null);

@@ -1,10 +1,10 @@
 {
     "nav": {
-        "inversiones": "房地产投资",
-        "hoteles": "酒店出售",
-        "terrenos": "土地出售",
-        "lujo": "豪宅",
-        "bodegas": "酒庄出售",
+        "investments": "房地产投资",
+        "hotels": "酒店出售",
+        "land": "土地出售",
+        "luxury": "豪宅",
+        "wineries": "酒庄出售",
         "blog": "博客",
         "agencies": "房地产代理",
         "search": "房产搜索",

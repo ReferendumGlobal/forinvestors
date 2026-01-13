@@ -12,10 +12,19 @@ import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PropertySearch from './components/PropertySearch';
 import Agencies from './components/Agencies';
+import ProcessSteps from './components/ProcessSteps';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import SeoHead from './components/SeoHead';
+import { AuthProvider } from './context/AuthContext';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import DashboardLayout from './components/dashboard/DashboardLayout';
+import DashboardHome from './components/dashboard/DashboardHome';
+import ContractSign from './components/dashboard/ContractSign';
+import AdminPanel from './components/dashboard/AdminPanel';
+import PropertyManager from './components/dashboard/PropertyManager';
 
 function CategoryPage({ categoryId }) {
   const currentCategory = categories[categoryId];
@@ -157,27 +166,29 @@ function LanguageWrapper() {
       </main>
 
       {/* Global Contact Section with POF Explanation */}
-      {/* Global Contact Section with POF Explanation - Hidden on Agency Page */}
       {showGlobalContact && (
-        <section id="contact" className="py-20 bg-midnight-900 border-t border-white/5 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gold-500/5 mix-blend-overlay"></div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
-                {t('contact_global.title', 'Solicitud de Acceso & Prueba de Fondos')}
-              </h2>
-              <div className="bg-gold-500/10 border border-gold-500/30 p-6 rounded-xl max-w-3xl mx-auto backdrop-blur-sm">
-                <p className="text-gold-400 text-lg font-light leading-relaxed">
-                  {t('contact_global.explanation')}
+        <>
+          <ProcessSteps variant="investors" />
+          <section id="contact" className="py-20 bg-midnight-900 border-t border-white/5 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gold-500/5 mix-blend-overlay"></div>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
+                  {t('contact_global.title', 'Solicitud de Acceso & Prueba de Fondos')}
+                </h2>
+                <div className="bg-gold-500/10 border border-gold-500/30 p-6 rounded-xl max-w-3xl mx-auto backdrop-blur-sm">
+                  <p className="text-gold-400 text-lg font-light leading-relaxed">
+                    {t('contact_global.explanation')}
+                  </p>
+                </div>
+                <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                  {t('contact_global.subtitle', 'Complete el siguiente formulario y adjunte su POF para recibir el dossier detallado.')}
                 </p>
               </div>
-              <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-                {t('contact_global.subtitle', 'Complete el siguiente formulario y adjunte su POF para recibir el dossier detallado.')}
-              </p>
+              <ContactForm categoryName="Global Footer Request" />
             </div>
-            <ContactForm categoryName="Global Footer Request" />
-          </div>
-        </section>
+          </section>
+        </>
       )}
 
       <FAQ />
@@ -186,15 +197,6 @@ function LanguageWrapper() {
     </div>
   );
 }
-
-import { AuthProvider } from './context/AuthContext';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import DashboardLayout from './components/dashboard/DashboardLayout';
-import DashboardHome from './components/dashboard/DashboardHome';
-import ContractSign from './components/dashboard/ContractSign';
-import AdminPanel from './components/dashboard/AdminPanel';
-import PropertyManager from './components/dashboard/PropertyManager';
 
 function App() {
   return (
