@@ -25,30 +25,30 @@ export default function ContractSign() {
         if (role === 'agency') {
             contractText = `CONTRATO DE COLABORACIÓN (AGENCIA)
             
-Entre Big Investors y ${profile?.company_name || 'la Agencia'}, se acuerda:
+Entre Urbina Agency y ${profile?.company_name || 'la Agencia'}, se acuerda:
 
 1. Ambas partes colaborarán en la comercialización de activos.
-2. Big Investors actuará como intermediario principal.
+2. Urbina Agency actuará como intermediario principal.
 3. Se respetará la confidencialidad de los clientes compartidos.
 4. Honorarios compartidos al 50% en operaciones conjuntas.`;
         } else if (role === 'seller') {
             contractText = `HOJA DE ENCARGO DE VENTA (EXCLUSIVA)
 
-Entre Big Investors y ${profile?.full_name || 'el Propietario'}, se acuerda:
+Entre Urbina Agency y ${profile?.full_name || 'el Propietario'}, se acuerda:
 
-1. El Propietario encarga a Big Investors la gestión de venta en EXCLUSIVA de su propiedad.
+1. El Propietario encarga a Urbina Agency la gestión de venta en EXCLUSIVA de su propiedad.
 2. El precio de venta acordado es el reflejado en la ficha del activo.
-3. Los honorarios de Big Investors serán del 3% + IVA sobre el precio final.
-4. Confidencialidad: Big Investors se compromete a no publicar la propiedad en portales abiertos.`;
+3. Los honorarios de Urbina Agency serán del 3% + IVA sobre el precio final.
+4. Confidencialidad: Urbina Agency se compromete a no publicar la propiedad en portales abiertos.`;
         } else {
             // Investor
             contractText = `MANDATO DE COMPRA / VENTA (INVERSOR)
 
-Entre Big Investors y ${profile?.full_name || 'el Inversor'}, se acuerda:
+Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
 
 1. El Inversor reconoce el carácter confidencial de la información recibida.
-2. Se compromete a no contactar directamente con la propiedad sin la intermediación de Big Investors.
-3. En caso de compra, los honorarios de Big Investors serán del 3% coste compra venta abonado por la parte vendedora.`;
+2. Se compromete a no contactar directamente con la propiedad sin la intermediación de Urbina Agency.
+3. En caso de compra, los honorarios de Urbina Agency serán del 3% coste compra venta abonado por la parte vendedora.`;
         }
         setContractContent(contractText);
         checkExistingContract();
