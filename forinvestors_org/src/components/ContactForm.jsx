@@ -145,7 +145,7 @@ export default function ContactForm({ categoryName, explanation }) {
                     target_location: formState.targetLocation,
                     intent: formState.intent,
                     request_access: formState.requestAccess,
-                    message: finalMessage,
+
                     role: 'investor',
                     status: 'new',
                     // Assuming 'metadata' or 'notes' column exists for extra data if schema is strict
