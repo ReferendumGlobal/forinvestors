@@ -3,8 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Import translation files (we will create these next)
-import es from './locales/es.json';
-import en from './locales/en.json';
+import es from './locales/es-v2.json';
+import en from './locales/en-v2.json';
 import zh from './locales/zh.json';
 import ru from './locales/ru.json';
 import ar from './locales/ar.json';
@@ -32,7 +32,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        fallbackLng: 'es', // Default to Spanish for biginvestors.net
+        fallbackLng: 'es', // Default to Spanish (v2)
         interpolation: {
             escapeValue: false, // React already safes from xss
         },
