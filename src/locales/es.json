@@ -123,6 +123,26 @@
             ]
         }
     },
+    "innovation": {
+        "subtitle": "Tecnología Inmobiliaria",
+        "title": "Smart Matching™ Algorithm",
+        "description": "Hemos reemplazado el tablón de anuncios tradicional por un motor de inteligencia artificial que cruza oferta y demanda en milisegundos, garantizando privacidad absoluta.",
+        "engine_text": "Nuestro motor analiza más de 50 puntos de datos por activo para encontrar el inversor exacto, eliminando el ruido y conectando capital real con oportunidades reales.",
+        "features": {
+            "algo": {
+                "title": "Algoritmos de Privacidad",
+                "desc": "Sus datos nunca se exponen. El sistema solo revela la oportunidad cuando detecta una coincidencia del 100% con los criterios de inversión pre-aprobados."
+            },
+            "privacy": {
+                "title": "Cifrado de Activos",
+                "desc": "La información sensible de la propiedad (ubicación exacta, catastro) se mantiene encriptada y solo se libera bajo firma digital de confidencialidad automáticamente gestionada."
+            },
+            "speed": {
+                "title": "Conexión Instantánea",
+                "desc": "Olvídese de meses de espera. En el momento en que una propiedad entra en nuestra base de datos, se notifica instantáneamente a los inversores cualificados que la buscan."
+            }
+        }
+    },
     "faqs_title": "Preguntas Frecuentes",
     "faqs_subtitle": "Todo lo que necesita saber antes de invertir con nosotros.",
     "faqs": [

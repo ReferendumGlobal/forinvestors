@@ -4,6 +4,7 @@ import { ChevronRight, Shield, Award, Users, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import SeoHead from './SeoHead';
+import MatchingInnovation from './MatchingInnovation';
 
 export default function Home() {
     const containerRef = useRef(null);
@@ -81,6 +82,9 @@ export default function Home() {
                     <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold-500 to-transparent"></div>
                 </div>
             </div>
+
+            {/* Innovation Section */}
+            <MatchingInnovation />
 
 
 

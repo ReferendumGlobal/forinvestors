@@ -147,6 +147,26 @@
             ]
         }
     },
+    "innovation": {
+        "subtitle": "Real Estate Technology",
+        "title": "Smart Matching™ Algorithm",
+        "description": "We have replaced the traditional bulletin board with an artificial intelligence engine that matches supply and demand in milliseconds, guaranteeing absolute privacy.",
+        "engine_text": "Our engine analyzes over 50 data points per asset to find the exact investor, eliminating noise and connecting real capital with real opportunities.",
+        "features": {
+            "algo": {
+                "title": "Privacy Algorithms",
+                "desc": "Your data is never exposed. The system only reveals the opportunity when it detects a 100% match with pre-approved investment criteria."
+            },
+            "privacy": {
+                "title": "Asset Encryption",
+                "desc": "Sensitive property information (exact location, cadastre) remains encrypted and is only released under a digitally managed confidentiality signature."
+            },
+            "speed": {
+                "title": "Instant Connection",
+                "desc": "Forget months of waiting. The moment a property enters our database, it instantly notifies qualified investors who are looking for it."
+            }
+        }
+    },
     "faqs_title": "Frequently Asked Questions",
     "faqs_subtitle": "Everything you need to know before investing with us.",
     "faqs": [
