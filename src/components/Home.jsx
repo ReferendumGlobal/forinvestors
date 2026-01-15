@@ -42,7 +42,7 @@ export default function Home() {
                         className="mb-8 inline-block"
                     >
                         <Shield className="w-16 h-16 text-gold-500 mx-auto mb-6" strokeWidth={1} />
-                        <h2 className="text-gold-400 text-sm md:text-base tracking-[0.3em] uppercase mb-4">Urbina Agency LLC</h2>
+                        <h2 className="text-gold-400 text-sm md:text-base tracking-[0.3em] uppercase mb-4">BIG INVESTORS</h2>
                     </motion.div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white mb-6 md:mb-8 leading-tight">

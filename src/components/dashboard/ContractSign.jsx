@@ -9,40 +9,50 @@ export default function ContractSign() {
     const [signed, setSigned] = useState(false);
     const [loading, setLoading] = useState(true);
     const [contractUrl, setContractUrl] = useState(null);
-
-    // Contract text content based on role
-    let contractText = '';
-
-    if (profile?.role === 'agency') {
-        contractText = `CONTRATO DE COLABORACIÓN (AGENCIA)
-        
-Entre Urbina Agency y ${profile?.company_name || 'la Agencia'}, se acuerda:
-1. La Agencia podrá publicar sus activos en la plataforma.
-2. Urbina Agency actuará como intermediario...
-[... Texto legal completo del contrato de agencia ...]`;
-    } else if (profile?.role === 'seller') {
-        contractText = `HOJA DE ENCARGO DE VENTA (EXCLUSIVA)
-
-Entre Urbina Agency y ${profile?.full_name || 'el Propietario'}, se acuerda:
-1. El Propietario encarga a Urbina Agency la gestión de venta en EXCLUSIVA de su propiedad.
-2. Duración del encargo: 6 meses prorrogables salvo notificación contraria.
-3. Honorarios: 7% sobre el valor final de venta, pagaderos en el momento del otorgamiento de la escritura pública.
-4. Confidencialidad: Urbina Agency se compromete a no publicar la propiedad en portales abiertos.
-[... Texto legal completo de la hoja de encargo ...]`;
-    } else {
-        contractText = `MANDATO DE COMPRA / VENTA (INVERSOR)
-
-Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
-1. El Inversor otorga mandato para la búsqueda de activos...
-2. La comisión pactada será del X% sobre el valor final...
-[... Texto legal completo del contrato de inversión ...]`;
-    }
-
-    const contractContent = contractText;
+    const [contractContent, setContractContent] = useState('');
+    const [role, setRole] = useState(null);
 
     useEffect(() => {
+        if (profile?.role) {
+            setRole(profile.role);
+        }
+    }, [profile]);
+
+    useEffect(() => {
+        if (!role) return;
+
+        let contractText = '';
+        if (role === 'agency') {
+            contractText = `CONTRATO DE COLABORACIÓN (AGENCIA)
+            
+Entre Big Investors y ${profile?.company_name || 'la Agencia'}, se acuerda:
+
+1. Ambas partes colaborarán en la comercialización de activos.
+2. Big Investors actuará como intermediario principal.
+3. Se respetará la confidencialidad de los clientes compartidos.
+4. Honorarios compartidos al 50% en operaciones conjuntas.`;
+        } else if (role === 'seller') {
+            contractText = `HOJA DE ENCARGO DE VENTA (EXCLUSIVA)
+
+Entre Big Investors y ${profile?.full_name || 'el Propietario'}, se acuerda:
+
+1. El Propietario encarga a Big Investors la gestión de venta en EXCLUSIVA de su propiedad.
+2. El precio de venta acordado es el reflejado en la ficha del activo.
+3. Los honorarios de Big Investors serán del 3% + IVA sobre el precio final.
+4. Confidencialidad: Big Investors se compromete a no publicar la propiedad en portales abiertos.`;
+        } else {
+            // Investor
+            contractText = `MANDATO DE COMPRA / VENTA (INVERSOR)
+
+Entre Big Investors y ${profile?.full_name || 'el Inversor'}, se acuerda:
+
+1. El Inversor reconoce el carácter confidencial de la información recibida.
+2. Se compromete a no contactar directamente con la propiedad sin la intermediación de Big Investors.
+3. En caso de compra, los honorarios de Big Investors serán del 3% coste compra venta abonado por la parte vendedora.`;
+        }
+        setContractContent(contractText);
         checkExistingContract();
-    }, []);
+    }, [role, profile]);
 
     const checkExistingContract = async () => {
         try {

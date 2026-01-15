@@ -22,7 +22,7 @@ export default function Footer() {
                                 Especialistas en la gestión de activos inmobiliarios de alto valor. Conectamos capital privado con oportunidades de inversión exclusivas en España, Europa y en todo el mundo.
                             </p>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
-                                Operado por Urbina Agency LLC
+                                Operado por Big Investors
                             </div>
                         </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
 
                     <div className="border-t border-white/5 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-sm text-gray-600">
-                            &copy; {new Date().getFullYear()} Urbina Agency LLC. Todos los derechos reservados.
+                            &copy; {new Date().getFullYear()} Big Investors. Todos los derechos reservados.
                         </p>
                         <div className="flex items-center gap-4">
                             <a href="#" className="p-2 bg-white/5 rounded-full text-gold-400 hover:text-white hover:bg-gold-500 transition-all duration-300">

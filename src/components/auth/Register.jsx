@@ -67,7 +67,7 @@ export default function Register() {
                     Solicitud de Acceso
                 </h2>
                 <p className="mt-2 text-center text-sm text-gray-400">
-                    Únase a Urbina Agency como {role === 'agency' ? 'Agencia Partner' : role === 'seller' ? 'Propietario / Vendedor' : 'Inversor Cualificado'}
+                    Únase a Big Investors como {role === 'agency' ? 'Agencia Partner' : role === 'seller' ? 'Propietario / Vendedor' : 'Inversor Cualificado'}
                 </p>
             </div>
 

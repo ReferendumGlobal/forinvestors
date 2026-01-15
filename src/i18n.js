@@ -32,7 +32,7 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        fallbackLng: 'es', // Default to Spanish for parainversores.com
+        fallbackLng: 'es', // Default to Spanish for biginvestors.net
         interpolation: {
             escapeValue: false, // React already safes from xss
         },

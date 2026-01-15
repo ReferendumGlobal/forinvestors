@@ -12,7 +12,7 @@ export default function LegalModal({ isOpen, onClose, section }) {
             text: (
                 <div className="space-y-4 text-gray-300">
                     <p><strong>1. Identificación de la Empresa</strong></p>
-                    <p>Este sitio web es propiedad y está operado por <strong>Urbina Agency LLC</strong>, con número de identificación fiscal (EIN) <strong>61-2276664</strong>. Nuestra dirección registrada es: <strong>7345 W SAND LAKE RD STE 210 OFFICE 7997 ORLANDO, FL, 32819 - UNITED STATES</strong>.</p>
+                    <p>Este sitio web es propiedad y está operado por <strong>Big Investors</strong>, con número de identificación fiscal (EIN) <strong>61-2276664</strong>. Nuestra dirección registrada es: <strong>7345 W SAND LAKE RD STE 210 OFFICE 7997 ORLANDO, FL, 32819 - UNITED STATES</strong>.</p>
 
                     <p><strong>2. Uso del Sitio</strong></p>
                     <p>El acceso a nuestra cartera de inversiones está reservado exclusivamente para inversores cualificados. La información contenida en este sitio web es de carácter confidencial.</p>
