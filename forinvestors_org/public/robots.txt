@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://biginvestors.net/sitemap.xml
+Sitemap: https://offmarketinvests.com/sitemap.xml

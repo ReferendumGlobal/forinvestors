@@ -17,7 +17,7 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                         <div>
-                            <h3 className="text-xl font-serif font-bold text-white mb-4">FOR INVESTORS</h3>
+                            <h3 className="text-xl font-serif font-bold text-white mb-4">OFFMARKET INVESTS</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
                                 Specialists in high-value real estate asset management. Connecting private capital with exclusive investment opportunities worldwide.
                             </p>
