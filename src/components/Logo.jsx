@@ -11,7 +11,7 @@ export default function Logo({ className }) {
                 </span>
             </div>
             <div className="hidden md:block whitespace-nowrap">
-                <span className="block text-white font-serif tracking-inver-widest text-sm font-bold leading-none">
+                <span className="block text-white font-serif tracking-inver-widest text-xs font-bold leading-none">
                     {t('seo.brand_name').toUpperCase()}
                 </span>
                 <span className="block text-gold-500 text-[9px] tracking-widest leading-none mt-1.5 opacity-80">
