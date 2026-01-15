@@ -127,6 +127,7 @@ function App() {
               <Route path="agencias" element={<Agencies />} />
               <Route path="sell" element={<SellAssets />} />
               <Route path="search" element={<PropertySearch />} />
+              <Route path="properties/:location" element={<PropertySearch />} />
               <Route path="*" element={<Navigate to="." replace />} />
             </Route>
             <Route path="/" element={<Navigate to="/es" replace />} />
