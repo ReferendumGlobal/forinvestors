@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Lock } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import { useTranslation } from 'react-i18next';
@@ -109,7 +109,13 @@ export default function Navbar({ categories }) {
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center gap-4">
+                    <div className="md:hidden flex items-center gap-2">
+                        <Link
+                            to="/login"
+                            className="p-2 text-gold-400 hover:text-white bg-gold-500/10 rounded-md border border-gold-500/30"
+                        >
+                            <Lock size={20} />
+                        </Link>
                         <LanguageSwitcher />
                         <button
                             onClick={() => setIsOpen(!isOpen)}
