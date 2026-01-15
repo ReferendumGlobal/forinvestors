@@ -10,11 +10,11 @@ export default function Logo({ className }) {
                     {t('seo.brand_name').charAt(0)}
                 </span>
             </div>
-            <div className="hidden md:block">
-                <span className="block text-white font-serif tracking-widest text-base font-bold leading-none">
+            <div className="hidden md:block whitespace-nowrap">
+                <span className="block text-white font-serif tracking-inver-widest text-sm font-bold leading-none">
                     {t('seo.brand_name').toUpperCase()}
                 </span>
-                <span className="block text-gold-500 text-[10px] tracking-widest leading-none mt-1 opacity-80">
+                <span className="block text-gold-500 text-[9px] tracking-widest leading-none mt-1.5 opacity-80">
                     BY URBINA AGENCY
                 </span>
             </div>
