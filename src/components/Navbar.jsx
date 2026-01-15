@@ -40,13 +40,13 @@ export default function Navbar({ categories }) {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center gap-4 lg:gap-8">
+                    <div className="hidden md:flex items-center gap-2 xl:gap-8">
                         <div className="flex items-center gap-1 bg-white/5 rounded-2xl p-2 border border-white/5 backdrop-blur-sm">
                             {Object.entries(categories).map(([key, category]) => (
                                 <Link
                                     key={key}
                                     to={key}
-                                    className={`px-3 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 whitespace-normal text-center max-w-[120px] leading-tight ${currentPath === key
+                                    className={`px-2 xl:px-3 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 whitespace-normal text-center max-w-[120px] leading-tight ${currentPath === key
                                         ? 'bg-gold-500 text-midnight-950 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
                                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                                         }`}
@@ -56,10 +56,10 @@ export default function Navbar({ categories }) {
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-2 lg:gap-4">
+                        <div className="flex items-center gap-1 xl:gap-4">
                             <Link
                                 to="search"
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'search'
+                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'search'
                                     ? 'text-gold-400 bg-white/5 border border-white/5'
                                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                                     }`}
@@ -68,7 +68,7 @@ export default function Navbar({ categories }) {
                             </Link>
                             <Link
                                 to="blog"
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'blog'
+                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'blog'
                                     ? 'text-gold-400 bg-white/5 border border-white/5'
                                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                                     }`}
@@ -77,7 +77,7 @@ export default function Navbar({ categories }) {
                             </Link>
                             <Link
                                 to="agencias"
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'agencias'
+                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'agencias'
                                     ? 'text-gold-400 bg-white/5 border border-white/5'
                                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                                     }`}
@@ -86,7 +86,7 @@ export default function Navbar({ categories }) {
                             </Link>
                             <Link
                                 to="sell"
-                                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'sell'
+                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'sell'
                                     ? 'text-gold-400 bg-white/5 border border-white/5'
                                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                                     }`}
@@ -96,7 +96,7 @@ export default function Navbar({ categories }) {
 
                             <Link
                                 to="/login"
-                                className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-midnight-950"
+                                className="flex items-center gap-2 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-midnight-950"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
                                 {t('nav.access')}
