@@ -27,31 +27,18 @@ export default function LanguageSwitcher() {
     const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
     const handleLanguageChange = (newLangCode) => {
-        // Smart Redirect:
-        // 1. Identify current 'key' (category or page ID) from current slug + current lang
-        // 2. Resolve 'newSlug' for that 'key' in new lang
-
         const currentPath = location.pathname;
         const parts = currentPath.split('/');
-        // path: /es/inversiones -> parts: ['', 'es', 'inversiones']
-        const currentSlug = parts[2];
+        // path starts with /:lang/..., so parts[1] is the language code
 
-        let newPath = `/${newLangCode}`;
-
-        if (currentSlug) {
-            // Find key (e.g. 'investments') using current lang decoding
-            const activeKey = getCategoryFromSlug(currentSlug, lang || 'en');
-
-            if (activeKey) {
-                // Get new slug (e.g. 'investments' for en)
-                const newSlug = getSlugFromCategory(activeKey, newLangCode);
-                newPath = `/${newLangCode}/${newSlug}`;
-            } else {
-                // Fallback: if we can't map it, just go to root of new lang
-                // or optionally keep slug if it happened to be universal?
-                // Safest is root to avoid 404s
-                newPath = `/${newLangCode}`;
-            }
+        let newPath;
+        if (parts.length > 1 && languages.some(l => l.code === parts[1])) {
+            // Replace existing lang code
+            parts[1] = newLangCode;
+            newPath = parts.join('/');
+        } else {
+            // If for some reason we are at root or no lang param (shouldn't happen inside LanguageWrapper but possible)
+            newPath = `/${newLangCode}`;
         }
 
         navigate(newPath);

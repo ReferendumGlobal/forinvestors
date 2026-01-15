@@ -94,8 +94,28 @@
         "explanation": "To verify your investor profile and grant you access to our private platform with username and password, we need to validate your Proof of Funds (POF). Once validated, you will receive personalized investment offers tailored to your needs and available capital."
     },
     "seo": {
-        "title": "For Investors | Global Luxury Real Estate Assets",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-prime properties. Expert management by Urbina Agency LLC."
+        "title": "BigInvestors.net | Global Luxury Real Estate Assets",
+        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-prime properties. Expert management by Big Investors."
+    },
+    "innovation": {
+        "subtitle": "Real Estate Technology",
+        "title": "Smart Matching™ Algorithm",
+        "description": "We have replaced the traditional bulletin board with an artificial intelligence engine that matches supply and demand in milliseconds, guaranteeing absolute privacy.",
+        "engine_text": "Our engine analyzes over 50 data points per asset to find the exact investor, eliminating noise and connecting real capital with real opportunities.",
+        "features": {
+            "algo": {
+                "title": "Privacy Algorithms",
+                "desc": "Your data is never exposed. The system only reveals the opportunity when it detects a 100% match with pre-approved investment criteria."
+            },
+            "privacy": {
+                "title": "Asset Encryption",
+                "desc": "Sensitive property information (exact location, cadastre) remains encrypted and is only released under a digitally managed confidentiality signature."
+            },
+            "speed": {
+                "title": "Instant Connection",
+                "desc": "Forget months of waiting. The moment a property enters our database, it instantly notifies qualified investors who are looking for it."
+            }
+        }
     },
     "search": {
         "title": "Off-Market Asset Search",

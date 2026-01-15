@@ -94,8 +94,28 @@
         "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
     },
     "seo": {
-        "title": "Para Inversores | Activos Inmobiliarios de Lujo Globales",
-        "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por Urbina Agency LLC."
+        "title": "BigInvestors.net | Activos Inmobiliarios de Lujo Globales",
+        "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por Big Investors."
+    },
+    "innovation": {
+        "subtitle": "Tecnología Inmobiliaria",
+        "title": "Smart Matching™ Algorithm",
+        "description": "Hemos reemplazado el tablón de anuncios tradicional por un motor de inteligencia artificial que cruza oferta y demanda en milisegundos, garantizando privacidad absoluta.",
+        "engine_text": "Nuestro motor analiza más de 50 puntos de datos por activo para encontrar el inversor exacto, eliminando el ruido y conectando capital real con oportunidades reales.",
+        "features": {
+            "algo": {
+                "title": "Algoritmos de Privacidad",
+                "desc": "Sus datos nunca se exponen. El sistema solo revela la oportunidad cuando detecta una coincidencia del 100% con los criterios de inversión pre-aprobados."
+            },
+            "privacy": {
+                "title": "Cifrado de Activos",
+                "desc": "La información sensible de la propiedad (ubicación exacta, catastro) se mantiene encriptada y solo se libera bajo firma digital de confidencialidad automáticamente gestionada."
+            },
+            "speed": {
+                "title": "Conexión Instantánea",
+                "desc": "Olvídese de meses de espera. En el momento en que una propiedad entra en nuestra base de datos, se notifica instantáneamente a los inversores cualificados que la buscan."
+            }
+        }
     },
     "search": {
         "title": "Buscador de Activos Off-Market",
