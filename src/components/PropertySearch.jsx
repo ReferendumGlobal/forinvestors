@@ -115,8 +115,8 @@ export default function PropertySearch() {
     };
 
     const pageTitle = routeLocation
-        ? `${t('search.results_found')} ${routeLocation} - ParaInversores`
-        : t('search.title') + ' - ParaInversores';
+        ? `${t('search.results_found')} ${routeLocation} - ${t('seo.brand_name')}`
+        : t('search.title') + ' - ' + t('seo.brand_name');
 
     return (
         <div className="min-h-screen bg-midnight-950 pt-32 pb-20">
