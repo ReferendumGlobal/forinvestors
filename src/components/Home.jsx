@@ -91,9 +91,9 @@ export default function Home() {
                         <div className="relative">
                             <div className="aspect-[3/4] rounded-sm overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
                                 <img
-                                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80"
-                                    alt="Urbina Family Legacy"
-                                    className="w-full h-full object-cover"
+                                    src="/grandparents.jpg"
+                                    alt="Francisco y Angelita Urbina - 1954"
+                                    className="w-full h-full object-cover sepia-[.25]"
                                 />
                                 <div className="absolute inset-0 bg-gold-900/20 mix-blend-multiply"></div>
                             </div>
