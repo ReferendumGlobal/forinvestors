@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Shield, Globe, Briefcase, CheckCircle, Upload, Loader2, Send, AlertCircle } from 'lucide-react';
 import SeoHead from './SeoHead';
 import { supabase } from '../lib/supabase';
+import ProcessSteps from './ProcessSteps';
 
 export default function SellAssets() {
     const { t } = useTranslation();
@@ -110,6 +111,10 @@ export default function SellAssets() {
                         {t('sell_page.subtitle')}
                     </p>
                 </motion.div>
+            </div>
+
+            <div className="mb-20">
+                <ProcessSteps variant="sellers" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
