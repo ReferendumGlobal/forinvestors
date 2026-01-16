@@ -63,7 +63,8 @@
         "global_exposure_text": "Your local assets will travel directly to offices in Dubai, New York, and London.",
         "form_title": "Request Access to the Alliance",
         "form_subtitle": "Complete the profile to receive the collaboration contract.",
-        "form_explanation": "Enter your agency details to verify eligibility. We will contact you to formalize the shared sales mandate."
+        "form_explanation": "Enter your agency details to verify eligibility. We will contact you to formalize the shared sales mandate.",
+        "seo_title": "Agencies Off-Market Investment"
     },
     "sell_page": {
         "title": "Sell Your Asset Exclusively",
@@ -94,7 +95,7 @@
         "explanation": "To verify your investor profile and grant you access to our private platform with username and password, we need to validate your Proof of Funds (POF). Once validated, you will receive personalized investment offers tailored to your needs and available capital."
     },
     "seo": {
-        "title": "OffMarketInvests.com | Global Luxury Real Estate Assets",
+        "title": "Off-Market Property Investment",
         "description": "Exclusive portfolio of hotels, land, wineries, and ultra-prime properties. Expert management by OffMarket Invests."
     },
     "innovation": {
@@ -130,7 +131,7 @@
     },
     "categories": {
         "investments": {
-            "title": "Real Estate Investments",
+            "title": "Off-Market Real Estate Investment",
             "shortTitle": "Investments",
             "description": "Comprehensive wealth management. We detect high-yield opportunities in the global market.",
             "longDescription": "Our Real Estate Investments division does not just search for assets; it designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products tailored to the risk and return profile of institutional investors and family offices.",
@@ -144,7 +145,7 @@
             ]
         },
         "hotels": {
-            "title": "Hotels for Sale",
+            "title": "Hotels Off-Market Investment",
             "shortTitle": "Hotels",
             "description": "Exclusive selection of hotel assets in major tourist areas of Spain and Europe.",
             "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
@@ -158,7 +159,7 @@
             ]
         },
         "land": {
-            "title": "Land for Sale",
+            "title": "Land Off-Market Investment",
             "shortTitle": "Land",
             "description": "Finalist, buildable, and rustic land in strategic locations for major developments.",
             "longDescription": "The basis of every great project is the land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use.",
@@ -172,7 +173,7 @@
             ]
         },
         "luxury": {
-            "title": "Luxury Properties",
+            "title": "Luxury Off-Market Properties",
             "shortTitle": "Luxury",
             "description": "Unique villas and penthouses in prime locations. The ultimate expression of residential exclusivity.",
             "longDescription": "We understand luxury not just as price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market.",
@@ -186,7 +187,7 @@
             ]
         },
         "wineries": {
-            "title": "Wineries for Sale",
+            "title": "Wineries Off-Market Investment",
             "shortTitle": "Wineries",
             "description": "Investments in the wine sector: wineries with D.O., vineyards, and production centers.",
             "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions.",
