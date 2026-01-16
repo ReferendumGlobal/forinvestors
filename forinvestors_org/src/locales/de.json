@@ -275,87 +275,67 @@
                 "icon": "FileText"
             },
             {
-                "title": "Registrieren & Signieren",
+                "title": "Registrierung & Unterschrift",
                 "description": "Geben Sie Ihre Agenturdaten ein und unterschreiben Sie den Kooperationsvertrag digital.",
                 "icon": "Handshake"
             },
             {
-                "title": "Immobilien hochladen",
-                "description": "Laden Sie die Immobilien hoch, für die Sie qualifizierte Investoren suchen.",
-                "icon": "Upload"
-            },
-            {
-                "title": "Smart Matching",
-                "description": "Das System gleicht Ihre Vermögenswerte mit Großkapitalgebern ab.",
+                "title": "Smart Matching™",
+                "description": "Laden Sie Ihre Assets hoch. Unser Algorithmus gleicht sie sofort mit verifiziertem Kapital ab.",
                 "icon": "PieChart"
             },
             {
-                "title": "Interesse erhalten",
-                "description": "Erhalten Sie Kontakte von Investoren, die an jeder Immobilie interessiert sind.",
-                "icon": "Users"
-            },
-            {
-                "title": "Verkauf abschließen",
-                "description": "Wenn Sie den Verkauf abschließen, geben Sie die Details ein und markieren Sie das Asset als verkauft.",
+                "title": "Abschlüsse",
+                "description": "Wir verwalten Besichtigungen und Angebote. 50/50 Gebührenteilung bei Abschluss.",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "Zahlung & Rechnung",
-                "description": "Zahlen Sie die geteilte Provision und erhalten Sie Ihre Leistungsrechnung.",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "Anfrage & POF",
-                "description": "Füllen Sie das Formular aus und reichen Sie Ihren Kapitalnachweis (POF) ein.",
-                "icon": "FileText"
+                "title": "Registrierung & POF",
+                "description": "Beantragen Sie Zugang durch Vorlage Ihres Kapitalnachweises (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "Überprüfung",
-                "description": "Wir prüfen Ihre Anfrage und gewähren Ihnen per E-Mail Zugriff auf die Plattform.",
+                "title": "Suchmandat",
+                "description": "Unterschreiben Sie digital unser nicht-exklusives Suchmandat.",
                 "icon": "Search"
             },
             {
-                "title": "Mandat unterzeichnen",
-                "description": "Unterzeichnen Sie das Mandat, um Immobilien zu erhalten, die Ihrem Profil entsprechen.",
-                "icon": "Handshake"
-            },
-            {
-                "title": "Angebote erhalten",
-                "description": "Sie erhalten Möglichkeiten von unserem internationalen Agenturnetzwerk.",
+                "title": "Smart Matching™",
+                "description": "Erhalten Sie sofortige Benachrichtigungen für Off-Market-Assets, die Ihren Kriterien entsprechen.",
                 "icon": "PieChart"
             },
             {
-                "title": "Kauf & Gebühr",
-                "description": "Schließen Sie das Geschäft ab und zahlen Sie die Provision an die Plattform.",
-                "icon": "CreditCard"
+                "title": "Akquisition",
+                "description": "Vollständige Beratung von der Verhandlung bis zur Unterschrift beim Notar.",
+                "icon": "Key"
             }
         ],
         "sellers": [
             {
-                "title": "Initial Evaluation",
-                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "title": "Erstbewertung",
+                "description": "Senden Sie grundlegende Details. Wir analysieren Viabilität und Bewertung in 24h.",
                 "icon": "FileText"
             },
             {
-                "title": "Mandate & Upload",
-                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "title": "Mandat & Upload",
+                "description": "Unterschreiben Sie ein sicheres Mandat und laden Sie Dokumente in den privaten Datenraum hoch.",
                 "icon": "Upload"
             },
             {
                 "title": "Smart Matching™",
-                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "description": "Unser System gleicht Ihr Asset geräuschlos mit verifizierten Investoren ab. Keine öffentliche Auflistung.",
                 "icon": "PieChart"
             },
             {
-                "title": "Offer & Closing",
-                "description": "Receive formal offers and close the deal securely at the notary.",
+                "title": "Angebot & Abschluss",
+                "description": "Erhalten Sie formelle Angebote und schließen Sie das Geschäft sicher beim Notar ab.",
                 "icon": "Handshake"
             }
         ],
-        "sellers_title": "Private Sale Process",
-        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
+        "sellers_title": "Privater Verkaufsprozess",
+        "sellers_subtitle": "Ein diskreter und sicherer Weg zur Liquidierung Ihres hochwertigen Assets."
     },
     "sell_page": {
         "title": "Verkaufen Sie Ihr Vermögen Exklusiv",

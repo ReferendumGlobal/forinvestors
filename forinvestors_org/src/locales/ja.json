@@ -288,29 +288,73 @@
         "success_desc": "物件の詳細を受け取りました。査定チームが間もなく連絡し、販売委任を正式に決定します。"
     },
     "steps": {
-        "sellers": [
+        "agencies": [
             {
-                "title": "Initial Evaluation",
-                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "title": "アクセス申請",
+                "description": "フォームに記入してください。審査を通過すると、アクセス用メールが届きます。",
                 "icon": "FileText"
             },
             {
-                "title": "Mandate & Upload",
-                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "title": "登録と署名",
+                "description": "代理店の詳細を入力し、提携契約にデジタル署名してください。",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "資産を登録してください。当社のアルゴリズムが検証済みの資本と即座にマッチングします。",
+                "icon": "PieChart"
+            },
+            {
+                "title": "成約",
+                "description": "内覧やオファーを管理します。成約時の手数料は50/50で分配します。",
+                "icon": "CheckCircle"
+            }
+        ],
+        "investors": [
+            {
+                "title": "登録と資金証明",
+                "description": "資金証明 (POF) を提出してアクセスを申請してください。",
+                "icon": "UserCheck"
+            },
+            {
+                "title": "検索委任",
+                "description": "非独占的な検索委任契約にデジタル署名してください。",
+                "icon": "Search"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "条件に合うオフマーケット資産の通知を即座に受け取れます。",
+                "icon": "PieChart"
+            },
+            {
+                "title": "取得",
+                "description": "交渉から公証人役場での署名まで、完全にアドバイスします。",
+                "icon": "Key"
+            }
+        ],
+        "sellers": [
+            {
+                "title": "初期評価",
+                "description": "基本的な詳細を送信してください。24時間以内に実現可能性と評価を分析します。",
+                "icon": "FileText"
+            },
+            {
+                "title": "委任とアップロード",
+                "description": "安全な委任契約に署名し、文書をプライベートデータルームにアップロードしてください。",
                 "icon": "Upload"
             },
             {
                 "title": "Smart Matching™",
-                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "description": "システムはあなたの資産を検証済みの投資家と静かに照合します。一般公開はありません。",
                 "icon": "PieChart"
             },
             {
-                "title": "Offer & Closing",
-                "description": "Receive formal offers and close the deal securely at the notary.",
+                "title": "オファーと成約",
+                "description": "正式なオファーを受け取り、公証人役場で安全に取引を完了します。",
                 "icon": "Handshake"
             }
         ],
-        "sellers_title": "Private Sale Process",
-        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
+        "sellers_title": "プライベート売却プロセス",
+        "sellers_subtitle": "高価値資産を現金化するための、慎重かつ安全なルートです。"
     }
 }

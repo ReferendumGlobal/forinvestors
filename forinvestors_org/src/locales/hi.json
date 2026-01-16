@@ -275,87 +275,67 @@
                 "icon": "FileText"
             },
             {
-                "title": "पंजीकरण करें और हस्ताक्षर करें",
+                "title": "साइन अप और हस्ताक्षर",
                 "description": "अपनी एजेंसी का विवरण दर्ज करें और सहयोग अनुबंध पर डिजिटल रूप से हस्ताक्षर करें।",
                 "icon": "Handshake"
             },
             {
-                "title": "गुण अपलोड करें",
-                "description": "उन संपत्तियों को अपलोड करें जिनके लिए आप योग्य निवेशकों की तलाश करते हैं।",
-                "icon": "Upload"
-            },
-            {
-                "title": "स्मार्ट मिलान",
-                "description": "सिस्टम आपकी संपत्ति का बड़े पूंजी निवेशकों के साथ मिलान करेगा।",
+                "title": "Smart Matching™",
+                "description": "अपनी संपत्ति अपलोड करें। हमारा एल्गोरिदम तुरंत सत्यापित पूंजी के साथ उनका मिलान करता है।",
                 "icon": "PieChart"
             },
             {
-                "title": "ब्याज प्राप्त करें",
-                "description": "प्रत्येक संपत्ति में रुचि रखने वाले निवेशकों से संपर्क प्राप्त करें।",
-                "icon": "Users"
-            },
-            {
-                "title": "बिक्री बंद करें",
-                "description": "यदि आप बिक्री बंद करते हैं, तो विवरण दर्ज करें और संपत्ति को बेची गई के रूप में चिह्नित करें।",
+                "title": "सौदा पक्का करें",
+                "description": "हम यात्राओं और प्रस्तावों का प्रबंधन करते हैं। समापन पर 50/50 शुल्क विभाजन।",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "भुगतान और चालान",
-                "description": "साझा कमीशन का भुगतान करें और अपना सेवा चालान प्राप्त करें।",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "अनुरोध और POF",
-                "description": "फॉर्म भरें और अपना प्रूव ऑफ फंड्स (POF) जमा करें।",
-                "icon": "FileText"
+                "title": "पंजीकरण और POF",
+                "description": "अपने फंड का प्रमाण (POF) प्रदान करके एक्सेस का अनुरोध करें।",
+                "icon": "UserCheck"
             },
             {
-                "title": "सत्यापन",
-                "description": "हम आपके अनुरोध की समीक्षा करेंगे और ईमेल के माध्यम से प्लेटफॉर्म एक्सेस प्रदान करेंगे।",
+                "title": "खोज जनादेश",
+                "description": "हमारे गैर-अनन्य खोज जनादेश (mandate) पर डिजिटल रूप से हस्ताक्षर करें।",
                 "icon": "Search"
             },
             {
-                "title": "जनादेश पर हस्ताक्षर करें",
-                "description": "अपने प्रोफ़ाइल से मेल खाने वाली संपत्तियां प्राप्त करने के लिए जनादेश पर हस्ताक्षर करें।",
-                "icon": "Handshake"
-            },
-            {
-                "title": "ऑफ़र प्राप्त करें",
-                "description": "आपको हमारे अंतरराष्ट्रीय एजेंसी नेटवर्क से अवसर प्राप्त होंगे।",
+                "title": "Smart Matching™",
+                "description": "अपने मानदंडों से मेल खाने वाली ऑफ-मार्केट संपत्तियों के लिए तुरंत सूचनाएं प्राप्त करें।",
                 "icon": "PieChart"
             },
             {
-                "title": "खरीद और शुल्क",
-                "description": "सौदा बंद करें और प्लेटफॉर्म को कमीशन का भुगतान करें।",
-                "icon": "CreditCard"
+                "title": "अधिग्रहण",
+                "description": "बातचीत से लेकर नोटरी में हस्ताक्षर करने तक की पूरी सलाह।",
+                "icon": "Key"
             }
         ],
         "sellers": [
             {
-                "title": "Initial Evaluation",
-                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "title": "प्रारंभिक मूल्यांकन",
+                "description": "बुनियादी विवरण जमा करें। हम 24 घंटे में व्यवहार्यता और मूल्यांकन का विश्लेषण करते हैं।",
                 "icon": "FileText"
             },
             {
-                "title": "Mandate & Upload",
-                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "title": "जनादेश और अपलोड",
+                "description": "एक सुरक्षित जनादेश पर हस्ताक्षर करें और निजी डेटा रूम में दस्तावेज़ अपलोड करें।",
                 "icon": "Upload"
             },
             {
                 "title": "Smart Matching™",
-                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "description": "हमारा सिस्टम चुपचाप आपकी संपत्ति को सत्यापित निवेशकों के साथ मिलाता है। कोई सार्वजनिक सूची नहीं।",
                 "icon": "PieChart"
             },
             {
-                "title": "Offer & Closing",
-                "description": "Receive formal offers and close the deal securely at the notary.",
+                "title": "प्रस्ताव और समापन",
+                "description": "औपचारिक प्रस्ताव प्राप्त करें और नोटरी में सुरक्षित रूप से सौदा बंद करें।",
                 "icon": "Handshake"
             }
         ],
-        "sellers_title": "Private Sale Process",
-        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
+        "sellers_title": "निजी बिक्री प्रक्रिया",
+        "sellers_subtitle": "आपकी उच्च-मूल्य वाली संपत्ति को समाप्त करने का एक विचारशील और सुरक्षित रास्ता।"
     },
     "sell_page": {
         "title": "अपनी संपत्ति को विशेष रूप से बेचें",

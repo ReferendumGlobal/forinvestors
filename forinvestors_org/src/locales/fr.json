@@ -270,92 +270,72 @@
         "investors_subtitle": "Un chemin clair et sécurisé pour accéder aux meilleures opportunités hors marché.",
         "agencies": [
             {
-                "title": "Demande d'accès",
-                "description": "Remplissez le formulaire. Si vous passez le filtre, vous recevrez un e-mail d'accès.",
+                "title": "Demande d'Accès",
+                "description": "Complétez le formulaire. Si vous passez le filtre, vous recevrez un e-mail d'accès.",
                 "icon": "FileText"
             },
             {
-                "title": "S'inscrire et signer",
+                "title": "Inscription et Signature",
                 "description": "Entrez les détails de votre agence et signez numériquement le contrat de collaboration.",
                 "icon": "Handshake"
             },
             {
-                "title": "Télécharger des propriétés",
-                "description": "Téléchargez les propriétés pour lesquelles vous cherchez des investisseurs qualifiés.",
-                "icon": "Upload"
-            },
-            {
-                "title": "Smart Matching",
-                "description": "Le système fera correspondre vos actifs avec des investisseurs à gros capitaux.",
+                "title": "Smart Matching™",
+                "description": "Téléchargez vos actifs. Notre algorithme les fait correspondre instantanément avec des capitaux vérifiés.",
                 "icon": "PieChart"
             },
             {
-                "title": "Recevoir de l'intérêt",
-                "description": "Obtenez des contacts d'investisseurs intéressés par chaque propriété.",
-                "icon": "Users"
-            },
-            {
-                "title": "Conclure la vente",
-                "description": "Si vous concluez la vente, entrez les détails et marquez l'actif comme vendu.",
+                "title": "Clôture des Ventes",
+                "description": "Nous gérons les visites et les offres. Partage des frais 50/50 à la clôture.",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "Paiement et facture",
-                "description": "Payez la commission partagée et recevez votre facture de service.",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "Demande et POF",
-                "description": "Remplissez le formulaire et soumettez votre preuve de fonds (POF).",
-                "icon": "FileText"
+                "title": "Inscription et POF",
+                "description": "Demandez l'accès en fournissant votre Preuve de Fonds (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "Vérification",
-                "description": "Nous examinerons votre demande et vous accorderons l'accès à la plateforme par e-mail.",
+                "title": "Mandat de Recherche",
+                "description": "Signez numériquement notre mandat de recherche non exclusif.",
                 "icon": "Search"
             },
             {
-                "title": "Signer le mandat",
-                "description": "Signez le mandat pour recevoir des propriétés correspondant à votre profil.",
-                "icon": "Handshake"
-            },
-            {
-                "title": "Recevoir des offres",
-                "description": "Vous recevrez des opportunités de notre réseau international d'agences.",
+                "title": "Smart Matching™",
+                "description": "Recevez des notifications instantanées pour les actifs hors marché correspondant à vos critères.",
                 "icon": "PieChart"
             },
             {
-                "title": "Achat et frais",
-                "description": "Concluez l'affaire et payez la commission à la plateforme.",
-                "icon": "CreditCard"
+                "title": "Acquisition",
+                "description": "Conseil complet de la négociation à la signature chez le notaire.",
+                "icon": "Key"
             }
         ],
         "sellers": [
             {
-                "title": "Initial Evaluation",
-                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "title": "Évaluation Initiale",
+                "description": "Soumettez les détails de base. Nous analysons la viabilité et la valorisation en 24h.",
                 "icon": "FileText"
             },
             {
-                "title": "Mandate & Upload",
-                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "title": "Mandat et Téléchargement",
+                "description": "Signez un mandat sécurisé et téléchargez la documentation dans la Data Room privée.",
                 "icon": "Upload"
             },
             {
                 "title": "Smart Matching™",
-                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "description": "Notre système croise silencieusement votre actif avec des investisseurs vérifiés. Aucune annonce publique.",
                 "icon": "PieChart"
             },
             {
-                "title": "Offer & Closing",
-                "description": "Receive formal offers and close the deal securely at the notary.",
+                "title": "Offre et Clôture",
+                "description": "Recevez des offres formelles et concluez l'affaire en toute sécurité chez le notaire.",
                 "icon": "Handshake"
             }
         ],
-        "sellers_title": "Private Sale Process",
-        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
+        "sellers_title": "Processus de Vente Privée",
+        "sellers_subtitle": "Un chemin discret et sécurisé pour liquider votre actif de grande valeur."
     },
     "sell_page": {
         "title": "Vendez votre Actif en Exclusivité",

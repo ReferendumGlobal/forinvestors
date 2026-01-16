@@ -271,91 +271,71 @@
         "agencies": [
             {
                 "title": "طلب الوصول",
-                "description": "املأ النموذج. إذا اجتزت التصفية، ستتلقى بريدًا إلكترونيًا للوصول.",
+                "description": "أكمل النموذج. إذا اجتزت التصفية، ستتلقى بريدًا إلكترونيًا للوصول.",
                 "icon": "FileText"
             },
             {
                 "title": "التسجيل والتوقيع",
-                "description": "أدخل تفاصيل الوكالة ووقع عقد التعاون رقميًا.",
+                "description": "أدخل تفاصيل وكالتك ووقّع رقميًا على عقد التعاون.",
                 "icon": "Handshake"
             },
             {
-                "title": "رفع العقارات",
-                "description": "ارفع العقارات التي تبحث عن مستثمرين مؤهلين لها.",
-                "icon": "Upload"
-            },
-            {
-                "title": "المطابقة الذكية",
-                "description": "سيقوم النظام بمطابقة أصولك مع مستثمرين ذوي رؤوس أموال كبيرة.",
+                "title": "Smart Matching™",
+                "description": "قم بتحميل أصولك. خوارزميتنا تطابقها فورًا مع رأس المال المؤكد.",
                 "icon": "PieChart"
             },
             {
-                "title": "استقبال الاهتمام",
-                "description": "احصل على جهات اتصال المستثمرين المهتمين بكل عقار.",
-                "icon": "Users"
-            },
-            {
-                "title": "إغلاق البيع",
-                "description": "إذا أغلقت البيع، أدخل التفاصيل وحدد الأصل كمباع.",
+                "title": "إغلاق الصفقات",
+                "description": "ندير الزيارات والعروض. تقسيم الرسوم 50/50 عند الإغلاق.",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "الدفع والفاتورة",
-                "description": "ادفع العمولة المشتركة واستلم فاتورة الخدمة.",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "الطلب وإثبات الأموال",
-                "description": "املأ النموذج وقدم إثبات الأموال (POF).",
-                "icon": "FileText"
+                "title": "التسجيل وإثبات الأموال",
+                "description": "اطلب الوصول عن طريق تقديم إثبات الأموال (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "التحقق",
-                "description": "سنراجع طلبك ونمنحك حق الوصول إلى المنصة عبر البريد الإلكتروني.",
+                "title": "تفويض البحث",
+                "description": "وقّع رقميًا على تفويض البحث غير الحصري الخاص بنا.",
                 "icon": "Search"
             },
             {
-                "title": "توقيع التفويض",
-                "description": "وقع التفويض لتلقي العقارات المطابقة لملفك الشخصي.",
-                "icon": "Handshake"
-            },
-            {
-                "title": "استقبال العروض",
-                "description": "ستتلقى فرصًا من شبكة وكالاتنا الدولية.",
+                "title": "Smart Matching™",
+                "description": "احصل على إشعارات فورية عن الأصول خارج السوق التي تطابق معاييرك.",
                 "icon": "PieChart"
             },
             {
-                "title": "الشراء والعمولة",
-                "description": "أغلق الصفقة وادفع العمولة للمنصة.",
-                "icon": "CreditCard"
+                "title": "الاستحواذ",
+                "description": "استشارة كاملة من التفاوض حتى التوقيع عند كاتب العدل.",
+                "icon": "Key"
             }
         ],
         "sellers": [
             {
-                "title": "Initial Evaluation",
-                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "title": "التقييم الأولي",
+                "description": "أرسل التفاصيل الأساسية. نقوم بتحليل الجدوى والتقييم خلال 24 ساعة.",
                 "icon": "FileText"
             },
             {
-                "title": "Mandate & Upload",
-                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "title": "التفويض والتحميل",
+                "description": "وقّع تفويضًا آمنًا وقم بتحميل المستندات إلى غرفة البيانات الخاصة.",
                 "icon": "Upload"
             },
             {
                 "title": "Smart Matching™",
-                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "description": "يقوم نظامنا بمطابقة أصلك بصمت مع المستثمرين المعتمدين. لا توجد قوائم عامة.",
                 "icon": "PieChart"
             },
             {
-                "title": "Offer & Closing",
-                "description": "Receive formal offers and close the deal securely at the notary.",
+                "title": "العرض والإغلاق",
+                "description": "احصل على عروض رسمية وأغلق الصفقة بأمان عند كاتب العدل.",
                 "icon": "Handshake"
             }
         ],
-        "sellers_title": "Private Sale Process",
-        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
+        "sellers_title": "عملية البيع الخاص",
+        "sellers_subtitle": "مسار سري وآمن لتسييل أصولك عالية القيمة."
     },
     "sell_page": {
         "title": "بع أصولك بشكل حصري",

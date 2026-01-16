@@ -270,92 +270,72 @@
         "investors_subtitle": "Um caminho claro e seguro para acessar as melhores oportunidades fora do mercado.",
         "agencies": [
             {
-                "title": "Pedido de Acesso",
+                "title": "Solicitação de Acesso",
                 "description": "Preencha o formulário. Se passar no filtro, receberá um e-mail de acesso.",
                 "icon": "FileText"
             },
             {
-                "title": "Registre-se e Assine",
-                "description": "Insira os detalhes da sua agência e assine digitalmente o contrato de colaboração.",
+                "title": "Registo e Assinatura",
+                "description": "Introduza os dados da sua agência e assine digitalmente o contrato de colaboração.",
                 "icon": "Handshake"
             },
             {
-                "title": "Carregar Propriedades",
-                "description": "Carregue as propriedades para as quais você busca investidores qualificados.",
-                "icon": "Upload"
-            },
-            {
-                "title": "Correspondência Inteligente",
-                "description": "O sistema combinará seus ativos com investidores de grande capital.",
+                "title": "Smart Matching™",
+                "description": "Carregue os seus ativos. O nosso algoritmo cruza-os instantaneamente com capital verificado.",
                 "icon": "PieChart"
             },
             {
-                "title": "Receber Interesse",
-                "description": "Obtenha contatos de investidores interessados em cada propriedade.",
-                "icon": "Users"
-            },
-            {
-                "title": "Fechar Venda",
-                "description": "Se fechar a venda, insira os detalhes e marque o ativo como vendido.",
+                "title": "Fechar Negócios",
+                "description": "Gerimos visitas e ofertas. Divisão de comissões 50/50 no fecho.",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "Pagamento e Fatura",
-                "description": "Pague a comissão compartilhada e receba sua fatura de serviço.",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "Pedido e POF",
-                "description": "Preencha o formulário e envie sua Prova de Fundos (POF).",
-                "icon": "FileText"
+                "title": "Registo e POF",
+                "description": "Solicite acesso fornecendo a sua Prova de Fundos (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "Verificação",
-                "description": "Revisaremos seu pedido e concederemos acesso à plataforma via e-mail.",
+                "title": "Mandato de Pesquisa",
+                "description": "Assine digitalmente o nosso mandato de pesquisa não exclusivo.",
                 "icon": "Search"
             },
             {
-                "title": "Assinar Mandato",
-                "description": "Assine o mandato para receber propriedades correspondentes ao seu perfil.",
-                "icon": "Handshake"
-            },
-            {
-                "title": "Receber Ofertas",
-                "description": "Você receberá oportunidades da nossa rede internacional de agências.",
+                "title": "Smart Matching™",
+                "description": "Receba notificações instantâneas de ativos off-market que correspondam aos seus critérios.",
                 "icon": "PieChart"
             },
             {
-                "title": "Compra e Taxa",
-                "description": "Feche o negócio e pague a comissão à plataforma.",
-                "icon": "CreditCard"
+                "title": "Aquisição",
+                "description": "Assessoria completa desde a negociação até à assinatura no notário.",
+                "icon": "Key"
             }
         ],
         "sellers": [
             {
-                "title": "Initial Evaluation",
-                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "title": "Avaliação Inicial",
+                "description": "Envie detalhes básicos. Analisamos a viabilidade e avaliação em 24h.",
                 "icon": "FileText"
             },
             {
-                "title": "Mandate & Upload",
-                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "title": "Mandato e Upload",
+                "description": "Assine um mandato seguro e carregue a documentação na Data Room privada.",
                 "icon": "Upload"
             },
             {
                 "title": "Smart Matching™",
-                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "description": "O nosso sistema cruza silenciosamente o seu ativo com investidores verificados. Sem listagens públicas.",
                 "icon": "PieChart"
             },
             {
-                "title": "Offer & Closing",
-                "description": "Receive formal offers and close the deal securely at the notary.",
+                "title": "Oferta e Fecho",
+                "description": "Receba ofertas formais e feche o negócio com segurança no notário.",
                 "icon": "Handshake"
             }
         ],
-        "sellers_title": "Private Sale Process",
-        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
+        "sellers_title": "Processo de Venda Privada",
+        "sellers_subtitle": "Um caminho discreto e seguro para liquidar o seu ativo de alto valor."
     },
     "sell_page": {
         "title": "Venda o seu Ativo em Exclusivo",
