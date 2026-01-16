@@ -36,8 +36,8 @@
         "rights": "Tous droits réservés."
     },
     "seo": {
-        "title": "Pour Investisseurs | Actifs Immobiliers de Luxe dans le Monde",
-        "description": "Portefeuille exclusif d'hôtels, de terrains, de vignobles et de propriétés ultra-luxueuses. Gestion experte par Urbina Agency LLC."
+        "title": "Investissement Immobilier Off-Market",
+        "description": "Portefeuille exclusif d'hôtels, de terrains, de vignobles et de propriétés ultra-luxueuses. Gestion experte par OffMarket Invests."
     },
     "search": {
         "title": "Recherche d'Actifs Off-Market",
@@ -52,7 +52,7 @@
     },
     "categories": {
         "investments": {
-            "title": "Investissements Immobiliers",
+            "title": "Investissement Immobilier Off-Market",
             "shortTitle": "Investissements Immobiliers",
             "description": "Gestion complète de portefeuille d'investissement. Nous détectons des opportunités à haut rendement sur le marché immobilier mondial.",
             "longDescription": "Notre division Investissements Immobiliers ne se contente pas de chercher des actifs, elle conçoit des stratégies de capital. Nous analysons les tendances du marché, les cycles économiques et les opportunités de valorisation pour offrir des produits adaptés au profil de risque et de rendement des investisseurs institutionnels et des family offices.",
@@ -66,7 +66,7 @@
             ]
         },
         "hotels": {
-            "title": "Hôtels à Vendre",
+            "title": "Investissement Hôtelier Off-Market",
             "shortTitle": "Hôtels à Vendre",
             "description": "Sélection exclusive d'actifs hôteliers dans les principales zones touristiques d'Espagne, d'Europe et de destinations mondiales.",
             "longDescription": "Le secteur hôtelier est le joyau de notre couronne. Nous avons un accès direct aux propriétaires de chaînes hôtelières, d'hôtels-boutiques indépendants et de complexes de luxe opérant « off-market ». Nous recherchons des actifs avec un potentiel de repositionnement, des contrats de gestion flexibles ou des rendements stabilisés dans des emplacements irremplaçables.",
@@ -80,7 +80,7 @@
             ]
         },
         "land": {
-            "title": "Terrains à Vendre",
+            "title": "Investissement Foncier Off-Market",
             "shortTitle": "Terrains à Vendre",
             "description": "Terrains finalistes, constructibles et rustiques dans des emplacements stratégiques pour de grands développements.",
             "longDescription": "La base de tout grand projet est la terre. Notre portefeuille foncier comprend des parcelles finalistes prêtes pour la demande de permis (Ready-to-build), des développements urbains à moyen terme et de grandes étendues de terres rustiques pour des projets d'énergie renouvelable ou à usage agricole. Nous vérifions rigoureusement le statut urbanistique de chaque mètre carré.",
@@ -94,7 +94,7 @@
             ]
         },
         "luxury": {
-            "title": "Propriétés de Luxe à Vendre",
+            "title": "Propriétés de Luxe Off-Market",
             "shortTitle": "Propriétés de Luxe à Vendre",
             "description": "Villas uniques et penthouses dans des emplacements privilégiés. L'expression ultime de l'exclusivité résidentielle.",
             "longDescription": "Nous comprenons le luxe non seulement comme un prix, mais comme une expérience de vie. Notre sélection « Propriétés de Luxe » comprend les résidences les plus exclusives du marché : villas à La Zagaleta, penthouses dans le quartier de Salamanca ou manoirs historiques sur la Côte d'Azur. Intimité, sécurité et design architectural sans compromis.",
@@ -108,7 +108,7 @@
             ]
         },
         "wineries": {
-            "title": "Vignobles à Vendre",
+            "title": "Investissement Viticole Off-Market",
             "shortTitle": "Vignobles à Vendre",
             "description": "Investissements dans le secteur viticole : domaines avec D.O., vignobles et centres de production.",
             "longDescription": "Investir dans un domaine viticole, c'est investir dans la culture, l'histoire et la terre. Nous offrons des opportunités dans les régions viticoles les plus prestigieuses (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Des domaines familiaux avec une marque consolidée aux grands centres de production en vrac, nous analysons la capacité de production et la valeur de la marque.",
@@ -161,7 +161,8 @@
         "global_exposure_text": "Vos actifs locaux voyageront directement vers des bureaux à Dubaï, New York et Londres.",
         "form_title": "Demander l'Accès à l'Alliance",
         "form_subtitle": "Complétez le profil pour recevoir le contrat de collaboration.",
-        "form_explanation": "Entrez les détails de votre agence pour vérifier l'éligibilité. Nous vous contacterons pour formaliser le mandat de vente partagé."
+        "form_explanation": "Entrez les détails de votre agence pour vérifier l'éligibilité. Nous vous contacterons pour formaliser le mandat de vente partagé.",
+        "seo_title": "Agences Investissement Off-Market"
     },
     "contact_global": {
         "title": "Contactez-nous",

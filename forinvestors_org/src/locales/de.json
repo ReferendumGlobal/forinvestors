@@ -36,8 +36,8 @@
         "rights": "Alle Rechte vorbehalten."
     },
     "seo": {
-        "title": "Für Investoren | Luxusimmobilien weltweit",
-        "description": "Exklusives Portfolio aus Hotels, Grundstücken, Weingütern und Ultra-Luxus-Immobilien. Expertenmanagement durch Urbina Agency LLC."
+        "title": "Off-Market Immobilieninvestment",
+        "description": "Exklusives Portfolio aus Hotels, Grundstücken, Weingütern und Ultra-Luxus-Immobilien. Expertenmanagement durch OffMarket Invests."
     },
     "search": {
         "title": "Suche nach Off-Market-Anlagen",
@@ -52,7 +52,7 @@
     },
     "categories": {
         "investments": {
-            "title": "Immobilieninvestitionen",
+            "title": "Off-Market Immobilieninvestment",
             "shortTitle": "Immobilieninvestitionen",
             "description": "Umfassendes Management von Investitionsportfolios. Wir entdecken renditestarke Möglichkeiten auf dem globalen Immobilienmarkt.",
             "longDescription": "Unsere Abteilung für Immobilieninvestitionen sucht nicht nur nach Vermögenswerten, sondern entwirft Kapitalstrategien. Wir analysieren Markttrends, Wirtschaftszyklen und Wertsteigerungsmöglichkeiten, um Produkte anzubieten, die zum Risiko- und Renditeprofil institutioneller Investoren und Family Offices passen.",
@@ -66,7 +66,7 @@
             ]
         },
         "hotels": {
-            "title": "Hotels zu verkaufen",
+            "title": "Off-Market Hotelinvestment",
             "shortTitle": "Hotels zu verkaufen",
             "description": "Exklusive Auswahl an Hotelanlagen in den wichtigsten touristischen Gebieten Spaniens, Europas und weltweiter Destinationen.",
             "longDescription": "Der Hotelsektor ist das Juwel unserer Krone. Wir haben direkten Zugang zu Eigentümern von Hotelketten, unabhängigen Boutique-Hotels und Luxusresorts, die „off-market“ operieren. Wir suchen Vermögenswerte mit Repositionierungspotenzial, flexiblen Managementverträgen oder stabilisierten Renditen an unwiederbringlichen Standorten.",
@@ -80,7 +80,7 @@
             ]
         },
         "land": {
-            "title": "Grundstücke zu verkaufen",
+            "title": "Off-Market Grundstücksinvestment",
             "shortTitle": "Grundstücke zu verkaufen",
             "description": "Baureifes, entwicklungsfähiges und ländliches Land an strategischen Standorten für Großprojekte.",
             "longDescription": "Die Basis jedes großen Projekts ist das Land. Unser Grundstücksportfolio umfasst baureife Parzellen (Ready-to-build), mittelfristige Stadtentwicklungen und große ländliche Flächen für Projekte im Bereich erneuerbare Energien oder landwirtschaftliche Nutzung. Wir prüfen den städtebaulichen Status jedes Quadratmeters rigoros.",
@@ -94,7 +94,7 @@
             ]
         },
         "luxury": {
-            "title": "Luxusimmobilien zu verkaufen",
+            "title": "Off-Market Luxusimmobilien",
             "shortTitle": "Luxusimmobilien zu verkaufen",
             "description": "Einzigartige Villen und Penthouses in erstklassigen Lagen. Der höchste Ausdruck von Wohnexklusivität.",
             "longDescription": "Wir verstehen Luxus nicht nur als Preis, sondern als Lebenserfahrung. Unsere Auswahl „Luxusimmobilien“ umfasst die exklusivsten Residenzen auf dem Markt: Villen in La Zagaleta, Penthouses im Viertel Salamanca oder historische Villen an der Côte d'Azur. Privatsphäre, Sicherheit und architektonisches Design ohne Kompromisse.",
@@ -108,7 +108,7 @@
             ]
         },
         "wineries": {
-            "title": "Weingüter zu verkaufen",
+            "title": "Off-Market Weingut-Investment",
             "shortTitle": "Weingüter zu verkaufen",
             "description": "Investitionen in den Weinsektor: Weingüter mit Herkunftsbezeichnung, Weinberge und Produktionszentren.",
             "longDescription": "In ein Weingut zu investieren bedeutet, in Kultur, Geschichte und Land zu investieren. Wir bieten Möglichkeiten in den renommiertesten Weinregionen (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Von Familienweingütern mit etablierter Marke bis hin zu großen Massenproduktionszentren analysieren wir die Produktionskapazität und den Markenwert.",
@@ -161,7 +161,8 @@
         "global_exposure_text": "Ihre lokalen Vermögenswerte gelangen direkt in Büros in Dubai, New York und London.",
         "form_title": "Zugang zur Allianz anfordern",
         "form_subtitle": "Vervollständigen Sie das Profil, um den Kooperationsvertrag zu erhalten.",
-        "form_explanation": "Geben Sie Ihre Agenturdaten ein, um die Berechtigung zu prüfen. Wir werden uns mit Ihnen in Verbindung setzen, um das gemeinsame Verkaufsmandat zu formalisieren."
+        "form_explanation": "Geben Sie Ihre Agenturdaten ein, um die Berechtigung zu prüfen. Wir werden uns mit Ihnen in Verbindung setzen, um das gemeinsame Verkaufsmandat zu formalisieren.",
+        "seo_title": "Agenturen Off-Market Investment"
     },
     "contact_global": {
         "title": "Kontaktieren Sie uns",
