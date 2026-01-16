@@ -114,7 +114,7 @@ export default function Navbar({ categories }) {
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center gap-4">
+                    <div className="md:hidden flex items-center gap-3">
                         <Link
                             to="/login"
                             className="text-gold-400 hover:text-gold-300 transition-colors bg-gold-500/10 p-2 rounded-md border border-gold-500/20"
