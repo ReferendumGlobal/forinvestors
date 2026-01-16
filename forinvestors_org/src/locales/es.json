@@ -63,7 +63,8 @@
         "global_exposure_text": "Sus activos locales viajarán directamente a despachos en Dubái, Nueva York y Londres.",
         "form_title": "Solicitar Acceso a la Alianza",
         "form_subtitle": "Complete el perfil para recibir el contrato de colaboración.",
-        "form_explanation": "Introduzca los datos de su agencia para verificar su elegibilidad. Nos pondremos en contacto para formalizar el mandato de venta compartido."
+        "form_explanation": "Introduzca los datos de su agencia para verificar su elegibilidad. Nos pondremos en contacto para formalizar el mandato de venta compartido.",
+        "seo_title": "Agencias Inversión Off-Market"
     },
     "sell_page": {
         "title": "Venda su Activo en Exclusiva",
@@ -94,7 +95,7 @@
         "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
     },
     "seo": {
-        "title": "OffMarketInvests.com | Activos Inmobiliarios de Lujo Globales",
+        "title": "Inversión Inmobiliaria Off-Market",
         "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por OffMarket Invests."
     },
     "innovation": {
@@ -130,7 +131,7 @@
     },
     "categories": {
         "investments": {
-            "title": "Inversiones Inmobiliarias",
+            "title": "Inversión Inmobiliaria Off-Market",
             "shortTitle": "Inversiones",
             "description": "Gestión integral de patrimonios. Detectamos oportunidades de alta rentabilidad en el mercado global.",
             "longDescription": "Nuestra división de Inversiones Inmobiliarias no solo busca activos, diseña estrategias de capital. Analizamos tendencias de mercado, ciclos económicos y oportunidades de revalorización para ofrecer productos ajustados al perfil de riesgo y retorno de inversores institucionales y family offices.",
@@ -144,7 +145,7 @@
             ]
         },
         "hotels": {
-            "title": "Hoteles en Venta",
+            "title": "Inversión Hoteles Off-Market",
             "shortTitle": "Hoteles",
             "description": "Selección exclusiva de activos hoteleros en las principales zonas turísticas de España y Europa.",
             "longDescription": "El sector hotelero es la joya de nuestra corona. Tenemos acceso directo a propietarios de cadenas, hoteles boutique independientes y resorts de lujo que operan 'off-market'. Buscamos activos con potencial de reposicionamiento, contratos de gestión flexibles o rentabilidades estabilizadas en ubicaciones irreemplazables.",
@@ -158,7 +159,7 @@
             ]
         },
         "land": {
-            "title": "Suelo en Venta",
+            "title": "Inversión Suelo Off-Market",
             "shortTitle": "Suelo",
             "description": "Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.",
             "longDescription": "La base de todo gran proyecto es la tierra. Nuestra cartera de suelo incluye parcelas finalistas listas para pedir licencia (Ready-to-build), desarrollos urbanísticos a medio plazo y grandes extensiones de suelo rústico para proyectos de energía renovable o uso agropecuario.",
@@ -172,7 +173,7 @@
             ]
         },
         "luxury": {
-            "title": "Propiedades de Lujo",
+            "title": "Propiedades de Lujo Off-Market",
             "shortTitle": "Lujo",
             "description": "Villas únicas y áticos en ubicaciones prime. La máxima expresión de la exclusividad residencial.",
             "longDescription": "Entendemos el lujo no solo como precio, sino como experiencia de vida. Nuestra selección 'Luxury Properties' incluye las residencias más exclusivas del mercado: villas en La Zagaleta, áticos en Barrio de Salamanca o pazos históricos.",
@@ -186,7 +187,7 @@
             ]
         },
         "wineries": {
-            "title": "Bodegas en Venta",
+            "title": "Inversión Bodegas Off-Market",
             "shortTitle": "Bodegas",
             "description": "Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.",
             "longDescription": "Invertir en una bodega es invertir en cultura, historia y tierra. Ofrecemos oportunidades en las regiones vinícolas más prestigiosas (Rioja, Ribera del Duero). Desde bodegas familiares con marca consolidada hasta grandes centros de producción a granel.",
