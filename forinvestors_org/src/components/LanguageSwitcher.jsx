@@ -63,14 +63,14 @@ export default function LanguageSwitcher() {
                         className="fixed inset-0 z-40"
                         onClick={() => setIsOpen(false)}
                     ></div>
-                    <div className="absolute right-0 mt-2 w-48 bg-midnight-950 border border-white/10 rounded-xl shadow-xl z-[100] py-1 max-h-[80vh] overflow-y-auto">
+                    <div className="absolute right-0 mt-2 w-40 bg-midnight-950 border border-white/10 rounded-xl shadow-xl z-[100] py-1 max-h-[70vh] overflow-y-auto">
                         {languages.map((lng) => (
                             <button
                                 key={lng.code}
                                 onClick={() => handleLanguageChange(lng.code)}
                                 className={`w-full text-left px-4 py-3 text-sm flex items-center gap-3 hover:bg-white/5 transition-colors ${i18n.language === lng.code ? 'text-gold-400 bg-white/5' : 'text-gray-300'}`}
                             >
-                                <span className="text-lg">{lng.flag}</span>
+                                <span className="text-xl">{lng.flag}</span>
                                 <span>{lng.label}</span>
                             </button>
                         ))}
