@@ -52,7 +52,10 @@ export default function SellAssets() {
                 }
             ]);
 
-            if (dbError) throw dbError;
+            if (dbError) {
+                console.error("Supabase Error (Non-blocking):", dbError);
+                // Continue execution to ensure email is sent
+            }
 
             // FormSubmit for email notification
             const formData = new FormData();
