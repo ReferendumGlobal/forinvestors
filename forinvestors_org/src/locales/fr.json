@@ -331,7 +331,31 @@
                 "description": "Concluez l'affaire et payez la commission à la plateforme.",
                 "icon": "CreditCard"
             }
-        ]
+        ],
+        "sellers": [
+            {
+                "title": "Initial Evaluation",
+                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Mandate & Upload",
+                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Offer & Closing",
+                "description": "Receive formal offers and close the deal securely at the notary.",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "Private Sale Process",
+        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
     },
     "sell_page": {
         "title": "Vendez votre Actif en Exclusivité",

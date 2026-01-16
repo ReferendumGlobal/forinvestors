@@ -336,14 +336,14 @@
                 "icon": "Handshake"
             },
             {
-                "title": "Subida de Activos",
-                "description": "Publique sus propiedades exclusivas. Serán visibles para inversores verificados.",
-                "icon": "Upload"
+                "title": "Smart Matching™",
+                "description": "Al subir su cartera, nuestro algoritmo detecta coincidencias inmediatas con capital verificado.",
+                "icon": "PieChart"
             },
             {
                 "title": "Cierre de Operaciones",
                 "description": "Gestionamos las visitas y ofertas. Reparto de honorarios al 50/50.",
-                "icon": "Award"
+                "icon": "CheckCircle"
             }
         ],
         "investors": [
@@ -358,16 +358,40 @@
                 "icon": "Search"
             },
             {
-                "title": "Acceso a Deals",
-                "description": "Acceda al dashboard y vea oportunidades que encajan con sus criterios.",
-                "icon": "Eye"
+                "title": "Smart Matching™",
+                "description": "Reciba notificaciones instantáneas de activos off-market que encajen con su criterio.",
+                "icon": "PieChart"
             },
             {
                 "title": "Adquisición",
                 "description": "Asesoramiento completo hasta la firma en notaría.",
                 "icon": "Key"
             }
-        ]
+        ],
+        "sellers": [
+            {
+                "title": "Evaluación Inicial",
+                "description": "Envíe los datos básicos. Analizamos la viabilidad y valoración en 24h.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Mandato y Carga",
+                "description": "Firma de mandato seguro y carga de documentación al Data Room privado.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "El sistema cruza silenciosamente su activo con inversores (POF verificado).",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Oferta y Cierre",
+                "description": "Reciba ofertas formales y cierre la operación ante notario.",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "Proceso de Venta Privada",
+        "sellers_subtitle": "Un camino discreto y seguro para cerrar la venta de su activo."
     },
     "footer": {
         "rights": "Todos los derechos reservados.",

@@ -327,23 +327,23 @@
         "agencies": [
             {
                 "title": "Access Request",
-                "description": "Fill out the form. If you pass the screen, you will receive an access email.",
+                "description": "Complete the form. If you pass the filter, you will receive an access email.",
                 "icon": "FileText"
             },
             {
-                "title": "Register & Sign",
-                "description": "Enter your agency details and digitally sign the collaboration agreement.",
+                "title": "Sign Up & Sign",
+                "description": "Enter your agency details and digitally sign the collaboration contract.",
                 "icon": "Handshake"
             },
             {
-                "title": "Upload Assets",
-                "description": "Publish your exclusive properties. They will be visible to verified investors.",
-                "icon": "Upload"
+                "title": "Smart Matching™",
+                "description": "Upload your assets. Our algorithm instantly matches them with verified capital.",
+                "icon": "PieChart"
             },
             {
                 "title": "Close Deals",
-                "description": "We manage visits and offers. 50/50 fee split.",
-                "icon": "Award"
+                "description": "We manage visits and offers. 50/50 fee split on closing.",
+                "icon": "CheckCircle"
             }
         ],
         "investors": [
@@ -358,16 +358,40 @@
                 "icon": "Search"
             },
             {
-                "title": "Access Deals",
-                "description": "Access the dashboard and view opportunities matching your criteria.",
-                "icon": "Eye"
+                "title": "Smart Matching™",
+                "description": "Receive instant notifications for off-market assets matching your criteria.",
+                "icon": "PieChart"
             },
             {
                 "title": "Acquisition",
-                "description": "Full advisory until signing at the notary.",
+                "description": "Full advisory from negotiation to signing at the notary.",
                 "icon": "Key"
             }
-        ]
+        ],
+        "sellers": [
+            {
+                "title": "Initial Evaluation",
+                "description": "Submit basic details. We analyze viability and valuation in 24h.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Mandate & Upload",
+                "description": "Sign a secure mandate and upload documentation to the private Data Room.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "Our system silently crosses your asset with verified investors. No public listing.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Offer & Closing",
+                "description": "Receive formal offers and close the deal securely at the notary.",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "Private Sale Process",
+        "sellers_subtitle": "A discreet and secure path to liquidating your high-value asset."
     },
     "footer": {
         "rights": "All rights reserved.",
