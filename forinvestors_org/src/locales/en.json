@@ -46,10 +46,11 @@
         "card_3_desc": "Direct connection with Family Offices."
     },
     "agencies_page": {
-        "hero_title": "Collaborate with Real Estate Elite",
-        "hero_subtitle": "Join our verified agency network and share deals with total security.",
-        "hero_cta": "Request Collaboration",
-        "collaboration_title": "A Fair Collaboration Model",
+        "title": "Collaborate with Real Estate Elite",
+        "subtitle": "Join our verified agency network and share deals with total security.",
+        "access_button": "Request Collaboration",
+        "disclaimer": "* Restricted access. Manual activation required after signing contract.",
+        "collaboration_model": "A Fair Collaboration Model",
         "collaboration_text_1": "We are not a portal, we are an **Alliance**. We sign a collaboration agreement that protects your mandate and guarantees a fair commission split (50/50) on every jointly closed operation.",
         "collaboration_text_2": "Once the contract is signed, you will be given access to our private platform where you can:",
         "benefits_list": [

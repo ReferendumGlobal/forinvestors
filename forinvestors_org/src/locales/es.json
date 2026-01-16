@@ -46,10 +46,11 @@
         "card_3_desc": "Conexión directa con Family Offices."
     },
     "agencies_page": {
-        "hero_title": "Colabora con la Élite del Real Estate",
-        "hero_subtitle": "Únase a nuestra red de agencias verificadas y comparta operaciones con total seguridad.",
-        "hero_cta": "Solicitar Colaboración",
-        "collaboration_title": "Un Modelo de Colaboración Justo",
+        "title": "Colabora con la Élite del Real Estate",
+        "subtitle": "Únase a nuestra red de agencias verificadas y comparta operaciones con total seguridad.",
+        "access_button": "Solicitar Colaboración",
+        "disclaimer": "* Acceso restringido. Requiere activación manual tras firma de contrato.",
+        "collaboration_model": "Un Modelo de Colaboración Justo",
         "collaboration_text_1": "No somos un portal, somos una **Alianza**. Firmamos un contrato de colaboración que protege su mandato y garantiza el reparto de honorarios (50/50) en cada operación cerrada conjuntamente.",
         "collaboration_text_2": "Una vez firmado el contrato, se le dará acceso a nuestra plataforma privada donde podrá:",
         "benefits_list": [
