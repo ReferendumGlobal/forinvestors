@@ -7,7 +7,7 @@ export default function Logo({ className }) {
                 <span className="text-midnight-950 font-serif font-bold text-2xl">U</span>
             </div>
             <div className="hidden md:block">
-                <span className="block text-white font-serif tracking-widest text-xs font-bold leading-none">OFFMARKETINVESTS.COM</span>
+                <span className="block text-white font-serif tracking-widest text-xs font-bold leading-none">TOP OFFMARKET</span>
                 <span className="block text-gold-500 text-[9px] tracking-widest leading-none mt-1.5 opacity-80">BY URBINA AGENCY</span>
             </div>
         </div>

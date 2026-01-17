@@ -17,7 +17,7 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                         <div>
-                            <h3 className="text-xl font-serif font-bold text-white mb-4">OFFMARKET INVESTS</h3>
+                            <h3 className="text-xl font-serif font-bold text-white mb-4">TOP OFFMARKET</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
                                 Specialists in high-value real estate asset management. Connecting private capital with exclusive investment opportunities worldwide.
                             </p>
@@ -36,8 +36,8 @@ export default function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://offmarketinvests.com" target="_blank" rel="noopener noreferrer" className="block group">
-                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">OffMarketInvests.com</span>
+                                    <a href="https://topoffmarket.com" target="_blank" rel="noopener noreferrer" className="block group">
+                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">TopOffMarket.com</span>
                                         <span className="text-xs text-gray-500 block">International Market</span>
                                     </a>
                                 </li>
