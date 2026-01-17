@@ -15,6 +15,9 @@ export default function Home() {
     });
     const { t } = useTranslation();
 
+    // Debug Version
+    console.log('TopOffMarket Loaded: v2.1 (AI & Services)');
+
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
