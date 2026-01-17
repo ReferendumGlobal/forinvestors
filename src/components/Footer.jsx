@@ -36,8 +36,8 @@ export default function Footer() {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://offmarketinvests.com" target="_blank" rel="noopener noreferrer" className="block group">
-                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">OffMarketInvests.com</span>
+                                    <a href="https://topoffmarket.com" target="_blank" rel="noopener noreferrer" className="block group">
+                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">TopOffMarket.com</span>
                                         <span className="text-xs text-gray-500 block">Mercado Internacional</span>
                                     </a>
                                 </li>
