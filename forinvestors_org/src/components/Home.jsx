@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';
 import SeoHead from './SeoHead';
 import MatchingInnovation from './MatchingInnovation';
+import ServicesSection from './ServicesSection';
 
 export default function Home() {
     const containerRef = useRef(null);
