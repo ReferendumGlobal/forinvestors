@@ -24,7 +24,7 @@ export default function ServicesSection() {
         {
             id: 'agencies',
             icon: Building2,
-            link: `/${lang}/agencies`,
+            link: `/${lang}/agencias`,
             image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
         }
     ];
