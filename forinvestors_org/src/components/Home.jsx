@@ -1,7 +1,41 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronRight, Shield, Award, Users, Globe, Cpu } from 'lucide-react';
-// ...
+import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';
+import SeoHead from './SeoHead';
+import MatchingInnovation from './MatchingInnovation';
+
+export default function Home() {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+    const { t } = useTranslation();
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+    return (
+        <div ref={containerRef} className="relative">
+            <SeoHead
+                title={t('seo.title')}
+                description={t('seo.description')}
+            />
+
+            {/* Hero Section */}
+            <div className="relative h-screen flex items-center justify-center overflow-hidden">
+                <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1512850183-6d7990f42385?auto=format&fit=crop&q=80"
+                        alt="Luxury Real Estate"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-midnight-950/80 via-midnight-950/60 to-midnight-950"></div>
+                </motion.div>
+
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -44,64 +78,64 @@ import { ChevronRight, Shield, Award, Users, Globe, Cpu } from 'lucide-react';
                     </motion.div>
                 </div >
 
-    <div className="absolute bottom-10 left-0 right-0 z-20 hidden md:flex justify-center animate-bounce">
-        <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold-500 to-transparent"></div>
-    </div>
+                <div className="absolute bottom-10 left-0 right-0 z-20 hidden md:flex justify-center animate-bounce">
+                    <div className="w-px h-16 bg-gradient-to-b from-transparent via-gold-500 to-transparent"></div>
+                </div>
             </div >
 
-    {/* Innovation Section */ }
-    < MatchingInnovation />
+            {/* Innovation Section */}
+            < MatchingInnovation />
 
 
 
-    {/* Legacy Section */ }
-    < div className = "py-24 md:py-32 relative bg-midnight-950" >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="relative">
-                    <div className="aspect-[3/4] rounded-sm overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
-                        <img
-                            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80"
-                            alt="Urbina Family Legacy"
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gold-900/20 mix-blend-multiply"></div>
-                    </div>
-                    <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-midnight-900 border border-gold-500/30 p-6 flex flex-col justify-center items-center text-center backdrop-blur-md">
-                        <Award className="w-8 h-8 text-gold-500 mb-2" />
-                        <span className="text-4xl font-serif text-white font-bold">1920</span>
-                        <span className="text-xs text-gold-400 uppercase tracking-widest mt-1">Est. Origins</span>
+            {/* Legacy Section */}
+            < div className="py-24 md:py-32 relative bg-midnight-950" >
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div className="relative">
+                            <div className="aspect-[3/4] rounded-sm overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
+                                <img
+                                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80"
+                                    alt="Urbina Family Legacy"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gold-900/20 mix-blend-multiply"></div>
+                            </div>
+                            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-midnight-900 border border-gold-500/30 p-6 flex flex-col justify-center items-center text-center backdrop-blur-md">
+                                <Award className="w-8 h-8 text-gold-500 mb-2" />
+                                <span className="text-4xl font-serif text-white font-bold">1920</span>
+                                <span className="text-xs text-gold-400 uppercase tracking-widest mt-1">Est. Origins</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 className="text-3xl md:text-5xl font-serif text-white mb-8 border-l-4 border-gold-500 pl-6">
+                                {t('legacy.title')}
+                            </h2>
+                            <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
+                                <p>
+                                    {t('legacy.text1')}
+                                </p>
+                                <p>
+                                    {t('legacy.text2')}
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                                <div className="group p-6 border border-white/5 hover:border-gold-500/30 transition-colors bg-white/5 backdrop-blur-sm">
+                                    <Globe className="w-8 h-8 text-gold-500 mb-4" />
+                                    <h3 className="text-white font-serif text-xl mb-2">{t('legacy.secrets_title')}</h3>
+                                    <p className="text-sm text-gray-400">{t('legacy.secrets_text')}</p>
+                                </div>
+                                <div className="group p-6 border border-white/5 hover:border-gold-500/30 transition-colors bg-white/5 backdrop-blur-sm">
+                                    <Users className="w-8 h-8 text-gold-500 mb-4" />
+                                    <h3 className="text-white font-serif text-xl mb-2">{t('legacy.success_title')}</h3>
+                                    <p className="text-sm text-gray-400">{t('legacy.success_text')}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div>
-                    <h2 className="text-3xl md:text-5xl font-serif text-white mb-8 border-l-4 border-gold-500 pl-6">
-                        {t('legacy.title')}
-                    </h2>
-                    <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
-                        <p>
-                            {t('legacy.text1')}
-                        </p>
-                        <p>
-                            {t('legacy.text2')}
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                        <div className="group p-6 border border-white/5 hover:border-gold-500/30 transition-colors bg-white/5 backdrop-blur-sm">
-                            <Globe className="w-8 h-8 text-gold-500 mb-4" />
-                            <h3 className="text-white font-serif text-xl mb-2">{t('legacy.secrets_title')}</h3>
-                            <p className="text-sm text-gray-400">{t('legacy.secrets_text')}</p>
-                        </div>
-                        <div className="group p-6 border border-white/5 hover:border-gold-500/30 transition-colors bg-white/5 backdrop-blur-sm">
-                            <Users className="w-8 h-8 text-gold-500 mb-4" />
-                            <h3 className="text-white font-serif text-xl mb-2">{t('legacy.success_title')}</h3>
-                            <p className="text-sm text-gray-400">{t('legacy.success_text')}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
             </div >
         </div >
     );
