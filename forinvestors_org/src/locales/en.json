@@ -1,103 +1,103 @@
 {
     "nav": {
-        "investments": "Real Estate Investments",
-        "hotels": "Hotels for Sale",
-        "land": "Land for Sale",
-        "luxury": "Luxury Properties",
-        "wineries": "Wineries for Sale",
+        "investments": "Global Investments",
+        "hotels": "Hotels Off Market",
+        "land": "Land Off Market",
+        "luxury": "Luxury Off Market",
+        "wineries": "Wineries Off Market",
         "blog": "Blog",
         "agencies": "For Agencies",
-        "search": "Asset Search",
+        "search": "Global Search",
         "access": "Private Access",
-        "sell": "Sell Assets",
+        "sell": "Sell Global Assets",
         "home": "Home",
-        "about": "About Us",
+        "about": "Global Prestige",
         "contact": "Contact"
     },
     "hero": {
-        "shield": "The Art of Discretion",
-        "subtitle": "We work with a portfolio that is <strong>not published on real estate portals</strong> but is of high quality. Our clients trust us with valuable secrets, and we return fruitful business.",
-        "cta": "Enter the Portfolio",
-        "title": "Off-Market Real Estate",
+        "shield": "Global Prestige & Discretion",
+        "subtitle": "Access the world's most exclusive <strong>off-market real estate portfolio</strong>. From European capitals to global financial hubs, we connect elite capital with unseen opportunities.",
+        "cta": "Explore Global Portfolio",
+        "title": "Global Off-Market Assets",
         "cta_invest": "I am an Investor",
         "cta_agency": "I am an Agency"
     },
     "legacy": {
-        "title": "A Legacy of Honor",
-        "text1": "The tradition of Urbina Agency is not born in the market, but in honor and service. Our DNA comes from Francisco and Angelita Urbina, my grandparents.",
-        "text2": "And from my great-grandfather, José María Urbina, a high-ranking military officer. From him, we learned that the most valuable information is that which is protected.",
-        "secrets_title": "Valuable Secrets",
-        "secrets_text": "We treat every investment intention as top-level classified information.",
-        "success_title": "Declassified Success",
-        "success_text": "The only trace we leave is success."
+        "title": "A Global Legacy",
+        "text1": "The Urbina Agency tradition expands beyond borders, rooted in honor and service. Our DNA, inherited from Francisco and Angelita Urbina, now serves a global clientele.",
+        "text2": "From our military heritage, we learned that valuable information must be protected. Today, we apply this discretion to managing high-value assets across continents.",
+        "secrets_title": "Global Confidentiality",
+        "secrets_text": "We treat every international investment intention as top-level classified information.",
+        "success_title": "Worldwide Success",
+        "success_text": "The only trace we leave is success, measured on a global scale."
     },
     "about": {
-        "title": "About Urbina Agency",
-        "description_1": "We are a boutique firm specializing in the intermediation of prime off-market real estate assets.",
-        "description_2": "We connect owners and investment funds with total confidentiality, operating in major European markets."
+        "title": "Top OffMarket: Global Reach",
+        "description_1": "We are the premier global firm for off-market real estate assets, serving elite investors worldwide.",
+        "description_2": "We bridge the gap between owners and capital in key markets: Europe, Middle East, and Americas."
     },
     "features": {
-        "title": "Why Choose Us?",
+        "title": "Global Advantage",
         "card_1_title": "100% Off-Market",
-        "card_1_desc": "Assets you won't find on public portals.",
-        "card_2_title": "Rigorous Verification",
-        "card_2_desc": "All assets and buyers undergo a strict due diligence process.",
-        "card_3_title": "Global Network",
-        "card_3_desc": "Direct connection with Family Offices."
+        "card_1_desc": "Exclusive assets unseen on any public portal worldwide.",
+        "card_2_title": "Global Verification",
+        "card_2_desc": "Rigorous due diligence for assets and buyers across all jurisdictions.",
+        "card_3_title": "International Network",
+        "card_3_desc": "Direct connections with Family Offices in Dubai, NY, London, and Asia."
     },
     "agencies_page": {
-        "title": "Collaborate with Real Estate Elite",
-        "subtitle": "Join our verified agency network and share deals with total security.",
-        "access_button": "Request Collaboration",
-        "disclaimer": "* Restricted access. Manual activation required after signing contract.",
-        "collaboration_model": "A Fair Collaboration Model",
-        "collaboration_text_1": "We are not a portal, we are an **Alliance**. We sign a collaboration agreement that protects your mandate and guarantees a fair commission split (50/50) on every jointly closed operation.",
-        "collaboration_text_2": "Once the contract is signed, you will be given access to our private platform where you can:",
+        "title": "Join the Global Elite Alliance",
+        "subtitle": "Connect with our worldwide network of agencies and share cross-border deal flow.",
+        "access_button": "Request Global Access",
+        "disclaimer": "* Restricted access. Manual activation required after signing global contract.",
+        "collaboration_model": "Global Collaboration",
+        "collaboration_text_1": "We are a **Global Alliance**. Our collaboration agreement protects your mandate and guarantees a fair 50/50 commission split on international operations.",
+        "collaboration_text_2": "Join our private platform to:",
         "benefits_list": [
-            "Upload your portfolio of exclusive properties visible only to verified investors.",
-            "Receive automated requests from investors matching your assets.",
-            "Access our 'Wanted' list by Large Capital."
+            "Upload exclusive properties visible to verified global investors.",
+            "Receive matches from international capital.",
+            "Access our 'Global Wanted' list."
         ],
-        "verified_demand_title": "Verified Demand",
-        "verified_demand_text": "We bring you buyers who have already passed the Proof of Funds (POF).",
-        "global_exposure_title": "Global Exposure",
-        "global_exposure_text": "Your local assets will travel directly to offices in Dubai, New York, and London.",
-        "form_title": "Request Access to the Alliance",
-        "form_subtitle": "Complete the profile to receive the collaboration contract.",
-        "form_explanation": "Enter your agency details to verify eligibility. We will contact you to formalize the shared sales mandate.",
-        "seo_title": "Agencies Off-Market Investment"
+        "verified_demand_title": "Verified Global Demand",
+        "verified_demand_text": "We bring you buyers with verified Proof of Funds (POF) from around the world.",
+        "global_exposure_title": "Worldwide Exposure",
+        "global_exposure_text": "Your assets will be presented in Dubai, New York, London, and beyond.",
+        "form_title": "Join the Global Alliance",
+        "form_subtitle": "Complete profile for international collaboration.",
+        "form_explanation": "Enter agency details. We will contact you for a global mandate.",
+        "seo_title": "Global Off-Market Agencies"
     },
     "sell_page": {
-        "title": "Sell Your Asset Exclusively",
+        "title": "Sell Assets Globally",
         "subtitle": "Access our network of qualified investors and global family offices.",
-        "hero_cta": "Value My Property",
-        "why_us_title": "Why sell with Urbina Agency?",
+        "hero_cta": "Global Valuation",
+        "why_us_title": "Why Sell with Top OffMarket?",
         "benefits": [
             {
-                "title": "Total Confidentiality",
-                "desc": "Your asset will not be published on general portals. Only verified investors with POF will have access."
+                "title": "Global Confidentiality",
+                "desc": "Your asset remains off-market. Only verified international investors access details."
             },
             {
-                "title": "Global Network",
+                "title": "Worldwide Network",
                 "desc": "We connect your property with capital in Dubai, London, New York and Asia."
             },
             {
-                "title": "Integral Management",
-                "desc": "We take care of everything: valuation, due diligence, visits and legal closing."
+                "title": "Global Management",
+                "desc": "We handle international valuation, due diligence, and legal closing."
             }
         ],
-        "form_title": "Asset Details",
-        "form_subtitle": "Fill out the form for our team to evaluate your property.",
+        "form_title": "Global Asset Details",
+        "form_subtitle": "Our international team will evaluate your property.",
         "success_title": "Request Received",
-        "success_desc": "We have received your property details. Our valuation team will contact you shortly to formalize the sales mandate."
+        "success_desc": "Details received. Our global valuation team will contact you."
     },
     "contact_global": {
-        "title": "Contact Us",
-        "explanation": "To verify your investor profile and grant you access to our private platform with username and password, we need to validate your Proof of Funds (POF). Once validated, you will receive personalized investment offers tailored to your needs and available capital."
+        "title": "Contact Global Desk",
+        "explanation": "To access our exclusive global portfolio, we must verify your investor profile and Proof of Funds (POF). You will then receive tailored international offers."
     },
     "seo": {
-        "title": "Off-Market Property Investment",
-        "description": "Exclusive portfolio of hotels, land, wineries, and ultra-prime properties. Expert management by OffMarket Invests."
+        "title": "Global Off-Market Assets",
+        "description": "Exclusive portfolio of Hotels, Land, and Wineries worldwide. Top OffMarket connects elite capital with unseen opportunities."
     },
     "innovation": {
         "subtitle": "Real Estate Technology",
