@@ -22,6 +22,25 @@
         "cta_invest": "I am an Investor",
         "cta_agency": "I am an Agency"
     },
+    "services": {
+        "title": "Our Ecosystem",
+        "subtitle": "Three dedicated pillars for the global real estate elite.",
+        "investors": {
+            "title": "For Investors",
+            "desc": "Access verified off-market opportunities matching your exact investment criteria.",
+            "cta": "Start Investing"
+        },
+        "owners": {
+            "title": "For Owners",
+            "desc": "Discreetly sell your asset to qualified buyers effectively and without public exposure.",
+            "cta": "Sell Asset"
+        },
+        "agencies": {
+            "title": "For Agencies",
+            "desc": "Join our global alliance to co-broke deals and access international capital.",
+            "cta": "Partner Up"
+        }
+    },
     "legacy": {
         "title": "Innovation & Heritage",
         "text1": "TopOffMarket.com combines the traditional values of the Urbina family with the most advanced technology. We honor our legacy of discretion by protecting your data with military-grade encryption.",
