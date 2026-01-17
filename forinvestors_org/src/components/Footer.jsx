@@ -41,12 +41,6 @@ export default function Footer() {
                                         <span className="text-xs text-gray-500 block">International Market</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="https://enteroffmarket.com" target="_blank" rel="noopener noreferrer" className="block group">
-                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">EnterOffMarket.com</span>
-                                        <span className="text-xs text-gray-500 block">Central Platform</span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
 
