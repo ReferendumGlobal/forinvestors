@@ -15,35 +15,35 @@
         "contact": "Contact"
     },
     "hero": {
-        "shield": "Global Prestige & Discretion",
-        "subtitle": "Access the world's most exclusive <strong>off-market real estate portfolio</strong>. From European capitals to global financial hubs, we connect elite capital with unseen opportunities.",
-        "cta": "Explore Global Portfolio",
-        "title": "Global Off-Market Assets",
+        "shield": "AI-Powered Off-Market",
+        "subtitle": "The first global platform that uses <strong>Smart Matching™</strong> to connect your specific investment criteria with exclusive off-market assets. Precision, speed, and absolute discretion.",
+        "cta": "Start Smart Match",
+        "title": "Intelligent Real Estate",
         "cta_invest": "I am an Investor",
         "cta_agency": "I am an Agency"
     },
     "legacy": {
-        "title": "A Global Legacy",
-        "text1": "The Urbina Agency tradition expands beyond borders, rooted in honor and service. Our DNA, inherited from Francisco and Angelita Urbina, now serves a global clientele.",
-        "text2": "From our military heritage, we learned that valuable information must be protected. Today, we apply this discretion to managing high-value assets across continents.",
-        "secrets_title": "Global Confidentiality",
-        "secrets_text": "We treat every international investment intention as top-level classified information.",
-        "success_title": "Worldwide Success",
-        "success_text": "The only trace we leave is success, measured on a global scale."
+        "title": "Innovation & Heritage",
+        "text1": "TopOffMarket.com combines the traditional values of the Urbina family with the most advanced technology. We honor our legacy of discretion by protecting your data with military-grade encryption.",
+        "text2": "Our history taught us the value of information. Our AI ensures that this information reaches only the right hands at the right time.",
+        "secrets_title": "Encrypted Confidentiality",
+        "secrets_text": "Our algorithm protects every asset until the perfect match is verified.",
+        "success_title": "Algorithmic Success",
+        "success_text": "We optimize the probability of closing through data analysis."
     },
     "about": {
-        "title": "Top OffMarket: Global Reach",
-        "description_1": "We are the premier global firm for off-market real estate assets, serving elite investors worldwide.",
-        "description_2": "We bridge the gap between owners and capital in key markets: Europe, Middle East, and Americas."
+        "title": "TopOffMarket.com: Intelligence applied to Luxury",
+        "description_1": "We are not just a brokerage firm; we are a technology company applied to the high-end real estate market.",
+        "description_2": "Our Smart Matching system analyzes thousands of data points to ensure that every opportunity presented is a viable investment."
     },
     "features": {
-        "title": "Global Advantage",
-        "card_1_title": "100% Off-Market",
-        "card_1_desc": "Exclusive assets unseen on any public portal worldwide.",
-        "card_2_title": "Global Verification",
-        "card_2_desc": "Rigorous due diligence for assets and buyers across all jurisdictions.",
-        "card_3_title": "International Network",
-        "card_3_desc": "Direct connections with Family Offices in Dubai, NY, London, and Asia."
+        "title": "The AI Advantage",
+        "card_1_title": "Smart Matching™",
+        "card_1_desc": "Instant connection between verified capital and specific assets.",
+        "card_2_title": "Predictive Analysis",
+        "card_2_desc": "We value assets based on real projected profitability and market trends.",
+        "card_3_title": "Global Data",
+        "card_3_desc": "Cross-referenced data from European, American, and Asian markets."
     },
     "agencies_page": {
         "title": "Join the Global Elite Alliance",
