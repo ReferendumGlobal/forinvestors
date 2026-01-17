@@ -84,6 +84,9 @@ export default function Home() {
                 </div>
             </div >
 
+            {/* Services Section */}
+            <ServicesSection />
+
             {/* Innovation Section */}
             < MatchingInnovation />
 
