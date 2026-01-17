@@ -132,73 +132,73 @@
     },
     "categories": {
         "investments": {
-            "title": "Off-Market Real Estate Investment",
+            "title": "Global RE Investments",
             "shortTitle": "Investments",
-            "description": "Comprehensive wealth management. We detect high-yield opportunities in the global market.",
-            "longDescription": "Our Real Estate Investments division does not just search for assets; it designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products tailored to the risk and return profile of institutional investors and family offices.",
+            "description": "Comprehensive global investment portfolio management. High-yield opportunities.",
+            "longDescription": "Our Global Investments division designs capital strategies. We analyze international market trends to offer products that fit the risk and return profile of institutional investors and family offices worldwide.",
             "priceRange": "From €1M to €500M",
             "details": "Tailored strategies: Core, Value-Add, and Opportunistic.",
             "features": [
-                "Macroeconomic and local market analysis.",
+                "Global macroeconomic analysis.",
                 "Exhaustive technical, legal, and financial Due Diligence.",
-                "Structuring of investment vehicles.",
+                "Structuring of international investment vehicles.",
                 "Post-acquisition Asset Management."
             ]
         },
         "hotels": {
-            "title": "Hotels Off-Market Investment",
+            "title": "Hotels Off Market",
             "shortTitle": "Hotels",
-            "description": "Exclusive selection of hotel assets in major tourist areas of Spain and Europe.",
-            "longDescription": "The hotel sector is the jewel of our crown. We have direct access to owners of chains, independent boutique hotels, and luxury resorts operating 'off-market'. We look for assets with repositioning potential, flexible management contracts, or stabilized yields in irreplaceable locations.",
+            "description": "Exclusive hotel assets in prime global destinations.",
+            "longDescription": "The hotel sector is our specialty. We access owners of chains and luxury resorts operating 'off-market'. We seek assets in unrepeatable locations worldwide.",
             "priceRange": "From €1M to €150M",
             "details": "Management, franchise, or pure purchase opportunities.",
             "features": [
-                "Urban hotels in European capitals.",
-                "Beachfront vacation resorts.",
-                "Buildings with hotel use for renovation.",
+                "Urban hotels in global capitals (Madrid, Paris, London, NYC).",
+                "Holiday resorts on the beachfront (Mediterranean, Caribbean).",
+                "Buildings with hotel licenses for renovation.",
                 "Sale & Leaseback with top-tier operators."
             ]
         },
         "land": {
-            "title": "Land Off-Market Investment",
+            "title": "Land Off Market",
             "shortTitle": "Land",
-            "description": "Finalist, buildable, and rustic land in strategic locations for major developments.",
-            "longDescription": "The basis of every great project is the land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use.",
+            "description": "Strategies land for large developments worldwide.",
+            "longDescription": "Land is the foundation. Our portfolio includes finalist plots (Ready-to-build) and large tracts for renewable energy or agricultural use globally.",
             "priceRange": "From €1M to €150M",
             "details": "Residential, logistical, commercial, and tertiary land.",
             "features": [
-                "Residential land for new construction promotions.",
-                "Logistical land in communication hubs.",
+                "Residential land for new global developments.",
+                "Logistics land in strategic transport hubs.",
                 "Tertiary land for shopping centers or offices.",
-                "Urban management and compensation advice."
+                "Urban planning management."
             ]
         },
         "luxury": {
-            "title": "Luxury Off-Market Properties",
-            "shortTitle": "Luxury",
-            "description": "Unique villas and penthouses in prime locations. The ultimate expression of residential exclusivity.",
-            "longDescription": "We understand luxury not just as price, but as a life experience. Our 'Luxury Properties' selection includes the most exclusive residences on the market.",
+            "title": "Luxury Off Market",
+            "shortTitle": "Luxury Assets",
+            "description": "Unique villas and penthouses in prime global locations.",
+            "longDescription": "Luxury is a living experience. Our 'Luxury Off Market' selection includes exclusive residences: villas, penthouses in financial centers, or historic mansions. Privacy and security guaranteed.",
             "priceRange": "From €1M to €150M",
             "details": "Prime and Ultra-Prime residential assets.",
             "features": [
-                "Signature villas with 24h private security.",
-                "Penthouses with panoramic views in financial centers.",
+                "Designer villas with 24h private security.",
+                "Penthouses with panoramic views.",
                 "Recreational estates and historic palaces.",
                 "Concierge and lifestyle management services."
             ]
         },
         "wineries": {
-            "title": "Wineries Off-Market Investment",
+            "title": "Wineries Off Market",
             "shortTitle": "Wineries",
-            "description": "Investments in the wine sector: wineries with D.O., vineyards, and production centers.",
-            "longDescription": "Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions.",
+            "description": "Investments in the global wine sector: wineries and vineyards.",
+            "longDescription": "Investing in a winery is investing in culture. We offer opportunities in prestigious regions (Rioja, Bordeaux, Napa Valley). We analyze production capacity and brand value.",
             "priceRange": "From €1M to €150M",
             "details": "Productive assets with real estate and brand value.",
             "features": [
                 "Wineries with Qualified Designation of Origin.",
-                "Centennial vineyards in full production.",
-                "Wine tourism facilities and winery hotels.",
-                "Wine brands with international distribution."
+                "Centenary vineyards in full production.",
+                "Wine tourism facilities.",
+                "International wine brands."
             ]
         }
     },
