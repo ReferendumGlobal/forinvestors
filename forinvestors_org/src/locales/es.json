@@ -45,6 +45,25 @@
         "card_3_title": "Red Global",
         "card_3_desc": "Conexión directa con Family Offices."
     },
+    "services": {
+        "title": "NUESTROS SERVICIOS",
+        "subtitle": "Ecosistema Inmobiliario Inteligente",
+        "investors": {
+            "title": "Para Inversores",
+            "desc": "Acceda a oportunidades off-market verificadas con nuestro algoritmo de Smart Matching™. Sin ruido, solo negocios reales.",
+            "cta": "Empezar a Invertir"
+        },
+        "owners": {
+            "title": "Para Propietarios",
+            "desc": "Venda su activo con total discreción a nuestra red global de Family Offices y fondos de inversión.",
+            "cta": "Vender mi Activo"
+        },
+        "agencies": {
+            "title": "Para Agencias",
+            "desc": "Únase a la alianza global. Comparta sus mandatos exclusivos y acceda a nuestra demanda cualificada.",
+            "cta": "Unirse a la Alianza"
+        }
+    },
     "agencies_page": {
         "title": "Colabora con la Élite del Real Estate",
         "subtitle": "Únase a nuestra red de agencias verificadas y comparta operaciones con total seguridad.",
