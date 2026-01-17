@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const BASE_URL = 'https://offmarketinvests.com';
+const BASE_URL = 'https://topoffmarket.com';
 const LANGUAGES = ['es', 'en', 'fr', 'de', 'ru', 'zh', 'ar', 'pt', 'ja', 'hi'];
 
 // Core pages (excluding dynamic IDs which would need database access, but including static routes)

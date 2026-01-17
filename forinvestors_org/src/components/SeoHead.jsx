@@ -7,7 +7,7 @@ export default function SeoHead({ title, description, image, routeKey }) {
     const { i18n } = useTranslation();
     const lang = i18n.language;
     const dir = lang === 'ar' ? 'rtl' : 'ltr';
-    const domain = 'https://offmarketinvests.com'; // Production domain
+    const domain = 'https://topoffmarket.com'; // Production domain
 
     // Generate Hreflang tags
     const renderHreflangs = () => {
