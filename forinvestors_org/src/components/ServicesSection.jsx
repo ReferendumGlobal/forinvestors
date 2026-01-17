@@ -2,28 +2,29 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { TrendingUp, Key, Building2, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function ServicesSection() {
     const { t } = useTranslation();
+    const { lang } = useParams();
 
     const services = [
         {
             id: 'investors',
             icon: TrendingUp,
-            link: '/investments',
+            link: `/${lang}/investments`,
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80"
         },
         {
             id: 'owners',
             icon: Key,
-            link: '/sell',
+            link: `/${lang}/sell`,
             image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80"
         },
         {
             id: 'agencies',
             icon: Building2,
-            link: '/agencies',
+            link: `/${lang}/agencies`,
             image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"
         }
     ];

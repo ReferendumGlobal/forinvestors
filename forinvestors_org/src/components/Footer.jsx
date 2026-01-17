@@ -73,7 +73,7 @@ export default function Footer() {
 
                     <div className="border-t border-white/5 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-sm text-gray-600">
-                            &copy; {new Date().getFullYear()} Urbina Agency LLC. All rights reserved. <span className="opacity-30 ml-2 text-xs text-red-500">v2.3 (AI DEBUG)</span>
+                            &copy; {new Date().getFullYear()} Urbina Agency LLC. All rights reserved. <span className="opacity-30 ml-2 text-xs">v2.3</span>
                         </p>
                         <div className="flex items-center gap-4">
                             <a href="#" className="p-2 bg-white/5 rounded-full text-gold-400 hover:text-white hover:bg-gold-500 transition-all duration-300">
