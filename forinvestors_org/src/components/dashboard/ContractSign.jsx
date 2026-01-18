@@ -16,6 +16,19 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
     const today = new Date();
     const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+    // BANK DETAILS (Confidential)
+    const BANK_DETAILS = `
+**Beneficiary**: URBINA AGENCY LLC
+
+**For International Transfers:**
+*   **SWIFT / BIC**: CLNOUS66
+*   **Account Number**: 692101525685
+
+**For Domestic US Transfers:**
+*   **Routing Number (ABA)**: 091017138
+*   **Account Number**: 692101525685
+`;
+
     // --- TEMPLATE GENERATORS ---
 
     const generateBuyMandate = () => {
@@ -78,7 +91,12 @@ ${purposeText}
 ### 5. URBINA AGENCY’s fee
 **SEVEN PERCENT (7%)** of acquisition price + taxes.
 
+### 6. Payment Instructions
+All fees shall be paid to the following account:
+${BANK_DETAILS}
+
 ...
+
 
 **URBINA AGENCY LLC**               **THE CLIENT**
 [System Signed]                     [See Signature Below]
@@ -116,7 +134,11 @@ URBINA AGENCY Authorized to collaborate with network agencies.
 **SEVEN PERCENT (7%)** of sale price + VAT.
 Payable within **15 business days**.
 
+### 5. Payment Details
+${BANK_DETAILS}
+
 ...
+
 
 **URBINA AGENCY LLC**               **THE OWNERS**
 [System Signed]                     [See Signature Below]
@@ -159,7 +181,8 @@ Plus applicable taxes.
 
 ### 5. Payment Terms
 The Partner shall pay Urbina Agency within **15 Business Days** of receiving their commission.
-Payment to Urbina Agency LLC accounts (SWIFT: CLNOUS66).
+Payment to:
+${BANK_DETAILS}
 
 ...
 
