@@ -1,9 +1,10 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
 import SignaturePad from './SignaturePad';
 import { FileText, Download, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import html2pdf from 'html2pdf.js';
 
 export default function ContractSign({ mode = 'standalone', contractType = 'buy_mandate', criteria, sellerData, agencyData, idUrl, onSuccess, onBack }) {
     const { profile, user } = useAuth();
@@ -11,10 +12,21 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
     const [loading, setLoading] = useState(true);
     const [contractUrl, setContractUrl] = useState(null);
     const [existingSignature, setExistingSignature] = useState(null);
+    const contractRef = useRef(null);
 
     // Common Date
     const today = new Date();
     const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    // BANK DETAILS (Confidential)
+    // TODO: User to verify these details
+    const BANK_DETAILS = `
+**Beneficiary**: URBINA AGENCY LLC
+**Bank Name**: (US BANK)
+**SWIFT / BIC**: CLNOUS66
+**Account Number**: (CONFIRM ENDING)
+**Reference**: Invoice # / Mandate
+`;
 
     // --- TEMPLATE GENERATORS ---
 
@@ -36,7 +48,7 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
 * Property Type: **${p.type || 'Any'}**
 * Price Range: **${p.priceRange || 'Any'}**
 * Specifics: **${p.other || 'None'}**
-`).join('\n');
+`).join('\\n');
         } else {
             // Fallback for old single format
             purposeText = `
@@ -78,6 +90,10 @@ ${purposeText}
 ### 5. URBINA AGENCY’s fee
 **SEVEN PERCENT (7%)** of acquisition price + taxes.
 
+### 6. Payment Instructions
+All fees shall be paid to the following account:
+${BANK_DETAILS}
+
 ...
 
 **URBINA AGENCY LLC**               **THE CLIENT**
@@ -115,6 +131,9 @@ URBINA AGENCY Authorized to collaborate with network agencies.
 ### 4. Fees (Commission)
 **SEVEN PERCENT (7%)** of sale price + VAT.
 Payable within **15 business days**.
+
+### 5. Payment Details
+${BANK_DETAILS}
 
 ...
 
@@ -159,7 +178,8 @@ Plus applicable taxes.
 
 ### 5. Payment Terms
 The Partner shall pay Urbina Agency within **15 Business Days** of receiving their commission.
-Payment to Urbina Agency LLC accounts (SWIFT: CLNOUS66).
+Payment to:
+${BANK_DETAILS}
 
 ...
 
@@ -237,6 +257,18 @@ Payment to Urbina Agency LLC accounts (SWIFT: CLNOUS66).
         }
     };
 
+    const handleDownload = () => {
+        const element = contractRef.current;
+        const opt = {
+            margin: 10,
+            filename: `Urbina_Agency_Contract_${contractType}.pdf`,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().from(element).set(opt).save();
+    };
+
     if (loading) return <div className="text-white text-center p-10"><Loader2 className="animate-spin inline mr-2" /> Loading contract...</div>;
 
     if (signed && mode === 'standalone') {
@@ -252,6 +284,21 @@ Payment to Urbina Agency LLC accounts (SWIFT: CLNOUS66).
                     <img src={existingSignature} alt="Signature" className="bg-white rounded p-2 h-20 border border-gray-600 mb-2" />
                     <p className="text-xs text-gray-400">Signed on {formattedDate}</p>
                 </div>
+
+                {/* Download Section */}
+                <div className="mt-8 pt-8 border-t border-white/10">
+                    <p className="text-gray-400 mb-4">Download your copy of the agreement:</p>
+                    <button
+                        onClick={() => window.location.reload()} // For now just reload to see the full view if needed, or implement full view toggle. 
+                        // Actually better to offer a "View/Download" button that opens the contract content again.
+                        className="bg-gold-500 hover:bg-gold-600 text-black font-bold py-2 px-6 rounded-lg inline-flex items-center gap-2"
+                    >
+                        <FileText size={18} /> View & Download PDF
+                    </button>
+                    {/* Note: Ideally we re-render the contract content hidden and download it. 
+                        For "standalone" mode where we only see success, we might want to toggle "showContract" state.
+                    */}
+                </div>
             </div>
         );
     }
@@ -259,27 +306,59 @@ Payment to Urbina Agency LLC accounts (SWIFT: CLNOUS66).
     return (
         <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="bg-midnight-800 p-6 rounded-xl border border-white/5">
-                <div className="flex items-center gap-3 mb-6">
-                    <FileText className="text-gold-500" size={28} />
-                    <h1 className="text-2xl font-bold text-white">
-                        {contractType === 'sale_mandate' ? 'Exclusive Sales Mandate' :
-                            contractType === 'agency_collaboration' ? 'Agency Collaboration Agreement' :
-                                'Property Search Mandate'}
-                    </h1>
+                <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                        <FileText className="text-gold-500" size={28} />
+                        <h1 className="text-2xl font-bold text-white">
+                            {contractType === 'sale_mandate' ? 'Exclusive Sales Mandate' :
+                                contractType === 'agency_collaboration' ? 'Agency Collaboration Agreement' :
+                                    'Property Search Mandate'}
+                        </h1>
+                    </div>
+                    {/* Download Button visible if signed or just previewing? Usually only if signed. 
+                        But we can allow download blank too. 
+                    */}
+                    <button
+                        onClick={handleDownload}
+                        className="text-gold-400 hover:text-white flex items-center gap-2 text-sm"
+                    >
+                        <Download size={16} /> Download PDF
+                    </button>
                 </div>
 
-                <div className="bg-white text-black p-8 rounded shadow-inner h-[500px] overflow-y-auto font-serif text-sm leading-relaxed mb-8">
+                <div
+                    ref={contractRef}
+                    className="bg-white text-black p-8 rounded shadow-inner h-[500px] overflow-y-auto font-serif text-sm leading-relaxed mb-8 relative"
+                >
+                    {/* Watermark/Header for PDF */}
+                    <div className="hidden print:block mb-4 text-center border-b pb-4">
+                        <h1 className="text-2xl font-bold">URBINA AGENCY LLC</h1>
+                        <p className="text-xs text-gray-500">Official Document</p>
+                    </div>
+
                     <div className="whitespace-pre-wrap font-serif" dangerouslySetInnerHTML={{ __html: getContractContent().replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/## (.*)/g, '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>').replace(/### (.*)/g, '<h3 class="text-lg font-bold mt-3 mb-1">$1</h3>') }} />
+
+                    {/* Signature Append for PDF generation if needed */}
+                    {existingSignature && (
+                        <div className="mt-8 border-t pt-4">
+                            <p>Signed by Client:</p>
+                            <img src={existingSignature} className="h-16" />
+                        </div>
+                    )}
                 </div>
 
-                <div className="bg-yellow-900/20 border border-yellow-500/20 p-4 rounded-lg mb-8 flex gap-3">
-                    <AlertCircle className="text-yellow-500 shrink-0" />
-                    <p className="text-sm text-gray-300">
-                        By signing below, you acknowledge and agree to the terms herein.
-                    </p>
-                </div>
+                {!signed && (
+                    <>
+                        <div className="bg-yellow-900/20 border border-yellow-500/20 p-4 rounded-lg mb-8 flex gap-3">
+                            <AlertCircle className="text-yellow-500 shrink-0" />
+                            <p className="text-sm text-gray-300">
+                                By signing below, you acknowledge and agree to the terms herein.
+                            </p>
+                        </div>
 
-                <SignaturePad onSave={handleSignatureSave} />
+                        <SignaturePad onSave={handleSignatureSave} />
+                    </>
+                )}
 
                 {onBack && (
                     <button onClick={onBack} className="mt-4 text-gray-500 hover:text-white text-sm">

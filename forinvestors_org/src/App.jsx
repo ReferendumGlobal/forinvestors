@@ -113,6 +113,7 @@ function App() {
               <Route path="admin" element={<AdminPanel />} />
               <Route path="users" element={<AdminPanel />} /> {/* Redirect users nav to Admin Panel */}
               <Route path="properties" element={<PropertyManager />} />
+              <Route path="opportunities" element={<Opportunities />} />
             </Route>
 
             {/* Public Website Routes */}
