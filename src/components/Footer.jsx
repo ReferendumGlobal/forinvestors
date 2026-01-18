@@ -15,7 +15,7 @@ export default function Footer() {
         <>
             <footer className="bg-midnight-950 border-t border-white/10 pt-16 pb-8">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                         <div>
                             <h3 className="text-xl font-serif font-bold text-white mb-4">PARA INVERSORES</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
@@ -24,6 +24,24 @@ export default function Footer() {
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
                                 Operado por Urbina Agency LLC
                             </div>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Nuestra Red Global</h3>
+                            <ul className="space-y-3">
+                                <li>
+                                    <a href="https://parainversores.com" target="_blank" rel="noopener noreferrer" className="block group">
+                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">ParaInversores.com</span>
+                                        <span className="text-xs text-gray-500 block">España y Europa</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://topoffmarket.com" target="_blank" rel="noopener noreferrer" className="block group">
+                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">TopOffMarket.com</span>
+                                        <span className="text-xs text-gray-500 block">Mercado Internacional</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
 
                         <div>
