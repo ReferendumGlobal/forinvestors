@@ -177,7 +177,7 @@ export default function SellAssets() {
                                     onClick={() => setSubmitted(false)}
                                     className="mt-8 text-gold-400 hover:text-gold-300 hover:underline"
                                 >
-                                    Enviar otra propiedad
+                                    {t('forms.buttons.send_another')}
                                 </button>
                             </motion.div>
                         ) : (
@@ -227,11 +227,11 @@ export default function SellAssets() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.priceRange')} (Min. 1M €)</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.priceRange')}</label>
                                         <input
                                             type="text"
                                             className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                            placeholder="Min. 1.000.000 €"
+                                            placeholder={t('forms.placeholders.capital_example')}
                                             value={formState.price}
                                             onChange={e => setFormState({ ...formState, price: e.target.value })}
                                         />
@@ -239,24 +239,24 @@ export default function SellAssets() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Ubicación del Activo</label>
+                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation')}</label>
                                     <input
                                         type="text"
                                         required
                                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                        placeholder="Ej: Barrio de Salamanca, Madrid"
+                                        placeholder={t('forms.placeholders.location_example')}
                                         value={formState.location}
                                         onChange={e => setFormState({ ...formState, location: e.target.value })}
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Detalles de la Propiedad</label>
+                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
                                     <textarea
                                         rows={4}
                                         required
                                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                        placeholder="Tipo de inmueble, m2, estado actual..."
+                                        placeholder={t('forms.placeholders.message_example')}
                                         value={formState.propertyDetails}
                                         onChange={e => setFormState({ ...formState, propertyDetails: e.target.value })}
                                     />
@@ -264,7 +264,7 @@ export default function SellAssets() {
 
                                 <div>
                                     <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                                        Dossier / Fotos (Opcional) <AlertCircle size={14} />
+                                        {t('forms.labels.dossier')} <AlertCircle size={14} />
                                     </label>
                                     <div className="flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg hover:bg-midnight-950/50 transition-colors relative cursor-pointer">
                                         <input
@@ -283,7 +283,7 @@ export default function SellAssets() {
                                                 <>
                                                     <Upload className="mx-auto h-10 w-10 text-gray-500" />
                                                     <p className="mt-1 text-sm text-gray-400">
-                                                        <span className="text-gold-400 font-medium">Subir archivo</span> o arrastrar
+                                                        <span className="text-gold-400 font-medium">{t('forms.buttons.upload_file')}</span> {t('forms.buttons.or_drag')}
                                                     </p>
                                                 </>
                                             )}
