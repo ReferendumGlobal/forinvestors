@@ -16,6 +16,47 @@
         "subtitle": "Nous travaillons avec un portefeuille qui <strong>n'est pas publié sur les portails immobiliers</strong> mais qui est de haute qualité. Nos clients nous confient des secrets précieux, et nous leur rendons des affaires fructueuses.",
         "cta": "Entrer dans le Portefeuille"
     },
+    "services": {
+        "title": "NOS SERVICES",
+        "subtitle": "Écosystème Immobilier Intelligent",
+        "investors": {
+            "title": "Pour Investisseurs",
+            "desc": "Accédez à des opportunités hors marché vérifiées avec notre algorithme Smart Matching™. Sans bruit, uniquement de vraies affaires.",
+            "cta": "Commencer à Investir"
+        },
+        "owners": {
+            "title": "Pour Propriétaires",
+            "desc": "Vendez votre actif en toute discrétion à notre réseau mondial de Family Offices et fonds d'investissement.",
+            "cta": "Vendre mon Actif"
+        },
+        "agencies": {
+            "title": "Pour Agences",
+            "desc": "Rejoignez l'alliance mondiale. Partagez vos mandats exclusifs et accédez à notre demande qualifiée.",
+            "cta": "Rejoindre l'Alliance"
+        }
+    },
+    "agencies_page": {
+        "title": "Rejoignez l'Alliance Mondiale d'Élite",
+        "subtitle": "Connectez-vous avec notre réseau mondial d'agences et partagez le flux d'affaires transfrontalier.",
+        "access_button": "Demander l'Accès Global",
+        "disclaimer": "* Accès restreint. Activation manuelle requise après signature du contrat global.",
+        "collaboration_model": "Collaboration Mondiale",
+        "collaboration_text_1": "Nous sommes une **Alliance Mondiale**. Notre accord de collaboration protège votre mandat et garantit un partage de commission équitable 50/50 sur les opérations internationales.",
+        "collaboration_text_2": "Rejoignez notre plateforme privée pour :",
+        "benefits_list": [
+            "Télécharger des propriétés exclusives visibiles par des investisseurs mondiaux vérifiés.",
+            "Recevoir des correspondances de capitaux internationaux.",
+            "Accéder à notre liste 'Recherche Mondiale'."
+        ],
+        "verified_demand_title": "Demande Mondiale Vérifiée",
+        "verified_demand_text": "Nous vous apportons des acheteurs avec Preuve de Fonds (POF) vérifiée du monde entier.",
+        "global_exposure_title": "Exposition Mondiale",
+        "global_exposure_text": "Vos actifs seront présentés à Dubaï, New York, Londres et au-delà.",
+        "form_title": "Rejoindre l'Alliance Mondiale",
+        "form_subtitle": "Compléter le profil pour la collaboration internationale.",
+        "form_explanation": "Entrez les détails de l'agence. Nous vous contacterons pour un mandat global.",
+        "seo_title": "Agences Off-Market Mondiales"
+    },
     "legacy": {
         "title": "Un Héritage d'Honneur",
         "text1": "La tradition de l'Urbina Agency ne naît pas sur le marché, mais dans l'honneur et le service. Notre ADN vient de Francisco et Angelita Urbina, mes grands-parents.",
@@ -38,6 +79,26 @@
     "seo": {
         "title": "Investissement Immobilier Off-Market",
         "description": "Portefeuille exclusif d'hôtels, de terrains, de vignobles et de propriétés ultra-luxueuses. Gestion experte par OffMarket Invests."
+    },
+    "innovation": {
+        "subtitle": "Technologie Immobilière",
+        "title": "Algorithme Smart Matching™",
+        "description": "Nous avons remplacé le tableau d'affichage traditionnel par un moteur d'intelligence artificielle qui fait correspondre l'offre et la demande en quelques millisecondes, garantissant une confidentialité absolue.",
+        "engine_text": "Notre moteur analyse plus de 50 points de données par actif pour trouver l'investisseur exact, éliminant le bruit et connectant le capital réel aux opportunités réelles.",
+        "features": {
+            "algo": {
+                "title": "Algorithmes de Confidentialité",
+                "desc": "Vos données ne sont jamais exposées. Le système ne révèle l'opportunité que lorsqu'il détecte une correspondance de 100 % avec des critères d'investissement pré-approuvés."
+            },
+            "privacy": {
+                "title": "Chiffrement des Actifs",
+                "desc": "Les informations sensibles sur la propriété (emplacement exact, cadastre) restent chiffrées et ne sont divulguées que sous signature de confidentialité gérée numériquement."
+            },
+            "speed": {
+                "title": "Connexion Instantanée",
+                "desc": "Oubliez les mois d'attente. Dès qu'une propriété entre dans notre base de données, elle notifie instantanément les investisseurs qualifiés qui la recherchent."
+            }
+        }
     },
     "search": {
         "title": "Recherche d'Actifs Off-Market",
@@ -142,28 +203,6 @@
             "answer": "Cela dépend du mandat. Dans les opérations directes off-market, nos honoraires sont généralement inclus dans le prix de vente ou convenus via un mandat d'achat (buy-side mandate)."
         }
     ],
-    "agencies_page": {
-        "title": "Alliance Mondiale pour Agences",
-        "subtitle": "Rejoignez le plus grand réseau mondial d'agences indépendantes. Nous centralisons la demande de grands capitaux.",
-        "access_button": "Accès Partenaires (Agences & Investisseurs)",
-        "disclaimer": "* Accès restreint. Nécessite une activation manuelle après signature du contrat.",
-        "collaboration_model": "Modèle de Collaboration",
-        "collaboration_text_1": "Nous ne sommes pas un portail, nous sommes une **Alliance**. Nous signons un accord de collaboration qui protège votre mandat et garantit un partage équitable des commissions (50/50) sur chaque opération conclue conjointement.",
-        "collaboration_text_2": "Une fois le contrat signé, vous aurez accès à notre plateforme privée où vous pourrez :",
-        "benefits_list": [
-            "Télécharger votre portefeuille de propriétés exclusives visibles uniquement par des investisseurs vérifiés.",
-            "Recevoir des demandes automatisées d'investisseurs correspondant à vos actifs.",
-            "Accéder à notre liste « Recherché » (Wanted) par le Grand Capital."
-        ],
-        "verified_demand_title": "Demande Vérifiée",
-        "verified_demand_text": "Nous vous apportons des acheteurs qui ont déjà passé la Preuve de Fonds (POF).",
-        "global_exposure_title": "Exposition Mondiale",
-        "global_exposure_text": "Vos actifs locaux voyageront directement vers des bureaux à Dubaï, New York et Londres.",
-        "form_title": "Demander l'Accès à l'Alliance",
-        "form_subtitle": "Complétez le profil pour recevoir le contrat de collaboration.",
-        "form_explanation": "Entrez les détails de votre agence pour vérifier l'éligibilité. Nous vous contacterons pour formaliser le mandat de vente partagé.",
-        "seo_title": "Agences Investissement Off-Market"
-    },
     "contact_global": {
         "title": "Contactez-nous",
         "explanation": "Pour consulter notre portefeuille exclusif ou demander une recherche de propriété, nous devons vérifier votre profil d'investissement. Veuillez remplir le formulaire avec vos coordonnées professionnelles et joindre une Preuve de Fonds (POF) si disponible."
@@ -244,7 +283,9 @@
         },
         "goals": {
             "buy": "Je veux Investir / Acheter",
-            "sell": "Je veux Vendre (Exclusif)"
+            "sell": "Je veux Vendre (Exclusif)",
+            "request_access": "Je demande l'accès à la Plateforme Privée pour voir les opportunités exclusives.",
+            "goal_label": "Quel est votre objectif ?"
         },
         "agency_types": {
             "hotels": "Hôtels",

@@ -16,6 +16,47 @@
         "subtitle": "我们管理的投资组合<strong>未在房地产门户网站上发布</strong>，但品质卓越。我们的客户托付给我们宝贵的秘密，我们将成功回报给他们。",
         "cta": "进入投资组合"
     },
+    "services": {
+        "title": "我们的服务",
+        "subtitle": "智能房地产生态系统",
+        "investors": {
+            "title": "对于投资者",
+            "desc": "通过我们的智能匹配 (Smart Matching™) 算法访问经过验证的场外交易机会。无干扰，只有真正的业务。",
+            "cta": "开始投资"
+        },
+        "owners": {
+            "title": "对于业主",
+            "desc": "向我们的全球家族办公室和投资基金网络谨慎出售您的资产。",
+            "cta": "出售我的资产"
+        },
+        "agencies": {
+            "title": "对于代理机构",
+            "desc": "加入全球联盟。分享您的独家授权并获得我们合格的需求。",
+            "cta": "加入联盟"
+        }
+    },
+    "agencies_page": {
+        "title": "加入全球精英联盟",
+        "subtitle": "与我们的全球代理网络联系并共享跨境交易流。",
+        "access_button": "申请全球访问",
+        "disclaimer": "* 访问受限。签署全球合同后需要手动激活。",
+        "collaboration_model": "全球合作",
+        "collaboration_text_1": "我们要建立一个**全球联盟**。我们的合作协议保护您的授权，并保证在国际业务中公平地按 50/50 分配佣金。",
+        "collaboration_text_2": "加入我们的私人平台以：",
+        "benefits_list": [
+            "上传经过验证的全球投资者可见的独家房产。",
+            "接收来自国际资本的匹配。",
+            "访问我们的“全球需求”列表。"
+        ],
+        "verified_demand_title": "经过验证的全球需求",
+        "verified_demand_text": "我们将为您带来经过验证的资金证明 (POF) 的全球买家。",
+        "global_exposure_title": "全球曝光",
+        "global_exposure_text": "您的资产将在迪拜、纽约、伦敦等地展示。",
+        "form_title": "加入全球联盟",
+        "form_subtitle": "完善国际合作资料。",
+        "form_explanation": "输入代理机构详细信息。我们将与您联系以获得全球授权。",
+        "seo_title": "全球场外交易代理机构"
+    },
     "legacy": {
         "title": "荣誉的传承",
         "text1": "Urbina Agency 的传统并非诞生于市场，而是源于荣誉和服务。我们的基因来自我的祖父母 Francisco 和 Angelita Urbina。",
@@ -38,6 +79,26 @@
     "seo": {
         "title": "场外房地产投资",
         "description": "独家酒店、土地、酒庄和超豪华房产投资组合。由 OffMarket Invests 专业管理。"
+    },
+    "innovation": {
+        "subtitle": "房地产科技",
+        "title": "智能匹配 (Smart Matching™) 算法",
+        "description": "我们要用能在几毫秒内匹配供需的人工智能引擎取代了传统的布告栏，保证绝对的隐私。",
+        "engine_text": "我们的引擎分析每个资产超过 50 个数据点以找到准确的投资者，消除噪音并将真正的资本与真正的机会联系起来。",
+        "features": {
+            "algo": {
+                "title": "隐私算法",
+                "desc": "您的数据从不公开。系统只有在检测到与预先批准的投资标准 100% 匹配时才会揭示机会。"
+            },
+            "privacy": {
+                "title": "资产加密",
+                "desc": "敏感的房产信息（确切位置、地籍）保持加密，仅在数字管理的保密签名下发布。"
+            },
+            "speed": {
+                "title": "即时连接",
+                "desc": "忘记数月的等待。房产进入我们要数据库的那一刻，它会立即通知正在寻找它的合格投资者。"
+            }
+        }
     },
     "search": {
         "title": "非公开资产搜索",
@@ -142,28 +203,6 @@
             "answer": "这取决于委托。在直接的非公开市场操作中，我们的费用通常包含在销售价格中，或通过买方委托协议商定。"
         }
     ],
-    "agencies_page": {
-        "title": "全球代理联盟",
-        "subtitle": "加入全球最大的独立代理网络。我们集中大资本的需求。",
-        "access_button": "合作伙伴入口（代理与投资者）",
-        "disclaimer": "* 受限访问。签署合同后需手动激活。",
-        "collaboration_model": "合作模式",
-        "collaboration_text_1": "我们不是门户网站，我们是一个**联盟**。我们签署合作协议，保护您的委托权，并保证在每笔共同完成的交易中公平分配佣金（50/50）。",
-        "collaboration_text_2": "签署合同后，您将获得访问我们私人平台的权限，您可以：",
-        "benefits_list": [
-            "上传仅对经过验证的投资者可见的独家房产组合。",
-            "接收与您的资产匹配的投资者的自动请求。",
-            "访问我们大资本的“需求”（Wanted）列表。"
-        ],
-        "verified_demand_title": "经过验证的需求",
-        "verified_demand_text": "我们为您带来已通过资金证明（POF）的买家。",
-        "global_exposure_title": "全球曝光",
-        "global_exposure_text": "您的本地资产将直接送达迪拜、纽约和伦敦的办公室。",
-        "form_title": "申请加入联盟",
-        "form_subtitle": "完善资料以接收合作合同。",
-        "form_explanation": "输入您的代理机构详细信息以验证资格。我们将联系您以正规化共享销售委托。",
-        "seo_title": "场外投资代理"
-    },
     "contact_global": {
         "title": "联系我们",
         "explanation": "为了查阅我们的独家投资组合或请求房产搜索，我们需要验证您的投资资料。请填写表格并提供您的专业详细信息，如有需要，请附上资金证明 (POF)。"
@@ -244,7 +283,9 @@
         },
         "goals": {
             "buy": "我想投资 / 购买",
-            "sell": "我想出售（独家）"
+            "sell": "我想出售（独家）",
+            "request_access": "我请求访问私人平台以查看独家机会。",
+            "goal_label": "您的目标是什么？"
         },
         "agency_types": {
             "hotels": "酒店",
