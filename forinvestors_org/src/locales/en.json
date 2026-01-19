@@ -96,19 +96,28 @@
         "card_3_title": "Global Data",
         "card_3_desc": "Cross-referenced data from European, American, and Asian markets."
     },
-    "agencies_page": {
+    "agency_page": {
         "title": "Join the Global Elite Alliance",
-        "subtitle": "Connect with our worldwide network of agencies and share cross-border deal flow.",
-        "access_button": "Request Global Access",
+        "subtitle": "Prove yourself as an exquisite Off-Market agency and receive 50% commission on our portfolio assets.",
+        "why_partner_title": "Alliance Benefits",
+        "access_button": "Request Collaboration",
         "disclaimer": "* Restricted access. Manual activation required after signing global contract.",
         "collaboration_model": "Global Collaboration",
-        "collaboration_text_1": "We are a **Global Alliance**. Our collaboration agreement protects your mandate and guarantees a fair 50/50 commission split on international operations.",
-        "collaboration_text_2": "Join our private platform to:",
-        "benefits_list": [
-            "Upload exclusive properties visible to verified global investors.",
-            "Receive matches from international capital.",
-            "Access our 'Global Wanted' list."
+        "benefits": [
+            {
+                "title": "50% Commission",
+                "desc": "Receive 50% of the sales commission on every deal closed with our clients."
+            },
+            {
+                "title": "Fast Sale",
+                "desc": "Our qualified investors buy properties in record time."
+            },
+            {
+                "title": "Unlimited Portfolio",
+                "desc": "Upload as many assets as you wish to our private platform."
+            }
         ],
+        "collaboration_text_1": "We are a **Global Alliance**. Our collaboration agreement protects your mandate and guarantees a fair 50/50 commission split on international operations.",
         "verified_demand_title": "Verified Global Demand",
         "verified_demand_text": "We bring you buyers with verified Proof of Funds (POF) from around the world.",
         "global_exposure_title": "Worldwide Exposure",
@@ -274,14 +283,16 @@
     "forms": {
         "labels": {
             "name": "Full Name",
-            "companyName": "Company Name (Optional)",
+            "companyName": "Legal Agency Name",
+            "companyNameOptional": "Company Name (Optional)",
             "fullName": "Full Name",
             "email": "Professional Email",
+            "website": "Website",
             "phone": "Phone",
             "city": "City",
             "country": "Country",
             "agencyName": "Agency Name",
-            "taxId": "Tax ID / EIN / VAT Number",
+            "taxId": "Tax ID / VAT Number",
             "contactPerson": "Contact Person",
             "propertiesCount": "# of Exclusive Properties",
             "priceRange": "Price Range (€)",

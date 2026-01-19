@@ -36,26 +36,35 @@
             "cta": "Juntar-se à Aliança"
         }
     },
-    "agencies_page": {
+    "agency_page": {
         "title": "Junte-se à Aliança de Elite Global",
-        "subtitle": "Conecte-se com nossa rede mundial de agências e compartilhe fluxo de negócios transfronteiriços.",
-        "access_button": "Solicitar Acesso Global",
-        "disclaimer": "* Acesso restrito. Ativação manual necessária após assinatura do contrato global.",
+        "subtitle": "Prove ser uma agência Off-Market requintada e receba 50% de comissão sobre os nossos ativos em carteira.",
+        "why_partner_title": "Vantagens da Aliança",
+        "access_button": "Solicitar Colaboração",
+        "disclaimer": "* Acesso restrito. Ativação manual necessária após assinatura do contrato.",
         "collaboration_model": "Colaboração Global",
-        "collaboration_text_1": "Somos uma **Aliança Global**. Nosso acordo de colaboração protege seu mandato e garante uma divisão de comissão justa de 50/50 em operações internacionais.",
-        "collaboration_text_2": "Junte-se à nossa plataforma privada para:",
-        "benefits_list": [
-            "Carregar propriedades exclusivas.",
-            "Receber correspondências de capital internacional.",
-            "Acessar nossa lista de 'Procura Global'."
+        "benefits": [
+            {
+                "title": "50% de Comissão",
+                "desc": "Receba 50% da comissão de venda em cada operação fechada com os nossos clientes."
+            },
+            {
+                "title": "Venda Rápida",
+                "desc": "Os nossos investidores qualificados compram propriedades em tempo recorde."
+            },
+            {
+                "title": "Portfólio Ilimitado",
+                "desc": "Carregue todos os ativos que desejar na nossa plataforma privada."
+            }
         ],
-        "verified_demand_title": "Demanda Global Verificada",
+        "collaboration_text_1": "Somos uma **Aliança Global**. O nosso acordo de colaboração protege o seu mandato e garante uma divisão justa de comissão 50/50 em operações internacionais.",
+        "verified_demand_title": "Procura Global Verificada",
         "verified_demand_text": "Trazemos compradores com Prova de Fundos (POF) verificada de todo o mundo.",
         "global_exposure_title": "Exposição Mundial",
-        "global_exposure_text": "Seus ativos serão apresentados em Dubai, Nova York, Londres e além.",
-        "form_title": "Juntar-se à Aliança Global",
-        "form_subtitle": "Completar perfil.",
-        "form_explanation": "Insira os detalhes da agência.",
+        "global_exposure_text": "Os seus ativos serão apresentados no Dubai, Nova Iorque, Londres e além.",
+        "form_title": "Juntar-se à Aliança",
+        "form_subtitle": "Complete o perfil para colaboração internacional.",
+        "form_explanation": "Insira os detalhes da agência. Entraremos em contacto para um mandato global.",
         "seo_title": "Agências Off-Market Globais"
     },
     "legacy": {
@@ -208,13 +217,15 @@
     },
     "forms": {
         "labels": {
+            "name": "Nome Completo",
             "fullName": "Nome Completo",
             "email": "E-mail Profissional",
+            "website": "Website",
             "phone": "Telefone",
             "city": "Cidade",
             "country": "País",
             "agencyName": "Nome da Agência",
-            "taxId": "CNPJ / NIF / VAT",
+            "taxId": "NIF / Número Fiscal",
             "contactPerson": "Pessoa de Contato",
             "propertiesCount": "Número de Imóveis Exclusivos",
             "priceRange": "Faixa de Preço (€)",

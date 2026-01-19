@@ -36,27 +36,36 @@
             "cta": "加入联盟"
         }
     },
-    "agencies_page": {
+    "agency_page": {
         "title": "加入全球精英联盟",
-        "subtitle": "与我们的全球代理网络联系并共享跨境交易流。",
-        "access_button": "申请全球访问",
+        "subtitle": "证明您是一家卓越的场外交易机构，并从我们的投资组合资产中获得 50% 的佣金。",
+        "why_partner_title": "联盟优势",
+        "access_button": "申请合作",
         "disclaimer": "* 访问受限。签署全球合同后需要手动激活。",
         "collaboration_model": "全球合作",
-        "collaboration_text_1": "我们要建立一个**全球联盟**。我们的合作协议保护您的授权，并保证在国际业务中公平地按 50/50 分配佣金。",
-        "collaboration_text_2": "加入我们的私人平台以：",
-        "benefits_list": [
-            "上传经过验证的全球投资者可见的独家房产。",
-            "接收来自国际资本的匹配。",
-            "访问我们的“全球需求”列表。"
+        "benefits": [
+            {
+                "title": "50% 佣金",
+                "desc": "每笔与我们客户完成的交易均可获得 50% 的销售佣金。"
+            },
+            {
+                "title": "快速出售",
+                "desc": "我们的合格投资者以创纪录的时间购买房产。"
+            },
+            {
+                "title": "无限资产组合",
+                "desc": "将您想要的任意数量资产上传到我们的私人平台。"
+            }
         ],
+        "collaboration_text_1": "我们是一个**全球联盟**。我们的合作协议保护您的授权，并保证在国际业务中公平分配 50/50 的佣金。",
         "verified_demand_title": "经过验证的全球需求",
-        "verified_demand_text": "我们将为您带来经过验证的资金证明 (POF) 的全球买家。",
+        "verified_demand_text": "不管是迪拜还是纽约，我们为您带来经过验证的资金证明 (POF) 买家。",
         "global_exposure_title": "全球曝光",
         "global_exposure_text": "您的资产将在迪拜、纽约、伦敦等地展示。",
-        "form_title": "加入全球联盟",
-        "form_subtitle": "完善国际合作资料。",
-        "form_explanation": "输入代理机构详细信息。我们将与您联系以获得全球授权。",
-        "seo_title": "全球场外交易代理机构"
+        "form_title": "加入联盟",
+        "form_subtitle": "完成国际合作档案。",
+        "form_explanation": "输入代理机构详细信息。我们将联系您以获取全球授权。",
+        "seo_title": "全球场外交易机构"
     },
     "legacy": {
         "title": "荣誉的传承",

@@ -36,27 +36,36 @@
             "cta": "Der Allianz beitreten"
         }
     },
-    "agencies_page": {
-        "title": "Treten Sie der Global Elite Alliance bei",
-        "subtitle": "Verbinden Sie sich mit unserem weltweiten Agenturnetzwerk und teilen Sie grenzüberschreitenden Dealflow.",
-        "access_button": "Globalen Zugang anfordern",
-        "disclaimer": "* Eingeschränkter Zugang. Manuelle Aktivierung nach Unterzeichnung des globalen Vertrags erforderlich.",
+    "agency_page": {
+        "title": "Treten Sie der Globalen Elite-Allianz bei",
+        "subtitle": "Bewiesen Sie sich als exquisite Off-Market-Agentur und erhalten Sie 50% Provision auf unsere Portfolio-Assets.",
+        "why_partner_title": "Vorteile der Allianz",
+        "access_button": "Zusammenarbeit Anfordern",
+        "disclaimer": "* Eingeschränkter Zugang. Manuelle Aktivierung nach Vertragsunterzeichnung erforderlich.",
         "collaboration_model": "Globale Zusammenarbeit",
-        "collaboration_text_1": "Wir sind eine **Globale Allianz**. Unsere Kooperationsvereinbarung schützt Ihr Mandat und garantiert eine faire 50/50-Provisionsaufteilung bei internationalen Operationen.",
-        "collaboration_text_2": "Treten Sie unserer privaten Plattform bei, um:",
-        "benefits_list": [
-            "Laden Sie exklusive Immobilien hoch.",
-            "Erhalten Sie Matches von internationalem Kapital.",
-            "Zugriff auf unsere 'Global Wanted'-Liste."
+        "benefits": [
+            {
+                "title": "50% Provision",
+                "desc": "Erhalten Sie 50% der Verkaufsprovision bei jedem Abschluss mit unseren Kunden."
+            },
+            {
+                "title": "Schneller Verkauf",
+                "desc": "Unsere qualifizierten Investoren kaufen Immobilien in Rekordzeit."
+            },
+            {
+                "title": "Unbegrenztes Portfolio",
+                "desc": "Laden Sie so viele Assets wie gewünscht auf unsere private Plattform hoch."
+            }
         ],
-        "verified_demand_title": "Verifizierte globale Nachfrage",
+        "collaboration_text_1": "Wir sind eine **Globale Allianz**. Unsere Kooperationsvereinbarung schützt Ihr Mandat und garantiert eine faire 50/50 Provisionsaufteilung bei internationalen Operationen.",
+        "verified_demand_title": "Verifizierte Globale Nachfrage",
         "verified_demand_text": "Wir bringen Ihnen Käufer mit verifiziertem Kapitalnachweis (POF) aus der ganzen Welt.",
         "global_exposure_title": "Weltweite Präsenz",
         "global_exposure_text": "Ihre Vermögenswerte werden in Dubai, New York, London und darüber hinaus präsentiert.",
-        "form_title": "Der Globalen Allianz beitreten",
-        "form_subtitle": "Profil vervollständigen.",
-        "form_explanation": "Geben Sie die Agenturdetails ein.",
-        "seo_title": "Globale Off-Market-Agenturen"
+        "form_title": "Der Allianz Beitreten",
+        "form_subtitle": "Profil für internationale Zusammenarbeit vervollständigen.",
+        "form_explanation": "Geben Sie die Agenturdetails ein. Wir werden Sie für ein globales Mandat kontaktieren.",
+        "seo_title": "Globale Off-Market Agenturen"
     },
     "legacy": {
         "title": "Ein Erbe der Ehre",
@@ -210,6 +219,7 @@
         "labels": {
             "fullName": "Vollständiger Name",
             "email": "Berufliche E-Mail",
+            "website": "Webseite",
             "phone": "Telefon",
             "city": "Stadt",
             "country": "Land",

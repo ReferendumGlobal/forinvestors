@@ -36,26 +36,35 @@
             "cta": "Rejoindre l'Alliance"
         }
     },
-    "agencies_page": {
-        "title": "Rejoignez l'Alliance Mondiale d'Élite",
-        "subtitle": "Connectez-vous avec notre réseau mondial d'agences et partagez le flux d'affaires transfrontalier.",
-        "access_button": "Demander l'Accès Global",
-        "disclaimer": "* Accès restreint. Activation manuelle requise après signature du contrat global.",
+    "agency_page": {
+        "title": "Rejoignez l'Alliance d'Élite Mondiale",
+        "subtitle": "Prouvez que vous êtes une agence Off-Market exquise et recevez 50 % de commission sur les actifs de notre portefeuille.",
+        "why_partner_title": "Avantages de l'Alliance",
+        "access_button": "Demander la Collaboration",
+        "disclaimer": "* Accès restreint. Activation manuelle requise après signature du contrat.",
         "collaboration_model": "Collaboration Mondiale",
-        "collaboration_text_1": "Nous sommes une **Alliance Mondiale**. Notre accord de collaboration protège votre mandat et garantit un partage de commission équitable 50/50 sur les opérations internationales.",
-        "collaboration_text_2": "Rejoignez notre plateforme privée pour :",
-        "benefits_list": [
-            "Télécharger des propriétés exclusives visibiles par des investisseurs mondiaux vérifiés.",
-            "Recevoir des correspondances de capitaux internationaux.",
-            "Accéder à notre liste 'Recherche Mondiale'."
+        "benefits": [
+            {
+                "title": "50 % de Commission",
+                "desc": "Recevez 50 % de la commission de vente sur chaque transaction conclue avec nos clients."
+            },
+            {
+                "title": "Vente Rapide",
+                "desc": "Nos investisseurs qualifiés achètent des propriétés en un temps record."
+            },
+            {
+                "title": "Portefeuille Illimité",
+                "desc": "Téléchargez autant d'actifs que vous le souhaitez sur notre plateforme privée."
+            }
         ],
+        "collaboration_text_1": "Nous sommes une **Alliance Mondiale**. Notre accord de collaboration protège votre mandat et garantit un partage équitable de la commission 50/50 sur les opérations internationales.",
         "verified_demand_title": "Demande Mondiale Vérifiée",
-        "verified_demand_text": "Nous vous apportons des acheteurs avec Preuve de Fonds (POF) vérifiée du monde entier.",
+        "verified_demand_text": "Nous vous apportons des acheteurs avec une Preuve de Fonds (POF) vérifiée du monde entier.",
         "global_exposure_title": "Exposition Mondiale",
         "global_exposure_text": "Vos actifs seront présentés à Dubaï, New York, Londres et au-delà.",
-        "form_title": "Rejoindre l'Alliance Mondiale",
+        "form_title": "Rejoindre l'Alliance",
         "form_subtitle": "Compléter le profil pour la collaboration internationale.",
-        "form_explanation": "Entrez les détails de l'agence. Nous vous contacterons pour un mandat global.",
+        "form_explanation": "Entrez les détails de l'agence. Nous vous contacterons pour un mandat mondial.",
         "seo_title": "Agences Off-Market Mondiales"
     },
     "legacy": {
@@ -209,7 +218,9 @@
     "forms": {
         "labels": {
             "fullName": "Nom Complet",
+            "companyNameOptional": "Nom de l'Entreprise (Optionnel)",
             "email": "Email Professionnel",
+            "website": "Site Web",
             "phone": "Téléphone",
             "city": "Ville",
             "country": "Pays",
