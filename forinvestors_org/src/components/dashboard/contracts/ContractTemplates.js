@@ -174,93 +174,140 @@ ${bankDetails}
     `;
     }
 
-    // --- AGENCY AGREEMENT ---
+    // --- AGENCY AGREEMENT (ALWAYS ENGLISH AS PER NEW REQUIREMENT) ---
     if (contractType === 'agency_collaboration') {
         const ag = data.agencyData || {};
-        const vat = ag.vatPercent ? `${ag.vatPercent}%` : 'applicable taxes';
 
-        const title = isSpanish ? "# ACUERDO DE COLABORACIÓN ENTRE AGENCIAS" : "# AGENCY COLLABORATION AGREEMENT";
+        return `# REAL ESTATE AGENCY COLLABORATION AGREEMENT
 
-        return `${title}
+## PARTIES
 
-        ** ${labels.online_mode} ${formattedDate}**
+On one part,
 
-## ${labels.parties}
+**URBINA AGENCY LLC**, with the following details (hereinafter, *URBINA AGENCY*):
 
-        ** URBINA AGENCY LLC ** (${isSpanish ? 'Propietario de la Plataforma' : 'Platform Owner'})...
-    ${isSpanish ? 'Y' : 'And'}
-        ** ${ag.companyName || (isSpanish ? 'AGENCIA COLABORADORA' : 'PARTNER AGENCY')}** (${isSpanish ? 'El Colaborador' : 'The Partner'}), ${isSpanish ? 'NIF' : 'Tax ID'} ** ${ag.taxId}**, ${isSpanish ? 'representada por' : 'represented by'} ** ${ag.repName}** (${ag.repId}).
-
-## ${labels.recitals}
-                ? 'Ambas entidades están facultadas para gestionar transacciones inmobiliarias y desean colaborar a través de ** [topoffmarket.com](https://topoffmarket.com)**.'
-                : 'Both entities are empowered to manage real estate transactions and wish to collaborate via ** [topoffmarket.com](https://topoffmarket.com)**.'}
-
-## ${labels.clauses}
-
-
-### 1. ${isSpanish ? 'Objeto y Roles de las Partes' : 'Object & Roles of the Parties'}
-${isSpanish
-                ? 'El presente acuerdo establece los términos de colaboración para la compraventa de activos inmobiliarios, bajo los siguientes roles definidos:'
-                : 'This agreement establishes the terms of collaboration for the sale of real estate assets, under the following defined roles:'}
-
-* **Urbina Agency (Plataforma):** ${isSpanish
-                ? 'Provee la infraestructura tecnológica, conexión con **COMPRADORES/INVERSORES** cualificados y aporta **PROPIEDADES** de su propia cartera.'
-                : 'Provides the technological infrastructure, connection with qualified **BUYERS/INVESTORS**, and contributes **PROPERTIES** from its own portfolio.'}
-* **${ag.companyName || 'El Colaborador'} (Gestión):** ${isSpanish
-                ? 'Aporta **PROPIEDADES** y se encarga de la **GESTIÓN INTEGRAL DE LA VENTA** (visitas, documentación) tanto de sus propiedades como de las asignadas por Urbina Agency.'
-                : 'Provides **PROPERTIES** and handles the **COMPREHENSIVE SALE MANAGEMENT** (visits, documentation) for both their own properties and those assigned by Urbina Agency.'}
-
-### 2. ${isSpanish ? 'Obligaciones Específicas' : 'Specific Obligations'}
-**${isSpanish ? 'El Colaborador' : 'The Partner'}:**
-* ${isSpanish
-                ? 'Gestionará las visitas, documentación legal, due diligence y relación directa con la propiedad/vendedor en TODAS las operaciones compartidas.'
-                : 'Shall manage visits, legal documentation, due diligence, and direct relationship with the property/seller in ALL shared operations.'}
-* ${isSpanish
-                ? 'Actuará como gestor principal en el terreno para las propiedades aportadas por Urbina Agency.'
-                : 'Shall act as the main ground manager for properties contributed by Urbina Agency.'}
-
-**Urbina Agency:**
-* ${isSpanish
-                ? 'Pondrá en contacto a compradores potenciales con El Colaborador a través de la tecnología de la Plataforma.'
-                : 'Shall connect potential buyers with The Partner through the Platform technology.'}
-
-### 3. ${isSpanish ? 'Duración' : 'Duration'}
-**${isSpanish ? 'INDEFINIDA' : 'INDEFINITE'}**. ${isSpanish
-                ? 'Hasta que una de las partes cese su actividad en la Plataforma.'
-                : 'Until either party ceases their activity on the Platform.'}
-
-### 4. ${isSpanish ? 'Honorarios y Reparto (SHARED COMMISSION)' : 'Fees & Commission Split (SHARED COMMISSION)'}
-${isSpanish
-                ? 'Basado en el modelo: **Colaborador (Propiedad + Gestión) + Urbina (Comprador + Tecnología)**.'
-                : 'Based on the model: **Partner (Property + Management) + Urbina (Buyer + Tech)**.'}
-
-${isSpanish
-                ? 'El reparto de los honorarios netos totales percibidos de la operación será:'
-                : 'The split of the total net fees received from the operation shall be:'}
-
-** ${isSpanish ? 'CINCUENTA POR CIENTO (50 %)' : 'FIFTY PERCENT (50 %)'} ** -> **Urbina Agency**
-** ${isSpanish ? 'CINCUENTA POR CIENTO (50 %)' : 'FIFTY PERCENT (50 %)'} ** -> **${ag.companyName || 'Partner'}**
-
-*${isSpanish ? `(Más IVA/Impuestos aplicables: ${vat})` : `(Plus applicable VAT/Taxes: ${vat})`}*
-
-### 5. ${isSpanish ? 'Instrucciones de Pago' : 'Payment Instructions'}
-${isSpanish
-                ? 'La parte que reciba los fondos (Depositario) transferirá el 50% a la otra parte (Beneficiario) en un plazo máximo de **15 DÍAS HÁBILES**.'
-                : 'The party receiving the funds (Depositary) shall transfer the 50% to the other party (Beneficiary) within a maximum of **15 BUSINESS DAYS**.'}
-
-**${isSpanish ? 'Pagos a Urbina Agency:' : 'Payments to Urbina Agency:'}**
+* Company Name: **URBINA AGENCY LLC**
+* Registered Office: **New Mexico, USA**
+* Legal Representative (CEO): **(System Admin)**
+* Bank Account (IBAN/Account): 
 ${bankDetails}
 
-**${isSpanish ? `Pagos a ${ag.companyName || 'El Colaborador'}:` : `Payments to ${ag.companyName || 'The Partner'}:`}**
-* **Bank Name**: ${ag.bankName || '_________________'}
-* **Account/IBAN**: ${ag.accountNumber || '_________________'}
-* **SWIFT/BIC**: ${ag.swiftCode || '_________________'}
+And on the other part,
 
-...
+**THE PARTNER AGENCY**, with the following details (hereinafter, *THE PARTNER AGENCY*):
 
+* Company Name: **${ag.companyName || '____________________'}**
+* Tax ID: **${ag.taxId || '____________________'}**
+* Registered Office: **${ag.address || '____________________'}**
+* Legal Representative: **${ag.repName || '____________________'}**
+* ID Number: **${ag.repId || '____________________'}**
+* Bank Account (IBAN): **${ag.accountNumber || '____________________'}**
+* Bank Name: **${ag.bankName || '____________________'}**
+* SWIFT/BIC: **${ag.swiftCode || '____________________'}**
 
-** ${labels.agency} **               ** ${labels.partner} **
-        ${labels.system_signed}
+Both parties, acknowledging sufficient legal capacity to contract, agree to subscribe to this **Real Estate Agency Collaboration Agreement**, which shall be governed by the following:
+
+---
+
+## CLAUSES
+
+### FIRST. OBJECT OF THE CONTRACT
+
+The object of this contract is to regulate the commercial collaboration between URBINA AGENCY and THE PARTNER AGENCY for the **marketing and sale of real estate assets**, both their own and those of third parties, through a commission splitting system and operational cooperation.
+
+### SECOND. ASSET CONTRIBUTION
+
+1. **URBINA AGENCY** may contribute to the collaboration:
+   * Properties under sales management.
+   * Buyers.
+   * Investors.
+   * Both for its own assets and for those contributed by THE PARTNER AGENCY.
+
+2. **THE PARTNER AGENCY** shall contribute and make available to the collaboration **all real estate assets it has under sales management** and which it decides to upload to the platform **[www.topoffmarket.com](http://www.topoffmarket.com)**, managed by URBINA AGENCY.
+
+3. Uploading an asset to the platform implies **automatic acceptance of the commission split** established in this contract, without the need for additional agreements for each asset.
+
+### THIRD. SALES MANAGEMENT
+
+1. THE PARTNER AGENCY shall be the **exclusive party responsible for the comprehensive sales management** of the assets it contributes, including, but not limited to:
+   * Property visits.
+   * Relationship with the property owner.
+   * Document management.
+   * Negotiation and closing of the operation.
+
+2. URBINA AGENCY shall act as an **opportunity channeler**, connecting the buyer or investor with THE PARTNER AGENCY.
+
+### FOURTH. ASSET PUBLICATION CONDITIONS
+
+For each real estate asset that THE PARTNER AGENCY uploads to the **topoffmarket.com** platform, it must mandatorily indicate:
+* Selling price of the asset.
+* Commission percentage signed with the owner.
+* Confirmation that it holds a valid sales mandate.
+
+The veracity of this data shall be the exclusive responsibility of THE PARTNER AGENCY.
+
+### FIFTH. COMMISSION SPLIT (PARTNER AGENCY ASSETS)
+
+1. In the event that an asset contributed by THE PARTNER AGENCY is sold thanks to a buyer or investor contributed by URBINA AGENCY:
+   * The total commission shall be that agreed with the owner.
+   * Said commission shall be split at **50% for each party**.
+
+2. Once the sale is formalized, THE PARTNER AGENCY must:
+   * Mark the asset as **"sold"** on the platform.
+   * Indicate the **final sale price**.
+   * Pay URBINA AGENCY **50% of the corresponding commission**.
+
+3. The payment must be made via bank transfer to the account indicated by URBINA AGENCY, within a **maximum period of 15 BUSINESS DAYS** from the collection of the commission by THE PARTNER AGENCY.
+
+### SIXTH. COMMISSION SPLIT (URBINA AGENCY ASSETS)
+
+1. In the event that THE PARTNER AGENCY intermediates in the sale of an asset for which **URBINA AGENCY has a signed sales mandate with the owner**:
+   * The total commission shall be that agreed with the owner.
+   * Said commission shall be split at **50% for each party**.
+
+2. URBINA AGENCY commits to pay THE PARTNER AGENCY the **50% of the commission** corresponding to it within a **maximum period of 15 BUSINESS DAYS** from the effective collection of the commission.
+
+3. The payment shall be made via bank transfer to the account indicated by THE PARTNER AGENCY above.
+
+### SEVENTH. CONFIDENTIALITY
+
+Both parties commit to maintaining the **strictest confidentiality** regarding commercial, economic, and strategic information to which they have access as a consequence of this collaboration.
+
+### EIGHTH. NON-EXCLUSIVITY
+
+This contract does not imply exclusivity between the parties, and both may collaborate with third parties, provided that the commitments assumed in this contract are not violated.
+
+### NINTH. DURATION
+
+This contract shall have an **indefinite** duration, entering into vigor on the date of its signature.
+
+Either party may unilaterally terminate it at any time by written notification to the other party with a minimum notice of **30 days**.
+
+### TENTH. TERMINATION
+
+The contract may be terminated by either party in case of:
+* Serious breach of the obligations established herein.
+* Mutual agreement.
+* Unilateral decision with notice as established in the previous clause.
+
+Operations initiated prior to termination must respect the agreed commission split.
+
+### ELEVENTH. APPLICABLE LAW AND JURISDICTION
+
+This contract shall be governed by the applicable legislation in the **State of New Mexico (United States)**.
+
+The parties expressly submit to the jurisdiction of the **Courts and Tribunals of the State of New Mexico**, waiving any other jurisdiction that might correspond to them.
+
+---
+
+And in proof of conformity, both parties sign this contract.
+
+**Online Signature on ${formattedDate}**
+
+**URBINA AGENCY LLC**                   | **THE PARTNER AGENCY**
+Signed: (System Digital Signature)   | Signed: (Digital Signature)
+Name: System Administrator           | Name: **${ag.repName || ''}**
+Position: CEO                        | Position: Representative
     `;
     }
 
