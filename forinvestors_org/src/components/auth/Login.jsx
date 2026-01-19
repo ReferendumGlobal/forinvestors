@@ -33,6 +33,54 @@ export default function Login() {
         }
     };
 
+    const handleForgotPassword = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError(null);
+
+        try {
+            const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                redirectTo: `${window.location.origin}/dashboard/reset-password`,
+            });
+            if (error) throw error;
+            alert('Password reset link sent! Check your email.');
+            setMode('login');
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const [mode, setMode] = useState('login'); // 'login' or 'forgot'
+
+    if (mode === 'forgot') {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+                <div className="sm:mx-auto sm:w-full sm:max-w-md">
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-white">Reset Password</h2>
+                </div>
+                <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-midnight-900/50 py-8 px-4 shadow sm:rounded-lg sm:px-10 border border-white/10">
+                        <form className="space-y-6" onSubmit={handleForgotPassword}>
+                            {error && <div className="text-red-400 text-center">{error}</div>}
+                            <div>
+                                <label className="block text-sm font-medium text-gray-300">Email</label>
+                                <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="bg-midnight-950 block w-full border border-white/10 rounded-md py-3 px-4 text-white focus:ring-gold-500 focus:border-gold-500" />
+                            </div>
+                            <button type="submit" disabled={loading} className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gold-600 hover:bg-gold-700">
+                                {loading ? <Loader2 className="animate-spin" /> : 'Send Reset Link'}
+                            </button>
+                            <button type="button" onClick={() => setMode('login')} className="w-full text-center text-sm text-gray-400 hover:text-white mt-2">
+                                Back to Login
+                            </button>
+                        </form>
+                    </motion.div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen bg-midnight-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -111,9 +159,9 @@ export default function Login() {
 
                         <div className="flex items-center justify-between">
                             <div className="text-sm">
-                                <a href="#" className="font-medium text-gold-500 hover:text-gold-400">
+                                <button type="button" onClick={() => setMode('forgot')} className="font-medium text-gold-500 hover:text-gold-400">
                                     Forgot password?
-                                </a>
+                                </button>
                             </div>
                         </div>
 
