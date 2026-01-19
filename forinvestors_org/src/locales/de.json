@@ -9,11 +9,12 @@
         "agencies": "Für Agenturen",
         "search": "Immobiliensuche",
         "access": "Privater Bereich",
-        "sell": "Vermögen Verkaufen"
+        "sell": "Vermögen Verkaufen",
+        "home": "Startseite"
     },
     "hero": {
-        "shield": "Die Kunst der Diskretion",
-        "subtitle": "Wir arbeiten mit einem Portfolio, das <strong>nicht auf Immobilienportalen veröffentlicht</strong> ist, aber von höchster Qualität ist. Unsere Kunden vertrauen uns wertvolle Geheimnisse an, und wir geben erfolgreiche Geschäfte zurück.",
+        "shield": "Top OFF Market.com",
+        "subtitle": "Die beste und größte Off-Market-Verkaufsplattform weltweit, unterstützt durch künstliche Intelligenz, um Verkäufer und Käufer mit hoher Privatsphäre zu verbinden.",
         "cta": "Portfolio betreten"
     },
     "services": {
@@ -79,6 +80,8 @@
     "innovation": {
         "subtitle": "Immobilientechnologie",
         "title": "Smart Matching™ Algorithmus",
+        "match_accuracy": "Match-Genauigkeit",
+        "engine_name": "TopOffMarket.com Engine™",
         "description": "Wir haben das traditionelle Schwarze Brett durch eine Künstliche Intelligenz ersetzt, die Angebot und Nachfrage in Millisekunden abgleicht und absolute Privatsphäre garantiert.",
         "engine_text": "Unser Motor analysiert über 50 Datenpunkte pro Asset, um den exakten Investor zu finden, eliminiert Rauschen und verbindet echtes Kapital mit echten Chancen.",
         "features": {

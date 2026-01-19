@@ -9,11 +9,12 @@
         "agencies": "房地产代理",
         "search": "房产搜索",
         "access": "私人区域",
-        "sell": "出售资产"
+        "sell": "出售资产",
+        "home": "首页"
     },
     "hero": {
-        "shield": "保密的艺术",
-        "subtitle": "我们管理的投资组合<strong>未在房地产门户网站上发布</strong>，但品质卓越。我们的客户托付给我们宝贵的秘密，我们将成功回报给他们。",
+        "shield": "Top OFF Market.com",
+        "subtitle": "全球最大、最好的人工智能支持的非公开市场销售平台，旨在以高度的隐私连接买家和卖家。",
         "cta": "进入投资组合"
     },
     "services": {
@@ -79,6 +80,8 @@
     "innovation": {
         "subtitle": "房地产科技",
         "title": "智能匹配 (Smart Matching™) 算法",
+        "match_accuracy": "匹配准确率",
+        "engine_name": "TopOffMarket.com 引擎™",
         "description": "我们要用能在几毫秒内匹配供需的人工智能引擎取代了传统的布告栏，保证绝对的隐私。",
         "engine_text": "我们的引擎分析每个资产超过 50 个数据点以找到准确的投资者，消除噪音并将真正的资本与真正的机会联系起来。",
         "features": {

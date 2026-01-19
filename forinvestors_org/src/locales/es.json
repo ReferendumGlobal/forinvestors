@@ -117,6 +117,8 @@
     "innovation": {
         "subtitle": "Tecnología Inmobiliaria",
         "title": "Smart Matching™ Algorithm",
+        "match_accuracy": "Precisión del Match",
+        "engine_name": "Motor TopOffMarket.com™",
         "description": "Hemos reemplazado el tablón de anuncios tradicional por un motor de inteligencia artificial que cruza oferta y demanda en milisegundos, garantizando privacidad absoluta.",
         "engine_text": "Nuestro motor analiza más de 50 puntos de datos por activo para encontrar el inversor exacto, eliminando el ruido y conectando capital real con oportunidades reales.",
         "features": {

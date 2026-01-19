@@ -15,8 +15,8 @@
         "contact": "Contact"
     },
     "hero": {
-        "shield": "AI-Powered Off-Market",
-        "subtitle": "The first global platform that uses <strong>Smart Matching™</strong> to connect your specific investment criteria with exclusive off-market assets. Precision, speed, and absolute discretion.",
+        "shield": "Top OFF Market.com",
+        "subtitle": "The best and largest off-market sales platform globally supported by artificial intelligence to connect sellers and buyers with high privacy.",
         "cta": "Start Smart Match",
         "title": "Intelligent Real Estate",
         "cta_invest": "I am an Investor",
@@ -117,7 +117,9 @@
     "innovation": {
         "subtitle": "Real Estate Technology",
         "title": "Smart Matching™ Algorithm",
-        "description": "We have replaced the traditional bulletin board with an artificial intelligence engine that matches supply and demand in milliseconds, guaranteeing absolute privacy.",
+        "match_accuracy": "Match Accuracy",
+        "engine_name": "TopOffMarket.com Engine™",
+        "description": "We replaced the traditional bulletin board with an Artificial Intelligence that matches supply and demand in milliseconds, guaranteeing absolute privacy.",
         "engine_text": "Our engine analyzes over 50 data points per asset to find the exact investor, eliminating noise and connecting real capital with real opportunities.",
         "features": {
             "algo": {

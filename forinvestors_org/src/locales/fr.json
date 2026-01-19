@@ -9,11 +9,12 @@
         "agencies": "Pour Agences Immobilières",
         "search": "Recherche de Propriétés",
         "access": "Espace Privé",
-        "sell": "Vendre des Actifs"
+        "sell": "Vendre des Actifs",
+        "home": "Accueil"
     },
     "hero": {
-        "shield": "L'Art de la Discrétion",
-        "subtitle": "Nous travaillons avec un portefeuille qui <strong>n'est pas publié sur les portails immobiliers</strong> mais qui est de haute qualité. Nos clients nous confient des secrets précieux, et nous leur rendons des affaires fructueuses.",
+        "shield": "Top OFF Market.com",
+        "subtitle": "La meilleure et la plus grande plateforme de vente hors marché au monde, soutenue par l'intelligence artificielle pour connecter vendeurs et acheteurs en toute confidentialité.",
         "cta": "Entrer dans le Portefeuille"
     },
     "services": {
@@ -79,6 +80,8 @@
     "innovation": {
         "subtitle": "Technologie Immobilière",
         "title": "Algorithme Smart Matching™",
+        "match_accuracy": "Précision de Correspondance",
+        "engine_name": "Moteur TopOffMarket.com™",
         "description": "Nous avons remplacé le tableau d'affichage traditionnel par un moteur d'intelligence artificielle qui fait correspondre l'offre et la demande en quelques millisecondes, garantissant une confidentialité absolue.",
         "engine_text": "Notre moteur analyse plus de 50 points de données par actif pour trouver l'investisseur exact, éliminant le bruit et connectant le capital réel aux opportunités réelles.",
         "features": {

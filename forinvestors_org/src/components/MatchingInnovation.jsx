@@ -83,7 +83,7 @@ export default function MatchingInnovation() {
 
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
                         <div>
-                            <h4 className="text-2xl font-serif text-white mb-2">TopOffMarket.com Engine™</h4>
+                            <h4 className="text-2xl font-serif text-white mb-2">{t('innovation.engine_name')}</h4>
                             <p className="text-gray-400 max-w-xl">
                                 {t('innovation.engine_text')}
                             </p>
@@ -92,7 +92,7 @@ export default function MatchingInnovation() {
                             <Network className="w-12 h-12" strokeWidth={1} />
                             <div className="text-left">
                                 <div className="text-3xl font-bold font-mono">98.5%</div>
-                                <div className="text-xs uppercase tracking-wider">Match Accuracy</div>
+                                <div className="text-xs uppercase tracking-wider">{t('innovation.match_accuracy')}</div>
                             </div>
                         </div>
                     </div>

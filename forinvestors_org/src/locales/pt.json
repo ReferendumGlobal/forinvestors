@@ -9,11 +9,12 @@
         "agencies": "Para Agências",
         "search": "Busca de Imóveis",
         "access": "Área Privada",
-        "sell": "Vender Ativos"
+        "sell": "Vender Ativos",
+        "home": "Início"
     },
     "hero": {
-        "shield": "A Arte da Discrição",
-        "subtitle": "Trabalhamos com um portfólio que <strong>não é publicado em portais imobiliários</strong>, mas é de alta qualidade. Nossos clientes nos confiam segredos valiosos, e nós devolvemos negócios de sucesso.",
+        "shield": "Top OFF Market.com",
+        "subtitle": "A melhor e maior plataforma de vendas off-market global, apoiada por inteligência artificial para conectar vendedores e compradores com alta privacidade.",
         "cta": "Entrar no Portfólio"
     },
     "services": {
@@ -79,6 +80,8 @@
     "innovation": {
         "subtitle": "Tecnologia Imobiliária",
         "title": "Algoritmo Smart Matching™",
+        "match_accuracy": "Precisão do Match",
+        "engine_name": "Motor TopOffMarket.com™",
         "description": "Substituímos o quadro de avisos tradicional por um motor de inteligência artificial que cruza oferta e procura em milissegundos, garantindo privacidade absoluta.",
         "engine_text": "O nosso motor analisa mais de 50 pontos de dados por ativo para encontrar o investidor exato, eliminando ruído e conectando capital real a oportunidades reais.",
         "features": {
