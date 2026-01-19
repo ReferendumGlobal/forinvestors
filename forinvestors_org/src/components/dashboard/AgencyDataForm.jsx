@@ -1,18 +1,24 @@
-
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Save, Loader2, ArrowRight, Building2, UserCircle } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
+import { supabase } from '../../lib/supabase';
+import { Loader2, ArrowRight, Building2, Upload, CheckCircle } from 'lucide-react';
 
 export default function AgencyDataForm({ initialData = {}, onComplete }) {
+    const { user } = useAuth();
     const [loading, setLoading] = useState(false);
+    const [uploading, setUploading] = useState(false);
+    const [idFile, setIdFile] = useState(null);
+    const [uploadSuccess, setUploadSuccess] = useState(false);
 
     const [agencyData, setAgencyData] = useState({
         companyName: initialData.companyName || '',
-        taxId: initialData.taxId || '', // CIF/NIF
+        taxId: initialData.taxId || '',
+        vatPercent: initialData.vatPercent || '',
         address: initialData.address || '',
         repName: initialData.repName || '',
         repId: initialData.repId || '',
         email: initialData.email || '',
+        idUrl: initialData.idUrl || ''
     });
 
     const handleChange = (e) => {
@@ -20,13 +26,61 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
         setAgencyData(prev => ({ ...prev, [name]: value }));
     };
 
+    const handleFileChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            setIdFile(e.target.files[0]);
+            setUploadSuccess(false);
+        }
+    };
+
+    const uploadDocument = async () => {
+        if (!idFile || !user) return null;
+
+        const fileExt = idFile.name.split('.').pop();
+        const fileName = `${user.id}/${Date.now()}_passport.${fileExt}`;
+
+        const { error: uploadError } = await supabase.storage
+            .from('user-documents')
+            .upload(fileName, idFile);
+
+        if (uploadError) throw uploadError;
+
+        const { data: { publicUrl } } = supabase.storage
+            .from('user-documents')
+            .getPublicUrl(fileName);
+
+        return publicUrl;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setTimeout(() => {
+        setUploading(true);
+
+        try {
+            let finalIdUrl = agencyData.idUrl;
+
+            // Upload new file if selected
+            if (idFile) {
+                finalIdUrl = await uploadDocument();
+                setUploadSuccess(true);
+            }
+
+            // Update state with URL
+            const finalData = { ...agencyData, idUrl: finalIdUrl };
+
+            // Allow small delay for UX
+            setTimeout(() => {
+                onComplete(finalData);
+            }, 500);
+
+        } catch (error) {
+            console.error("Upload error:", error);
+            alert("Error uploading document: " + error.message);
             setLoading(false);
-            onComplete(agencyData);
-        }, 500);
+        } finally {
+            setUploading(false);
+        }
     };
 
     return (
@@ -70,7 +124,7 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                             <input
                                 required
                                 name="vatPercent"
-                                value={agencyData.vatPercent || ''}
+                                value={agencyData.vatPercent}
                                 onChange={handleChange}
                                 placeholder="21"
                                 type="number"
@@ -130,6 +184,29 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                                 className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
                             />
                         </div>
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-400 mb-1">
+                                Upload Representative ID (Passport/DNI)
+                            </label>
+                            <div className="flex items-center gap-4">
+                                <label className="cursor-pointer bg-midnight-950 border border-white/10 hover:border-gold-500 rounded-lg py-2 px-4 flex items-center gap-2 transition-colors">
+                                    <Upload size={18} className="text-gold-500" />
+                                    <span className="text-sm text-gray-300">Choose File...</span>
+                                    <input
+                                        type="file"
+                                        accept="image/*,.pdf"
+                                        onChange={handleFileChange}
+                                        className="hidden"
+                                    />
+                                </label>
+                                {idFile && (
+                                    <span className="text-sm text-green-400 flex items-center gap-1">
+                                        <CheckCircle size={14} /> {idFile.name}
+                                    </span>
+                                )}
+                            </div>
+                            <p className="text-xs text-gray-500 mt-1">Accepted: PDF, JPG, PNG (Max 5MB)</p>
+                        </div>
                     </div>
                 </div>
 
@@ -153,10 +230,10 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                 <div className="flex justify-end pt-4">
                     <button
                         type="submit"
-                        disabled={loading}
-                        className="flex items-center gap-2 bg-gold-500 text-midnight-950 px-6 py-3 rounded-lg font-bold hover:bg-gold-400 transition-colors"
+                        disabled={loading || uploading}
+                        className="flex items-center gap-2 bg-gold-500 text-midnight-950 px-6 py-3 rounded-lg font-bold hover:bg-gold-400 transition-colors disabled:opacity-50"
                     >
-                        {loading ? <Loader2 className="animate-spin" /> : 'Continue to Agreement'}
+                        {loading || uploading ? <Loader2 className="animate-spin" /> : 'Continue to Agreement'}
                         <ArrowRight size={20} />
                     </button>
                 </div>

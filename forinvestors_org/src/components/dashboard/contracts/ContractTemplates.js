@@ -177,6 +177,7 @@ ${bankDetails}
     // --- AGENCY AGREEMENT ---
     if (contractType === 'agency_collaboration') {
         const ag = data.agencyData || {};
+        const vat = ag.vatPercent ? `${ag.vatPercent}%` : 'applicable taxes';
 
         const title = isSpanish ? "# ACUERDO DE COLABORACIÓN ENTRE AGENCIAS" : "# AGENCY COLLABORATION AGREEMENT";
 
