@@ -159,6 +159,47 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
 
                 <div className="space-y-4 pt-2">
                     <h3 className="text-sm font-medium text-gold-500 uppercase tracking-wider border-b border-white/10 pb-2">
+                        Bank Details for Commissions
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="md:col-span-2">
+                            <label className="block text-sm font-medium text-gray-400 mb-1">Bank Name</label>
+                            <input
+                                required
+                                name="bankName"
+                                value={agencyData.bankName || ''}
+                                onChange={handleChange}
+                                placeholder="Bank Name"
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">Account Number / IBAN</label>
+                            <input
+                                required
+                                name="accountNumber"
+                                value={agencyData.accountNumber || ''}
+                                onChange={handleChange}
+                                placeholder="ES12 3456..."
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">SWIFT / BIC Code</label>
+                            <input
+                                required
+                                name="swiftCode"
+                                value={agencyData.swiftCode || ''}
+                                onChange={handleChange}
+                                placeholder="SWFTID..."
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="space-y-4 pt-2">
+                    <h3 className="text-sm font-medium text-gold-500 uppercase tracking-wider border-b border-white/10 pb-2">
                         Legal Representative
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
