@@ -285,6 +285,8 @@
             "name": "Full Name",
             "companyName": "Legal Agency Name",
             "companyNameOptional": "Company Name (Optional)",
+            "optional_suffix": "(Optional)",
+            "isCompany": "Search mandate on behalf of a Company",
             "fullName": "Full Name",
             "email": "Professional Email",
             "website": "Website",
@@ -469,6 +471,23 @@
         "terms_conditions": {
             "title": "Terms & Conditions",
             "content": "Use of this platform implies acceptance of the following terms..."
+        }
+    },
+    "dashboard": {
+        "contracts": {
+            "title_sale": "Exclusive Sales Mandate",
+            "title_agency": "Agency Collaboration Agreement",
+            "title_search": "Property Search Mandate",
+            "download_pdf": "Download PDF",
+            "signed_by_client": "Signed by Client:",
+            "agreement_warning": "By signing below, you acknowledge and agree to the terms herein.",
+            "back_step": "Back to Previous Step",
+            "active_title": "Agreement Active",
+            "signed_on": "Signed on",
+            "download_copy": "Download your copy of the agreement:",
+            "view_download_pdf": "View & Download PDF",
+            "loading": "Loading contract...",
+            "save_error": "Error saving signature. Please try again."
         }
     },
     "seo": {

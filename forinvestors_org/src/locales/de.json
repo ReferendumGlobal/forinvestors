@@ -241,7 +241,9 @@
             "dossier": "Firmendossier / Portfolio-Beispiel",
             "pof": "Kapitalnachweis (POF)",
             "interested_assets": "Vermögenswerte von Interesse (Mehrfachauswahl)",
-            "companyName": "Firmenname (Optional)"
+            "companyName": "Firmenname (Optional)",
+            "optional_suffix": "(Optional)",
+            "isCompany": "Suchauftrag im Namen eines Unternehmens"
         },
         "assets": {
             "hotels": "Hotels",
@@ -484,6 +486,23 @@
         "search": {
             "title": "Suche Off Market",
             "description": "Finden Sie exklusive Off-Market-Immobilienanlagen."
+        }
+    },
+    "dashboard": {
+        "contracts": {
+            "title_sale": "Exklusives Verkaufsmandat",
+            "title_agency": "Agentur-Kooperationsvereinbarung",
+            "title_search": "Immobiliensuchmandat",
+            "download_pdf": "PDF herunterladen",
+            "signed_by_client": "Unterschrieben vom Kunden:",
+            "agreement_warning": "Mit Ihrer Unterschrift erkennen Sie die hierin enthaltenen Bedingungen an.",
+            "back_step": "Zurück zum vorherigen Schritt",
+            "active_title": "Vereinbarung Aktiv",
+            "signed_on": "Unterschrieben am",
+            "download_copy": "Laden Sie Ihre Kopie der Vereinbarung herunter:",
+            "view_download_pdf": "PDF anzeigen & herunterladen",
+            "loading": "Vertrag wird geladen...",
+            "save_error": "Fehler beim Speichern der Unterschrift. Bitte versuchen Sie es erneut."
         }
     }
 }

@@ -324,12 +324,12 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={e => setFormState({ ...formState, isCompany: e.target.checked })}
                         className="h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500 accent-gold-500 cursor-pointer"
                     />
-                    <span className="text-sm text-gray-300 font-medium">Mandato a nombre de Empresa (Marcar si procede)</span>
+                    <span className="text-sm text-gray-300 font-medium">{t('forms.labels.isCompany')}</span>
                 </label>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID (Opcional)</label>
+                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.taxId')} {t('forms.labels.optional_suffix', '(Optional)')}</label>
                         <input
                             type="text"
                             className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"

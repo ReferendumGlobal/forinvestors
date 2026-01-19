@@ -1,204 +1,23 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
 import SignaturePad from './SignaturePad';
 import { FileText, Download, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import html2pdf from 'html2pdf.js';
+import { useTranslation } from 'react-i18next';
+import { getContractContent } from './contracts/ContractTemplates';
 
 export default function ContractSign({ mode = 'standalone', contractType = 'buy_mandate', criteria, sellerData, agencyData, idUrl, onSuccess, onBack }) {
     const { profile, user } = useAuth();
     const [signed, setSigned] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [contractUrl, setContractUrl] = useState(null);
     const [existingSignature, setExistingSignature] = useState(null);
     const contractRef = useRef(null);
+    const { t, i18n } = useTranslation();
 
     // Common Date
     const today = new Date();
-    const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-
-    // BANK DETAILS (Confidential)
-    const BANK_DETAILS = `
-**Beneficiary**: URBINA AGENCY LLC
-
-**For International Transfers:**
-*   **SWIFT / BIC**: CLNOUS66
-*   **Account Number**: 692101525685
-
-**For Domestic US Transfers:**
-*   **Routing Number (ABA)**: 091017138
-*   **Account Number**: 692101525685
-`;
-
-
-    // --- TEMPLATE GENERATORS ---
-
-    const generateBuyMandate = () => {
-        const signingPlace = criteria?.signingPlace || "Online";
-        const clientName = profile?.full_name || "Client Name";
-        const clientID = criteria?.idNumber || "ID/Passport";
-        const clientAddress = criteria?.address || "Address";
-        const capacity = criteria?.investmentCapacity || "TBD";
-
-        // Handle Multiple Profiles
-        let purposeText = "";
-        const profiles = criteria?.searchProfiles || [];
-
-        if (profiles.length > 0) {
-            purposeText = profiles.map((p, i) => `
-**Profile ${i + 1}**:
-* Location: **${p.country || 'Any'}** - **${p.region || ''}**
-* Property Type: **${p.type || 'Any'}**
-* Price Range: **${p.priceRange || 'Any'}**
-* Specifics: **${p.other || 'None'}**
-`).join('\\n');
-        } else {
-            // Fallback for old single format
-            purposeText = `
-        * Country: ** "${criteria?.targetCountry || 'Any'}" **
-* Price range: ** "${criteria?.priceRange || 'Any'}" **
-* Property type: ** "${criteria?.propertyType || 'Any'}" **
-        `;
-        }
-
-        return `# PROPERTY SEARCH MANDATE AGREEMENT FOR INVESTMENT
-
-        ** In ${signingPlace}, on ${formattedDate}**
-
-## PARTIES
-
-On the one hand,
-
-** URBINA AGENCY LLC **, a company duly incorporated and registered in the State of New Mexico, United States of America... (operating through ** [forinvestors.org](http://www.forinvestors.org)**).
-
-            And on the other hand,
-
-** "${clientName}" **, identified with ** "${clientID}" **, with registered address at ** "${clientAddress}" **, hereinafter referred to as ** "THE CLIENT" **.
-
-## RECITALS
-
-    1. THE CLIENT is interested in the ** search and analysis of real estate investment opportunities **, validated by a total declared Investment Capacity of ** ${capacity}**.
-2. URBINA AGENCY professionally engages in the identification of assets...
-
-## CLAUSES
-
-### 1. Purpose of the agreement(Search Mandate)
-THE CLIENT grants URBINA AGENCY a mandate to identify opportunities meeting the following criteria:
-
-${purposeText}
-
-### 3. Term
-        ** SIX(6) MONTHS **, automatic termination unless renewed.
-
-### 5. URBINA AGENCY’s fee
-        ** SEVEN PERCENT(7 %) ** of acquisition price + taxes.
-
-### 6. Payment Instructions
-All fees shall be paid to the following account:
-${BANK_DETAILS}
-
-...
-
-
-** URBINA AGENCY LLC **               ** THE CLIENT **
-        [System Signed][See Signature Below]
-    `;
-    };
-
-    const generateSaleMandate = () => {
-        const property = sellerData?.property || {};
-        const owners = sellerData?.owners || [];
-        const ownersList = owners.map(o => `** ${o.name}** (ID: ${o.idNumber}, ${o.percent}%)`).join(' and ');
-
-        return `# EXCLUSIVE SALES MANAGEMENT MANDATE
-
-        ** In Online Mode, on ${formattedDate}**
-
-## PARTIES
-
-        ** URBINA AGENCY LLC ** (The Agency)...
-    And
-        ** THE OWNERS **: ${ownersList}, legal owners of the property at ** ${property.address || 'TBD'}**.
-
-## CLAUSES
-
-### 1. Object
-EXCLUSIVE MANDATE to manage the sale of the Property.
-** Target Price **: €${property.price || 'TBD'}.
-
-### 2. Term & Exclusivity
-        ** SIX(6) MONTHS **.Strict Exclusivity.
-
-### 3. Collaboration
-URBINA AGENCY Authorized to collaborate with network agencies.
-
-### 4. Fees(Commission)
-        ** SEVEN PERCENT(7 %) ** of sale price + VAT.
-Payable within ** 15 business days **.
-
-### 5. Payment Details
-${BANK_DETAILS}
-
-...
-
-
-** URBINA AGENCY LLC **               ** THE OWNERS **
-        [System Signed][See Signature Below]
-    `;
-    };
-
-    const generateAgencyAgreement = () => {
-        const ag = agencyData || {};
-
-        return `# AGENCY COLLABORATION AGREEMENT
-
-        ** In Online Mode, on ${formattedDate}**
-
-## PARTIES
-
-        ** URBINA AGENCY LLC ** (Platform Owner)...
-    And
-        ** ${ag.companyName || 'PARTNER AGENCY'}** (The Partner), Tax ID ** ${ag.taxId}**, represented by ** ${ag.repName}** (${ag.repId}).
-
-## RECITALS
-Both entities are empowered to manage real estate transactions and wish to collaborate via ** [forinvestors.org](http://www.forinvestors.org)**.
-
-## CLAUSES
-
-### 1. Object
-Mutual collaboration for the sale of real estate assets.
-* The Partner uploads properties to the Platform -> Deemed as shared collaboration.
-* Urbina Agency provides Investors for said properties.
-
-### 2. Duration
-        ** INDEFINITE **.Valid until either party terminates their account on the Platform.
-
-### 3. Obligations
-The Partner MUST upload the specific "Sales Mandate" and "Commission Agreement" for each property they list on the Platform.
-
-### 4. Fees & Commission Split
-In the event of a successful sale where the Buyer is introduced by Urbina Agency / Platform:
-** FIFTY PERCENT(50 %) ** of the total commission received by The Partner from the seller.
-Plus applicable taxes.
-
-### 5. Payment Terms
-The Partner shall pay Urbina Agency within ** 15 Business Days ** of receiving their commission.
-Payment to:
-${BANK_DETAILS}
-
-...
-
-** URBINA AGENCY LLC **               ** PARTNER AGENCY **
-        [System Signed][See Signature Below]
-    `;
-    };
-
-    const getContractContent = () => {
-        if (contractType === 'sale_mandate') return generateSaleMandate();
-        if (contractType === 'agency_collaboration') return generateAgencyAgreement();
-        return generateBuyMandate();
-    };
+    const formattedDate = today.toLocaleDateString(i18n.language === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
     useEffect(() => {
         checkExistingContract();
@@ -226,7 +45,8 @@ ${BANK_DETAILS}
     const handleSignatureSave = async (signatureDataUrl) => {
         setLoading(true);
         try {
-            const contractText = getContractContent();
+            // Generate contract text with current language persistence
+            const contractText = getContractContent(contractType, { criteria, sellerData, agencyData, profile }, i18n.language);
 
             // Build insert data based on type
             const insertData = {
@@ -257,7 +77,7 @@ ${BANK_DETAILS}
 
         } catch (err) {
             console.error('Error saving contract:', err);
-            alert('Error saving signature. Please try again.');
+            alert(t('dashboard.contracts.save_error', 'Error saving signature. Please try again.'));
         } finally {
             setLoading(false);
         }
@@ -275,7 +95,7 @@ ${BANK_DETAILS}
         html2pdf().from(element).set(opt).save();
     };
 
-    if (loading) return <div className="text-white text-center p-10"><Loader2 className="animate-spin inline mr-2" /> Loading contract...</div>;
+    if (loading) return <div className="text-white text-center p-10"><Loader2 className="animate-spin inline mr-2" /> {t('dashboard.contracts.loading', 'Loading contract...')}</div>;
 
     if (signed && mode === 'standalone') {
         return (
@@ -285,25 +105,21 @@ ${BANK_DETAILS}
                         <CheckCircle size={48} />
                     </div>
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-4">Agreement Active</h2>
+                <h2 className="text-2xl font-bold text-white mb-4">{t('dashboard.contracts.active_title', 'Agreement Active')}</h2>
                 <div className="bg-white/5 p-4 rounded-lg inline-block text-left max-w-lg mx-auto w-full">
                     <img src={existingSignature} alt="Signature" className="bg-white rounded p-2 h-20 border border-gray-600 mb-2" />
-                    <p className="text-xs text-gray-400">Signed on {formattedDate}</p>
+                    <p className="text-xs text-gray-400">{t('dashboard.contracts.signed_on', 'Signed on')} {formattedDate}</p>
                 </div>
 
                 {/* Download Section */}
                 <div className="mt-8 pt-8 border-t border-white/10">
-                    <p className="text-gray-400 mb-4">Download your copy of the agreement:</p>
+                    <p className="text-gray-400 mb-4">{t('dashboard.contracts.download_copy', 'Download your copy of the agreement:')}</p>
                     <button
-                        onClick={() => window.location.reload()} // For now just reload to see the full view if needed, or implement full view toggle. 
-                        // Actually better to offer a "View/Download" button that opens the contract content again.
+                        onClick={() => window.location.reload()}
                         className="bg-gold-500 hover:bg-gold-600 text-black font-bold py-2 px-6 rounded-lg inline-flex items-center gap-2"
                     >
-                        <FileText size={18} /> View & Download PDF
+                        <FileText size={18} /> {t('dashboard.contracts.view_download_pdf', 'View & Download PDF')}
                     </button>
-                    {/* Note: Ideally we re-render the contract content hidden and download it. 
-                        For "standalone" mode where we only see success, we might want to toggle "showContract" state.
-                    */}
                 </div>
             </div>
         );
@@ -316,19 +132,16 @@ ${BANK_DETAILS}
                     <div className="flex items-center gap-3">
                         <FileText className="text-gold-500" size={28} />
                         <h1 className="text-2xl font-bold text-white">
-                            {contractType === 'sale_mandate' ? 'Exclusive Sales Mandate' :
-                                contractType === 'agency_collaboration' ? 'Agency Collaboration Agreement' :
-                                    'Property Search Mandate'}
+                            {contractType === 'sale_mandate' ? t('dashboard.contracts.title_sale', 'Exclusive Sales Mandate') :
+                                contractType === 'agency_collaboration' ? t('dashboard.contracts.title_agency', 'Agency Collaboration Agreement') :
+                                    t('dashboard.contracts.title_search', 'Property Search Mandate')}
                         </h1>
                     </div>
-                    {/* Download Button visible if signed or just previewing? Usually only if signed. 
-                        But we can allow download blank too. 
-                    */}
                     <button
                         onClick={handleDownload}
                         className="text-gold-400 hover:text-white flex items-center gap-2 text-sm"
                     >
-                        <Download size={16} /> Download PDF
+                        <Download size={16} /> {t('dashboard.contracts.download_pdf', 'Download PDF')}
                     </button>
                 </div>
 
@@ -342,12 +155,12 @@ ${BANK_DETAILS}
                         <p className="text-xs text-gray-500">Official Document</p>
                     </div>
 
-                    <div className="whitespace-pre-wrap font-serif" dangerouslySetInnerHTML={{ __html: getContractContent().replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/## (.*)/g, '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>').replace(/### (.*)/g, '<h3 class="text-lg font-bold mt-3 mb-1">$1</h3>') }} />
+                    <div className="whitespace-pre-wrap font-serif" dangerouslySetInnerHTML={{ __html: getContractContent(contractType, { criteria, sellerData, agencyData, profile }, i18n.language).replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/## (.*)/g, '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>').replace(/### (.*)/g, '<h3 class="text-lg font-bold mt-3 mb-1">$1</h3>') }} />
 
                     {/* Signature Append for PDF generation if needed */}
                     {existingSignature && (
                         <div className="mt-8 border-t pt-4">
-                            <p>Signed by Client:</p>
+                            <p>{t('dashboard.contracts.signed_by_client', 'Signed by Client:')}</p>
                             <img src={existingSignature} className="h-16" />
                         </div>
                     )}
@@ -358,7 +171,7 @@ ${BANK_DETAILS}
                         <div className="bg-yellow-900/20 border border-yellow-500/20 p-4 rounded-lg mb-8 flex gap-3">
                             <AlertCircle className="text-yellow-500 shrink-0" />
                             <p className="text-sm text-gray-300">
-                                By signing below, you acknowledge and agree to the terms herein.
+                                {t('dashboard.contracts.agreement_warning', 'By signing below, you acknowledge and agree to the terms herein.')}
                             </p>
                         </div>
 
@@ -368,7 +181,7 @@ ${BANK_DETAILS}
 
                 {onBack && (
                     <button onClick={onBack} className="mt-4 text-gray-500 hover:text-white text-sm">
-                        Back to Previous Step
+                        {t('dashboard.contracts.back_step', 'Back to Previous Step')}
                     </button>
                 )}
             </div>

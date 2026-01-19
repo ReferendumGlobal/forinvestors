@@ -55,29 +55,43 @@ export default function AgencyContactForm() {
         setError(null);
         setLoadingText(t('forms.loading.encrypting'));
 
+        // Prepare details for the message field since DB columns might vary
+        const propertyTypesStr = formState.propertyTypes.map(t => t).join(', '); // or translate if needed
+        const fullMessage = `
+[Agency Lead Details]
+Company: ${formState.companyName}
+Tax ID: ${formState.taxId}
+Contact: ${formState.contactPerson}
+Website: ${formState.website}
+Property Types: ${propertyTypesStr}
+Price Range: ${formState.priceRangeFrom} - ${formState.priceRangeTo}
+Dossier: ${formState.dossierLink}
+
+[Message]
+${formState.message}
+        `.trim();
+
         try {
-            // 1. Save to Supabase
+            // 1. Save to Supabase (Non-blocking)
             const { error: dbError } = await supabase.from('leads').insert([
                 {
                     full_name: formState.contactPerson,
                     company_name: formState.companyName,
-                    tax_id: formState.taxId,
+                    // tax_id: formState.taxId, // Removed to prevent schema errors
                     email: formState.email,
                     phone: formState.phone,
                     role: 'agency',
                     status: 'new',
-                    message: formState.message,
+                    message: fullMessage, // Store full details in message
                     source: 'agency_page',
-                    details: {
-                        website: formState.website,
-                        property_types: formState.propertyTypes,
-                        price_range: `${formState.priceRangeFrom} - ${formState.priceRangeTo}`,
-                        dossier_link: formState.dossierLink
-                    }
+                    // details: { ... } // Removed to prevent schema errors
                 }
             ]);
 
-            if (dbError) throw dbError;
+            if (dbError) {
+                console.error("Supabase Insert Error (Non-fatal):", dbError);
+                // We do not throw here to ensure email delivery works
+            }
 
             // 2. Send email via FormSubmit
             const formData = new FormData();
@@ -98,10 +112,14 @@ export default function AgencyContactForm() {
                 formData.append('dossier_link', formState.dossierLink);
             }
 
-            await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
+            const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
                 method: "POST",
                 body: formData
             });
+
+            if (!response.ok) {
+                throw new Error("Email sending failed");
+            }
 
             // Navigate to register
             navigate('/register?type=agency', {
@@ -112,7 +130,7 @@ export default function AgencyContactForm() {
                     phone: formState.phone,
                     role: 'agency',
                     website: formState.website,
-                    message: formState.message,
+                    message: fullMessage,
                     dossierLink: formState.dossierLink
                 }
             });

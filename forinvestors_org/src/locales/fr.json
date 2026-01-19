@@ -219,6 +219,8 @@
         "labels": {
             "fullName": "Nom Complet",
             "companyNameOptional": "Nom de l'Entreprise (Optionnel)",
+            "optional_suffix": "(Optionnel)",
+            "isCompany": "Mandat au nom d'une société (Cochez si applicable)",
             "email": "Email Professionnel",
             "website": "Site Web",
             "phone": "Téléphone",
@@ -447,6 +449,23 @@
                     "desc": "Nous gérons l'opération avec les normes juridiques et de confidentialité les plus élevées."
                 }
             }
+        }
+    },
+    "dashboard": {
+        "contracts": {
+            "title_sale": "Mandat de Vente Exclusif",
+            "title_agency": "Accord de Collaboration Agence",
+            "title_search": "Mandat de Recherche de Propriété",
+            "download_pdf": "Télécharger PDF",
+            "signed_by_client": "Signé par le Client :",
+            "agreement_warning": "En signant ci-dessous, vous reconnaissez et acceptez les termes présents.",
+            "back_step": "Retour à l'étape précédente",
+            "active_title": "Accord Actif",
+            "signed_on": "Signé le",
+            "download_copy": "Téléchargez votre copie de l'accord :",
+            "view_download_pdf": "Voir et Télécharger PDF",
+            "loading": "Chargement du contrat...",
+            "save_error": "Erreur lors de l'enregistrement de la signature. Veuillez réessayer."
         }
     },
     "seo": {

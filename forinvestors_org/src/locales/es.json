@@ -285,6 +285,8 @@
             "name": "Nombre Completo",
             "companyName": "Nombre Legal Agencia",
             "companyNameOptional": "Nombre de Empresa (Opcional)",
+            "optional_suffix": "(Opcional)",
+            "isCompany": "Mandato en nombre de una Empresa (Marcar si procede)",
             "fullName": "Nombre Completo",
             "email": "Email Profesional",
             "website": "Página Web",
@@ -469,6 +471,23 @@
         "terms_conditions": {
             "title": "Términos y Condiciones",
             "content": "El uso de esta plataforma implica la aceptación de los siguientes términos..."
+        }
+    },
+    "dashboard": {
+        "contracts": {
+            "title_sale": "Mandato de Venta Exclusiva",
+            "title_agency": "Acuerdo de Colaboración de Agencia",
+            "title_search": "Mandato de Búsqueda de Propiedad",
+            "download_pdf": "Descargar PDF",
+            "signed_by_client": "Firmado por el Cliente:",
+            "agreement_warning": "Al firmar a continuación, usted reconoce y acepta los términos aquí expuestos.",
+            "back_step": "Volver al Paso Anterior",
+            "active_title": "Acuerdo Activo",
+            "signed_on": "Firmado el",
+            "download_copy": "Descargue su copia del acuerdo:",
+            "view_download_pdf": "Ver y Descargar PDF",
+            "loading": "Cargando contrato...",
+            "save_error": "Error al guardar la firma. Por favor inténtelo de nuevo."
         }
     },
     "seo": {

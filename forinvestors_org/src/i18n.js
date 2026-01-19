@@ -37,9 +37,10 @@ i18n
             escapeValue: false,
         },
         detection: {
-            order: ['path', 'navigator'],
+            order: ['path', 'localStorage', 'navigator'],
             lookupFromPathIndex: 0,
             checkWhitelist: true,
+            caches: ['localStorage']
         },
         supportedLngs: ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'],
     });
