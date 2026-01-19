@@ -51,9 +51,41 @@
         "success_text": "We optimize the probability of closing through data analysis."
     },
     "about": {
-        "title": "TopOffMarket.com: Intelligence applied to Luxury",
-        "description_1": "We are not just a brokerage firm; we are a technology company applied to the high-end real estate market.",
-        "description_2": "Our Smart Matching system analyzes thousands of data points to ensure that every opportunity presented is a viable investment."
+        "nav": "About Us",
+        "hero": {
+            "title": "From Discrete Prestige to Digital Revolution",
+            "subtitle": " 40 years leading the Off-Market from the shadows. Now, we turn on the light of Artificial Intelligence."
+        },
+        "legacy": {
+            "title": "A 40-Year Legacy",
+            "description": "For four decades, we have been the silent leaders in major off-market transactions. Operating almost in the shadows, we have managed exclusive assets for a global elite, basing our success on absolute discretion and personal trust."
+        },
+        "evolution": {
+            "title": "Our Evolution",
+            "description": "We have decided to take a step forward. We are opening our historical portfolio and network of contacts to the world, transforming our experience into a cutting-edge technological platform."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "To make the off-market business select, intuitive, and effective globally, supported by the power of Artificial Intelligence."
+        },
+        "how_it_works": {
+            "title": "How It Works",
+            "subtitle": "Technology at the service of exclusivity",
+            "steps": {
+                "1": {
+                    "title": "Verified Access",
+                    "desc": "We rigorously validate every profile to maintain network exclusivity."
+                },
+                "2": {
+                    "title": "AI Matching",
+                    "desc": "Our algorithms connect your investment criteria with precise hidden assets."
+                },
+                "3": {
+                    "title": "Secure Closing",
+                    "desc": "We manage the operation with the highest legal and privacy standards."
+                }
+            }
+        }
     },
     "features": {
         "title": "The AI Advantage",

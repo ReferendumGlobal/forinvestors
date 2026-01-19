@@ -5,7 +5,7 @@ import Logo from './Logo';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
-export default function Navbar({ categories }) {
+export default function Navbar({ categories = {} }) {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
@@ -51,6 +51,15 @@ export default function Navbar({ categories }) {
                                         }`}
                                 >
                                     {t('nav.home')}
+                                </Link>
+                                <Link
+                                    to="about"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'about'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {t('about.nav')}
                                 </Link>
                                 <Link
                                     to="search"
@@ -178,6 +187,19 @@ export default function Navbar({ categories }) {
                         </Link>
                     ))}
                     <div className="h-px bg-white/10 my-2"></div>
+                    <Link
+                        to="about"
+                        onClick={() => setIsOpen(false)}
+                        className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === 'about'
+                            ? 'text-gold-400 bg-white/5'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            }`}
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 w-5 flex justify-center">•</span>
+                            {t('about.nav')}
+                        </div>
+                    </Link>
                     <Link
                         to="search"
                         onClick={() => setIsOpen(false)}

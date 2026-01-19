@@ -401,6 +401,43 @@
         "success_title": "Demande Reçue",
         "success_desc": "Nous avons bien reçu les données de votre propriété. Notre équipe d'évaluation vous contactera sous peu pour formaliser le mandat de vente."
     },
+    "about": {
+        "nav": "À Propos",
+        "hero": {
+            "title": "Du Prestige Discret à la Révolution Numérique",
+            "subtitle": "40 ans de leadership sur le marché Off-Market depuis l'ombre. Aujourd'hui, nous allumons la lumière de l'Intelligence Artificielle."
+        },
+        "legacy": {
+            "title": "Un Héritage de 40 Ans",
+            "description": "Pendant quatre décennies, nous avons été les leaders silencieux des grandes transactions hors marché. Opérant presque dans l'ombre, nous avons géré des actifs exclusifs pour une élite mondiale, basant notre succès sur une discrétion absolue et une confiance personnelle."
+        },
+        "evolution": {
+            "title": "Notre Évolution",
+            "description": "Nous avons décidé de faire un pas en avant. Nous ouvrons notre portefeuille historique et notre réseau de contacts au monde, transformant notre expérience en une plateforme technologique de pointe."
+        },
+        "mission": {
+            "title": "Notre Mission",
+            "description": "Rendre le marché off-market sélect, intuitif et efficace à l'échelle mondiale, soutenu par la puissance de l'Intelligence Artificielle."
+        },
+        "how_it_works": {
+            "title": "Comment ça marche",
+            "subtitle": "La technologie au service de l'exclusivité",
+            "steps": {
+                "1": {
+                    "title": "Accès Vérifié",
+                    "desc": "Nous validons rigoureusement chaque profil pour maintenir l'exclusivité du réseau."
+                },
+                "2": {
+                    "title": "Matching IA",
+                    "desc": "Nos algorithmes connectent vos critères d'investissement avec des actifs cachés précis."
+                },
+                "3": {
+                    "title": "Clôture Sécurisée",
+                    "desc": "Nous gérons l'opération avec les normes juridiques et de confidentialité les plus élevées."
+                }
+            }
+        }
+    },
     "seo": {
         "home": {
             "title": "Off Market",

@@ -401,6 +401,43 @@
         "success_title": "Pedido Recebido",
         "success_desc": "Recebemos os dados da sua propriedade. A nossa equipa de avaliações entrará em contacto em breve para formalizar o mandato de venda."
     },
+    "about": {
+        "nav": "Sobre Nós",
+        "hero": {
+            "title": "Do Prestígio Discreto à Revolução Digital",
+            "subtitle": "40 anos liderando o mercado Off-Market das sombras. Agora, acendemos a luz da Inteligência Artificial."
+        },
+        "legacy": {
+            "title": "Um Legado de 40 Anos",
+            "description": "Durante quatro décadas, fomos os líderes silenciosos nas principais transações off-market. Operando quase nas sombras, gerimos ativos exclusivos para uma elite global, baseando o nosso sucesso na discrição absoluta e na confiança pessoal."
+        },
+        "evolution": {
+            "title": "A Nossa Evolução",
+            "description": "Decidimos dar um passo em frente. Abrimos o nosso portfólio histórico e a nossa rede de contactos ao mundo, transformando a nossa experiência numa plataforma tecnológica de ponta."
+        },
+        "mission": {
+            "title": "A Nossa Missão",
+            "description": "Tornar o negócio off-market seleto, intuitivo e eficaz a nível global, apoiado pelo poder da Inteligência Artificial."
+        },
+        "how_it_works": {
+            "title": "Como Funciona",
+            "subtitle": "Tecnologia ao serviço da exclusividade",
+            "steps": {
+                "1": {
+                    "title": "Acesso Verificado",
+                    "desc": "Validamos rigorosamente cada perfil para manter a exclusividade da rede."
+                },
+                "2": {
+                    "title": "Matching IA",
+                    "desc": "Os nossos algoritmos conectam o seu critério de investimento com ativos ocultos precisos."
+                },
+                "3": {
+                    "title": "Fecho Seguro",
+                    "desc": "Gerimos a operação com os mais altos padrões legais e de privacidade."
+                }
+            }
+        }
+    },
     "seo": {
         "home": {
             "title": "Off Market",

@@ -401,6 +401,43 @@
         "success_title": "Anfrage Erhalten",
         "success_desc": "Wir haben Ihre Immobiliendaten erhalten. Unser Bewertungsteam wird Sie in Kürze kontaktieren, um das Verkaufsmandat zu formalisieren."
     },
+    "about": {
+        "nav": "Über uns",
+        "hero": {
+            "title": "Vom diskreten Prestige zur digitalen Revolution",
+            "subtitle": "40 Jahre Marktführerschaft im Off-Market aus dem Schatten heraus. Jetzt erhellen wir ihn mit Künstlicher Intelligenz."
+        },
+        "legacy": {
+            "title": "Ein 40-jähriges Vermächtnis",
+            "description": "Seit vier Jahrzehnten sind wir die stillen Führer bei großen Off-Market-Transaktionen. Fast im Verborgenen operierend, haben wir exklusive Vermögenswerte für eine globale Elite verwaltet. Unser Erfolg basiert auf absoluter Diskretion und persönlichem Vertrauen."
+        },
+        "evolution": {
+            "title": "Unsere Evolution",
+            "description": "Wir haben beschlossen, einen Schritt nach vorne zu machen. Wir öffnen unser historisches Portfolio und unser Netzwerk für die Welt und transformieren unsere Erfahrung in eine technologische Spitzenplattform."
+        },
+        "mission": {
+            "title": "Unsere Mission",
+            "description": "Das Off-Market-Geschäft weltweit elitär, intuitiv und effektiv zu gestalten, unterstützt durch die Kraft der Künstlichen Intelligenz."
+        },
+        "how_it_works": {
+            "title": "Wie es funktioniert",
+            "subtitle": "Technologie im Dienste der Exklusivität",
+            "steps": {
+                "1": {
+                    "title": "Verifizierter Zugang",
+                    "desc": "Wir prüfen jedes Profil streng, um die Exklusivität des Netzwerks zu wahren."
+                },
+                "2": {
+                    "title": "KI-Matching",
+                    "desc": "Unsere Algorithmen verbinden Ihre Investitionskriterien mit präzisen, verborgenen Vermögenswerten."
+                },
+                "3": {
+                    "title": "Sicherer Abschluss",
+                    "desc": "Wir verwalten die Transaktion nach höchsten rechtlichen und datenschutzrechtlichen Standards."
+                }
+            }
+        }
+    },
     "seo": {
         "home": {
             "title": "Off Market",

@@ -32,9 +32,41 @@
         "success_text": "El único rastro que dejamos es el éxito."
     },
     "about": {
-        "title": "Sobre Urbina Agency",
-        "description_1": "Somos una firma boutique especializada en la intermediación de activos inmobiliarios prime fuera de mercado (off-market).",
-        "description_2": "Conectamos propietarios y fondos de inversión con total confidencialidad, operando en los principales mercados de Europa."
+        "nav": "Sobre Nosotros",
+        "hero": {
+            "title": "Del Prestigio Discreto a la Revolución Digital",
+            "subtitle": "40 años liderando el mercado Off-Market desde la sombra. Ahora, encendemos la luz de la Inteligencia Artificial."
+        },
+        "legacy": {
+            "title": "Un Legado de 40 Años",
+            "description": "Durante cuatro décadas, hemos sido los líderes silenciosos en las compraventas off-market más importantes. Operando casi en la sombra, hemos gestionado activos exclusivos para una élite global, basando nuestro éxito en la discreción absoluta y la confianza personal."
+        },
+        "evolution": {
+            "title": "Nuestra Evolución",
+            "description": "Hemos decidido dar un paso adelante. Abrimos nuestra cartera histórica y nuestra red de contactos al mundo, transformando nuestra experiencia en una plataforma tecnológica de vanguardia."
+        },
+        "mission": {
+            "title": "Nuestra Misión",
+            "description": "Hacer que el negocio off-market sea selecto, intuitivo y efectivo a nivel global, apoyado en el poder de la Inteligencia Artificial."
+        },
+        "how_it_works": {
+            "title": "Cómo Funciona la Plataforma",
+            "subtitle": "Tecnología al servicio de la exclusividad",
+            "steps": {
+                "1": {
+                    "title": "Acceso Verificado",
+                    "desc": "Validamos rigurosamente cada perfil para mantener la exclusividad de la red."
+                },
+                "2": {
+                    "title": "Matching IA",
+                    "desc": "Nuestros algoritmos conectan su criterio de inversión con activos ocultos precisos."
+                },
+                "3": {
+                    "title": "Cierre Seguro",
+                    "desc": "Gestionamos la operación con los más altos estándares legales y de privacidad."
+                }
+            }
+        }
     },
     "features": {
         "title": "¿Por qué elegirnos?",

@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import AboutUs from './components/AboutUs';
 import ScrollToTop from './components/ScrollToTop';
 import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -110,6 +111,7 @@ function App() {
             {/* Public Website Routes */}
             <Route path="/:lang" element={<LanguageWrapper />}>
               <Route index element={<Home />} />
+              <Route path="about" element={<AboutUs />} />
               <Route path=":slug" element={<RouteDispatcher />} />
               <Route path="*" element={<Navigate to="." replace />} />
             </Route>
