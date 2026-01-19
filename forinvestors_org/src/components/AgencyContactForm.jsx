@@ -12,6 +12,7 @@ export default function AgencyContactForm() {
     const navigate = useNavigate();
     const [formState, setFormState] = useState({
         companyName: '',
+        taxId: '',
         contactPerson: '',
         email: '',
         phone: '',
@@ -60,6 +61,7 @@ export default function AgencyContactForm() {
                 {
                     full_name: formState.contactPerson,
                     company_name: formState.companyName,
+                    tax_id: formState.taxId,
                     email: formState.email,
                     phone: formState.phone,
                     role: 'agency',
@@ -80,6 +82,7 @@ export default function AgencyContactForm() {
             // 2. Send email via FormSubmit
             const formData = new FormData();
             formData.append('company_name', formState.companyName);
+            formData.append('tax_id', formState.taxId);
             formData.append('contact_person', formState.contactPerson);
             formData.append('email', formState.email);
             formData.append('phone', formState.phone);
@@ -225,6 +228,18 @@ export default function AgencyContactForm() {
                                             onChange={e => setFormState({ ...formState, companyName: e.target.value })}
                                         />
                                     </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.taxId')}</label>
+                                        <input
+                                            type="text"
+                                            required
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
+                                            value={formState.taxId}
+                                            onChange={e => setFormState({ ...formState, taxId: e.target.value })}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.website')}</label>
                                         <input

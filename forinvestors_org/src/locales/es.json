@@ -99,6 +99,7 @@
     "agency_page": {
         "title": "Colabora con la Élite del Real Estate",
         "subtitle": "Demuestra ser una exquisita agencia Off-Market y recibe el 50% de comisión sobre nuestros activos en cartera.",
+        "why_partner_title": "Ventajas de la Alianza",
         "access_button": "Solicitar Colaboración",
         "disclaimer": "* Acceso restringido. Requiere activación manual tras firma de contrato.",
         "collaboration_model": "Un Modelo de Colaboración Justo",
@@ -282,9 +283,10 @@
     "forms": {
         "labels": {
             "name": "Nombre Completo",
-            "companyName": "Nombre de Empresa (Opcional)",
+            "companyName": "Nombre Legal Agencia",
             "fullName": "Nombre Completo",
             "email": "Email Profesional",
+            "website": "Página Web",
             "phone": "Teléfono",
             "city": "Ciudad",
             "country": "País",
