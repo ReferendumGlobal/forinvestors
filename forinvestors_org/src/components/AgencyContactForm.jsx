@@ -159,23 +159,23 @@ export default function AgencyContactForm() {
                         {t('agency_page.why_partner_title')}
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
                         {Array.isArray(benefits) && benefits.map((benefit, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.2 }}
-                                className="bg-midnight-900/50 p-8 rounded-xl border border-white/5 hover:border-gold-500/30 transition-colors text-left"
+                                className="bg-midnight-900/50 p-8 rounded-xl border border-white/5 hover:border-gold-500/30 transition-colors text-left flex items-center gap-6"
                             >
-                                <div className="flex items-start gap-4">
-                                    <div className="mt-1">
+                                <div className="flex-shrink-0">
+                                    <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center">
                                         <CheckCircle className="text-gold-500" size={24} />
                                     </div>
-                                    <div>
-                                        <h3 className="text-xl font-serif text-white mb-2">{benefit.title}</h3>
-                                        <p className="text-gray-400 leading-relaxed">{benefit.desc}</p>
-                                    </div>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-serif text-white mb-1">{benefit.title}</h3>
+                                    <p className="text-gray-400 leading-relaxed">{benefit.desc}</p>
                                 </div>
                             </motion.div>
                         ))}

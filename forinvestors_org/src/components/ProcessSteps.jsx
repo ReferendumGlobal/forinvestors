@@ -53,7 +53,7 @@ export default function ProcessSteps({ variant = 'agencies' }) {
                     {/* Connecting Line (Desktop) */}
                     <div className="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-gold-500/0 via-gold-500/30 to-gold-500/0"></div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                    <div className={`grid grid-cols-1 md:grid-cols-2 ${variant === 'agencies' ? 'lg:grid-cols-2 max-w-5xl mx-auto' : 'lg:grid-cols-4'} gap-8 lg:gap-12`}>
                         {steps.map((step, index) => {
                             const Icon = icons[step.icon] || FileText;
 
