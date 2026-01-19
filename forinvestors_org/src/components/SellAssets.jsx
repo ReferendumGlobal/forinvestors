@@ -29,6 +29,7 @@ export default function SellAssets() {
     const benefits = t('sell_page.benefits', { returnObjects: true });
 
     const handleFileChange = (e) => {
+        // Legacy file handler kept to avoid break, but not used in UI now
         if (e.target.files[0]) {
             setFormState({ ...formState, file: e.target.files[0] });
         }
@@ -75,8 +76,8 @@ export default function SellAssets() {
             formData.append('_template', 'table');
             formData.append('role', 'seller');
 
-            if (formState.file) {
-                formData.append('attachment', formState.file);
+            if (formState.dossierLink) {
+                formData.append('dossier_link', formState.dossierLink);
             }
 
             await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
@@ -270,104 +271,103 @@ export default function SellAssets() {
                                         onChange={e => setFormState({ ...formState, location: e.target.value })}
                                     />
                                 </div>
-                            </div>
 
                                 {/* Company Sale Toggle */}
-                        <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5">
-                            <label className="flex items-center space-x-3 cursor-pointer">
-                                <input
-                                    type="checkbox"
-                                    checked={formState.saleByCompany}
-                                    onChange={e => setFormState({ ...formState, saleByCompany: e.target.checked })}
-                                    className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
-                                />
-                                <span className="text-sm text-gray-300">Venta a nombre de Empresa</span>
-                            </label>
+                                <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5">
+                                    <label className="flex items-center space-x-3 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            checked={formState.saleByCompany}
+                                            onChange={e => setFormState({ ...formState, saleByCompany: e.target.checked })}
+                                            className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                                        />
+                                        <span className="text-sm text-gray-300">Venta a nombre de Empresa</span>
+                                    </label>
 
-                            {formState.saleByCompany && (
-                                <motion.div
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: 'auto' }}
-                                    className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"
+                                    {formState.saleByCompany && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"
+                                        >
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-400 mb-2">Nombre de Empresa</label>
+                                                <input
+                                                    type="text"
+                                                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                                    value={formState.companyName}
+                                                    onChange={e => setFormState({ ...formState, companyName: e.target.value })}
+                                                />
+                                            </div>
+                                            <div>
+                                                <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID</label>
+                                                <input
+                                                    type="text"
+                                                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                                    value={formState.companyNif}
+                                                    onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
+                                                />
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
+                                    <textarea
+                                        rows={4}
+                                        required
+                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                        placeholder={t('forms.placeholders.message_example')}
+                                        value={formState.propertyDetails}
+                                        onChange={e => setFormState({ ...formState, propertyDetails: e.target.value })}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
+                                        Enlace al Dossier / Fotos <AlertCircle size={14} />
+                                    </label>
+                                    <input
+                                        type="url"
+                                        required
+                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                        placeholder="https://drive.google.com/..."
+                                        value={formState.dossierLink}
+                                        onChange={e => setFormState({ ...formState, dossierLink: e.target.value })}
+                                    />
+                                    <p className="text-xs text-gray-500 mt-2">
+                                        * Indispensable adjuntar <strong>Referencia Catastral</strong> en el dossier.
+                                    </p>
+                                </div>
+
+                                {error && (
+                                    <div className="p-3 bg-red-900/20 border border-red-500/30 rounded text-red-200 text-sm text-center">
+                                        {error}
+                                    </div>
+                                )}
+
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 rounded-lg transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
                                 >
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-2">Nombre de Empresa</label>
-                                        <input
-                                            type="text"
-                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                            value={formState.companyName}
-                                            onChange={e => setFormState({ ...formState, companyName: e.target.value })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID</label>
-                                        <input
-                                            type="text"
-                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                            value={formState.companyNif}
-                                            onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
-                                        />
-                                    </div>
-                                </motion.div>
-                            )}
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
-                            <textarea
-                                rows={4}
-                                required
-                                className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                placeholder={t('forms.placeholders.message_example')}
-                                value={formState.propertyDetails}
-                                onChange={e => setFormState({ ...formState, propertyDetails: e.target.value })}
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                                Enlace al Dossier / Fotos <AlertCircle size={14} />
-                            </label>
-                            <input
-                                type="url"
-                                required
-                                className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                placeholder="https://drive.google.com/..."
-                                value={formState.dossierLink}
-                                onChange={e => setFormState({ ...formState, dossierLink: e.target.value })}
-                            />
-                            <p className="text-xs text-gray-500 mt-2">
-                                * Indispensable adjuntar <strong>Referencia Catastral</strong> en el dossier.
-                            </p>
-                        </div>
-
-                        {error && (
-                            <div className="p-3 bg-red-900/20 border border-red-500/30 rounded text-red-200 text-sm text-center">
-                                {error}
-                            </div>
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="animate-spin" size={20} />
+                                            {t('forms.buttons.processing')}
+                                        </>
+                                    ) : (
+                                        <>
+                                            {t('sell_page.hero_cta')} <Send size={18} />
+                                        </>
+                                    )}
+                                </button>
+                            </form>
                         )}
-
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 rounded-lg transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
-                        >
-                            {isSubmitting ? (
-                                <>
-                                    <Loader2 className="animate-spin" size={20} />
-                                    {t('forms.buttons.processing')}
-                                </>
-                            ) : (
-                                <>
-                                    {t('sell_page.hero_cta')} <Send size={18} />
-                                </>
-                            )}
-                        </button>
-                    </form>
-                        )}
+                    </div>
                 </div>
             </div>
         </div>
-        </div >
     );
 }
