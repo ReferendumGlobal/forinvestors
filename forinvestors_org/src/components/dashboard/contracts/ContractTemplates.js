@@ -204,25 +204,25 @@ ${isSpanish
                 : 'This agreement establishes the terms of collaboration for the sale of real estate assets, under the following defined roles:'}
 
 * **Urbina Agency (Plataforma):** ${isSpanish
-                ? 'Provee la infraestructura tecnológica (topoffmarket.com) y la conexión con **COMPRADORES/INVERSORES** cualificados.'
-                : 'Provides the technological infrastructure (topoffmarket.com) and connection with qualified **BUYERS/INVESTORS**.'}
+                ? 'Provee la infraestructura tecnológica, conexión con **COMPRADORES/INVERSORES** cualificados y aporta **PROPIEDADES** de su propia cartera.'
+                : 'Provides the technological infrastructure, connection with qualified **BUYERS/INVESTORS**, and contributes **PROPERTIES** from its own portfolio.'}
 * **${ag.companyName || 'El Colaborador'} (Gestión):** ${isSpanish
-                ? 'Aporta **PROPIEDADES** (su cartera propia o captaciones) y se encarga de la **GESTIÓN INTEGRAL DE LA VENTA** en terreno.'
-                : 'Provides **PROPERTIES** (own portfolio or listings) and handles the **COMPREHENSIVE SALE MANAGEMENT** on the ground.'}
+                ? 'Aporta **PROPIEDADES** y se encarga de la **GESTIÓN INTEGRAL DE LA VENTA** (visitas, documentación) tanto de sus propiedades como de las asignadas por Urbina Agency.'
+                : 'Provides **PROPERTIES** and handles the **COMPREHENSIVE SALE MANAGEMENT** (visits, documentation) for both their own properties and those assigned by Urbina Agency.'}
 
 ### 2. ${isSpanish ? 'Obligaciones Específicas' : 'Specific Obligations'}
 **${isSpanish ? 'El Colaborador' : 'The Partner'}:**
 * ${isSpanish
-                ? 'Gestionará las visitas, documentación legal, due diligence y relación directa con la propiedad/vendedor.'
-                : 'Shall manage visits, legal documentation, due diligence, and direct relationship with the property/seller.'}
+                ? 'Gestionará las visitas, documentación legal, due diligence y relación directa con la propiedad/vendedor en TODAS las operaciones compartidas.'
+                : 'Shall manage visits, legal documentation, due diligence, and direct relationship with the property/seller in ALL shared operations.'}
 * ${isSpanish
-                ? 'Es responsable gestionar las ventas de las propiedades asignadas por Urbina Agency.'
-                : 'Is responsible for managing the sales of properties assigned by Urbina Agency.'}
+                ? 'Actuará como gestor principal en el terreno para las propiedades aportadas por Urbina Agency.'
+                : 'Shall act as the main ground manager for properties contributed by Urbina Agency.'}
 
 **Urbina Agency:**
 * ${isSpanish
-                ? 'Pondrá en contacto a compradores potenciales con El Colaborador a través de la tecnología de la Plataforma para que este gestione el cierre.'
-                : 'Shall connect potential buyers with The Partner through the Platform technology for them to manage the closing.'}
+                ? 'Pondrá en contacto a compradores potenciales con El Colaborador a través de la tecnología de la Plataforma.'
+                : 'Shall connect potential buyers with The Partner through the Platform technology.'}
 
 ### 3. ${isSpanish ? 'Duración' : 'Duration'}
 **${isSpanish ? 'INDEFINIDA' : 'INDEFINITE'}**. ${isSpanish
