@@ -30,7 +30,7 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
 *   **Routing Number (ABA)**: 091017138
 *   **Account Number**: 692101525685
 `;
-    `;
+
 
     // --- TEMPLATE GENERATORS ---
 
@@ -47,12 +47,12 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
 
         if (profiles.length > 0) {
             purposeText = profiles.map((p, i) => `
-        ** Profile ${ i + 1 }**:
-* Location: ** ${ p.country || 'Any' }** - ** ${ p.region || '' }**
-* Property Type: ** ${ p.type || 'Any' }**
-* Price Range: ** ${ p.priceRange || 'Any' }**
-* Specifics: ** ${ p.other || 'None' }**
-        `).join('\\n');
+**Profile ${i + 1}**:
+* Location: **${p.country || 'Any'}** - **${p.region || ''}**
+* Property Type: **${p.type || 'Any'}**
+* Price Range: **${p.priceRange || 'Any'}**
+* Specifics: **${p.other || 'None'}**
+`).join('\\n');
         } else {
             // Fallback for old single format
             purposeText = `
@@ -64,7 +64,7 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
 
         return `# PROPERTY SEARCH MANDATE AGREEMENT FOR INVESTMENT
 
-        ** In ${ signingPlace }, on ${ formattedDate }**
+        ** In ${signingPlace}, on ${formattedDate}**
 
 ## PARTIES
 
@@ -78,7 +78,7 @@ On the one hand,
 
 ## RECITALS
 
-    1. THE CLIENT is interested in the ** search and analysis of real estate investment opportunities **, validated by a total declared Investment Capacity of ** ${ capacity }**.
+    1. THE CLIENT is interested in the ** search and analysis of real estate investment opportunities **, validated by a total declared Investment Capacity of ** ${capacity}**.
 2. URBINA AGENCY professionally engages in the identification of assets...
 
 ## CLAUSES
@@ -86,7 +86,7 @@ On the one hand,
 ### 1. Purpose of the agreement(Search Mandate)
 THE CLIENT grants URBINA AGENCY a mandate to identify opportunities meeting the following criteria:
 
-${ purposeText }
+${purposeText}
 
 ### 3. Term
         ** SIX(6) MONTHS **, automatic termination unless renewed.
@@ -96,7 +96,7 @@ ${ purposeText }
 
 ### 6. Payment Instructions
 All fees shall be paid to the following account:
-${ BANK_DETAILS }
+${BANK_DETAILS}
 
 ...
 
@@ -109,23 +109,23 @@ ${ BANK_DETAILS }
     const generateSaleMandate = () => {
         const property = sellerData?.property || {};
         const owners = sellerData?.owners || [];
-        const ownersList = owners.map(o => `** ${ o.name }** (ID: ${ o.idNumber }, ${ o.percent }%)`).join(' and ');
+        const ownersList = owners.map(o => `** ${o.name}** (ID: ${o.idNumber}, ${o.percent}%)`).join(' and ');
 
         return `# EXCLUSIVE SALES MANAGEMENT MANDATE
 
-        ** In Online Mode, on ${ formattedDate }**
+        ** In Online Mode, on ${formattedDate}**
 
 ## PARTIES
 
         ** URBINA AGENCY LLC ** (The Agency)...
     And
-        ** THE OWNERS **: ${ ownersList }, legal owners of the property at ** ${ property.address || 'TBD' }**.
+        ** THE OWNERS **: ${ownersList}, legal owners of the property at ** ${property.address || 'TBD'}**.
 
 ## CLAUSES
 
 ### 1. Object
 EXCLUSIVE MANDATE to manage the sale of the Property.
-** Target Price **: €${ property.price || 'TBD' }.
+** Target Price **: €${property.price || 'TBD'}.
 
 ### 2. Term & Exclusivity
         ** SIX(6) MONTHS **.Strict Exclusivity.
@@ -138,7 +138,7 @@ URBINA AGENCY Authorized to collaborate with network agencies.
 Payable within ** 15 business days **.
 
 ### 5. Payment Details
-${ BANK_DETAILS }
+${BANK_DETAILS}
 
 ...
 
@@ -153,13 +153,13 @@ ${ BANK_DETAILS }
 
         return `# AGENCY COLLABORATION AGREEMENT
 
-        ** In Online Mode, on ${ formattedDate }**
+        ** In Online Mode, on ${formattedDate}**
 
 ## PARTIES
 
         ** URBINA AGENCY LLC ** (Platform Owner)...
     And
-        ** ${ ag.companyName || 'PARTNER AGENCY' }** (The Partner), Tax ID ** ${ ag.taxId }**, represented by ** ${ ag.repName }** (${ ag.repId }).
+        ** ${ag.companyName || 'PARTNER AGENCY'}** (The Partner), Tax ID ** ${ag.taxId}**, represented by ** ${ag.repName}** (${ag.repId}).
 
 ## RECITALS
 Both entities are empowered to manage real estate transactions and wish to collaborate via ** [forinvestors.org](http://www.forinvestors.org)**.
@@ -185,7 +185,7 @@ Plus applicable taxes.
 ### 5. Payment Terms
 The Partner shall pay Urbina Agency within ** 15 Business Days ** of receiving their commission.
 Payment to:
-${ BANK_DETAILS }
+${BANK_DETAILS}
 
 ...
 
@@ -267,7 +267,7 @@ ${ BANK_DETAILS }
         const element = contractRef.current;
         const opt = {
             margin: 10,
-            filename: `Urbina_Agency_Contract_${ contractType }.pdf`,
+            filename: `Urbina_Agency_Contract_${contractType}.pdf`,
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
