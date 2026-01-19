@@ -19,14 +19,18 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
     const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
     // BANK DETAILS (Confidential)
-    // TODO: User to verify these details
     const BANK_DETAILS = `
 **Beneficiary**: URBINA AGENCY LLC
-**Bank Name**: (US BANK)
-**SWIFT / BIC**: CLNOUS66
-**Account Number**: (CONFIRM ENDING)
-**Reference**: Invoice # / Mandate
+
+**For International Transfers:**
+*   **SWIFT / BIC**: CLNOUS66
+*   **Account Number**: 692101525685
+
+**For Domestic US Transfers:**
+*   **Routing Number (ABA)**: 091017138
+*   **Account Number**: 692101525685
 `;
+    `;
 
     // --- TEMPLATE GENERATORS ---
 
@@ -43,103 +47,105 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
 
         if (profiles.length > 0) {
             purposeText = profiles.map((p, i) => `
-**Profile ${i + 1}**:
-* Location: **${p.country || 'Any'}** - **${p.region || ''}**
-* Property Type: **${p.type || 'Any'}**
-* Price Range: **${p.priceRange || 'Any'}**
-* Specifics: **${p.other || 'None'}**
-`).join('\\n');
+        ** Profile ${ i + 1 }**:
+* Location: ** ${ p.country || 'Any' }** - ** ${ p.region || '' }**
+* Property Type: ** ${ p.type || 'Any' }**
+* Price Range: ** ${ p.priceRange || 'Any' }**
+* Specifics: ** ${ p.other || 'None' }**
+        `).join('\\n');
         } else {
             // Fallback for old single format
             purposeText = `
-* Country: **"${criteria?.targetCountry || 'Any'}"**
-* Price range: **"${criteria?.priceRange || 'Any'}"**
-* Property type: **"${criteria?.propertyType || 'Any'}"**
-`;
+        * Country: ** "${criteria?.targetCountry || 'Any'}" **
+* Price range: ** "${criteria?.priceRange || 'Any'}" **
+* Property type: ** "${criteria?.propertyType || 'Any'}" **
+        `;
         }
 
         return `# PROPERTY SEARCH MANDATE AGREEMENT FOR INVESTMENT
 
-**In ${signingPlace}, on ${formattedDate}**
+        ** In ${ signingPlace }, on ${ formattedDate }**
 
 ## PARTIES
 
 On the one hand,
 
-**URBINA AGENCY LLC**, a company duly incorporated and registered in the State of New Mexico, United States of America... (operating through **[forinvestors.org](http://www.forinvestors.org)**).
+** URBINA AGENCY LLC **, a company duly incorporated and registered in the State of New Mexico, United States of America... (operating through ** [forinvestors.org](http://www.forinvestors.org)**).
 
-And on the other hand,
+            And on the other hand,
 
-**"${clientName}"**, identified with **"${clientID}"**, with registered address at **"${clientAddress}"**, hereinafter referred to as **"THE CLIENT"**.
+** "${clientName}" **, identified with ** "${clientID}" **, with registered address at ** "${clientAddress}" **, hereinafter referred to as ** "THE CLIENT" **.
 
 ## RECITALS
 
-1. THE CLIENT is interested in the **search and analysis of real estate investment opportunities**, validated by a total declared Investment Capacity of **${capacity}**.
+    1. THE CLIENT is interested in the ** search and analysis of real estate investment opportunities **, validated by a total declared Investment Capacity of ** ${ capacity }**.
 2. URBINA AGENCY professionally engages in the identification of assets...
 
 ## CLAUSES
 
-### 1. Purpose of the agreement (Search Mandate)
+### 1. Purpose of the agreement(Search Mandate)
 THE CLIENT grants URBINA AGENCY a mandate to identify opportunities meeting the following criteria:
 
-${purposeText}
+${ purposeText }
 
 ### 3. Term
-**SIX (6) MONTHS**, automatic termination unless renewed.
+        ** SIX(6) MONTHS **, automatic termination unless renewed.
 
 ### 5. URBINA AGENCY’s fee
-**SEVEN PERCENT (7%)** of acquisition price + taxes.
+        ** SEVEN PERCENT(7 %) ** of acquisition price + taxes.
 
 ### 6. Payment Instructions
 All fees shall be paid to the following account:
-${BANK_DETAILS}
+${ BANK_DETAILS }
 
 ...
 
-**URBINA AGENCY LLC**               **THE CLIENT**
-[System Signed]                     [See Signature Below]
-`;
+
+** URBINA AGENCY LLC **               ** THE CLIENT **
+        [System Signed][See Signature Below]
+    `;
     };
 
     const generateSaleMandate = () => {
         const property = sellerData?.property || {};
         const owners = sellerData?.owners || [];
-        const ownersList = owners.map(o => `**${o.name}** (ID: ${o.idNumber}, ${o.percent}%)`).join(' and ');
+        const ownersList = owners.map(o => `** ${ o.name }** (ID: ${ o.idNumber }, ${ o.percent }%)`).join(' and ');
 
         return `# EXCLUSIVE SALES MANAGEMENT MANDATE
 
-**In Online Mode, on ${formattedDate}**
+        ** In Online Mode, on ${ formattedDate }**
 
 ## PARTIES
 
-**URBINA AGENCY LLC** (The Agency)...
-And
-**THE OWNERS**: ${ownersList}, legal owners of the property at **${property.address || 'TBD'}**.
+        ** URBINA AGENCY LLC ** (The Agency)...
+    And
+        ** THE OWNERS **: ${ ownersList }, legal owners of the property at ** ${ property.address || 'TBD' }**.
 
 ## CLAUSES
 
 ### 1. Object
 EXCLUSIVE MANDATE to manage the sale of the Property.
-**Target Price**: €${property.price || 'TBD'}.
+** Target Price **: €${ property.price || 'TBD' }.
 
 ### 2. Term & Exclusivity
-**SIX (6) MONTHS**. Strict Exclusivity.
+        ** SIX(6) MONTHS **.Strict Exclusivity.
 
 ### 3. Collaboration
 URBINA AGENCY Authorized to collaborate with network agencies.
 
-### 4. Fees (Commission)
-**SEVEN PERCENT (7%)** of sale price + VAT.
-Payable within **15 business days**.
+### 4. Fees(Commission)
+        ** SEVEN PERCENT(7 %) ** of sale price + VAT.
+Payable within ** 15 business days **.
 
 ### 5. Payment Details
-${BANK_DETAILS}
+${ BANK_DETAILS }
 
 ...
 
-**URBINA AGENCY LLC**               **THE OWNERS**
-[System Signed]                     [See Signature Below]
-`;
+
+** URBINA AGENCY LLC **               ** THE OWNERS **
+        [System Signed][See Signature Below]
+    `;
     };
 
     const generateAgencyAgreement = () => {
@@ -147,16 +153,16 @@ ${BANK_DETAILS}
 
         return `# AGENCY COLLABORATION AGREEMENT
 
-**In Online Mode, on ${formattedDate}**
+        ** In Online Mode, on ${ formattedDate }**
 
 ## PARTIES
 
-**URBINA AGENCY LLC** (Platform Owner)...
-And
-**${ag.companyName || 'PARTNER AGENCY'}** (The Partner), Tax ID **${ag.taxId}**, represented by **${ag.repName}** (${ag.repId}).
+        ** URBINA AGENCY LLC ** (Platform Owner)...
+    And
+        ** ${ ag.companyName || 'PARTNER AGENCY' }** (The Partner), Tax ID ** ${ ag.taxId }**, represented by ** ${ ag.repName }** (${ ag.repId }).
 
 ## RECITALS
-Both entities are empowered to manage real estate transactions and wish to collaborate via **[forinvestors.org](http://www.forinvestors.org)**.
+Both entities are empowered to manage real estate transactions and wish to collaborate via ** [forinvestors.org](http://www.forinvestors.org)**.
 
 ## CLAUSES
 
@@ -166,26 +172,26 @@ Mutual collaboration for the sale of real estate assets.
 * Urbina Agency provides Investors for said properties.
 
 ### 2. Duration
-**INDEFINITE**. Valid until either party terminates their account on the Platform.
+        ** INDEFINITE **.Valid until either party terminates their account on the Platform.
 
 ### 3. Obligations
 The Partner MUST upload the specific "Sales Mandate" and "Commission Agreement" for each property they list on the Platform.
 
 ### 4. Fees & Commission Split
-In the event of a successful sale where the Buyer is introduced by Urbina Agency/Platform:
-**FIFTY PERCENT (50%)** of the total commission received by The Partner from the seller.
+In the event of a successful sale where the Buyer is introduced by Urbina Agency / Platform:
+** FIFTY PERCENT(50 %) ** of the total commission received by The Partner from the seller.
 Plus applicable taxes.
 
 ### 5. Payment Terms
-The Partner shall pay Urbina Agency within **15 Business Days** of receiving their commission.
+The Partner shall pay Urbina Agency within ** 15 Business Days ** of receiving their commission.
 Payment to:
-${BANK_DETAILS}
+${ BANK_DETAILS }
 
 ...
 
-**URBINA AGENCY LLC**               **PARTNER AGENCY**
-[System Signed]                     [See Signature Below]
-`;
+** URBINA AGENCY LLC **               ** PARTNER AGENCY **
+        [System Signed][See Signature Below]
+    `;
     };
 
     const getContractContent = () => {
@@ -261,7 +267,7 @@ ${BANK_DETAILS}
         const element = contractRef.current;
         const opt = {
             margin: 10,
-            filename: `Urbina_Agency_Contract_${contractType}.pdf`,
+            filename: `Urbina_Agency_Contract_${ contractType }.pdf`,
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }

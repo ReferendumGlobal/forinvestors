@@ -114,10 +114,6 @@
         "title": "Contact Global Desk",
         "explanation": "To access our exclusive global portfolio, we must verify your investor profile and Proof of Funds (POF). You will then receive tailored international offers."
     },
-    "seo": {
-        "title": "Global Off-Market Assets",
-        "description": "Exclusive portfolio of Hotels, Land, and Wineries worldwide. Top OffMarket connects elite capital with unseen opportunities."
-    },
     "innovation": {
         "subtitle": "Real Estate Technology",
         "title": "Smart Matching™ Algorithm",
@@ -428,6 +424,44 @@
         "terms_conditions": {
             "title": "Terms & Conditions",
             "content": "Use of this platform implies acceptance of the following terms..."
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties. Expert management by Top OffMarket."
+        },
+        "investments": {
+            "title": "Investments Off Market",
+            "description": "High-yield real estate investment opportunities. Off-market assets."
+        },
+        "hotels": {
+            "title": "Hotels Off Market",
+            "description": "Luxury hotels for sale worldwide. Confidential off-market listings."
+        },
+        "land": {
+            "title": "Land Off Market",
+            "description": "Prime land development opportunities. Off-market plots."
+        },
+        "luxury": {
+            "title": "Luxury Homes Off Market",
+            "description": "Ultra-luxury residential properties. Exclusive off-market access."
+        },
+        "wineries": {
+            "title": "Wineries Off Market",
+            "description": "Vineyards and wineries for sale. Off-market selection."
+        },
+        "agencies": {
+            "title": "Agencies Off Market",
+            "description": "Collaboration platform for real estate agencies. Share off-market mandates."
+        },
+        "sell": {
+            "title": "Sell Off Market",
+            "description": "Sell your property confidentially. Direct access to qualified investors."
+        },
+        "search": {
+            "title": "Search Off Market",
+            "description": "Find exclusive off-market real estate assets."
         }
     }
 }

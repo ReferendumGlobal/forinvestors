@@ -7,7 +7,8 @@ export const routeConfig = {
         wineries: 'bodegas',
         blog: 'blog',
         agencies: 'agencias',
-        search: 'buscar'
+        search: 'buscar',
+        sell: 'vender'
     },
     en: {
         investments: 'investments',
@@ -17,7 +18,8 @@ export const routeConfig = {
         wineries: 'wineries',
         blog: 'blog',
         agencies: 'for-agencies',
-        search: 'search'
+        search: 'search',
+        sell: 'sell'
     },
     fr: {
         investments: 'investissements',
@@ -27,7 +29,8 @@ export const routeConfig = {
         wineries: 'vignobles',
         blog: 'blog',
         agencies: 'agences',
-        search: 'recherche'
+        search: 'recherche',
+        sell: 'vendre'
     },
     de: {
         investments: 'investitionen',
@@ -37,7 +40,8 @@ export const routeConfig = {
         wineries: 'weinguter',
         blog: 'blog',
         agencies: 'agenturen',
-        search: 'suche'
+        search: 'suche',
+        sell: 'verkaufen'
     },
     ru: {
         investments: 'investitsii',
@@ -47,7 +51,8 @@ export const routeConfig = {
         wineries: 'vinodelni',
         blog: 'blog',
         agencies: 'agentstva',
-        search: 'poisk'
+        search: 'poisk',
+        sell: 'prodat'
     },
     zh: {
         investments: 'touzi',
@@ -57,7 +62,8 @@ export const routeConfig = {
         wineries: 'jiuzhuang',
         blog: 'blog',
         agencies: 'jigou',
-        search: 'sousuo'
+        search: 'sousuo',
+        sell: 'chushou'
     },
     ar: {
         investments: 'istithmarat',
@@ -67,7 +73,8 @@ export const routeConfig = {
         wineries: 'khoroum',
         blog: 'blog',
         agencies: 'wakalat',
-        search: 'bahth'
+        search: 'bahth',
+        sell: 'bay'
     },
     pt: {
         investments: 'investimentos',
@@ -77,7 +84,8 @@ export const routeConfig = {
         wineries: 'vinicolas',
         blog: 'blog',
         agencies: 'agencias',
-        search: 'busca'
+        search: 'busca',
+        sell: 'vender'
     },
     ja: {
         investments: 'toushi',
@@ -87,7 +95,8 @@ export const routeConfig = {
         wineries: 'wainari',
         blog: 'blog',
         agencies: 'dairiten',
-        search: 'kensaku'
+        search: 'kensaku',
+        sell: 'baikyaku'
     },
     hi: {
         investments: 'nivesh',
@@ -97,7 +106,8 @@ export const routeConfig = {
         wineries: 'wineries',
         blog: 'blog',
         agencies: 'agencies',
-        search: 'khoj'
+        search: 'khoj',
+        sell: 'bechen'
     }
 };
 
@@ -111,6 +121,7 @@ const slugToKeyMap = {
     'bodegas': 'wineries',
     'agencias': 'agencies',
     'buscar': 'search',
+    'vender': 'sell',
     // FR
     'investissements': 'investments',
     'terrains': 'land',
@@ -118,6 +129,7 @@ const slugToKeyMap = {
     'vignobles': 'wineries',
     'agences': 'agencies',
     'recherche': 'search',
+    'vendre': 'sell',
     // DE
     'investitionen': 'investments',
     'grundstucke': 'land',
@@ -125,6 +137,7 @@ const slugToKeyMap = {
     'weinguter': 'wineries',
     'agenturen': 'agencies',
     'suche': 'search',
+    'verkaufen': 'sell',
     // RU
     'investitsii': 'investments',
     'oteli': 'hotels',
@@ -133,6 +146,7 @@ const slugToKeyMap = {
     'vinodelni': 'wineries',
     'agentstva': 'agencies',
     'poisk': 'search',
+    'prodat': 'sell',
     // ZH
     'touzi': 'investments',
     'jiudian': 'hotels',
@@ -141,6 +155,7 @@ const slugToKeyMap = {
     'jiuzhuang': 'wineries',
     'jigou': 'agencies',
     'sousuo': 'search',
+    'chushou': 'sell',
     // AR
     'istithmarat': 'investments',
     'fanadiq': 'hotels',
@@ -149,6 +164,7 @@ const slugToKeyMap = {
     'khoroum': 'wineries',
     'wakalat': 'agencies',
     'bahth': 'search',
+    'bay': 'sell',
     // PT
     'investimentos': 'investments',
     'hoteis': 'hotels',
@@ -163,15 +179,16 @@ const slugToKeyMap = {
     'wainari': 'wineries',
     'dairiten': 'agencies',
     'kensaku': 'search',
+    'baikyaku': 'sell',
     // HI
     'nivesh': 'investments',
     'hotel': 'hotels',
     'zamin': 'land',
     'vilasita': 'luxury',
-    'khoj': 'search'
+    'khoj': 'search',
+    'bechen': 'sell'
 };
 
-// Helper: Get category ID from slug (reverse lookup)
 // Helper: Get category ID from slug (reverse lookup)
 export const getCategoryFromSlug = (slug, lang) => {
     // Direct map lookup (fastest and most robust)

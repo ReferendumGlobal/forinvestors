@@ -76,10 +76,6 @@
         "disclaimer": "إخلاء المسؤولية",
         "rights": "جميع الحقوق محفوظة."
     },
-    "seo": {
-        "title": "استثمار عقاري خارج السوق",
-        "description": "محفظة حصرية من الفنادق والأراضي ومصانع النبيذ والعقارات الفاخرة للغاية. إدارة خبيرة من قبل OffMarket Invests."
-    },
     "innovation": {
         "subtitle": "تكنولوجيا العقارات",
         "title": "خوارزمية المطابقة الذكية (Smart Matching™)",
@@ -401,5 +397,43 @@
         "form_subtitle": "املأ النموذج ليقوم فريقنا بتقييم ممتلكاتك.",
         "success_title": "تم استلام الطلب",
         "success_desc": "لقد استلمنا بيانات ممتلكاتك. سيتصل بك فريق التقييم لدينا قريبًا لإضفاء الطابع الرسمي على تفويض البيع."
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "محفظة حصرية من الفنادق والأراضي ومصانع النبيذ. إدارة خبيرة من قبل Top OffMarket."
+        },
+        "investments": {
+            "title": "استثمارات عقارية Off Market",
+            "description": "فرص استثمار عقاري عالية العائد. أصول off-market."
+        },
+        "hotels": {
+            "title": "فنادق Off Market",
+            "description": "فنادق فاخرة للبيع في جميع أنحاء العالم. قوائم سرية off-market."
+        },
+        "land": {
+            "title": "أراضي Off Market",
+            "description": "فرص تطوير أراضي من الدرجة الأولى. قطع أراضي off-market."
+        },
+        "luxury": {
+            "title": "عقارات فاخرة Off Market",
+            "description": "عقارات سكنية فائقة الفخامة. وصول حصري off-market."
+        },
+        "wineries": {
+            "title": "مصانع نبيذ Off Market",
+            "description": "كروم ومصانع نبيذ للبيع. اختيار off-market."
+        },
+        "agencies": {
+            "title": "وكالات Off Market",
+            "description": "منصة تعاون للوكالات العقارية. شارك تفويضات off-market."
+        },
+        "sell": {
+            "title": "بيع الأصول Off Market",
+            "description": "بع عقارك بسرية تامة. وصول مباشر للمستثمرين المؤهلين."
+        },
+        "search": {
+            "title": "بحث عن عقارات Off Market",
+            "description": "ابحث عن أصول عقارية حصرية off-market."
+        }
     }
 }

@@ -114,10 +114,6 @@
         "title": "Contacto Global",
         "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
     },
-    "seo": {
-        "title": "Inversión Inmobiliaria Off-Market",
-        "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por OffMarket Invests."
-    },
     "innovation": {
         "subtitle": "Tecnología Inmobiliaria",
         "title": "Smart Matching™ Algorithm",
@@ -428,6 +424,44 @@
         "terms_conditions": {
             "title": "Términos y Condiciones",
             "content": "El uso de esta plataforma implica la aceptación de los siguientes términos..."
+        }
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por Top OffMarket."
+        },
+        "investments": {
+            "title": "Inversiones Off Market",
+            "description": "Oportunidades de alta rentabilidad inmobiliaria. Activos off-market."
+        },
+        "hotels": {
+            "title": "Hoteles Off Market",
+            "description": "Hoteles de lujo en venta. Selección confidencial off-market."
+        },
+        "land": {
+            "title": "Suelo Off Market",
+            "description": "Suelo finalista y desarrollos prime. Parcelas off-market."
+        },
+        "luxury": {
+            "title": "Lujo Off Market",
+            "description": "Propiedades residenciales ultra-lujo. Acceso exclusivo off-market."
+        },
+        "wineries": {
+            "title": "Bodegas Off Market",
+            "description": "Viñedos y bodegas en venta. Selección off-market."
+        },
+        "agencies": {
+            "title": "Agencias Off Market",
+            "description": "Plataforma de colaboración para agencias. Comparta mandatos off-market."
+        },
+        "sell": {
+            "title": "Vender Off Market",
+            "description": "Venda su propiedad confidencialmente. Acceso directo a inversores cualificados."
+        },
+        "search": {
+            "title": "Buscar Off Market",
+            "description": "Encuentre activos inmobiliarios exclusivos off-market."
         }
     }
 }

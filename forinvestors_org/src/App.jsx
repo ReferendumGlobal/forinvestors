@@ -8,27 +8,20 @@ import { categories } from './data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useParams, Outlet, useNavigate } from 'react-router-dom';
-import Blog from './components/Blog';
-import FAQ from './components/FAQ';
-import PropertySearch from './components/PropertySearch';
-import Agencies from './components/Agencies';
-import SellAssets from './components/SellAssets';
 import ProcessSteps from './components/ProcessSteps';
-import CategoryPage from './components/CategoryPage';
+import FAQ from './components/FAQ';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import SeoHead from './components/SeoHead';
 import { AuthProvider } from './context/AuthContext';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import RouteDispatcher from './components/RouteDispatcher';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import DashboardHome from './components/dashboard/DashboardHome';
 import ContractSign from './components/dashboard/ContractSign';
 import AdminPanel from './components/dashboard/AdminPanel';
 import PropertyManager from './components/dashboard/PropertyManager';
-
-// CategoryPage imported from components
 
 function LanguageWrapper() {
   const { lang } = useParams();
@@ -50,8 +43,6 @@ function LanguageWrapper() {
       document.documentElement.lang = lang;
     } else {
       // Invalid lang, redirect to default (es)
-      // We can't easily redirect here inside the render as it might cause loops if not careful,
-      // but the route matching /:lang *should* catch it.
       navigate('/es', { replace: true });
     }
   }, [lang, i18n, navigate]);
@@ -104,14 +95,13 @@ function App() {
           <Routes>
             {/* Auth & Dashboard Routes */}
             <Route path="/login" element={<Login />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
             <Route path="/dashboard" element={<DashboardLayout />}>
               <Route index element={<DashboardHome />} />
               <Route path="contracts" element={<ContractSign />} />
               <Route path="admin" element={<AdminPanel />} />
-              <Route path="users" element={<AdminPanel />} /> {/* Redirect users nav to Admin Panel */}
+              <Route path="users" element={<AdminPanel />} />
               <Route path="properties" element={<PropertyManager />} />
               <Route path="opportunities" element={<Opportunities />} />
             </Route>
@@ -119,15 +109,7 @@ function App() {
             {/* Public Website Routes */}
             <Route path="/:lang" element={<LanguageWrapper />}>
               <Route index element={<Home />} />
-              <Route path="investments" element={<CategoryPage categoryId="investments" />} />
-              <Route path="hotels" element={<CategoryPage categoryId="hotels" />} />
-              <Route path="land" element={<CategoryPage categoryId="land" />} />
-              <Route path="luxury" element={<CategoryPage categoryId="luxury" />} />
-              <Route path="wineries" element={<CategoryPage categoryId="wineries" />} />
-              <Route path="blog" element={<Blog />} />
-              <Route path="agencias" element={<Agencies />} />
-              <Route path="sell" element={<SellAssets />} />
-              <Route path="search" element={<PropertySearch />} />
+              <Route path=":slug" element={<RouteDispatcher />} />
               <Route path="*" element={<Navigate to="." replace />} />
             </Route>
             <Route path="/" element={<Navigate to="/es" replace />} />

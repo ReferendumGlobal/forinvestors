@@ -76,10 +76,6 @@
         "disclaimer": "免責事項",
         "rights": "全著作権所有。"
     },
-    "seo": {
-        "title": "オフマーケット不動産投資",
-        "description": "ホテル、土地、ワイナリー、超高級不動産の独占ポートフォリオ。OffMarket Investsによる専門的な管理。"
-    },
     "innovation": {
         "subtitle": "不動産テクノロジー",
         "title": "スマートマッチング (Smart Matching™) アルゴリズム",
@@ -397,5 +393,43 @@
         ],
         "sellers_title": "プライベート売却プロセス",
         "sellers_subtitle": "高価値資産を現金化するための、慎重かつ安全なルートです。"
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "ホテル、土地、ワイナリーの独占ポートフォリオ。Top OffMarketによる専門的な管理。"
+        },
+        "investments": {
+            "title": "不動産投資 Off Market",
+            "description": "高利回りの不動産投資機会。オフマーケット資産。"
+        },
+        "hotels": {
+            "title": "ホテル Off Market",
+            "description": "世界中で販売されている高級ホテル。機密のオフマーケットリスト。"
+        },
+        "land": {
+            "title": "土地 Off Market",
+            "description": "一等地の土地開発機会。オフマーケットの区画。"
+        },
+        "luxury": {
+            "title": "高級不動産 Off Market",
+            "description": "超高級住宅物件。排他的なオフマーケットアクセス。"
+        },
+        "wineries": {
+            "title": "ワイナリー Off Market",
+            "description": "販売中のブドウ園とワイナリー。オフマーケットのセレクション。"
+        },
+        "agencies": {
+            "title": "代理店 Off Market",
+            "description": "不動産代理店のためのコラボレーションプラットフォーム。オフマーケットの委任を共有します。"
+        },
+        "sell": {
+            "title": "資産を売却 Off Market",
+            "description": "機密に資産を売却します。適格な投資家への直接アクセス。"
+        },
+        "search": {
+            "title": "物件検索 Off Market",
+            "description": "独占的なオフマーケット不動産資産を見つけます。"
+        }
     }
 }

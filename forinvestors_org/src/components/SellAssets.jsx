@@ -92,8 +92,9 @@ export default function SellAssets() {
     return (
         <div className="bg-midnight-950 min-h-screen pt-24 pb-20">
             <SeoHead
-                title={`${t('sell_page.title')} | Urbina Agency`}
-                description={t('sell_page.subtitle')}
+                title={t('seo.sell.title')}
+                description={t('seo.sell.description')}
+                routeKey="sell"
             />
 
             {/* Hero Section */}

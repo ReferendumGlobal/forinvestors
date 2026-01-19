@@ -24,8 +24,8 @@ export default function Home() {
     return (
         <div ref={containerRef} className="relative">
             <SeoHead
-                title={t('seo.title')}
-                description={t('seo.description')}
+                title={t('seo.home.title')}
+                description={t('seo.home.description')}
             />
 
             {/* Hero Section */}

@@ -11,7 +11,7 @@ export default function Agencies() {
 
     return (
         <div className="min-h-screen bg-midnight-950 pt-32 pb-20">
-            <SeoHead title={t('agencies_page.seo_title', 'Agencies Off-Market | TopOffMarket.com')} description={t('agencies_page.subtitle')} routeKey="agencies" />
+            <SeoHead title={t('seo.agencies.title')} description={t('seo.agencies.description')} routeKey="agencies" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}

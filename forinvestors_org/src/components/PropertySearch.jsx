@@ -95,7 +95,7 @@ export default function PropertySearch() {
 
     return (
         <div className="min-h-screen bg-midnight-950 pt-32 pb-20">
-            <SeoHead title={`${t('nav.search')} | Urbina Agency`} description={t('search.subtitle')} routeKey="search" />
+            <SeoHead title={t('seo.search.title')} description={t('seo.search.description')} routeKey="search" />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <motion.div

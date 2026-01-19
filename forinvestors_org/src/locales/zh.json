@@ -76,10 +76,6 @@
         "disclaimer": "免责声明",
         "rights": "保留所有权利。"
     },
-    "seo": {
-        "title": "场外房地产投资",
-        "description": "独家酒店、土地、酒庄和超豪华房产投资组合。由 OffMarket Invests 专业管理。"
-    },
     "innovation": {
         "subtitle": "房地产科技",
         "title": "智能匹配 (Smart Matching™) 算法",
@@ -397,5 +393,43 @@
         ],
         "sellers_title": "私密出售流程",
         "sellers_subtitle": "变现高价值资产的安全且私密的途径。"
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "独家酒店、土地和酒庄投资组合。由 Top OffMarket 专业管理。"
+        },
+        "investments": {
+            "title": "房地产投资 Off Market",
+            "description": "高收益房地产投资机会。场外资产。"
+        },
+        "hotels": {
+            "title": "酒店 Off Market",
+            "description": "全球待售豪华酒店。机密场外清单。"
+        },
+        "land": {
+            "title": "土地 Off Market",
+            "description": "优质土地开发机会。场外地块。"
+        },
+        "luxury": {
+            "title": "豪宅 Off Market",
+            "description": "超豪华住宅物业。独家场外访问。"
+        },
+        "wineries": {
+            "title": "酒庄 Off Market",
+            "description": "待售葡萄园和酒庄。场外精选。"
+        },
+        "agencies": {
+            "title": "房地产代理 Off Market",
+            "description": "房地产代理合作平台。分享场外授权。"
+        },
+        "sell": {
+            "title": "出售资产 Off Market",
+            "description": "保密出售您的房产。直接接触合格投资者。"
+        },
+        "search": {
+            "title": "房产搜索 Off Market",
+            "description": "查找独家场外房地产资产。"
+        }
     }
 }

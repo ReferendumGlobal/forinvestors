@@ -36,7 +36,11 @@ export default function SeoHead({ title, description, image, routeKey }) {
             <html lang={lang} dir={dir} />
             <title>{title}</title>
             <meta name="description" content={description} />
+
             {/* Dynamic OpenGraph */}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
             <meta property="og:locale" content={lang} />
             {image && <meta property="og:image" content={image} />}
 

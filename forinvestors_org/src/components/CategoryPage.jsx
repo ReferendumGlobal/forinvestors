@@ -15,8 +15,9 @@ const CategoryPage = ({ categoryId }) => {
     return (
         <>
             <SeoHead
-                title={t(`categories.${categoryId}.title`)}
-                description={t(`categories.${categoryId}.description`)}
+                title={t(`seo.${categoryId}.title`)}
+                description={t(`seo.${categoryId}.description`)}
+                routeKey={categoryId}
             />
             {/* Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
