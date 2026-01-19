@@ -76,10 +76,6 @@
         "disclaimer": "Haftungsausschluss",
         "rights": "Alle Rechte vorbehalten."
     },
-    "seo": {
-        "title": "Off-Market Immobilieninvestment",
-        "description": "Exklusives Portfolio aus Hotels, Grundstücken, Weingütern und Ultra-Luxus-Immobilien. Expertenmanagement durch OffMarket Invests."
-    },
     "innovation": {
         "subtitle": "Immobilientechnologie",
         "title": "Smart Matching™ Algorithmus",
@@ -401,5 +397,43 @@
         "form_subtitle": "Füllen Sie das Formular aus, damit unser Team Ihre Immobilie bewerten kann.",
         "success_title": "Anfrage Erhalten",
         "success_desc": "Wir haben Ihre Immobiliendaten erhalten. Unser Bewertungsteam wird Sie in Kürze kontaktieren, um das Verkaufsmandat zu formalisieren."
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "Exklusives Portfolio aus Hotels, Grundstücken und Weingütern. Expertenmanagement durch Top OffMarket."
+        },
+        "investments": {
+            "title": "Investitionen Off Market",
+            "description": "Renditestarke Immobilieninvestitionsmöglichkeiten. Off-Market-Anlagen."
+        },
+        "hotels": {
+            "title": "Hotels Off Market",
+            "description": "Luxushotels weltweit zu verkaufen. Vertrauliche Off-Market-Angebote."
+        },
+        "land": {
+            "title": "Grundstücke Off Market",
+            "description": "Erstklassige Entwicklungsgrundstücke. Off-Market-Parzellen."
+        },
+        "luxury": {
+            "title": "Luxus Off Market",
+            "description": "Ultra-Luxus-Wohnimmobilien. Exklusiver Off-Market-Zugang."
+        },
+        "wineries": {
+            "title": "Weingüter Off Market",
+            "description": "Weinberge und Weingüter zu verkaufen. Off-Market-Auswahl."
+        },
+        "agencies": {
+            "title": "Agenturen Off Market",
+            "description": "Kollaborationsplattform für Immobilienagenturen. Teilen Sie Off-Market-Mandate."
+        },
+        "sell": {
+            "title": "Verkaufen Off Market",
+            "description": "Verkaufen Sie Ihre Immobilie vertraulich. Direkter Zugang zu qualifizierten Investoren."
+        },
+        "search": {
+            "title": "Suche Off Market",
+            "description": "Finden Sie exklusive Off-Market-Immobilienanlagen."
+        }
     }
 }

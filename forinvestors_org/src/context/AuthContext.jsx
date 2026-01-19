@@ -11,6 +11,11 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!supabase) {
+            setLoading(false);
+            return;
+        }
+
         // Check active session
         supabase.auth.getSession().then(({ data: { session } }) => {
             setUser(session?.user ?? null);
@@ -33,6 +38,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const fetchProfile = async (userId) => {
+        if (!supabase) return;
         try {
             const { data, error } = await supabase
                 .from('profiles')
@@ -53,6 +59,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const signOut = async () => {
+        if (!supabase) return;
         await supabase.auth.signOut();
         setUser(null);
         setProfile(null);

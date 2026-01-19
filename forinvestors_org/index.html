@@ -17,8 +17,9 @@
   <meta name="google-site-verification" content="2Nyeew96fs-sbp54xLoBmyqf139tdiW4kwxsJkXwzXY" />
   <!-- Added for TopOffMarket.com domain verification -->
   <meta name="title" content="TopOffMarket.com | Global Luxury Real Estate Assets" />
-  <meta name="description"
-    content="Exclusive portfolio of hotels, land, wineries, and ultra-luxury properties from €2M to €300M. Expert management by Top OffMarket for qualified investors." />
+
+  <!-- Description and OG tags managed by React Helmet -->
+
   <meta name="keywords"
     content="real estate investment, luxury hotels worldwide, prime land development, wineries for sale, urbina agency, high net worth investment, off market" />
   <meta name="author" content="Top OffMarket" />
@@ -26,9 +27,7 @@
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://topoffmarket.com/" />
-  <meta property="og:title" content="Top OffMarket | Premium Investment Opportunities" />
-  <meta property="og:description"
-    content="Access our off-market portfolio of hotel assets, land, and wineries worldwide. Investments from €2M." />
+  <!-- OG Title/Desc managed by React Helmet -->
   <meta property="og:image" content="/logo.svg" />
 
   <!-- Twitter -->
@@ -43,9 +42,23 @@
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Top Off Market",
+        "alternateName": "TopOffMarket.com",
+        "url": "https://topoffmarket.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://topoffmarket.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "RealEstateAgent",
-        "name": "OffMarket Invests",
-        "image": "https://offmarketinvests.com/logo.svg",
+        "name": "Top Off Market",
+        "image": "https://topoffmarket.com/logo.svg",
         "description": "Agency specializing in luxury real estate assets and investment.",
         "address": {
           "@type": "PostalAddress",

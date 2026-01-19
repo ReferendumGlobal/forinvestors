@@ -76,10 +76,6 @@
         "disclaimer": "Aviso Legal",
         "rights": "Todos os direitos reservados."
     },
-    "seo": {
-        "title": "Investimento Imobiliário Off-Market",
-        "description": "Portfólio exclusivo de hotéis, terrenos, vinícolas e imóveis de ultra luxo. Gestão especializada por OffMarket Invests."
-    },
     "innovation": {
         "subtitle": "Tecnologia Imobiliária",
         "title": "Algoritmo Smart Matching™",
@@ -401,5 +397,43 @@
         "form_subtitle": "Preencha o formulário para que a nossa equipa avalie a sua propriedade.",
         "success_title": "Pedido Recebido",
         "success_desc": "Recebemos os dados da sua propriedade. A nossa equipa de avaliações entrará em contacto em breve para formalizar o mandato de venda."
+    },
+    "seo": {
+        "home": {
+            "title": "Off Market",
+            "description": "Portfólio exclusivo de hotéis, terrenos e vinícolas. Gestão especializada pela Top OffMarket."
+        },
+        "investments": {
+            "title": "Investimentos Off Market",
+            "description": "Oportunidades de investimento imobiliário de alto rendimento. Ativos off-market."
+        },
+        "hotels": {
+            "title": "Hotéis Off Market",
+            "description": "Hotéis de luxo para venda em todo o mundo. Listagens confidenciais off-market."
+        },
+        "land": {
+            "title": "Terrenos Off Market",
+            "description": "Oportunidades de desenvolvimento de terrenos de primeira. Parcelas off-market."
+        },
+        "luxury": {
+            "title": "Luxo Off Market",
+            "description": "Propriedades residenciais de ultra luxo. Acesso exclusivo off-market."
+        },
+        "wineries": {
+            "title": "Vinícolas Off Market",
+            "description": "Vinhas e vinícolas para venda. Seleção off-market."
+        },
+        "agencies": {
+            "title": "Agências Off Market",
+            "description": "Plataforma de colaboração para agências imobiliárias. Compartilhe mandatos off-market."
+        },
+        "sell": {
+            "title": "Vender Off Market",
+            "description": "Venda sua propriedade confidencialmente. Acesso direto a investidores qualificados."
+        },
+        "search": {
+            "title": "Busca Off Market",
+            "description": "Encontre ativos imobiliários exclusivos off-market."
+        }
     }
 }
