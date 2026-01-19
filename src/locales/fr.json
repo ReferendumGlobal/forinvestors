@@ -8,7 +8,8 @@
         "blog": "Blog",
         "agencies": "Pour Agences Immobilières",
         "search": "Recherche de Propriétés",
-        "access": "Espace Privé"
+        "access": "Espace Privé",
+        "sell": "Vendre des Actifs"
     },
     "hero": {
         "shield": "L'Art de la Discrétion",
@@ -35,8 +36,8 @@
         "rights": "Tous droits réservés."
     },
     "seo": {
-        "title": "Pour Investisseurs | Actifs Immobiliers de Luxe dans le Monde",
-        "description": "Portefeuille exclusif d'hôtels, de terrains, de vignobles et de propriétés ultra-luxueuses. Gestion experte par Urbina Agency LLC."
+        "title": "Investissement Immobilier Off-Market",
+        "description": "Portefeuille exclusif d'hôtels, de terrains, de vignobles et de propriétés ultra-luxueuses. Gestion experte par Enter OffMarket."
     },
     "search": {
         "title": "Recherche d'Actifs Off-Market",
@@ -51,7 +52,7 @@
     },
     "categories": {
         "investments": {
-            "title": "Investissements Immobiliers",
+            "title": "Investissement Immobilier Off-Market",
             "shortTitle": "Investissements Immobiliers",
             "description": "Gestion complète de portefeuille d'investissement. Nous détectons des opportunités à haut rendement sur le marché immobilier mondial.",
             "longDescription": "Notre division Investissements Immobiliers ne se contente pas de chercher des actifs, elle conçoit des stratégies de capital. Nous analysons les tendances du marché, les cycles économiques et les opportunités de valorisation pour offrir des produits adaptés au profil de risque et de rendement des investisseurs institutionnels et des family offices.",
@@ -65,7 +66,7 @@
             ]
         },
         "hotels": {
-            "title": "Hôtels à Vendre",
+            "title": "Investissement Hôtelier Off-Market",
             "shortTitle": "Hôtels à Vendre",
             "description": "Sélection exclusive d'actifs hôteliers dans les principales zones touristiques d'Espagne, d'Europe et de destinations mondiales.",
             "longDescription": "Le secteur hôtelier est le joyau de notre couronne. Nous avons un accès direct aux propriétaires de chaînes hôtelières, d'hôtels-boutiques indépendants et de complexes de luxe opérant « off-market ». Nous recherchons des actifs avec un potentiel de repositionnement, des contrats de gestion flexibles ou des rendements stabilisés dans des emplacements irremplaçables.",
@@ -79,7 +80,7 @@
             ]
         },
         "land": {
-            "title": "Terrains à Vendre",
+            "title": "Investissement Foncier Off-Market",
             "shortTitle": "Terrains à Vendre",
             "description": "Terrains finalistes, constructibles et rustiques dans des emplacements stratégiques pour de grands développements.",
             "longDescription": "La base de tout grand projet est la terre. Notre portefeuille foncier comprend des parcelles finalistes prêtes pour la demande de permis (Ready-to-build), des développements urbains à moyen terme et de grandes étendues de terres rustiques pour des projets d'énergie renouvelable ou à usage agricole. Nous vérifions rigoureusement le statut urbanistique de chaque mètre carré.",
@@ -93,7 +94,7 @@
             ]
         },
         "luxury": {
-            "title": "Propriétés de Luxe à Vendre",
+            "title": "Propriétés de Luxe Off-Market",
             "shortTitle": "Propriétés de Luxe à Vendre",
             "description": "Villas uniques et penthouses dans des emplacements privilégiés. L'expression ultime de l'exclusivité résidentielle.",
             "longDescription": "Nous comprenons le luxe non seulement comme un prix, mais comme une expérience de vie. Notre sélection « Propriétés de Luxe » comprend les résidences les plus exclusives du marché : villas à La Zagaleta, penthouses dans le quartier de Salamanca ou manoirs historiques sur la Côte d'Azur. Intimité, sécurité et design architectural sans compromis.",
@@ -107,7 +108,7 @@
             ]
         },
         "wineries": {
-            "title": "Vignobles à Vendre",
+            "title": "Investissement Viticole Off-Market",
             "shortTitle": "Vignobles à Vendre",
             "description": "Investissements dans le secteur viticole : domaines avec D.O., vignobles et centres de production.",
             "longDescription": "Investir dans un domaine viticole, c'est investir dans la culture, l'histoire et la terre. Nous offrons des opportunités dans les régions viticoles les plus prestigieuses (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Des domaines familiaux avec une marque consolidée aux grands centres de production en vrac, nous analysons la capacité de production et la valeur de la marque.",
@@ -160,7 +161,8 @@
         "global_exposure_text": "Vos actifs locaux voyageront directement vers des bureaux à Dubaï, New York et Londres.",
         "form_title": "Demander l'Accès à l'Alliance",
         "form_subtitle": "Complétez le profil pour recevoir le contrat de collaboration.",
-        "form_explanation": "Entrez les détails de votre agence pour vérifier l'éligibilité. Nous vous contacterons pour formaliser le mandat de vente partagé."
+        "form_explanation": "Entrez les détails de votre agence pour vérifier l'éligibilité. Nous vous contacterons pour formaliser le mandat de vente partagé.",
+        "seo_title": "Agences Investissement Off-Market"
     },
     "contact_global": {
         "title": "Contactez-nous",
@@ -189,7 +191,28 @@
             "private_platform": "Plateforme Privée",
             "view_exclusive": "pour voir les opportunités exclusives.",
             "dossier": "Dossier d'Entreprise / Exemple de Portefeuille",
-            "pof": "Preuve de Fonds (POF)"
+            "pof": "Preuve de Fonds (POF)",
+            "companiesName": "Nom de l'Entreprise (Optionnel)",
+            "interested_assets": "Actifs d'Intérêt (Sélection multiple)"
+        },
+        "assets": {
+            "hotels": "Hôtels",
+            "wineries": "Vignobles",
+            "agricultural": "Domaines Agricoles",
+            "livestock": "Fermes d'Élevage",
+            "mansions": "Manoirs",
+            "castles": "Châteaux et Palais",
+            "penthouses": "Penthouses de Luxe",
+            "office_buildings": "Immeubles de Bureaux",
+            "apartment_buildings": "Immeubles d'Appartements",
+            "urban_land": "Terrains Urbains",
+            "dev_land": "Terrains à Développer",
+            "casinos": "Casinos",
+            "football_clubs": "Clubs de Football",
+            "islands": "Îles Privées",
+            "sports_clubs": "Clubs Sportifs",
+            "garages": "Parkings Grande Capacité",
+            "businesses": "Entreprises / M&A"
         },
         "placeholders": {
             "name_example": "Jean Dupont",
@@ -198,7 +221,8 @@
             "capital_example": "Ex: 5,000,000",
             "location_example": "Ex: Madrid, Marbella, Londres...",
             "message_example": "Intéressé par des propriétés à...",
-            "funds_example": "Ex: 5,000,000"
+            "funds_example": "Ex: 5,000,000",
+            "company_example": "Nom de votre entreprise"
         },
         "buttons": {
             "send_request": "Envoyer la Demande",
@@ -246,67 +270,95 @@
         "investors_subtitle": "Un chemin clair et sécurisé pour accéder aux meilleures opportunités hors marché.",
         "agencies": [
             {
-                "title": "Demande d'accès",
-                "description": "Remplissez le formulaire. Si vous passez le filtre, vous recevrez un e-mail d'accès.",
+                "title": "Demande d'Accès",
+                "description": "Complétez le formulaire. Si vous passez le filtre, vous recevrez un e-mail d'accès.",
                 "icon": "FileText"
             },
             {
-                "title": "S'inscrire et signer",
+                "title": "Inscription et Signature",
                 "description": "Entrez les détails de votre agence et signez numériquement le contrat de collaboration.",
                 "icon": "Handshake"
             },
             {
-                "title": "Télécharger des propriétés",
-                "description": "Téléchargez les propriétés pour lesquelles vous cherchez des investisseurs qualifiés.",
-                "icon": "Upload"
-            },
-            {
-                "title": "Smart Matching",
-                "description": "Le système fera correspondre vos actifs avec des investisseurs à gros capitaux.",
+                "title": "Smart Matching™",
+                "description": "Téléchargez vos actifs. Notre algorithme les fait correspondre instantanément avec des capitaux vérifiés.",
                 "icon": "PieChart"
             },
             {
-                "title": "Recevoir de l'intérêt",
-                "description": "Obtenez des contacts d'investisseurs intéressés par chaque propriété.",
-                "icon": "Users"
-            },
-            {
-                "title": "Conclure la vente",
-                "description": "Si vous concluez la vente, entrez les détails et marquez l'actif comme vendu.",
+                "title": "Clôture des Ventes",
+                "description": "Nous gérons les visites et les offres. Partage des frais 50/50 à la clôture.",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "Paiement et facture",
-                "description": "Payez la commission partagée et recevez votre facture de service.",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "Demande et POF",
-                "description": "Remplissez le formulaire et soumettez votre preuve de fonds (POF).",
-                "icon": "FileText"
+                "title": "Inscription et POF",
+                "description": "Demandez l'accès en fournissant votre Preuve de Fonds (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "Vérification",
-                "description": "Nous examinerons votre demande et vous accorderons l'accès à la plateforme par e-mail.",
+                "title": "Mandat de Recherche",
+                "description": "Signez numériquement notre mandat de recherche non exclusif.",
                 "icon": "Search"
             },
             {
-                "title": "Signer le mandat",
-                "description": "Signez le mandat pour recevoir des propriétés correspondant à votre profil.",
-                "icon": "Handshake"
-            },
-            {
-                "title": "Recevoir des offres",
-                "description": "Vous recevrez des opportunités de notre réseau international d'agences.",
+                "title": "Smart Matching™",
+                "description": "Recevez des notifications instantanées pour les actifs hors marché correspondant à vos critères.",
                 "icon": "PieChart"
             },
             {
-                "title": "Achat et frais",
-                "description": "Concluez l'affaire et payez la commission à la plateforme.",
-                "icon": "CreditCard"
+                "title": "Acquisition",
+                "description": "Conseil complet de la négociation à la signature chez le notaire.",
+                "icon": "Key"
             }
-        ]
+        ],
+        "sellers": [
+            {
+                "title": "Évaluation Initiale",
+                "description": "Soumettez les détails de base. Nous analysons la viabilité et la valorisation en 24h.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Mandat et Téléchargement",
+                "description": "Signez un mandat sécurisé et téléchargez la documentation dans la Data Room privée.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "Notre système croise silencieusement votre actif avec des investisseurs vérifiés. Aucune annonce publique.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Offre et Clôture",
+                "description": "Recevez des offres formelles et concluez l'affaire en toute sécurité chez le notaire.",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "Processus de Vente Privée",
+        "sellers_subtitle": "Un chemin discret et sécurisé pour liquider votre actif de grande valeur."
+    },
+    "sell_page": {
+        "title": "Vendez votre Actif en Exclusivité",
+        "subtitle": "Accédez à notre réseau d'investisseurs qualifiés et de family offices mondiaux.",
+        "hero_cta": "Estimer ma Propriété",
+        "why_us_title": "Pourquoi vendre avec Urbina Agency ?",
+        "benefits": [
+            {
+                "title": "Confidentialité Totale",
+                "desc": "Votre actif ne sera pas publié sur les portails généralistes. Seuls les investisseurs vérifiés avec POF y auront accès."
+            },
+            {
+                "title": "Réseau Mondial",
+                "desc": "Nous connectons votre propriété avec des capitaux à Dubaï, Londres, New York et en Asie."
+            },
+            {
+                "title": "Gestion Intégrale",
+                "desc": "Nous nous occupons de tout : évaluation, due diligence, visites et clôture juridique."
+            }
+        ],
+        "form_title": "Détails de l'Actif",
+        "form_subtitle": "Remplissez le formulaire pour que notre équipe évalue votre propriété.",
+        "success_title": "Demande Reçue",
+        "success_desc": "Nous avons bien reçu les données de votre propriété. Notre équipe d'évaluation vous contactera sous peu pour formaliser le mandat de vente."
     }
 }

@@ -7,37 +7,37 @@ export default function LegalModal({ isOpen, onClose, section }) {
 
     const content = {
         terms: {
-            title: "Términos y Condiciones",
+            title: "Terms & Conditions",
             icon: FileText,
             text: (
                 <div className="space-y-4 text-gray-300">
-                    <p><strong>1. Identificación de la Empresa</strong></p>
-                    <p>Este sitio web es propiedad y está operado por <strong>Urbina Agency LLC</strong>, con número de identificación fiscal (EIN) <strong>61-2276664</strong>. Nuestra dirección registrada es: <strong>7345 W SAND LAKE RD STE 210 OFFICE 7997 ORLANDO, FL, 32819 - UNITED STATES</strong>.</p>
+                    <p><strong>1. Company Identification</strong></p>
+                    <p>This website is owned and operated by <strong>Urbina Agency LLC</strong>, with tax identification number (EIN) <strong>61-2276664</strong>. Our registered address is: <strong>7345 W SAND LAKE RD STE 210 OFFICE 7997 ORLANDO, FL, 32819 - UNITED STATES</strong>.</p>
 
-                    <p><strong>2. Uso del Sitio</strong></p>
-                    <p>El acceso a nuestra cartera de inversiones está reservado exclusivamente para inversores cualificados. La información contenida en este sitio web es de carácter confidencial.</p>
+                    <p><strong>2. Site Usage</strong></p>
+                    <p>Access to our investment portfolio is reserved exclusively for qualified investors. The information contained on this website is confidential.</p>
                 </div>
             )
         },
         privacy: {
-            title: "Política de Privacidad",
+            title: "Privacy Policy",
             icon: Shield,
             text: (
                 <div className="space-y-4 text-gray-300">
-                    <p>En <strong>Urbina Agency LLC</strong>, nos comprometemos a proteger su privacidad.</p>
-                    <p>La información personal y financiera que nos proporcione, incluyendo documentos de Prueba de Fondos (POF), será tratada con la más estricta confidencialidad y utilizada únicamente para verificar su solvencia y presentarle oportunidades de inversión adecuadas.</p>
-                    <p>No compartimos sus datos con terceros sin su consentimiento explícito, salvo cuando sea estrictamente necesario para la formalización de una operación inmobiliaria.</p>
+                    <p>At <strong>Urbina Agency LLC</strong>, we are committed to protecting your privacy.</p>
+                    <p>The personal and financial information you provide, including Proof of Funds (POF) documents, will be treated with the strictest confidentiality and used solely to verify your solvency and present you with suitable investment opportunities.</p>
+                    <p>We do not share your data with third parties without your explicit consent, except when strictly necessary for the formalization of a real estate transaction.</p>
                 </div>
             )
         },
         disclaimer: {
-            title: "Aviso Legal y Descargo de Responsabilidad",
+            title: "Legal Notice & Disclaimer",
             icon: AlertTriangle,
             text: (
                 <div className="space-y-4 text-gray-300">
-                    <p>La información presentada en este sitio web tiene fines informativos y no constituye una oferta vinculante de venta ni asesoramiento financiero.</p>
-                    <p>Todas las inversiones inmobiliarias conllevan riesgos. Los precios y la disponibilidad de los activos están sujetos a cambios sin previo aviso. Recomendamos encarecidamente realizar una Due Diligence legal y financiera independiente antes de cualquier transacción.</p>
-                    <p><strong>Urbina Agency LLC</strong> actúa como intermediario y facilitador, no como asesor financiero regulado.</p>
+                    <p>The information presented on this website is for informational purposes and does not constitute a binding offer of sale or financial advice.</p>
+                    <p>All real estate investments carry risks. Prices and availability of assets are subject to change without prior notice. We strongly recommend conducting independent legal and financial Due Diligence prior to any transaction.</p>
+                    <p><strong>Urbina Agency LLC</strong> acts as an intermediary and facilitator, not as a regulated financial advisor.</p>
                 </div>
             )
         }
@@ -76,7 +76,7 @@ export default function LegalModal({ isOpen, onClose, section }) {
                         {currentContent.text}
 
                         <div className="mt-8 pt-6 border-t border-white/5 text-xs text-gray-500 text-center">
-                            © {new Date().getFullYear()} Urbina Agency LLC. Todos los derechos reservados.
+                            © {new Date().getFullYear()} Urbina Agency LLC. All rights reserved.
                         </div>
                     </div>
                 </motion.div>

@@ -8,7 +8,8 @@
         "blog": "Blog",
         "agencies": "Für Agenturen",
         "search": "Immobiliensuche",
-        "access": "Privater Bereich"
+        "access": "Privater Bereich",
+        "sell": "Vermögen Verkaufen"
     },
     "hero": {
         "shield": "Die Kunst der Diskretion",
@@ -35,8 +36,8 @@
         "rights": "Alle Rechte vorbehalten."
     },
     "seo": {
-        "title": "Für Investoren | Luxusimmobilien weltweit",
-        "description": "Exklusives Portfolio aus Hotels, Grundstücken, Weingütern und Ultra-Luxus-Immobilien. Expertenmanagement durch Urbina Agency LLC."
+        "title": "Off-Market Immobilieninvestment",
+        "description": "Exklusives Portfolio aus Hotels, Grundstücken, Weingütern und Ultra-Luxus-Immobilien. Expertenmanagement durch Enter OffMarket."
     },
     "search": {
         "title": "Suche nach Off-Market-Anlagen",
@@ -51,7 +52,7 @@
     },
     "categories": {
         "investments": {
-            "title": "Immobilieninvestitionen",
+            "title": "Off-Market Immobilieninvestment",
             "shortTitle": "Immobilieninvestitionen",
             "description": "Umfassendes Management von Investitionsportfolios. Wir entdecken renditestarke Möglichkeiten auf dem globalen Immobilienmarkt.",
             "longDescription": "Unsere Abteilung für Immobilieninvestitionen sucht nicht nur nach Vermögenswerten, sondern entwirft Kapitalstrategien. Wir analysieren Markttrends, Wirtschaftszyklen und Wertsteigerungsmöglichkeiten, um Produkte anzubieten, die zum Risiko- und Renditeprofil institutioneller Investoren und Family Offices passen.",
@@ -65,7 +66,7 @@
             ]
         },
         "hotels": {
-            "title": "Hotels zu verkaufen",
+            "title": "Off-Market Hotelinvestment",
             "shortTitle": "Hotels zu verkaufen",
             "description": "Exklusive Auswahl an Hotelanlagen in den wichtigsten touristischen Gebieten Spaniens, Europas und weltweiter Destinationen.",
             "longDescription": "Der Hotelsektor ist das Juwel unserer Krone. Wir haben direkten Zugang zu Eigentümern von Hotelketten, unabhängigen Boutique-Hotels und Luxusresorts, die „off-market“ operieren. Wir suchen Vermögenswerte mit Repositionierungspotenzial, flexiblen Managementverträgen oder stabilisierten Renditen an unwiederbringlichen Standorten.",
@@ -79,7 +80,7 @@
             ]
         },
         "land": {
-            "title": "Grundstücke zu verkaufen",
+            "title": "Off-Market Grundstücksinvestment",
             "shortTitle": "Grundstücke zu verkaufen",
             "description": "Baureifes, entwicklungsfähiges und ländliches Land an strategischen Standorten für Großprojekte.",
             "longDescription": "Die Basis jedes großen Projekts ist das Land. Unser Grundstücksportfolio umfasst baureife Parzellen (Ready-to-build), mittelfristige Stadtentwicklungen und große ländliche Flächen für Projekte im Bereich erneuerbare Energien oder landwirtschaftliche Nutzung. Wir prüfen den städtebaulichen Status jedes Quadratmeters rigoros.",
@@ -93,7 +94,7 @@
             ]
         },
         "luxury": {
-            "title": "Luxusimmobilien zu verkaufen",
+            "title": "Off-Market Luxusimmobilien",
             "shortTitle": "Luxusimmobilien zu verkaufen",
             "description": "Einzigartige Villen und Penthouses in erstklassigen Lagen. Der höchste Ausdruck von Wohnexklusivität.",
             "longDescription": "Wir verstehen Luxus nicht nur als Preis, sondern als Lebenserfahrung. Unsere Auswahl „Luxusimmobilien“ umfasst die exklusivsten Residenzen auf dem Markt: Villen in La Zagaleta, Penthouses im Viertel Salamanca oder historische Villen an der Côte d'Azur. Privatsphäre, Sicherheit und architektonisches Design ohne Kompromisse.",
@@ -107,7 +108,7 @@
             ]
         },
         "wineries": {
-            "title": "Weingüter zu verkaufen",
+            "title": "Off-Market Weingut-Investment",
             "shortTitle": "Weingüter zu verkaufen",
             "description": "Investitionen in den Weinsektor: Weingüter mit Herkunftsbezeichnung, Weinberge und Produktionszentren.",
             "longDescription": "In ein Weingut zu investieren bedeutet, in Kultur, Geschichte und Land zu investieren. Wir bieten Möglichkeiten in den renommiertesten Weinregionen (Rioja, Ribera del Duero, Bordeaux, Napa Valley). Von Familienweingütern mit etablierter Marke bis hin zu großen Massenproduktionszentren analysieren wir die Produktionskapazität und den Markenwert.",
@@ -160,7 +161,8 @@
         "global_exposure_text": "Ihre lokalen Vermögenswerte gelangen direkt in Büros in Dubai, New York und London.",
         "form_title": "Zugang zur Allianz anfordern",
         "form_subtitle": "Vervollständigen Sie das Profil, um den Kooperationsvertrag zu erhalten.",
-        "form_explanation": "Geben Sie Ihre Agenturdaten ein, um die Berechtigung zu prüfen. Wir werden uns mit Ihnen in Verbindung setzen, um das gemeinsame Verkaufsmandat zu formalisieren."
+        "form_explanation": "Geben Sie Ihre Agenturdaten ein, um die Berechtigung zu prüfen. Wir werden uns mit Ihnen in Verbindung setzen, um das gemeinsame Verkaufsmandat zu formalisieren.",
+        "seo_title": "Agenturen Off-Market Investment"
     },
     "contact_global": {
         "title": "Kontaktieren Sie uns",
@@ -189,7 +191,28 @@
             "private_platform": "privaten Plattform",
             "view_exclusive": "an, um exklusive Möglichkeiten zu sehen.",
             "dossier": "Firmendossier / Portfolio-Beispiel",
-            "pof": "Kapitalnachweis (POF) Dokument"
+            "pof": "Kapitalnachweis (POF)",
+            "interested_assets": "Vermögenswerte von Interesse (Mehrfachauswahl)",
+            "companyName": "Firmenname (Optional)"
+        },
+        "assets": {
+            "hotels": "Hotels",
+            "wineries": "Weingüter",
+            "agricultural": "Landwirtschaftliche Anwesen",
+            "livestock": "Viehbetriebe",
+            "mansions": "Villen",
+            "castles": "Schlösser & Paläste",
+            "penthouses": "Luxus-Penthouses",
+            "office_buildings": "Bürogebäude",
+            "apartment_buildings": "Wohngebäude",
+            "urban_land": "Stadtgrundstücke",
+            "dev_land": "Bauland",
+            "casinos": "Casinos",
+            "football_clubs": "Fußballvereine",
+            "islands": "Privatinseln",
+            "sports_clubs": "Sportvereine",
+            "garages": "Großraumgaragen",
+            "businesses": "Unternehmen / M&A"
         },
         "placeholders": {
             "name_example": "Max Mustermann",
@@ -198,7 +221,8 @@
             "capital_example": "Bsp.: 5.000.000",
             "location_example": "Bsp.: Madrid, Marbella, London...",
             "message_example": "Interessiert an Immobilien in...",
-            "funds_example": "Bsp.: 5.000.000"
+            "funds_example": "Bsp.: 5.000.000",
+            "company_example": "Ihr Firmenname"
         },
         "buttons": {
             "send_request": "Anfrage senden",
@@ -251,62 +275,90 @@
                 "icon": "FileText"
             },
             {
-                "title": "Registrieren & Signieren",
+                "title": "Registrierung & Unterschrift",
                 "description": "Geben Sie Ihre Agenturdaten ein und unterschreiben Sie den Kooperationsvertrag digital.",
                 "icon": "Handshake"
             },
             {
-                "title": "Immobilien hochladen",
-                "description": "Laden Sie die Immobilien hoch, für die Sie qualifizierte Investoren suchen.",
-                "icon": "Upload"
-            },
-            {
-                "title": "Smart Matching",
-                "description": "Das System gleicht Ihre Vermögenswerte mit Großkapitalgebern ab.",
+                "title": "Smart Matching™",
+                "description": "Laden Sie Ihre Assets hoch. Unser Algorithmus gleicht sie sofort mit verifiziertem Kapital ab.",
                 "icon": "PieChart"
             },
             {
-                "title": "Interesse erhalten",
-                "description": "Erhalten Sie Kontakte von Investoren, die an jeder Immobilie interessiert sind.",
-                "icon": "Users"
-            },
-            {
-                "title": "Verkauf abschließen",
-                "description": "Wenn Sie den Verkauf abschließen, geben Sie die Details ein und markieren Sie das Asset als verkauft.",
+                "title": "Abschlüsse",
+                "description": "Wir verwalten Besichtigungen und Angebote. 50/50 Gebührenteilung bei Abschluss.",
                 "icon": "CheckCircle"
-            },
-            {
-                "title": "Zahlung & Rechnung",
-                "description": "Zahlen Sie die geteilte Provision und erhalten Sie Ihre Leistungsrechnung.",
-                "icon": "CreditCard"
             }
         ],
         "investors": [
             {
-                "title": "Anfrage & POF",
-                "description": "Füllen Sie das Formular aus und reichen Sie Ihren Kapitalnachweis (POF) ein.",
-                "icon": "FileText"
+                "title": "Registrierung & POF",
+                "description": "Beantragen Sie Zugang durch Vorlage Ihres Kapitalnachweises (POF).",
+                "icon": "UserCheck"
             },
             {
-                "title": "Überprüfung",
-                "description": "Wir prüfen Ihre Anfrage und gewähren Ihnen per E-Mail Zugriff auf die Plattform.",
+                "title": "Suchmandat",
+                "description": "Unterschreiben Sie digital unser nicht-exklusives Suchmandat.",
                 "icon": "Search"
             },
             {
-                "title": "Mandat unterzeichnen",
-                "description": "Unterzeichnen Sie das Mandat, um Immobilien zu erhalten, die Ihrem Profil entsprechen.",
-                "icon": "Handshake"
-            },
-            {
-                "title": "Angebote erhalten",
-                "description": "Sie erhalten Möglichkeiten von unserem internationalen Agenturnetzwerk.",
+                "title": "Smart Matching™",
+                "description": "Erhalten Sie sofortige Benachrichtigungen für Off-Market-Assets, die Ihren Kriterien entsprechen.",
                 "icon": "PieChart"
             },
             {
-                "title": "Kauf & Gebühr",
-                "description": "Schließen Sie das Geschäft ab und zahlen Sie die Provision an die Plattform.",
-                "icon": "CreditCard"
+                "title": "Akquisition",
+                "description": "Vollständige Beratung von der Verhandlung bis zur Unterschrift beim Notar.",
+                "icon": "Key"
             }
-        ]
+        ],
+        "sellers": [
+            {
+                "title": "Erstbewertung",
+                "description": "Senden Sie grundlegende Details. Wir analysieren Viabilität und Bewertung in 24h.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Mandat & Upload",
+                "description": "Unterschreiben Sie ein sicheres Mandat und laden Sie Dokumente in den privaten Datenraum hoch.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "Unser System gleicht Ihr Asset geräuschlos mit verifizierten Investoren ab. Keine öffentliche Auflistung.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Angebot & Abschluss",
+                "description": "Erhalten Sie formelle Angebote und schließen Sie das Geschäft sicher beim Notar ab.",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "Privater Verkaufsprozess",
+        "sellers_subtitle": "Ein diskreter und sicherer Weg zur Liquidierung Ihres hochwertigen Assets."
+    },
+    "sell_page": {
+        "title": "Verkaufen Sie Ihr Vermögen Exklusiv",
+        "subtitle": "Erhalten Sie Zugang zu unserem Netzwerk qualifizierter Investoren und globaler Family Offices.",
+        "hero_cta": "Meine Immobilie Bewerten",
+        "why_us_title": "Warum mit Urbina Agency verkaufen?",
+        "benefits": [
+            {
+                "title": "Absolute Vertraulichkeit",
+                "desc": "Ihr Vermögenswert wird nicht auf allgemeinen Portalen veröffentlicht. Nur verifizierte Investoren mit Kapitalnachweis haben Zugang."
+            },
+            {
+                "title": "Globales Netzwerk",
+                "desc": "Wir verbinden Ihre Immobilie mit Kapital in Dubai, London, New York und Asien."
+            },
+            {
+                "title": "Umfassendes Management",
+                "desc": "Wir kümmern uns um alles: Bewertung, Due Diligence, Besichtigungen und rechtlichen Abschluss."
+            }
+        ],
+        "form_title": "Details zum Vermögenswert",
+        "form_subtitle": "Füllen Sie das Formular aus, damit unser Team Ihre Immobilie bewerten kann.",
+        "success_title": "Anfrage Erhalten",
+        "success_desc": "Wir haben Ihre Immobiliendaten erhalten. Unser Bewertungsteam wird Sie in Kürze kontaktieren, um das Verkaufsmandat zu formalisieren."
     }
 }

@@ -4,11 +4,13 @@ import { motion } from 'framer-motion';
 import { Shield, Globe, Briefcase, CheckCircle, Upload, Loader2, Send, AlertCircle } from 'lucide-react';
 import SeoHead from './SeoHead';
 import { supabase } from '../lib/supabase';
+import ProcessSteps from './ProcessSteps';
 
 export default function SellAssets() {
     const { t } = useTranslation();
     const [formState, setFormState] = useState({
         name: '',
+        companyName: '',
         email: '',
         phone: '',
         propertyDetails: '',
@@ -38,6 +40,7 @@ export default function SellAssets() {
             const { error: dbError } = await supabase.from('leads').insert([
                 {
                     full_name: formState.name,
+                    company_name: formState.companyName,
                     email: formState.email,
                     phone: formState.phone,
                     target_location: formState.location, // Mapping Location to target_location
@@ -50,11 +53,15 @@ export default function SellAssets() {
                 }
             ]);
 
-            if (dbError) throw dbError;
+            if (dbError) {
+                console.error("Supabase Error (Non-blocking):", dbError);
+                // Continue execution to ensure email is sent
+            }
 
             // FormSubmit for email notification
             const formData = new FormData();
             formData.append('name', formState.name);
+            formData.append('company_name', formState.companyName);
             formData.append('email', formState.email);
             formData.append('phone', formState.phone);
             formData.append('location', formState.location);
@@ -104,6 +111,10 @@ export default function SellAssets() {
                         {t('sell_page.subtitle')}
                     </p>
                 </motion.div>
+            </div>
+
+            <div className="mb-20">
+                <ProcessSteps variant="sellers" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -183,6 +194,16 @@ export default function SellAssets() {
                                         />
                                     </div>
                                     <div>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyName')}</label>
+                                        <input
+                                            type="text"
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                            placeholder={t('forms.placeholders.company_example')}
+                                            value={formState.companyName}
+                                            onChange={e => setFormState({ ...formState, companyName: e.target.value })}
+                                        />
+                                    </div>
+                                    <div>
                                         <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.email')}</label>
                                         <input
                                             type="email"
@@ -206,11 +227,11 @@ export default function SellAssets() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.priceRange')}</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.priceRange')} (Min. 1M €)</label>
                                         <input
                                             type="text"
                                             className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                            placeholder="Ej: 2.500.000 €"
+                                            placeholder="Min. 1.000.000 €"
                                             value={formState.price}
                                             onChange={e => setFormState({ ...formState, price: e.target.value })}
                                         />

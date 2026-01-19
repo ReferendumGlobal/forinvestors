@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
-import { useTranslation } from 'react-i18next';
 
 export default function AgencyContactForm({ explanation }) {
-    const { t } = useTranslation(); // Hook added
+    const { t } = useTranslation();
     const [formState, setFormState] = useState({
         agencyName: '',
         taxId: '',
@@ -24,9 +24,8 @@ export default function AgencyContactForm({ explanation }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(null);
-    const [loadingText, setLoadingText] = useState(t('forms.loading.encrypting')); // Translatable initial state
+    const [loadingText, setLoadingText] = useState(t('forms.loading.encrypting'));
 
-    // Keys for translation
     const propertyTypeKeys = [
         "hotels",
         "land",
@@ -44,11 +43,11 @@ export default function AgencyContactForm({ explanation }) {
         }
     };
 
-    const handleCheckboxChange = (typeKey) => {
-        if (formState.propertyTypes.includes(typeKey)) {
-            setFormState({ ...formState, propertyTypes: formState.propertyTypes.filter(t => t !== typeKey) });
+    const handleCheckboxChange = (key) => {
+        if (formState.propertyTypes.includes(key)) {
+            setFormState({ ...formState, propertyTypes: formState.propertyTypes.filter(t => t !== key) });
         } else {
-            setFormState({ ...formState, propertyTypes: [...formState.propertyTypes, typeKey] });
+            setFormState({ ...formState, propertyTypes: [...formState.propertyTypes, key] });
         }
     };
 
@@ -70,7 +69,7 @@ export default function AgencyContactForm({ explanation }) {
 
             return () => clearInterval(interval);
         }
-    }, [isSubmitting, t]); // Add t to dependency
+    }, [isSubmitting, t]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -78,7 +77,6 @@ export default function AgencyContactForm({ explanation }) {
         setError(null);
 
         const formData = new FormData();
-        // ... build formData ...
         formData.append('agencyName', formState.agencyName);
         formData.append('taxId', formState.taxId);
         formData.append('contactPerson', formState.contactPerson);
@@ -87,9 +85,7 @@ export default function AgencyContactForm({ explanation }) {
         formData.append('location', `${formState.city}, ${formState.country}`);
         formData.append('propertiesCount', formState.propertiesCount);
         formData.append('priceRange', `${formState.priceRangeFrom} - ${formState.priceRangeTo}`);
-        // Send translated values or keys? Keys are safer for data, but email might need readable text.
-        // Let's send keys and translated string for clarity if specific need. For now keys are fine or translated.
-        // Actually, let's map keys to their translated values for the EMAIL so it's readable.
+
         const translatedTypes = formState.propertyTypes.map(k => t(`forms.agency_types.${k}`));
         formData.append('propertyTypes', translatedTypes.join(', '));
 
@@ -106,13 +102,13 @@ export default function AgencyContactForm({ explanation }) {
             // 1. Save to Supabase (Leads Table)
             const { error: dbError } = await supabase.from('leads').insert([
                 {
-                    full_name: formState.contactPerson,
+                    full_name: formState.contactPerson, // Using contact person as main name
                     email: formState.email,
                     phone: formState.phone,
-                    budget: `${formState.priceRangeFrom} - ${formState.priceRangeTo}`,
+                    budget: `${formState.priceRangeFrom} - ${formState.priceRangeTo}`, // Storing price range in budget
                     target_location: `${formState.city}, ${formState.country}`,
-                    intent: 'sell',
-                    request_access: true,
+                    intent: 'sell', // Agencies sell
+                    request_access: true, // Agencies always request access
                     message: `AGENCIA: ${formState.agencyName} (Tax ID: ${formState.taxId}). Properties: ${formState.propertiesCount}. Types: ${translatedTypes.join(', ')}. Msg: ${formState.message}`,
                     role: 'agency',
                     status: 'new'
@@ -130,14 +126,31 @@ export default function AgencyContactForm({ explanation }) {
                 body: formData
             });
 
-            // Handle response...
+            let result = {};
+            const text = await response.text();
+            try {
+                result = JSON.parse(text);
+            } catch (e) {
+                console.warn("Non-JSON response:", text);
+            }
+
             if (response.ok) {
                 setSubmitted(true);
                 setFormState({
-                    agencyName: '', taxId: '', contactPerson: '', email: '', phone: '', city: '', country: '', propertiesCount: '', priceRangeFrom: '', priceRangeTo: '', propertyTypes: [], message: '', file: null
+                    contactPerson: '',
+                    email: '',
+                    phone: '',
+                    city: '',
+                    country: '',
+                    propertiesCount: '',
+                    priceRangeFrom: '',
+                    priceRangeTo: '',
+                    propertyTypes: [],
+                    message: '',
+                    file: null
                 });
             } else {
-                setError(t('forms.status.error'));
+                setError(result.message || t('forms.status.error'));
             }
         } catch (err) {
             console.error("Error submitting form:", err);

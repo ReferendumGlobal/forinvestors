@@ -14,10 +14,10 @@ export default function FAQ() {
         <section className="py-20 bg-midnight-950 border-t border-white/5">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-serif text-white mb-4 flex items-center justify-center gap-3">
-                        Preguntas Frecuentes
+                    <h2 className="text-3xl font-sans font-bold text-white mb-4 flex items-center justify-center gap-3">
+                        Frequently Asked Questions
                     </h2>
-                    <p className="text-gray-400">Todo lo que necesita saber antes de invertir con nosotros.</p>
+                    <p className="text-gray-400">Everything you need to know before investing with us.</p>
                 </div>
 
                 <div className="space-y-4">

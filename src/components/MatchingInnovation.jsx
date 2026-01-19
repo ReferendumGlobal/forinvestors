@@ -83,7 +83,7 @@ export default function MatchingInnovation() {
 
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
                         <div>
-                            <h4 className="text-2xl font-serif text-white mb-2">BigInvestors.net Engine™</h4>
+                            <h4 className="text-2xl font-serif text-white mb-2">OffMarketInvests.com Engine™</h4>
                             <p className="text-gray-400 max-w-xl">
                                 {t('innovation.engine_text')}
                             </p>

@@ -26,7 +26,7 @@ export default function Login() {
             navigate('/dashboard');
         } catch (err) {
             setError(err.message === 'Invalid login credentials'
-                ? 'Credenciales incorrectas. Verifique su email y contraseña.'
+                ? 'Invalid credentials. Please check your email and password.'
                 : err.message);
         } finally {
             setLoading(false);
@@ -36,14 +36,19 @@ export default function Login() {
     return (
         <div className="min-h-screen bg-midnight-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
+                <div className="flex justify-start mb-4">
+                    <Link to="/" className="text-sm text-gold-500 hover:text-gold-400 flex items-center gap-2">
+                        ← Back to Home
+                    </Link>
+                </div>
                 <Link to="/" className="flex justify-center mb-6">
                     <Shield className="h-12 w-12 text-gold-500" />
                 </Link>
                 <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
-                    Acceso a Plataforma
+                    Platform Access
                 </h2>
                 <p className="mt-2 text-center text-sm text-gray-400">
-                    Exclusivo para Socios y Agencias Verificadas
+                    Exclusive for Partners and Verified Agencies
                 </p>
             </div>
 
@@ -62,7 +67,7 @@ export default function Login() {
 
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                                Email Corporativo
+                                Corporate Email
                             </label>
                             <div className="mt-1 relative rounded-md shadow-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -77,14 +82,14 @@ export default function Login() {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="bg-midnight-950 block w-full pl-10 pr-3 py-3 border border-white/10 rounded-md leading-5 text-white placeholder-gray-500 focus:outline-none focus:ring-gold-500 focus:border-gold-500 sm:text-sm"
-                                    placeholder="nombre@empresa.com"
+                                    placeholder="name@company.com"
                                 />
                             </div>
                         </div>
 
                         <div>
                             <label htmlFor="password" className="block text-sm font-medium text-gray-300">
-                                Contraseña
+                                Password
                             </label>
                             <div className="mt-1 relative rounded-md shadow-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -107,7 +112,7 @@ export default function Login() {
                         <div className="flex items-center justify-between">
                             <div className="text-sm">
                                 <a href="#" className="font-medium text-gold-500 hover:text-gold-400">
-                                    ¿Olvidó su contraseña?
+                                    Forgot password?
                                 </a>
                             </div>
                         </div>
@@ -122,7 +127,7 @@ export default function Login() {
                                     <Loader2 className="animate-spin h-5 w-5" />
                                 ) : (
                                     <span className="flex items-center">
-                                        Acceder <ArrowRight className="ml-2 h-4 w-4" />
+                                        Sign In <ArrowRight className="ml-2 h-4 w-4" />
                                     </span>
                                 )}
                             </button>
@@ -132,27 +137,30 @@ export default function Login() {
                     <div className="mt-6">
                         <div className="relative">
                             <div className="absolute inset-0 flex items-center">
-                                <div className="w-full border-t border-gray-700" />
+                                <div className="w-full border-t border-white/10" />
                             </div>
                             <div className="relative flex justify-center text-sm">
-                                <span className="px-2 bg-midnight-900 text-gray-400">
-                                    ¿Aún no es socio?
-                                </span>
+                                <span className="px-2 bg-midnight-950 text-gray-400">Not a member yet?</span>
                             </div>
                         </div>
 
                         <div className="mt-6 grid grid-cols-2 gap-3">
                             <Link
                                 to="/register?type=investor"
-                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-800 text-sm font-medium text-gray-300 hover:bg-midnight-700 transition-colors"
+                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-900 text-sm font-medium text-white hover:bg-midnight-800 transition-colors"
                             >
-                                Soy Inversor
+                                <span className="sr-only">Sign up for</span> Investor
                             </Link>
                             <Link
                                 to="/register?type=agency"
-                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-800 text-sm font-medium text-gray-300 hover:bg-midnight-700 transition-colors"
+                                className="w-full inline-flex justify-center py-2 px-4 border border-white/10 rounded-md shadow-sm bg-midnight-900 text-sm font-medium text-white hover:bg-midnight-800 transition-colors"
                             >
-                                Soy Agencia
+                                <span className="sr-only">Sign up for</span> Agency
+                            </Link>
+                        </div>
+                        <div className="mt-4 text-center">
+                            <Link to="/sell" className="text-sm text-gold-500 hover:text-gold-400">
+                                Looking to sell a property?
                             </Link>
                         </div>
                     </div>

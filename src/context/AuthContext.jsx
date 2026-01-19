@@ -71,11 +71,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={value}>
-            {loading ? (
-                <div className="min-h-screen bg-midnight-950 flex items-center justify-center">
-                    <div className="text-gold-500 text-xl font-serif animate-pulse">Cargando ParaInversores...</div>
-                </div>
-            ) : children}
+            {!loading && children}
         </AuthContext.Provider>
     );
 };

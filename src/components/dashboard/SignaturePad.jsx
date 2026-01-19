@@ -32,7 +32,7 @@ export default function SignaturePad({ onSave, onClear }) {
 
                 {isEmpty && (
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none text-gray-400 select-none">
-                        <span className="text-lg italic">Firmar aquí / Sign here</span>
+                        <span className="text-lg italic">Sign here</span>
                     </div>
                 )}
             </div>
@@ -43,7 +43,7 @@ export default function SignaturePad({ onSave, onClear }) {
                     className="flex items-center px-4 py-2 bg-gray-700 text-gray-300 rounded hover:bg-gray-600 transition-colors"
                 >
                     <Eraser size={18} className="mr-2" />
-                    Borrar / Clear
+                    Clear
                 </button>
 
                 <button
@@ -52,7 +52,7 @@ export default function SignaturePad({ onSave, onClear }) {
                     className="flex items-center px-6 py-2 bg-gold-600 text-white rounded font-bold hover:bg-gold-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                     <Check size={18} className="mr-2" />
-                    Confirmar Firma
+                    Confirm Signature
                 </button>
             </div>
         </div>

@@ -104,7 +104,7 @@ export default function PropertyManager() {
             fetchProperties();
         } catch (error) {
             console.error('Error saving property:', error);
-            alert('Error al guardar la propiedad');
+            alert('Error saving property');
         } finally {
             setLoading(false);
         }
@@ -115,13 +115,13 @@ export default function PropertyManager() {
             <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                     <Building className="text-gold-500" />
-                    Propiedades
+                    Properties
                 </h2>
                 <button
                     onClick={() => handleOpenModal()}
                     className="bg-gold-600 hover:bg-gold-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors"
                 >
-                    <Plus size={18} /> Nueva Propiedad
+                    <Plus size={18} /> New Property
                 </button>
             </div>
 
@@ -131,23 +131,23 @@ export default function PropertyManager() {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                     <input
                         type="text"
-                        placeholder="Buscar propiedades..."
+                        placeholder="Search properties..."
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white focus:ring-gold-500 focus:border-gold-500"
                     />
                 </div>
                 <button className="bg-midnight-700 text-gray-300 px-4 py-2 rounded-lg border border-white/10 flex items-center gap-2 hover:bg-midnight-600">
-                    <Filter size={18} /> Filtros
+                    <Filter size={18} /> Filters
                 </button>
             </div>
 
             {/* Properties List */}
             {loading && !isModalOpen ? (
-                <div className="text-center py-12 text-gray-400">Cargando propiedades...</div>
+                <div className="text-center py-12 text-gray-400">Loading properties...</div>
             ) : properties.length === 0 ? (
                 <div className="text-center py-12 bg-midnight-800/50 rounded-xl border border-white/5">
                     <Building className="mx-auto h-12 w-12 text-gray-600 mb-4" />
-                    <h3 className="text-lg font-medium text-white">No hay propiedades</h3>
-                    <p className="text-gray-400 mt-2">Añade tu primera propiedad para empezar.</p>
+                    <h3 className="text-lg font-medium text-white">No properties found</h3>
+                    <p className="text-gray-400 mt-2">Add your first property to get started.</p>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -158,7 +158,7 @@ export default function PropertyManager() {
                                     <img src={p.images[0]} alt={p.title} className="w-full h-full object-cover" />
                                 ) : (
                                     <div className="w-full h-full flex items-center justify-center text-gray-500">
-                                        Sin Imagen
+                                        No Image
                                     </div>
                                 )}
                                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -177,8 +177,8 @@ export default function PropertyManager() {
                                     <span className="text-gold-400 font-medium">{parseInt(p.price).toLocaleString()} €</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-xs text-gray-500">
-                                    <span className="bg-midnight-950 px-2 py-1 rounded border border-white/10 uppercase">{p.property_type}</span>
-                                    {p.is_exclusive && <span className="bg-gold-500/20 text-gold-400 px-2 py-1 rounded border border-gold-500/20">Exclusiva</span>}
+                                    <span className="bg-midnight-950 px-2 py-1 rounded border border-white/10 uppercase">{p.property_type.replace('_', ' ')}</span>
+                                    {p.is_exclusive && <span className="bg-gold-500/20 text-gold-400 px-2 py-1 rounded border border-gold-500/20">Exclusive</span>}
                                 </div>
                             </div>
                         </div>
@@ -203,7 +203,7 @@ export default function PropertyManager() {
                         >
                             <div className="sticky top-0 bg-midnight-900/95 backdrop-blur border-b border-white/10 p-6 flex justify-between items-center z-10">
                                 <h3 className="text-xl font-bold text-white">
-                                    {editingProperty ? 'Editar Propiedad' : 'Nueva Propiedad'}
+                                    {editingProperty ? 'Edit Property' : 'New Property'}
                                 </h3>
                                 <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-white">
                                     <X size={24} />
@@ -213,19 +213,19 @@ export default function PropertyManager() {
                             <form onSubmit={handleSubmit} className="p-6 space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="md:col-span-2">
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">Título Público</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Public Title</label>
                                         <input
                                             type="text"
                                             required
                                             value={formData.title}
                                             onChange={e => setFormData({ ...formData, title: e.target.value })}
                                             className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-2 text-white focus:ring-gold-500 focus:border-gold-500"
-                                            placeholder="Ej: Hotel Boutique en Centro Histórico"
+                                            placeholder="e.g. Boutique Hotel in Historical Center"
                                         />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">Precio (€)</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Price (€)</label>
                                         <div className="relative">
                                             <Euro className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
                                             <input
@@ -240,7 +240,7 @@ export default function PropertyManager() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">Ubicación</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Location</label>
                                         <div className="relative">
                                             <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
                                             <input
@@ -249,29 +249,29 @@ export default function PropertyManager() {
                                                 value={formData.location}
                                                 onChange={e => setFormData({ ...formData, location: e.target.value })}
                                                 className="w-full bg-midnight-950 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white focus:ring-gold-500 focus:border-gold-500"
-                                                placeholder="Ciudad, País"
+                                                placeholder="City, Country"
                                             />
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">Tipo de Activo</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Asset Type</label>
                                         <select
                                             value={formData.property_type}
                                             onChange={e => setFormData({ ...formData, property_type: e.target.value })}
                                             className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-2 text-white focus:ring-gold-500 focus:border-gold-500"
                                         >
                                             <option value="hotel">Hotel</option>
-                                            <option value="building">Edificio</option>
-                                            <option value="land">Terreno / Suelo</option>
-                                            <option value="commercial">Local Comercial</option>
-                                            <option value="luxury_residential">Residencial Lujo</option>
-                                            <option value="winery">Bodega</option>
+                                            <option value="building">Building</option>
+                                            <option value="land">Land</option>
+                                            <option value="commercial">Commercial Space</option>
+                                            <option value="luxury_residential">Luxury Residential</option>
+                                            <option value="winery">Winery</option>
                                         </select>
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">Comisión (%)</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Commission (%)</label>
                                         <input
                                             type="number"
                                             step="0.1"
@@ -283,18 +283,18 @@ export default function PropertyManager() {
                                     </div>
 
                                     <div className="md:col-span-2">
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">Descripción</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Description</label>
                                         <textarea
                                             rows={4}
                                             value={formData.description}
                                             onChange={e => setFormData({ ...formData, description: e.target.value })}
                                             className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-2 text-white focus:ring-gold-500 focus:border-gold-500"
-                                            placeholder="Detalles clave del inmueble..."
+                                            placeholder="Key property details..."
                                         />
                                     </div>
 
                                     <div className="md:col-span-2">
-                                        <label className="block text-sm font-medium text-gray-400 mb-1">URL del Dossier (Drive/Dropbox/PDF)</label>
+                                        <label className="block text-sm font-medium text-gray-400 mb-1">Dossier URL (Drive/Dropbox/PDF)</label>
                                         <input
                                             type="url"
                                             value={formData.dossier_url}
@@ -312,7 +312,7 @@ export default function PropertyManager() {
                                             onChange={e => setFormData({ ...formData, is_exclusive: e.target.checked })}
                                             className="rounded border-gray-600 bg-midnight-950 text-gold-500 focus:ring-gold-500"
                                         />
-                                        <label htmlFor="exclusive" className="text-gray-300">Es mandato exclusivo</label>
+                                        <label htmlFor="exclusive" className="text-gray-300">Exclusive Mandate</label>
                                     </div>
                                 </div>
 
@@ -322,14 +322,14 @@ export default function PropertyManager() {
                                         onClick={() => setIsModalOpen(false)}
                                         className="px-4 py-2 text-gray-400 hover:text-white transition-colors"
                                     >
-                                        Cancelar
+                                        Cancel
                                     </button>
                                     <button
                                         type="submit"
                                         disabled={loading}
                                         className="bg-gold-600 hover:bg-gold-700 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-colors disabled:opacity-50"
                                     >
-                                        <Save size={18} /> {loading ? 'Guardando...' : 'Guardar Propiedad'}
+                                        <Save size={18} /> {loading ? 'Saving...' : 'Save Property'}
                                     </button>
                                 </div>
                             </form>

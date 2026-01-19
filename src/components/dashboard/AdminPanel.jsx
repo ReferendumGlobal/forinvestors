@@ -10,7 +10,7 @@ export default function AdminPanel() {
     const [users, setUsers] = useState([]);
     const [contracts, setContracts] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState('leads'); // 'leads', 'users', 'contracts'
+    const [activeTab, setActiveTab] = useState('leads');
 
     useEffect(() => {
         if (profile?.role === 'admin') {
@@ -21,21 +21,18 @@ export default function AdminPanel() {
     const fetchData = async () => {
         setLoading(true);
         try {
-            // 1. Fetch Leads
             const { data: leadsData } = await supabase
                 .from('leads')
                 .select('*')
                 .order('created_at', { ascending: false });
             setLeads(leadsData || []);
 
-            // 2. Fetch Profiles (Users)
             const { data: profilesData } = await supabase
                 .from('profiles')
                 .select('*')
                 .order('created_at', { ascending: false });
             setUsers(profilesData || []);
 
-            // 3. Fetch Contracts
             const { data: contractsData } = await supabase
                 .from('contracts')
                 .select('*, profiles(full_name, email)')
@@ -50,16 +47,13 @@ export default function AdminPanel() {
     };
 
     const handleInvite = async (lead) => {
-        // Here we would ideally trigger a Cloud Function to send an email.
-        // For MVP, we'll just update status and alert the admin to send the link manually.
         const { error } = await supabase
             .from('leads')
             .update({ status: 'invited' })
             .eq('id', lead.id);
 
         if (!error) {
-            const roleParam = lead.role || (lead.intent === 'sell' ? 'seller' : 'investor');
-            alert(`Marcado como invitado. Envía este link a ${lead.email}:\n\nhttps://parainversores.com/#/register?email=${encodeURIComponent(lead.email)}&type=${roleParam}`);
+            alert(`Marked as invited. Send this link to ${lead.email}:\n\nhttps://forinvestors.org/#/register?email=${encodeURIComponent(lead.email)}&type=${lead.intent === 'sell' ? 'agency' : 'investor'}`);
             fetchData();
         }
     };
@@ -85,33 +79,24 @@ export default function AdminPanel() {
                 <AlertTriangle className="text-red-500" /> Admin Control Center
             </h1>
 
-            {/* Tabs */}
             <div className="flex space-x-4 border-b border-white/10 mb-8 overflow-x-auto">
                 <button
                     onClick={() => setActiveTab('leads')}
                     className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'leads' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
                 >
-                    Leads / Solicitudes ({leads.length})
+                    Leads ({leads.length})
                 </button>
                 <button
                     onClick={() => setActiveTab('users')}
                     className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'users' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
                 >
-                    Usuarios Registrados ({users.length})
+                    Users ({users.length})
                 </button>
                 <button
                     onClick={() => setActiveTab('contracts')}
                     className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'contracts' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
                 >
-                    Contratos Firmados ({contracts.length})
-                </button>
-                <button
-                    onClick={() => setActiveTab('matching')}
-                    className={`pb-4 px-4 text-sm font-medium transition-colors ${activeTab === 'matching' ? 'border-b-2 border-gold-500 text-gold-500' : 'text-gray-400 hover:text-white'}`}
-                >
-                    <div className="flex items-center gap-2">
-                        <GitMerge size={16} /> Matching
-                    </div>
+                    Contracts ({contracts.length})
                 </button>
             </div>
 
@@ -121,12 +106,12 @@ export default function AdminPanel() {
                     <table className="min-w-full divide-y divide-white/10">
                         <thead className="bg-midnight-950">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Fecha</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Nombre</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Email/Tel</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Intención</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Estado</th>
-                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Acciones</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Date</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Name</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Email/Phone</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Intent</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="bg-midnight-900 divide-y divide-white/5">
@@ -145,12 +130,24 @@ export default function AdminPanel() {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                                         <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${lead.intent === 'buy' ? 'bg-green-100/10 text-green-400' : 'bg-blue-100/10 text-blue-400'}`}>
-                                            {lead.intent === 'buy' ? 'Comprar' : 'Vender'}
+                                            {lead.intent === 'buy' ? 'Buy' : 'Sell'}
                                         </span>
                                         {lead.request_access && (
                                             <span className="ml-2 px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gold-100/10 text-gold-400">
-                                                Acceso
+                                                Access
                                             </span>
+                                        )}
+                                        {/* Extract POF Link if present */}
+                                        {lead.message && (lead.message.includes('http') || lead.message.includes('POF')) && (
+                                            <a
+                                                href={lead.message.match(/https?:\/\/[^\s]+/) ? lead.message.match(/https?:\/\/[^\s]+/)[0] : '#'}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="ml-2 text-gold-500 hover:text-gold-400 inline-flex items-center"
+                                                title="View Proof of Funds"
+                                            >
+                                                <FileText size={16} />
+                                            </a>
                                         )}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
@@ -164,7 +161,7 @@ export default function AdminPanel() {
                                                 onClick={() => handleInvite(lead)}
                                                 className="text-gold-500 hover:text-gold-400 flex items-center justify-end gap-1 w-full"
                                             >
-                                                <Mail size={16} /> Invitar
+                                                <Mail size={16} /> Invite
                                             </button>
                                         )}
                                     </td>
@@ -181,10 +178,10 @@ export default function AdminPanel() {
                     <table className="min-w-full divide-y divide-white/10">
                         <thead className="bg-midnight-950">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Usuario</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Rol</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Estado</th>
-                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Acciones</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">User</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Role</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
+                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="bg-midnight-900 divide-y divide-white/5">
@@ -231,10 +228,10 @@ export default function AdminPanel() {
                     <table className="min-w-full divide-y divide-white/10">
                         <thead className="bg-midnight-950">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Fecha</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Firmado Por</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Tipo</th>
-                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Firma</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Date</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Signed By</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Type</th>
+                                <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Signature</th>
                             </tr>
                         </thead>
                         <tbody className="bg-midnight-900 divide-y divide-white/5">
@@ -244,14 +241,14 @@ export default function AdminPanel() {
                                         {new Date(c.signed_at).toLocaleDateString()}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm font-medium text-white">{c.profiles?.full_name || 'Usuario desconocido'}</div>
+                                        <div className="text-sm font-medium text-white">{c.profiles?.full_name || 'Unknown User'}</div>
                                         <div className="text-xs text-gray-500">{c.profiles?.email}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 capitalize">
                                         {c.type}
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right">
-                                        <img src={c.signature_url} alt="Firma" className="h-8 inline-block bg-white rounded p-1" />
+                                        <img src={c.signature_url} alt="Signature" className="h-8 inline-block bg-white rounded p-1" />
                                     </td>
                                 </tr>
                             ))}

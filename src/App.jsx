@@ -12,10 +12,10 @@ import Blog from './components/Blog';
 import FAQ from './components/FAQ';
 import PropertySearch from './components/PropertySearch';
 import Agencies from './components/Agencies';
-import ProcessSteps from './components/ProcessSteps';
-
-import CategoryPage from './components/CategoryPage';
 import SellAssets from './components/SellAssets';
+import ProcessSteps from './components/ProcessSteps';
+import About from './components/About';
+import CategoryPage from './components/CategoryPage';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
@@ -105,6 +105,7 @@ function App() {
           <Routes>
             {/* Auth & Dashboard Routes */}
             <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
             <Route path="/dashboard" element={<DashboardLayout />}>
@@ -127,7 +128,7 @@ function App() {
               <Route path="agencias" element={<Agencies />} />
               <Route path="sell" element={<SellAssets />} />
               <Route path="search" element={<PropertySearch />} />
-              <Route path="properties/:location" element={<PropertySearch />} />
+              <Route path="about" element={<About />} />
               <Route path="*" element={<Navigate to="." replace />} />
             </Route>
             <Route path="/" element={<Navigate to="/es" replace />} />

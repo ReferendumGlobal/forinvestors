@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe, Lock } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import { useTranslation } from 'react-i18next';
@@ -33,88 +33,103 @@ export default function Navbar({ categories }) {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
-                    <div className="flex items-center">
-                        <Link to="/" className="flex-shrink-0 group">
-                            <Logo className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-                        </Link>
-                    </div>
+                    {/* Desktop Menu - Row 1: Logo and Actions */}
+                    <div className="hidden md:flex flex-col w-full gap-4">
+                        <div className="flex justify-between items-center w-full">
+                            <div className="flex items-center">
+                                <Link to="/" className="flex-shrink-0 group">
+                                    <Logo className="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
+                                </Link>
+                            </div>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center gap-2 xl:gap-8">
-                        <div className="flex items-center gap-1 bg-white/5 rounded-2xl p-2 border border-white/5 backdrop-blur-sm">
-                            {Object.entries(categories).map(([key, category]) => (
+                            <div className="flex items-center gap-2 lg:gap-4">
                                 <Link
-                                    key={key}
-                                    to={key}
-                                    className={`px-2 xl:px-3 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 whitespace-normal text-center max-w-[120px] leading-tight ${currentPath === key
-                                        ? 'bg-gold-500 text-midnight-950 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
+                                    to="search"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'search'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
                                         : 'text-gray-300 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
-                                    {t(`nav.${key}`)}
+                                    {t('nav.search')}
                                 </Link>
-                            ))}
+                                <Link
+                                    to="blog"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'blog'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {t('nav.blog')}
+                                </Link>
+                                <Link
+                                    to="about"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'about'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {t('nav.about')}
+                                </Link>
+                                <Link
+                                    to="agencias"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'agencias'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {t('nav.agencies')}
+                                </Link>
+                                <Link
+                                    to="sell"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'sell'
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gold-400 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {t('nav.sell')}
+                                </Link>
+
+                                <Link
+                                    to="/login"
+                                    className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-midnight-950"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                                    {t('nav.access')}
+                                </Link>
+
+                                <div className="h-6 w-px bg-white/10 mx-1"></div>
+
+                                <LanguageSwitcher />
+                            </div>
                         </div>
 
-                        <div className="flex items-center gap-1 xl:gap-4">
-                            <Link
-                                to="search"
-                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'search'
-                                    ? 'text-gold-400 bg-white/5 border border-white/5'
-                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                                    }`}
-                            >
-                                {t('nav.search')}
-                            </Link>
-                            <Link
-                                to="blog"
-                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'blog'
-                                    ? 'text-gold-400 bg-white/5 border border-white/5'
-                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                                    }`}
-                            >
-                                {t('nav.blog')}
-                            </Link>
-                            <Link
-                                to="agencias"
-                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'agencias'
-                                    ? 'text-gold-400 bg-white/5 border border-white/5'
-                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                                    }`}
-                            >
-                                {t('nav.agencies')}
-                            </Link>
-                            <Link
-                                to="sell"
-                                className={`px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'sell'
-                                    ? 'text-gold-400 bg-white/5 border border-white/5'
-                                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                                    }`}
-                            >
-                                {t('nav.sell')}
-                            </Link>
-
-                            <Link
-                                to="/login"
-                                className="flex items-center gap-2 px-2 xl:px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 bg-gold-500/10 border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-midnight-950"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
-                                {t('nav.access')}
-                            </Link>
-
-                            <div className="h-6 w-px bg-white/10 mx-1"></div>
-
-                            <LanguageSwitcher />
+                        {/* Desktop Menu - Row 2: Categories */}
+                        <div className="flex items-center justify-center w-full">
+                            <div className="flex items-center gap-1 bg-white/5 rounded-2xl p-1.5 border border-white/5 backdrop-blur-sm w-full justify-between">
+                                {Object.entries(categories).map(([key, category]) => (
+                                    <Link
+                                        key={key}
+                                        to={key}
+                                        className={`flex-1 px-3 py-2 rounded-xl text-xs lg:text-sm font-medium transition-all duration-300 whitespace-nowrap text-center leading-tight ${currentPath === key
+                                            ? 'bg-gold-500 text-midnight-950 shadow-[0_0_15px_rgba(234,179,8,0.3)]'
+                                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                            }`}
+                                    >
+                                        {t(`nav.${key}`)}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center gap-2">
+                    <div className="md:hidden flex items-center gap-3">
                         <Link
                             to="/login"
-                            className="p-2 text-gold-400 hover:text-white bg-gold-500/10 rounded-md border border-gold-500/30"
+                            className="text-gold-400 hover:text-gold-300 transition-colors bg-gold-500/10 p-2 rounded-md border border-gold-500/20"
+                            aria-label={t('nav.access')}
                         >
-                            <Lock size={20} />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
                         </Link>
                         <LanguageSwitcher />
                         <button
@@ -174,6 +189,19 @@ export default function Navbar({ categories }) {
                         <div className="flex items-center gap-3">
                             <span className="text-gold-500 w-5 flex justify-center">•</span>
                             {t('nav.blog')}
+                        </div>
+                    </Link>
+                    <Link
+                        to="about"
+                        onClick={() => setIsOpen(false)}
+                        className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === 'about'
+                            ? 'text-gold-400 bg-white/5'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            }`}
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 w-5 flex justify-center">•</span>
+                            {t('nav.about')}
                         </div>
                     </Link>
                     <Link

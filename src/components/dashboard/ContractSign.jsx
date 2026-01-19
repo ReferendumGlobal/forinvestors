@@ -1,58 +1,186 @@
+
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { supabase } from '../../lib/supabase';
 import SignaturePad from './SignaturePad';
-import { FileText, Download, CheckCircle, AlertCircle } from 'lucide-react';
+import { FileText, Download, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
-export default function ContractSign() {
+export default function ContractSign({ mode = 'standalone', contractType = 'buy_mandate', criteria, sellerData, agencyData, idUrl, onSuccess, onBack }) {
     const { profile, user } = useAuth();
     const [signed, setSigned] = useState(false);
     const [loading, setLoading] = useState(true);
     const [contractUrl, setContractUrl] = useState(null);
-    const [contractContent, setContractContent] = useState('');
-    const [role, setRole] = useState(null);
+    const [existingSignature, setExistingSignature] = useState(null);
 
-    useEffect(() => {
-        if (profile?.role) {
-            setRole(profile.role);
+    // Common Date
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    // --- TEMPLATE GENERATORS ---
+
+    const generateBuyMandate = () => {
+        const signingPlace = criteria?.signingPlace || "Online";
+        const capacity = criteria?.investmentCapacity || "TBD";
+
+        // Correctly handle individual vs company name in the contract header
+        let clientName = profile?.full_name || "Client Name";
+        if (criteria?.entityType === 'company' && criteria?.companyName) {
+            clientName = `${criteria.companyName}, represented by ${criteria.legalRepresentative || profile?.full_name}`;
         }
-    }, [profile]);
 
-    useEffect(() => {
-        if (!role) return;
+        // Handle Multiple Profiles
+        let purposeText = "";
+        const profiles = criteria?.searchProfiles || [];
 
-        let contractText = '';
-        if (role === 'agency') {
-            contractText = `CONTRATO DE COLABORACIÓN (AGENCIA)
-            
-Entre Urbina Agency y ${profile?.company_name || 'la Agencia'}, se acuerda:
-
-1. Ambas partes colaborarán en la comercialización de activos.
-2. Urbina Agency actuará como intermediario principal.
-3. Se respetará la confidencialidad de los clientes compartidos.
-4. Honorarios compartidos al 50% en operaciones conjuntas.`;
-        } else if (role === 'seller') {
-            contractText = `HOJA DE ENCARGO DE VENTA (EXCLUSIVA)
-
-Entre Urbina Agency y ${profile?.full_name || 'el Propietario'}, se acuerda:
-
-1. El Propietario encarga a Urbina Agency la gestión de venta en EXCLUSIVA de su propiedad.
-2. El precio de venta acordado es el reflejado en la ficha del activo.
-3. Los honorarios de Urbina Agency serán del 3% + IVA sobre el precio final.
-4. Confidencialidad: Urbina Agency se compromete a no publicar la propiedad en portales abiertos.`;
+        if (profiles.length > 0) {
+            purposeText = profiles.map((p, i) => `
+**Profile ${i + 1}**:
+* Location: **${p.country || 'Any'}** - **${p.region || ''}**
+* Property Type: **${p.type || 'Any'}**
+* Price Range: **${p.priceRange || 'Any'}**
+* Specifics: **${p.other || 'None'}**
+`).join('\n');
         } else {
-            // Investor
-            contractText = `MANDATO DE COMPRA / VENTA (INVERSOR)
-
-Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
-
-1. El Inversor reconoce el carácter confidencial de la información recibida.
-2. Se compromete a no contactar directamente con la propiedad sin la intermediación de Urbina Agency.
-3. En caso de compra, los honorarios de Urbina Agency serán del 3% coste compra venta abonado por la parte vendedora.`;
+            // Fallback for old single format
+            purposeText = `
+* Country: **"${criteria?.targetCountry || 'Any'}"**
+* Price range: **"${criteria?.priceRange || 'Any'}"**
+* Property type: **"${criteria?.propertyType || 'Any'}"**
+`;
         }
-        setContractContent(contractText);
+
+        return `# PROPERTY SEARCH MANDATE AGREEMENT FOR INVESTMENT
+
+**In ${signingPlace}, on ${formattedDate}**
+
+## PARTIES
+
+On the one hand,
+
+**URBINA AGENCY LLC**, a company duly incorporated and registered in the State of New Mexico, United States of America... (operating through **[forinvestors.org](http://www.forinvestors.org)**).
+
+And on the other hand,
+
+**"${clientName}"**, identified with **"${clientID}"**, with registered address at **"${clientAddress}"**, hereinafter referred to as **"THE CLIENT"**.
+
+## RECITALS
+
+1. THE CLIENT is interested in the **search and analysis of real estate investment opportunities**, validated by a total declared Investment Capacity of **${capacity}**.
+2. URBINA AGENCY professionally engages in the identification of assets...
+
+## CLAUSES
+
+### 1. Purpose of the agreement (Search Mandate)
+THE CLIENT grants URBINA AGENCY a mandate to identify opportunities meeting the following criteria:
+
+${purposeText}
+
+### 3. Term
+**SIX (6) MONTHS**, automatic termination unless renewed.
+
+### 5. URBINA AGENCY’s fee
+**SEVEN PERCENT (7%)** of acquisition price + taxes.
+
+...
+
+**URBINA AGENCY LLC**               **THE CLIENT**
+[System Signed]                     [See Signature Below]
+                                    ${criteria?.entityType === 'company' ? `For: ${criteria.companyName}` : ''}
+`;
+    };
+
+    const generateSaleMandate = () => {
+        const property = sellerData?.property || {};
+        const owners = sellerData?.owners || [];
+        const ownersList = owners.map(o => `**${o.name}** (ID: ${o.idNumber}, ${o.percent}%)`).join(' and ');
+
+        return `# EXCLUSIVE SALES MANAGEMENT MANDATE
+
+**In Online Mode, on ${formattedDate}**
+
+## PARTIES
+
+**URBINA AGENCY LLC** (The Agency)...
+And
+**THE OWNERS**: ${ownersList}, legal owners of the property at **${property.address || 'TBD'}**.
+
+## CLAUSES
+
+### 1. Object
+EXCLUSIVE MANDATE to manage the sale of the Property.
+**Target Price**: €${property.price || 'TBD'}.
+
+### 2. Term & Exclusivity
+**SIX (6) MONTHS**. Strict Exclusivity.
+
+### 3. Collaboration
+URBINA AGENCY Authorized to collaborate with network agencies.
+
+### 4. Fees (Commission)
+**SEVEN PERCENT (7%)** of sale price + VAT.
+Payable within **15 business days**.
+
+...
+
+**URBINA AGENCY LLC**               **THE OWNERS**
+[System Signed]                     [See Signature Below]
+`;
+    };
+
+    const generateAgencyAgreement = () => {
+        const ag = agencyData || {};
+
+        return `# AGENCY COLLABORATION AGREEMENT
+
+**In Online Mode, on ${formattedDate}**
+
+## PARTIES
+
+**URBINA AGENCY LLC** (Platform Owner)...
+And
+**${ag.companyName || 'PARTNER AGENCY'}** (The Partner), Tax ID **${ag.taxId}**, represented by **${ag.repName}** (${ag.repId}).
+
+## RECITALS
+Both entities are empowered to manage real estate transactions and wish to collaborate via **[forinvestors.org](http://www.forinvestors.org)**.
+
+## CLAUSES
+
+### 1. Object
+Mutual collaboration for the sale of real estate assets.
+* The Partner uploads properties to the Platform -> Deemed as shared collaboration.
+* Urbina Agency provides Investors for said properties.
+
+### 2. Duration
+**INDEFINITE**. Valid until either party terminates their account on the Platform.
+
+### 3. Obligations
+The Partner MUST upload the specific "Sales Mandate" and "Commission Agreement" for each property they list on the Platform.
+
+### 4. Fees & Commission Split
+In the event of a successful sale where the Buyer is introduced by Urbina Agency/Platform:
+**FIFTY PERCENT (50%)** of the total commission received by The Partner from the seller.
+Plus applicable taxes.
+
+### 5. Payment Terms
+The Partner shall pay Urbina Agency within **15 Business Days** of receiving their commission.
+Payment to Urbina Agency LLC accounts (SWIFT: CLNOUS66).
+
+...
+
+**URBINA AGENCY LLC**               **PARTNER AGENCY**
+[System Signed]                     [See Signature Below]
+`;
+    };
+
+    const getContractContent = () => {
+        if (contractType === 'sale_mandate') return generateSaleMandate();
+        if (contractType === 'agency_collaboration') return generateAgencyAgreement();
+        return generateBuyMandate();
+    };
+
+    useEffect(() => {
         checkExistingContract();
-    }, [role, profile]);
+    }, []);
 
     const checkExistingContract = async () => {
         try {
@@ -63,8 +191,8 @@ Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
                 .single();
 
             if (data) {
+                setExistingSignature(data.signature_url);
                 setSigned(true);
-                setContractUrl(data.signature_url); // In this MVP we treat signature_url as the proof
             }
         } catch (err) {
             // No contract found
@@ -76,38 +204,46 @@ Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
     const handleSignatureSave = async (signatureDataUrl) => {
         setLoading(true);
         try {
-            // 1. Insert into contracts table
+            const contractText = getContractContent();
+
+            // Build insert data based on type
+            const insertData = {
+                user_id: user.id,
+                type: contractType,
+                signature_url: signatureDataUrl,
+                signed_at: new Date().toISOString(),
+                contract_text: contractText,
+            };
+
+            // Store specific metadata in 'criteria' JSONB column
+            if (contractType === 'buy_mandate') insertData.criteria = criteria;
+            else if (contractType === 'sale_mandate') insertData.criteria = sellerData;
+            else if (contractType === 'agency_collaboration') insertData.criteria = agencyData;
+
+            // Handle ID URL for investors (others uploaded separately)
+            if (idUrl) insertData.id_url = idUrl;
+
             const { error } = await supabase
                 .from('contracts')
-                .insert([
-                    {
-                        user_id: user.id,
-                        type: profile?.role === 'agency' ? 'collaboration' :
-                            profile?.role === 'seller' ? 'sales_mandate' : 'buy_mandate',
-                        signature_url: signatureDataUrl, // Storing base64 directly for MVP simplicity
-                        signed_at: new Date().toISOString()
-                    }
-                ]);
+                .insert([insertData]);
 
             if (error) throw error;
 
-            // 2. Update profile status (optional, maybe wait for admin to act based on contract?)
-            // We'll keep status as 'pending' until Admin manually approves in the Users Panel.
-
             setSigned(true);
-            setContractUrl(signatureDataUrl);
+            setExistingSignature(signatureDataUrl);
+            if (onSuccess) onSuccess();
 
         } catch (err) {
             console.error('Error saving contract:', err);
-            alert('Error al guardar la firma. Por favor intente de nuevo.');
+            alert('Error saving signature. Please try again.');
         } finally {
             setLoading(false);
         }
     };
 
-    if (loading) return <div className="text-white text-center p-10">Cargando contrato...</div>;
+    if (loading) return <div className="text-white text-center p-10"><Loader2 className="animate-spin inline mr-2" /> Loading contract...</div>;
 
-    if (signed) {
+    if (signed && mode === 'standalone') {
         return (
             <div className="max-w-4xl mx-auto p-6 bg-midnight-900 border border-green-500/30 rounded-xl text-center">
                 <div className="flex justify-center mb-6">
@@ -115,45 +251,45 @@ Entre Urbina Agency y ${profile?.full_name || 'el Inversor'}, se acuerda:
                         <CheckCircle size={48} />
                     </div>
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-4">Contrato Firmado Correctamente</h2>
-                <p className="text-gray-300 mb-8">
-                    Su documentación está en regla. Nuestro equipo de compliance revisará su perfil para la activación final.
-                </p>
+                <h2 className="text-2xl font-bold text-white mb-4">Agreement Active</h2>
                 <div className="bg-white/5 p-4 rounded-lg inline-block text-left max-w-lg mx-auto w-full">
-                    <p className="text-xs text-gray-500 uppercase mb-2">Firma Registrada:</p>
-                    <img src={contractUrl} alt="Firma" className="bg-white rounded p-2 h-20 border border-gray-600" />
-                    <p className="text-xs text-gray-500 mt-2">Fecha: {new Date().toLocaleDateString()}</p>
+                    <img src={existingSignature} alt="Signature" className="bg-white rounded p-2 h-20 border border-gray-600 mb-2" />
+                    <p className="text-xs text-gray-400">Signed on {formattedDate}</p>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="bg-midnight-800 p-6 rounded-xl border border-white/5">
                 <div className="flex items-center gap-3 mb-6">
                     <FileText className="text-gold-500" size={28} />
                     <h1 className="text-2xl font-bold text-white">
-                        {profile?.role === 'agency' ? 'Firma de Acuerdo de Colaboración' :
-                            profile?.role === 'seller' ? 'Firma de Hoja de Encargo' :
-                                'Firma de Mandato'}
+                        {contractType === 'sale_mandate' ? 'Exclusive Sales Mandate' :
+                            contractType === 'agency_collaboration' ? 'Agency Collaboration Agreement' :
+                                'Property Search Mandate'}
                     </h1>
                 </div>
 
-                <div className="bg-white text-black p-8 rounded shadow-inner h-96 overflow-y-auto font-serif text-sm leading-relaxed mb-8">
-                    <pre className="whitespace-pre-wrap font-serif">
-                        {contractContent}
-                    </pre>
+                <div className="bg-white text-black p-8 rounded shadow-inner h-[500px] overflow-y-auto font-serif text-sm leading-relaxed mb-8">
+                    <div className="whitespace-pre-wrap font-serif" dangerouslySetInnerHTML={{ __html: getContractContent().replace(/\n/g, '<br/>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/## (.*)/g, '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>').replace(/### (.*)/g, '<h3 class="text-lg font-bold mt-3 mb-1">$1</h3>') }} />
                 </div>
 
                 <div className="bg-yellow-900/20 border border-yellow-500/20 p-4 rounded-lg mb-8 flex gap-3">
                     <AlertCircle className="text-yellow-500 shrink-0" />
                     <p className="text-sm text-gray-300">
-                        Por favor, lea atentamente y firme en el recuadro inferior para completar su solicitud de acceso.
+                        By signing below, you acknowledge and agree to the terms herein.
                     </p>
                 </div>
 
                 <SignaturePad onSave={handleSignatureSave} />
+
+                {onBack && (
+                    <button onClick={onBack} className="mt-4 text-gray-500 hover:text-white text-sm">
+                        Back to Previous Step
+                    </button>
+                )}
             </div>
         </div>
     );

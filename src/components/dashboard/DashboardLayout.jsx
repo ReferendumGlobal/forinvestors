@@ -1,14 +1,46 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { supabase } from '../../lib/supabase';
 import { Navigate, Outlet, Link, useLocation } from 'react-router-dom';
 import { Shield, LayoutDashboard, Building, Users, FileText, LogOut, Menu, X } from 'lucide-react';
+import InvestorOnboarding from './InvestorOnboarding';
+import SellerOnboarding from './SellerOnboarding';
+import AgencyOnboarding from './AgencyOnboarding';
 
 export default function DashboardLayout() {
-    const { user, profile, loading, signOut } = useAuth();
+    const { user, profile, loading: authLoading, signOut } = useAuth();
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+    const [hasContract, setHasContract] = useState(false);
+    const [checkingContract, setCheckingContract] = useState(true);
     const location = useLocation();
 
-    if (loading) return (
+    useEffect(() => {
+        // Check contract if user is investor, seller, or agency
+        if (user && ['investor', 'seller', 'agency'].includes(profile?.role)) {
+            checkContract();
+        } else {
+            setCheckingContract(false);
+        }
+    }, [user, profile]);
+
+    const checkContract = async () => {
+        try {
+            const { data, error } = await supabase
+                .from('contracts')
+                .select('id')
+                .eq('user_id', user.id)
+                .maybeSingle();
+
+            if (data) setHasContract(true);
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setCheckingContract(false);
+        }
+    };
+
+    if (authLoading || checkingContract) return (
         <div className="min-h-screen bg-midnight-950 flex items-center justify-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-500"></div>
         </div>
@@ -16,14 +48,76 @@ export default function DashboardLayout() {
 
     if (!user) return <Navigate to="/login" />;
 
+    // --- ONBOARDING ROUTING ---
+
+    // 1. INVESTOR
+    if (profile?.role === 'investor' && !hasContract) {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col">
+                <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
+                    <Link to="/" className="flex items-center space-x-2">
+                        <Shield className="h-8 w-8 text-gold-500" />
+                        <span className="text-white font-serif font-bold text-lg">URBINA</span>
+                    </Link>
+                    <button onClick={signOut} className="text-gray-400 hover:text-white text-sm">
+                        Sign Out
+                    </button>
+                </header>
+                <main className="flex-1 overflow-y-auto">
+                    <InvestorOnboarding />
+                </main>
+            </div>
+        );
+    }
+
+    // 2. SELLER
+    if (profile?.role === 'seller' && !hasContract) {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col">
+                <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
+                    <Link to="/" className="flex items-center space-x-2">
+                        <Shield className="h-8 w-8 text-gold-500" />
+                        <span className="text-white font-serif font-bold text-lg">URBINA</span>
+                    </Link>
+                    <button onClick={signOut} className="text-gray-400 hover:text-white text-sm">
+                        Sign Out
+                    </button>
+                </header>
+                <main className="flex-1 overflow-y-auto">
+                    <SellerOnboarding />
+                </main>
+            </div>
+        );
+    }
+
+    // 3. AGENCY
+    if (profile?.role === 'agency' && !hasContract) {
+        return (
+            <div className="min-h-screen bg-midnight-950 flex flex-col">
+                <header className="bg-midnight-900 border-b border-white/5 h-16 flex items-center justify-between px-6">
+                    <Link to="/" className="flex items-center space-x-2">
+                        <Shield className="h-8 w-8 text-gold-500" />
+                        <span className="text-white font-serif font-bold text-lg">URBINA</span>
+                    </Link>
+                    <button onClick={signOut} className="text-gray-400 hover:text-white text-sm">
+                        Sign Out
+                    </button>
+                </header>
+                <main className="flex-1 overflow-y-auto">
+                    <AgencyOnboarding />
+                </main>
+            </div>
+        );
+    }
+
     // Navigation items based on role
     const navItems = [
-        { name: 'Inicio', path: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'agency', 'investor'] },
+        { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard, roles: ['admin', 'agency', 'investor', 'seller'] },
         { name: 'Admin Panel', path: '/dashboard/admin', icon: Shield, roles: ['admin'] },
-        { name: 'Usuarios', path: '/dashboard/users', icon: Users, roles: ['admin'] },
-        { name: 'Propiedades', path: '/dashboard/properties', icon: Building, roles: ['admin', 'agency'] },
-        { name: 'Oportunidades', path: '/dashboard/opportunities', icon: Building, roles: ['investor'] },
-        { name: 'Contratos', path: '/dashboard/contracts', icon: FileText, roles: ['admin', 'agency', 'investor'] },
+        { name: 'Users', path: '/dashboard/users', icon: Users, roles: ['admin'] },
+        { name: 'Properties', path: '/dashboard/properties', icon: Building, roles: ['admin', 'agency', 'seller'] },
+        { name: 'Opportunities', path: '/dashboard/opportunities', icon: Building, roles: ['investor'] },
+        { name: 'Contracts', path: '/dashboard/contracts', icon: FileText, roles: ['admin', 'agency', 'investor', 'seller'] },
     ];
 
     const filteredNav = navItems.filter(item => item.roles.includes(profile?.role));
@@ -74,7 +168,7 @@ export default function DashboardLayout() {
                             </div>
                         </div>
                         <div className="ml-3">
-                            <p className="text-sm font-medium text-white truncate max-w-[120px]">{profile?.full_name || 'Usuario'}</p>
+                            <p className="text-sm font-medium text-white truncate max-w-[120px]">{profile?.full_name || 'User'}</p>
                             <p className="text-xs text-gray-500 capitalize">{profile?.role}</p>
                         </div>
                     </div>
@@ -83,7 +177,7 @@ export default function DashboardLayout() {
                         className="flex items-center w-full px-4 py-2 text-sm text-red-400 hover:bg-red-400/10 rounded-lg transition-colors"
                     >
                         <LogOut className="mr-3 h-5 w-5" />
-                        Cerrar Sesión
+                        Sign Out
                     </button>
                 </div>
             </div>

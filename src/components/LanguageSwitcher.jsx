@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Globe, ChevronDown } from 'lucide-react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { getCategoryFromSlug, getSlugFromCategory } from '../routes';
 
 const languages = [
     { code: 'es', label: 'Español', flag: '🇪🇸' },
@@ -26,21 +27,19 @@ export default function LanguageSwitcher() {
     const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
     const handleLanguageChange = (newLangCode) => {
-        // Replace the current language segment in the URL with the new one
-        // Assumption: URL is always /:lang/...
-        // If we are at /es/hoteles, and switch to en, go to /en/hoteles.
-
-        // Simple regex replacement for safety if we strictly follow /:lang scheme
         const currentPath = location.pathname;
         const parts = currentPath.split('/');
-        // parts[0] is empty, parts[1] is 'es' (or 'en' etc)
-        if (parts.length > 1) {
+        // path starts with /:lang/..., so parts[1] is the language code
+
+        let newPath;
+        if (parts.length > 1 && languages.some(l => l.code === parts[1])) {
+            // Replace existing lang code
             parts[1] = newLangCode;
+            newPath = parts.join('/');
         } else {
-            // specific case if root /
-            parts.push(newLangCode);
+            // If for some reason we are at root or no lang param (shouldn't happen inside LanguageWrapper but possible)
+            newPath = `/${newLangCode}`;
         }
-        const newPath = parts.join('/');
 
         navigate(newPath);
         setIsOpen(false);
@@ -64,14 +63,14 @@ export default function LanguageSwitcher() {
                         className="fixed inset-0 z-40"
                         onClick={() => setIsOpen(false)}
                     ></div>
-                    <div className="absolute right-0 top-full mt-2 w-48 bg-midnight-950 border border-white/10 rounded-xl shadow-xl z-[100] py-1 max-h-[80vh] overflow-y-auto origin-top-right">
+                    <div className="fixed inset-x-4 top-[15%] max-w-sm mx-auto sm:absolute sm:inset-auto sm:right-0 sm:top-full sm:mt-2 sm:w-48 bg-midnight-950 border border-white/10 rounded-xl shadow-xl z-[100] py-1 max-h-[70vh] overflow-y-auto">
                         {languages.map((lng) => (
                             <button
                                 key={lng.code}
                                 onClick={() => handleLanguageChange(lng.code)}
                                 className={`w-full text-left px-4 py-3 text-sm flex items-center gap-3 hover:bg-white/5 transition-colors ${i18n.language === lng.code ? 'text-gold-400 bg-white/5' : 'text-gray-300'}`}
                             >
-                                <span className="text-lg">{lng.flag}</span>
+                                <span className="text-xl">{lng.flag}</span>
                                 <span>{lng.label}</span>
                             </button>
                         ))}

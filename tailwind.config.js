@@ -8,30 +8,30 @@ export default {
     extend: {
       colors: {
         gold: {
-          50: '#fbf7e3',
-          100: '#f5ebb8',
-          200: '#edd983',
-          300: '#e3c252',
-          400: '#d9a82a',
-          500: '#b8860b', // main gold
-          600: '#966606',
-          700: '#754a05',
-          800: '#613b0a',
-          900: '#52310e',
+          50: '#F9F7F2',
+          100: '#F0EAD6',
+          200: '#E2D3A8',
+          300: '#D4BC7A',
+          400: '#C6A54D',
+          500: '#B88E1F', // Deep Bronze/Gold
+          600: '#937219',
+          700: '#6E5513',
+          800: '#49390C',
+          900: '#251C06',
         },
         midnight: {
-          950: '#0a0a0e', // darker than slate-950
-          900: '#111118',
-          800: '#1a1a24',
+          950: '#020410', // Deepest Navy
+          900: '#0A1128', // Night Blue
+          800: '#132244', // Lighter Navy
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'serif'],
-        sans: ['"Inter"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'], // Elegant Serif for EnterOffMarket
+        sans: ['"Montserrat"', 'sans-serif'], // Modern Sans
       },
       backgroundImage: {
-        'luxury-gradient': 'linear-gradient(to bottom right, #111118, #0a0a0e)',
-        'gold-gradient': 'linear-gradient(to right, #b8860b, #d9a82a)',
+        'luxury-gradient': 'linear-gradient(to bottom right, #020410, #0A1128)',
+        'gold-gradient': 'linear-gradient(to right, #B88E1F, #D4BC7A)', // Real Gold gradient
       }
     },
   },

@@ -17,35 +17,41 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                         <div>
-                            <h3 className="text-xl font-serif font-bold text-white mb-4">PARA INVERSORES</h3>
+                            <h3 className="text-xl font-serif font-bold text-white mb-4">OFFMARKET INVESTS</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">
-                                Especialistas en la gestión de activos inmobiliarios de alto valor. Conectamos capital privado con oportunidades de inversión exclusivas en España, Europa y en todo el mundo.
+                                Specialists in high-value real estate asset management. Connecting private capital with exclusive investment opportunities worldwide.
                             </p>
                             <div className="text-xs text-gray-500 uppercase tracking-widest font-semibold">
-                                Operado por Urbina Agency LLC
+                                Operated by Enter OffMarket
                             </div>
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Nuestra Red Global</h3>
+                            <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Global Network</h3>
                             <ul className="space-y-3">
                                 <li>
                                     <a href="https://parainversores.com" target="_blank" rel="noopener noreferrer" className="block group">
                                         <span className="text-white font-medium group-hover:text-gold-400 transition-colors">ParaInversores.com</span>
-                                        <span className="text-xs text-gray-500 block">España y Europa</span>
+                                        <span className="text-xs text-gray-500 block">Spain & Europe</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="https://topoffmarket.com" target="_blank" rel="noopener noreferrer" className="block group">
                                         <span className="text-white font-medium group-hover:text-gold-400 transition-colors">TopOffMarket.com</span>
-                                        <span className="text-xs text-gray-500 block">Mercado Internacional</span>
+                                        <span className="text-xs text-gray-500 block">International Market</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://enteroffmarket.com" target="_blank" rel="noopener noreferrer" className="block group">
+                                        <span className="text-white font-medium group-hover:text-gold-400 transition-colors">EnterOffMarket.com</span>
+                                        <span className="text-xs text-gray-500 block">Central Platform</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
 
                         <div>
-                            <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Contacto Corporativo</h3>
+                            <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Corporate Contact</h3>
                             <ul className="space-y-4">
 
                                 <li className="flex items-start text-gray-400">
@@ -63,17 +69,17 @@ export default function Footer() {
                         <div>
                             <h3 className="text-lg font-serif font-bold text-gold-400 mb-4">Legal</h3>
                             <ul className="space-y-3 text-gray-400">
-                                <li><button onClick={() => openLegal('terms')} className="hover:text-white transition-colors text-left">Términos y Condiciones</button></li>
-                                <li><button onClick={() => openLegal('privacy')} className="hover:text-white transition-colors text-left">Política de Privacidad</button></li>
-                                <li><button onClick={() => openLegal('disclaimer')} className="hover:text-white transition-colors text-left">Aviso Legal</button></li>
+                                <li><button onClick={() => openLegal('terms')} className="hover:text-white transition-colors text-left">Terms & Conditions</button></li>
+                                <li><button onClick={() => openLegal('privacy')} className="hover:text-white transition-colors text-left">Privacy Policy</button></li>
+                                <li><button onClick={() => openLegal('disclaimer')} className="hover:text-white transition-colors text-left">Disclaimer</button></li>
                                 <li className="pt-2 text-xs text-gray-600">EIN: 61-2276664</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="border-t border-white/5 pt-8 text-center flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-sm text-gray-600">
-                            &copy; {new Date().getFullYear()} Urbina Agency LLC. Todos los derechos reservados.
+                        <p className="text-gray-400 text-sm">
+                            © {new Date().getFullYear()} EnterOffMarket.com. All rights reserved. <span className="opacity-30 ml-2 text-xs">v2.2 (SAFE MODE)</span>
                         </p>
                         <div className="flex items-center gap-4">
                             <a href="#" className="p-2 bg-white/5 rounded-full text-gold-400 hover:text-white hover:bg-gold-500 transition-all duration-300">
@@ -88,7 +94,7 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </footer >
+            </footer>
 
             <LegalModal
                 isOpen={legalModalOpen}

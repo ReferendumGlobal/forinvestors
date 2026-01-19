@@ -4,81 +4,81 @@ export const categories = {
     investments: {
         id: 'investments',
         icon: TrendingUp,
-        title: 'Inversiones Inmobiliarias',
-        description: 'Gestión integral de carteras de inversión. Detectamos oportunidades de alto rendimiento en el mercado inmobiliario global.',
-        longDescription: 'Nuestra división de Inversiones Inmobiliarias no solo busca activos, sino que diseña estrategias de capital. Analizamos tendencias de mercado, ciclos económicos y oportunidades de revalorización para ofrecer productos que encajen con el perfil de riesgo y retorno de inversores institucionales y family offices.',
-        priceRange: 'Desde 1M€ hasta 500M€',
+        title: 'Real Estate Investments',
+        description: 'Comprehensive investment portfolio management. We detect high-yield opportunities in the global real estate market.',
+        longDescription: 'Our Real Estate Investments division does not just seek assets; it designs capital strategies. We analyze market trends, economic cycles, and appreciation opportunities to offer products that fit the risk and return profile of institutional investors and family offices.',
+        priceRange: 'From €1M to €500M',
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        details: 'Estrategias a medida: Core, Value-Add y Opportunistic.',
+        details: 'Tailored strategies: Core, Value-Add, and Opportunistic.',
         features: [
-            'Análisis macroeconómico y de mercado local.',
-            'Due Diligence técnica, legal y financiera exhaustiva.',
-            'Estructuración de vehículos de inversión.',
-            'Gestión de activos (Asset Management) post-adquisición.'
+            'Macroeconomic and local market analysis.',
+            'Exhaustive technical, legal, and financial Due Diligence.',
+            'Structuring of investment vehicles.',
+            'Post-acquisition Asset Management.'
         ]
     },
     hotels: {
         id: 'hotels',
         icon: Hotel,
-        title: 'Hoteles a la Venta',
-        description: 'Selección exclusiva de activos hoteleros en las principales zonas turísticas de España, Europa y destinos mundiales.',
-        longDescription: 'El sector hotelero es la joya de nuestra corona. Disponemos de acceso directo a propietarios de cadenas hoteleras, hoteles boutique independientes y resorts de lujo que operan "off-market". Buscamos activos con potencial de reposicionamiento, contratos de gestión flexibles o rentabilidades estabilizadas en ubicaciones irreplicables.',
-        priceRange: 'Desde 1M€ hasta 150M€',
+        title: 'Hotels for Sale',
+        description: 'Exclusive selection of hotel assets in prime tourist destinations in Spain, Europe, and worldwide.',
+        longDescription: 'The hotel sector is the jewel in our crown. We have direct access to owners of hotel chains, independent boutique hotels, and luxury resorts operating "off-market". We look for assets with repositioning potential, flexible management contracts, or stabilized yields in unrepeatable locations.',
+        priceRange: 'From €1M to €150M',
         image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        details: 'Oportunidades de gestión, franquicia o compra pura.',
+        details: 'Management, franchise, or pure purchase opportunities.',
         features: [
-            'Hoteles urbanos en capitales europeas (Madrid, París, Londres).',
-            'Resorts vacacionales en primera línea de playa (Baleares, Costa del Sol).',
-            'Edificios con licencia hotelera para reformar.',
-            'Sale & Leaseback con operadores de primer nivel.'
+            'Urban hotels in European capitals (Madrid, Paris, London).',
+            'Holiday resorts on the beachfront (Balearics, Costa del Sol).',
+            'Buildings with hotel licenses for renovation.',
+            'Sale & Leaseback with top-tier operators.'
         ]
     },
     land: {
         id: 'land',
         icon: LandPlot,
-        title: 'Terrenos a la Venta',
-        description: 'Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.',
-        longDescription: 'La base de cualquier gran proyecto es la tierra. Nuestra cartera de suelos incluye parcelas finalistas listas para solicitar licencia (Ready-to-build), desarrollos urbanísticos a medio plazo y grandes extensiones de suelo rústico para proyectos de energía renovable o uso agropecuario. Verificamos rigurosamente la situación urbanística de cada metro cuadrado.',
-        priceRange: 'Desde 1M€ hasta 150M€',
+        title: 'Land for Sale',
+        description: 'Finalist, buildable, and rustic land in strategic locations for large developments.',
+        longDescription: 'The foundation of any great project is land. Our land portfolio includes finalist plots ready for license application (Ready-to-build), medium-term urban developments, and large tracts of rustic land for renewable energy projects or agricultural use. We rigorously verify the urban planning status of every square meter.',
+        priceRange: 'From €1M to €150M',
         image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=2232&q=80',
-        details: 'Suelo residencial, logístico, comercial y terciario.',
+        details: 'Residential, logistical, commercial, and tertiary land.',
         features: [
-            'Suelo residencial para promociones de obra nueva.',
-            'Suelo logístico en nudos de comunicación estratégicos.',
-            'Suelo terciario para centros comerciales u oficinas.',
-            'Gestión urbanística y juntas de compensación.'
+            'Residential land for new construction developments.',
+            'Logistics land in strategic communication hubs.',
+            'Tertiary land for shopping centers or offices.',
+            'Urban planning management and compensation boards.'
         ]
     },
     luxury: {
         id: 'luxury',
         icon: Star,
-        title: 'Propiedades de Lujo a la Venta',
-        description: 'Villas singulares y áticos en ubicaciones prime. El máximo exponente de la exclusividad residencial.',
-        longDescription: 'Entendemos el lujo no solo como un precio, sino como una experiencia de vida. Nuestra selección "Propiedades de Lujo" incluye las residencias más exclusivas del mercado: villas en La Zagaleta, áticos en el Barrio de Salamanca o mansiones históricas en la Costa Azul. Privacidad, seguridad y diseño arquitectónico sin compromisos.',
-        priceRange: 'Desde 1M€ hasta 150M€',
+        title: 'Luxury Properties for Sale',
+        description: 'Unique villas and penthouses in prime locations. The pinnacle of residential exclusivity.',
+        longDescription: 'We understand luxury not just as a price, but as a living experience. Our "Luxury Properties" selection includes the most exclusive residences on the market: villas in La Zagaleta, penthouses in the Salamanca district, or historic mansions on the French Riviera. Absolute privacy, security, and architectural design without compromise.',
+        priceRange: 'From €1M to €150M',
         image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
-        details: 'Activos residenciales Prime y Ultra-Prime.',
+        details: 'Prime and Ultra-Prime residential assets.',
         features: [
-            'Villas de autor con seguridad privada 24h.',
-            'Áticos con vistas panorámicas en centros financieros.',
-            'Fincas de recreo y palacetes históricos.',
-            'Servicios de conserjería y gestión de estilo de vida.'
+            'Designer villas with 24h private security.',
+            'Penthouses with panoramic views in financial centers.',
+            'Recreational estates and historic palaces.',
+            'Concierge and lifestyle management services.'
         ]
     },
     wineries: {
         id: 'wineries',
         icon: Grape,
-        title: 'Bodegas a la Venta',
-        description: 'Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.',
-        longDescription: 'Invertir en una bodega es invertir en cultura, historia y tierra. Ofrecemos oportunidades en las regiones vinícolas más prestigiosas (Rioja, Ribera del Duero, Burdeos, Napa Valley). Desde bodegas familiares con marca consolidada hasta grandes centros de producción a granel, analizamos la capacidad productiva y el valor de marca.',
-        priceRange: 'Desde 1M€ hasta 150M€',
+        title: 'Wineries for Sale',
+        description: 'Investments in the wine sector: wineries with D.O., vineyards, and production centers.',
+        longDescription: 'Investing in a winery is investing in culture, history, and land. We offer opportunities in the most prestigious wine regions (Rioja, Ribera del Duero, Bordeaux, Napa Valley). From family wineries with established brands to large bulk production centers, we analyze production capacity and brand value.',
+        priceRange: 'From €1M to €150M',
         image: 'https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-        details: 'Activos productivos con valor inmobiliario y de marca.',
+        details: 'Productive assets with real estate and brand value.',
         features: [
-            'Bodegas con Denominación de Origen Calificada.',
-            'Viñedos centenarios en plena producción.',
-            'Instalaciones de enoturismo y hoteles bodega.',
-            'Marcas de vino con distribución internacional.'
+            'Wineries with Qualified Designation of Origin.',
+            'Centenary vineyards in full production.',
+            'Wine tourism facilities and winery hotels.',
+            'Wine brands with international distribution.'
         ]
     }
 };
@@ -86,45 +86,45 @@ export const categories = {
 export const blogPosts = [
     {
         id: 1,
-        title: "Tendencias Inmobiliarias 2026: El Auge del 'Build to Rent'",
-        excerpt: "Analizamos cómo los grandes fondos están rotando sus carteras hacia activos residenciales flexibles en las principales capitales europeas.",
-        date: "12 Oct 2025",
+        title: "Real Estate Trends 2026: The Rise of 'Build to Rent'",
+        excerpt: "Analyzing how major funds are rotating portfolios towards flexible residential assets in key European capitals.",
+        date: "Oct 12, 2025",
         image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        readTime: "5 min lectura"
+        readTime: "5 min read"
     },
     {
         id: 2,
-        title: "Inversión Hotelera: ¿Rebranding o Gestión Directa?",
-        excerpt: "Claves para maximizar el RevPAR en activos hoteleros costeros mediante estrategias de reposicionamiento de marca.",
-        date: "28 Sep 2025",
+        title: "Hotel Investment: Rebranding or Direct Management?",
+        excerpt: "Keys to maximizing RevPAR in coastal hotel assets through brand repositioning strategies.",
+        date: "Sep 28, 2025",
         image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        readTime: "8 min lectura"
+        readTime: "8 min read"
     },
     {
         id: 3,
-        title: "Suelo Logístico: El Nuevo Oro Negro",
-        excerpt: "La demanda de espacios de última milla está disparando las valoraciones de suelo industrial en los anillos metropolitanos de Madrid y Barcelona.",
-        date: "15 Sep 2025",
+        title: "Logistics Land: The New Black Gold",
+        excerpt: "Demand for last-mile spaces is skyrocketing industrial land valuations in metropolitan rings worldwide.",
+        date: "Sep 15, 2025",
         image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        readTime: "6 min lectura"
+        readTime: "6 min read"
     }
 ];
 
 export const faqs = [
     {
-        question: "¿Qué tipo de inversores pueden acceder a su cartera?",
-        answer: "Trabajamos exclusivamente con inversores cualificados, Family Offices y fondos institucionales capaces de acreditar solvencia para operaciones desde 1M€."
+        question: "What type of investors can access your portfolio?",
+        answer: "We work exclusively with qualified investors, Family Offices, and institutional funds capable of proving solvency for operations starting from €1M."
     },
     {
-        question: "¿Por qué requieren una Prueba de Fondos (POF) antes de ver detalles?",
-        answer: "Para proteger la confidencialidad de nuestros vendedores y activos off-market. Solo compartimos información sensible (ubicación exacta, métricas) con compradores verificados."
+        question: "Why do you require Proof of Funds (POF) before seeing details?",
+        answer: "To protect the confidentiality of our sellers and off-market assets. We only share sensitive information (exact location, metrics) with verified buyers."
     },
     {
-        question: "¿Gestionan la Golden Visa para inversores extracomunitarios?",
-        answer: "Sí. Contamos con un departamento legal especializado en tramitar la residencia por inversión (Golden Visa) para clientes que adquieren activos superiores a 500.000€."
+        question: "Do you handle Golden Visa for non-EU investors?",
+        answer: "Yes. We have a legal department specialized in processing residence by investment (Golden Visa) for clients acquiring assets over €500,000."
     },
     {
-        question: "¿Cobran honorarios al comprador o al vendedor?",
-        answer: "Depende del mandato. En operaciones off-market directas, nuestros honorarios suelen estar incluidos en el precio de venta o pactados mediante mandato de compra (buy-side mandate)."
+        question: "Do you charge fees to the buyer or the seller?",
+        answer: "It depends on the mandate. In direct off-market operations, our fees are usually included in the sales price or agreed upon via a buy-side mandate."
     }
 ];

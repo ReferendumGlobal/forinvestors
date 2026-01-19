@@ -1,13 +1,35 @@
+
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
-import { useTranslation } from 'react-i18next';
+
+const ASSET_TYPES = [
+    'hotels',
+    'wineries',
+    'agricultural',
+    'livestock',
+    'mansions',
+    'castles',
+    'penthouses',
+    'office_buildings',
+    'apartment_buildings',
+    'urban_land',
+    'dev_land',
+    'casinos',
+    'football_clubs',
+    'islands',
+    'sports_clubs',
+    'garages',
+    'businesses'
+];
 
 export default function ContactForm({ categoryName, explanation }) {
     const { t } = useTranslation();
     const [formState, setFormState] = useState({
         name: '',
+        companyName: '',
         email: '',
         phone: '',
         funds: '',
@@ -15,6 +37,7 @@ export default function ContactForm({ categoryName, explanation }) {
         intent: 'buy',
         requestAccess: true,
         message: '',
+        selectedAssets: [],
         file: null
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,6 +49,15 @@ export default function ContactForm({ categoryName, explanation }) {
         if (e.target.files[0]) {
             setFormState({ ...formState, file: e.target.files[0] });
         }
+    };
+
+    const handleAssetToggle = (asset) => {
+        setFormState(prev => {
+            const newAssets = prev.selectedAssets.includes(asset)
+                ? prev.selectedAssets.filter(a => a !== asset)
+                : [...prev.selectedAssets, asset];
+            return { ...prev, selectedAssets: newAssets };
+        });
     };
 
     useEffect(() => {
@@ -53,17 +85,23 @@ export default function ContactForm({ categoryName, explanation }) {
         setIsSubmitting(true);
         setError(null);
 
+        // Format selected assets for display
+        const interests = formState.selectedAssets.map(a => t(`forms.assets.${a}`)).join(', ');
+        const finalMessage = `Interests: ${interests}\n\nMessage: ${formState.message}`;
+
         const formData = new FormData();
         formData.append('name', formState.name);
+        formData.append('company_name', formState.companyName);
         formData.append('email', formState.email);
         formData.append('phone', formState.phone);
         formData.append('funds', formState.funds);
         formData.append('targetLocation', formState.targetLocation);
-        formData.append('intent', formState.intent === 'buy' ? 'Inversión (Compra)' : 'Venta');
-        formData.append('requestAccess', formState.requestAccess ? 'Sí' : 'No');
+        formData.append('interests', interests);
+        formData.append('intent', formState.intent === 'buy' ? 'Investment (Buy)' : 'Sale');
+        formData.append('requestAccess', formState.requestAccess ? 'Yes' : 'No');
         formData.append('message', formState.message);
         formData.append('category', categoryName);
-        formData.append('_subject', `Nueva solicitud de inversión: ${categoryName}`);
+        formData.append('_subject', `New Investment Request: ${categoryName}`);
         formData.append('_template', 'table');
         formData.append('_captcha', 'false');
 
@@ -72,27 +110,58 @@ export default function ContactForm({ categoryName, explanation }) {
         }
 
         try {
-            // 1. Save to Supabase (Leads Table)
+            let fileUrl = null;
+
+            // 1. Upload File to Supabase Storage (if present)
+            if (formState.file) {
+                const fileExt = formState.file.name.split('.').pop();
+                const fileName = `leads_pof/${Date.now()}_${Math.random().toString(36).substr(2, 9)}.${fileExt}`;
+
+                const { data: uploadData, error: uploadError } = await supabase.storage
+                    .from('documents') // Ensure this bucket exists or use 'user-documents' if that is the one
+                    .upload(fileName, formState.file);
+
+                if (uploadError) {
+                    console.error("Upload error:", uploadError);
+                    // Continue without file or show error? Let's log but continue lead creation for now
+                } else {
+                    // Get Public URL
+                    const { data: publicUrlData } = supabase.storage
+                        .from('documents')
+                        .getPublicUrl(fileName);
+
+                    fileUrl = publicUrlData.publicUrl;
+                }
+            }
+
+            // 1b. Save to Supabase (Leads Table)
             const { error: dbError } = await supabase.from('leads').insert([
                 {
                     full_name: formState.name,
+                    company_name: formState.companyName,
                     email: formState.email,
                     phone: formState.phone,
                     budget: formState.funds,
                     target_location: formState.targetLocation,
                     intent: formState.intent,
                     request_access: formState.requestAccess,
-                    message: formState.message,
-                    role: 'investor', // Default for this form
-                    status: 'new'
+
+                    role: 'investor',
+                    status: 'new',
+                    // Assuming 'metadata' or 'notes' column exists for extra data if schema is strict
+                    // If pof_url column exists excellent, if not we append to message
+                    message: fileUrl ? `${finalMessage}\n\n[POF Document]: ${fileUrl}` : finalMessage
                 }
             ]);
 
-            if (dbError) {
-                console.error("Error saving lead:", dbError);
-            }
+            if (dbError) console.error("Error saving lead:", dbError);
 
             // 2. Send Email via FormSubmit
+            // Append POF link to message for email too
+            if (fileUrl) {
+                formData.set('message', `${formState.message}\n\nPOF Link: ${fileUrl}`);
+            }
+
             const response = await fetch("https://formsubmit.co/ajax/urbinaagency@gmail.com", {
                 method: "POST",
                 headers: {
@@ -101,7 +170,7 @@ export default function ContactForm({ categoryName, explanation }) {
                 body: formData
             });
 
-            // Try to parse JSON
+            // Try to parse JSON but don't fail if it's not JSON
             let result = {};
             const text = await response.text();
             try {
@@ -114,14 +183,19 @@ export default function ContactForm({ categoryName, explanation }) {
                 setSubmitted(true);
                 setFormState({
                     name: '',
+                    companyName: '',
                     email: '',
                     phone: '',
                     funds: '',
+                    targetLocation: '',
+                    intent: 'buy',
+                    requestAccess: true,
                     message: '',
+                    selectedAssets: [],
                     file: null
                 });
             } else {
-                setError(t('forms.status.error'));
+                setError(result.message || t('forms.status.error'));
             }
         } catch (err) {
             console.error("Error submitting form:", err);
@@ -142,7 +216,7 @@ export default function ContactForm({ categoryName, explanation }) {
                     <CheckCircle className="text-gold-500" size={32} />
                 </div>
                 <h3 className="text-2xl font-serif text-white mb-2">{t('forms.status.sent_title')}</h3>
-                <p className="text-gray-400">{t('forms.status.sent_investor_text')}</p>
+                <p className="text-gray-400">{t('forms.status.sent_text')}</p>
                 <button
                     onClick={() => setSubmitted(false)}
                     className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
@@ -165,7 +239,7 @@ export default function ContactForm({ categoryName, explanation }) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.fullName')}</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.name')}</label>
                     <input
                         type="text"
                         required
@@ -173,6 +247,16 @@ export default function ContactForm({ categoryName, explanation }) {
                         placeholder={t('forms.placeholders.name_example')}
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyName')}</label>
+                    <input
+                        type="text"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder={t('forms.placeholders.company_example')}
+                        value={formState.companyName}
+                        onChange={(e) => setFormState({ ...formState, companyName: e.target.value })}
                     />
                 </div>
                 <div>
@@ -186,9 +270,6 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     />
                 </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.phone')}</label>
                     <input
@@ -199,32 +280,62 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                     />
                 </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.capital')}</label>
                     <input
                         type="text"
                         required
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                        placeholder={t('forms.placeholders.capital_example')}
+                        placeholder="Min. 1,000,000 €"
                         value={formState.funds}
                         onChange={(e) => setFormState({ ...formState, funds: e.target.value })}
                     />
                 </div>
+                <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation')}</label>
+                    <input
+                        type="text"
+                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
+                        placeholder={t('forms.placeholders.location_example')}
+                        value={formState.targetLocation}
+                        onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
+                    />
+                </div>
+            </div>
+
+            {/* Asset Type Selection */}
+            <div>
+                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.labels.interested_assets')}</label>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {ASSET_TYPES.map((asset) => (
+                        <label
+                            key={asset}
+                            className={`flex items-center space-x-2 p-3 rounded-lg border cursor-pointer transition-all ${formState.selectedAssets.includes(asset)
+                                ? 'bg-gold-500/20 border-gold-500 text-white'
+                                : 'bg-midnight-950 border-white/10 text-gray-400 hover:border-white/30'
+                                }`}
+                        >
+                            <input
+                                type="checkbox"
+                                checked={formState.selectedAssets.includes(asset)}
+                                onChange={() => handleAssetToggle(asset)}
+                                className="hidden"
+                            />
+                            <div className={`w-4 h-4 rounded border flex items-center justify-center ${formState.selectedAssets.includes(asset) ? 'border-gold-500 bg-gold-500' : 'border-gray-500'
+                                }`}>
+                                {formState.selectedAssets.includes(asset) && <CheckCircle size={12} className="text-midnight-950" />}
+                            </div>
+                            <span className="text-xs md:text-sm">{t(`forms.assets.${asset}`)}</span>
+                        </label>
+                    ))}
+                </div>
             </div>
 
             <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.location_interest')}</label>
-                <input
-                    type="text"
-                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"
-                    placeholder={t('forms.placeholders.location_example')}
-                    value={formState.targetLocation}
-                    onChange={(e) => setFormState({ ...formState, targetLocation: e.target.value })}
-                />
-            </div>
-
-            <div>
-                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.goals.goal_label')}</label>
+                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.labels.goal')}</label>
                 <div className="grid grid-cols-2 gap-4">
                     <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'buy' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
                         <input
@@ -235,7 +346,7 @@ export default function ContactForm({ categoryName, explanation }) {
                             onChange={() => setFormState({ ...formState, intent: 'buy' })}
                             className="hidden"
                         />
-                        <span className="font-medium text-center">{t('forms.goals.invest')}</span>
+                        <span className="font-medium">{t('forms.goals.buy')}</span>
                     </label>
                     <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'sell' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
                         <input
@@ -246,7 +357,7 @@ export default function ContactForm({ categoryName, explanation }) {
                             onChange={() => setFormState({ ...formState, intent: 'sell' })}
                             className="hidden"
                         />
-                        <span className="font-medium text-center">{t('forms.goals.sell')}</span>
+                        <span className="font-medium">{t('forms.goals.sell')}</span>
                     </label>
                 </div>
             </div>
@@ -260,7 +371,7 @@ export default function ContactForm({ categoryName, explanation }) {
                     className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
                 />
                 <label htmlFor="requestAccess" className="text-sm text-gray-300 cursor-pointer select-none">
-                    {t('forms.goals.request_access')}
+                    {t('forms.labels.request_access')} <strong className="text-gold-400">{t('forms.labels.private_platform')}</strong> {t('forms.labels.view_exclusive')}
                 </label>
             </div>
 

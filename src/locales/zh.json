@@ -8,7 +8,8 @@
         "blog": "博客",
         "agencies": "房地产代理",
         "search": "房产搜索",
-        "access": "私人区域"
+        "access": "私人区域",
+        "sell": "出售资产"
     },
     "hero": {
         "shield": "保密的艺术",
@@ -35,8 +36,8 @@
         "rights": "保留所有权利。"
     },
     "seo": {
-        "title": "致投资者 | 全球豪宅资产",
-        "description": "独家酒店、土地、酒庄和超豪华房产投资组合。由 Urbina Agency LLC 专业管理。"
+        "title": "场外房地产投资",
+        "description": "独家酒店、土地、酒庄和超豪华房产投资组合。由 Enter OffMarket 专业管理。"
     },
     "search": {
         "title": "非公开资产搜索",
@@ -51,7 +52,7 @@
     },
     "categories": {
         "investments": {
-            "title": "房地产投资",
+            "title": "场外房地产投资",
             "shortTitle": "房地产投资",
             "description": "全面的投资组合管理。我们发掘全球房地产市场的高收益机会。",
             "longDescription": "我们的房地产投资部门不仅寻找资产，还设计资本策略。我们分析市场趋势、经济周期和增值机会，提供符合机构投资者和家族办公室风险与回报要求的产品。",
@@ -65,7 +66,7 @@
             ]
         },
         "hotels": {
-            "title": "酒店出售",
+            "title": "场外酒店投资",
             "shortTitle": "酒店出售",
             "description": "西班牙、欧洲及全球主要旅游目的地的独家酒店资产精选。",
             "longDescription": "酒店业是我们皇冠上的明珠。我们直接联系拥有连锁酒店、独立精品酒店和豪华度假村的一手业主，这些资产均在“非公开市场”运营。我们寻找具有重新定位潜力、灵活管理合同或在不可复制位置提供稳定收益的资产。",
@@ -79,7 +80,7 @@
             ]
         },
         "land": {
-            "title": "土地出售",
+            "title": "场外土地投资",
             "shortTitle": "土地出售",
             "description": "位于战略位置适合大型开发的最终用地、可建设用地和乡村用地。",
             "longDescription": "任何伟大项目的基础都是土地。我们的土地组合包括准备申请许可证及可立即建设的最终地块、中期城市开发项目，以及用于可再生能源项目或农业用途的大片乡村土地。我们严格核实每平方米的城市规划状况。",
@@ -93,7 +94,7 @@
             ]
         },
         "luxury": {
-            "title": "豪宅出售",
+            "title": "场外豪宅投资",
             "shortTitle": "豪宅出售",
             "description": "位于黄金地段的独特别墅和顶层公寓。住宅尊贵的极致体现。",
             "longDescription": "我们将奢华不仅理解为价格，更是一种生活体验。我们的“豪宅”精选包括市场上最独特的住宅：拉扎加莱塔（La Zagaleta）的别墅、萨拉曼卡区的顶层公寓或蔚蓝海岸的历史豪宅。绝不妥协的隐私、安全和建筑设计。",
@@ -107,7 +108,7 @@
             ]
         },
         "wineries": {
-            "title": "酒庄出售",
+            "title": "场外酒庄投资",
             "shortTitle": "酒庄出售",
             "description": "葡萄酒行业的投资：拥有原产地命名（D.O.）的酒庄、葡萄园和生产中心。",
             "longDescription": "投资酒庄就是投资文化、历史和土地。我们在最负盛名的葡萄酒产区（里奥哈、杜埃罗河岸、波尔多、纳帕谷）提供机会。从拥有稳固品牌的家族酒庄到大型散装生产中心，我们分析生产能力和品牌价值。",
@@ -160,7 +161,8 @@
         "global_exposure_text": "您的本地资产将直接送达迪拜、纽约和伦敦的办公室。",
         "form_title": "申请加入联盟",
         "form_subtitle": "完善资料以接收合作合同。",
-        "form_explanation": "输入您的代理机构详细信息以验证资格。我们将联系您以正规化共享销售委托。"
+        "form_explanation": "输入您的代理机构详细信息以验证资格。我们将联系您以正规化共享销售委托。",
+        "seo_title": "场外投资代理"
     },
     "contact_global": {
         "title": "联系我们",
@@ -189,7 +191,28 @@
             "private_platform": "私人平台",
             "view_exclusive": "以查看独家机会。",
             "dossier": "公司档案 / 投资组合示例",
-            "pof": "资金证明 (POF) 文件"
+            "pof": "资金证明 (POF) 文件",
+            "interested_assets": "感兴趣的资产（多选）",
+            "companyName": "公司名称（可选）"
+        },
+        "assets": {
+            "hotels": "酒店",
+            "wineries": "酒庄",
+            "agricultural": "农业庄园",
+            "livestock": "畜牧场",
+            "mansions": "豪宅",
+            "castles": "城堡与宫殿",
+            "penthouses": "豪华顶层公寓",
+            "office_buildings": "办公楼",
+            "apartment_buildings": "公寓楼",
+            "urban_land": "城市用地",
+            "dev_land": "开发用地",
+            "casinos": "赌场",
+            "football_clubs": "足球俱乐部",
+            "islands": "私人岛屿",
+            "sports_clubs": "体育俱乐部",
+            "garages": "大型停车场",
+            "businesses": "企业并购 / M&A"
         },
         "placeholders": {
             "name_example": "李明",
@@ -198,7 +221,8 @@
             "capital_example": "例如：5,000,000",
             "location_example": "例如：马德里，马贝拉，伦敦...",
             "message_example": "对...的房产感兴趣",
-            "funds_example": "例如：5,000,000"
+            "funds_example": "例如：5,000,000",
+            "company_example": "您的公司名称"
         },
         "buttons": {
             "send_request": "发送请求",
@@ -238,5 +262,99 @@
             "verifying": "正在验证提交...",
             "finalizing": "正在完成传输..."
         }
+    },
+    "sell_page": {
+        "title": "独家出售您的资产",
+        "subtitle": "访问我们要合格投资者和全球家族办公室网络。",
+        "hero_cta": "评估我的房产",
+        "why_us_title": "为什么要通过 Urbina Agency 出售？",
+        "benefits": [
+            {
+                "title": "完全保密",
+                "desc": "您的资产不会在一般门户网站上发布。只有经过验证并提供资金证明的投资者才能访问。"
+            },
+            {
+                "title": "全球网络",
+                "desc": "我们将您的房产与迪拜、伦敦、纽约和亚洲的资本联系起来。"
+            },
+            {
+                "title": "综合管理",
+                "desc": "我们负责一切：估值、尽职调查、访问和法律结算。"
+            }
+        ],
+        "form_title": "资产详情",
+        "form_subtitle": "填写表格以便我们的团队评估您的房产。",
+        "success_title": "已收到请求",
+        "success_desc": "我们已收到您的房产详细信息。我们的估值团队将很快与您联系以正式确定销售授权。"
+    },
+    "steps": {
+        "agencies": [
+            {
+                "title": "申请访问",
+                "description": "填写表格。如果通过筛选，您将收到访问邮件。",
+                "icon": "FileText"
+            },
+            {
+                "title": "注册与签约",
+                "description": "输入代理机构信息并数字签署合作合同。",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "上传您的资产。我们的算法将即时与经过验证的资本进行匹配。",
+                "icon": "PieChart"
+            },
+            {
+                "title": "完成交易",
+                "description": "我们管理参观和报价。成交后按50/50比例分账。",
+                "icon": "CheckCircle"
+            }
+        ],
+        "investors": [
+            {
+                "title": "注册与资金证明",
+                "description": "提交资金证明 (POF) 申请访问。",
+                "icon": "UserCheck"
+            },
+            {
+                "title": "搜索委托",
+                "description": "数字签署我们的非独家搜索委托书。",
+                "icon": "Search"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "即时接收符合您标准的场外资产通知。",
+                "icon": "PieChart"
+            },
+            {
+                "title": "收购",
+                "description": "从谈判到公证处签约的全程咨询服务。",
+                "icon": "Key"
+            }
+        ],
+        "sellers": [
+            {
+                "title": "初步评估",
+                "description": "提交基本详情。我们在24小时内分析可行性和估值。",
+                "icon": "FileText"
+            },
+            {
+                "title": "委托与上传",
+                "description": "签署安全委托书并将文件上传至私人数据室。",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "系统将您的资产与经过验证的投资者静默匹配。无公开挂牌。",
+                "icon": "PieChart"
+            },
+            {
+                "title": "报价与成交",
+                "description": "收到正式报价并在公证处安全完成交易。",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "私密出售流程",
+        "sellers_subtitle": "变现高价值资产的安全且私密的途径。"
     }
 }

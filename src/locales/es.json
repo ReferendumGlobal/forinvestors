@@ -1,0 +1,414 @@
+{
+    "nav": {
+        "investments": "Inversiones Inmobiliarias",
+        "hotels": "Hoteles en Venta",
+        "land": "Suelo en Venta",
+        "luxury": "Propiedades de Lujo",
+        "wineries": "Bodegas en Venta",
+        "blog": "Blog",
+        "agencies": "Para Agencias",
+        "search": "Buscador de Activos",
+        "access": "Acceso Privado",
+        "sell": "Vender Activos",
+        "home": "Inicio",
+        "about": "Nosotros",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "shield": "El Arte de la Discreción",
+        "subtitle": "Trabajamos con una cartera que <strong>no se publica en portales inmobiliarios</strong> pero que es de alta calidad. Nuestros clientes nos confían secretos valiosos, y nosotros les devolvemos negocios fructíferos.",
+        "cta": "Entrar en la Cartera",
+        "title": "Mercado Inmobiliario Off-Market",
+        "cta_invest": "Soy Inversor",
+        "cta_agency": "Soy Agencia"
+    },
+    "legacy": {
+        "title": "Un Legado de Honor",
+        "text1": "La tradición de Urbina Agency no nace en el mercado, sino en el honor y el servicio. Nuestro ADN proviene de Francisco y Angelita Urbina, mis abuelos.",
+        "text2": "Y de mi bisabuelo, José María Urbina, un alto oficial militar. De él aprendimos que la información más valiosa es la que se protege.",
+        "secrets_title": "Secretos Valiosos",
+        "secrets_text": "Tratamos cada intención de inversión como información clasificada de alto nivel.",
+        "success_title": "Éxito Desclasificado",
+        "success_text": "El único rastro que dejamos es el éxito."
+    },
+    "about": {
+        "title": "Sobre Urbina Agency",
+        "description_1": "Somos una firma boutique especializada en la intermediación de activos inmobiliarios prime fuera de mercado (off-market).",
+        "description_2": "Conectamos propietarios y fondos de inversión con total confidencialidad, operando en los principales mercados de Europa."
+    },
+    "features": {
+        "title": "¿Por qué elegirnos?",
+        "card_1_title": "100% Off-Market",
+        "card_1_desc": "Activos que no encontrará en portales públicos.",
+        "card_2_title": "Verificación Rigurosa",
+        "card_2_desc": "Todos los activos y compradores pasan un estricto proceso de due diligence.",
+        "card_3_title": "Red Global",
+        "card_3_desc": "Conexión directa con Family Offices."
+    },
+    "agencies_page": {
+        "title": "Colabora con la Élite del Real Estate",
+        "subtitle": "Únase a nuestra red de agencias verificadas y comparta operaciones con total seguridad.",
+        "access_button": "Solicitar Colaboración",
+        "disclaimer": "* Acceso restringido. Requiere activación manual tras firma de contrato.",
+        "collaboration_model": "Un Modelo de Colaboración Justo",
+        "collaboration_text_1": "No somos un portal, somos una **Alianza**. Firmamos un contrato de colaboración que protege su mandato y garantiza el reparto de honorarios (50/50) en cada operación cerrada conjuntamente.",
+        "collaboration_text_2": "Una vez firmado el contrato, se le dará acceso a nuestra plataforma privada donde podrá:",
+        "benefits_list": [
+            "Subir su cartera de inmuebles exclusivos visibles solo para inversores verificados.",
+            "Recibir solicitudes automatizadas de inversores que encajen con sus activos.",
+            "Acceder a nuestra lista de 'Wanted' por Gran Capital."
+        ],
+        "verified_demand_title": "Demanda Verificada",
+        "verified_demand_text": "Le traemos compradores que ya han pasado el Proof of Funds (POF).",
+        "global_exposure_title": "Exposición Global",
+        "global_exposure_text": "Sus activos locales viajarán directamente a despachos en Dubái, Nueva York y Londres.",
+        "form_title": "Solicitar Acceso a la Alianza",
+        "form_subtitle": "Complete el perfil para recibir el contrato de colaboración.",
+        "form_explanation": "Introduzca los datos de su agencia para verificar su elegibilidad. Nos pondremos en contacto para formalizar el mandato de venta compartido.",
+        "seo_title": "Agencias Inversión Off-Market"
+    },
+    "sell_page": {
+        "title": "Venda su Activo en Exclusiva",
+        "subtitle": "Acceda a nuestra red de inversores cualificados y family offices globales.",
+        "hero_cta": "Valorar mi Propiedad",
+        "why_us_title": "¿Por qué vender con Urbina Agency?",
+        "benefits": [
+            {
+                "title": "Confidencialidad Total",
+                "desc": "Su activo no se publicará en portales generalistas. Solo inversores verificados con POF tendrán acceso."
+            },
+            {
+                "title": "Red Global",
+                "desc": "Conectamos su propiedad con capital en Dubái, Londres, Nueva York y Asia."
+            },
+            {
+                "title": "Gestión Integral",
+                "desc": "Nos encargamos de todo: valoración, due diligence, visitas y cierre legal."
+            }
+        ],
+        "form_title": "Detalles del Activo",
+        "form_subtitle": "Rellene el formulario para que nuestro equipo evalúe su propiedad.",
+        "success_title": "Solicitud Recibida",
+        "success_desc": "Hemos recibido los datos de su propiedad. Nuestro equipo de valoraciones le contactará en breve para formalizar el mandato de venta."
+    },
+    "contact_global": {
+        "title": "Contacto Global",
+        "explanation": "Para verificar su perfil inversor y darle acceso a nuestra plataforma privada con usuario y contraseña, necesitamos validar su Prueba de Fondos (POF). Una vez validado, recibirá ofertas de inversión personalizadas acordes a sus necesidades y capital disponible."
+    },
+    "seo": {
+        "title": "Inversión Inmobiliaria Off-Market",
+        "description": "Cartera exclusiva de hoteles, suelo, bodegas y propiedades ultra-prime. Gestión experta por Enter OffMarket."
+    },
+    "innovation": {
+        "subtitle": "Tecnología Inmobiliaria",
+        "title": "Smart Matching™ Algorithm",
+        "description": "Hemos reemplazado el tablón de anuncios tradicional por un motor de inteligencia artificial que cruza oferta y demanda en milisegundos, garantizando privacidad absoluta.",
+        "engine_text": "Nuestro motor analiza más de 50 puntos de datos por activo para encontrar el inversor exacto, eliminando el ruido y conectando capital real con oportunidades reales.",
+        "features": {
+            "algo": {
+                "title": "Algoritmos de Privacidad",
+                "desc": "Sus datos nunca se exponen. El sistema solo revela la oportunidad cuando detecta una coincidencia del 100% con los criterios de inversión pre-aprobados."
+            },
+            "privacy": {
+                "title": "Cifrado de Activos",
+                "desc": "La información sensible de la propiedad (ubicación exacta, catastro) se mantiene encriptada y solo se libera bajo firma digital de confidencialidad automáticamente gestionada."
+            },
+            "speed": {
+                "title": "Conexión Instantánea",
+                "desc": "Olvídese de meses de espera. En el momento en que una propiedad entra en nuestra base de datos, se notifica instantáneamente a los inversores cualificados que la buscan."
+            }
+        }
+    },
+    "search": {
+        "title": "Buscador de Activos Off-Market",
+        "subtitle": "Acceda a la mayor base de datos de activos ocultos en España y Europa.",
+        "placeholder": "Introduzca ubicación (ej: Madrid, Ibiza, París...)",
+        "button": "Buscar Propiedades",
+        "results_found": "Hemos detectado activos off-market disponibles en",
+        "cta_text": "Por confidencialidad, no publicamos detalles. Rellene el formulario para recibir el blind dossier.",
+        "cta_button": "Solicitar Dossier",
+        "no_results": "Sin resultados públicos. Contáctenos para un encargo personalizado.",
+        "available_multiple": "Disponibles"
+    },
+    "categories": {
+        "investments": {
+            "title": "Inversión Inmobiliaria Off-Market",
+            "shortTitle": "Inversiones",
+            "description": "Gestión integral de patrimonios. Detectamos oportunidades de alta rentabilidad en el mercado global.",
+            "longDescription": "Nuestra división de Inversiones Inmobiliarias no solo busca activos, diseña estrategias de capital. Analizamos tendencias de mercado, ciclos económicos y oportunidades de revalorización para ofrecer productos ajustados al perfil de riesgo y retorno de inversores institucionales y family offices.",
+            "priceRange": "Desde 1M€ a 500M€",
+            "details": "Estrategias a medida: Core, Value-Add y Opportunistic.",
+            "features": [
+                "Análisis macroeconómico y de mercado local.",
+                "Due Diligence técnica, legal y financiera exhaustiva.",
+                "Estructuración de vehículos de inversión.",
+                "Asset Management post-adquisición."
+            ]
+        },
+        "hotels": {
+            "title": "Inversión Hoteles Off-Market",
+            "shortTitle": "Hoteles",
+            "description": "Selección exclusiva de activos hoteleros en las principales zonas turísticas de España y Europa.",
+            "longDescription": "El sector hotelero es la joya de nuestra corona. Tenemos acceso directo a propietarios de cadenas, hoteles boutique independientes y resorts de lujo que operan 'off-market'. Buscamos activos con potencial de reposicionamiento, contratos de gestión flexibles o rentabilidades estabilizadas en ubicaciones irreemplazables.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Oportunidades de gestión, franquicia o compra pura.",
+            "features": [
+                "Hoteles urbanos en capitales europeas.",
+                "Resorts vacacionales en primera línea de playa.",
+                "Edificios con uso hotelero para reformar.",
+                "Sale & Leaseback con operadores de primer nivel."
+            ]
+        },
+        "land": {
+            "title": "Inversión Suelo Off-Market",
+            "shortTitle": "Suelo",
+            "description": "Suelo finalista, urbanizable y rústico en ubicaciones estratégicas para grandes desarrollos.",
+            "longDescription": "La base de todo gran proyecto es la tierra. Nuestra cartera de suelo incluye parcelas finalistas listas para pedir licencia (Ready-to-build), desarrollos urbanísticos a medio plazo y grandes extensiones de suelo rústico para proyectos de energía renovable o uso agropecuario.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Suelo residencial, logístico, comercial y terciario.",
+            "features": [
+                "Suelo residencial para promociones de obra nueva.",
+                "Suelo logístico en nodos de comunicación.",
+                "Suelo terciario para centros comerciales u oficinas.",
+                "Gestión urbanística y asesoramiento en compensación."
+            ]
+        },
+        "luxury": {
+            "title": "Propiedades de Lujo Off-Market",
+            "shortTitle": "Lujo",
+            "description": "Villas únicas y áticos en ubicaciones prime. La máxima expresión de la exclusividad residencial.",
+            "longDescription": "Entendemos el lujo no solo como precio, sino como experiencia de vida. Nuestra selección 'Luxury Properties' incluye las residencias más exclusivas del mercado: villas en La Zagaleta, áticos en Barrio de Salamanca o pazos históricos.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Activos residenciales Prime y Ultra-Prime.",
+            "features": [
+                "Villas de autor con seguridad privada 24h.",
+                "Áticos con vistas panorámicas en centros financieros.",
+                "Fincas de recreo y palacios históricos.",
+                "Servicios de conserjería y lifestyle management."
+            ]
+        },
+        "wineries": {
+            "title": "Inversión Bodegas Off-Market",
+            "shortTitle": "Bodegas",
+            "description": "Inversiones en el sector vitivinícola: bodegas con D.O., viñedos y centros de producción.",
+            "longDescription": "Invertir en una bodega es invertir en cultura, historia y tierra. Ofrecemos oportunidades en las regiones vinícolas más prestigiosas (Rioja, Ribera del Duero). Desde bodegas familiares con marca consolidada hasta grandes centros de producción a granel.",
+            "priceRange": "Desde 1M€ a 150M€",
+            "details": "Activos productivos con valor inmobiliario y de marca.",
+            "features": [
+                "Bodegas con Denominación de Origen Calificada.",
+                "Viñedos centenarios en plena producción.",
+                "Instalaciones de enoturismo y hoteles bodega.",
+                "Marcas de vino con distribución internacional."
+            ]
+        }
+    },
+    "faqs_title": "Preguntas Frecuentes",
+    "faqs_subtitle": "Todo lo que necesita saber antes de invertir con nosotros.",
+    "faqs": [
+        {
+            "question": "¿Quién tiene acceso a mis propiedades?",
+            "answer": "Solo inversores cualificados que han pasado nuestro proceso de verificación y prueba de fondos (POF)."
+        },
+        {
+            "question": "¿Exigen exclusividad de venta?",
+            "answer": "Sí. Trabajamos con mandatos de venta exclusivos para proteger el valor de su activo en el mercado off-market y evitar la sobreexposición."
+        },
+        {
+            "question": "¿Cómo se valoran los activos?",
+            "answer": "Nuestro equipo de analistas utiliza datos de transacciones reales comparables y proyecciones financieras para determinar el valor de mercado óptimo."
+        },
+        {
+            "question": "¿Trabajan con otras agencias?",
+            "answer": "Sí, colaboramos con agencias verificadas bajo estrictos acuerdos de confidencialidad (NDA) y reparto de comisiones."
+        }
+    ],
+    "forms": {
+        "labels": {
+            "name": "Nombre Completo",
+            "companyName": "Nombre de Empresa (Opcional)",
+            "fullName": "Nombre Completo",
+            "email": "Email Profesional",
+            "phone": "Teléfono",
+            "city": "Ciudad",
+            "country": "País",
+            "agencyName": "Nombre de Agencia",
+            "taxId": "NIF / CIF / Tax ID",
+            "contactPerson": "Persona de Contacto",
+            "propertiesCount": "Nº Propiedades en Exclusiva",
+            "priceRange": "Rango de Precios (€)",
+            "from": "Desde",
+            "to": "Hasta",
+            "propertyTypes": "Tipos de Propiedad en Cartera",
+            "message": "Mensaje Adicional",
+            "capital": "Capital para Invertir (€ / Proof of Funds)",
+            "targetLocation": "¿Dónde desea invertir?",
+            "goal": "¿Cuál es su objetivo?",
+            "request_access": "Solicito acceso a la",
+            "private_platform": "Plataforma Privada",
+            "view_exclusive": "para ver oportunidades exclusivas.",
+            "dossier": "Dossier Corporativo / Ejemplo de Cartera",
+            "pof": "Documento Prueba de Fondos (POF)",
+            "interested_assets": "Activos de Interés (Seleccione varios)"
+        },
+        "assets": {
+            "hotels": "Hoteles",
+            "wineries": "Bodegas",
+            "agricultural": "Fincas Agrícolas",
+            "livestock": "Fincas Ganaderas",
+            "mansions": "Mansiones",
+            "castles": "Castillos y Palacios",
+            "penthouses": "Áticos de Lujo",
+            "office_buildings": "Edificios de Oficinas",
+            "apartment_buildings": "Edificios de Apartamentos",
+            "urban_land": "Terrenos Urbanos",
+            "dev_land": "Suelo para Promociones",
+            "casinos": "Casinos",
+            "football_clubs": "Clubes de Fútbol",
+            "islands": "Islas Privadas",
+            "sports_clubs": "Clubes Deportivos",
+            "garages": "Garajes de Alta Capacidad",
+            "businesses": "Negocios / M&A"
+        },
+        "placeholders": {
+            "company_example": "Nombre de su empresa",
+            "name_example": "Juan Pérez",
+            "email_example": "juan@empresa.com",
+            "phone_example": "+34 633...",
+            "capital_example": "Ej: 5.000.000",
+            "location_example": "Ej: Madrid, Marbella, Londres...",
+            "message_example": "Interesado en propiedades en...",
+            "funds_example": "Ej: 10.000.000"
+        },
+        "buttons": {
+            "send_request": "Enviar Solicitud",
+            "sending": "Enviando...",
+            "apply": "Solicitar Colaboración",
+            "processing": "Procesando Solicitud...",
+            "upload_file": "Subir archivo",
+            "or_drag": "o arrastrar",
+            "file_ready": "Archivo listo",
+            "send_another": "Enviar otra solicitud"
+        },
+        "status": {
+            "sent_title": "Solicitud Enviada",
+            "sent_agency_text": "Hemos recibido su solicitud. Nuestro equipo legal le enviará el contrato de colaboración para activar su acceso.",
+            "sent_investor_text": "Su solicitud ha sido recibida. El equipo de verificación revisará su POF y le contactará en 24h.",
+            "error": "Hubo un error al enviar el formulario. Inténtelo de nuevo.",
+            "success": "¡Éxito!",
+            "connection_error": "Error de conexión. Compruebe su internet e inténtelo de nuevo."
+        },
+        "goals": {
+            "buy": "Quiero Invertir / Comprar",
+            "sell": "Quiero Vender (Exclusiva)",
+            "request_access": "Solicito acceso a la Plataforma Privada para ver oportunidades exclusivas.",
+            "goal_label": "¿Cuál es su objetivo?"
+        },
+        "agency_types": {
+            "hotels": "Hoteles",
+            "land": "Suelo para construir",
+            "fincas": "Fincas",
+            "wineries": "Bodegas",
+            "agricultural": "Explotaciones Agrícolas",
+            "livestock": "Ganaderas",
+            "buildings": "Edificios",
+            "luxury": "Propiedades de Lujo"
+        },
+        "loading": {
+            "encrypting": "Encriptando documentos...",
+            "uploading": "Subiendo a servidor seguro...",
+            "verifying": "Verificando envío...",
+            "finalizing": "Finalizando transmisión..."
+        }
+    },
+    "steps": {
+        "agencies_title": "Cómo Colaborar",
+        "agencies_subtitle": "Siga estos pasos para unirse a nuestra alianza global y empezar a cerrar operaciones.",
+        "investors_title": "Proceso de Inversión",
+        "investors_subtitle": "Un camino claro y seguro para acceder a las mejores oportunidades off-market.",
+        "agencies": [
+            {
+                "title": "Solicitud de Acceso",
+                "description": "Complete el formulario. Si supera el filtro, recibirá un email de acceso.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Alta y Firma",
+                "description": "Introduzca los datos de su agencia y firme digitalmente el contrato de colaboración.",
+                "icon": "Handshake"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "Al subir su cartera, nuestro algoritmo detecta coincidencias inmediatas con capital verificado.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Cierre de Operaciones",
+                "description": "Gestionamos las visitas y ofertas. Reparto de honorarios al 50/50.",
+                "icon": "CheckCircle"
+            }
+        ],
+        "investors": [
+            {
+                "title": "Registro y POF",
+                "description": "Solicite acceso aportando su Prueba de Fondos (POF).",
+                "icon": "UserCheck"
+            },
+            {
+                "title": "Mandato de Búsqueda",
+                "description": "Firme digitalmente nuestro mandato de búsqueda no exclusivo.",
+                "icon": "Search"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "Reciba notificaciones instantáneas de activos off-market que encajen con su criterio.",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Adquisición",
+                "description": "Asesoramiento completo hasta la firma en notaría.",
+                "icon": "Key"
+            }
+        ],
+        "sellers": [
+            {
+                "title": "Evaluación Inicial",
+                "description": "Envíe los datos básicos. Analizamos la viabilidad y valoración en 24h.",
+                "icon": "FileText"
+            },
+            {
+                "title": "Mandato y Carga",
+                "description": "Firma de mandato seguro y carga de documentación al Data Room privado.",
+                "icon": "Upload"
+            },
+            {
+                "title": "Smart Matching™",
+                "description": "El sistema cruza silenciosamente su activo con inversores (POF verificado).",
+                "icon": "PieChart"
+            },
+            {
+                "title": "Oferta y Cierre",
+                "description": "Reciba ofertas formales y cierre la operación ante notario.",
+                "icon": "Handshake"
+            }
+        ],
+        "sellers_title": "Proceso de Venta Privada",
+        "sellers_subtitle": "Un camino discreto y seguro para cerrar la venta de su activo."
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados.",
+        "privacy": "Política de Privacidad",
+        "terms": "Términos y Condiciones",
+        "contact": "Contacto"
+    },
+    "legal": {
+        "modal_title": "Términos Legales",
+        "privacy_policy": {
+            "title": "Política de Privacidad",
+            "content": "En Urbina Agency, nos comprometemos a proteger su privacidad..."
+        },
+        "terms_conditions": {
+            "title": "Términos y Condiciones",
+            "content": "El uso de esta plataforma implica la aceptación de los siguientes términos..."
+        }
+    }
+}

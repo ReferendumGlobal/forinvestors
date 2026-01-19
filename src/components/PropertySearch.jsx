@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, MapPin, ArrowRight, Building, CheckCircle, Sparkles } from 'lucide-react';
 import { useTranslation, Trans } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
 import ContactForm from './ContactForm';
+import SeoHead from './SeoHead';
 
 // Helper component for counting animation
 function CountingLabel({ onComplete, labelAvailable }) {
+    // ... existing CountingLabel component ...
     const [count, setCount] = useState(0);
     const [finished, setFinished] = useState(false);
 
@@ -48,9 +49,9 @@ function CountingLabel({ onComplete, labelAvailable }) {
 
 export default function PropertySearch() {
     const { t } = useTranslation();
-    const { lang, location: routeLocation } = useParams();
-    const [location, setLocation] = useState(routeLocation || '');
-    const [hasSearched, setHasSearched] = useState(!!routeLocation);
+    const navigate = useNavigate();
+    const [location, setLocation] = useState('');
+    const [hasSearched, setHasSearched] = useState(false);
     const [searching, setSearching] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [prizeWon, setPrizeWon] = useState(false);
@@ -58,34 +59,12 @@ export default function PropertySearch() {
 
     const [results, setResults] = useState([]);
 
-    // Keys match internal IDs
+    // English keys for forinvestors.org
     const CATEGORIES = ['investments', 'hotels', 'land', 'luxury', 'wineries'];
-
-    // Auto-search effect when route has location
-    useEffect(() => {
-        if (routeLocation) {
-            // Immediate "search" results for SEO landing
-            const selectedCategories = CATEGORIES;
-            const newResults = selectedCategories.map(cat => ({
-                id: cat,
-                count: 'available'
-            }));
-            setResults(newResults);
-            setHasSearched(true);
-
-            // Allow time for render then scroll
-            setTimeout(() => {
-                resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 100);
-        }
-    }, [routeLocation]);
 
     const handleSearch = (e) => {
         e.preventDefault();
         if (!location.trim()) return;
-
-        // If we are searching manually, we might want to update URL or just search in place.
-        // For now, let's just search in place.
 
         setSearching(true);
         setHasSearched(false);
@@ -114,16 +93,9 @@ export default function PropertySearch() {
         }, 1500);
     };
 
-    const pageTitle = routeLocation
-        ? `${t('search.results_found')} ${routeLocation} - ${t('seo.brand_name')}`
-        : t('search.title') + ' - ' + t('seo.brand_name');
-
     return (
         <div className="min-h-screen bg-midnight-950 pt-32 pb-20">
-            <Helmet>
-                <title>{pageTitle}</title>
-                <meta name="description" content={routeLocation ? `Encuentra oportunidades de inversión exclusivas en ${routeLocation}. Hoteles, suelo, lujo y más activos off-market.` : t('search.subtitle')} />
-            </Helmet>
+            <SeoHead title={`${t('nav.search')} | Urbina Agency`} description={t('search.subtitle')} routeKey="search" />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <motion.div
@@ -139,7 +111,7 @@ export default function PropertySearch() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-serif text-white mb-6 font-bold"
                     >
-                        {routeLocation ? `${t('search.results_found')} ${routeLocation}` : t('search.title')}
+                        {t('search.title')}
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -259,7 +231,7 @@ export default function PropertySearch() {
                                             className="mt-8 text-left max-w-2xl mx-auto"
                                         >
                                             <ContactForm
-                                                categoryName={`Búsqueda Off-Market: ${location}`}
+                                                categoryName={`Off-Market Search: ${location}`}
                                                 explanation={t('contact_global.explanation')}
                                             />
                                         </motion.div>
