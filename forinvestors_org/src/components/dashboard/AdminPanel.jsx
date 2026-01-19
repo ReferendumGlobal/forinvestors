@@ -52,7 +52,9 @@ export default function AdminPanel() {
             .update({ status: 'invited' })
             .eq('id', lead.id);
 
-        if (!error) {
+        if (error) {
+            alert(`Error inviting lead: ${error.message}`);
+        } else {
             const origin = window.location.origin;
             alert(`Marked as invited. Send this link to ${lead.email}:\n\n${origin}/#/register?email=${encodeURIComponent(lead.email)}&type=${lead.intent === 'sell' ? 'agency' : 'investor'}`);
             fetchData();
@@ -65,7 +67,12 @@ export default function AdminPanel() {
             .update({ status: 'approved' })
             .eq('id', userId);
 
-        if (!error) fetchData();
+        if (error) {
+            console.error("Approval error:", error);
+            alert(`Failed to approve user: ${error.message}`);
+        } else {
+            fetchData();
+        }
     };
 
     if (!profile || profile.role !== 'admin') {
