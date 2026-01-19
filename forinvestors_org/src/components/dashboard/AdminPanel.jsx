@@ -231,6 +231,17 @@ export default function AdminPanel() {
                                         {(u.status === 'pending' || !u.status) && (
                                             <div className="flex justify-end gap-2">
                                                 <button
+                                                    onClick={() => {
+                                                        const origin = window.location.origin;
+                                                        const link = `${origin}/#/register?email=${encodeURIComponent(u.email)}&type=${u.role === 'seller' ? 'agency' : 'investor'}`; // Simple fallback logic
+                                                        alert(`Link for ${u.email}:\n\n${link}`);
+                                                    }}
+                                                    className="text-blue-400 hover:text-blue-300 p-1 bg-blue-900/20 rounded"
+                                                    title="Get Link"
+                                                >
+                                                    <Mail size={18} />
+                                                </button>
+                                                <button
                                                     onClick={() => handleApproveUser(u.id)}
                                                     className="text-green-500 hover:text-green-400 p-1 bg-green-900/20 rounded"
                                                     title="Approve"
