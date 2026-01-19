@@ -44,6 +44,15 @@ export default function Navbar({ categories }) {
 
                             <div className="flex items-center gap-2 lg:gap-4">
                                 <Link
+                                    to="/"
+                                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === ''
+                                        ? 'text-gold-400 bg-white/5 border border-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                                        }`}
+                                >
+                                    {t('nav.home')}
+                                </Link>
+                                <Link
                                     to="search"
                                     className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${currentPath === 'search'
                                         ? 'text-gold-400 bg-white/5 border border-white/5'
@@ -139,6 +148,19 @@ export default function Navbar({ categories }) {
                     }`}
             >
                 <div className="px-4 pt-4 pb-6 space-y-2">
+                    <Link
+                        to="/"
+                        onClick={() => setIsOpen(false)}
+                        className={`block px-3 py-4 rounded-md text-base font-medium ${currentPath === ''
+                            ? 'text-gold-400 bg-white/5 border-l-2 border-gold-500 pl-2'
+                            : 'text-gray-300 hover:text-white hover:bg-white/5'
+                            }`}
+                    >
+                        <div className="flex items-center gap-3">
+                            <span className="text-gold-500 w-5 flex justify-center">•</span>
+                            {t('nav.home')}
+                        </div>
+                    </Link>
                     {Object.entries(categories).map(([key, category]) => (
                         <Link
                             key={key}

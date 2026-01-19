@@ -69,6 +69,14 @@ export default function Home() {
                         transition={{ delay: 0.5 }}
                     >
                         <Link
+                            to="/"
+                            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-white/20 hover:border-gold-500/50 overflow-hidden rounded-none transition-all duration-300 mr-4"
+                        >
+                            <span className="relative text-white font-serif text-lg tracking-wider group-hover:text-gold-400 transition-colors">
+                                {t('nav.home')}
+                            </span>
+                        </Link>
+                        <Link
                             to="investments"
                             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent overflow-hidden rounded-none transition-all duration-300"
                         >
