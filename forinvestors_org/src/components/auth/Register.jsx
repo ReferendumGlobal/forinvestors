@@ -49,6 +49,27 @@ export default function Register() {
 
             if (authError) throw authError;
 
+            // 1.5. Explicitly create Profile (safeguard against missing triggers)
+            if (authData.user) {
+                const { error: profileError } = await supabase
+                    .from('profiles')
+                    .upsert([
+                        {
+                            id: authData.user.id,
+                            email: email,
+                            full_name: fullName,
+                            role: role,
+                            company_name: role === 'agency' ? companyName : null,
+                            status: 'pending'
+                        }
+                    ], { onConflict: 'id' });
+
+                if (profileError) {
+                    console.error("Profile creation warning:", profileError);
+                    // We continue, as auth was successful
+                }
+            }
+
             // 2. Check if session exists (Email Confirmation might be enabled)
             if (authData.session) {
                 navigate('/dashboard');
