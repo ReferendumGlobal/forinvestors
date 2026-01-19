@@ -21,7 +21,7 @@ export default function ProcessSteps({ variant = 'agencies' }) {
     const steps = Array.isArray(stepsData) ? stepsData : [];
 
     return (
-        <section className="py-20 bg-midnight-950 relative overflow-hidden">
+        <section className="py-10 bg-midnight-950 relative overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-1/4 -right-64 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl"></div>

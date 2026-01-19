@@ -131,7 +131,7 @@ export default function AgencyContactForm() {
             />
 
             {/* Hero Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ export default function AgencyContactForm() {
                 </motion.div>
             </div>
 
-            <div className="mb-20">
+            <div className="mb-10">
                 <ProcessSteps variant="agencies" />
             </div>
 
