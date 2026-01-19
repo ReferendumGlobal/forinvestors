@@ -29,7 +29,7 @@ export default function Home() {
             />
 
             {/* Hero Section */}
-            <div className="relative h-screen flex items-center justify-center overflow-hidden">
+            <div className="relative h-screen flex items-center justify-center overflow-hidden pt-28">
                 <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1512850183-6d7990f42385?auto=format&fit=crop&q=80"
