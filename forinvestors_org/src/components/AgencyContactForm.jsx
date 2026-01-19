@@ -113,7 +113,6 @@ export default function AgencyContactForm() {
                     dossierLink: formState.dossierLink
                 }
             });
-            // setSubmitted(true);
 
         } catch (err) {
             console.error("Error submitting agency form:", err);
@@ -132,7 +131,7 @@ export default function AgencyContactForm() {
             />
 
             {/* Hero Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -152,22 +151,22 @@ export default function AgencyContactForm() {
                 <ProcessSteps variant="agencies" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-                {/* Benefits Side */}
-                <div className="space-y-12">
-                    <h2 className="text-3xl font-serif text-white mb-8 border-l-4 border-gold-500 pl-6">
+                {/* Benefits Section - Full Width Grid */}
+                <div className="space-y-8 text-center">
+                    <h2 className="text-3xl font-serif text-white mb-8 inline-block border-b-4 border-gold-500 pb-2">
                         {t('agency_page.why_partner_title')}
                     </h2>
 
-                    <div className="grid gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {Array.isArray(benefits) && benefits.map((benefit, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.2 }}
-                                className="bg-midnight-900/50 p-6 rounded-xl border border-white/5 hover:border-gold-500/30 transition-colors"
+                                className="bg-midnight-900/50 p-8 rounded-xl border border-white/5 hover:border-gold-500/30 transition-colors text-left"
                             >
                                 <div className="flex items-start gap-4">
                                     <div className="mt-1">
@@ -183,14 +182,14 @@ export default function AgencyContactForm() {
                     </div>
                 </div>
 
-                {/* Agency Form */}
-                <div className="relative">
-                    <div className="bg-midnight-900 border border-gold-500/20 rounded-2xl p-8 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+                {/* Agency Form - Centered & Wide */}
+                <div className="max-w-4xl mx-auto">
+                    <div className="bg-midnight-900 border border-gold-500/20 rounded-2xl p-8 md:p-12 relative overflow-hidden shadow-2xl shadow-black/50">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
 
-                        <div className="mb-8">
-                            <h3 className="text-2xl font-serif text-white mb-2">{t('agency_page.form_title')}</h3>
-                            <p className="text-gray-400 text-sm">{t('agency_page.form_subtitle')}</p>
+                        <div className="mb-10 text-center">
+                            <h3 className="text-3xl font-serif text-white mb-3">{t('agency_page.form_title')}</h3>
+                            <p className="text-gray-400">{t('agency_page.form_subtitle')}</p>
                         </div>
 
                         {submitted ? (
@@ -214,25 +213,37 @@ export default function AgencyContactForm() {
                                 </button>
                             </motion.div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyName')}</label>
-                                    <input
-                                        type="text"
-                                        required
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                        value={formState.companyName}
-                                        onChange={e => setFormState({ ...formState, companyName: e.target.value })}
-                                    />
+                            <form onSubmit={handleSubmit} className="space-y-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyName')}</label>
+                                        <input
+                                            type="text"
+                                            required
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
+                                            value={formState.companyName}
+                                            onChange={e => setFormState({ ...formState, companyName: e.target.value })}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.website')}</label>
+                                        <input
+                                            type="url"
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
+                                            placeholder="https://"
+                                            value={formState.website}
+                                            onChange={e => setFormState({ ...formState, website: e.target.value })}
+                                        />
+                                    </div>
                                 </div>
 
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                     <div>
                                         <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.contactPerson')}</label>
                                         <input
                                             type="text"
                                             required
-                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
                                             value={formState.contactPerson}
                                             onChange={e => setFormState({ ...formState, contactPerson: e.target.value })}
                                         />
@@ -242,7 +253,7 @@ export default function AgencyContactForm() {
                                         <input
                                             type="tel"
                                             required
-                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
                                             value={formState.phone}
                                             onChange={e => setFormState({ ...formState, phone: e.target.value })}
                                         />
@@ -254,28 +265,17 @@ export default function AgencyContactForm() {
                                     <input
                                         type="email"
                                         required
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
                                         value={formState.email}
                                         onChange={e => setFormState({ ...formState, email: e.target.value })}
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.website')}</label>
-                                    <input
-                                        type="url"
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                        placeholder="https://"
-                                        value={formState.website}
-                                        onChange={e => setFormState({ ...formState, website: e.target.value })}
-                                    />
-                                </div>
-
-                                <div>
                                     <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.labels.propertyTypes')}</label>
-                                    <div className="grid grid-cols-2 gap-3">
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                         {propertyTypeKeys.map(key => (
-                                            <label key={key} className="flex items-center space-x-3 cursor-pointer group">
+                                            <label key={key} className="flex items-center space-x-3 cursor-pointer group p-3 bg-midnight-950/50 rounded-lg border border-white/5 hover:border-gold-500/30 transition-all">
                                                 <input
                                                     type="checkbox"
                                                     checked={formState.propertyTypes.includes(key)}
@@ -296,7 +296,7 @@ export default function AgencyContactForm() {
                                     <input
                                         type="url"
                                         required
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
                                         placeholder="https://drive.google.com/..."
                                         value={formState.dossierLink}
                                         onChange={e => setFormState({ ...formState, dossierLink: e.target.value })}
@@ -310,7 +310,7 @@ export default function AgencyContactForm() {
                                     <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
                                     <textarea
                                         rows={4}
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none transition-all"
                                         placeholder={t('forms.placeholders.message_example')}
                                         value={formState.message}
                                         onChange={e => setFormState({ ...formState, message: e.target.value })}
@@ -326,7 +326,7 @@ export default function AgencyContactForm() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full flex items-center justify-center bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                                    className="w-full flex items-center justify-center bg-gold-500 hover:bg-gold-600 text-white font-bold py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-gold-500/20 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                                 >
                                     {isSubmitting ? (
                                         <div className="flex flex-col items-center justify-center">
@@ -337,9 +337,9 @@ export default function AgencyContactForm() {
                                             <span className="text-xs font-normal mt-1 text-white/80">{loadingText}</span>
                                         </div>
                                     ) : (
-                                        <div className="flex items-center">
+                                        <div className="flex items-center text-lg">
                                             <span>{t('forms.buttons.send_request')}</span>
-                                            <Send className="ml-2" size={18} />
+                                            <Send className="ml-2" size={20} />
                                         </div>
                                     )}
                                 </button>
