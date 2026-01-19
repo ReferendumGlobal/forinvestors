@@ -315,6 +315,36 @@ export default function ContactForm({ categoryName, explanation }) {
             {/* Intent Hidden - Always Buy/Invest */}
             <input type="hidden" name="intent" value="buy" />
 
+            {/* Company Search Toggle */}
+            <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5 mb-4">
+                <label className="flex items-center space-x-3 cursor-pointer">
+                    <input
+                        type="checkbox"
+                        checked={formState.isCompany}
+                        onChange={e => setFormState({ ...formState, isCompany: e.target.checked })}
+                        className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                    />
+                    <span className="text-sm text-gray-300">Mandato a nombre de Empresa (Opcional)</span>
+                </label>
+
+                {formState.isCompany && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        className="mt-4"
+                    >
+                        <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID (Opcional)</label>
+                        <input
+                            type="text"
+                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                            placeholder="G-12345678"
+                            value={formState.companyNif}
+                            onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
+                        />
+                    </motion.div>
+                )}
+            </div>
+
             <div className="flex items-center space-x-3 bg-midnight-900/50 p-4 rounded-lg border border-white/5">
                 <input
                     type="checkbox"

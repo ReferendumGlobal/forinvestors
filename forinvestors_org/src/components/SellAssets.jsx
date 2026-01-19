@@ -300,7 +300,7 @@ export default function SellAssets() {
                                                 />
                                             </div>
                                             <div>
-                                                <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID</label>
+                                                <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID (Opcional)</label>
                                                 <input
                                                     type="text"
                                                     className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
