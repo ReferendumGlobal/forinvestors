@@ -53,7 +53,8 @@ export default function AdminPanel() {
             .eq('id', lead.id);
 
         if (!error) {
-            alert(`Marked as invited. Send this link to ${lead.email}:\n\nhttps://forinvestors.org/#/register?email=${encodeURIComponent(lead.email)}&type=${lead.intent === 'sell' ? 'agency' : 'investor'}`);
+            const origin = window.location.origin;
+            alert(`Marked as invited. Send this link to ${lead.email}:\n\n${origin}/#/register?email=${encodeURIComponent(lead.email)}&type=${lead.intent === 'sell' ? 'agency' : 'investor'}`);
             fetchData();
         }
     };
