@@ -42,7 +42,8 @@ export default function Register() {
                         role: role,
                         company_name: role === 'agency' ? companyName : null,
                         status: 'pending' // Default to pending for manual approval
-                    }
+                    },
+                    emailRedirectTo: `${window.location.origin}/dashboard`
                 }
             });
 
