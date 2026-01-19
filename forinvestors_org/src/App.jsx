@@ -30,7 +30,10 @@ function LanguageWrapper() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  const showGlobalContact = !location.pathname.includes('/agencias') && !location.pathname.includes('/agencies');
+  const showGlobalContact = !location.pathname.includes('/agencias') &&
+    !location.pathname.includes('/agencies') &&
+    !location.pathname.toLowerCase().includes('vender') &&
+    !location.pathname.toLowerCase().includes('sell');
 
   useEffect(() => {
     const validLangs = ['es', 'en', 'zh', 'ru', 'ar', 'de', 'fr', 'pt', 'ja', 'hi'];

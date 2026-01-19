@@ -228,7 +228,7 @@ export default function ContactForm({ categoryName, explanation }) {
                     />
                 </div>
                 <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyName')}</label>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.companyNameOptional')}</label>
                     <input
                         type="text"
                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-colors"

@@ -284,6 +284,7 @@
         "labels": {
             "name": "Nombre Completo",
             "companyName": "Nombre Legal Agencia",
+            "companyNameOptional": "Nombre de Empresa (Opcional)",
             "fullName": "Nombre Completo",
             "email": "Email Profesional",
             "website": "Página Web",
