@@ -152,10 +152,10 @@ export default function AgencyContactForm() {
                 <ProcessSteps variant="agencies" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-                {/* Benefits Side - 5 cols */}
-                <div className="lg:col-span-5 space-y-12 block">
+                {/* Benefits Side */}
+                <div className="space-y-12">
                     <h2 className="text-3xl font-serif text-white mb-8 border-l-4 border-gold-500 pl-6">
                         {t('agency_page.why_partner_title')}
                     </h2>
@@ -183,8 +183,8 @@ export default function AgencyContactForm() {
                     </div>
                 </div>
 
-                {/* Agency Form - 7 cols */}
-                <div className="lg:col-span-7">
+                {/* Agency Form */}
+                <div className="relative">
                     <div className="bg-midnight-900 border border-gold-500/20 rounded-2xl p-8 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 

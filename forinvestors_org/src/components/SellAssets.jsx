@@ -273,7 +273,8 @@ export default function SellAssets() {
                                 </div>
 
                                 {/* Company Sale Toggle */}
-                                <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5">
+                                {/* Company Details (Always visible, Optional) */}
+                                <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5 space-y-4">
                                     <label className="flex items-center space-x-3 cursor-pointer">
                                         <input
                                             type="checkbox"
@@ -281,35 +282,29 @@ export default function SellAssets() {
                                             onChange={e => setFormState({ ...formState, saleByCompany: e.target.checked })}
                                             className="h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500 accent-gold-500 cursor-pointer"
                                         />
-                                        <span className="text-sm text-gray-300">Venta a nombre de Empresa</span>
+                                        <span className="text-sm text-gray-300 font-medium">Venta a nombre de Empresa (Marcar si procede)</span>
                                     </label>
 
-                                    {formState.saleByCompany && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{ opacity: 1, height: 'auto' }}
-                                            className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"
-                                        >
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-400 mb-2">Nombre de Empresa</label>
-                                                <input
-                                                    type="text"
-                                                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                                    value={formState.companyName}
-                                                    onChange={e => setFormState({ ...formState, companyName: e.target.value })}
-                                                />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID (Opcional)</label>
-                                                <input
-                                                    type="text"
-                                                    className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                                    value={formState.companyNif}
-                                                    onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
-                                                />
-                                            </div>
-                                        </motion.div>
-                                    )}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-400 mb-2">Nombre de Empresa (Opcional)</label>
+                                            <input
+                                                type="text"
+                                                className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                                value={formState.companyName}
+                                                onChange={e => setFormState({ ...formState, companyName: e.target.value })}
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID (Opcional)</label>
+                                            <input
+                                                type="text"
+                                                className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                                value={formState.companyNif}
+                                                onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div>

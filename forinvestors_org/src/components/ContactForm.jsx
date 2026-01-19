@@ -315,8 +315,8 @@ export default function ContactForm({ categoryName, explanation }) {
             {/* Intent Hidden - Always Buy/Invest */}
             <input type="hidden" name="intent" value="buy" />
 
-            {/* Company Search Toggle */}
-            <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5 mb-4">
+            {/* Company Search Details (Always visible, Optional) */}
+            <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5 mb-4 space-y-4">
                 <label className="flex items-center space-x-3 cursor-pointer">
                     <input
                         type="checkbox"
@@ -324,15 +324,11 @@ export default function ContactForm({ categoryName, explanation }) {
                         onChange={e => setFormState({ ...formState, isCompany: e.target.checked })}
                         className="h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500 accent-gold-500 cursor-pointer"
                     />
-                    <span className="text-sm text-gray-300">Mandato a nombre de Empresa (Opcional)</span>
+                    <span className="text-sm text-gray-300 font-medium">Mandato a nombre de Empresa (Marcar si procede)</span>
                 </label>
 
-                {formState.isCompany && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        className="mt-4"
-                    >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
                         <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID (Opcional)</label>
                         <input
                             type="text"
@@ -341,8 +337,8 @@ export default function ContactForm({ categoryName, explanation }) {
                             value={formState.companyNif}
                             onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
                         />
-                    </motion.div>
-                )}
+                    </div>
+                </div>
             </div>
 
             <div className="flex items-center space-x-3 bg-midnight-900/50 p-4 rounded-lg border border-white/5">
