@@ -50,9 +50,13 @@ export default function DashboardLayout() {
     if (!user) return <Navigate to="/login" />;
 
     // 0. PENDING APPROVAL CHECK
-    // Only block if explicitly pending. If 'approved' (default for old users?) or null, proceed.
-    // Assuming new flow sets 'pending'.
-    if (user.user_metadata?.status === 'pending' || profile?.status === 'pending') {
+    // Prioritize `profile.status` as the live source of truth. 
+    // Only fall back to `user_metadata` if profile is not yet loaded/created.
+    const isPending = profile?.status
+        ? profile.status === 'pending'
+        : user.user_metadata?.status === 'pending';
+
+    if (isPending) {
         return <PendingApproval />;
     }
 
