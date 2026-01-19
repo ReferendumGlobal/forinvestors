@@ -77,7 +77,7 @@ export default function ContractSign({ mode = 'standalone', contractType = 'buy_
 
         } catch (err) {
             console.error('Error saving contract:', err);
-            alert(t('dashboard.contracts.save_error', 'Error saving signature. Please try again.'));
+            alert(`Error saving signature: ${err.message || err.error_description || 'Unknown error'}`);
         } finally {
             setLoading(false);
         }

@@ -191,16 +191,15 @@ ${bankDetails}
         ** ${ag.companyName || (isSpanish ? 'AGENCIA COLABORADORA' : 'PARTNER AGENCY')}** (${isSpanish ? 'El Colaborador' : 'The Partner'}), ${isSpanish ? 'NIF' : 'Tax ID'} ** ${ag.taxId}**, ${isSpanish ? 'representada por' : 'represented by'} ** ${ag.repName}** (${ag.repId}).
 
 ## ${labels.recitals}
-${isSpanish
-                ? 'Ambas entidades están facultadas para gestionar transacciones inmobiliarias y desean colaborar a través de ** [forinvestors.org](http://www.forinvestors.org)**.'
-                : 'Both entities are empowered to manage real estate transactions and wish to collaborate via ** [forinvestors.org](http://www.forinvestors.org)**.'}
+                ? 'Ambas entidades están facultadas para gestionar transacciones inmobiliarias y desean colaborar a través de ** [topoffmarket.com](https://topoffmarket.com)**.'
+                : 'Both entities are empowered to manage real estate transactions and wish to collaborate via ** [topoffmarket.com](https://topoffmarket.com)**.'}
 
 ## ${labels.clauses}
 
 ### 1. ${isSpanish ? 'Objeto' : 'Object'}
 ${isSpanish ? 'Colaboración mutua para la venta de activos inmobiliarios.' : 'Mutual collaboration for the sale of real estate assets.'}
 * ${isSpanish ? 'El Colaborador sube propiedades a la Plataforma -> Considerado colaboración compartida.' : 'The Partner uploads properties to the Platform -> Deemed as shared collaboration.'}
-* ${isSpanish ? 'Urbina Agency aporta Inversores para dichas propiedades.' : 'Urbina Agency provides Investors for said properties.'}
+* ${isSpanish ? 'Urbina Agency aporta Inversores para dichas propiedades (o viceversa).' : 'Urbina Agency provides Investors for said properties (or vice-versa).'}
 
 ### 2. ${isSpanish ? 'Duración' : 'Duration'}
         ** ${isSpanish ? 'INDEFINIDA' : 'INDEFINITE'} **. ${isSpanish ? 'Válido hasta que una de las partes dé de baja su cuenta en la Plataforma.' : 'Valid until either party terminates their account on the Platform.'}
@@ -212,16 +211,22 @@ ${isSpanish
 
 ### 4. ${isSpanish ? 'Honorarios y Reparto de Comisión' : 'Fees & Commission Split'}
 ${isSpanish
-                ? 'En caso de venta exitosa donde el Comprador sea presentado por Urbina Agency / Plataforma:'
-                : 'In the event of a successful sale where the Buyer is introduced by Urbina Agency / Platform:'}
-** ${isSpanish ? 'CINCUENTA POR CIENTO (50 %)' : 'FIFTY PERCENT (50 %)'} ** ${isSpanish ? 'de la comisión total recibida por El Colaborador del vendedor.' : 'of the total commission received by The Partner from the seller.'}
-${isSpanish ? 'Más impuestos aplicables.' : 'Plus applicable taxes.'}
+                ? 'Independientemente de quién sea el titular de la propiedad (Urbina Agency o El Colaborador), la comisión se repartirá de la siguiente manera:'
+                : 'Regardless of who holds the property listing (Urbina Agency or The Partner), the commission shall be split as follows:'}
+
+** ${isSpanish ? 'CINCUENTA POR CIENTO (50 %)' : 'FIFTY PERCENT (50 %)'} ** ${isSpanish ? 'de la comisión neta total para cada parte.' : 'of the total net commission for each party.'}
+${isSpanish ? `Más impuestos aplicables/IVA (${vat}).` : `Plus applicable taxes/VAT (${vat}).`}
+
+${isSpanish
+                ? 'El reparto se aplica tanto si Urbina Agency presenta al comprador para una propiedad del Colaborador, como si el Colaborador presenta al comprador para una propiedad de Urbina Agency.'
+                : 'This split applies whether Urbina Agency introduces the buyer for the Partner\'s property, or the Partner introduces the buyer for Urbina Agency\'s property.'}
 
 ### 5. ${isSpanish ? 'Condiciones de Pago' : 'Payment Terms'}
 ${isSpanish
-                ? 'El Colaborador pagará a Urbina Agency dentro de los ** 15 días hábiles ** posteriores al cobro de su comisión.'
-                : 'The Partner shall pay Urbina Agency within ** 15 Business Days ** of receiving their commission.'}
-${isSpanish ? 'Pago a:' : 'Payment to:'}
+                ? 'La parte que reciba la comisión completa del vendedor/comprador (el "Depositario") deberá abonar el 50% correspondiente a la otra parte (el "Beneficiario") dentro de los ** 15 días hábiles ** posteriores al cobro.'
+                : 'The party receiving the full commission from the seller/buyer (the "Depositary") shall pay the corresponding 50% to the other party (the "Beneficiary") within ** 15 Business Days ** of receipt.'}
+
+${isSpanish ? 'Pago a Urbina Agency (si aplica):' : 'Payment to Urbina Agency (if applicable):'}
 ${bankDetails}
 
 ...

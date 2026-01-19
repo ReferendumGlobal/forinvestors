@@ -66,6 +66,18 @@ export default function AgencyDataForm({ initialData = {}, onComplete }) {
                             />
                         </div>
                         <div>
+                            <label className="block text-sm font-medium text-gray-400 mb-1">VAT / Tax % (e.g. 21%)</label>
+                            <input
+                                required
+                                name="vatPercent"
+                                value={agencyData.vatPercent || ''}
+                                onChange={handleChange}
+                                placeholder="21"
+                                type="number"
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg p-2.5 text-white focus:ring-1 focus:ring-gold-500"
+                            />
+                        </div>
+                        <div>
                             <label className="block text-sm font-medium text-gray-400 mb-1">Official Email</label>
                             <input
                                 required
