@@ -7,6 +7,7 @@ import { Shield, LayoutDashboard, Building, Users, FileText, LogOut, Menu, X } f
 import InvestorOnboarding from './InvestorOnboarding';
 import SellerOnboarding from './SellerOnboarding';
 import AgencyOnboarding from './AgencyOnboarding';
+import PendingApproval from '../auth/PendingApproval';
 
 export default function DashboardLayout() {
     const { user, profile, loading: authLoading, signOut } = useAuth();
@@ -47,6 +48,13 @@ export default function DashboardLayout() {
     );
 
     if (!user) return <Navigate to="/login" />;
+
+    // 0. PENDING APPROVAL CHECK
+    // Only block if explicitly pending. If 'approved' (default for old users?) or null, proceed.
+    // Assuming new flow sets 'pending'.
+    if (user.user_metadata?.status === 'pending' || profile?.status === 'pending') {
+        return <PendingApproval />;
+    }
 
     // --- ONBOARDING ROUTING ---
 

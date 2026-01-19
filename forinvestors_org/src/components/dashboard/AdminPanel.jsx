@@ -179,6 +179,8 @@ export default function AdminPanel() {
                         <thead className="bg-midnight-950">
                             <tr>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">User</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Details</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Documents</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Role</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Status</th>
                                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-400 uppercase tracking-wider">Actions</th>
@@ -190,6 +192,30 @@ export default function AdminPanel() {
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="text-sm font-medium text-white">{u.full_name}</div>
                                         <div className="text-xs text-gray-500">{u.email}</div>
+                                        <div className="text-xs text-gray-500">{u.phone}</div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="text-xs text-gray-300">
+                                            <span className="font-semibold">Entity:</span> {u.entity_type || 'N/A'}
+                                        </div>
+                                        {u.company_name && <div className="text-xs text-gray-400">{u.company_name}</div>}
+                                        <div className="text-xs text-gray-300">
+                                            <span className="font-semibold">Rep:</span> {u.legal_representative || 'N/A'}
+                                        </div>
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap">
+                                        <div className="flex gap-2">
+                                            {u.id_document_url && (
+                                                <a href={u.id_document_url} target="_blank" rel="noopener noreferrer" className="text-gold-500 hover:text-gold-400" title="View ID">
+                                                    <FileText size={16} /> ID
+                                                </a>
+                                            )}
+                                            {u.dossier_link && (
+                                                <a href={u.dossier_link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300" title="View Dossier">
+                                                    <FileText size={16} /> Link
+                                                </a>
+                                            )}
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 capitalize">{u.role}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm">
@@ -197,19 +223,20 @@ export default function AdminPanel() {
                                             u.status === 'rejected' ? 'bg-red-100/10 text-red-400' :
                                                 'bg-yellow-100/10 text-yellow-400'
                                             }`}>
-                                            {u.status}
+                                            {u.status || 'pending'}
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        {u.status === 'pending' && (
+                                        {(u.status === 'pending' || !u.status) && (
                                             <div className="flex justify-end gap-2">
                                                 <button
                                                     onClick={() => handleApproveUser(u.id)}
-                                                    className="text-green-500 hover:text-green-400"
+                                                    className="text-green-500 hover:text-green-400 p-1 bg-green-900/20 rounded"
+                                                    title="Approve"
                                                 >
                                                     <CheckCircle size={18} />
                                                 </button>
-                                                <button className="text-red-500 hover:text-red-400">
+                                                <button className="text-red-500 hover:text-red-400 p-1 bg-red-900/20 rounded" title="Reject">
                                                     <XCircle size={18} />
                                                 </button>
                                             </div>

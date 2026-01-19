@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
@@ -27,6 +28,7 @@ const ASSET_TYPES = [
 
 export default function ContactForm({ categoryName, explanation }) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [formState, setFormState] = useState({
         name: '',
         companyName: '',
@@ -180,19 +182,17 @@ export default function ContactForm({ categoryName, explanation }) {
             }
 
             if (response.ok) {
-                setSubmitted(true);
-                setFormState({
-                    name: '',
-                    companyName: '',
-                    email: '',
-                    phone: '',
-                    funds: '',
-                    targetLocation: '',
-                    intent: 'buy',
-                    requestAccess: true,
-                    message: '',
-                    selectedAssets: [],
-                    file: null
+                // Navigate to register with pre-filled state
+                navigate('/register', {
+                    state: {
+                        name: formState.name,
+                        companyName: formState.companyName,
+                        email: formState.email,
+                        phone: formState.phone,
+                        role: formState.intent === 'buy' ? 'investor' : 'seller',
+                        message: formState.message,
+                        fileUrl: fileUrl // Pass the uploaded POF url if any
+                    }
                 });
             } else {
                 setError(result.message || t('forms.status.error'));
@@ -204,28 +204,6 @@ export default function ContactForm({ categoryName, explanation }) {
             setIsSubmitting(false);
         }
     };
-
-    if (submitted) {
-        return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-midnight-800 border border-gold-500/30 rounded-2xl p-8 text-center"
-            >
-                <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="text-gold-500" size={32} />
-                </div>
-                <h3 className="text-2xl font-serif text-white mb-2">{t('forms.status.sent_title')}</h3>
-                <p className="text-gray-400">{t('forms.status.sent_text')}</p>
-                <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
-                >
-                    {t('forms.buttons.send_another')}
-                </button>
-            </motion.div>
-        );
-    }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">

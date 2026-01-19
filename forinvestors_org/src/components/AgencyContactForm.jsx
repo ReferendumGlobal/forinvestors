@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Upload, CheckCircle, AlertCircle, Send, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -6,6 +7,7 @@ import { supabase } from '../lib/supabase';
 
 export default function AgencyContactForm({ explanation }) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [formState, setFormState] = useState({
         agencyName: '',
         taxId: '',
@@ -135,19 +137,19 @@ export default function AgencyContactForm({ explanation }) {
             }
 
             if (response.ok) {
-                setSubmitted(true);
-                setFormState({
-                    contactPerson: '',
-                    email: '',
-                    phone: '',
-                    city: '',
-                    country: '',
-                    propertiesCount: '',
-                    priceRangeFrom: '',
-                    priceRangeTo: '',
-                    propertyTypes: [],
-                    message: '',
-                    file: null
+                // Navigate to register with pre-filled state
+                navigate('/register?type=agency', {
+                    state: {
+                        companyName: formState.agencyName, // Map agencyName to companyName
+                        taxId: formState.taxId,
+                        fullName: formState.contactPerson, // Map contactPerson to fullName
+                        email: formState.email,
+                        phone: formState.phone,
+                        role: 'agency',
+                        location: `${formState.city}, ${formState.country}`,
+                        message: formState.message,
+                        fileUrl: null // Agency form doesn't upload to Supabase yet in this component, but if it did we'd pass it
+                    }
                 });
             } else {
                 setError(result.message || t('forms.status.error'));
@@ -159,28 +161,6 @@ export default function AgencyContactForm({ explanation }) {
             setIsSubmitting(false);
         }
     };
-
-    if (submitted) {
-        return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-midnight-800 border border-gold-500/30 rounded-2xl p-8 text-center"
-            >
-                <div className="w-16 h-16 bg-gold-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="text-gold-500" size={32} />
-                </div>
-                <h3 className="text-2xl font-serif text-white mb-2">{t('forms.status.sent_title')}</h3>
-                <p className="text-gray-400">{t('forms.status.sent_agency_text')}</p>
-                <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-6 text-gold-400 hover:text-gold-300 font-medium transition-colors"
-                >
-                    {t('forms.buttons.send_another')}
-                </button>
-            </motion.div>
-        );
-    }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6 bg-midnight-800/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-white/5 relative">
