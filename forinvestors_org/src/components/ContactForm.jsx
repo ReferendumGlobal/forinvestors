@@ -312,33 +312,8 @@ export default function ContactForm({ categoryName, explanation }) {
                 </div>
             </div>
 
-            <div>
-                <label className="block text-sm font-medium text-gray-400 mb-3">{t('forms.labels.goal')}</label>
-                <div className="grid grid-cols-2 gap-4">
-                    <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'buy' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
-                        <input
-                            type="radio"
-                            name="intent"
-                            value="buy"
-                            checked={formState.intent === 'buy'}
-                            onChange={() => setFormState({ ...formState, intent: 'buy' })}
-                            className="hidden"
-                        />
-                        <span className="font-medium">{t('forms.goals.buy')}</span>
-                    </label>
-                    <label className={`flex items-center justify-center p-4 rounded-lg border cursor-pointer transition-all ${formState.intent === 'sell' ? 'bg-gold-500/20 border-gold-500 text-white' : 'bg-midnight-900 border-white/10 text-gray-400 hover:border-gold-500/30'}`}>
-                        <input
-                            type="radio"
-                            name="intent"
-                            value="sell"
-                            checked={formState.intent === 'sell'}
-                            onChange={() => setFormState({ ...formState, intent: 'sell' })}
-                            className="hidden"
-                        />
-                        <span className="font-medium">{t('forms.goals.sell')}</span>
-                    </label>
-                </div>
-            </div>
+            {/* Intent Hidden - Always Buy/Invest */}
+            <input type="hidden" name="intent" value="buy" />
 
             <div className="flex items-center space-x-3 bg-midnight-900/50 p-4 rounded-lg border border-white/5">
                 <input

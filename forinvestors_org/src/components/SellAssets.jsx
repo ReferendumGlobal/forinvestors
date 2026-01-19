@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Shield, Globe, Briefcase, CheckCircle, Upload, Loader2, Send, AlertCircle } from 'lucide-react';
@@ -8,6 +9,7 @@ import ProcessSteps from './ProcessSteps';
 
 export default function SellAssets() {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [formState, setFormState] = useState({
         name: '',
         companyName: '',
@@ -16,7 +18,9 @@ export default function SellAssets() {
         propertyDetails: '',
         location: '',
         price: '',
-        file: null
+        dossierLink: '', // Replaces file upload
+        saleByCompany: false,
+        companyNif: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -80,7 +84,23 @@ export default function SellAssets() {
                 body: formData
             });
 
-            setSubmitted(true);
+            // Navigate to register
+            navigate('/register?type=seller', {
+                state: {
+                    name: formState.name,
+                    companyName: formState.companyName,
+                    companyNif: formState.companyNif,
+                    saleByCompany: formState.saleByCompany,
+                    email: formState.email,
+                    phone: formState.phone,
+                    role: 'seller',
+                    location: formState.location,
+                    price: formState.price,
+                    message: formState.propertyDetails,
+                    dossierLink: formState.dossierLink
+                }
+            });
+            // setSubmitted(true); // No longer showing local success message
         } catch (err) {
             console.error("Error submitting seller form:", err);
             setError(t('forms.status.error'));
@@ -240,85 +260,114 @@ export default function SellAssets() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation')}</label>
+                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.targetLocation') || "Ubicación del Activo"}</label>
                                     <input
                                         type="text"
                                         required
                                         className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                        placeholder={t('forms.placeholders.location_example')}
+                                        placeholder="Ciudad, País"
                                         value={formState.location}
                                         onChange={e => setFormState({ ...formState, location: e.target.value })}
                                     />
                                 </div>
+                            </div>
 
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
-                                    <textarea
-                                        rows={4}
-                                        required
-                                        className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
-                                        placeholder={t('forms.placeholders.message_example')}
-                                        value={formState.propertyDetails}
-                                        onChange={e => setFormState({ ...formState, propertyDetails: e.target.value })}
-                                    />
-                                </div>
+                                {/* Company Sale Toggle */}
+                        <div className="bg-midnight-950/30 p-4 rounded-lg border border-white/5">
+                            <label className="flex items-center space-x-3 cursor-pointer">
+                                <input
+                                    type="checkbox"
+                                    checked={formState.saleByCompany}
+                                    onChange={e => setFormState({ ...formState, saleByCompany: e.target.checked })}
+                                    className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                                />
+                                <span className="text-sm text-gray-300">Venta a nombre de Empresa</span>
+                            </label>
 
-                                <div>
-                                    <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
-                                        {t('forms.labels.dossier')} <AlertCircle size={14} />
-                                    </label>
-                                    <div className="flex justify-center px-6 pt-5 pb-6 border-2 border-white/10 border-dashed rounded-lg hover:bg-midnight-950/50 transition-colors relative cursor-pointer">
-                                        <input
-                                            type="file"
-                                            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                                            onChange={handleFileChange}
-                                            accept=".pdf,.jpg,.png,.zip"
-                                        />
-                                        <div className="text-center">
-                                            {formState.file ? (
-                                                <div className="flex flex-col items-center">
-                                                    <CheckCircle className="text-green-500 mb-2" size={24} />
-                                                    <span className="text-white text-sm">{formState.file.name}</span>
-                                                </div>
-                                            ) : (
-                                                <>
-                                                    <Upload className="mx-auto h-10 w-10 text-gray-500" />
-                                                    <p className="mt-1 text-sm text-gray-400">
-                                                        <span className="text-gold-400 font-medium">{t('forms.buttons.upload_file')}</span> {t('forms.buttons.or_drag')}
-                                                    </p>
-                                                </>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {error && (
-                                    <div className="p-3 bg-red-900/20 border border-red-500/30 rounded text-red-200 text-sm text-center">
-                                        {error}
-                                    </div>
-                                )}
-
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 rounded-lg transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
+                            {formState.saleByCompany && (
+                                <motion.div
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4"
                                 >
-                                    {isSubmitting ? (
-                                        <>
-                                            <Loader2 className="animate-spin" size={20} />
-                                            {t('forms.buttons.processing')}
-                                        </>
-                                    ) : (
-                                        <>
-                                            {t('sell_page.hero_cta')} <Send size={18} />
-                                        </>
-                                    )}
-                                </button>
-                            </form>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">Nombre de Empresa</label>
+                                        <input
+                                            type="text"
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                            value={formState.companyName}
+                                            onChange={e => setFormState({ ...formState, companyName: e.target.value })}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-400 mb-2">NIF / Tax ID</label>
+                                        <input
+                                            type="text"
+                                            className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                            value={formState.companyNif}
+                                            onChange={e => setFormState({ ...formState, companyNif: e.target.value })}
+                                        />
+                                    </div>
+                                </motion.div>
+                            )}
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium text-gray-400 mb-2">{t('forms.labels.message')}</label>
+                            <textarea
+                                rows={4}
+                                required
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                placeholder={t('forms.placeholders.message_example')}
+                                value={formState.propertyDetails}
+                                onChange={e => setFormState({ ...formState, propertyDetails: e.target.value })}
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-medium text-gold-400 mb-2 flex items-center gap-2">
+                                Enlace al Dossier / Fotos <AlertCircle size={14} />
+                            </label>
+                            <input
+                                type="url"
+                                required
+                                className="w-full bg-midnight-950 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:ring-1 focus:ring-gold-500 outline-none"
+                                placeholder="https://drive.google.com/..."
+                                value={formState.dossierLink}
+                                onChange={e => setFormState({ ...formState, dossierLink: e.target.value })}
+                            />
+                            <p className="text-xs text-gray-500 mt-2">
+                                * Indispensable adjuntar <strong>Referencia Catastral</strong> en el dossier.
+                            </p>
+                        </div>
+
+                        {error && (
+                            <div className="p-3 bg-red-900/20 border border-red-500/30 rounded text-red-200 text-sm text-center">
+                                {error}
+                            </div>
                         )}
-                    </div>
+
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="w-full bg-gold-500 hover:bg-gold-600 text-white font-bold py-4 rounded-lg transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2"
+                        >
+                            {isSubmitting ? (
+                                <>
+                                    <Loader2 className="animate-spin" size={20} />
+                                    {t('forms.buttons.processing')}
+                                </>
+                            ) : (
+                                <>
+                                    {t('sell_page.hero_cta')} <Send size={18} />
+                                </>
+                            )}
+                        </button>
+                    </form>
+                        )}
                 </div>
             </div>
         </div>
+        </div >
     );
 }
