@@ -19,7 +19,9 @@ export default function Register() {
     const [entityType, setEntityType] = useState('individual'); // 'individual' or 'company'
     const [legalRepresentative, setLegalRepresentative] = useState('');
     const [idFile, setIdFile] = useState(null);
-    const [dossierLink, setDossierLink] = useState(''); // Google Drive link
+    const [dossierLink, setDossierLink] = useState(preFilledData.dossierLink || ''); // Google Drive link
+    const [vatPercentage, setVatPercentage] = useState(''); // New VAT field
+    const [companyNif, setCompanyNif] = useState(preFilledData.companyNif || '');
 
     // Default to investor if not specified, but check params or pre-filled role
     const typeParam = searchParams.get('type');
@@ -73,7 +75,9 @@ export default function Register() {
                         role: role,
                         phone: phone,
                         company_name: entityType === 'company' || role === 'agency' ? companyName : null,
+                        company_nif: companyNif,
                         entity_type: entityType,
+                        vat_percentage: vatPercentage,
                         legal_representative: legalRepresentative,
                         id_document_url: idDocumentUrl,
                         dossier_link: dossierLink,
