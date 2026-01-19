@@ -102,13 +102,21 @@
         "access_button": "Solicitar Colaboración",
         "disclaimer": "* Acceso restringido. Requiere activación manual tras firma de contrato.",
         "collaboration_model": "Un Modelo de Colaboración Justo",
-        "collaboration_text_1": "No somos un portal, somos una **Alianza**. Firmamos un contrato de colaboración que protege su mandato y garantiza el reparto de honorarios (50/50) en cada operación cerrada conjuntamente.",
-        "collaboration_text_2": "Una vez firmado el contrato, se le dará acceso a nuestra plataforma privada donde podrá:",
-        "benefits_list": [
-            "Subir su cartera de inmuebles exclusivos visibles solo para inversores verificados.",
-            "Recibir solicitudes automatizadas de inversores que encajen con sus activos.",
-            "Acceder a nuestra lista de 'Wanted' por Gran Capital."
+        "benefits": [
+            {
+                "title": "50% Comisión",
+                "desc": "Recibe el 50% de la comisión de venta en cada operación cerrada con nuestros clientes."
+            },
+            {
+                "title": "Venta Rápida",
+                "desc": "Nuestros inversores cualificados compran propiedades en tiempo récord."
+            },
+            {
+                "title": "Cartera Ilimitada",
+                "desc": "Vuelca todos los activos que desees en nuestra plataforma privada."
+            }
         ],
+        "collaboration_text_1": "Aprovéchate de nuestros contratos en exclusividad con nuestros clientes. Recibe el 50% de la comisión de venta garantizada. Firma el contrato de colaboración y accede a una red global.",
         "verified_demand_title": "Demanda Verificada",
         "verified_demand_text": "Le traemos compradores que ya han pasado el Proof of Funds (POF).",
         "global_exposure_title": "Exposición Global",
@@ -392,7 +400,7 @@
             },
             {
                 "title": "Cierre de Operaciones",
-                "description": "Gestionamos las visitas y ofertas. Reparto de honorarios al 50/50.",
+                "description": "Nuestros clientes inversores comprarán la propiedad en poco tiempo. Reciba el 50% de la comisión.",
                 "icon": "CheckCircle"
             }
         ],
