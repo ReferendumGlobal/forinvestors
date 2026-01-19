@@ -22,6 +22,7 @@ import DashboardHome from './components/dashboard/DashboardHome';
 import ContractSign from './components/dashboard/ContractSign';
 import AdminPanel from './components/dashboard/AdminPanel';
 import PropertyManager from './components/dashboard/PropertyManager';
+import Opportunities from './components/dashboard/Opportunities';
 
 function LanguageWrapper() {
   const { lang } = useParams();
