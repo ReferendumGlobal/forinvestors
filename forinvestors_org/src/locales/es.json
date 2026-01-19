@@ -290,7 +290,7 @@
             "propertyTypes": "Tipos de Propiedad en Cartera",
             "message": "Mensaje Adicional",
             "capital": "Capital para Invertir (€ / Proof of Funds)",
-            "targetLocation": "¿Dónde desea invertir?",
+            "targetLocation": "Ubicación del Activo",
             "goal": "¿Cuál es su objetivo?",
             "request_access": "Solicito acceso a la",
             "private_platform": "Plataforma Privada",

@@ -279,7 +279,7 @@ export default function SellAssets() {
                                             type="checkbox"
                                             checked={formState.saleByCompany}
                                             onChange={e => setFormState({ ...formState, saleByCompany: e.target.checked })}
-                                            className="form-checkbox h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                                            className="h-5 w-5 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500 accent-gold-500 cursor-pointer"
                                         />
                                         <span className="text-sm text-gray-300">Venta a nombre de Empresa</span>
                                     </label>

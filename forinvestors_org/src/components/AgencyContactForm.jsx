@@ -152,10 +152,10 @@ export default function AgencyContactForm() {
                 <ProcessSteps variant="agencies" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-                {/* Benefits Side */}
-                <div className="space-y-12">
+                {/* Benefits Side - 5 cols */}
+                <div className="lg:col-span-5 space-y-12 block">
                     <h2 className="text-3xl font-serif text-white mb-8 border-l-4 border-gold-500 pl-6">
                         {t('agency_page.why_partner_title')}
                     </h2>
@@ -183,8 +183,8 @@ export default function AgencyContactForm() {
                     </div>
                 </div>
 
-                {/* Agency Form */}
-                <div>
+                {/* Agency Form - 7 cols */}
+                <div className="lg:col-span-7">
                     <div className="bg-midnight-900 border border-gold-500/20 rounded-2xl p-8 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
@@ -280,7 +280,7 @@ export default function AgencyContactForm() {
                                                     type="checkbox"
                                                     checked={formState.propertyTypes.includes(key)}
                                                     onChange={() => handleCheckboxChange(key)}
-                                                    className="form-checkbox h-4 w-4 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500"
+                                                    className="h-4 w-4 text-gold-500 rounded border-gray-600 bg-midnight-950 focus:ring-gold-500 accent-gold-500 cursor-pointer"
                                                 />
                                                 <span className="text-sm text-gray-300 group-hover:text-gold-400 transition-colors">{t(`forms.agency_types.${key}`)}</span>
                                             </label>
