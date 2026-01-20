@@ -178,7 +178,7 @@
         }
     },
     "search": {
-        "title": "Off-Market Asset Search",
+        "title": "Off Market properties",
         "subtitle": "Access the largest database of hidden assets in Spain and Europe.",
         "placeholder": "Enter location (e.g., Madrid, Ibiza, Paris...)",
         "button": "Search Properties",
